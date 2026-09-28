@@ -52,7 +52,7 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
             </div>
 
             {/* Title */}
-            <h1 className="t-display text-[clamp(2.2rem,5vw,4rem)] text-[#0A0A0F] leading-tight mb-8">
+            <h1 className="t-display text-[clamp(2.2rem,5vw,4rem)] text-[#0A0A0F] leading-normal mb-8">
               ทำไม Design System ถึงสำคัญกับทุกบริษัทที่ต้องการ Scale
             </h1>
 

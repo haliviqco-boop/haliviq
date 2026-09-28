@@ -82,7 +82,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         <section className="pt-[112px] pb-16 lg:pb-24" style={{ background: '#08070F' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <p className="text-xs tracking-widest uppercase mb-5" style={{ color: 'var(--purple-light)', fontWeight: 400, letterSpacing: '0.2em' }}>{isEN ? 'Insights' : 'Insights'}</p>
-            <h1 className="t-display text-[clamp(2.6rem,6vw,4.5rem)] leading-tight mb-6" style={{ color: '#fff' }}>
+            <h1 className="t-display text-[clamp(2.6rem,6vw,4.5rem)] leading-normal mb-6" style={{ color: '#fff' }}>
               {isEN ? 'Today I Learned' : 'Today I Learned'}
             </h1>
             <p className="max-w-xl mb-10" style={{ color: 'rgba(255,255,255,0.55)', fontWeight: 400, fontSize: '1rem', lineHeight: 1.6 }}>
