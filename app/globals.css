@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-main);
   font-weight: 500;
   color: #0A0A0F;
-  line-height: 1.15;
+  line-height: 1.196; /* +4% from 1.15, headings were touching/overlapping */
 }
 
 h1 { font-size: clamp(3rem, 8vw, 7.5rem); }
@@ -91,7 +91,7 @@ body {
 .t-display {
   font-family: var(--font-main);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.092; /* +4% from 1.05, headings were touching/overlapping */
   letter-spacing: -0.02em;
   color: #0A0A0F;
 }
