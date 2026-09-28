@@ -134,19 +134,26 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           </div>
         </section>
 
-        <section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)' }}>
-          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle,#fff 1px,transparent 1px)', backgroundSize: '28px 28px' }} />
-          <div className="relative max-w-3xl mx-auto px-6 lg:px-10 text-center">
-            <p className="text-white/60 text-xs tracking-widest uppercase mb-6 font-mono">{isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}</p>
-            <h2 className="t-display text-white text-[clamp(2rem,4vw,3.5rem)] mb-6 leading-tight">
+        <section className="relative overflow-hidden" style={{ background: '#050308' }}>
+          <div
+            className="absolute inset-0 pointer-events-none opacity-40"
+            style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '180px 180px, 260px 260px', backgroundPosition: '0 0, 90px 130px' }}
+          />
+          <div
+            className="absolute left-0 right-0 bottom-0 pointer-events-none"
+            style={{ height: 260, background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(123,110,246,0.35) 0%, rgba(83,195,215,0.08) 45%, transparent 75%)' }}
+          />
+          <div className="relative max-w-3xl mx-auto px-6 lg:px-10 py-24 text-center">
+            <p className="text-xs tracking-widest uppercase mb-6 font-mono" style={{ color: 'rgba(255,255,255,0.5)' }}>{isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}</p>
+            <h2 className="t-display text-[clamp(2rem,4vw,3.5rem)] mb-6 leading-tight" style={{ background: 'linear-gradient(135deg, var(--purple-light) 0%, #53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
               {isEN ? "We'd love to hear what you're building." : 'เราอยากได้ยินสิ่งที่คุณกำลังสร้าง'}
             </h2>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href={`/${lang}/contact`} className="inline-flex items-center gap-2 px-8 py-3.5 bg-white rounded-full text-sm hover:bg-[var(--purple-bg)] transition-colors" style={{ color: 'var(--purple)', fontWeight: 400 }}>
+              <Link href={`/${lang}/contact`} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm transition-opacity hover:opacity-90" style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}>
                 {isEN ? 'Start a Conversation' : 'เริ่มบทสนทนา'}
                 <i className="ti ti-arrow-right" style={{ fontSize: 14 }} aria-hidden="true" />
               </Link>
-              <a href="mailto:wu@haliviq.com" className="text-sm text-white/85 hover:text-white transition-colors" style={{ fontWeight: 400 }}>wu@haliviq.com</a>
+              <a href="mailto:wu@haliviq.com" className="text-sm transition-colors" style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 400 }}>wu@haliviq.com</a>
             </div>
           </div>
         </section>

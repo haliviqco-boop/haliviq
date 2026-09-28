@@ -225,19 +225,26 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           </div>
         </section>
 
-        <section className="py-24 relative overflow-hidden" style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)' }}>
-          <div className="absolute inset-0 opacity-10" style={{ backgroundImage:'radial-gradient(circle,#fff 1px,transparent 1px)', backgroundSize:'28px 28px' }} />
-          <div className="relative max-w-3xl mx-auto px-6 lg:px-10 text-center">
-            <p className="text-white/60 text-xs tracking-widest uppercase mb-6 font-mono">{isEN ? 'Newsletter' : 'จดหมายข่าว'}</p>
-            <h2 className="t-display text-white text-[clamp(2rem,4vw,3.5rem)] mb-6 leading-tight">
+        <section className="relative overflow-hidden" style={{ background: '#050308' }}>
+          <div
+            className="absolute inset-0 pointer-events-none opacity-40"
+            style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '180px 180px, 260px 260px', backgroundPosition: '0 0, 90px 130px' }}
+          />
+          <div
+            className="absolute left-0 right-0 bottom-0 pointer-events-none"
+            style={{ height: 260, background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(123,110,246,0.35) 0%, rgba(83,195,215,0.08) 45%, transparent 75%)' }}
+          />
+          <div className="relative max-w-3xl mx-auto px-6 lg:px-10 py-24 text-center">
+            <p className="text-xs tracking-widest uppercase mb-6 font-mono" style={{ color: 'rgba(255,255,255,0.5)' }}>{isEN ? 'Newsletter' : 'จดหมายข่าว'}</p>
+            <h2 className="t-display text-[clamp(2rem,4vw,3.5rem)] mb-6 leading-tight" style={{ background: 'linear-gradient(135deg, var(--purple-light) 0%, #53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
               {isEN ? <>Get Insights<br />Every Two Weeks</> : <>รับ Insight<br />ทุกสองสัปดาห์</>}
             </h2>
-            <p className="text-white/85 mb-10 max-w-md mx-auto" style={{ fontWeight:400 }}>
+            <p className="mb-10 max-w-md mx-auto" style={{ color: 'rgba(255,255,255,0.75)', fontWeight:400 }}>
               {isEN ? 'Articles, case studies, and tools from the Haliviq team. No spam. Unsubscribe anytime.' : 'บทความ Case Study และเครื่องมือจากทีม Haliviq ไม่มี Spam ยกเลิกได้ตลอด'}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input type="email" placeholder={isEN ? 'your@email.com' : 'อีเมลของคุณ'} className="flex-1 px-5 py-3.5 rounded-full bg-white/10 border border-white/20 text-white placeholder:text-white/40 text-sm outline-none focus:border-white/50" style={{ fontWeight:400 }} />
-              <button className="px-8 py-3.5 bg-white rounded-full text-sm hover:bg-[var(--purple-bg)] transition-colors" style={{ color:'var(--purple)', fontWeight:400 }}>
+              <input type="email" placeholder={isEN ? 'your@email.com' : 'อีเมลของคุณ'} className="flex-1 px-5 py-3.5 rounded-full text-sm outline-none transition-colors" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.15)', color: '#fff', fontWeight:400 }} />
+              <button className="px-8 py-3.5 rounded-full text-sm transition-opacity hover:opacity-90" style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight:500 }}>
                 {isEN ? 'Subscribe' : 'สมัครรับ'}
               </button>
             </div>
