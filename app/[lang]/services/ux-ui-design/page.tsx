@@ -423,7 +423,6 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       heroDesc={heroDesc} heroBullets={heroBullets}
       heroDark heroSlot={heroSlot} heroShowSecondaryCta={false}
       heroCtaLabel={isEN ? 'Get Started' : 'เริ่มต้นเลย'}
-      postHeroSlot={postHeroSlot}
       whyTitle={whyTitle} whyDesc={whyDesc} whyPoints={whyPoints}
       outcomes={outcomes} ctaTitle={ctaTitle} ctaDesc={ctaDesc}
       features={features} steps={steps} caseStudies={caseStudies}
