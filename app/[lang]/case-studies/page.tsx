@@ -144,7 +144,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-20 lg:pt-28 pb-16">
             <div className="mb-16">
               <p className="t-label mb-5">{isEN ? 'Case Studies' : 'Case Studies'}</p>
-              <h1 className="t-display text-[clamp(3rem,7vw,6.5rem)] text-[#0A0A0F] leading-none mb-6">
+              <h1 className="t-display text-[clamp(3rem,7vw,6.5rem)] text-[#0A0A0F] leading-tight mb-6">
                 {isEN ? <>Real work,<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Real results</span></> : <>ผลงานจริง<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>ผลลัพธ์ที่วัดได้</span></>}
               </h1>
               <p className="t-body text-sm max-w-lg">

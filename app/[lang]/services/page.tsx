@@ -443,7 +443,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg,var(--purple),var(--purple-light),var(--lime))' }} />
           <div className="max-w-5xl mx-auto px-6 lg:px-10 pt-20 lg:pt-28 pb-16 text-center">
             <p className="t-label mb-5">{isEN ? 'Services' : 'บริการ'}</p>
-            <h1 className="t-display text-[clamp(2.6rem,5.5vw,4.8rem)] text-[#0A0A0F] leading-none mb-6">
+            <h1 className="t-display text-[clamp(2.6rem,5.5vw,4.8rem)] text-[#0A0A0F] leading-tight mb-6">
               {isEN ? (
                 <>Everything You Need,<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>In One Studio</span></>
               ) : (

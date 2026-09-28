@@ -57,13 +57,13 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             style={{ background: 'radial-gradient(circle, rgba(123,110,246,0.28) 0%, transparent 70%)', filter: 'blur(20px)' }}
           />
           <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-20 lg:pt-28 pb-20">
-            <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+            <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
               <div>
                 <p className="t-label mb-5">{isEN ? 'Get in Touch' : 'ติดต่อเรา'}</p>
-                <h1 className="t-display text-[clamp(3rem,6vw,5.5rem)] leading-none mb-8" style={{ color: '#fff' }}>
+                <h1 className="t-display text-[clamp(3rem,6vw,5.5rem)] leading-tight mb-8" style={{ color: '#fff' }}>
                   {isEN
                     ? <>Let&apos;s build<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,#53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>something great</span></>
-                    : <>มาสร้าง<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,#53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>สิ่งที่ยิ่งใหญ่</span><br />ด้วยกัน</>}
+                    : <>มาสร้าง<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,#53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>สิ่งที่ยิ่งใหญ่ด้วยกัน</span></>}
                 </h1>
                 <p className="leading-relaxed mb-12" style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.85)', fontWeight: 400, maxWidth: 460 }}>
                   {isEN ? 'Tell us about your project. We will get back to you within 24 hours with initial thoughts and next steps.' : 'เล่าให้เราฟังเรื่องโปรเจกต์ของคุณ เราจะตอบกลับภายใน 24 ชั่วโมงพร้อมความคิดเห็นเบื้องต้นและขั้นตอนถัดไป'}
@@ -95,7 +95,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                 </div>
               </div>
 
-              <div className="rounded-3xl p-8 lg:p-10" style={{ background: '#141329', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <div className="rounded-3xl p-8 lg:p-10 lg:sticky lg:top-24" style={{ background: '#141329', border: '1px solid rgba(255,255,255,0.08)' }}>
                 <h2 className="mb-8" style={{ fontWeight: 500, fontSize: '1.3rem', color: '#fff' }}>{isEN ? 'Tell us about your project' : 'เล่าให้เราฟังเรื่องโปรเจกต์'}</h2>
                 <div className="space-y-5">
                   {[
