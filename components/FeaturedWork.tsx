@@ -24,7 +24,12 @@ export default function FeaturedWork({ lang, tr }: Props) {
           {fw.h2}
         </h2>
 
-        {/* Sticky stacking cards */}
+        {/* Sticky stacking cards. Each card is a direct sibling under the shared container
+            below (no per-card wrapper) — that's what lets each one hold at `top: 96px`
+            while later, higher z-index cards scroll up and cover it. Wrapping each card in
+            its own extra-height box (an earlier attempt at this) breaks the effect: it gives
+            each card its own separate "release point" so one fully scrolls away before the
+            next is close enough to stick, leaving a gap instead of an overlap. */}
         <div>
           {items.map((it, i) => (
             <div
