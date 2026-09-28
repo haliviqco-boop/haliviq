@@ -10,7 +10,7 @@ export default function FeaturedWork({ lang, tr }: Props) {
   const prefix = `/${lang}`
 
   return (
-    <section className="relative overflow-hidden py-24 lg:py-32" style={{ background: '#08070F' }}>
+    <section className="relative py-24 lg:py-32" style={{ background: '#08070F' }}>
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.05]"
         style={{
