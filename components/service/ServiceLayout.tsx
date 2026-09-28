@@ -152,36 +152,6 @@ export default function ServiceLayout({
 
         {postHeroSlot}
 
-        {/* Outcomes */}
-        <div className="border-y border-[#E4E4EC] bg-[#F7F7FC]">
-          <div className="max-w-7xl mx-auto px-4 lg:px-10">
-            <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-[#E4E4EC]">
-              {(outcomes ?? []).map(o => (
-                <div key={o.label} className="px-4 lg:px-10 py-8">
-                  <div className="text-[clamp(2rem,4vw,3rem)] leading-none mb-2" style={{fontFamily:'var(--font-main)',fontWeight: 400,color}}>{o.stat}</div>
-                  <p className="mb-1" style={{fontWeight:500,fontSize:"1rem",color:"#0A0A0F"}}>{o.label}</p>
-                  {o.desc && <p className="" style={{fontWeight:400,fontSize:"0.95rem",color:"#0A0A0F"}}>{o.desc}</p>}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Related */}
-        <section className="bg-[#F7F7FC] py-16">
-          <div className="max-w-7xl mx-auto px-4 lg:px-10">
-            <p className="t-label mb-8">{lang==='en'?'Related Services':'บริการที่เกี่ยวข้อง'}</p>
-            <div className="flex flex-wrap gap-3">
-              {(related??[]).map(r => (
-                <Link key={r.href} href={`${prefix}${r.href}`} className="btn-outline group flex items-center gap-2" style={{fontSize:'0.9rem',padding:'10px 20px'}}>
-                  {r.label}
-                  <i className="ti ti-arrow-right opacity-0 group-hover:opacity-100 transition-opacity" style={{fontSize:13}} aria-hidden="true"/>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
       </main>
       <Footer lang={lang} tr={tr}/>
     </>
