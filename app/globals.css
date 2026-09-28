@@ -155,7 +155,8 @@ body {
 .card:hover { border-color: rgba(123,110,246,.3); transform: translateY(-4px); box-shadow: 0 20px 48px rgba(123,110,246,.08); }
 
 .marquee-wrap { overflow: hidden; }
-.marquee-inner { display: flex; width: max-content; animation: marquee 30s linear infinite; }
+.marquee-inner { display: flex; width: max-content; animation: marquee 45s linear infinite; }
+.marquee-inner.marquee-slow { animation-duration: 60s; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 .service-row { border-bottom: 1.5px solid var(--border); transition: background .25s; cursor: pointer; }

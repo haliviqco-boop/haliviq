@@ -3,11 +3,11 @@ import { type Lang, type T } from '@/lib/i18n'
 type Props = { lang: Lang; tr: T }
 
 const cases = [
-  { tag_th:'FinTech · Mobile App', tag_en:'FinTech · Mobile App', title_th:'Digital Banking Super App', title_en:'Digital Banking Super App', img:'', href:'/work' },
-  { tag_th:'ค้าปลีก · E-Commerce', tag_en:'Retail · E-Commerce', title_th:'Omnichannel Retail Platform', title_en:'Omnichannel Retail Platform', img:'', href:'/work' },
-  { tag_th:'สุขภาพ · Web Platform', tag_en:'Healthcare · Web', title_th:'Patient Digital Ecosystem', title_en:'Patient Digital Ecosystem', img:'', href:'/work' },
-  { tag_th:'AI · Enterprise', tag_en:'AI · Enterprise', title_th:'AI Document Intelligence', title_en:'AI Document Intelligence', img:'', href:'/work' },
-  { tag_th:'FinTech · Payment', tag_en:'FinTech · Payment', title_th:'Payment Gateway Platform', title_en:'Payment Gateway Platform', img:'', href:'/work' },
+  { tag_th:'FinTech · Mobile App', tag_en:'FinTech · Mobile App', title_th:'Digital Banking Super App', title_en:'Digital Banking Super App', img:'/images/work/project-1.jpg', href:'/work' },
+  { tag_th:'ค้าปลีก · E-Commerce', tag_en:'Retail · E-Commerce', title_th:'Omnichannel Retail Platform', title_en:'Omnichannel Retail Platform', img:'/images/work/project-2.jpg', href:'/work' },
+  { tag_th:'สุขภาพ · Web Platform', tag_en:'Healthcare · Web', title_th:'Patient Digital Ecosystem', title_en:'Patient Digital Ecosystem', img:'/images/work/project-3.jpg', href:'/work' },
+  { tag_th:'AI · Enterprise', tag_en:'AI · Enterprise', title_th:'AI Document Intelligence', title_en:'AI Document Intelligence', img:'/images/work/project-4.jpg', href:'/work' },
+  { tag_th:'FinTech · Payment', tag_en:'FinTech · Payment', title_th:'Payment Gateway Platform', title_en:'Payment Gateway Platform', img:'/images/work/project-5.jpg', href:'/work' },
 ]
 
 export default function Work({ lang, tr }: Props) {

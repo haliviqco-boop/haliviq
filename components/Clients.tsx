@@ -28,8 +28,8 @@ export default function Clients({ tr }: Props) {
       <div className="marquee-wrap relative">
         <div className="absolute left-0 inset-y-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"/>
         <div className="absolute right-0 inset-y-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"/>
-        <div className="marquee-inner">
-          {[...clients, ...clients, ...clients].map((c, i) => (
+        <div className="marquee-inner marquee-slow">
+          {[...clients, ...clients].map((c, i) => (
             <div key={i} className="flex items-center justify-center px-12 shrink-0">
               <img
                 src={c.img}
