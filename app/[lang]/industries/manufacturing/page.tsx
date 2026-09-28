@@ -116,7 +116,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   return (
     <>
-      <Navbar lang={lang} tr={tr} />
+      <Navbar lang={lang} tr={tr} transparent />
       <main>
 
         {/* Hero */}

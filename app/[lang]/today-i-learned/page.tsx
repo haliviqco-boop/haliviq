@@ -77,7 +77,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   return (
     <>
-      <Navbar lang={lang} tr={tr} />
+      <Navbar lang={lang} tr={tr} transparent />
       <main>
         <section className="pt-[112px] pb-16 lg:pb-24" style={{ background: '#08070F' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10">

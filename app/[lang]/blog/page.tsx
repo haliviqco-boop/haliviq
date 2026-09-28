@@ -104,7 +104,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   return (
     <>
-      <Navbar lang={lang} tr={tr} />
+      <Navbar lang={lang} tr={tr} transparent />
       <main>
         <section className="relative overflow-hidden pt-[80px]" style={{ background: '#08070F' }}>
           <div
