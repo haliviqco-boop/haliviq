@@ -139,31 +139,38 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     <>
       <Navbar lang={lang} tr={tr} />
       <main>
-        <section className="pt-[80px] bg-white">
-          <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg,var(--purple),var(--purple-light),var(--lime))' }} />
-          <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-20 lg:pt-28 pb-16">
+        <section className="relative overflow-hidden pt-[80px]" style={{ background: '#08070F' }}>
+          <div
+            className="absolute inset-0 pointer-events-none opacity-[0.35]"
+            style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' }}
+          />
+          <div
+            className="absolute -top-40 -left-32 w-[560px] h-[560px] rounded-full pointer-events-none"
+            style={{ background: 'radial-gradient(circle, rgba(123,110,246,0.28) 0%, transparent 70%)', filter: 'blur(20px)' }}
+          />
+          <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-20 lg:pt-28 pb-16">
             <div className="mb-16">
               <p className="t-label mb-5">{isEN ? 'Case Studies' : 'Case Studies'}</p>
-              <h1 className="t-display text-[clamp(3rem,7vw,6.5rem)] text-[#0A0A0F] leading-tight mb-6">
+              <h1 className="t-display text-[clamp(3rem,7vw,6.5rem)] leading-tight mb-6" style={{ color: '#fff' }}>
                 {isEN ? <>Real work,<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Real results</span></> : <>ผลงานจริง<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>ผลลัพธ์ที่วัดได้</span></>}
               </h1>
-              <p className="t-body text-sm max-w-lg">
+              <p className="text-sm max-w-lg" style={{ color: 'rgba(255,255,255,0.75)', fontWeight: 400 }}>
                 {isEN ? "How we've helped clients across industries solve complex challenges with technology." : 'ตัวอย่างที่เราช่วยลูกค้าในหลากหลายอุตสาหกรรมแก้โจทย์ที่ซับซ้อนด้วยเทคโนโลยี'}
               </p>
             </div>
 
             {/* Featured case study — cover art + 2 rows of feature cards */}
-            <div className="rounded-[32px] overflow-hidden border border-[#E4E4EC]">
-              <div className="relative py-16 px-6 lg:px-16" style={{ background: 'linear-gradient(160deg, var(--purple-bg) 0%, var(--lime-bg) 100%)' }}>
+            <div className="rounded-[32px] overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+              <div className="relative py-16 px-6 lg:px-16" style={{ background: 'linear-gradient(160deg, #171232 0%, #1B1A33 100%)' }}>
                 <div className="grid lg:grid-cols-[1fr_auto_1fr] gap-8 items-center">
                   <div className="grid grid-rows-2 gap-5 order-2 lg:order-1">
                     {left.map((c) => (
-                      <div key={c.title} className="bg-white rounded-2xl p-5 shadow-lg shadow-black/5">
-                        <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ background: 'var(--purple-bg)' }}>
-                          <i className={`ti ${c.icon}`} style={{ fontSize: 18, color: 'var(--purple)' }} aria-hidden="true" />
+                      <div key={c.title} className="rounded-2xl p-5" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                        <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ background: 'rgba(123,110,246,0.18)' }}>
+                          <i className={`ti ${c.icon}`} style={{ fontSize: 18, color: 'var(--purple-light)' }} aria-hidden="true" />
                         </div>
-                        <p className="mb-1" style={{ color: '#0A0A0F', fontWeight: 500, fontSize: '0.95rem' }}>{c.title}</p>
-                        <p style={{ color: '#6E6E88', fontWeight: 400, fontSize: '0.8rem', lineHeight: 1.5 }}>{c.desc}</p>
+                        <p className="mb-1" style={{ color: '#fff', fontWeight: 500, fontSize: '0.95rem' }}>{c.title}</p>
+                        <p style={{ color: 'rgba(255,255,255,0.6)', fontWeight: 400, fontSize: '0.8rem', lineHeight: 1.5 }}>{c.desc}</p>
                       </div>
                     ))}
                   </div>
@@ -175,12 +182,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
                   <div className="grid grid-rows-2 gap-5 order-3">
                     {right.map((c) => (
-                      <div key={c.title} className="bg-white rounded-2xl p-5 shadow-lg shadow-black/5">
-                        <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ background: 'var(--lime-bg)' }}>
-                          <i className={`ti ${c.icon}`} style={{ fontSize: 18, color: 'var(--lime-dark)' }} aria-hidden="true" />
+                      <div key={c.title} className="rounded-2xl p-5" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                        <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ background: 'rgba(196,232,106,0.18)' }}>
+                          <i className={`ti ${c.icon}`} style={{ fontSize: 18, color: 'var(--lime)' }} aria-hidden="true" />
                         </div>
-                        <p className="mb-1" style={{ color: '#0A0A0F', fontWeight: 500, fontSize: '0.95rem' }}>{c.title}</p>
-                        <p style={{ color: '#6E6E88', fontWeight: 400, fontSize: '0.8rem', lineHeight: 1.5 }}>{c.desc}</p>
+                        <p className="mb-1" style={{ color: '#fff', fontWeight: 500, fontSize: '0.95rem' }}>{c.title}</p>
+                        <p style={{ color: 'rgba(255,255,255,0.6)', fontWeight: 400, fontSize: '0.8rem', lineHeight: 1.5 }}>{c.desc}</p>
                       </div>
                     ))}
                   </div>

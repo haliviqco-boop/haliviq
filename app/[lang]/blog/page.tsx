@@ -106,23 +106,30 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     <>
       <Navbar lang={lang} tr={tr} />
       <main>
-        <section className="pt-[80px] bg-white">
-          <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg,var(--purple),var(--purple-light),var(--lime))' }} />
-          <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-20 lg:pt-28 pb-16">
+        <section className="relative overflow-hidden pt-[80px]" style={{ background: '#08070F' }}>
+          <div
+            className="absolute inset-0 pointer-events-none opacity-[0.35]"
+            style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' }}
+          />
+          <div
+            className="absolute -top-40 -left-32 w-[560px] h-[560px] rounded-full pointer-events-none"
+            style={{ background: 'radial-gradient(circle, rgba(123,110,246,0.28) 0%, transparent 70%)', filter: 'blur(20px)' }}
+          />
+          <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-20 lg:pt-28 pb-16">
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
               <div>
                 <p className="t-label mb-5">{isEN ? 'Insights' : 'บทความ'}</p>
-                <h1 className="t-display text-[clamp(3rem,7vw,6.5rem)] text-[#0A0A0F] leading-tight">
+                <h1 className="t-display text-[clamp(3rem,7vw,6.5rem)] leading-tight" style={{ color: '#fff' }}>
                   {isEN ? <>Ideas &<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Perspectives</span></> : <>ไอเดียและ<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>มุมมอง</span></>}
                 </h1>
               </div>
-              <p className="t-body text-sm max-w-sm">
+              <p className="text-sm max-w-sm" style={{ color: 'rgba(255,255,255,0.75)', fontWeight: 400 }}>
                 {isEN ? 'Insights on Digital Product, UX Design, Engineering, and AI from the Haliviq team.' : 'Insight ด้าน Digital Product, UX Design, Engineering และ AI จากทีม Haliviq'}
               </p>
             </div>
 
             {/* Featured — 1 big cover */}
-            <Link href={`/${lang}/blog/${featured.slug}`} className="group block border border-[#E4E4EC] rounded-3xl overflow-hidden hover:border-[var(--purple)]/30 hover:shadow-2xl hover:shadow-[var(--purple)]/6 transition-all duration-500">
+            <Link href={`/${lang}/blog/${featured.slug}`} className="group block rounded-3xl overflow-hidden transition-all duration-500" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
               <div className="grid lg:grid-cols-2">
                 <div className="min-h-[320px] flex items-center justify-center" style={{ background: gradients[0] }}>
                   <div className="text-center">
@@ -130,22 +137,22 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                     <p className="text-sm mt-3" style={{ color:'#fff', opacity:0.55, fontWeight:400 }}>{isEN ? 'Featured Article Cover' : 'รูปปก Featured'}</p>
                   </div>
                 </div>
-                <div className="p-10 lg:p-14 flex flex-col justify-center">
+                <div className="p-10 lg:p-14 flex flex-col justify-center" style={{ background: '#141329' }}>
                   <div className="flex items-center gap-3 mb-6">
-                    <span className="px-3 py-1 rounded-full text-xs" style={{ background:'var(--purple-bg)', color:'var(--purple)', fontWeight:400 }}>{featured.cat}</span>
-                    <span className="text-sm text-[#AAAABC]" style={{ fontWeight:400 }}>{featured.date} · {featured.readTime}</span>
+                    <span className="px-3 py-1 rounded-full text-xs" style={{ background:'rgba(123,110,246,0.15)', color:'var(--purple-light)', fontWeight:400 }}>{featured.cat}</span>
+                    <span className="text-sm" style={{ color: 'rgba(255,255,255,0.5)', fontWeight:400 }}>{featured.date} · {featured.readTime}</span>
                   </div>
-                  <h2 className="t-display text-[clamp(1.5rem,2.5vw,2.2rem)] text-[#0A0A0F] leading-tight mb-5 group-hover:text-[var(--purple)] transition-colors">{featured.title}</h2>
-                  <p className="t-body text-sm leading-relaxed mb-8">{featured.excerpt}</p>
+                  <h2 className="t-display text-[clamp(1.5rem,2.5vw,2.2rem)] leading-tight mb-5 transition-colors" style={{ color: '#fff' }}>{featured.title}</h2>
+                  <p className="text-sm leading-relaxed mb-8" style={{ color: 'rgba(255,255,255,0.7)' }}>{featured.excerpt}</p>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-full bg-[var(--purple-bg)] flex items-center justify-center" style={{ fontSize:14, color:'var(--purple)' }}>{featured.author[0]}</div>
+                      <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: 'rgba(123,110,246,0.18)', fontSize:14, color:'var(--purple-light)' }}>{featured.author[0]}</div>
                       <div>
-                        <p className="text-base text-[#0A0A0F]" style={{ fontWeight:400 }}>{featured.author}</p>
-                        <p className="text-sm text-[#AAAABC]" style={{ fontWeight:400 }}>{featured.role}</p>
+                        <p className="text-base" style={{ color: '#fff', fontWeight:400 }}>{featured.author}</p>
+                        <p className="text-sm" style={{ color: 'rgba(255,255,255,0.5)', fontWeight:400 }}>{featured.role}</p>
                       </div>
                     </div>
-                    <span className="text-base text-[var(--purple)] flex items-center gap-1.5 group-hover:gap-3 transition-all" style={{ fontWeight:400 }}>
+                    <span className="text-base flex items-center gap-1.5 group-hover:gap-3 transition-all" style={{ color: 'var(--purple-light)', fontWeight:400 }}>
                       {isEN ? 'Read Article' : 'อ่านบทความ'} <i className="ti ti-arrow-right" style={{ fontSize:14 }} aria-hidden="true" />
                     </span>
                   </div>
