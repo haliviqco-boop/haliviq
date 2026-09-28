@@ -27,7 +27,7 @@ export const t = {
     coreSkills: {
       h2: 'Core Skills',
       subtitle: 'Core disciplines. One integrated team.',
-      desc: 'ทุกโปรเจกต์ของ OOZOU ขับเคลื่อนด้วยความเชี่ยวชาญหลักในทีม ทั้งวิศวกรรม AI ข้อมูล และดีไซน์ ทีมเดียวที่ดูแลผลิตภัณฑ์ตั้งแต่ร่างแรกจนถึงวันที่ขยายสเกลจริง ไม่มีอะไรตกหล่นระหว่างทาง',
+      desc: 'ทุกโปรเจกต์ของ Haliviq ขับเคลื่อนด้วยความเชี่ยวชาญหลักในทีม ทั้งวิศวกรรม AI ข้อมูล และดีไซน์ ทีมเดียวที่ดูแลผลิตภัณฑ์ตั้งแต่ร่างแรกจนถึงวันที่ขยายสเกลจริง ไม่มีอะไรตกหล่นระหว่างทาง',
       exploreLabel: 'สำรวจ',
       categories: [
         {
@@ -37,7 +37,7 @@ export const t = {
         },
         {
           heading: 'ดีไซน์',
-          desc: 'ดีไซน์ของ OOZOU คือการเข้าใจปัญหาก่อนเปิด Figma เราผสานการวิจัยผู้ใช้งาน การออกแบบประสบการณ์ และอินเทอร์เฟซ เพื่อสร้างผลิตภัณฑ์ที่ใช้งานง่ายตั้งแต่วันแรก และทดสอบทุกแนวคิดกับผู้ใช้จริงก่อนเขียนโค้ดบรรทัดแรก',
+          desc: 'ดีไซน์ของ Haliviq คือการเข้าใจปัญหาก่อนเปิด Figma เราผสานการวิจัยผู้ใช้งาน การออกแบบประสบการณ์ และอินเทอร์เฟซ เพื่อสร้างผลิตภัณฑ์ที่ใช้งานง่ายตั้งแต่วันแรก และทดสอบทุกแนวคิดกับผู้ใช้จริงก่อนเขียนโค้ดบรรทัดแรก',
           tags: ['ออกแบบประสบการณ์ (UX)', 'ออกแบบอินเทอร์เฟซ (UI)', 'วิจัยผู้ใช้งาน', 'สร้าง Prototype', 'ระบบดีไซน์', 'ตรวจสอบคุณภาพดีไซน์'],
         },
         {
@@ -349,7 +349,7 @@ export const t = {
     coreSkills: {
       h2: 'Core Skills',
       subtitle: 'Core disciplines. One integrated team.',
-      desc: 'Every OOZOU project draws on our core in-house disciplines: engineering, AI, data, and design. One integrated team carries your product from first sketch to production scale, so nothing gets lost in handovers.',
+      desc: 'Every Haliviq project draws on our core in-house disciplines: engineering, AI, data, and design. One integrated team carries your product from first sketch to production scale, so nothing gets lost in handovers.',
       exploreLabel: 'Explore',
       categories: [
         {
@@ -359,7 +359,7 @@ export const t = {
         },
         {
           heading: 'Design',
-          desc: 'Design at OOZOU means understanding the problem before opening Figma. We combine user research, experience design, and interface design to craft products that are intuitive from day one, and we validate every concept with real users before a line of code is written.',
+          desc: 'Design at Haliviq means understanding the problem before opening Figma. We combine user research, experience design, and interface design to craft products that are intuitive from day one, and we validate every concept with real users before a line of code is written.',
           tags: ['Experience (UX) Design', 'Interface (UI) Design', 'User Research', 'Rapid Prototyping', 'Design Systems', 'Design QA'],
         },
         {
