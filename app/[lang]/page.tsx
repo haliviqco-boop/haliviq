@@ -8,8 +8,6 @@ import Services from '@/components/Services'
 import Work from '@/components/Work'
 import FeaturedWork from '@/components/FeaturedWork'
 import PortfolioGallery from '@/components/PortfolioGallery'
-import Process from '@/components/Process'
-import About from '@/components/About'
 import LatestThinking from '@/components/LatestThinking'
 import FAQ from '@/components/FAQ'
 import CTA from '@/components/CTA'
@@ -34,8 +32,6 @@ export default function HomePage({ params }: { params: { lang: string } }) {
       {/* Work section removed */}
       <FeaturedWork lang={lang} tr={tr} />
       <PortfolioGallery lang={lang} tr={tr} />
-      <Process lang={lang} tr={tr} />
-      <About lang={lang} tr={tr} />
       <LatestThinking lang={lang} tr={tr} />
       <FAQ lang={lang} tr={tr} />
       <CTA lang={lang} tr={tr} />
