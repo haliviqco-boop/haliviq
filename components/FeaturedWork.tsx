@@ -30,7 +30,7 @@ export default function FeaturedWork({ lang, tr }: Props) {
             <div
               key={it.title}
               className="sticky mb-6 lg:mb-8"
-              style={{ top: `${96 + i * 22}px`, zIndex: i + 1 }}
+              style={{ top: '96px', zIndex: i + 1 }}
             >
               <div
                 className="rounded-3xl grid lg:grid-cols-2 items-stretch gap-8 lg:gap-4 p-6 lg:p-10"
