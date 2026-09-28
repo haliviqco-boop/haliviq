@@ -4,7 +4,6 @@ import Hero from '@/components/Hero'
 import CoreSkills from '@/components/CoreSkills'
 import WhatWeDo from '@/components/WhatWeDo'
 import Clients from '@/components/Clients'
-import Services from '@/components/Services'
 import Work from '@/components/Work'
 import FeaturedWork from '@/components/FeaturedWork'
 import PortfolioGallery from '@/components/PortfolioGallery'
@@ -28,8 +27,7 @@ export default function HomePage({ params }: { params: { lang: string } }) {
       <CoreSkills lang={lang} tr={tr} />
       <WhatWeDo lang={lang} tr={tr} />
       <Clients lang={lang} tr={tr} />
-      <Services lang={lang} tr={tr} />
-      {/* Work section removed */}
+      {/* Services and Work sections removed */}
       <FeaturedWork lang={lang} tr={tr} />
       <PortfolioGallery lang={lang} tr={tr} />
       <LatestThinking lang={lang} tr={tr} />
