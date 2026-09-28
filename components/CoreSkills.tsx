@@ -5,8 +5,10 @@ import { type Lang, type T } from '@/lib/i18n'
 type Props = { lang: Lang; tr: T }
 
 const accents = ['#7B6EF6', '#5A4ED4', '#7B6EF6', '#5A4ED4']
-const BODY = '#10092F'
-const HEAD = '#35285D'
+const SWATCHES = ['#F2A6C7', '#B8A9FA', '#F5D76E', '#F7F4EF']
+const SECTION_BG = '#0B0918'
+const CARD_BG = '#171232'
+const CANVAS_BG = '#15112A'
 
 export default function CoreSkills({ lang, tr }: Props) {
   const cs = (tr as any).coreSkills
@@ -14,11 +16,11 @@ export default function CoreSkills({ lang, tr }: Props) {
   const prefix = `/${lang}`
 
   return (
-    <section style={{ background: '#fff' }} className="py-24 lg:py-32 overflow-hidden">
+    <section style={{ background: SECTION_BG }} className="py-24 lg:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 lg:px-10 mb-20 fade-up">
-        <h2 className="t-display text-[clamp(2.25rem,4.5vw,3.5rem)] mb-3" style={{ color: HEAD }}>{cs.h2}</h2>
-        <p className="mb-6" style={{ fontFamily: 'var(--font-main)', fontWeight: 500, fontSize: '1.15rem', color: 'var(--purple)' }}>{cs.subtitle}</p>
-        <p className="max-w-2xl" style={{ fontWeight: 400, fontSize: '1.05rem', lineHeight: 1.75, color: BODY, opacity: 0.75 }}>{cs.desc}</p>
+        <h2 className="t-display text-[clamp(2.25rem,4.5vw,3.5rem)] mb-3" style={{ color: '#fff' }}>{cs.h2}</h2>
+        <p className="mb-6" style={{ fontFamily: 'var(--font-main)', fontWeight: 500, fontSize: '1.15rem', color: 'var(--lime)' }}>{cs.subtitle}</p>
+        <p className="max-w-2xl" style={{ fontWeight: 400, fontSize: '1.05rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.75)' }}>{cs.desc}</p>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 lg:px-10 flex flex-col gap-20 lg:gap-24">
@@ -158,34 +160,43 @@ export default function CoreSkills({ lang, tr }: Props) {
                     </div>
                   </div>
                 ) : (
-                  <div className="relative rounded-2xl p-4" style={{ background: 'var(--purple-bg)', border: '1px solid rgba(123,110,246,0.15)' }}>
+                  <div
+                    className="relative rounded-2xl p-4"
+                    style={{
+                      background: CANVAS_BG,
+                      border: '1px solid rgba(255,255,255,0.08)',
+                      backgroundImage: 'radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px)',
+                      backgroundSize: '16px 16px',
+                      animation: 'floatY 5s ease-in-out infinite',
+                    }}
+                  >
                     {/* window bar */}
                     <div className="flex items-center gap-1.5 mb-4">
-                      <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'rgba(53,40,93,0.18)' }} />
-                      <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'rgba(53,40,93,0.18)' }} />
-                      <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'rgba(53,40,93,0.18)' }} />
-                      <span className="ml-3 text-[11px]" style={{ letterSpacing: '0.15em', color: 'rgba(53,40,93,0.45)', fontWeight: 400 }}>
+                      <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'rgba(255,255,255,0.15)' }} />
+                      <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'rgba(255,255,255,0.15)' }} />
+                      <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'rgba(255,255,255,0.15)' }} />
+                      <span className="ml-3 text-[11px]" style={{ letterSpacing: '0.15em', color: 'rgba(255,255,255,0.45)', fontWeight: 400 }}>
                         {g.heading.toUpperCase()} CANVAS
                       </span>
                     </div>
 
                     {/* canvas frame — overflow visible so the swatch/tooltip/Aa chip can peek outside it */}
-                    <div className="relative rounded-xl" style={{ height: 290, background: '#fff', border: '1px solid rgba(123,110,246,0.12)' }}>
+                    <div className="relative rounded-xl" style={{ height: 290, background: CARD_BG, border: '1px solid rgba(255,255,255,0.08)' }}>
                       {/* title bars */}
                       <div className="px-5 pt-5">
-                        <div className="h-2.5 rounded-full mb-2" style={{ width: '62%', background: 'rgba(53,40,93,0.28)' }} />
-                        <div className="h-2 rounded-full" style={{ width: '38%', background: 'rgba(53,40,93,0.14)' }} />
+                        <div className="h-2.5 rounded-full mb-2" style={{ width: '62%', background: 'rgba(255,255,255,0.28)' }} />
+                        <div className="h-2 rounded-full" style={{ width: '38%', background: 'rgba(255,255,255,0.14)' }} />
                       </div>
 
                       {/* content blocks: icon + text lines */}
                       <div className="flex gap-3 px-5 mt-4">
-                        {[accent, HEAD].map((c, bi) => (
-                          <div key={bi} className="flex-1 flex items-start gap-2.5 rounded-lg p-3" style={{ background: 'var(--purple-bg)' }}>
+                        {[accent, 'var(--purple-light)'].map((c, bi) => (
+                          <div key={bi} className="flex-1 flex items-start gap-2.5 rounded-lg p-3" style={{ background: 'rgba(255,255,255,0.04)' }}>
                             <span className="w-7 h-7 rounded-md shrink-0" style={{ background: c, opacity: 0.85 }} />
                             <div className="flex flex-col gap-1.5 flex-1 pt-0.5">
-                              <div className="h-1.5 rounded-full" style={{ width: '90%', background: 'rgba(53,40,93,0.22)' }} />
-                              <div className="h-1.5 rounded-full" style={{ width: '75%', background: 'rgba(53,40,93,0.14)' }} />
-                              <div className="h-1.5 rounded-full" style={{ width: '55%', background: 'rgba(53,40,93,0.14)' }} />
+                              <div className="h-1.5 rounded-full" style={{ width: '90%', background: 'rgba(255,255,255,0.22)' }} />
+                              <div className="h-1.5 rounded-full" style={{ width: '75%', background: 'rgba(255,255,255,0.14)' }} />
+                              <div className="h-1.5 rounded-full" style={{ width: '55%', background: 'rgba(255,255,255,0.14)' }} />
                             </div>
                           </div>
                         ))}
@@ -197,10 +208,10 @@ export default function CoreSkills({ lang, tr }: Props) {
                           className="absolute"
                           style={{
                             inset: '-40%',
-                            background: `radial-gradient(circle at 30% 45%, ${accent}55, transparent 60%), radial-gradient(circle at 72% 55%, var(--lime) 0%, transparent 55%)`,
+                            background: `radial-gradient(circle at 30% 45%, ${accent}66, transparent 60%), radial-gradient(circle at 72% 55%, var(--lime) 0%, transparent 55%)`,
                             animation: 'blobPulse 6s ease-in-out infinite',
                             filter: 'blur(10px)',
-                            opacity: 0.8,
+                            opacity: 0.55,
                           }}
                         />
                       </div>
@@ -208,21 +219,21 @@ export default function CoreSkills({ lang, tr }: Props) {
                       {/* floating swatch tray — peeks outside the top-right corner */}
                       <div
                         className="absolute -top-3 -right-3 flex items-center gap-1.5 px-3 py-2 rounded-xl"
-                        style={{ background: '#fff', animation: 'floatY 4s ease-in-out infinite', border: '1px solid rgba(123,110,246,0.18)', boxShadow: '0 6px 18px rgba(53,40,93,0.1)' }}
+                        style={{ background: CARD_BG, animation: 'floatY 4s ease-in-out infinite', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 6px 18px rgba(0,0,0,0.35)' }}
                       >
-                        {['var(--purple-dark)', 'var(--purple)', 'var(--lime)', HEAD].map((c, ci) => (
+                        {SWATCHES.map((c, ci) => (
                           <span key={ci} className="w-3.5 h-3.5 rounded-full" style={{ background: c }} />
                         ))}
                       </div>
 
                       {/* animated cursor + tooltip, over the wave, peeking past the bottom-right edge */}
                       <div className="absolute" style={{ right: '10%', bottom: '-10px', animation: 'cursorLoop 5s ease-in-out infinite' }}>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ filter: 'drop-shadow(0 1px 2px rgba(53,40,93,0.3))' }}>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.4))' }}>
                           <path d="M2 1l11 6.5-4.8 1.3L6.5 13 2 1z" fill="#fff" />
                         </svg>
                         <div
                           className="mt-1 ml-3 px-2.5 py-1 rounded-md text-[11px] whitespace-nowrap"
-                          style={{ background: accent, color: '#fff', fontWeight: 600, animation: 'tooltipPulse 2.5s ease-in-out infinite', boxShadow: '0 4px 12px rgba(53,40,93,0.2)' }}
+                          style={{ background: accent, color: '#fff', fontWeight: 600, animation: 'tooltipPulse 2.5s ease-in-out infinite', boxShadow: '0 4px 12px rgba(0,0,0,0.35)' }}
                         >
                           {lang === 'en' ? 'Create.' : 'สร้าง.'}
                         </div>
@@ -231,12 +242,12 @@ export default function CoreSkills({ lang, tr }: Props) {
                       {/* Aa typography chip — peeks outside the bottom-left corner */}
                       <div
                         className="absolute -bottom-5 -left-4 flex items-center gap-2 px-3 py-2 rounded-lg"
-                        style={{ background: '#fff', border: '1px solid rgba(123,110,246,0.18)', boxShadow: '0 6px 18px rgba(53,40,93,0.1)' }}
+                        style={{ background: CARD_BG, border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 6px 18px rgba(0,0,0,0.35)' }}
                       >
-                        <span className="text-base" style={{ fontWeight: 700, color: HEAD }}>Aa</span>
+                        <span className="text-base" style={{ fontWeight: 700, color: '#fff' }}>Aa</span>
                         <div className="flex flex-col gap-1">
-                          <div className="h-1 w-8 rounded-full" style={{ background: 'rgba(53,40,93,0.18)' }} />
-                          <div className="h-1 w-5 rounded-full" style={{ background: 'rgba(53,40,93,0.12)' }} />
+                          <div className="h-1 w-8 rounded-full" style={{ background: 'rgba(255,255,255,0.22)' }} />
+                          <div className="h-1 w-5 rounded-full" style={{ background: 'rgba(255,255,255,0.14)' }} />
                         </div>
                       </div>
                     </div>
@@ -246,8 +257,8 @@ export default function CoreSkills({ lang, tr }: Props) {
 
               {/* Text content */}
               <div className="flex-1 w-full pt-1">
-                <h3 className="t-display text-[clamp(1.4rem,2.2vw,1.85rem)] mb-3" style={{ color: HEAD }}>{g.heading}</h3>
-                <p className="mb-4 max-w-xl" style={{ fontWeight: 400, fontSize: '0.95rem', lineHeight: 1.7, color: BODY, opacity: 0.75 }}>
+                <h3 className="t-display text-[clamp(1.4rem,2.2vw,1.85rem)] mb-3" style={{ color: '#fff' }}>{g.heading}</h3>
+                <p className="mb-4 max-w-xl" style={{ fontWeight: 400, fontSize: '0.95rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.75)' }}>
                   {g.desc}
                 </p>
                 <div className="flex flex-wrap gap-1.5 mb-4 max-w-xl">
@@ -255,7 +266,7 @@ export default function CoreSkills({ lang, tr }: Props) {
                     <span
                       key={tag}
                       className="px-2.5 py-1 rounded-full"
-                      style={{ fontSize: '0.75rem', background: 'rgba(123,110,246,0.07)', color: 'var(--purple-dark)', fontWeight: 400 }}
+                      style={{ fontSize: '0.75rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.8)', fontWeight: 400 }}
                     >
                       {tag}
                     </span>
@@ -264,7 +275,7 @@ export default function CoreSkills({ lang, tr }: Props) {
                 <Link
                   href={`${prefix}/services`}
                   className="inline-flex items-center gap-1.5 transition-colors"
-                  style={{ color: BODY, opacity: 0.55, fontWeight: 400, fontSize: '0.9rem' }}
+                  style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 400, fontSize: '0.9rem' }}
                 >
                   {cs.exploreLabel} {g.heading}
                   <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
