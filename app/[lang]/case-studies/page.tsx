@@ -285,10 +285,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             className="absolute left-0 right-0 bottom-0 pointer-events-none"
             style={{ height: 260, background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(123,110,246,0.35) 0%, rgba(83,195,215,0.08) 45%, transparent 75%)' }}
           />
-          <div className="relative max-w-3xl mx-auto px-6 lg:px-10 py-24 text-center">
-            <p className="text-xs tracking-widest uppercase mb-6 font-mono" style={{ color: 'rgba(255,255,255,0.5)' }}>{isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}</p>
-            <h2 className="t-display text-[clamp(2rem,4vw,3.5rem)] mb-6 leading-tight" style={{ background: 'linear-gradient(135deg, var(--purple-light) 0%, #53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-              {isEN ? <>Let's build your<br />next case study</> : <>มาสร้าง Case Study<br />ถัดไปด้วยกัน</>}
+          <div className="relative max-w-4xl mx-auto px-6 lg:px-10 py-24 text-center">
+            <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#fff', fontWeight: 500 }}>{isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}</p>
+            <h2 className="t-display text-[clamp(1.75rem,4vw,3rem)] mb-6 leading-normal md:whitespace-nowrap" style={{ background: 'linear-gradient(135deg, var(--purple-light) 0%, #53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+              {isEN ? <>Let's build your next case study</> : <>มาสร้าง Case Study ถัดไปด้วยกัน</>}
             </h2>
             <Link href={`/${lang}/contact`} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm transition-opacity hover:opacity-90" style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}>
               {isEN ? 'Talk to Us' : 'คุยกับเรา'}
