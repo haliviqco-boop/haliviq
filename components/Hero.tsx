@@ -24,7 +24,7 @@ export default function Hero({ lang, tr }: Props) {
               Human Ideas. Intelligent Future.
             </p>
 
-            <h1 className="t-display text-[clamp(2.75rem,6vw,5.5rem)] mb-6 fade-up" style={{animationDelay:'0.1s', color:'#fff'}}>
+            <h1 className="t-display leading-relaxed text-[clamp(2.75rem,6vw,5.5rem)] mb-6 fade-up" style={{animationDelay:'0.1s', color:'#fff'}}>
               {h.h1a} <span style={{background:'linear-gradient(135deg,var(--purple-light) 0%,#8CD8E3 100%)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text'}}>{h.h1b}</span> {h.h1c}
             </h1>
 

@@ -60,7 +60,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
               <div>
                 <p className="t-label mb-5">{isEN ? 'Get in Touch' : 'ติดต่อเรา'}</p>
-                <h1 className="t-display text-[clamp(3rem,6vw,5.5rem)] leading-normal mb-8" style={{ color: '#fff' }}>
+                <h1 className="t-display text-[clamp(3rem,6vw,5.5rem)] leading-relaxed mb-8" style={{ color: '#fff' }}>
                   {isEN
                     ? <>Let&apos;s build<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,#53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>something great</span></>
                     : <>มาสร้าง<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,#53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>สิ่งที่ยิ่งใหญ่ด้วยกัน</span></>}

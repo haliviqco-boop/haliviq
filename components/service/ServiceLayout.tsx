@@ -71,7 +71,7 @@ export default function ServiceLayout({
             <div className="relative max-w-7xl mx-auto px-4 lg:px-10 py-24 lg:py-32">
               <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
-                  <h1 className="t-display mb-6 leading-normal" style={{ color: '#fff', fontSize: 'clamp(2.8rem,6vw,5.5rem)' }}>
+                  <h1 className="t-display mb-6 leading-relaxed" style={{ color: '#fff', fontSize: 'clamp(2.8rem,6vw,5.5rem)' }}>
                     {title}
                     {subtitle && (
                       <>
@@ -112,7 +112,7 @@ export default function ServiceLayout({
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 text-xs tracking-widest uppercase" style={{ background: bg, color }}>
                     <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ background: color }} />{badge}
                   </div>
-                  <h1 className="t-display text-[clamp(2.8rem,6vw,5.5rem)] text-[#0A0A0F] mb-6 leading-normal">
+                  <h1 className="t-display text-[clamp(2.8rem,6vw,5.5rem)] text-[#0A0A0F] mb-6 leading-relaxed">
                     {title}<br />
                     <span style={{ background: `linear-gradient(135deg,${color},var(--purple-light))`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>{subtitle}</span>
                   </h1>

@@ -119,7 +119,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
               <div>
                 <p className="t-label mb-5">{isEN ? 'Insights' : 'บทความ'}</p>
-                <h1 className="t-display text-[clamp(3rem,7vw,6.5rem)] leading-normal" style={{ color: '#fff' }}>
+                <h1 className="t-display text-[clamp(3rem,7vw,6.5rem)] leading-relaxed" style={{ color: '#fff' }}>
                   {isEN ? <>Ideas &<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Perspectives</span></> : <>ไอเดียและ<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>มุมมอง</span></>}
                 </h1>
               </div>

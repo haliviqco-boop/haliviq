@@ -110,7 +110,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                   <span className="w-2 h-2 rounded-full bg-[var(--purple)] animate-pulse inline-block" />
                   <span className="t-label" style={{ fontSize: '0.7rem' }}>{isEN ? 'Now Hiring 12 Positions' : 'กำลังเปิดรับ 12 ตำแหน่ง'}</span>
                 </div>
-                <h1 className="t-display text-[clamp(3rem,6.5vw,6rem)] text-[#0A0A0F] leading-normal mb-8">
+                <h1 className="t-display text-[clamp(3rem,6.5vw,6rem)] text-[#0A0A0F] leading-relaxed mb-8">
                   {isEN ? <>Come build<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>something great</span><br />together</> : <>มาร่วมสร้าง<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>สิ่งที่ยิ่งใหญ่</span><br />ไปด้วยกัน</>}
                 </h1>
                 <p className="t-body text-lg leading-relaxed mb-10 max-w-md">

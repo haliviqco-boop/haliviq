@@ -59,7 +59,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-20 lg:pt-28 pb-20">
             <div className="max-w-3xl">
               <p className="t-label mb-5">{isEN ? 'Partner Program' : 'โปรแกรมพาร์ทเนอร์'}</p>
-              <h1 className="t-display text-[clamp(3rem,6.5vw,6rem)] text-[#0A0A0F] leading-normal mb-8">
+              <h1 className="t-display text-[clamp(3rem,6.5vw,6rem)] text-[#0A0A0F] leading-relaxed mb-8">
                 {isEN ? <>Grow Together<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>with Haliviq</span></> : <>เติบโตไปด้วยกัน<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>กับ Haliviq</span></>}
               </h1>
               <p className="t-body text-lg leading-relaxed max-w-2xl">
