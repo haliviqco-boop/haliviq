@@ -49,7 +49,10 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; overflow-x: hidden; font-size: 100%; }
+/* overflow-x: clip (not hidden) — "hidden" on one axis forces the other axis to
+   become "auto" per spec, which silently creates a second scroll container on
+   html/body and breaks position: sticky for every descendant. clip avoids that. */
+html { scroll-behavior: smooth; overflow-x: clip; font-size: 100%; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-main);
@@ -74,7 +77,7 @@ body {
   background: #fff;
   color: #0A0A0F;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 ::selection { background: var(--purple); color: #fff; }
