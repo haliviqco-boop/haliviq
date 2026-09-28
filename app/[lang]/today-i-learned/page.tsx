@@ -89,14 +89,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Short, practical notes from the Haliviq team: quick lessons from daily engineering and design work.' : 'บันทึกสั้นๆ เชิงปฏิบัติจากทีม Haliviq — บทเรียนเล็กๆ จากงานวิศวกรรมและดีไซน์ในแต่ละวัน'}
             </p>
 
-            {/* Topic filter pills */}
-            <div className="flex flex-wrap gap-2.5 mb-14">
+            {/* Topic filter pills — horizontal slider instead of wrapping into many rows */}
+            <div className="flex flex-nowrap gap-2.5 mb-14 overflow-x-auto no-scrollbar -mx-1 px-1" style={{ scrollSnapType: 'x proximity' }}>
               <button
                 onClick={() => setActive('all')}
-                className="px-4 py-2 rounded-lg text-sm transition-colors"
+                className="shrink-0 whitespace-nowrap px-4 py-2 rounded-lg text-sm transition-colors"
                 style={active === 'all'
-                  ? { border: '1px solid var(--purple-light)', color: 'var(--purple-light)', fontWeight: 400 }
-                  : { border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.7)', fontWeight: 400 }}
+                  ? { border: '1px solid var(--purple-light)', color: 'var(--purple-light)', fontWeight: 400, scrollSnapAlign: 'start' }
+                  : { border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.7)', fontWeight: 400, scrollSnapAlign: 'start' }}
               >
                 {isEN ? 'All Topics' : 'ทั้งหมด'}
               </button>
@@ -104,10 +104,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                 <button
                   key={tp.label}
                   onClick={() => setActive(tp.label)}
-                  className="px-4 py-2 rounded-lg text-sm transition-colors"
+                  className="shrink-0 whitespace-nowrap px-4 py-2 rounded-lg text-sm transition-colors"
                   style={active === tp.label
-                    ? { border: '1px solid var(--purple-light)', color: 'var(--purple-light)', fontWeight: 400 }
-                    : { border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.7)', fontWeight: 400 }}
+                    ? { border: '1px solid var(--purple-light)', color: 'var(--purple-light)', fontWeight: 400, scrollSnapAlign: 'start' }
+                    : { border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.7)', fontWeight: 400, scrollSnapAlign: 'start' }}
                 >
                   {tp.label} <span style={{ color: 'rgba(255,255,255,0.35)' }}>{tp.count}</span>
                 </button>
