@@ -5,7 +5,14 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Haliviq — Digital Product Studio',
   description: 'Strategy, design, and engineering under one roof.',
-  icons: { icon: '/favicon.svg' },
+  icons: {
+    icon: [
+      { url: '/favicon.png', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/favicon.png',
+  },
   openGraph: {
     title: 'Haliviq — Digital Product Studio',
     description: 'Strategy, design, and engineering under one roof.',
