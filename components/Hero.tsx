@@ -10,16 +10,9 @@ export default function Hero({ lang, tr }: Props) {
 
   return (
     <section className="relative overflow-hidden" style={{minHeight:'100vh', background:'#050310'}}>
-      {/* Purple dune landscape background — slow Ken Burns zoom */}
-      <img src="/images/hero/dune-bg.jpg" alt=""
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{zIndex:0, animation:'heroKenBurns 22s ease-in-out infinite', transformOrigin:'center center', willChange:'transform'}}/>
-      {/* Soft glow pulse layer */}
-      <div className="absolute inset-0 pointer-events-none" style={{
-        zIndex:1,
-        background:'radial-gradient(circle at 50% 40%, rgba(168,110,246,0.35) 0%, transparent 60%)',
-        animation:'heroGlowPulse 6s ease-in-out infinite',
-      }}/>
+      {/* Purple dune landscape background — animated GIF (motion baked into the file) */}
+      <img src="/images/hero/dune-bg.gif" alt=""
+        className="absolute inset-0 w-full h-full object-cover" style={{zIndex:0}}/>
       {/* Soft top-to-bottom overlay for nav + text legibility */}
       <div className="absolute inset-0" style={{background:'linear-gradient(180deg, rgba(5,3,16,0.55) 0%, rgba(5,3,16,0.15) 30%, rgba(5,3,16,0.1) 55%, rgba(5,3,16,0.65) 100%)', zIndex:2}}/>
 
