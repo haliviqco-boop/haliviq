@@ -214,6 +214,14 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
   const isTransparent = transparent
   const navTextColor = isTransparent ? 'var(--purple-light)' : 'var(--purple)'
 
+  // Mobile menu panel: match whichever theme the page itself uses, same as the
+  // desktop nav above, instead of always forcing the light panel.
+  const mobileBg = isTransparent ? '#08070F' : '#fff'
+  const mobileBorder = isTransparent ? 'rgba(255,255,255,0.14)' : '#E4E4EC'
+  const mobileSubBorder = isTransparent ? 'rgba(255,255,255,0.08)' : '#F0F0F6'
+  const mobileHeadColor = isTransparent ? 'var(--purple-light)' : 'var(--purple)'
+  const mobileItemColor = isTransparent ? 'rgba(255,255,255,0.85)' : '#0A0A0F'
+
   return (
     <>
       <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
@@ -454,35 +462,35 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
       </header>
 
       {/* Mobile menu */}
-      <div className={`fixed inset-0 z-40 bg-white transition-all duration-300 lg:hidden ${menuOpen?'opacity-100 visible':'opacity-0 invisible'}`}>
+      <div className={`fixed inset-0 z-40 transition-all duration-300 lg:hidden ${menuOpen?'opacity-100 visible':'opacity-0 invisible'}`} style={{ background: mobileBg }}>
         <div className="flex flex-col h-full pt-20 pb-10 px-5 overflow-y-auto">
           <nav className="flex flex-col mt-2">
 
             {/* บริการ accordion */}
-            <div className="border-b border-[#E4E4EC]">
+            <div className="border-b" style={{ borderColor: mobileBorder }}>
               <button
                 onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                className="flex items-center justify-between w-full py-3 text-[var(--purple)]"
-                style={{fontWeight:400,fontSize:"1.15rem"}}
+                className="flex items-center justify-between w-full py-3"
+                style={{fontWeight:400,fontSize:"1.15rem", color: mobileHeadColor}}
               >
                 {n.services}
                 <svg width="16" height="16" viewBox="0 0 12 12" fill="none"
                   className={`transition-transform duration-200 ${mobileServicesOpen?'rotate-180':''}`}>
-                  <path d="M2 4l4 4 4-4" stroke="var(--purple)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2 4l4 4 4-4" stroke={mobileHeadColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
               {mobileServicesOpen && (
                 <div className="pb-3 pl-2">
                   {Object.entries(servicesMenu).map(([cat, items]) => (
-                    <div key={cat} className="mb-1 border-b border-[#F0F0F6] last:border-0">
+                    <div key={cat} className="mb-1 border-b last:border-0" style={{ borderColor: mobileSubBorder }}>
                       <button
                         onClick={() => setOpenCatKey(openCatKey === cat ? null : cat)}
                         className="flex items-center justify-between w-full py-2"
                       >
-                        <span style={{fontSize:"1.05rem",fontWeight:400,color:"var(--purple)"}}>{cat}</span>
+                        <span style={{fontSize:"1.05rem",fontWeight:400,color:mobileHeadColor}}>{cat}</span>
                         <svg width="14" height="14" viewBox="0 0 12 12" fill="none"
                           className={`transition-transform duration-200 ${openCatKey === cat ? 'rotate-180' : ''}`}>
-                          <path d="M2 4l4 4 4-4" stroke="var(--purple)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M2 4l4 4 4-4" stroke={mobileHeadColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </button>
                       {openCatKey === cat && (
@@ -490,8 +498,8 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
                           {(items as any[]).map((i:any) => (
                             <Link key={i.href} href={`${prefix}${i.href}`}
                               onClick={() => { setMenuOpen(false); setMobileServicesOpen(false); setOpenCatKey(null) }}
-                              className="block py-1.5 text-[#0A0A0F] hover:text-[var(--purple)] transition-colors"
-                              style={{fontWeight:400,fontSize:'1rem'}}>{i.label}</Link>
+                              className="block py-1.5 hover:text-[var(--purple-light)] transition-colors"
+                              style={{fontWeight:400,fontSize:'1rem', color: mobileItemColor}}>{i.label}</Link>
                           ))}
                         </div>
                       )}
@@ -502,16 +510,16 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
             </div>
 
             {/* Work accordion */}
-            <div className="border-b border-[#E4E4EC]">
+            <div className="border-b" style={{ borderColor: mobileBorder }}>
               <button
                 onClick={() => setMobileWorkOpen(!mobileWorkOpen)}
-                className="flex items-center justify-between w-full py-3 text-[var(--purple)]"
-                style={{fontWeight:400,fontSize:"1.15rem"}}
+                className="flex items-center justify-between w-full py-3"
+                style={{fontWeight:400,fontSize:"1.15rem", color: mobileHeadColor}}
               >
                 {n.work}
                 <svg width="16" height="16" viewBox="0 0 12 12" fill="none"
                   className={`transition-transform duration-200 ${mobileWorkOpen?'rotate-180':''}`}>
-                  <path d="M2 4l4 4 4-4" stroke="var(--purple)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2 4l4 4 4-4" stroke={mobileHeadColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
               {mobileWorkOpen && (
@@ -519,28 +527,28 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
                   {workMenu.map((w, i) => (
                     <Link key={i} href={`${prefix}${w.href}`}
                       onClick={() => { setMenuOpen(false); setMobileWorkOpen(false) }}
-                      className="block py-1.5 text-[#0A0A0F] hover:text-[var(--purple)] transition-colors"
-                      style={{fontWeight:400,fontSize:'1rem'}}>{w.title}</Link>
+                      className="block py-1.5 hover:text-[var(--purple-light)] transition-colors"
+                      style={{fontWeight:400,fontSize:'1rem', color: mobileItemColor}}>{w.title}</Link>
                   ))}
                   <Link href={`${prefix}/work`}
                     onClick={() => { setMenuOpen(false); setMobileWorkOpen(false) }}
-                    className="block py-1.5 mt-1 text-[var(--purple)] transition-colors"
-                    style={{fontWeight:500,fontSize:'1rem'}}>{lang === 'en' ? 'All Work' : 'ผลงานทั้งหมด'} →</Link>
+                    className="block py-1.5 mt-1 transition-colors"
+                    style={{fontWeight:500,fontSize:'1rem', color: mobileHeadColor}}>{lang === 'en' ? 'All Work' : 'ผลงานทั้งหมด'} →</Link>
                 </div>
               )}
             </div>
 
             {/* อุตสาหกรรม accordion */}
-            <div className="border-b border-[#E4E4EC]">
+            <div className="border-b" style={{ borderColor: mobileBorder }}>
               <button
                 onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
-                className="flex items-center justify-between w-full py-3 text-[var(--purple)]"
-                style={{fontWeight:400,fontSize:"1.15rem"}}
+                className="flex items-center justify-between w-full py-3"
+                style={{fontWeight:400,fontSize:"1.15rem", color: mobileHeadColor}}
               >
                 {n.industries}
                 <svg width="16" height="16" viewBox="0 0 12 12" fill="none"
                   className={`transition-transform duration-200 ${mobileIndustriesOpen?'rotate-180':''}`}>
-                  <path d="M2 4l4 4 4-4" stroke="var(--purple)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2 4l4 4 4-4" stroke={mobileHeadColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
               {mobileIndustriesOpen && (
@@ -548,28 +556,28 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
                   {flagshipIndustries.map((ind) => (
                     <Link key={ind.href} href={`${prefix}${ind.href}`}
                       onClick={() => { setMenuOpen(false); setMobileIndustriesOpen(false) }}
-                      className="block py-1.5 text-[#0A0A0F] hover:text-[var(--purple)] transition-colors"
-                      style={{fontWeight:400,fontSize:'1rem'}}>{ind.title}</Link>
+                      className="block py-1.5 hover:text-[var(--purple-light)] transition-colors"
+                      style={{fontWeight:400,fontSize:'1rem', color: mobileItemColor}}>{ind.title}</Link>
                   ))}
                   <Link href={`${prefix}/industries`}
                     onClick={() => { setMenuOpen(false); setMobileIndustriesOpen(false) }}
-                    className="block py-1.5 mt-1 text-[var(--purple)] transition-colors"
-                    style={{fontWeight:500,fontSize:'1rem'}}>{allIndustriesLabel} →</Link>
+                    className="block py-1.5 mt-1 transition-colors"
+                    style={{fontWeight:500,fontSize:'1rem', color: mobileHeadColor}}>{allIndustriesLabel} →</Link>
                 </div>
               )}
             </div>
 
             {/* Insights accordion */}
-            <div className="border-b border-[#E4E4EC]">
+            <div className="border-b" style={{ borderColor: mobileBorder }}>
               <button
                 onClick={() => setMobileInsightsOpen(!mobileInsightsOpen)}
-                className="flex items-center justify-between w-full py-3 text-[var(--purple)]"
-                style={{fontWeight:400,fontSize:"1.15rem"}}
+                className="flex items-center justify-between w-full py-3"
+                style={{fontWeight:400,fontSize:"1.15rem", color: mobileHeadColor}}
               >
                 {n.insights}
                 <svg width="16" height="16" viewBox="0 0 12 12" fill="none"
                   className={`transition-transform duration-200 ${mobileInsightsOpen?'rotate-180':''}`}>
-                  <path d="M2 4l4 4 4-4" stroke="var(--purple)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M2 4l4 4 4-4" stroke={mobileHeadColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
               {mobileInsightsOpen && (
@@ -577,8 +585,8 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
                   {insightsMenu.map((it) => (
                     <Link key={it.href} href={`${prefix}${it.href}`}
                       onClick={() => { setMenuOpen(false); setMobileInsightsOpen(false) }}
-                      className="block py-1.5 text-[#0A0A0F] hover:text-[var(--purple)] transition-colors"
-                      style={{fontWeight:400,fontSize:'1rem'}}>{it.title}</Link>
+                      className="block py-1.5 hover:text-[var(--purple-light)] transition-colors"
+                      style={{fontWeight:400,fontSize:'1rem', color: mobileItemColor}}>{it.title}</Link>
                   ))}
                 </div>
               )}
@@ -588,8 +596,8 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
             {mobileNav.map(({ key, label, href }) => (
               <Link key={key} href={`${prefix}${href}`}
                 onClick={() => setMenuOpen(false)}
-                className="flex items-center justify-between py-3 text-[var(--purple)] hover:text-[var(--purple-light)] transition-colors border-b border-[#E4E4EC]"
-                style={{fontWeight:400,fontSize:"1.15rem"}}>
+                className="flex items-center justify-between py-3 hover:text-[var(--purple-light)] transition-colors border-b"
+                style={{fontWeight:400,fontSize:"1.15rem", color: mobileHeadColor, borderColor: mobileBorder}}>
                 {label}
               </Link>
             ))}
