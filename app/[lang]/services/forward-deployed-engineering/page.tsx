@@ -1,0 +1,454 @@
+import Link from 'next/link'
+import ServiceLayout from '@/components/service/ServiceLayout'
+import { type Lang } from '@/lib/i18n'
+
+const BRAND_LOGOS: Record<string, { hex: string; path: string }> = {
+  claude: { hex: '#D97757', path: 'm4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z' },
+  python: { hex: '#3776AB', path: 'M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z' },
+  typescript: { hex: '#3178C6', path: 'M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z' },
+  nextdotjs: { hex: '#FFFFFF', path: 'M18.665 21.978C16.758 23.255 14.465 24 12 24 5.377 24 0 18.623 0 12S5.377 0 12 0s12 5.377 12 12c0 3.583-1.574 6.801-4.067 9.001L9.219 7.2H7.2v9.596h1.615V9.251l9.85 12.727Zm-3.332-8.533 1.6 2.061V7.2h-1.6v6.245Z' },
+  postgresql: { hex: '#4169E1', path: 'M23.5594 14.7228a.5269.5269 0 0 0-.0563-.1191c-.139-.2632-.4768-.3418-1.0074-.2321-1.6533.3411-2.2935.1312-2.5256-.0191 1.342-2.0482 2.445-4.522 3.0411-6.8297.2714-1.0507.7982-3.5237.1222-4.7316a1.5641 1.5641 0 0 0-.1509-.235C21.6931.9086 19.8007.0248 17.5099.0005c-1.4947-.0158-2.7705.3461-3.1161.4794a9.449 9.449 0 0 0-.5159-.0816 8.044 8.044 0 0 0-1.3114-.1278c-1.1822-.0184-2.2038.2642-3.0498.8406-.8573-.3211-4.7888-1.645-7.2219.0788C.9359 2.1526.3086 3.8733.4302 6.3043c.0409.818.5069 3.334 1.2423 5.7436.4598 1.5065.9387 2.7019 1.4334 3.582.553.9942 1.1259 1.5933 1.7143 1.7895.4474.1491 1.1327.1441 1.8581-.7279.8012-.9635 1.5903-1.8258 1.9446-2.2069.4351.2355.9064.3625 1.39.3772a.0569.0569 0 0 0 .0004.0041 11.0312 11.0312 0 0 0-.2472.3054c-.3389.4302-.4094.5197-1.5002.7443-.3102.064-1.1344.2339-1.1464.8115-.0025.1224.0329.2309.0919.3268.2269.4231.9216.6097 1.015.6331 1.3345.3335 2.5044.092 3.3714-.6787-.017 2.231.0775 4.4174.3454 5.0874.2212.5529.7618 1.9045 2.4692 1.9043.2505 0 .5263-.0291.8296-.0941 1.7819-.3821 2.5557-1.1696 2.855-2.9059.1503-.8707.4016-2.8753.5388-4.1012.0169-.0703.0357-.1207.057-.1362.0007-.0005.0697-.0471.4272.0307a.3673.3673 0 0 0 .0443.0068l.2539.0223.0149.001c.8468.0384 1.9114-.1426 2.5312-.4308.6438-.2988 1.8057-1.0323 1.5951-1.6698zM2.371 11.8765c-.7435-2.4358-1.1779-4.8851-1.2123-5.5719-.1086-2.1714.4171-3.6829 1.5623-4.4927 1.8367-1.2986 4.8398-.5408 6.108-.13-.0032.0032-.0066.0061-.0098.0094-2.0238 2.044-1.9758 5.536-1.9708 5.7495-.0002.0823.0066.1989.0162.3593.0348.5873.0996 1.6804-.0735 2.9184-.1609 1.1504.1937 2.2764.9728 3.0892.0806.0841.1648.1631.2518.2374-.3468.3714-1.1004 1.1926-1.9025 2.1576-.5677.6825-.9597.5517-1.0886.5087-.3919-.1307-.813-.5871-1.2381-1.3223-.4796-.839-.9635-2.0317-1.4155-3.5126zm6.0072 5.0871c-.1711-.0428-.3271-.1132-.4322-.1772.0889-.0394.2374-.0902.4833-.1409 1.2833-.2641 1.4815-.4506 1.9143-1.0002.0992-.126.2116-.2687.3673-.4426a.3549.3549 0 0 0 .0737-.1298c.1708-.1513.2724-.1099.4369-.0417.156.0646.3078.26.3695.4752.0291.1016.0619.2945-.0452.4444-.9043 1.2658-2.2216 1.2494-3.1676 1.0128zm2.094-3.988-.0525.141c-.133.3566-.2567.6881-.3334 1.003-.6674-.0021-1.3168-.2872-1.8105-.8024-.6279-.6551-.9131-1.5664-.7825-2.5004.1828-1.3079.1153-2.4468.079-3.0586-.005-.0857-.0095-.1607-.0122-.2199.2957-.2621 1.6659-.9962 2.6429-.7724.4459.1022.7176.4057.8305.928.5846 2.7038.0774 3.8307-.3302 4.7363-.084.1866-.1633.3629-.2311.5454zm7.3637 4.5725c-.0169.1768-.0358.376-.0618.5959l-.146.4383a.3547.3547 0 0 0-.0182.1077c-.0059.4747-.054.6489-.115.8693-.0634.2292-.1353.4891-.1794 1.0575-.11 1.4143-.8782 2.2267-2.4172 2.5565-1.5155.3251-1.7843-.4968-2.0212-1.2217a6.5824 6.5824 0 0 0-.0769-.2266c-.2154-.5858-.1911-1.4119-.1574-2.5551.0165-.5612-.0249-1.9013-.3302-2.6462.0044-.2932.0106-.5909.019-.8918a.3529.3529 0 0 0-.0153-.1126 1.4927 1.4927 0 0 0-.0439-.208c-.1226-.4283-.4213-.7866-.7797-.9351-.1424-.059-.4038-.1672-.7178-.0869.067-.276.1831-.5875.309-.9249l.0529-.142c.0595-.16.134-.3257.213-.5012.4265-.9476 1.0106-2.2453.3766-5.1772-.2374-1.0981-1.0304-1.6343-2.2324-1.5098-.7207.0746-1.3799.3654-1.7088.5321a5.6716 5.6716 0 0 0-.1958.1041c.0918-1.1064.4386-3.1741 1.7357-4.4823a4.0306 4.0306 0 0 1 .3033-.276.3532.3532 0 0 0 .1447-.0644c.7524-.5706 1.6945-.8506 2.802-.8325.4091.0067.8017.0339 1.1742.081 1.939.3544 3.2439 1.4468 4.0359 2.3827.8143.9623 1.2552 1.9315 1.4312 2.4543-1.3232-.1346-2.2234.1268-2.6797.779-.9926 1.4189.543 4.1729 1.2811 5.4964.1353.2426.2522.4522.2889.5413.2403.5825.5515.9713.7787 1.2552.0696.087.1372.1714.1885.245-.4008.1155-1.1208.3825-1.0552 1.717-.0123.1563-.0423.4469-.0834.8148-.0461.2077-.0702.4603-.0994.7662zm.8905-1.6211c-.0405-.8316.2691-.9185.5967-1.0105a2.8566 2.8566 0 0 0 .135-.0406 1.202 1.202 0 0 0 .1342.103c.5703.3765 1.5823.4213 3.0068.1344-.2016.1769-.5189.3994-.9533.6011-.4098.1903-1.0957.333-1.7473.3636-.7197.0336-1.0859-.0807-1.1721-.151zm.5695-9.2712c-.0059.3508-.0542.6692-.1054 1.0017-.055.3576-.112.7274-.1264 1.1762-.0142.4368.0404.8909.0932 1.3301.1066.887.216 1.8003-.2075 2.7014a3.5272 3.5272 0 0 1-.1876-.3856c-.0527-.1276-.1669-.3326-.3251-.6162-.6156-1.1041-2.0574-3.6896-1.3193-4.7446.3795-.5427 1.3408-.5661 2.1781-.463zm.2284 7.0137a12.3762 12.3762 0 0 0-.0853-.1074l-.0355-.0444c.7262-1.1995.5842-2.3862.4578-3.4385-.0519-.4318-.1009-.8396-.0885-1.2226.0129-.4061.0666-.7543.1185-1.0911.0639-.415.1288-.8443.1109-1.3505.0134-.0531.0188-.1158.0118-.1902-.0457-.4855-.5999-1.938-1.7294-3.253-.6076-.7073-1.4896-1.4972-2.6889-2.0395.5251-.1066 1.2328-.2035 2.0244-.1859 2.0515.0456 3.6746.8135 4.8242 2.2824a.908.908 0 0 1 .0667.1002c.7231 1.3556-.2762 6.2751-2.9867 10.5405zm-8.8166-6.1162c-.025.1794-.3089.4225-.6211.4225a.5821.5821 0 0 1-.0809-.0056c-.1873-.026-.3765-.144-.5059-.3156-.0458-.0605-.1203-.178-.1055-.2844.0055-.0401.0261-.0985.0925-.1488.1182-.0894.3518-.1226.6096-.0867.3163.0441.6426.1938.6113.4186zm7.9305-.4114c.0111.0792-.049.201-.1531.3102-.0683.0717-.212.1961-.4079.2232a.5456.5456 0 0 1-.075.0052c-.2935 0-.5414-.2344-.5607-.3717-.024-.1765.2641-.3106.5611-.352.297-.0414.6111.0088.6356.1851z' },
+  apachekafka: { hex: '#FFFFFF', path: 'M9.71 2.136a1.43 1.43 0 0 0-2.047 0h-.007a1.48 1.48 0 0 0-.421 1.042c0 .41.161.777.422 1.039l.007.007c.257.264.616.426 1.019.426.404 0 .766-.162 1.027-.426l.003-.007c.261-.262.421-.629.421-1.039 0-.408-.159-.777-.421-1.042H9.71zM8.683 22.295c.404 0 .766-.167 1.027-.429l.003-.008c.261-.261.421-.631.421-1.036 0-.41-.159-.778-.421-1.044H9.71a1.42 1.42 0 0 0-1.027-.432 1.4 1.4 0 0 0-1.02.432h-.007c-.26.266-.422.634-.422 1.044 0 .406.161.775.422 1.036l.007.008c.258.262.617.429 1.02.429zm7.89-4.462c.359-.096.683-.33.882-.684l.027-.052a1.47 1.47 0 0 0 .114-1.067 1.454 1.454 0 0 0-.675-.896l-.021-.014a1.425 1.425 0 0 0-1.078-.132c-.36.091-.684.335-.881.686-.2.349-.241.75-.146 1.119.099.363.33.691.675.896h.002c.346.203.737.239 1.101.144zm-6.405-7.342a2.083 2.083 0 0 0-1.485-.627c-.58 0-1.103.242-1.482.627-.378.385-.612.916-.612 1.507s.233 1.124.612 1.514a2.08 2.08 0 0 0 2.967 0c.379-.39.612-.923.612-1.514s-.233-1.122-.612-1.507zm-.835-2.51c.843.141 1.6.552 2.178 1.144h.004c.092.093.182.196.265.299l1.446-.851a3.176 3.176 0 0 1-.047-1.808 3.149 3.149 0 0 1 1.456-1.926l.025-.016a3.062 3.062 0 0 1 2.345-.306c.77.21 1.465.721 1.898 1.482v.002c.431.757.518 1.626.313 2.408a3.145 3.145 0 0 1-1.456 1.928l-.198.118h-.02a3.095 3.095 0 0 1-2.154.201 3.127 3.127 0 0 1-1.514-.944l-1.444.848a4.162 4.162 0 0 1 0 2.879l1.444.846c.413-.47.939-.789 1.514-.944a3.041 3.041 0 0 1 2.371.319l.048.023v.002a3.17 3.17 0 0 1 1.408 1.906 3.215 3.215 0 0 1-.313 2.405l-.026.053-.003-.005a3.147 3.147 0 0 1-1.867 1.436 3.096 3.096 0 0 1-2.371-.318v-.006a3.156 3.156 0 0 1-1.456-1.927 3.175 3.175 0 0 1 .047-1.805l-1.446-.848a3.905 3.905 0 0 1-.265.294l-.004.005a3.938 3.938 0 0 1-2.178 1.138v1.699a3.09 3.09 0 0 1 1.56.862l.002.004c.565.572.914 1.368.914 2.243 0 .873-.35 1.664-.914 2.239l-.002.009a3.1 3.1 0 0 1-2.21.931 3.1 3.1 0 0 1-2.206-.93h-.002v-.009a3.186 3.186 0 0 1-.916-2.239c0-.875.35-1.672.916-2.243v-.004h.002a3.1 3.1 0 0 1 1.558-.862v-1.699a3.926 3.926 0 0 1-2.176-1.138l-.006-.005a4.098 4.098 0 0 1-1.173-2.874c0-1.122.452-2.136 1.173-2.872h.006a3.947 3.947 0 0 1 2.176-1.144V6.289a3.137 3.137 0 0 1-1.558-.864h-.002v-.004a3.192 3.192 0 0 1-.916-2.243c0-.871.35-1.669.916-2.243l.002-.002A3.084 3.084 0 0 1 8.683 0c.861 0 1.641.355 2.21.932v.002h.002c.565.574.914 1.372.914 2.243 0 .876-.35 1.667-.914 2.243l-.002.005a3.142 3.142 0 0 1-1.56.864v1.692zm8.121-1.129l-.012-.019a1.452 1.452 0 0 0-.87-.668 1.43 1.43 0 0 0-1.103.146h.002c-.347.2-.58.529-.677.896-.095.365-.054.768.146 1.119l.007.009c.2.347.519.579.874.673.357.103.755.059 1.098-.144l.019-.009a1.47 1.47 0 0 0 .657-.885 1.493 1.493 0 0 0-.141-1.118' },
+  graphql: { hex: '#E10098', path: 'M12.002 0a2.138 2.138 0 1 0 0 4.277 2.138 2.138 0 1 0 0-4.277zm8.54 4.931a2.138 2.138 0 1 0 0 4.277 2.138 2.138 0 1 0 0-4.277zm0 9.862a2.138 2.138 0 1 0 0 4.277 2.138 2.138 0 1 0 0-4.277zm-8.54 4.931a2.138 2.138 0 1 0 0 4.276 2.138 2.138 0 1 0 0-4.276zm-8.542-4.93a2.138 2.138 0 1 0 0 4.276 2.138 2.138 0 1 0 0-4.277zm0-9.863a2.138 2.138 0 1 0 0 4.277 2.138 2.138 0 1 0 0-4.277zm8.542-3.378L2.953 6.777v10.448l9.049 5.224 9.047-5.224V6.777zm0 1.601 7.66 13.27H4.34zm-1.387.371L3.97 15.037V7.363zm2.774 0 6.646 3.838v7.674zM5.355 17.44h13.293l-6.646 3.836z' },
+  kubernetes: { hex: '#326CE5', path: 'M10.204 14.35l.007.01-.999 2.413a5.171 5.171 0 0 1-2.075-2.597l2.578-.437.004.005a.44.44 0 0 1 .484.606zm-.833-2.129a.44.44 0 0 0 .173-.756l.002-.011L7.585 9.7a5.143 5.143 0 0 0-.73 3.255l2.514-.725.002-.009zm1.145-1.98a.44.44 0 0 0 .699-.337l.01-.005.15-2.62a5.144 5.144 0 0 0-3.01 1.442l2.147 1.523.004-.002zm.76 4.75l-.723.349-.006.012a.578.578 0 0 0 .17.756l.001.012 2.144 1.522a5.171 5.171 0 0 0 .89-3.096l-2.476.445zm5.926 1.437l-.015-.005a.44.44 0 0 0-.35-.502l-2.577-.433-.004.006a.44.44 0 0 0-.484.606l-.007.01.998 2.409a5.184 5.184 0 0 0 2.44-2.09zM12.06 24a1.968 1.968 0 0 1-.769-.157l-.005-.003-6.573-2.819a1.978 1.978 0 0 1-1.164-1.593l-.001-.009-1.114-7.082a1.968 1.968 0 0 1 .374-1.492l.006-.008 4.576-5.578a1.976 1.976 0 0 1 1.526-.72h.01l7.144-.003h.01c.596 0 1.155.267 1.529.723l4.578 5.581.005.008c.351.427.502.973.418 1.51v.01l-1.11 7.056-.003.017a1.987 1.987 0 0 1-1.174 1.598l-6.562 2.815-.01.004a1.973 1.973 0 0 1-.755.152zm-.667-1.28a.615.615 0 0 0 .245.203l.117.047a.605.605 0 0 0 .48-.024l.012-.005 6.573-2.817.015-.006a.63.63 0 0 0 .375-.512l.002-.017 1.111-7.061.002-.01a.626.626 0 0 0-.132-.473l-.006-.008-4.579-5.582-.007-.008a.622.622 0 0 0-.485-.229h-.008l-7.148.003h-.007a.62.62 0 0 0-.484.229l-.007.008-4.576 5.578-.007.008a.622.622 0 0 0-.118.472l1.114 7.083.002.014c.03.216.164.41.363.507l.015.007 6.573 2.818.014.007a.609.609 0 0 0 .53-.02z' },
+  terraform: { hex: '#844FBA', path: 'M12.042 2.475v6.115l5.296 3.057V5.532zm6.155 9.352v6.116L23.5 14.886V8.77zm-12.319.013v6.115l5.296 3.057v-6.115zM.5 8.79v6.116l5.296 3.057V11.85zM12.042 15.9v6.115l5.296 3.057v-6.115z' },
+}
+
+function BrandLogo({ name, size = 15 }: { name: string; size?: number }) {
+  const logo = BRAND_LOGOS[name]
+  if (!logo) return null
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true">
+      <path d={logo.path} fill={logo.hex} />
+    </svg>
+  )
+}
+
+export async function generateStaticParams() {
+  return [{ lang: 'th' }, { lang: 'en' }]
+}
+
+export default function Page({ params }: { params: { lang: Lang } }) {
+  const isEN = params.lang === 'en'
+  const prefix = `/${params.lang}`
+
+  const badge    = isEN ? 'Engineering / Forward-Deployed'  : 'Engineering / Forward-Deployed'
+  const title    = isEN ? 'Your Team,'  : 'ทีมของคุณ,'
+  const subtitle = isEN ? 'Your Tools, Your Office'    : 'เครื่องมือของคุณ, ออฟฟิศของคุณ'
+  const heroDesc = isEN ? 'Senior engineers embedded directly in your organization to ship AI that reaches production, tackle the integrations nobody wants, and leave you with a handover you can actually live with.'  : 'Senior Engineer ที่ฝังตัวอยู่ในองค์กรของคุณโดยตรง เพื่อส่ง AI ที่ไปถึง Production จัดการ Integration ที่ไม่มีใครอยากทำ และส่งมอบงานในแบบที่คุณดูแลต่อได้จริง'
+  const whyTitle = isEN ? 'Why embedded engineering beats a typical vendor'    : 'ทำไม Embedded Engineering ถึงดีกว่า Vendor ทั่วไป'
+  const whyDesc  = isEN ? 'A vendor delivers a spec from a distance. An embedded team sits with yours, sees the real constraints, and ships weekly instead of disappearing for months and returning with a mismatch.'  : 'Vendor ทั่วไปส่งมอบตาม Spec จากระยะไกล แต่ Embedded Team จะนั่งทำงานร่วมกับทีมคุณ เห็นข้อจำกัดจริง และส่งงานทุกสัปดาห์ แทนที่จะหายไปหลายเดือนแล้วกลับมาพร้อมงานที่ไม่ตรงกับที่ต้องการ'
+  const ctaTitle = isEN ? 'Ready to embed a team that ships?'    : 'พร้อมมีทีมที่ฝังตัวและส่งงานได้จริงหรือยัง?'
+  const ctaDesc  = isEN ? 'Start with a scoping call to define the mission and the team you actually need.'   : 'เริ่มด้วย Call วางขอบเขต เพื่อกำหนดภารกิจและทีมที่คุณต้องการจริง'
+  const overviewText = isEN
+    ? 'Forward-deployed engineering puts senior engineers physically or virtually embedded inside your organization — your tools, your repos, your standups — to ship AI systems that actually reach production, not just a slide deck. That means tackling the integrations nobody else wants to touch, working inside your security and compliance constraints, shipping in weekly increments your team can see, and leaving behind a handover that a normal engineering team can maintain without needing us on standby forever.'
+    : 'Forward-Deployed Engineering คือการฝัง Senior Engineer เข้าไปในองค์กรของคุณ ทั้งแบบ Physical หรือ Virtual ใช้เครื่องมือของคุณ, Repo ของคุณ, Standup ของคุณ เพื่อส่งมอบระบบ AI ที่ไปถึง Production จริง ไม่ใช่แค่ Slide นำเสนอ หมายความว่าเราจะจัดการ Integration ที่ไม่มีใครอยากแตะ ทำงานภายใต้ข้อจำกัดด้าน Security และ Compliance ของคุณ ส่งมอบงานเป็นรายสัปดาห์ให้ทีมเห็นความคืบหน้า และส่งมอบงานในรูปแบบที่ทีม Engineering ปกติของคุณดูแลต่อได้เอง โดยไม่ต้องพึ่งเราตลอดไป'
+
+  const heroBullets = isEN ? [
+      'Senior engineers embedded in your team, tools, and workflows',
+      'AI systems shipped to real production, not a proof of concept',
+      'The hard integrations other vendors avoid, handled directly',
+      'Weekly shipping cadence your team can see and react to',
+      'A handover documented and structured for your team to own',
+    ] : [
+      'Senior Engineer ที่ฝังตัวในทีม, เครื่องมือ และ Workflow ของคุณ',
+      'ส่งมอบระบบ AI ถึง Production จริง ไม่ใช่แค่ Proof of Concept',
+      'จัดการ Integration ที่ยากและ Vendor รายอื่นมักเลี่ยง',
+      'ส่งมอบงานเป็นรายสัปดาห์ ให้ทีมคุณเห็นและปรับได้ทัน',
+      'ส่งมอบงานพร้อมเอกสารที่ทีมคุณดูแลต่อได้เอง',
+    ]
+  const whyPoints   = isEN ? [
+      'A distant vendor ships to a spec; an embedded team ships to reality, adjusting as constraints surface.',
+      'Weekly delivery cadence surfaces problems early instead of at a big-bang handoff months later.',
+      'Integrations into legacy systems and internal tools are usually the real blocker, not the AI model itself.',
+      'Working inside your security perimeter avoids the friction of shipping data to an external vendor.',
+      'A well-documented handover means your team is not dependent on us indefinitely to keep the system running.',
+    ] : [
+      'Vendor จากระยะไกลส่งมอบตาม Spec แต่ Embedded Team ส่งมอบตามความจริง ปรับตามข้อจำกัดที่พบระหว่างทาง',
+      'จังหวะส่งมอบรายสัปดาห์ ช่วยเจอปัญหาตั้งแต่เนิ่นๆ แทนที่จะเจอตอน Handoff ใหญ่หลังผ่านไปหลายเดือน',
+      'การเชื่อมต่อกับระบบเดิมและเครื่องมือภายใน มักเป็นตัวขวางจริง มากกว่าตัว AI Model เอง',
+      'การทำงานภายใน Security Perimeter ของคุณ ช่วยลดความยุ่งยากจากการส่งข้อมูลออกไปหา Vendor ภายนอก',
+      'Handover ที่มีเอกสารครบถ้วน ทำให้ทีมคุณไม่ต้องพึ่งเราตลอดไปเพื่อดูแลระบบให้ทำงานต่อ',
+    ]
+  const outcomes    = isEN ? [
+      {stat: '1wk', label: 'First Shipped Increment', desc: 'From embed to first production commit'},
+      {stat: '100%', label: 'Handovers Fully Documented', desc: 'Runbooks, architecture, and decisions'},
+      {stat: '0', label: 'Vendor Black Boxes', desc: 'Every line of code is yours'},
+      {stat: '15+', label: 'Systems Integrated', desc: 'Across forward-deployed engagements'}
+    ] : [
+      {stat: '1wk', label: 'ส่งงานแรกภายใน', desc: 'ตั้งแต่เข้าฝังตัวจนถึง Commit แรกใน Production'},
+      {stat: '100%', label: 'Handover มีเอกสารครบ', desc: 'Runbook, Architecture และการตัดสินใจ'},
+      {stat: '0', label: 'Black Box จาก Vendor', desc: 'Code ทุกบรรทัดเป็นของคุณ'},
+      {stat: '15+', label: 'ระบบที่เชื่อมต่อแล้ว', desc: 'ตลอด Engagement แบบ Forward-Deployed'}
+    ]
+  const features    = isEN ? [
+      {icon: 'ti-users', title: 'Your Team, Your Tools, Your Office', desc: 'Engineers embedded directly into your workflows, standups, and repos.'},
+      {icon: 'ti-rocket', title: 'AI That Reaches Production', desc: 'Systems built to actually ship and run reliably, not just demo well.'},
+      {icon: 'ti-plug-connected', title: 'The Integrations Nobody Wants', desc: 'Legacy systems, internal APIs, and messy data sources handled directly.'},
+      {icon: 'ti-file-check', title: 'A Handover You Can Live With', desc: 'Documentation, runbooks, and architecture your team can maintain.'},
+      {icon: 'ti-calendar-time', title: 'Weekly Shipping Cadence', desc: 'Visible progress every week, not a black box until the final delivery.'},
+      {icon: 'ti-shield-lock', title: 'Works Inside Your Perimeter', desc: 'Engineering within your security, compliance, and data boundaries.'}
+    ] : [
+      {icon: 'ti-users', title: 'Your Team, Your Tools, Your Office', desc: 'Engineer ฝังตัวเข้าไปใน Workflow, Standup และ Repo ของคุณโดยตรง'},
+      {icon: 'ti-rocket', title: 'AI That Reaches Production', desc: 'สร้างระบบที่ส่งมอบและทำงานได้จริงอย่างน่าเชื่อถือ ไม่ใช่แค่ Demo ดูดี'},
+      {icon: 'ti-plug-connected', title: 'The Integrations Nobody Wants', desc: 'จัดการระบบเดิม, API ภายใน และแหล่งข้อมูลที่ยุ่งยากโดยตรง'},
+      {icon: 'ti-file-check', title: 'A Handover You Can Live With', desc: 'เอกสาร, Runbook และ Architecture ที่ทีมคุณดูแลต่อได้'},
+      {icon: 'ti-calendar-time', title: 'Weekly Shipping Cadence', desc: 'เห็นความคืบหน้าทุกสัปดาห์ ไม่ใช่ Black Box จนถึงวันส่งมอบสุดท้าย'},
+      {icon: 'ti-shield-lock', title: 'Works Inside Your Perimeter', desc: 'ทำงานภายใต้ขอบเขต Security, Compliance และข้อมูลของคุณ'}
+    ]
+  const steps       = isEN ? [
+      {no: '01', title: 'Scope the Mission', desc: 'Define the problem, constraints, and success criteria.'},
+      {no: '02', title: 'Meet Your Engineers', desc: 'Match senior engineers to the mission and your stack.'},
+      {no: '03', title: 'Embed in Week One', desc: 'Join your tools, repos, and standups from day one.'},
+      {no: '04', title: 'Ship Every Week', desc: 'Deliver visible increments your team can react to.'},
+      {no: '05', title: 'Harden for Production', desc: 'Security, reliability, and scale work before go-live.'},
+      {no: '06', title: 'Hand Over or Extend', desc: 'Full documented handover, or continue the engagement.'}
+    ] : [
+      {no: '01', title: 'Scope the Mission', desc: 'กำหนดปัญหา, ข้อจำกัด และเกณฑ์ความสำเร็จ'},
+      {no: '02', title: 'Meet Your Engineers', desc: 'จับคู่ Senior Engineer ที่เหมาะกับภารกิจและ Stack ของคุณ'},
+      {no: '03', title: 'Embed in Week One', desc: 'เข้าร่วมเครื่องมือ, Repo และ Standup ตั้งแต่วันแรก'},
+      {no: '04', title: 'Ship Every Week', desc: 'ส่งมอบความคืบหน้าที่มองเห็นได้ให้ทีมปรับตามได้ทัน'},
+      {no: '05', title: 'Harden for Production', desc: 'ทำงาน Security, Reliability และ Scale ก่อน Go-live'},
+      {no: '06', title: 'Hand Over or Extend', desc: 'ส่งมอบพร้อมเอกสารครบ หรือขยาย Engagement ต่อ'}
+    ]
+  const caseStudies = isEN ? [
+      {tag: 'FinTech · Bangkok', title: 'AI System Reached Production in 6 Weeks', desc: 'Embedded team shipped weekly, integrated with 4 legacy internal systems.', result: 'Zero handover dependency after 6 months'},
+      {tag: 'Logistics · Nationwide', title: 'Legacy Integration Nobody Else Would Touch', desc: 'Direct integration with a 15-year-old dispatch system via undocumented APIs.', result: '15+ systems connected successfully'},
+      {tag: 'Enterprise SaaS · Bangkok', title: 'SSO & Compliance Work Inside Client Perimeter', desc: 'Engineers worked entirely inside client security boundary with SAML/OIDC.', result: 'Zero data left client infrastructure'}
+    ] : [
+      {tag: 'FinTech · กรุงเทพฯ', title: 'ระบบ AI ถึง Production ภายใน 6 สัปดาห์', desc: 'Embedded Team ส่งงานรายสัปดาห์ เชื่อมต่อระบบภายในเดิม 4 ระบบ', result: 'ไม่ต้องพึ่งทีมหลัง 6 เดือน'},
+      {tag: 'Logistics · ทั่วประเทศ', title: 'เชื่อมต่อระบบเดิมที่ไม่มีใครอยากแตะ', desc: 'เชื่อมต่อโดยตรงกับระบบ Dispatch อายุ 15 ปี ผ่าน API ที่ไม่มีเอกสาร', result: 'เชื่อมต่อสำเร็จมากกว่า 15 ระบบ'},
+      {tag: 'Enterprise SaaS · กรุงเทพฯ', title: 'ทำงาน SSO และ Compliance ใน Perimeter ลูกค้า', desc: 'Engineer ทำงานทั้งหมดภายใน Security Boundary ของลูกค้าด้วย SAML/OIDC', result: 'ไม่มีข้อมูลออกจาก Infrastructure ลูกค้า'}
+    ]
+  const faqs        = isEN ? [
+      {q: 'How is this different from a typical outsourced project?', a: 'Engineers work embedded inside your tools, repos, and standups, shipping weekly rather than disappearing for months and returning with a mismatch.'},
+      {q: 'Can you work inside our security perimeter?', a: 'Yes. We regularly work fully within client infrastructure and security boundaries, including SSO via SAML/OIDC.'},
+      {q: 'What happens after the engagement ends?', a: 'You get a fully documented handover — architecture, runbooks, and decisions — so your team can maintain the system independently.'},
+      {q: 'What kind of integrations do you typically handle?', a: 'Legacy systems, undocumented internal APIs, and messy data sources that other vendors typically avoid.'}
+    ] : [
+      {q: 'ต่างจากโปรเจกต์ Outsource ทั่วไปอย่างไร?', a: 'Engineer ทำงานฝังตัวอยู่ในเครื่องมือ, Repo และ Standup ของคุณ ส่งงานรายสัปดาห์ แทนที่จะหายไปหลายเดือนแล้วกลับมาพร้อมงานที่ไม่ตรง'},
+      {q: 'ทำงานภายใน Security Perimeter ของเราได้ไหม?', a: 'ได้ครับ เราทำงานภายใน Infrastructure และ Security Boundary ของลูกค้าเป็นประจำ รวมถึง SSO ผ่าน SAML/OIDC'},
+      {q: 'หลังจบ Engagement แล้วจะเกิดอะไรขึ้น?', a: 'คุณจะได้รับ Handover ที่มีเอกสารครบถ้วน ทั้ง Architecture, Runbook และการตัดสินใจต่างๆ เพื่อให้ทีมคุณดูแลระบบต่อได้เอง'},
+      {q: 'มักจัดการ Integration แบบไหนบ้าง?', a: 'ระบบเดิม, API ภายในที่ไม่มีเอกสาร และแหล่งข้อมูลที่ยุ่งยาก ซึ่ง Vendor รายอื่นมักเลี่ยง'}
+    ]
+  const related     = isEN ? [
+      {label: 'AI Voice Agents', href: '/services/ai-voice-agents'},
+      {label: 'Enterprise Solutions', href: '/services/enterprise-solutions'},
+      {label: 'Cloud Services & Migration', href: '/services/cloud-services-migration'},
+      {label: 'Cybersecurity', href: '/services/cybersecurity'}
+    ] : [
+      {label: 'AI Voice Agents', href: '/services/ai-voice-agents'},
+      {label: 'Enterprise Solutions', href: '/services/enterprise-solutions'},
+      {label: 'Cloud Services & Migration', href: '/services/cloud-services-migration'},
+      {label: 'Cybersecurity', href: '/services/cybersecurity'}
+    ]
+
+  const fdeLines = [
+    { n: 1, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>embed --team senior-engineers --week 1</span></> },
+    { n: 2, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Joined repos, standups, tools' : 'เข้าร่วม Repo, Standup, เครื่องมือแล้ว'}</> },
+    { n: 3, jsx: <>&nbsp;</> },
+    { n: 4, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>integrate --system legacy-dispatch</span></> },
+    { n: 5, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? '15-year-old system connected' : 'เชื่อมต่อระบบอายุ 15 ปีสำเร็จ'}</> },
+    { n: 6, jsx: <>&nbsp;</> },
+    { n: 7, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>handover --docs runbooks,architecture</span></> },
+    { n: 8, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Team can maintain independently' : 'ทีมดูแลต่อได้อย่างอิสระ'}</> },
+  ]
+
+  const heroSlot = (
+    <div className="relative pb-10 pr-6">
+      <div className="rounded-2xl overflow-hidden" style={{ background: '#141329', border: '1px solid rgba(123,110,246,0.35)' }}>
+        <div className="flex items-center gap-2 px-5 py-3.5" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+          <span className="w-2.5 h-2.5 rounded-full" style={{ background: '#F87171' }} />
+          <span className="w-2.5 h-2.5 rounded-full" style={{ background: '#FBBF24' }} />
+          <span className="w-2.5 h-2.5 rounded-full" style={{ background: '#34D399' }} />
+          <span className="ml-3 text-xs" style={{ color: 'rgba(255,255,255,0.85)', fontFamily: 'monospace' }}>embed-log.sh</span>
+        </div>
+        <div className="px-6 py-6" style={{ fontFamily: 'monospace', fontSize: '0.9rem', lineHeight: 1.9, color: 'rgba(255,255,255,0.85)' }}>
+          {fdeLines.map((l) => (
+            <div key={l.n} className="flex gap-4">
+              <span style={{ color: 'rgba(255,255,255,0.25)', width: 16, textAlign: 'right' }}>{l.n}</span>
+              <span>{l.jsx}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div
+        className="absolute -bottom-2 -right-2 w-[220px] rounded-2xl p-4"
+        style={{ background: '#1B1A33', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 20px 50px -10px rgba(0,0,0,0.6)' }}
+      >
+        <div className="flex items-center justify-between mb-3">
+          <span className="text-[10px] tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.85)' }}>{isEN ? 'Delivery Cadence' : 'Delivery Cadence'}</span>
+          <span className="w-2 h-2 rounded-full" style={{ background: 'var(--lime)' }} />
+        </div>
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-12 h-12 rounded-lg flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg,var(--purple),var(--purple-light))' }}>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 12h4l3-8 4 16 3-8h2" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
+          </div>
+          <div className="flex-1 space-y-1.5">
+            <div className="h-1.5 rounded-full" style={{ background: 'rgba(255,255,255,0.15)', width: '90%' }} />
+            <div className="h-1.5 rounded-full" style={{ background: 'rgba(255,255,255,0.15)', width: '65%' }} />
+            <div className="h-3.5 rounded-full" style={{ background: 'linear-gradient(90deg,var(--purple),var(--lime))', width: '90%' }} />
+          </div>
+        </div>
+        <div className="flex items-center gap-1.5 text-xs" style={{ color: 'var(--lime)' }}>
+          <i className="ti ti-circle-check" style={{ fontSize: 13 }} aria-hidden="true" />
+          {isEN ? 'First increment shipped in week 1' : 'ส่งมอบงานแรกภายในสัปดาห์แรก'}
+        </div>
+      </div>
+    </div>
+  )
+
+  const capabilities = isEN ? [
+    { icon: 'ti-users', title: 'Your Team, Your Tools, Your Office', desc: 'Engineers embedded directly into your workflows, standups, and repos.' },
+    { icon: 'ti-rocket', title: 'AI That Reaches Production', desc: 'Systems built to actually ship and run reliably, not just demo well.' },
+    { icon: 'ti-plug-connected', title: 'The Integrations Nobody Wants', desc: 'Legacy systems, internal APIs, and messy data sources handled directly.' },
+    { icon: 'ti-file-check', title: 'A Handover You Can Live With', desc: 'Documentation, runbooks, and architecture your team can maintain.' },
+  ] : [
+    { icon: 'ti-users', title: 'Your Team, Your Tools, Your Office', desc: 'Engineer ฝังตัวเข้าไปใน Workflow, Standup และ Repo ของคุณโดยตรง' },
+    { icon: 'ti-rocket', title: 'AI That Reaches Production', desc: 'สร้างระบบที่ส่งมอบและทำงานได้จริงอย่างน่าเชื่อถือ ไม่ใช่แค่ Demo ดูดี' },
+    { icon: 'ti-plug-connected', title: 'The Integrations Nobody Wants', desc: 'จัดการระบบเดิม, API ภายใน และแหล่งข้อมูลที่ยุ่งยากโดยตรง' },
+    { icon: 'ti-file-check', title: 'A Handover You Can Live With', desc: 'เอกสาร, Runbook และ Architecture ที่ทีมคุณดูแลต่อได้' },
+  ]
+
+  const techStack = [
+    { label: 'Anthropic Claude', svg: 'claude' },
+    { label: 'OpenAI', icon: 'ti-brand-openai' },
+    { label: 'Python', svg: 'python' },
+    { label: 'TypeScript', svg: 'typescript' },
+    { label: 'Next.js', svg: 'nextdotjs' },
+    { label: 'PostgreSQL', svg: 'postgresql' },
+    { label: 'Apache Kafka', svg: 'apachekafka' },
+    { label: 'REST & GraphQL APIs', svg: 'graphql' },
+    { label: 'AWS', icon: 'ti-brand-aws' },
+    { label: 'Google Cloud', icon: 'ti-cloud' },
+    { label: 'Azure', icon: 'ti-brand-azure' },
+    { label: 'Kubernetes', svg: 'kubernetes' },
+    { label: 'Terraform', svg: 'terraform' },
+    { label: 'SSO (SAML/OIDC)', icon: 'ti-lock-access' },
+  ] as { label: string; icon?: string; svg?: string }[]
+
+  const approachSteps = isEN ? [
+    { no: '01', title: 'Scope the Mission', desc: 'Problem, constraints, success criteria' },
+    { no: '02', title: 'Meet Your Engineers', desc: 'Matched to the mission and stack' },
+    { no: '03', title: 'Embed in Week One', desc: 'Join tools, repos, standups' },
+    { no: '04', title: 'Ship Every Week', desc: 'Visible increments your team reviews' },
+    { no: '05', title: 'Harden for Production', desc: 'Security, reliability, scale' },
+    { no: '06', title: 'Hand Over or Extend', desc: 'Full documented handover' },
+  ] : [
+    { no: '01', title: 'Scope the Mission', desc: 'ปัญหา, ข้อจำกัด, เกณฑ์ความสำเร็จ' },
+    { no: '02', title: 'Meet Your Engineers', desc: 'จับคู่ตามภารกิจและ Stack' },
+    { no: '03', title: 'Embed in Week One', desc: 'เข้าร่วมเครื่องมือ, Repo, Standup' },
+    { no: '04', title: 'Ship Every Week', desc: 'ส่งงานที่มองเห็นได้ให้ทีมตรวจ' },
+    { no: '05', title: 'Harden for Production', desc: 'Security, Reliability, Scale' },
+    { no: '06', title: 'Hand Over or Extend', desc: 'Handover พร้อมเอกสารครบ' },
+  ]
+
+  const darkFaqs = isEN ? [
+    { q: 'How is forward-deployed engineering different from a typical outsourced project?', a: 'Our engineers work embedded directly inside your tools, repositories, and standups — not from a distance on a fixed spec. That means weekly shipped increments your team can see and react to, rather than disappearing for months and returning with something that misses the mark.' },
+    { q: 'Can you work inside our security perimeter?', a: 'Yes. We regularly work fully within client infrastructure and security boundaries, including SSO integration via SAML or OIDC, without needing to move sensitive data outside your environment.' },
+    { q: 'What happens after the engagement ends?', a: 'You receive a fully documented handover — architecture decisions, runbooks, and operational guidance — so your existing engineering team can maintain and extend the system independently, without needing us on standby indefinitely.' },
+    { q: 'What kind of integrations do you typically handle?', a: 'Legacy systems, undocumented internal APIs, and messy or inconsistent data sources — the kind of integration work that other vendors typically avoid or underscope.' },
+    { q: 'How long does a typical engagement run?', a: 'Engagements are scoped around a specific mission rather than a fixed calendar length. A focused integration project might run 6-8 weeks; a broader embedded team engagement building and hardening a full AI system often runs 3-6 months.' },
+    { q: 'How is a forward-deployed engagement priced?', a: 'Pricing is based on team composition and engagement length rather than a fixed project fee, since scope evolves as the mission is defined. We provide a clear rate structure after the scoping call.' },
+    { q: 'Do we own everything that gets built?', a: 'Yes, entirely. All code, infrastructure configuration, and documentation belong to you. There is no vendor lock-in or dependency on proprietary tooling we control.' },
+    { q: 'Can the engagement scale up or down as our needs change?', a: 'Yes. Team composition can flex as the mission evolves — adding specialists for a specific integration, or scaling down once the system stabilizes and your team is ready to take over.' },
+  ] : [
+    { q: 'Forward-Deployed Engineering ต่างจากโปรเจกต์ Outsource ทั่วไปอย่างไร?', a: 'Engineer ของเราทำงานฝังตัวอยู่ในเครื่องมือ, Repository และ Standup ของคุณโดยตรง ไม่ใช่ทำงานจากระยะไกลตาม Spec ตายตัว หมายความว่าส่งงานเป็นรายสัปดาห์ให้ทีมคุณเห็นและปรับได้ทัน แทนที่จะหายไปหลายเดือนแล้วกลับมาพร้อมงานที่ไม่ตรงเป้า' },
+    { q: 'ทำงานภายใน Security Perimeter ของเราได้ไหม?', a: 'ได้ครับ เราทำงานภายใน Infrastructure และ Security Boundary ของลูกค้าเป็นประจำ รวมถึงการเชื่อมต่อ SSO ผ่าน SAML หรือ OIDC โดยไม่ต้องนำข้อมูลสำคัญออกนอกสภาพแวดล้อมของคุณ' },
+    { q: 'หลังจบ Engagement แล้วจะเกิดอะไรขึ้น?', a: 'คุณจะได้รับ Handover ที่มีเอกสารครบถ้วน ทั้งการตัดสินใจด้าน Architecture, Runbook และคำแนะนำการดำเนินงาน เพื่อให้ทีม Engineering ของคุณดูแลและต่อยอดระบบได้เอง โดยไม่ต้องพึ่งเราตลอดไป' },
+    { q: 'มักจัดการ Integration แบบไหนบ้าง?', a: 'ระบบเดิม, API ภายในที่ไม่มีเอกสาร และแหล่งข้อมูลที่ยุ่งยากหรือไม่สอดคล้องกัน ซึ่งเป็นงาน Integration ที่ Vendor รายอื่นมักเลี่ยงหรือประเมิน Scope ต่ำเกินไป' },
+    { q: 'Engagement ทั่วไปใช้เวลานานแค่ไหน?', a: 'Engagement กำหนดขอบเขตตามภารกิจเฉพาะ ไม่ใช่ระยะเวลาตายตัว โปรเจกต์ Integration แบบเจาะจงอาจใช้เวลา 6-8 สัปดาห์ ส่วน Engagement แบบ Embedded Team ที่กว้างขึ้นสำหรับสร้างและ Harden ระบบ AI เต็มรูปแบบ มักใช้เวลา 3-6 เดือน' },
+    { q: 'Forward-Deployed Engagement คิดราคาอย่างไร?', a: 'ราคาคิดตามองค์ประกอบทีมและระยะเวลา Engagement มากกว่าค่าธรรมเนียมโปรเจกต์ตายตัว เนื่องจาก Scope จะพัฒนาไปตามภารกิจที่กำหนด เราจะให้โครงสร้างราคาที่ชัดเจนหลัง Call วางขอบเขต' },
+    { q: 'เราเป็นเจ้าของทุกอย่างที่สร้างขึ้นไหม?', a: 'ใช่ครับ เป็นเจ้าของทั้งหมด ทั้ง Code, การตั้งค่า Infrastructure และเอกสารทั้งหมดเป็นของคุณ ไม่มี Vendor Lock-in หรือการพึ่งพา Tooling เฉพาะที่เราควบคุม' },
+    { q: 'Engagement ปรับขนาดขึ้นลงตามความต้องการที่เปลี่ยนไปได้ไหม?', a: 'ได้ครับ องค์ประกอบทีมสามารถปรับตามภารกิจที่พัฒนาไป เช่น เพิ่ม Specialist สำหรับ Integration เฉพาะ หรือลดขนาดลงเมื่อระบบเสถียรและทีมคุณพร้อมรับช่วงต่อ' },
+  ]
+
+  const postHeroSlot = (
+    <>
+    <section className="relative overflow-hidden" style={{ background: '#08070F' }}>
+      <div className="relative max-w-7xl mx-auto px-4 lg:px-10 pb-24 lg:pb-32">
+        <div className="rounded-2xl p-10 lg:p-16 mb-16 lg:mb-24" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
+          <div className="w-12 h-[3px] rounded-full mb-8" style={{ background: 'linear-gradient(90deg, var(--purple-light), var(--lime))' }} />
+          <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
+            {overviewText}
+          </p>
+        </div>
+
+        <p className="mb-5 text-xs tracking-widest uppercase" style={{ color: 'var(--lime)', fontWeight: 600 }}>
+          {isEN ? 'Capabilities' : 'ความสามารถ'}
+        </p>
+        <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
+          {isEN ? 'Key Capabilities' : 'ความสามารถหลัก'}
+        </h2>
+        <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400 }}>
+          {isEN ? 'Concrete capabilities we bring to this engagement — not buzzwords.' : 'ความสามารถที่จับต้องได้จริงที่เรานำมาใช้ในทุกโปรเจกต์ ไม่ใช่แค่คำสวยหรู'}
+        </p>
+
+        <div className="grid sm:grid-cols-2 gap-5">
+          {capabilities.map((c) => (
+            <div key={c.title} className="p-8 rounded-2xl" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
+              <div className="flex items-start gap-5">
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'rgba(123,110,246,0.15)' }}>
+                  <i className={`ti ${c.icon}`} style={{ fontSize: 20, color: 'var(--purple-light)' }} aria-hidden="true" />
+                </div>
+                <div>
+                  <h3 className="mb-2" style={{ color: '#fff', fontWeight: 600, fontSize: '1.35rem' }}>{c.title}</h3>
+                  <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>{c.desc}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-16 lg:mt-24">
+          <p className="mb-5 text-xs tracking-widest uppercase" style={{ color: 'var(--lime)', fontWeight: 600 }}>
+            {isEN ? 'Tools We Use' : 'เครื่องมือที่ใช้'}
+          </p>
+          <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
+            {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้งาน'}
+          </h2>
+          <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
+            {isEN
+              ? 'A broad, production-grade stack we adapt to whatever your organization already runs.'
+              : 'Stack ระดับ Production ที่หลากหลาย ปรับให้เข้ากับสิ่งที่องค์กรคุณใช้งานอยู่แล้ว'}
+          </p>
+
+          <div className="flex flex-wrap gap-3">
+            {techStack.map((t) => (
+              <span
+                key={t.label}
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-base"
+                style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.85)', fontWeight: 400 }}
+              >
+                {t.label}
+                {t.svg ? (
+                  <BrandLogo name={t.svg} />
+                ) : (
+                  <i className={`ti ${t.icon}`} style={{ fontSize: 15, color: 'var(--purple-light)' }} aria-hidden="true" />
+                )}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-16 lg:mt-24">
+          <p className="mb-5 text-xs tracking-widest uppercase" style={{ color: 'var(--lime)', fontWeight: 600 }}>
+            {isEN ? 'How We Work' : 'วิธีการทำงาน'}
+          </p>
+          <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
+            {isEN ? 'Our Approach' : 'แนวทางการทำงานของเรา'}
+          </h2>
+          <p className="mb-16" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
+            {isEN
+              ? 'A clear path from scoping to a shipped, handed-over system — adjusted per mission, never one-size-fits-all.'
+              : 'เส้นทางที่ชัดเจนจากการวางขอบเขตสู่ระบบที่ส่งมอบแล้ว ปรับตามแต่ละภารกิจ ไม่ใช่สูตรสำเร็จตายตัว'}
+          </p>
+
+          <div className="relative">
+            <div
+              className="hidden lg:block absolute left-0 right-0"
+              style={{ top: 32, height: 1, background: 'linear-gradient(90deg, rgba(123,110,246,0.5), rgba(196,255,92,0.5))' }}
+            />
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-14">
+              {approachSteps.map((s) => (
+                <div key={s.no} className="relative">
+                  <div
+                    className="relative z-10 w-16 h-16 rounded-full flex items-center justify-center mb-6 font-mono"
+                    style={{
+                      background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)',
+                      boxShadow: '0 8px 24px -8px rgba(123,110,246,0.6)',
+                      color: '#fff',
+                      fontSize: '1.05rem',
+                      fontWeight: 600,
+                    }}
+                  >
+                    {s.no}
+                  </div>
+                  <h3 className="mb-2" style={{ color: '#fff', fontWeight: 600, fontSize: '1.2rem' }}>{s.title}</h3>
+                  <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1rem', fontWeight: 400 }}>{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-16 lg:mt-24">
+          <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
+            {isEN ? 'Frequently Asked Questions' : 'คำถามที่พบบ่อย'}
+          </h2>
+          <p className="mb-4" style={{ color: 'var(--lime)', fontSize: '1.2rem', fontWeight: 600 }}>
+            {isEN ? 'Straight answers about how forward-deployed engagements work.' : 'คำตอบตรงไปตรงมาเกี่ยวกับวิธีที่ Forward-Deployed Engagement ทำงาน'}
+          </p>
+
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+            {darkFaqs.map((f, i) => (
+              <details key={f.q} className="group marker:hidden [&::-webkit-details-marker]:hidden" style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }} open={i === 0}>
+                <summary className="flex items-center justify-between gap-6 cursor-pointer list-none py-6">
+                  <span style={{ color: '#fff', fontSize: 'clamp(1.15rem,1.8vw,1.4rem)', fontWeight: 500 }}>{f.q}</span>
+                  <i className="ti ti-chevron-down shrink-0 transition-transform duration-300 group-open:rotate-180" style={{ fontSize: 20, color: 'rgba(255,255,255,0.85)' }} aria-hidden="true" />
+                </summary>
+                <p className="pb-6 leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.15rem', fontWeight: 400, maxWidth: 900 }}>
+                  {f.a}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="relative overflow-hidden" style={{ background: '#050308' }}>
+      <div
+        className="absolute inset-0 pointer-events-none opacity-40"
+        style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '180px 180px, 260px 260px', backgroundPosition: '0 0, 90px 130px' }}
+      />
+      <div
+        className="absolute left-0 right-0 bottom-0 pointer-events-none"
+        style={{ height: 260, background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(123,110,246,0.35) 0%, rgba(196,255,92,0.08) 45%, transparent 75%)' }}
+      />
+      <div className="relative max-w-7xl mx-auto px-4 lg:px-10 py-28 lg:py-36">
+        <h2 className="t-display mb-5 leading-tight" style={{ color: '#fff', fontSize: 'clamp(2.5rem,5.5vw,4.2rem)' }}>
+          {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
+        </h2>
+        <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
+          {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+        </p>
+        <div className="flex flex-wrap items-center gap-6">
+          <Link
+            href={`${prefix}/contact`}
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-medium transition-opacity hover:opacity-90"
+            style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}
+          >
+            {isEN ? 'Start a Conversation' : 'เริ่มบทสนทนา'}
+            <i className="ti ti-arrow-right" style={{ fontSize: 17 }} aria-hidden="true" />
+          </Link>
+          <a href="mailto:wu@haliviq.com" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>
+            wu@haliviq.com
+          </a>
+        </div>
+      </div>
+    </section>
+    </>
+  )
+
+  return (
+    <ServiceLayout
+      lang={params.lang as Lang}
+      badge={badge} title={title} subtitle={subtitle}
+      heroDesc={heroDesc} heroBullets={heroBullets}
+      heroDark heroSlot={heroSlot} heroShowSecondaryCta={false}
+      heroCtaLabel={isEN ? 'Get Started' : 'เริ่มต้นเลย'}
+      postHeroSlot={postHeroSlot}
+      whyTitle={whyTitle} whyDesc={whyDesc} whyPoints={whyPoints}
+      outcomes={outcomes} ctaTitle={ctaTitle} ctaDesc={ctaDesc}
+      features={features} steps={steps} caseStudies={caseStudies}
+      faqs={faqs} related={related}
+      color="var(--purple)" bg="var(--purple-bg)"
+      whyImg="/images/services/forward-deployed-engineering/why1.jpg"
+      whyImg2="/images/services/forward-deployed-engineering/why2.jpg"
+      featureImg="/images/services/forward-deployed-engineering/feature.jpg"
+      processImg="/images/services/forward-deployed-engineering/process.jpg"
+    />
+  )
+}

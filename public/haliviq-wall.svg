@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="100%" height="100%" viewBox="0 0 1800 1090" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#050310"/>
+      <stop offset="55%" stop-color="#070312"/>
+      <stop offset="100%" stop-color="#0A0616"/>
+    </linearGradient>
+
+    <radialGradient id="glow" cx="50%" cy="62%" r="55%">
+      <stop offset="0%" stop-color="#C9B6FF" stop-opacity="0.95"/>
+      <stop offset="28%" stop-color="#9C7CF4" stop-opacity="0.55"/>
+      <stop offset="58%" stop-color="#5A4ED4" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#5A4ED4" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="ridgeBack" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#241A45"/>
+      <stop offset="100%" stop-color="#160F2E"/>
+    </linearGradient>
+
+    <linearGradient id="ridgeMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4B3B8C"/>
+      <stop offset="100%" stop-color="#241A45"/>
+    </linearGradient>
+
+    <linearGradient id="ridgeFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8B7CF0"/>
+      <stop offset="55%" stop-color="#6656D6"/>
+      <stop offset="100%" stop-color="#241A45"/>
+    </linearGradient>
+
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#B9A6FF" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#4A3D8C" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+    <filter id="soft-lg" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="34"/>
+    </filter>
+    <filter id="soft-sm" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1800" height="1090" fill="url(#sky)"/>
+
+  <!-- big ambient glow behind everything -->
+  <ellipse cx="900" cy="700" rx="620" ry="360" fill="url(#glow)" filter="url(#soft-lg)"/>
+
+  <!-- tagline -->
+  <text x="900" y="330" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="300" font-size="34" letter-spacing="14" fill="#F4F2FF" fill-opacity="0.92">HUMAN IDEAS. INTELLIGENT FUTURE.</text>
+
+  <!-- back ridge -->
+  <path filter="url(#soft)" fill="url(#ridgeBack)" opacity="0.85" d="M0,560 C120,520 220,585 340,555 C460,525 520,470 640,500 C760,530 800,590 920,565 C1040,540 1100,480 1220,510 C1340,540 1400,600 1520,570 C1620,545 1680,520 1800,545 L1800,1090 L0,1090 Z"/>
+
+  <!-- mid ridge -->
+  <path filter="url(#soft)" fill="url(#ridgeMid)" opacity="0.8" d="M0,660 C100,600 200,650 300,615 C420,575 480,630 600,615 C700,600 760,540 900,545 C1040,550 1100,610 1200,615 C1320,620 1380,575 1500,610 C1620,645 1700,655 1800,625 L1800,1090 L0,1090 Z"/>
+
+  <!-- valley water sheen -->
+  <ellipse cx="900" cy="860" rx="480" ry="140" fill="url(#water)" filter="url(#soft)"/>
+
+  <!-- front ridge: two peaks with a soft valley dip in the middle so the glow shines through -->
+  <path filter="url(#soft-sm)" fill="url(#ridgeFront)" opacity="0.97" d="M0,780 C150,720 280,760 420,730 C560,700 650,655 760,690 C830,712 870,780 900,845 C930,780 970,712 1040,690 C1150,655 1240,700 1380,730 C1520,760 1650,720 1800,780 L1800,1090 L0,1090 Z"/>
+
+  <!-- wordmark: HALIVIQ (white + purple accent), in the dark foreground below the valley -->
+  <g transform="translate(346,767) scale(0.62)">
+    <path d="M614.916,312.006L622.199,312.006L622.199,343.488L634.518,337.043L644.796,331.589C646.339,330.763 648.018,330.35 649.833,330.35L672.431,330.35L672.431,312.006L679.714,312.006L679.714,355.387L672.431,355.387L672.431,337.043L640.304,337.043C638.534,337.043 636.878,337.435 635.335,338.22L627.031,342.558C624.354,344.004 622.743,346.07 622.199,348.756L622.199,355.387L614.916,355.387L614.916,312.006Z" fill="#FFFFFF"/>
+    <path d="M766.293,331.837L764.863,332.581L764.727,332.705L755.879,337.353L745.601,342.744C744.013,343.571 742.334,343.984 740.564,343.984L722.867,343.984L722.867,355.387L715.584,355.387L715.584,326.694C715.584,322.645 717.161,319.185 720.315,316.313C723.468,313.442 727.269,312.006 731.716,312.006L780.518,312.006L780.518,355.387L773.235,355.387L773.235,328.181L766.293,331.837ZM722.867,326.694L722.867,337.353L750.025,337.353C751.84,337.353 753.519,336.94 755.062,336.113L766.293,330.226L768.199,329.235C769.832,328.367 771.08,327.241 771.942,325.857C772.804,324.473 773.235,322.934 773.235,321.24L773.235,318.637L731.716,318.637C729.311,318.637 727.235,319.433 725.488,321.023C723.741,322.614 722.867,324.504 722.867,326.694Z" fill="#FFFFFF"/>
+    <path d="M824.352,348.756L871.385,348.756C873.201,348.756 874.879,348.343 876.422,347.516L882.616,344.294L882.616,345.905L877.171,348.756L866.893,354.147C865.35,354.974 863.671,355.387 861.856,355.387L817.069,355.387L817.069,312.006L824.352,312.006L824.352,348.756Z" fill="#FFFFFF"/>
+    <rect x="914.879" y="312.006" width="7.283" height="43.38" fill="#FFFFFF"/>
+    <path d="M964.907,312.006L964.907,340.204C964.907,341.856 965.349,343.374 966.234,344.758C967.119,346.143 968.356,347.248 969.944,348.074L970.352,348.322C970.897,348.611 971.487,348.756 972.122,348.756L1008.06,348.756C1008.7,348.756 1009.29,348.611 1009.83,348.322L1010.24,348.074C1011.87,347.248 1013.12,346.143 1013.98,344.758C1014.84,343.374 1015.27,341.856 1015.27,340.204L1015.27,312.006L1022.56,312.006L1022.56,341.381C1022.56,342.62 1021.97,343.55 1020.79,344.17L1015.27,347.082L1015.14,347.206L1012.14,348.756L1004.18,352.908L1002.82,353.651L1000.3,354.953C999.756,355.242 999.167,355.387 998.531,355.387L981.651,355.387C981.016,355.387 980.426,355.242 979.881,354.953L977.431,353.651L968.106,348.756L965.111,347.206L964.907,347.082L959.394,344.17C958.214,343.55 957.624,342.62 957.624,341.381L957.624,312.006L964.907,312.006Z" fill="#FFFFFF"/>
+    <rect x="1058.02" y="312.006" width="7.283" height="43.38" fill="#FFFFFF"/>
+    <path d="M1152.70,321.26 A21.69,21.69 0 1,0 1152.70,346.13 M1116.15,344.54 L1100,363" fill="none" stroke="#A577FD" stroke-width="7.283" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

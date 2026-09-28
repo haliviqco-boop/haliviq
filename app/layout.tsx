@@ -1,0 +1,43 @@
+import type { Metadata } from 'next'
+import Script from 'next/script'
+import './globals.css'
+
+export const metadata: Metadata = {
+  title: 'Haliviq — Digital Product Studio',
+  description: 'Strategy, design, and engineering under one roof.',
+  icons: { icon: '/favicon.svg' },
+  openGraph: {
+    title: 'Haliviq — Digital Product Studio',
+    description: 'Strategy, design, and engineering under one roof.',
+    images: ['/og/haliviq-og.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Haliviq — Digital Product Studio',
+    description: 'Strategy, design, and engineering under one roof.',
+    images: ['/og/haliviq-og.png'],
+  },
+}
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="th">
+      <head>
+        <link rel="preload" href="/fonts/LINESeedSansTH_Th.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/>
+        <link rel="preload" href="/fonts/LINESeedSansTH_Rg.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/>
+        <link rel="preload" href="/fonts/LINESeedSansTH_Bd.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+      </head>
+      <body>
+        {children}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-18293218603" strategy="afterInteractive"/>
+        <Script id="gtag-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-18293218603');
+        `}</Script>
+      </body>
+    </html>
+  )
+}

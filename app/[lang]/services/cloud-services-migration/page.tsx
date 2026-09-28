@@ -1,0 +1,445 @@
+import Link from 'next/link'
+import ServiceLayout from '@/components/service/ServiceLayout'
+import { type Lang } from '@/lib/i18n'
+
+const BRAND_LOGOS: Record<string, { hex: string; path: string }> = {
+  googlecloud: { hex: '#4285F4', path: 'M12.19 2.38a9.344 9.344 0 0 0-9.234 6.893c.053-.02-.055.013 0 0-3.875 2.551-3.922 8.11-.247 10.941l.006-.007-.007.03a6.717 6.717 0 0 0 4.077 1.356h5.173l.03.03h5.192c6.687.053 9.376-8.605 3.835-12.35a9.365 9.365 0 0 0-2.821-4.552l-.043.043.006-.05A9.344 9.344 0 0 0 12.19 2.38zm-.358 4.146c1.244-.04 2.518.368 3.486 1.15a5.186 5.186 0 0 1 1.862 4.078v.518c3.53-.07 3.53 5.262 0 5.193h-5.193l-.008.009v-.04H6.785a2.59 2.59 0 0 1-1.067-.23h.001a2.597 2.597 0 1 1 3.437-3.437l3.013-3.012A6.747 6.747 0 0 0 8.11 8.24c.018-.01.04-.026.054-.023a5.186 5.186 0 0 1 3.67-1.69z' },
+  kubernetes: { hex: '#326CE5', path: 'M10.204 14.35l.007.01-.999 2.413a5.171 5.171 0 0 1-2.075-2.597l2.578-.437.004.005a.44.44 0 0 1 .484.606zm-.833-2.129a.44.44 0 0 0 .173-.756l.002-.011L7.585 9.7a5.143 5.143 0 0 0-.73 3.255l2.514-.725.002-.009zm1.145-1.98a.44.44 0 0 0 .699-.337l.01-.005.15-2.62a5.144 5.144 0 0 0-3.01 1.442l2.147 1.523.004-.002zm.76 2.75l.723.349.722-.347.18-.78-.5-.623h-.804l-.5.623.179.779zm1.5-3.095a.44.44 0 0 0 .7.336l.008.003 2.134-1.513a5.188 5.188 0 0 0-2.992-1.442l.148 2.615.002.001zm10.876 5.97l-5.773 7.181a1.6 1.6 0 0 1-1.248.594l-9.261.003a1.6 1.6 0 0 1-1.247-.596l-5.776-7.18a1.583 1.583 0 0 1-.307-1.34L2.1 5.573c.108-.47.425-.864.863-1.073L11.305.513a1.606 1.606 0 0 1 1.385 0l8.345 3.985c.438.209.755.604.863 1.073l2.062 8.955c.108.47-.005.963-.308 1.34zm-3.289-2.057c-.042-.01-.103-.026-.145-.034-.174-.033-.315-.025-.479-.038-.35-.037-.638-.067-.895-.148-.105-.04-.18-.165-.216-.216l-.201-.059a6.45 6.45 0 0 0-.105-2.332 6.465 6.465 0 0 0-.936-2.163c.052-.047.15-.133.177-.159.008-.09.001-.183.094-.282.197-.185.444-.338.743-.522.142-.084.273-.137.415-.242.032-.024.076-.062.11-.089.24-.191.295-.52.123-.736-.172-.216-.506-.236-.745-.045-.034.027-.08.062-.111.088-.134.116-.217.23-.33.35-.246.25-.45.458-.673.609-.097.056-.239.037-.303.033l-.19.135a6.545 6.545 0 0 0-4.146-2.003l-.012-.223c-.065-.062-.143-.115-.163-.25-.022-.268.015-.557.057-.905.023-.163.061-.298.068-.475.001-.04-.001-.099-.001-.142 0-.306-.224-.555-.5-.555-.275 0-.499.249-.499.555l.001.014c0 .041-.002.092 0 .128.006.177.044.312.067.475.042.348.078.637.056.906a.545.545 0 0 1-.162.258l-.012.211a6.424 6.424 0 0 0-4.166 2.003 8.373 8.373 0 0 1-.18-.128c-.09.012-.18.04-.297-.029-.223-.15-.427-.358-.673-.608-.113-.12-.195-.234-.329-.349-.03-.026-.077-.062-.111-.088a.594.594 0 0 0-.348-.132.481.481 0 0 0-.398.176c-.172.216-.117.546.123.737l.007.005.104.083c.142.105.272.159.414.242.299.185.546.338.743.522.076.082.09.226.1.288l.16.143a6.462 6.462 0 0 0-1.02 4.506l-.208.06c-.055.072-.133.184-.215.217-.257.081-.546.11-.895.147-.164.014-.305.006-.48.039-.037.007-.09.02-.133.03l-.004.002-.007.002c-.295.071-.484.342-.423.608.061.267.349.429.645.365l.007-.001.01-.003.129-.029c.17-.046.294-.113.448-.172.33-.118.604-.217.87-.256.112-.009.23.069.288.101l.217-.037a6.5 6.5 0 0 0 2.88 3.596l-.09.218c.033.084.069.199.044.282-.097.252-.263.517-.452.813-.091.136-.185.242-.268.399-.02.037-.045.095-.064.134-.128.275-.034.591.213.71.248.12.556-.007.69-.282v-.002c.02-.039.046-.09.062-.127.07-.162.094-.301.144-.458.132-.332.205-.68.387-.897.05-.06.13-.082.215-.105l.113-.205a6.453 6.453 0 0 0 4.609.012l.106.192c.086.028.18.042.256.155.136.232.229.507.342.84.05.156.074.295.145.457.016.037.043.09.062.129.133.276.442.402.69.282.247-.118.341-.435.213-.71-.02-.039-.045-.096-.065-.134-.083-.156-.177-.261-.268-.398-.19-.296-.346-.541-.443-.793-.04-.13.007-.21.038-.294-.018-.022-.059-.144-.083-.202a6.499 6.499 0 0 0 2.88-3.622c.064.01.176.03.213.038.075-.05.144-.114.28-.104.266.039.54.138.87.256.154.06.277.128.448.173.036.01.088.019.13.028l.009.003.007.001c.297.064.584-.098.645-.365.06-.266-.128-.537-.423-.608zM16.4 9.701l-1.95 1.746v.005a.44.44 0 0 0 .173.757l.003.01 2.526.728a5.199 5.199 0 0 0-.108-1.674A5.208 5.208 0 0 0 16.4 9.7zm-4.013 5.325a.437.437 0 0 0-.404-.232.44.44 0 0 0-.372.233h-.002l-1.268 2.292a5.164 5.164 0 0 0 3.326.003l-1.27-2.296h-.01zm1.888-1.293a.44.44 0 0 0-.27.036.44.44 0 0 0-.214.572l-.003.004 1.01 2.438a5.15 5.15 0 0 0 2.081-2.615l-2.6-.44-.004.005z' },
+  docker: { hex: '#2496ED', path: 'M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z' },
+  terraform: { hex: '#844FBA', path: 'M1.44 0v7.575l6.561 3.79V3.787zm21.12 4.227l-6.561 3.791v7.574l6.56-3.787zM8.72 4.23v7.575l6.561 3.787V8.018zm0 8.405v7.575L15.28 24v-7.578z' },
+  pulumi: { hex: '#8A3391', path: 'M11.997 0C10.226 0 8.79.83 8.79 1.856c0 1.025 1.436 1.856 3.207 1.856 1.772 0 3.208-.831 3.208-1.856C15.205.83 13.77 0 11.997 0zM5.95 3.488c-1.772 0-3.208.83-3.208 1.856C2.742 6.369 4.178 7.2 5.95 7.2c1.771 0 3.207-.831 3.207-1.856 0-1.025-1.436-1.856-3.207-1.856zm12.103 0c-1.772 0-3.208.83-3.208 1.856 0 1.025 1.436 1.856 3.208 1.856 1.771 0 3.207-.831 3.207-1.856 0-1.025-1.436-1.856-3.207-1.856zm-6.056 3.495c-1.771 0-3.207.831-3.207 1.856 0 1.025 1.436 1.856 3.207 1.856 1.772 0 3.208-.83 3.208-1.856 0-1.025-1.436-1.856-3.208-1.856zm-10.127.67a1.157 1.157 0 0 0-.55.151c-.888.513-.89 2.172-.004 3.706.886 1.534 2.324 2.362 3.211 1.85.888-.513.89-2.171.003-3.706-.72-1.246-1.803-2.027-2.66-2zm20.257.004c-.857-.026-1.941.754-2.661 2-.886 1.535-.884 3.194.003 3.707.888.512 2.325-.316 3.211-1.85.886-1.534.885-3.193-.003-3.706a1.157 1.157 0 0 0-.55-.15zm-6.048 3.492c-.857-.026-1.94.754-2.66 2-.886 1.535-.885 3.194.003 3.706.887.513 2.325-.316 3.21-1.85.887-1.534.885-3.193-.003-3.706a1.157 1.157 0 0 0-.55-.15zm-8.16.001a1.157 1.157 0 0 0-.55.151c-.888.513-.89 2.172-.004 3.706.886 1.535 2.324 2.363 3.211 1.85.888-.512.89-2.171.003-3.705-.72-1.247-1.803-2.028-2.66-2.002zm-6.047 3.494a1.157 1.157 0 0 0-.55.151c-.888.513-.89 2.172-.004 3.706.886 1.534 2.324 2.362 3.212 1.85.887-.513.888-2.172.003-3.706-.72-1.246-1.804-2.027-2.661-2.001zm20.258.002c-.857-.026-1.941.755-2.66 2.001-.887 1.535-.885 3.193.003 3.706.887.512 2.325-.316 3.21-1.85.886-1.534.885-3.193-.003-3.706a1.157 1.157 0 0 0-.55-.15zm-6.047 3.492c-.858-.026-1.942.754-2.661 2-.886 1.535-.885 3.194.003 3.706.888.513 2.325-.315 3.21-1.85.887-1.533.885-3.193-.002-3.705a1.157 1.157 0 0 0-.55-.151zm-8.163.003a1.157 1.157 0 0 0-.55.151c-.887.513-.889 2.172-.003 3.706.886 1.534 2.323 2.363 3.211 1.85.888-.512.89-2.171.004-3.706-.72-1.246-1.804-2.027-2.662-2z' },
+  helm: { hex: '#3971E3', path: 'M12.337 0c-.475 0-.861 1.016-.861 2.269 0 .527.069 1.011.183 1.396a8.514 8.514 0 0 0-3.961 1.22 5.229 5.229 0 0 0-.595-1.093c-.606-.866-1.34-1.436-1.79-1.43a.381.381 0 0 0-.217.066c-.39.273-.123 1.326.596 2.353.267.381.559.705.84.948a8.683 8.683 0 0 0-1.528 1.716h1.734a7.179 7.179 0 0 1 5.381-2.421 7.18 7.18 0 0 1 5.382 2.42h1.733a8.687 8.687 0 0 0-1.32-1.53c.35-.249.735-.643 1.078-1.133.719-1.027.986-2.08.596-2.353a.382.382 0 0 0-.217-.065c-.45-.007-1.184.563-1.79 1.43a4.897 4.897 0 0 0-.676 1.325 8.52 8.52 0 0 0-3.899-1.42c.12-.39.193-.887.193-1.429 0-1.253-.386-2.269-.862-2.269zM1.624 9.443v5.162h1.358v-1.968h1.64v1.968h1.357V9.443H4.62v1.838H2.98V9.443zm5.912 0v5.162h3.21v-1.108H8.893v-.95h1.64v-1.142h-1.64v-.84h1.853V9.443zm4.698 0v5.162h3.218v-1.362h-1.86v-3.8zm4.706 0v5.162h1.364v-2.643l1.357 1.225 1.35-1.232v2.65h1.365V9.443h-.614l-2.1 1.914-2.109-1.914zm-11.82 7.28a8.688 8.688 0 0 0 1.412 1.548 5.206 5.206 0 0 0-.841.948c-.719 1.027-.985 2.08-.596 2.353.39.273 1.289-.338 2.007-1.364a5.23 5.23 0 0 0 .595-1.092 8.514 8.514 0 0 0 3.961 1.219 5.01 5.01 0 0 0-.183 1.396c0 1.253.386 2.269.861 2.269.476 0 .862-1.016.862-2.269 0-.542-.072-1.04-.193-1.43a8.52 8.52 0 0 0 3.9-1.42c.121.4.352.865.675 1.327.719 1.026 1.617 1.637 2.007 1.364.39-.273.123-1.326-.596-2.353-.343-.49-.727-.885-1.077-1.135a8.69 8.69 0 0 0 1.202-1.36h-1.771a7.174 7.174 0 0 1-5.227 2.252 7.174 7.174 0 0 1-5.226-2.252z' },
+}
+
+function BrandLogo({ name, size = 15 }: { name: string; size?: number }) {
+  const logo = BRAND_LOGOS[name]
+  if (!logo) return null
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true">
+      <path d={logo.path} fill={logo.hex} />
+    </svg>
+  )
+}
+
+export async function generateStaticParams() {
+  return [{ lang: 'th' }, { lang: 'en' }]
+}
+
+export default function Page({ params }: { params: { lang: Lang } }) {
+  const isEN = params.lang === 'en'
+  const prefix = `/${params.lang}`
+
+  const badge    = isEN ? 'Infrastructure / Cloud Services'  : 'โครงสร้างพื้นฐาน / Cloud Services'
+  const title    = isEN ? 'Cloud Architecture'  : 'สถาปัตยกรรม Cloud'
+  const subtitle = isEN ? 'That Scales With You'    : 'ที่เติบโตไปพร้อมธุรกิจคุณ'
+  const heroDesc = isEN ? 'Cloud architecture, migration, and FinOps on AWS, Google Cloud, and Azure — secure, observable, and cost-aware.'  : 'ออกแบบ Cloud Architecture, ทำ Migration และดูแล FinOps บน AWS, Google Cloud และ Azure ปลอดภัย ตรวจสอบได้ และคุมต้นทุนได้จริง'
+  const whyTitle = isEN ? 'Why unmanaged cloud spend quietly bleeds your business'    : 'ทำไม Cloud ที่ไม่ถูกดูแลถึงเผาเงินคุณอย่างเงียบๆ'
+  const whyDesc  = isEN ? 'Most companies overspend on cloud by 30% or more without noticing — idle instances, unused storage, and over-provisioned services add up fast when nobody owns the bill.'  : 'ธุรกิจส่วนใหญ่จ่ายค่า Cloud เกินจริง 30% หรือมากกว่านั้นโดยไม่รู้ตัว จาก Instance ที่ไม่ได้ใช้ Storage ที่ค้างอยู่ และ Service ที่ Provision เกินความจำเป็น เมื่อไม่มีใครดูแลบิลอย่างจริงจัง'
+  const ctaTitle = isEN ? 'Ready to fix your cloud?'    : 'พร้อมจัดระเบียบ Cloud ของคุณไหม?'
+  const ctaDesc  = isEN ? 'Start with a free cloud cost & architecture review. We will show you where the money and risk are.'   : 'เริ่มด้วยการตรวจสอบ Cloud Cost และ Architecture ฟรี เราจะชี้ให้เห็นว่าเงินและความเสี่ยงอยู่ตรงไหน'
+  const overviewText = isEN
+    ? 'We design and operate scalable cloud platforms with cost predictability built in from day one. That covers migrations off on-premises systems, consolidating sprawling multi-cloud environments, and running production Kubernetes — with security, compliance, infrastructure automation, networking, identity, observability, and cost optimization treated as part of the architecture, not an afterthought bolted on after something breaks.'
+    : 'เราออกแบบและดูแล Cloud Platform ที่ Scale ได้ พร้อมควบคุมต้นทุนได้ตั้งแต่วันแรก ครอบคลุมตั้งแต่การ Migrate ออกจากระบบ On-premises การรวม Multi-cloud ที่กระจัดกระจายให้เป็นระบบเดียว ไปจนถึงการดูแล Kubernetes ระดับ Production โดยให้ Security, Compliance, Infrastructure Automation, Networking, Identity และ Cost Optimization เป็นส่วนหนึ่งของ Architecture ตั้งแต่ต้น ไม่ใช่สิ่งที่มาเสริมทีหลังตอนระบบมีปัญหา'
+
+  const heroBullets = isEN ? [
+      'Cloud migration with rollback-safe, phased cutover plans',
+      'Multi-cloud and hybrid architecture without unnecessary lock-in',
+      'FinOps discipline that keeps spend predictable and visible',
+      'Secure-by-default identity, network, and secrets management',
+      'Kubernetes operations for teams running production workloads',
+    ] : [
+      'Migrate Cloud ด้วยแผน Cutover แบบ Phased ที่ Rollback ได้ปลอดภัย',
+      'ออกแบบ Multi-cloud และ Hybrid Architecture โดยไม่ผูกติด Vendor เกินจำเป็น',
+      'วินัย FinOps ที่ทำให้ค่าใช้จ่ายคาดการณ์ได้และมองเห็นชัดเจน',
+      'วาง Identity, Network และ Secrets Management แบบ Secure-by-default',
+      'ดูแล Kubernetes สำหรับทีมที่รัน Production Workload จริง',
+    ]
+  const whyPoints   = isEN ? [
+      'Idle instances and over-provisioned services routinely account for 30%+ of a typical cloud bill.',
+      'Phased migrations with rollback checkpoints cut business disruption to near zero.',
+      'Multi-cloud sprawl without a clear architecture creates both cost and security blind spots.',
+      'A well-run Kubernetes platform reduces deployment time from days to minutes.',
+      'Security built into the architecture from day one is far cheaper than retrofitting it after an incident.',
+    ] : [
+      'Instance ที่ไม่ได้ใช้และ Service ที่ Provision เกินมักคิดเป็น 30% ขึ้นไปของบิล Cloud ทั่วไป',
+      'การ Migrate แบบ Phased พร้อมจุด Rollback ช่วยลด Disruption ทางธุรกิจให้เกือบเป็นศูนย์',
+      'Multi-cloud ที่กระจัดกระจายโดยไม่มี Architecture ชัดเจน สร้างทั้งจุดบอดด้านต้นทุนและความปลอดภัย',
+      'Kubernetes Platform ที่ดูแลดี ลดเวลา Deploy จากหลักวันเหลือหลักนาที',
+      'การวาง Security ไว้ใน Architecture ตั้งแต่ต้น ถูกกว่าการแก้ไขย้อนหลังหลังเกิดเหตุมาก',
+    ]
+  const outcomes    = isEN ? [
+      {stat: '30%', label: 'Average Cost Reduction', desc: 'After FinOps review and right-sizing'},
+      {stat: '99.9%', label: 'Uptime SLA', desc: 'Multi-AZ redundant architecture'},
+      {stat: '0', label: 'Downtime Migrations', desc: 'With rollback-safe cutover plans'},
+      {stat: '24/7', label: 'Platform Monitoring', desc: 'Observability from day one'}
+    ] : [
+      {stat: '30%', label: 'ลดต้นทุนเฉลี่ย', desc: 'หลังทำ FinOps Review และ Right-sizing'},
+      {stat: '99.9%', label: 'Uptime SLA', desc: 'Architecture แบบ Multi-AZ Redundant'},
+      {stat: '0', label: 'Downtime จากการ Migrate', desc: 'ด้วยแผน Cutover ที่ Rollback ได้'},
+      {stat: '24/7', label: 'Monitoring Platform', desc: 'วาง Observability ตั้งแต่วันแรก'}
+    ]
+  const features    = isEN ? [
+      {icon: 'ti-cloud-upload', title: 'Migration & Cutover', desc: 'Phased migrations with rollback checkpoints, data validation, and minimal downtime.'},
+      {icon: 'ti-topology-star-3', title: 'Multi-Cloud & Hybrid', desc: 'Architecture that avoids unnecessary vendor lock-in and architectural bloat.'},
+      {icon: 'ti-currency-dollar', title: 'FinOps & Cost Control', desc: 'Instance optimization, capacity planning, and spend transparency tied to outcomes.'},
+      {icon: 'ti-shield-lock', title: 'Cloud Security Posture', desc: 'Identity controls, network segmentation, secrets management, continuous compliance.'},
+      {icon: 'ti-brand-kubernetes', title: 'Kubernetes Operations', desc: 'Production-grade container orchestration with autoscaling and self-healing.'},
+      {icon: 'ti-chart-dots', title: 'Observability', desc: 'Monitoring, logging, and alerting so issues are caught before customers notice.'}
+    ] : [
+      {icon: 'ti-cloud-upload', title: 'Migration & Cutover', desc: 'Migrate แบบ Phased พร้อมจุด Rollback, Data Validation และ Downtime ต่ำสุด'},
+      {icon: 'ti-topology-star-3', title: 'Multi-Cloud & Hybrid', desc: 'Architecture ที่ไม่ผูกติด Vendor เกินจำเป็นและไม่บวมเกินความจำเป็น'},
+      {icon: 'ti-currency-dollar', title: 'FinOps & Cost Control', desc: 'Optimize Instance, วางแผน Capacity และมองเห็นค่าใช้จ่ายที่ผูกกับผลลัพธ์ธุรกิจ'},
+      {icon: 'ti-shield-lock', title: 'Cloud Security Posture', desc: 'Identity Control, Network Segmentation, Secrets Management และ Compliance ต่อเนื่อง'},
+      {icon: 'ti-brand-kubernetes', title: 'Kubernetes Operations', desc: 'Container Orchestration ระดับ Production พร้อม Autoscaling และ Self-healing'},
+      {icon: 'ti-chart-dots', title: 'Observability', desc: 'Monitoring, Logging และ Alerting เพื่อจับปัญหาก่อนที่ลูกค้าจะรู้ตัว'}
+    ]
+  const steps       = isEN ? [
+      {no: '01', title: 'Assessment', desc: 'Evaluate workloads, dependencies, and migration risks.'},
+      {no: '02', title: 'Planning', desc: 'Design landing zones and sequence migration phases.'},
+      {no: '03', title: 'Migration', desc: 'Execute transfers, verify data integrity, transition systems.'},
+      {no: '04', title: 'Optimize', desc: 'Improve cost, throughput, and system resilience.'},
+      {no: '05', title: 'Observe', desc: 'Implement monitoring and operational procedures.'},
+      {no: '06', title: 'Support', desc: 'Provide ongoing cloud platform operations.'}
+    ] : [
+      {no: '01', title: 'Assessment', desc: 'ประเมิน Workload, Dependency และความเสี่ยงในการ Migrate'},
+      {no: '02', title: 'Planning', desc: 'ออกแบบ Landing Zone และลำดับขั้นตอนการ Migrate'},
+      {no: '03', title: 'Migration', desc: 'ดำเนินการย้ายระบบ ตรวจสอบความถูกต้องของข้อมูล'},
+      {no: '04', title: 'Optimize', desc: 'ปรับปรุงต้นทุน Throughput และความทนทานของระบบ'},
+      {no: '05', title: 'Observe', desc: 'วาง Monitoring และขั้นตอนการดูแลระบบ'},
+      {no: '06', title: 'Support', desc: 'ดูแล Cloud Platform อย่างต่อเนื่อง'}
+    ]
+  const caseStudies = isEN ? [
+      {tag: 'FinTech · Bangkok', title: 'On-prem to AWS Migration, Zero Downtime', desc: 'Phased cutover of core banking workloads with full rollback safety net.', result: 'Cost down 34%'},
+      {tag: 'Retail · Nationwide', title: 'Multi-Cloud Consolidation to GCP', desc: 'Unified 6 scattered cloud accounts into one governed platform.', result: 'Ops overhead down 50%'},
+      {tag: 'Logistics · Bangkok', title: 'Kubernetes Platform for 40+ Microservices', desc: 'Self-healing, autoscaling platform replacing manual VM deployments.', result: 'Deploy time: days to minutes'}
+    ] : [
+      {tag: 'FinTech · กรุงเทพฯ', title: 'Migrate On-prem สู่ AWS แบบ Zero Downtime', desc: 'Cutover Workload ธนาคารแบบ Phased พร้อม Rollback Safety Net เต็มรูปแบบ', result: 'ต้นทุนลดลง 34%'},
+      {tag: 'Retail · ทั่วประเทศ', title: 'รวม Multi-Cloud เข้าสู่ GCP', desc: 'รวม Cloud Account ที่กระจัดกระจาย 6 บัญชีเป็น Platform เดียวที่ควบคุมได้', result: 'ภาระงาน Ops ลดลง 50%'},
+      {tag: 'Logistics · กรุงเทพฯ', title: 'Kubernetes Platform สำหรับ 40+ Microservices', desc: 'Platform แบบ Self-healing, Autoscaling แทนการ Deploy VM ด้วยมือ', result: 'เวลา Deploy: วัน เหลือ นาที'}
+    ]
+  const faqs        = isEN ? [
+      {q: 'Which cloud platforms do you support?', a: 'AWS, Google Cloud, and Azure, with Kubernetes, Docker, Terraform, and Helm for infrastructure as code.'},
+      {q: 'Can you migrate without business disruption?', a: 'Yes. Phased migration planning includes rollback checkpoints and parallel operation until validation confirms success.'},
+      {q: 'Will this reduce our cloud bill?', a: 'Usually. Cost review identifies savings through right-sizing and unused resource elimination before any structural changes.'},
+      {q: 'How do you approach security?', a: 'Secure by default — least-privilege IAM, network isolation, secrets management, and audit logging from day one.'}
+    ] : [
+      {q: 'รองรับ Cloud Platform ไหนบ้าง?', a: 'AWS, Google Cloud และ Azure พร้อม Kubernetes, Docker, Terraform และ Helm สำหรับ Infrastructure as Code'},
+      {q: 'Migrate ได้โดยไม่กระทบธุรกิจไหม?', a: 'ได้ครับ แผน Migrate แบบ Phased มีจุด Rollback และรันคู่ขนานจนกว่าจะ Validate สำเร็จ'},
+      {q: 'จะช่วยลดค่า Cloud ได้ไหม?', a: 'โดยทั่วไปได้ครับ Cost Review จะหาจุดประหยัดจาก Right-sizing และ Resource ที่ไม่ได้ใช้ก่อนปรับ Structure'},
+      {q: 'ดูแล Security ยังไง?', a: 'Secure by Default — IAM แบบ Least-privilege, Network Isolation, Secrets Management และ Audit Logging ตั้งแต่วันแรก'}
+    ]
+  const related     = isEN ? [
+      {label: 'Application Modernization', href: '/services/application-modernization'},
+      {label: 'Cybersecurity', href: '/services/cybersecurity'},
+      {label: 'Digital Transformation', href: '/services/digital-transformation'},
+      {label: 'Managed Services & Support', href: '/services/support-maintenance'}
+    ] : [
+      {label: 'ปรับปรุงระบบเดิม', href: '/services/application-modernization'},
+      {label: 'ความปลอดภัยไซเบอร์', href: '/services/cybersecurity'},
+      {label: 'Digital Transformation', href: '/services/digital-transformation'},
+      {label: 'บริการดูแลระบบ', href: '/services/support-maintenance'}
+    ]
+
+  const cloudLines = [
+    { n: 1, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>terraform apply --target=prod</span></> },
+    { n: 2, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? '14 resources migrated · 0 errors' : 'ย้าย 14 Resource · 0 Error'}</> },
+    { n: 3, jsx: <>&nbsp;</> },
+    { n: 4, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>kubectl rollout status</span></> },
+    { n: 5, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'deployment "api" rolled out' : 'deployment "api" สำเร็จ'}</> },
+    { n: 6, jsx: <>&nbsp;</> },
+    { n: 7, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>{isEN ? 'finops --report monthly' : 'finops --report monthly'}</span></> },
+    { n: 8, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Spend down 34% vs last cycle' : 'ค่าใช้จ่ายลด 34% จากรอบก่อน'}</> },
+  ]
+
+  const heroSlot = (
+    <div className="relative pb-10 pr-6">
+      <div className="rounded-2xl overflow-hidden" style={{ background: '#141329', border: '1px solid rgba(123,110,246,0.35)' }}>
+        <div className="flex items-center gap-2 px-5 py-3.5" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+          <span className="w-2.5 h-2.5 rounded-full" style={{ background: '#F87171' }} />
+          <span className="w-2.5 h-2.5 rounded-full" style={{ background: '#FBBF24' }} />
+          <span className="w-2.5 h-2.5 rounded-full" style={{ background: '#34D399' }} />
+          <span className="ml-3 text-xs" style={{ color: 'rgba(255,255,255,0.85)', fontFamily: 'monospace' }}>deploy.sh</span>
+        </div>
+        <div className="px-6 py-6" style={{ fontFamily: 'monospace', fontSize: '0.9rem', lineHeight: 1.9, color: 'rgba(255,255,255,0.85)' }}>
+          {cloudLines.map((l) => (
+            <div key={l.n} className="flex gap-4">
+              <span style={{ color: 'rgba(255,255,255,0.25)', width: 16, textAlign: 'right' }}>{l.n}</span>
+              <span>{l.jsx}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div
+        className="absolute -bottom-2 -right-2 w-[220px] rounded-2xl p-4"
+        style={{ background: '#1B1A33', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 20px 50px -10px rgba(0,0,0,0.6)' }}
+      >
+        <div className="flex items-center justify-between mb-3">
+          <span className="text-[10px] tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.85)' }}>{isEN ? 'Cloud Spend' : 'ค่าใช้จ่าย Cloud'}</span>
+          <span className="w-2 h-2 rounded-full" style={{ background: 'var(--lime)' }} />
+        </div>
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-12 h-12 rounded-lg flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg,var(--purple),var(--purple-light))' }}>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8M21 7v6h-6" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
+          </div>
+          <div className="flex-1 space-y-1.5">
+            <div className="h-1.5 rounded-full" style={{ background: 'rgba(255,255,255,0.15)', width: '80%' }} />
+            <div className="h-1.5 rounded-full" style={{ background: 'rgba(255,255,255,0.15)', width: '55%' }} />
+            <div className="h-3.5 rounded-full" style={{ background: 'linear-gradient(90deg,var(--purple),var(--lime))', width: '66%' }} />
+          </div>
+        </div>
+        <div className="flex items-center gap-1.5 text-xs" style={{ color: 'var(--lime)' }}>
+          <i className="ti ti-circle-check" style={{ fontSize: 13 }} aria-hidden="true" />
+          {isEN ? '34% cost reduction' : 'ลดต้นทุน 34%'}
+        </div>
+      </div>
+    </div>
+  )
+
+  const capabilities = isEN ? [
+    { icon: 'ti-cloud-upload', title: 'Migration & Cutover', desc: 'Phased migrations incorporating rollback strategies, data validation, and reduced downtime.' },
+    { icon: 'ti-topology-star-3', title: 'Multi-Cloud & Hybrid', desc: 'Architecture selection that avoids unnecessary vendor dependency or architectural bloat.' },
+    { icon: 'ti-currency-dollar', title: 'FinOps & Cost Control', desc: 'Instance optimization, capacity reservations, and spending transparency aligned with business outcomes.' },
+    { icon: 'ti-shield-lock', title: 'Cloud Security Posture', desc: 'Identity controls, network segmentation, secrets management, and continuous compliance monitoring.' },
+  ] : [
+    { icon: 'ti-cloud-upload', title: 'Migration & Cutover', desc: 'Migrate แบบ Phased พร้อมกลยุทธ์ Rollback, Data Validation และลด Downtime' },
+    { icon: 'ti-topology-star-3', title: 'Multi-Cloud & Hybrid', desc: 'เลือก Architecture ที่ไม่ผูกติด Vendor เกินจำเป็นและไม่บวมเกินความจำเป็น' },
+    { icon: 'ti-currency-dollar', title: 'FinOps & Cost Control', desc: 'Optimize Instance, จอง Capacity และสร้างความโปร่งใสด้านค่าใช้จ่ายที่ผูกกับผลลัพธ์ธุรกิจ' },
+    { icon: 'ti-shield-lock', title: 'Cloud Security Posture', desc: 'Identity Control, Network Segmentation, Secrets Management และ Compliance ต่อเนื่อง' },
+  ]
+
+  const techStack = [
+    { label: 'AWS', icon: 'ti-brand-aws' },
+    { label: 'Google Cloud', svg: 'googlecloud' },
+    { label: 'Azure', icon: 'ti-brand-azure' },
+    { label: 'Kubernetes', svg: 'kubernetes' },
+    { label: 'Docker', svg: 'docker' },
+    { label: 'Terraform', svg: 'terraform' },
+    { label: 'Pulumi', svg: 'pulumi' },
+    { label: 'Helm', svg: 'helm' },
+  ] as { label: string; icon?: string; svg?: string }[]
+
+  const approachSteps = isEN ? [
+    { no: '01', title: 'Assessment', desc: 'Workloads, dependencies, and risks' },
+    { no: '02', title: 'Planning', desc: 'Landing zones and migration sequence' },
+    { no: '03', title: 'Migration', desc: 'Transfer, verify, transition systems' },
+    { no: '04', title: 'Optimize', desc: 'Cost, throughput, and resilience' },
+    { no: '05', title: 'Observe', desc: 'Monitoring and operational runbooks' },
+    { no: '06', title: 'Support', desc: 'Ongoing platform operations' },
+  ] : [
+    { no: '01', title: 'Assessment', desc: 'ประเมิน Workload, Dependency และความเสี่ยง' },
+    { no: '02', title: 'Planning', desc: 'ออกแบบ Landing Zone และลำดับการ Migrate' },
+    { no: '03', title: 'Migration', desc: 'ย้ายระบบ ตรวจสอบ และเปลี่ยนผ่าน' },
+    { no: '04', title: 'Optimize', desc: 'ปรับปรุงต้นทุน Throughput และความทนทาน' },
+    { no: '05', title: 'Observe', desc: 'วาง Monitoring และขั้นตอนดูแลระบบ' },
+    { no: '06', title: 'Support', desc: 'ดูแล Platform อย่างต่อเนื่อง' },
+  ]
+
+  const darkFaqs = isEN ? [
+    { q: 'Which cloud platforms does Haliviq support?', a: 'AWS, Google Cloud, and Azure, with Kubernetes, Docker, Terraform, Pulumi, and Helm for infrastructure as code. We pick the platform and toolset pragmatically based on your team\'s existing skills and workload requirements — not a house preference we push on every client.' },
+    { q: 'Can you migrate us without business disruption?', a: 'Yes. Every migration plan includes predetermined rollback checkpoints, pre-cutover rehearsals, and a period of parallel system operation until validation confirms the new environment is stable. If something goes wrong mid-cutover, we roll back to the known-good state rather than pushing through.' },
+    { q: 'Will this actually reduce our cloud bill?', a: 'In almost every engagement, yes. Cost considerations inform every architecture decision from the start, and our FinOps reviews typically identify 20-40% in savings through instance right-sizing, unused resource elimination, and storage tier optimization before we even propose any structural changes.' },
+    { q: 'How do you approach cloud security?', a: 'Secure by default: least-privilege IAM, network isolation, secrets management, and audit logging are part of the initial architecture, not bolted on afterward. We build in comprehensive monitoring from day one so anomalies get caught early, not discovered during an incident review.' },
+    { q: 'Do you support hybrid or multi-cloud setups?', a: 'Yes, when there is a real business reason for it — regulatory requirements, vendor risk diversification, or workload-specific strengths. We are explicit about the added operational complexity multi-cloud brings, and we do not recommend it just because it sounds more resilient on paper.' },
+    { q: 'How long does a typical migration take?', a: 'A single-application migration with moderate complexity usually takes 6-10 weeks from assessment to cutover. A full data-center exit or large-scale multi-cloud consolidation can run 4-9 months, phased so that each application group is validated in production before the next one begins.' },
+    { q: 'What happens to our systems during Kubernetes adoption?', a: 'We containerize incrementally, starting with stateless services that benefit most from autoscaling, and build the platform around your existing CI/CD rather than forcing a rewrite. Legacy systems that are not good Kubernetes candidates stay on their current infrastructure until it makes sense to move them.' },
+    { q: 'Who owns the infrastructure code and cloud accounts afterward?', a: 'You do, entirely. All Terraform/Pulumi code, CI/CD pipelines, and documentation live in your own repositories and cloud accounts from day one — we work inside your environment rather than a separate one we control, so there is no migration needed at handover.' },
+  ] : [
+    { q: 'Haliviq รองรับ Cloud Platform ไหนบ้าง?', a: 'AWS, Google Cloud และ Azure พร้อม Kubernetes, Docker, Terraform, Pulumi และ Helm สำหรับ Infrastructure as Code เราเลือก Platform และเครื่องมือตามความเหมาะสมจริง ตามทักษะทีมคุณและความต้องการของ Workload ไม่ใช่ความชอบส่วนตัวที่ยัดเยียดให้ทุกลูกค้า' },
+    { q: 'Migrate ได้โดยไม่กระทบธุรกิจใช่ไหม?', a: 'ใช่ครับ ทุกแผน Migrate มีจุด Rollback ที่กำหนดไว้ล่วงหน้า มีการซ้อม Cutover ก่อนจริง และมีช่วงเวลาที่ระบบเก่าและใหม่รันคู่ขนานกันจนกว่าจะ Validate ว่าเสถียร หากมีปัญหาระหว่าง Cutover เราจะ Rollback กลับไปสถานะที่รู้ว่าปลอดภัย ไม่ฝืนดันต่อ' },
+    { q: 'จะช่วยลดค่าใช้จ่าย Cloud ได้จริงไหม?', a: 'เกือบทุกโปรเจกต์ได้ครับ เราคำนึงถึงต้นทุนในทุกการตัดสินใจด้าน Architecture ตั้งแต่ต้น และ FinOps Review ของเรามักพบโอกาสประหยัด 20-40% จาก Right-sizing, การตัด Resource ที่ไม่ได้ใช้ และ Optimize Storage Tier ก่อนที่จะเสนอปรับ Structure ใดๆ ด้วยซ้ำ' },
+    { q: 'ดูแล Security ของ Cloud อย่างไร?', a: 'Secure by Default ครับ — IAM แบบ Least-privilege, Network Isolation, Secrets Management และ Audit Logging เป็นส่วนหนึ่งของ Architecture ตั้งแต่ต้น ไม่ใช่มาติดตั้งเพิ่มทีหลัง เรามี Monitoring ครอบคลุมตั้งแต่วันแรกเพื่อจับความผิดปกติได้ไว ไม่ใช่มาพบตอนสอบสวนเหตุการณ์' },
+    { q: 'รองรับ Hybrid หรือ Multi-cloud ไหม?', a: 'รองรับครับ เมื่อมีเหตุผลทางธุรกิจจริง เช่น ข้อกำหนดด้าน Regulation, การกระจายความเสี่ยงด้าน Vendor หรือจุดแข็งเฉพาะของแต่ละ Workload เราจะบอกตรงๆ ถึงความซับซ้อนด้าน Operation ที่เพิ่มขึ้นจาก Multi-cloud และไม่แนะนำเพียงเพราะฟังดูทนทานกว่าบนกระดาษ' },
+    { q: 'การ Migrate ทั่วไปใช้เวลานานแค่ไหน?', a: 'Migrate แอปพลิเคชันเดียวที่ความซับซ้อนปานกลาง มักใช้เวลา 6-10 สัปดาห์ตั้งแต่ Assessment ถึง Cutover ส่วนการปิด Data Center ทั้งหมดหรือรวม Multi-cloud ขนาดใหญ่ อาจใช้เวลา 4-9 เดือน โดยแบ่งเป็น Phase ให้แต่ละกลุ่มแอปพลิเคชัน Validate บน Production ก่อนเริ่มกลุ่มถัดไป' },
+    { q: 'ระหว่างปรับใช้ Kubernetes ระบบเดิมจะเป็นอย่างไร?', a: 'เรา Containerize แบบค่อยเป็นค่อยไป เริ่มจาก Stateless Service ที่ได้ประโยชน์จาก Autoscaling มากที่สุด และสร้าง Platform รอบ CI/CD เดิมของคุณ แทนที่จะบังคับ Rewrite ระบบเก่าที่ไม่เหมาะกับ Kubernetes จะยังอยู่บน Infrastructure เดิมจนกว่าจะถึงเวลาที่ควรย้าย' },
+    { q: 'Infrastructure Code และ Cloud Account เป็นของใครหลังจบโปรเจกต์?', a: 'เป็นของคุณทั้งหมดครับ Terraform/Pulumi Code, CI/CD Pipeline และเอกสารทั้งหมดอยู่ใน Repository และ Cloud Account ของคุณเองตั้งแต่วันแรก เราทำงานในสภาพแวดล้อมของคุณ ไม่ใช่สภาพแวดล้อมแยกที่เราควบคุม จึงไม่ต้อง Migrate อะไรตอนส่งมอบ' },
+  ]
+
+  const postHeroSlot = (
+    <>
+    <section className="relative overflow-hidden" style={{ background: '#08070F' }}>
+      <div className="relative max-w-7xl mx-auto px-4 lg:px-10 pb-24 lg:pb-32">
+        <div className="rounded-2xl p-10 lg:p-16 mb-16 lg:mb-24" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
+          <div className="w-12 h-[3px] rounded-full mb-8" style={{ background: 'linear-gradient(90deg, var(--purple-light), var(--lime))' }} />
+          <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
+            {overviewText}
+          </p>
+        </div>
+
+        <p className="mb-5 text-xs tracking-widest uppercase" style={{ color: 'var(--lime)', fontWeight: 600 }}>
+          {isEN ? 'Capabilities' : 'ความสามารถ'}
+        </p>
+        <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
+          {isEN ? 'Key Capabilities' : 'ความสามารถหลัก'}
+        </h2>
+        <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400 }}>
+          {isEN ? 'Concrete capabilities we bring to this engagement — not buzzwords.' : 'ความสามารถที่จับต้องได้จริงที่เรานำมาใช้ในทุกโปรเจกต์ ไม่ใช่แค่คำสวยหรู'}
+        </p>
+
+        <div className="grid sm:grid-cols-2 gap-5">
+          {capabilities.map((c) => (
+            <div key={c.title} className="p-8 rounded-2xl" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
+              <div className="flex items-start gap-5">
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'rgba(123,110,246,0.15)' }}>
+                  <i className={`ti ${c.icon}`} style={{ fontSize: 20, color: 'var(--purple-light)' }} aria-hidden="true" />
+                </div>
+                <div>
+                  <h3 className="mb-2" style={{ color: '#fff', fontWeight: 600, fontSize: '1.35rem' }}>{c.title}</h3>
+                  <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>{c.desc}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-16 lg:mt-24">
+          <p className="mb-5 text-xs tracking-widest uppercase" style={{ color: 'var(--lime)', fontWeight: 600 }}>
+            {isEN ? 'Tools We Use' : 'เครื่องมือที่ใช้'}
+          </p>
+          <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
+            {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้งาน'}
+          </h2>
+          <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
+            {isEN
+              ? 'Proven cloud platforms and infrastructure tools we apply where they fit — chosen for the problem, not the trend cycle.'
+              : 'Cloud Platform และเครื่องมือ Infrastructure ที่พิสูจน์แล้ว เลือกใช้ตามโจทย์งานจริง ไม่ใช่ตามกระแส'}
+          </p>
+
+          <div className="flex flex-wrap gap-3">
+            {techStack.map((t) => (
+              <span
+                key={t.label}
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-base"
+                style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.85)', fontWeight: 400 }}
+              >
+                {t.label}
+                {t.svg ? (
+                  <BrandLogo name={t.svg} />
+                ) : (
+                  <i className={`ti ${t.icon}`} style={{ fontSize: 15, color: 'var(--purple-light)' }} aria-hidden="true" />
+                )}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-16 lg:mt-24">
+          <p className="mb-5 text-xs tracking-widest uppercase" style={{ color: 'var(--lime)', fontWeight: 600 }}>
+            {isEN ? 'How We Work' : 'วิธีการทำงาน'}
+          </p>
+          <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
+            {isEN ? 'Our Approach' : 'แนวทางการทำงานของเรา'}
+          </h2>
+          <p className="mb-16" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
+            {isEN
+              ? 'A clear path from assessment to steady-state operations — adjusted per platform, never one-size-fits-all.'
+              : 'เส้นทางที่ชัดเจนจากการประเมินสู่การดำเนินงานที่มั่นคง ปรับตามแต่ละ Platform ไม่ใช่สูตรสำเร็จตายตัว'}
+          </p>
+
+          <div className="relative">
+            <div
+              className="hidden lg:block absolute left-0 right-0"
+              style={{ top: 32, height: 1, background: 'linear-gradient(90deg, rgba(123,110,246,0.5), rgba(196,255,92,0.5))' }}
+            />
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-14">
+              {approachSteps.map((s) => (
+                <div key={s.no} className="relative">
+                  <div
+                    className="relative z-10 w-16 h-16 rounded-full flex items-center justify-center mb-6 font-mono"
+                    style={{
+                      background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)',
+                      boxShadow: '0 8px 24px -8px rgba(123,110,246,0.6)',
+                      color: '#fff',
+                      fontSize: '1.05rem',
+                      fontWeight: 600,
+                    }}
+                  >
+                    {s.no}
+                  </div>
+                  <h3 className="mb-2" style={{ color: '#fff', fontWeight: 600, fontSize: '1.2rem' }}>{s.title}</h3>
+                  <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1rem', fontWeight: 400 }}>{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-16 lg:mt-24">
+          <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
+            {isEN ? 'Frequently Asked Questions' : 'คำถามที่พบบ่อย'}
+          </h2>
+          <p className="mb-4" style={{ color: 'var(--lime)', fontSize: '1.2rem', fontWeight: 600 }}>
+            {isEN ? 'Straight answers about how we run cloud platforms.' : 'คำตอบตรงไปตรงมาเกี่ยวกับวิธีที่เราดูแล Cloud Platform'}
+          </p>
+
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+            {darkFaqs.map((f, i) => (
+              <details key={f.q} className="group marker:hidden [&::-webkit-details-marker]:hidden" style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }} open={i === 0}>
+                <summary className="flex items-center justify-between gap-6 cursor-pointer list-none py-6">
+                  <span style={{ color: '#fff', fontSize: 'clamp(1.15rem,1.8vw,1.4rem)', fontWeight: 500 }}>{f.q}</span>
+                  <i className="ti ti-chevron-down shrink-0 transition-transform duration-300 group-open:rotate-180" style={{ fontSize: 20, color: 'rgba(255,255,255,0.85)' }} aria-hidden="true" />
+                </summary>
+                <p className="pb-6 leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.15rem', fontWeight: 400, maxWidth: 900 }}>
+                  {f.a}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="relative overflow-hidden" style={{ background: '#050308' }}>
+      <div
+        className="absolute inset-0 pointer-events-none opacity-40"
+        style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '180px 180px, 260px 260px', backgroundPosition: '0 0, 90px 130px' }}
+      />
+      <div
+        className="absolute left-0 right-0 bottom-0 pointer-events-none"
+        style={{ height: 260, background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(123,110,246,0.35) 0%, rgba(196,255,92,0.08) 45%, transparent 75%)' }}
+      />
+      <div className="relative max-w-7xl mx-auto px-4 lg:px-10 py-28 lg:py-36">
+        <h2 className="t-display mb-5 leading-tight" style={{ color: '#fff', fontSize: 'clamp(2.5rem,5.5vw,4.2rem)' }}>
+          {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
+        </h2>
+        <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
+          {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+        </p>
+        <div className="flex flex-wrap items-center gap-6">
+          <Link
+            href={`${prefix}/contact`}
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-medium transition-opacity hover:opacity-90"
+            style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}
+          >
+            {isEN ? 'Start a Conversation' : 'เริ่มบทสนทนา'}
+            <i className="ti ti-arrow-right" style={{ fontSize: 17 }} aria-hidden="true" />
+          </Link>
+          <a href="mailto:wu@haliviq.com" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>
+            wu@haliviq.com
+          </a>
+        </div>
+      </div>
+    </section>
+    </>
+  )
+
+  return (
+    <ServiceLayout
+      lang={params.lang as Lang}
+      badge={badge} title={title} subtitle={subtitle}
+      heroDesc={heroDesc} heroBullets={heroBullets}
+      heroDark heroSlot={heroSlot} heroShowSecondaryCta={false}
+      heroCtaLabel={isEN ? 'Get Started' : 'เริ่มต้นเลย'}
+      postHeroSlot={postHeroSlot}
+      whyTitle={whyTitle} whyDesc={whyDesc} whyPoints={whyPoints}
+      outcomes={outcomes} ctaTitle={ctaTitle} ctaDesc={ctaDesc}
+      features={features} steps={steps} caseStudies={caseStudies}
+      faqs={faqs} related={related}
+      color="var(--purple)" bg="var(--purple-bg)"
+      whyImg="/images/services/cloud-services-migration/why1.jpg"
+      whyImg2="/images/services/cloud-services-migration/why2.jpg"
+      featureImg="/images/services/cloud-services-migration/feature.jpg"
+      processImg="/images/services/cloud-services-migration/process.jpg"
+    />
+  )
+}
