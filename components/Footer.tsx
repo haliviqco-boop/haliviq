@@ -21,7 +21,7 @@ export default function Footer({ lang, tr }: Props) {
   return (
     <footer style={{ background: '#08070F' }}>
       <div className="max-w-7xl mx-auto px-4 lg:px-10">
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-6 py-16 lg:py-20">
+        <div className="grid grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-6 py-16 lg:py-20">
           {/* Brand column */}
           <div className="col-span-2">
             <img src="/haliviq-logo-light.svg" alt="Haliviq" className="h-9 w-auto mb-4" />
@@ -42,29 +42,6 @@ export default function Footer({ lang, tr }: Props) {
                   {svg}
                 </a>
               ))}
-            </div>
-
-            <p style={{ color: '#fff', fontSize: '0.95rem', fontWeight: 500, marginBottom: 4 }}>
-              {f.legalName}
-            </p>
-
-            <div className="grid grid-cols-2 gap-6 mt-3 mb-4 max-w-md">
-              <div>
-                <p className="mb-1.5" style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-                  {f.thailandLabel}
-                </p>
-                <div style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.85rem', fontWeight: 400, lineHeight: 1.7 }}>
-                  {(f.addressLines as string[]).map((line: string) => <p key={line}>{line}</p>)}
-                </div>
-              </div>
-              <div>
-                <p className="mb-1.5" style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-                  {f.usaLabel}
-                </p>
-                <div style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.85rem', fontWeight: 400, lineHeight: 1.7 }}>
-                  {(f.usaAddressLines as string[]).map((line: string) => <p key={line}>{line}</p>)}
-                </div>
-              </div>
             </div>
 
             <div className="mt-3" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.85rem', fontWeight: 400, lineHeight: 1.8 }}>
@@ -90,6 +67,25 @@ export default function Footer({ lang, tr }: Props) {
               </ul>
             </div>
           ))}
+
+          {/* Company legal name + addresses — last column */}
+          <div>
+            <p className="mb-3.5" style={{ color: '#fff', fontSize: '0.95rem', fontWeight: 500, lineHeight: 1.4 }}>
+              {f.legalName}
+            </p>
+            <p className="mb-1.5" style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+              {f.thailandLabel}
+            </p>
+            <div className="mb-3.5" style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.8rem', fontWeight: 400, lineHeight: 1.6 }}>
+              {(f.addressLines as string[]).map((line: string) => <p key={line}>{line}</p>)}
+            </div>
+            <p className="mb-1.5" style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+              {f.usaLabel}
+            </p>
+            <div style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.8rem', fontWeight: 400, lineHeight: 1.6 }}>
+              {(f.usaAddressLines as string[]).map((line: string) => <p key={line}>{line}</p>)}
+            </div>
+          </div>
         </div>
 
         {/* Language switcher row */}
