@@ -47,11 +47,30 @@ export default function Footer({ lang, tr }: Props) {
             <p style={{ color: '#fff', fontSize: '0.95rem', fontWeight: 500, marginBottom: 4 }}>
               {f.legalName}
             </p>
-            <div style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.85rem', fontWeight: 400, lineHeight: 1.7 }}>
-              {(f.addressLines as string[]).map((line: string) => <p key={line}>{line}</p>)}
+
+            <div className="grid grid-cols-2 gap-6 mt-3 mb-4 max-w-md">
+              <div>
+                <p className="mb-1.5" style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+                  {f.thailandLabel}
+                </p>
+                <div style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.85rem', fontWeight: 400, lineHeight: 1.7 }}>
+                  {(f.addressLines as string[]).map((line: string) => <p key={line}>{line}</p>)}
+                </div>
+              </div>
+              <div>
+                <p className="mb-1.5" style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+                  {f.usaLabel}
+                </p>
+                <div style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.85rem', fontWeight: 400, lineHeight: 1.7 }}>
+                  {(f.usaAddressLines as string[]).map((line: string) => <p key={line}>{line}</p>)}
+                </div>
+              </div>
             </div>
+
             <div className="mt-3" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.85rem', fontWeight: 400, lineHeight: 1.8 }}>
               <p>{f.phone}</p>
+              <p>WhatsApp: {f.whatsapp}</p>
+              <p>LINE: {f.line}</p>
               <p>{f.salesLabel}: wu@haliviq.com</p>
               <p>{f.supportLabel}: info@haliviq.com</p>
             </div>
