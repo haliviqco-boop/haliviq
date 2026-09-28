@@ -35,15 +35,15 @@
   --purple-dark:  #5A4ED4;
   --purple-light: #A99CF8;
   --purple-bg:    #EEEDFB;
-  --lime:         #A8D832;
-  --lime-dark:    #8AB828;
-  --lime-light:   #C4E86A;
-  --lime-bg:      #F2F9E3;
+  --lime:         #53C3D7;
+  --lime-dark:    #3A9FB3;
+  --lime-light:   #8CD8E3;
+  --lime-bg:      #E9F7F9;
   --navy:         #1A1B2E;
   --navy-mid:     #252640;
   --navy-soft:    #3A3B5C;
-  --gradient:      linear-gradient(135deg, #7B6EF6 0%, #A99CF8 45%, #A8D832 100%);
-  --gradient-text: linear-gradient(135deg, #7B6EF6 0%, #8B82FF 50%, #A8D832 100%);
+  --gradient:      linear-gradient(135deg, #7B6EF6 0%, #A99CF8 45%, #53C3D7 100%);
+  --gradient-text: linear-gradient(135deg, #7B6EF6 0%, #8B82FF 50%, #53C3D7 100%);
   --border:   #E4E4F0;
   --surface:  #F8F8FD;
 }

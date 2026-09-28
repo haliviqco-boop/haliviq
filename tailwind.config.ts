@@ -14,10 +14,10 @@ const config: Config = {
         'purple-light': '#A99CF8',
         'purple-bg': '#EEEDFB',
         // Lime green from logo right
-        lime: '#A8D832',
-        'lime-dark': '#8AB828',
-        'lime-light': '#C4E86A',
-        'lime-bg': '#F2F9E3',
+        lime: '#53C3D7',
+        'lime-dark': '#3A9FB3',
+        'lime-light': '#8CD8E3',
+        'lime-bg': '#E9F7F9',
         // Dark navy from logo background
         navy: '#1A1B2E',
         'navy-mid': '#252640',

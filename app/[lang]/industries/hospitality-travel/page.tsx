@@ -81,7 +81,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             </div>
             <p className="text-[10px] tracking-wide" style={{ color: 'rgba(255,255,255,0.4)' }}>{isEN ? 'Tap to unlock' : 'แตะเพื่อปลดล็อก'}</p>
           </div>
-          <div className="relative w-[110px] h-[180px] rounded-lg" style={{ border: '2px solid var(--lime)', background: 'rgba(168,216,50,0.05)' }}>
+          <div className="relative w-[110px] h-[180px] rounded-lg" style={{ border: '2px solid var(--lime)', background: 'rgba(83,195,215,0.05)' }}>
             <span className="absolute top-3 left-0 right-0 text-center" style={{ color: '#fff', fontSize: '1.5rem', fontWeight: 600 }}>208</span>
             <i className="ti ti-wifi" style={{ position: 'absolute', left: 8, top: 60, fontSize: 22, color: 'var(--lime)', animation: 'iconFloat 2.2s ease-in-out infinite' }} aria-hidden="true" />
             <i className="ti ti-lock-open" style={{ position: 'absolute', right: 14, bottom: 20, fontSize: 22, color: 'var(--lime)' }} aria-hidden="true" />
@@ -221,7 +221,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
                 <div key={c.title} className="p-8 rounded-2xl" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ background: 'rgba(168,216,50,0.12)' }}>
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ background: 'rgba(83,195,215,0.12)' }}>
                     <i className={`ti ${c.icon}`} style={{ fontSize: 24, color: 'var(--lime)' }} aria-hidden="true" />
                   </div>
                   <h3 className="mb-3" style={{ color: '#fff', fontWeight: 600, fontSize: '1.3rem' }}>{c.title}</h3>
@@ -303,7 +303,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           />
           <div
             className="absolute left-0 right-0 bottom-0 pointer-events-none"
-            style={{ height: 260, background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(123,110,246,0.35) 0%, rgba(196,255,92,0.08) 45%, transparent 75%)' }}
+            style={{ height: 260, background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(123,110,246,0.35) 0%, rgba(83,195,215,0.08) 45%, transparent 75%)' }}
           />
           <div className="relative max-w-7xl mx-auto px-4 lg:px-10 py-28 lg:py-36">
             <h2 className="t-display mb-5 leading-tight" style={{ color: '#fff', fontSize: 'clamp(2.5rem,5.5vw,4.2rem)' }}>

@@ -318,7 +318,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <div className="relative">
             <div
               className="hidden lg:block absolute left-0 right-0"
-              style={{ top: 32, height: 1, background: 'linear-gradient(90deg, rgba(123,110,246,0.5), rgba(196,255,92,0.5))' }}
+              style={{ top: 32, height: 1, background: 'linear-gradient(90deg, rgba(123,110,246,0.5), rgba(83,195,215,0.5))' }}
             />
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-14">
               {approachSteps.map((s) => (
@@ -375,7 +375,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       />
       <div
         className="absolute left-0 right-0 bottom-0 pointer-events-none"
-        style={{ height: 260, background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(123,110,246,0.35) 0%, rgba(196,255,92,0.08) 45%, transparent 75%)' }}
+        style={{ height: 260, background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(123,110,246,0.35) 0%, rgba(83,195,215,0.08) 45%, transparent 75%)' }}
       />
       <div className="relative max-w-7xl mx-auto px-4 lg:px-10 py-28 lg:py-36">
         <h2 className="t-display mb-5 leading-tight" style={{ color: '#fff', fontSize: 'clamp(2.5rem,5.5vw,4.2rem)' }}>

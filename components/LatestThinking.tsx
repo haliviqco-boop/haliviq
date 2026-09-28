@@ -8,9 +8,9 @@ type Props = { lang: Lang; tr: T }
 const gradients = [
   'linear-gradient(135deg, #7B6EF6 0%, #A99CF8 100%)',
   'linear-gradient(135deg, #5A4ED4 0%, #7B6EF6 100%)',
-  'linear-gradient(135deg, #A99CF8 0%, #A8D832 100%)',
-  'linear-gradient(135deg, #7B6EF6 0%, #A8D832 100%)',
-  'linear-gradient(135deg, #5A4ED4 0%, #A8D832 100%)',
+  'linear-gradient(135deg, #A99CF8 0%, #53C3D7 100%)',
+  'linear-gradient(135deg, #7B6EF6 0%, #53C3D7 100%)',
+  'linear-gradient(135deg, #5A4ED4 0%, #53C3D7 100%)',
 ]
 
 function ArticleImage({ src, i }: { src: string; i: number }) {
@@ -67,7 +67,7 @@ export default function LatestThinking({ lang, tr }: Props) {
         className="absolute pointer-events-none"
         style={{
           top: '-15%', left: '-10%', width: '50%', aspectRatio: '1/1',
-          background: 'radial-gradient(circle, rgba(168,216,50,0.12) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(83,195,215,0.12) 0%, transparent 70%)',
           filter: 'blur(40px)',
         }}
       />

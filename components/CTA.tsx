@@ -29,7 +29,7 @@ export default function CTA({ lang, tr }: Props) {
         className="absolute pointer-events-none"
         style={{
           bottom: '-10%', left: '-10%', width: '40%', aspectRatio: '1/1',
-          background: 'radial-gradient(circle, rgba(168,216,50,0.08) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(83,195,215,0.08) 0%, transparent 70%)',
           filter: 'blur(50px)',
         }}
       />

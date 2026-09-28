@@ -75,7 +75,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           </div>
         </div>
         <div className="p-5">
-          <div className="aspect-[16/9] rounded-xl mb-4 flex items-center justify-center relative overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(123,110,246,0.18), rgba(168,216,50,0.1))' }}>
+          <div className="aspect-[16/9] rounded-xl mb-4 flex items-center justify-center relative overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(123,110,246,0.18), rgba(83,195,215,0.1))' }}>
             <svg width="130" height="70" viewBox="0 0 130 70" fill="none" style={{ animation: 'iconFloat 3s ease-in-out infinite' }}>
               <circle cx="65" cy="35" r="26" stroke="var(--purple-light)" strokeWidth="1.5" fill="none" opacity="0.5" />
               <circle cx="65" cy="35" r="16" stroke="var(--purple-light)" strokeWidth="1.5" fill="none" opacity="0.7" />
@@ -249,7 +249,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
                 <div key={c.title} className="p-8 rounded-2xl" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ background: 'rgba(168,216,50,0.12)' }}>
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ background: 'rgba(83,195,215,0.12)' }}>
                     <i className={`ti ${c.icon}`} style={{ fontSize: 24, color: 'var(--lime)' }} aria-hidden="true" />
                   </div>
                   <h3 className="mb-3" style={{ color: '#fff', fontWeight: 600, fontSize: '1.3rem' }}>{c.title}</h3>
@@ -331,7 +331,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           />
           <div
             className="absolute left-0 right-0 bottom-0 pointer-events-none"
-            style={{ height: 260, background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(123,110,246,0.35) 0%, rgba(196,255,92,0.08) 45%, transparent 75%)' }}
+            style={{ height: 260, background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(123,110,246,0.35) 0%, rgba(83,195,215,0.08) 45%, transparent 75%)' }}
           />
           <div className="relative max-w-7xl mx-auto px-4 lg:px-10 py-28 lg:py-36">
             <h2 className="t-display mb-5 leading-tight" style={{ color: '#fff', fontSize: 'clamp(2.5rem,5.5vw,4.2rem)' }}>

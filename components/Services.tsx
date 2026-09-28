@@ -3,13 +3,13 @@ import Link from 'next/link'
 import { type Lang, type T } from '@/lib/i18n'
 type Props = { lang: Lang; tr: T }
 
-// SVG icons — unique shape per service, gradient #6C60FF → #AEDC1B, navy bg
+// SVG icons — unique shape per service, gradient #6C60FF → #53C3D7, navy bg
 const GRAD_ID = 'xg'
 const GradDef = () => (
   <defs>
     <linearGradient id={GRAD_ID} x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stopColor="#6C60FF"/>
-      <stop offset="100%" stopColor="#AEDC1B"/>
+      <stop offset="100%" stopColor="#53C3D7"/>
     </linearGradient>
   </defs>
 )
