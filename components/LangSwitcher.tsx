@@ -15,13 +15,13 @@ export default function LangSwitcher() {
   }
 
   return (
-    <div className="flex items-center gap-0.5 border border-[#E4E4EC] rounded-full p-0.5 bg-[#F7F7FC]">
+    <div className="flex items-center gap-0.5 rounded-full p-0.5" style={{ border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.04)' }}>
       {(['th', 'en'] as Lang[]).map(lang => (
         <button key={lang} onClick={() => switchLang(lang)}
           className="px-3 py-1.5 rounded-full text-xs transition-all"
           style={{ fontWeight:400, fontFamily:'var(--font-main)',
             background: currentLang===lang ? 'var(--purple)' : 'transparent',
-            color: currentLang===lang ? '#fff' : '#70708A' }}>
+            color: currentLang===lang ? '#fff' : 'rgba(255,255,255,0.55)' }}>
           {lang === 'th' ? 'ไทย' : 'EN'}
         </button>
       ))}
