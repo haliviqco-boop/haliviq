@@ -208,14 +208,21 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
     return () => document.removeEventListener('mousedown', handleClick)
   }, [])
 
-  const isTransparent = transparent && !scrolled
-  const navTextColor = isTransparent ? 'rgba(255,255,255,0.92)' : 'var(--purple)'
+  // Pages that opt into the dark theme (currently just the homepage) keep the light
+  // logo and bright nav text at all scroll positions, since the whole page is dark —
+  // only the header backdrop swaps from fully transparent to a dark blurred bar on scroll.
+  const isTransparent = transparent
+  const navTextColor = isTransparent ? 'var(--purple-light)' : 'var(--purple)'
 
   return (
     <>
-      <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${scrolled || !transparent ? 'bg-white/96 backdrop-blur-xl shadow-sm shadow-black/[0.04] border-b border-[#E4E4EC]' : 'bg-transparent border-b border-transparent'}`}>
+      <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+        transparent
+          ? (scrolled ? 'bg-[#08070F]/90 backdrop-blur-xl shadow-sm shadow-black/[0.3] border-b border-white/[0.08]' : 'bg-transparent border-b border-transparent')
+          : 'bg-white/96 backdrop-blur-xl shadow-sm shadow-black/[0.04] border-b border-[#E4E4EC]'
+      }`}>
         {/* Brand gradient hairline across the very top edge */}
-        <div className="h-[3px] w-full" style={{background:'linear-gradient(90deg, var(--purple-dark) 0%, var(--purple) 30%, var(--purple-light) 60%, var(--lime) 100%)', opacity: isTransparent ? 1 : 0, transition:'opacity 0.3s'}}/>
+        <div className="h-[3px] w-full" style={{background:'linear-gradient(90deg, var(--purple-dark) 0%, var(--purple) 30%, var(--purple-light) 60%, var(--lime) 100%)', opacity: isTransparent && !scrolled ? 1 : 0, transition:'opacity 0.3s'}}/>
         <div className="max-w-7xl mx-auto px-4 lg:px-6 flex items-center justify-between h-[60px]">
 
           <Link href={`${prefix}`}>
