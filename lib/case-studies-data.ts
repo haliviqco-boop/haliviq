@@ -32,11 +32,11 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     slug: 'savelberg',
-    industryTag: 'Hospitality & F&B',
+    industryTag: 'F&B',
     result: 'เว็บไซต์ใหม่',
     year: '2025',
     th: {
-      badge: 'Hospitality & F&B',
+      badge: 'F&B',
       client: 'Savelberg Restaurant',
       title: 'เว็บไซต์ร้านอาหารระดับมิชลินสตาร์ Savelberg',
       desc: 'ออกแบบและพัฒนาเว็บไซต์ให้ร้านอาหารไฟน์ไดนิ่งสไตล์ฝรั่งเศสระดับมิชลินสตาร์ พร้อมวางกลยุทธ์คอนเทนต์และการตลาดดิจิทัล เพื่อสื่อสารความประณีตของแบรนด์ให้ลูกค้าทั้งชาวไทยและต่างชาติ',
@@ -88,7 +88,7 @@ export const caseStudies: CaseStudy[] = [
       servicesLabel: 'บริการที่ให้',
     },
     en: {
-      badge: 'Hospitality & F&B',
+      badge: 'F&B',
       client: 'Savelberg Restaurant',
       title: 'Savelberg — Michelin-Starred Restaurant Website',
       desc: 'Designed and built a new website for a Michelin-starred French fine-dining restaurant, with content direction and digital marketing support to carry the brand\'s refinement online for both Thai and international guests.',

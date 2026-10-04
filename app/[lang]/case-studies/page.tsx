@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import { t, type Lang } from '@/lib/i18n'
 import Footer from '@/components/Footer'
+import { getCaseStudy } from '@/lib/case-studies-data'
 
 const featureCardsEN = [
   { icon: 'ti-code', title: 'Scalability', desc: 'Built and designed to scale cleanly as new features get added over time.' },
@@ -39,7 +40,7 @@ const groupsEN = [
   { label: 'Healthcare', ids: [3, 10] },
   { label: 'AI', ids: [4, 8] },
   { label: 'Enterprise', ids: [7, 9] },
-  { label: 'Hospitality & F&B', ids: [13] },
+  { label: 'F&B', ids: [13] },
 ]
 
 const casesEN = [
@@ -55,7 +56,7 @@ const casesEN = [
   { id:10, tags:['Healthcare'], client:'Health Platform', title:'Telemedicine & Mental Health', desc:'Video consultation + mood tracking.', result:'92% Completion' },
   { id:11, tags:['FinTech'], client:'Insurance Group', title:'InsurTech Claims Platform', desc:'AI claims processing, 73% time reduction.', result:'73% Faster' },
   { id:12, tags:['E-Commerce'], client:'Fashion Retailer', title:'Personalization Engine', desc:'AI product recommendation increased AOV by 45%.', result:'+45% AOV' },
-  { id:13, tags:['Hospitality & F&B'], client:'Savelberg Restaurant', title:'Michelin-Starred Restaurant Website', desc:'New bilingual website and content direction for a Michelin-starred French restaurant.', result:'New Website', slug:'savelberg' },
+  { id:13, tags:['F&B'], client:'Savelberg Restaurant', title:'Michelin-Starred Restaurant Website', desc:'New bilingual website and content direction for a Michelin-starred French restaurant.', result:'New Website', slug:'savelberg' },
 ]
 
 const groupsTH = groupsEN
@@ -72,7 +73,7 @@ const casesTH = [
   { id:10, tags:['Healthcare'], client:'Health Platform', title:'Telemedicine & Mental Health', desc:'Video Consultation + Mood Tracking', result:'92% Completion' },
   { id:11, tags:['FinTech'], client:'Insurance Group', title:'InsurTech Claims Platform', desc:'AI Claims Processing ลด 73% เวลา', result:'73% Faster' },
   { id:12, tags:['E-Commerce'], client:'Fashion Retailer', title:'Personalization Engine', desc:'AI Product Recommendation เพิ่ม AOV 45%', result:'+45% AOV' },
-  { id:13, tags:['Hospitality & F&B'], client:'Savelberg Restaurant', title:'เว็บไซต์ร้านอาหารระดับมิชลินสตาร์', desc:'เว็บไซต์สองภาษาและวางแนวทางคอนเทนต์ให้ร้านอาหารฝรั่งเศสระดับมิชลินสตาร์', result:'เว็บไซต์ใหม่', slug:'savelberg' },
+  { id:13, tags:['F&B'], client:'Savelberg Restaurant', title:'เว็บไซต์ร้านอาหารระดับมิชลินสตาร์', desc:'เว็บไซต์สองภาษาและวางแนวทางคอนเทนต์ให้ร้านอาหารฝรั่งเศสระดับมิชลินสตาร์', result:'เว็บไซต์ใหม่', slug:'savelberg' },
 ]
 
 const gradients = [
@@ -253,15 +254,22 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                     ref={(el) => { rowRefs.current[g.label] = el }}
                     className="no-scrollbar flex gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory"
                   >
-                    {items.map((c, i) => (
+                    {items.map((c, i) => {
+                      const cover = (c as any).slug ? getCaseStudy((c as any).slug)?.[lang]?.heroImage : undefined
+                      return (
                       <Link
                         key={c.id}
                         href={(c as any).slug ? `/${lang}/case-studies/${(c as any).slug}` : `/${lang}/work`}
                         className="group shrink-0 w-[280px] snap-start rounded-2xl p-4 transition-all duration-300 hover:-translate-y-1"
                         style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}
                       >
-                        <div className="h-32 rounded-xl flex items-center justify-center mb-4 relative" style={{ background: gradients[i % gradients.length] }}>
-                          <i className="ti ti-photo" style={{ fontSize: 22, color: '#fff', opacity: 0.45 }} aria-hidden="true" />
+                        <div className="h-32 rounded-xl flex items-center justify-center mb-4 relative overflow-hidden" style={cover ? undefined : { background: gradients[i % gradients.length] }}>
+                          {cover ? (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img src={cover} alt={c.title} className="absolute inset-0 w-full h-full object-cover" />
+                          ) : (
+                            <i className="ti ti-photo" style={{ fontSize: 22, color: '#fff', opacity: 0.45 }} aria-hidden="true" />
+                          )}
                           <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs" style={{ background: 'rgba(255,255,255,0.9)', color: 'var(--purple)', fontWeight: 500 }}>{c.result}</span>
                         </div>
                         <p className="text-xs mb-1.5" style={{ color: 'rgba(255,255,255,0.45)', fontWeight: 400 }}>{c.client}</p>
@@ -271,7 +279,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                           {isEN ? 'View Case Study' : 'ดูรายละเอียด'} <i className="ti ti-arrow-up-right" style={{ fontSize: 13 }} aria-hidden="true" />
                         </span>
                       </Link>
-                    ))}
+                      )
+                    })}
                   </div>
                 </div>
               )

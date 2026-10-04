@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import { t, type Lang } from '@/lib/i18n'
 import Footer from '@/components/Footer'
+import { getCaseStudy } from '@/lib/case-studies-data'
 
 const serviceGroupsEN = [
   { key: 'web', label: 'Web Development' },
@@ -33,7 +34,7 @@ const projectsEN = [
   { id:10, service:'mobile', tags:['Healthcare','Mobile App'], year:'2024', title:'Telemedicine & Mental Health', client:'Health Platform', desc:'Video consultation app with mood tracking and care-plan reminders.', result:'92% Completion' },
   { id:11, service:'data', tags:['FinTech','Enterprise'], year:'2023', title:'InsurTech Claims Platform', client:'Insurance Group', desc:'Data pipeline and analytics dashboard powering automated claims decisions.', result:'73% Faster' },
   { id:12, service:'data', tags:['E-Commerce','AI'], year:'2024', title:'Personalization Engine', client:'Fashion Retailer', desc:'Behavioral data pipeline feeding a product-recommendation model.', result:'+45% AOV' },
-  { id:13, service:'web', tags:['Hospitality & F&B','Web Platform'], year:'2025', title:'Michelin-Starred Restaurant Website', client:'Savelberg Restaurant', desc:'New bilingual website with an AI concierge chatbot and content direction for a Michelin-starred French restaurant.', result:'New Website', slug:'savelberg' },
+  { id:13, service:'web', tags:['F&B','Web Platform'], year:'2025', title:'Michelin-Starred Restaurant Website', client:'Savelberg Restaurant', desc:'New bilingual website with an AI concierge chatbot and content direction for a Michelin-starred French restaurant.', result:'New Website', slug:'savelberg' },
 ]
 
 const projectsTH = [
@@ -49,7 +50,7 @@ const projectsTH = [
   { id:10, service:'mobile', tags:['Healthcare','Mobile App'], year:'2024', title:'Telemedicine & Mental Health', client:'Health Platform', desc:'แอป Video Consultation พร้อม Mood Tracking และแจ้งเตือนแผนการดูแล', result:'92% Completion' },
   { id:11, service:'data', tags:['FinTech','Enterprise'], year:'2023', title:'InsurTech Claims Platform', client:'Insurance Group', desc:'Data Pipeline และ Dashboard วิเคราะห์ข้อมูลสำหรับตัดสินใจเคลมอัตโนมัติ', result:'73% Faster' },
   { id:12, service:'data', tags:['E-Commerce','AI'], year:'2024', title:'Personalization Engine', client:'Fashion Retailer', desc:'Data Pipeline พฤติกรรมผู้ใช้ป้อนโมเดลแนะนำสินค้า', result:'+45% AOV' },
-  { id:13, service:'web', tags:['Hospitality & F&B','Web Platform'], year:'2025', title:'เว็บไซต์ร้านอาหารระดับมิชลินสตาร์', client:'Savelberg Restaurant', desc:'เว็บไซต์สองภาษาพร้อมแชทบอท AI และวางแนวทางคอนเทนต์ให้ร้านอาหารฝรั่งเศสระดับมิชลินสตาร์', result:'เว็บไซต์ใหม่', slug:'savelberg' },
+  { id:13, service:'web', tags:['F&B','Web Platform'], year:'2025', title:'เว็บไซต์ร้านอาหารระดับมิชลินสตาร์', client:'Savelberg Restaurant', desc:'เว็บไซต์สองภาษาพร้อมแชทบอท AI และวางแนวทางคอนเทนต์ให้ร้านอาหารฝรั่งเศสระดับมิชลินสตาร์', result:'เว็บไซต์ใหม่', slug:'savelberg' },
 ]
 
 const gradients = [
@@ -143,6 +144,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                     {items.map((p, i) => {
                       const CardTag: any = (p as any).slug ? Link : 'div'
                       const cardProps = (p as any).slug ? { href: `/${lang}/case-studies/${(p as any).slug}` } : {}
+                      const cover = (p as any).slug ? getCaseStudy((p as any).slug)?.[lang]?.heroImage : undefined
                       return (
                       <CardTag
                         key={p.id}
@@ -150,8 +152,13 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                         className="group shrink-0 w-[300px] snap-start rounded-2xl p-4 transition-all duration-300 hover:-translate-y-1 cursor-pointer block"
                         style={{ background:'rgba(255,255,255,0.03)', border:'1px solid rgba(255,255,255,0.08)' }}
                       >
-                        <div className="relative h-36 rounded-xl flex items-center justify-center mb-4" style={{ background: gradients[i % gradients.length] }}>
-                          <i className="ti ti-photo" style={{ fontSize:22, color:'#fff', opacity:0.4 }} aria-hidden="true" />
+                        <div className="relative h-36 rounded-xl flex items-center justify-center mb-4 overflow-hidden" style={cover ? undefined : { background: gradients[i % gradients.length] }}>
+                          {cover ? (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img src={cover} alt={p.title} className="absolute inset-0 w-full h-full object-cover" />
+                          ) : (
+                            <i className="ti ti-photo" style={{ fontSize:22, color:'#fff', opacity:0.4 }} aria-hidden="true" />
+                          )}
                           <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs bg-white/20 backdrop-blur-sm text-white" style={{ fontWeight:400 }}>{p.year}</span>
                           <span className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full text-xs flex items-center gap-1" style={{ background:'rgba(8,7,15,0.6)', color:'var(--lime)', fontWeight:500 }}>
                             <i className="ti ti-trending-up" style={{ fontSize:12 }} aria-hidden="true" />{p.result}
