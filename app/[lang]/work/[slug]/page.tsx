@@ -3,36 +3,36 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { t, type Lang } from '@/lib/i18n'
-import { caseStudies, getCaseStudy } from '@/lib/case-studies-data'
+import { workProjects, getWorkProject } from '@/lib/work-data'
 
 export async function generateStaticParams() {
   const langs: Lang[] = ['th', 'en']
-  return langs.flatMap((lang) => caseStudies.map((c) => ({ lang, slug: c.slug })))
+  return langs.flatMap((lang) => workProjects.map((w) => ({ lang, slug: w.slug })))
 }
 
 export async function generateMetadata({ params }: { params: { lang: Lang; slug: string } }): Promise<Metadata> {
   const lang = (params.lang === 'en' ? 'en' : 'th') as Lang
-  const study = getCaseStudy(params.slug)
-  if (!study) return {}
-  const c = study[lang]
-  const title = `${c.title} | Haliviq Case Studies`
-  const siteUrl = `https://haliviq.com/${lang}/case-studies/${study.slug}`
+  const project = getWorkProject(params.slug)
+  if (!project) return {}
+  const c = project[lang]
+  const title = `${c.h1} | Haliviq`
+  const siteUrl = `https://haliviq.com/${lang}/work/${project.slug}`
   return {
     title,
-    description: c.desc,
+    description: c.metaDescription,
     alternates: { canonical: siteUrl },
     openGraph: {
       title,
-      description: c.desc,
-      images: [c.heroImage],
+      description: c.metaDescription,
+      images: [c.ogImage],
       url: siteUrl,
       type: 'article',
     },
     twitter: {
       card: 'summary_large_image',
       title,
-      description: c.desc,
-      images: [c.heroImage],
+      description: c.metaDescription,
+      images: [c.ogImage],
     },
   }
 }
@@ -40,9 +40,9 @@ export async function generateMetadata({ params }: { params: { lang: Lang; slug:
 export default function Page({ params }: { params: { lang: Lang; slug: string } }) {
   const lang = (params.lang === 'en' ? 'en' : 'th') as Lang
   const tr = t[lang] as any
-  const study = getCaseStudy(params.slug)
+  const project = getWorkProject(params.slug)
 
-  if (!study) {
+  if (!project) {
     return (
       <>
         <Navbar lang={lang} tr={tr} transparent />
@@ -54,15 +54,15 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
     )
   }
 
-  const c = study[lang]
-  const siteUrl = `https://haliviq.com/${lang}/case-studies/${study.slug}`
+  const c = project[lang]
+  const siteUrl = `https://haliviq.com/${lang}/work/${project.slug}`
+
   const creativeWorkSchema = {
     '@context': 'https://schema.org',
-    '@type': 'CreativeWork',
-    name: c.title,
-    description: c.desc,
-    image: `https://haliviq.com${c.heroImage}`,
-    datePublished: study.year,
+    '@type': 'Service',
+    name: c.h1,
+    description: c.metaDescription,
+    image: `https://haliviq.com${c.ogImage}`,
     url: siteUrl,
     provider: {
       '@type': 'Organization',
@@ -71,9 +71,23 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
     },
   }
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: c.faq.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.answer,
+      },
+    })),
+  }
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navbar lang={lang} tr={tr} transparent />
       <main style={{ background: '#08070F' }}>
         {/* Hero */}
@@ -84,7 +98,7 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
           />
           <div className="relative max-w-5xl mx-auto px-6 lg:px-10 pt-14 pb-16">
             <Link
-              href={`/${lang}/case-studies`}
+              href={`/${lang}/work`}
               className="inline-flex items-center gap-2 mb-10 text-sm transition-colors hover:text-white"
               style={{ color: 'rgba(255,255,255,0.55)', fontWeight: 400 }}
             >
@@ -99,32 +113,26 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
               {c.badge}
             </span>
 
-            <h1 className="t-display leading-relaxed text-[clamp(2.25rem,5vw,4rem)] mb-6" style={{ color: '#fff' }}>
-              {c.title}
+            <h1 className="t-display leading-relaxed text-[clamp(2.1rem,4.6vw,3.6rem)] mb-6" style={{ color: '#fff' }}>
+              {c.h1}
             </h1>
 
             <p className="max-w-3xl mb-10" style={{ color: 'rgba(255,255,255,0.75)', fontWeight: 400, fontSize: '1.05rem', lineHeight: 1.65 }}>
-              {c.desc}
+              {c.intro}
             </p>
 
-            <div
-              className="inline-flex flex-wrap items-center gap-6 rounded-2xl px-7 py-5"
-              style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)' }}
-            >
-              <span className="flex items-center gap-2.5 text-sm" style={{ color: 'rgba(255,255,255,0.8)', fontWeight: 400 }}>
-                <i className="ti ti-building-store" style={{ fontSize: 17 }} aria-hidden="true" />
-                {c.client}
-              </span>
-              <span className="w-px h-5" style={{ background: 'rgba(255,255,255,0.15)' }} />
-              <span className="flex items-center gap-2.5 text-sm" style={{ color: 'rgba(255,255,255,0.8)', fontWeight: 400 }}>
-                <i className="ti ti-clock" style={{ fontSize: 17 }} aria-hidden="true" />
-                {study.year} · {c.duration}
-              </span>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 max-w-3xl">
+              {c.snapshot.map((s) => (
+                <div key={s.label} className="rounded-2xl px-5 py-4" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                  <p className="text-xs mb-1.5" style={{ color: 'rgba(255,255,255,0.5)', fontWeight: 400 }}>{s.label}</p>
+                  <p style={{ color: '#fff', fontWeight: 500, fontSize: '0.95rem' }}>{s.value}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Services provided + hero image */}
+        {/* Services provided + cover image */}
         <section className="pb-16 lg:pb-24">
           <div className="max-w-5xl mx-auto px-6 lg:px-10">
             <p className="text-sm mb-4" style={{ color: 'rgba(255,255,255,0.55)', fontWeight: 400 }}>{c.servicesLabel}</p>
@@ -142,50 +150,53 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
 
             <div className="max-w-md mx-auto rounded-3xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={c.heroImage} alt={c.client} className="w-full h-auto block" />
+              <img src={c.ogImage} alt={c.client} className="w-full h-auto block" />
             </div>
           </div>
         </section>
 
-        {/* The Challenge */}
+        {/* Objectives */}
         <section className="pb-16 lg:pb-24">
           <div className="max-w-5xl mx-auto px-6 lg:px-10">
-            <h2 className="t-display leading-relaxed text-[clamp(1.6rem,3vw,2.3rem)] mb-6" style={{ color: '#fff' }}>
-              {c.challengeHeading}
+            <h2 className="t-display leading-relaxed text-[clamp(1.5rem,2.8vw,2.1rem)] mb-6" style={{ color: '#fff' }}>
+              {c.objectivesHeading}
             </h2>
             <div className="rounded-2xl p-8" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <p style={{ color: 'rgba(255,255,255,0.75)', fontWeight: 400, fontSize: '1rem', lineHeight: 1.75 }}>
-                {c.challenge}
-              </p>
+              <ul className="flex flex-col gap-3">
+                {c.objectives.map((o) => (
+                  <li key={o} className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full mt-2.5 shrink-0" style={{ background: 'var(--purple-light)' }} />
+                    <span style={{ color: 'rgba(255,255,255,0.75)', fontWeight: 400, fontSize: '1rem', lineHeight: 1.7 }}>{o}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </section>
 
-        {/* Our Solution */}
+        {/* Deliverables */}
         <section className="pb-16 lg:pb-24">
           <div className="max-w-5xl mx-auto px-6 lg:px-10">
-            <h2 className="t-display leading-relaxed text-[clamp(1.6rem,3vw,2.3rem)] mb-6" style={{ color: '#fff' }}>
-              {c.solutionHeading}
+            <h2 className="t-display leading-relaxed text-[clamp(1.5rem,2.8vw,2.1rem)] mb-6" style={{ color: '#fff' }}>
+              {c.deliverablesHeading}
             </h2>
             <div className="rounded-2xl p-8" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <p style={{ color: 'rgba(255,255,255,0.75)', fontWeight: 400, fontSize: '1rem', lineHeight: 1.75 }}>
-                {c.solution}
-              </p>
+              <ul className="flex flex-col gap-3">
+                {c.deliverables.map((d) => (
+                  <li key={d} className="flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 rounded-full mt-2.5 shrink-0" style={{ background: 'var(--lime)' }} />
+                    <span style={{ color: 'rgba(255,255,255,0.75)', fontWeight: 400, fontSize: '1rem', lineHeight: 1.7 }}>{d}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-
-            <h3 className="t-display leading-relaxed text-[clamp(1.3rem,2.4vw,1.75rem)] mt-14 mb-5" style={{ color: 'rgba(255,255,255,0.85)' }}>
-              {c.overviewHeading}
-            </h3>
-            <p style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 400, fontSize: '1rem', lineHeight: 1.75 }}>
-              {c.overview}
-            </p>
           </div>
         </section>
 
-        {/* Our Approach */}
+        {/* Approach */}
         <section className="pb-16 lg:pb-24">
           <div className="max-w-5xl mx-auto px-6 lg:px-10">
-            <h2 className="t-display leading-relaxed text-[clamp(1.6rem,3vw,2.3rem)] mb-10" style={{ color: '#fff' }}>
+            <h2 className="t-display leading-relaxed text-[clamp(1.5rem,2.8vw,2.1rem)] mb-10" style={{ color: '#fff' }}>
               {c.approachHeading}
             </h2>
             <div className="grid sm:grid-cols-2 gap-5">
@@ -205,35 +216,66 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
           </div>
         </section>
 
-        {/* Key Features */}
+        {/* Tech */}
+        <section className="pb-16 lg:pb-24">
+          <div className="max-w-5xl mx-auto px-6 lg:px-10">
+            <h2 className="t-display leading-relaxed text-[clamp(1.5rem,2.8vw,2.1rem)] mb-6" style={{ color: '#fff' }}>
+              {c.techHeading}
+            </h2>
+            <div className="flex flex-wrap gap-3">
+              {c.tech.map((tItem) => (
+                <span
+                  key={tItem}
+                  className="px-4 py-2 rounded-full text-sm flex items-center gap-2"
+                  style={{ background: 'rgba(196,232,106,0.08)', border: '1px solid rgba(196,232,106,0.25)', color: 'var(--lime)', fontWeight: 400 }}
+                >
+                  <i className="ti ti-cpu" style={{ fontSize: 14 }} aria-hidden="true" />
+                  {tItem}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Results */}
+        <section className="pb-16 lg:pb-24">
+          <div className="max-w-5xl mx-auto px-6 lg:px-10">
+            <h2 className="t-display leading-relaxed text-[clamp(1.5rem,2.8vw,2.1rem)] mb-6" style={{ color: '#fff' }}>
+              {c.resultsHeading}
+            </h2>
+            <ul className="flex flex-col gap-3">
+              {c.results.map((r) => (
+                <li key={r} className="flex items-start gap-3">
+                  <i className="ti ti-circle-check" style={{ fontSize: 18, color: 'var(--lime)', marginTop: 2 }} aria-hidden="true" />
+                  <span style={{ color: 'rgba(255,255,255,0.75)', fontWeight: 400, fontSize: '1rem', lineHeight: 1.7 }}>{r}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* FAQ */}
         <section className="pb-24 lg:pb-32">
           <div className="max-w-5xl mx-auto px-6 lg:px-10">
-            <h2 className="t-display leading-relaxed text-[clamp(1.6rem,3vw,2.3rem)] mb-10" style={{ color: '#fff' }}>
-              {c.keyFeaturesHeading}
+            <h2 className="t-display leading-relaxed text-[clamp(1.5rem,2.8vw,2.1rem)] mb-10" style={{ color: '#fff' }}>
+              {c.faqHeading}
             </h2>
-            <div className="flex flex-col gap-10">
-              {c.keyFeatures.map((group) => (
-                <div key={group.title}>
-                  <h3 className="mb-4" style={{ color: 'rgba(255,255,255,0.9)', fontWeight: 500, fontSize: '1.15rem' }}>{group.title}</h3>
-                  <ul className="flex flex-col gap-3">
-                    {group.bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-3">
-                        <span className="w-1.5 h-1.5 rounded-full mt-2.5 shrink-0" style={{ background: 'var(--lime)' }} />
-                        <span style={{ color: 'rgba(255,255,255,0.72)', fontWeight: 400, fontSize: '0.98rem', lineHeight: 1.6 }}>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
+            <div className="flex flex-col gap-5">
+              {c.faq.map((f) => (
+                <div key={f.question} className="rounded-2xl p-7" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                  <h3 className="mb-2.5" style={{ color: '#fff', fontWeight: 500, fontSize: '1.05rem' }}>{f.question}</h3>
+                  <p style={{ color: 'rgba(255,255,255,0.68)', fontWeight: 400, fontSize: '0.95rem', lineHeight: 1.7 }}>{f.answer}</p>
                 </div>
               ))}
             </div>
 
             <div className="mt-14 text-center">
               <Link
-                href={`/${lang}/work/${study.slug}`}
+                href={`/${lang}/case-studies/${project.slug}`}
                 className="inline-flex items-center gap-2 text-base transition-all hover:gap-3"
                 style={{ color: 'var(--lime)', fontWeight: 500 }}
               >
-                {lang === 'en' ? 'See the Work Summary' : 'ดูสรุปงาน Work'}
+                {lang === 'en' ? 'Read the Full Case Study' : 'อ่าน Case Study ฉบับเต็ม'}
                 <i className="ti ti-arrow-right" style={{ fontSize: 15 }} aria-hidden="true" />
               </Link>
             </div>
@@ -255,7 +297,7 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
               {lang === 'en' ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </p>
             <h2 className="t-display text-[clamp(1.75rem,4vw,3rem)] mb-6 leading-normal md:whitespace-nowrap" style={{ background: 'linear-gradient(135deg, var(--purple-light) 0%, #53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-              {lang === 'en' ? <>Let's build your next case study</> : <>มาสร้าง Case Study ถัดไปด้วยกัน</>}
+              {lang === 'en' ? <>Let's build your next project</> : <>มาสร้างโปรเจกต์ถัดไปด้วยกัน</>}
             </h2>
             <Link href={`/${lang}/contact`} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm transition-opacity hover:opacity-90" style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}>
               {lang === 'en' ? 'Talk to Us' : 'คุยกับเรา'}

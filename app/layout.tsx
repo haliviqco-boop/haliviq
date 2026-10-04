@@ -33,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preload" href="/fonts/LINESeedSansTH_Th.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/>
         <link rel="preload" href="/fonts/LINESeedSansTH_Rg.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/>
         <link rel="preload" href="/fonts/LINESeedSansTH_Bd.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/>
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="anonymous" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
       </head>
       <body>
