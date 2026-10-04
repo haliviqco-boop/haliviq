@@ -36,11 +36,16 @@ const featuredTH = {
 
 const groupsEN = [
   { label: 'FinTech', ids: [1, 5, 11] },
-  { label: 'E-Commerce', ids: [2, 6, 12] },
+  { label: 'E-Commerce', ids: [2, 6, 12, 18] },
   { label: 'Healthcare', ids: [3, 10] },
   { label: 'AI', ids: [4, 8] },
   { label: 'Enterprise', ids: [7, 9] },
-  { label: 'F&B', ids: [13] },
+  { label: 'F&B', ids: [13, 14, 22] },
+  { label: 'Fitness & Wellness', ids: [15] },
+  { label: 'Apparel & Uniforms', ids: [16] },
+  { label: 'Manufacturing', ids: [17] },
+  { label: 'Government & Public Sector', ids: [19, 21] },
+  { label: 'Retail & Shopping Mall', ids: [20] },
 ]
 
 const casesEN = [
@@ -57,6 +62,15 @@ const casesEN = [
   { id:11, tags:['FinTech'], client:'Insurance Group', title:'InsurTech Claims Platform', desc:'AI claims processing, 73% time reduction.', result:'73% Faster' },
   { id:12, tags:['E-Commerce'], client:'Fashion Retailer', title:'Personalization Engine', desc:'AI product recommendation increased AOV by 45%.', result:'+45% AOV' },
   { id:13, tags:['F&B'], client:'Savelberg Restaurant', title:'Michelin-Starred Restaurant Website', desc:'New bilingual website and content direction for a Michelin-starred French restaurant.', result:'New Website', slug:'savelberg' },
+  { id:14, tags:['F&B'], client:'OVO', title:'Ice Cream Brand Website', desc:'New website for an ice cream and dessert brand, with online ordering and marketing content direction.', result:'New Website', slug:'ovo' },
+  { id:15, tags:['Fitness & Wellness'], client:'BASE', title:'Fitness Studio Website', desc:'New website for a fitness studio with online class booking and trainer profiles.', result:'New Website', slug:'base' },
+  { id:16, tags:['Apparel & Uniforms'], client:'Blue Bear', title:'Medical Uniform Manufacturer Website', desc:'New website with a product catalog and B2B order-inquiry flow for hospital and clinic customers.', result:'New Website', slug:'blue-bear' },
+  { id:17, tags:['Manufacturing'], client:'Thai Metal Aluminium', title:'Precision Manufacturing Website', desc:'New corporate website presenting manufacturing capabilities and quality standards to industrial customers.', result:'New Website', slug:'thai-metal-aluminium' },
+  { id:18, tags:['E-Commerce'], client:'VERA', title:'Bag Brand E-Commerce Website', desc:'New e-commerce website for a self-manufactured bag brand, with cart and checkout for nationwide sales.', result:'New Website', slug:'vera' },
+  { id:19, tags:['Government & Public Sector'], client:'NFI – National Food Institute', title:'National Food Institute Website', desc:'New website organizing lab services and research for a public food-research institute.', result:'New Website', slug:'nfi' },
+  { id:20, tags:['Retail & Shopping Mall'], client:'MBK Center', title:'MBK Center Mobile App', desc:'New mobile app letting shoppers find stores, promotions, and member perks in one place.', result:'New App', slug:'mbk' },
+  { id:21, tags:['Government & Public Sector'], client:'DITP', title:'DITP Export Promotion Mobile App', desc:'New version of an export-promotion app, built on an earlier version we developed, for Thai exporters.', result:'New App', slug:'ditp' },
+  { id:22, tags:['F&B'], client:'Sra Bua by Kiin Kiin', title:'Fine-Dining Restaurant Website', desc:'New bilingual website with online reservations for a modern Thai fine-dining restaurant.', result:'New Website', slug:'sra-bua' },
 ]
 
 const groupsTH = groupsEN
@@ -74,6 +88,15 @@ const casesTH = [
   { id:11, tags:['FinTech'], client:'Insurance Group', title:'InsurTech Claims Platform', desc:'AI Claims Processing ลด 73% เวลา', result:'73% Faster' },
   { id:12, tags:['E-Commerce'], client:'Fashion Retailer', title:'Personalization Engine', desc:'AI Product Recommendation เพิ่ม AOV 45%', result:'+45% AOV' },
   { id:13, tags:['F&B'], client:'Savelberg Restaurant', title:'เว็บไซต์ร้านอาหารระดับมิชลินสตาร์', desc:'เว็บไซต์สองภาษาและวางแนวทางคอนเทนต์ให้ร้านอาหารฝรั่งเศสระดับมิชลินสตาร์', result:'เว็บไซต์ใหม่', slug:'savelberg' },
+  { id:14, tags:['F&B'], client:'OVO', title:'เว็บไซต์แบรนด์ไอศกรีม', desc:'เว็บไซต์ใหม่สำหรับแบรนด์ไอศกรีมและของหวาน พร้อมระบบสั่งซื้อออนไลน์และวางแนวทางคอนเทนต์การตลาด', result:'เว็บไซต์ใหม่', slug:'ovo' },
+  { id:15, tags:['Fitness & Wellness'], client:'BASE', title:'เว็บไซต์สตูดิโอฟิตเนส', desc:'เว็บไซต์ใหม่สำหรับสตูดิโอฟิตเนส พร้อมระบบจองคลาสออนไลน์และโปรไฟล์เทรนเนอร์', result:'เว็บไซต์ใหม่', slug:'base' },
+  { id:16, tags:['Apparel & Uniforms'], client:'Blue Bear', title:'เว็บไซต์ผู้ผลิตชุดยูนิฟอร์มทางการแพทย์', desc:'เว็บไซต์ใหม่พร้อมแคตตาล็อกสินค้าและระบบติดต่อสั่งซื้อแบบองค์กรสำหรับลูกค้าโรงพยาบาลและคลินิก', result:'เว็บไซต์ใหม่', slug:'blue-bear' },
+  { id:17, tags:['Manufacturing'], client:'Thai Metal Aluminium', title:'เว็บไซต์โรงงานผลิตชิ้นส่วนอะลูมิเนียม', desc:'เว็บไซต์องค์กรใหม่ นำเสนอขีดความสามารถด้านการผลิตและมาตรฐานคุณภาพต่อลูกค้าอุตสาหกรรม', result:'เว็บไซต์ใหม่', slug:'thai-metal-aluminium' },
+  { id:18, tags:['E-Commerce'], client:'VERA', title:'เว็บไซต์อีคอมเมิร์ซแบรนด์กระเป๋า', desc:'เว็บไซต์อีคอมเมิร์ซใหม่สำหรับแบรนด์กระเป๋าที่ผลิตและขายออนไลน์ พร้อมระบบตะกร้าสินค้าและชำระเงิน', result:'เว็บไซต์ใหม่', slug:'vera' },
+  { id:19, tags:['Government & Public Sector'], client:'NFI สถาบันอาหาร', title:'เว็บไซต์สถาบันอาหาร', desc:'เว็บไซต์ใหม่จัดระเบียบบริการห้องปฏิบัติการและงานวิจัยให้สถาบันวิจัยอาหารภาครัฐ', result:'เว็บไซต์ใหม่', slug:'nfi' },
+  { id:20, tags:['Retail & Shopping Mall'], client:'MBK Center', title:'แอปมือถือศูนย์การค้า MBK', desc:'แอปมือถือใหม่ให้ลูกค้าค้นหาร้านค้า โปรโมชัน และสิทธิพิเศษได้ในที่เดียว', result:'แอปใหม่', slug:'mbk' },
+  { id:21, tags:['Government & Public Sector'], client:'DITP', title:'แอปมือถือส่งเสริมผู้ประกอบการส่งออก DITP', desc:'แอปเวอร์ชันใหม่ต่อยอดจากแอปที่เคยพัฒนาให้ เพื่อสนับสนุนผู้ประกอบการส่งออกไทย', result:'แอปใหม่', slug:'ditp' },
+  { id:22, tags:['F&B'], client:'Sra Bua by Kiin Kiin', title:'เว็บไซต์ร้านอาหารไฟน์ไดนิ่ง', desc:'เว็บไซต์สองภาษาพร้อมระบบจองโต๊ะออนไลน์ให้ร้านอาหารไทยโมเดิร์นระดับไฟน์ไดนิ่ง', result:'เว็บไซต์ใหม่', slug:'sra-bua' },
 ]
 
 const gradients = [
