@@ -96,9 +96,9 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
               ))}
             </div>
 
-            <div className="rounded-3xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+            <div className="rounded-3xl overflow-hidden max-h-[520px]" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={c.heroImage} alt={c.client} className="w-full h-auto block" />
+              <img src={c.heroImage} alt={c.client} className="w-full h-full max-h-[520px] object-cover block" />
             </div>
           </div>
         </section>
