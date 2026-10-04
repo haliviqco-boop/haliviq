@@ -140,7 +140,7 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
               ))}
             </div>
 
-            <div className="max-w-md mx-auto rounded-3xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+            <div className="max-w-md rounded-3xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={c.heroImage} alt={c.client} className="w-full h-auto block" />
             </div>
