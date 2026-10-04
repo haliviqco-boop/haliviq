@@ -44,6 +44,11 @@ const projectsEN = [
   { id:20, service:'mobile', tags:['Retail','Mobile App'], year:'2025', title:'MBK Center Mobile App', client:'MBK Center', desc:'New mobile app letting shoppers find stores, promotions, and member perks in one place.', result:'New App', slug:'mbk' },
   { id:21, service:'mobile', tags:['Government','Mobile App'], year:'2025', title:'DITP Export Promotion Mobile App', client:'DITP', desc:'New version of an export-promotion app, built on an earlier version we developed, for Thai exporters.', result:'New App', slug:'ditp' },
   { id:22, service:'web', tags:['F&B','Web Platform'], year:'2025', title:'Fine-Dining Restaurant Website', client:'Sra Bua by Kiin Kiin', desc:'New bilingual website with online reservations for a modern Thai fine-dining restaurant.', result:'New Website', slug:'sra-bua' },
+  { id:23, service:'web', tags:['Travel','Web Platform'], year:'2025', title:'Website, Branding & AI CRM', client:'World Surprise Travel', desc:'New brand identity, website, and AI CRM for a tour company managing travel packages and customers.', result:'New Website', slug:'world-surprise-travel' },
+  { id:24, service:'web', tags:['Real Estate','Web Platform'], year:'2025', title:'Home Builder Website with CRM', client:'Awii House', desc:'New website and CRM for a home-building company, tracking customers from consultation to contract.', result:'New Website', slug:'awii-house' },
+  { id:25, service:'web', tags:['Real Estate','Web Platform'], year:'2025', title:'Website, Brand CI & Real Estate CRM', client:'Canapaya Residences', desc:'New brand identity, website, and a dedicated CRM for a luxury riverside residential project.', result:'New Website', slug:'canapaya-residences' },
+  { id:26, service:'web', tags:['Enterprise','Web Platform'], year:'2025', title:'Website with AI CRM', client:'RFS', desc:'New website and AI CRM for a Singapore-based telecom infrastructure and smart-city solutions provider.', result:'New Website', slug:'rfs' },
+  { id:27, service:'mobile', tags:['Government','Mobile App'], year:'2025', title:'Tax Inspection App', client:'Excise Department', desc:'New mobile app for field officers to verify excise tax payments, integrated with data from related agencies.', result:'New App', slug:'excise-department' },
 ]
 
 const projectsTH = [
@@ -69,6 +74,11 @@ const projectsTH = [
   { id:20, service:'mobile', tags:['Retail','Mobile App'], year:'2025', title:'แอปมือถือศูนย์การค้า MBK', client:'MBK Center', desc:'แอปมือถือใหม่ให้ลูกค้าค้นหาร้านค้า โปรโมชัน และสิทธิพิเศษได้ในที่เดียว', result:'แอปใหม่', slug:'mbk' },
   { id:21, service:'mobile', tags:['Government','Mobile App'], year:'2025', title:'แอปมือถือส่งเสริมผู้ประกอบการส่งออก DITP', client:'DITP', desc:'แอปเวอร์ชันใหม่ต่อยอดจากแอปที่เคยพัฒนาให้ เพื่อสนับสนุนผู้ประกอบการส่งออกไทย', result:'แอปใหม่', slug:'ditp' },
   { id:22, service:'web', tags:['F&B','Web Platform'], year:'2025', title:'เว็บไซต์ร้านอาหารไฟน์ไดนิ่ง', client:'Sra Bua by Kiin Kiin', desc:'เว็บไซต์สองภาษาพร้อมระบบจองโต๊ะออนไลน์ให้ร้านอาหารไทยโมเดิร์นระดับไฟน์ไดนิ่ง', result:'เว็บไซต์ใหม่', slug:'sra-bua' },
+  { id:23, service:'web', tags:['Travel','Web Platform'], year:'2025', title:'เว็บไซต์ Branding และ AI CRM', client:'World Surprise Travel', desc:'วางแบรนด์ใหม่ เว็บไซต์ และ AI CRM ให้บริษัททัวร์บริหารแพ็กเกจและลูกค้า', result:'เว็บไซต์ใหม่', slug:'world-surprise-travel' },
+  { id:24, service:'web', tags:['Real Estate','Web Platform'], year:'2025', title:'เว็บไซต์พร้อม CRM ให้บริษัทรับสร้างบ้าน', client:'Awii House', desc:'เว็บไซต์และ CRM ใหม่ให้บริษัทรับสร้างบ้าน ติดตามลูกค้าตั้งแต่ปรึกษาจนถึงเซ็นสัญญา', result:'เว็บไซต์ใหม่', slug:'awii-house' },
+  { id:25, service:'web', tags:['Real Estate','Web Platform'], year:'2025', title:'เว็บไซต์ Brand CI และ CRM อสังหาริมทรัพย์', client:'Canapaya Residences', desc:'วางแบรนด์ เว็บไซต์ และ CRM เฉพาะทางให้โครงการที่พักอาศัยหรูริมแม่น้ำ', result:'เว็บไซต์ใหม่', slug:'canapaya-residences' },
+  { id:26, service:'web', tags:['Enterprise','Web Platform'], year:'2025', title:'เว็บไซต์พร้อม AI CRM', client:'RFS', desc:'เว็บไซต์และ AI CRM ใหม่ให้ผู้ให้บริการโครงสร้างพื้นฐานโทรคมนาคมและสมาร์ทซิตี้จากสิงคโปร์', result:'เว็บไซต์ใหม่', slug:'rfs' },
+  { id:27, service:'mobile', tags:['Government','Mobile App'], year:'2025', title:'แอปตรวจสอบภาษี', client:'กรมสรรพสามิต', desc:'แอปมือถือใหม่ให้เจ้าหน้าที่ตรวจสอบภาษีสรรพสามิต เชื่อมข้อมูลกับหน่วยงานที่เกี่ยวข้อง', result:'แอปใหม่', slug:'excise-department' },
 ]
 
 const gradients = [
@@ -91,10 +101,6 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     const el = rowRefs.current[key]
     if (el) el.scrollBy({ left: dir * 360, behavior: 'smooth' })
   }
-
-  const stats = isEN
-    ? [{ n: '120+', l: 'Projects Delivered' }, { n: '8 yrs', l: 'Experience' }, { n: '15+', l: 'Industries' }, { n: '95%', l: 'Client Referral Rate' }]
-    : [{ n: '120+', l: 'โปรเจกต์ที่ส่งมอบ' }, { n: '8 ปี', l: 'ประสบการณ์' }, { n: '15+', l: 'อุตสาหกรรม' }, { n: '95%', l: 'ลูกค้าแนะนำต่อ' }]
 
   return (
     <>
@@ -124,7 +130,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         <section className="py-20 lg:py-28" style={{ background: '#08070F' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col gap-16">
             {serviceGroups.map((sg) => {
-              const items = projects.filter(p => p.service === sg.key)
+              const items = projects.filter(p => p.service === sg.key && (p as any).slug)
               if (!items.length) return null
               return (
                 <div key={sg.key}>
@@ -198,30 +204,24 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           </div>
         </section>
 
-        <div className="border-y border-[#E4E4EC] bg-[#F7F7FC]">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10">
-            <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-[#E4E4EC]">
-              {stats.map(s => (
-                <div key={s.l} className="px-6 lg:px-10 py-7">
-                  <div className="text-[clamp(2rem,3.5vw,2.8rem)] leading-none mb-1" style={{ fontFamily:'var(--font-main)', fontWeight:500, color:'var(--purple)' }}>{s.n}</div>
-                  <p className="text-sm text-[#6E6E88]" style={{ fontWeight:400 }}>{s.l}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <section className="py-24 relative overflow-hidden" style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)' }}>
-          <div className="absolute inset-0 opacity-10" style={{ backgroundImage:'radial-gradient(circle,#fff 1px,transparent 1px)', backgroundSize:'28px 28px' }} />
-          <div className="relative max-w-3xl mx-auto px-6 lg:px-10 text-center">
-            <p className="text-white/60 text-xs tracking-widest uppercase mb-6 font-mono">{isEN ? 'Ready to start?' : 'พร้อมเริ่มแล้ว?'}</p>
-            <h2 className="t-display text-white text-[clamp(2rem,5vw,4.5rem)] mb-6 leading-tight">
-              {isEN ? 'Let your project\nbe on this list' : 'ให้โปรเจกต์ของคุณ\nอยู่ในลิสต์นี้'}
+        <section className="relative overflow-hidden" style={{ background: '#050308' }}>
+          <div
+            className="absolute inset-0 pointer-events-none opacity-40"
+            style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '180px 180px, 260px 260px', backgroundPosition: '0 0, 90px 130px' }}
+          />
+          <div
+            className="absolute left-0 right-0 bottom-0 pointer-events-none"
+            style={{ height: 260, background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(123,110,246,0.35) 0%, rgba(83,195,215,0.08) 45%, transparent 75%)' }}
+          />
+          <div className="relative max-w-3xl mx-auto px-6 lg:px-10 py-24 text-center">
+            <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#fff', fontWeight: 500 }}>{isEN ? 'Ready to start?' : 'พร้อมเริ่มแล้ว?'}</p>
+            <h2 className="t-display text-[clamp(2rem,5vw,4.5rem)] mb-6 leading-tight" style={{ background: 'linear-gradient(135deg, var(--purple-light) 0%, #53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+              {isEN ? <>Let your project<br />be on this list</> : <>ให้โปรเจกต์ของคุณ<br />อยู่ในลิสต์นี้</>}
             </h2>
-            <p className="text-white/85 mb-10 max-w-md mx-auto" style={{ fontWeight:400 }}>
+            <p className="mb-10 max-w-md mx-auto" style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 400 }}>
               {isEN ? 'We are ready to build a product you are proud of. Start with a free conversation.' : 'เราพร้อมช่วยสร้างผลิตภัณฑ์ที่คุณภาคภูมิใจ เริ่มจากการสนทนาฟรี'}
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-2 px-10 py-4 bg-white rounded-full text-sm hover:bg-[var(--purple-bg)] transition-colors" style={{ color:'var(--purple)', fontWeight:400 }}>
+            <Link href={`/${lang}/contact`} className="inline-flex items-center gap-2 px-10 py-4 rounded-full text-sm transition-opacity hover:opacity-90" style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}>
               {isEN ? 'Start a Project' : 'เริ่มโปรเจกต์เลย'} <i className="ti ti-arrow-right" style={{ fontSize:15 }} aria-hidden="true" />
             </Link>
           </div>

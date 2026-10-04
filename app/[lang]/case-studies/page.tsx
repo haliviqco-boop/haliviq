@@ -44,8 +44,12 @@ const groupsEN = [
   { label: 'Fitness & Wellness', ids: [15] },
   { label: 'Apparel & Uniforms', ids: [16] },
   { label: 'Manufacturing', ids: [17] },
-  { label: 'Government & Public Sector', ids: [19, 21] },
+  { label: 'Government & Public Sector', ids: [19, 21, 27] },
   { label: 'Retail & Shopping Mall', ids: [20] },
+  { label: 'Travel & Tourism', ids: [23] },
+  { label: 'Construction & Real Estate', ids: [24] },
+  { label: 'Real Estate', ids: [25] },
+  { label: 'Telecommunications', ids: [26] },
 ]
 
 const casesEN = [
@@ -71,6 +75,11 @@ const casesEN = [
   { id:20, tags:['Retail & Shopping Mall'], client:'MBK Center', title:'MBK Center Mobile App', desc:'New mobile app letting shoppers find stores, promotions, and member perks in one place.', result:'New App', slug:'mbk' },
   { id:21, tags:['Government & Public Sector'], client:'DITP', title:'DITP Export Promotion Mobile App', desc:'New version of an export-promotion app, built on an earlier version we developed, for Thai exporters.', result:'New App', slug:'ditp' },
   { id:22, tags:['F&B'], client:'Sra Bua by Kiin Kiin', title:'Fine-Dining Restaurant Website', desc:'New bilingual website with online reservations for a modern Thai fine-dining restaurant.', result:'New Website', slug:'sra-bua' },
+  { id:23, tags:['Travel & Tourism'], client:'World Surprise Travel', title:'Website, Branding & AI CRM', desc:'New brand identity, website, and AI CRM for a tour company managing travel packages and customers.', result:'New Website', slug:'world-surprise-travel' },
+  { id:24, tags:['Construction & Real Estate'], client:'Awii House', title:'Home Builder Website with CRM', desc:'New website and CRM for a home-building company, tracking customers from consultation to contract.', result:'New Website', slug:'awii-house' },
+  { id:25, tags:['Real Estate'], client:'Canapaya Residences', title:'Website, Brand CI & Real Estate CRM', desc:'New brand identity, website, and a dedicated CRM for a luxury riverside residential project.', result:'New Website', slug:'canapaya-residences' },
+  { id:26, tags:['Telecommunications'], client:'RFS', title:'Website with AI CRM', desc:'New website and AI CRM for a Singapore-based telecom infrastructure and smart-city solutions provider.', result:'New Website', slug:'rfs' },
+  { id:27, tags:['Government & Public Sector'], client:'Excise Department', title:'Tax Inspection App', desc:'New mobile app for field officers to verify excise tax payments, integrated with data from related agencies.', result:'New App', slug:'excise-department' },
 ]
 
 const groupsTH = groupsEN
@@ -97,6 +106,11 @@ const casesTH = [
   { id:20, tags:['Retail & Shopping Mall'], client:'MBK Center', title:'แอปมือถือศูนย์การค้า MBK', desc:'แอปมือถือใหม่ให้ลูกค้าค้นหาร้านค้า โปรโมชัน และสิทธิพิเศษได้ในที่เดียว', result:'แอปใหม่', slug:'mbk' },
   { id:21, tags:['Government & Public Sector'], client:'DITP', title:'แอปมือถือส่งเสริมผู้ประกอบการส่งออก DITP', desc:'แอปเวอร์ชันใหม่ต่อยอดจากแอปที่เคยพัฒนาให้ เพื่อสนับสนุนผู้ประกอบการส่งออกไทย', result:'แอปใหม่', slug:'ditp' },
   { id:22, tags:['F&B'], client:'Sra Bua by Kiin Kiin', title:'เว็บไซต์ร้านอาหารไฟน์ไดนิ่ง', desc:'เว็บไซต์สองภาษาพร้อมระบบจองโต๊ะออนไลน์ให้ร้านอาหารไทยโมเดิร์นระดับไฟน์ไดนิ่ง', result:'เว็บไซต์ใหม่', slug:'sra-bua' },
+  { id:23, tags:['Travel & Tourism'], client:'World Surprise Travel', title:'เว็บไซต์ Branding และ AI CRM', desc:'วางแบรนด์ใหม่ เว็บไซต์ และ AI CRM ให้บริษัททัวร์บริหารแพ็กเกจและลูกค้า', result:'เว็บไซต์ใหม่', slug:'world-surprise-travel' },
+  { id:24, tags:['Construction & Real Estate'], client:'Awii House', title:'เว็บไซต์พร้อม CRM ให้บริษัทรับสร้างบ้าน', desc:'เว็บไซต์และ CRM ใหม่ให้บริษัทรับสร้างบ้าน ติดตามลูกค้าตั้งแต่ปรึกษาจนถึงเซ็นสัญญา', result:'เว็บไซต์ใหม่', slug:'awii-house' },
+  { id:25, tags:['Real Estate'], client:'Canapaya Residences', title:'เว็บไซต์ Brand CI และ CRM อสังหาริมทรัพย์', desc:'วางแบรนด์ เว็บไซต์ และ CRM เฉพาะทางให้โครงการที่พักอาศัยหรูริมแม่น้ำ', result:'เว็บไซต์ใหม่', slug:'canapaya-residences' },
+  { id:26, tags:['Telecommunications'], client:'RFS', title:'เว็บไซต์พร้อม AI CRM', desc:'เว็บไซต์และ AI CRM ใหม่ให้ผู้ให้บริการโครงสร้างพื้นฐานโทรคมนาคมและสมาร์ทซิตี้จากสิงคโปร์', result:'เว็บไซต์ใหม่', slug:'rfs' },
+  { id:27, tags:['Government & Public Sector'], client:'กรมสรรพสามิต', title:'แอปตรวจสอบภาษี', desc:'แอปมือถือใหม่ให้เจ้าหน้าที่ตรวจสอบภาษีสรรพสามิต เชื่อมข้อมูลกับหน่วยงานที่เกี่ยวข้อง', result:'แอปใหม่', slug:'excise-department' },
 ]
 
 const gradients = [
@@ -242,7 +256,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         <section className="py-20 lg:py-28" style={{ background: '#08070F' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col gap-16">
             {groups.map((g) => {
-              const items = cases.filter(c => c.tags.includes(g.label))
+              const items = cases.filter(c => c.tags.includes(g.label) && (c as any).slug)
               if (!items.length) return null
               return (
                 <div key={g.label}>
