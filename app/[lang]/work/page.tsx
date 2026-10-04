@@ -104,22 +104,29 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   return (
     <>
-      <Navbar lang={lang} tr={tr} />
+      <Navbar lang={lang} tr={tr} transparent />
       <main>
-        <section className="pt-[80px] bg-white">
-          <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg,var(--purple),var(--purple-light),var(--lime))' }} />
-          <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-20 pb-16 lg:pt-28 lg:pb-20">
+        <section className="relative overflow-hidden pt-[80px]" style={{ background: '#08070F' }}>
+          <div
+            className="absolute inset-0 pointer-events-none opacity-[0.35]"
+            style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' }}
+          />
+          <div
+            className="absolute -top-40 -left-32 w-[560px] h-[560px] rounded-full pointer-events-none"
+            style={{ background: 'radial-gradient(circle, rgba(123,110,246,0.28) 0%, transparent 70%)', filter: 'blur(20px)' }}
+          />
+          <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-20 pb-16 lg:pt-28 lg:pb-20">
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
               <div>
                 <p className="t-label mb-5">{isEN ? 'Our Work' : 'ผลงานของเรา'}</p>
-                <h1 className="t-display text-[clamp(3rem,7vw,6.5rem)] text-[#0A0A0F] leading-relaxed">
+                <h1 className="t-display text-[clamp(3rem,7vw,6.5rem)] leading-relaxed" style={{ color: '#fff' }}>
                   {isEN ? 'Products We Are' : 'ผลิตภัณฑ์ที่เรา'}<br />
                   <span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                     {isEN ? 'Proud Of' : 'ภาคภูมิใจ'}
                   </span>
                 </h1>
               </div>
-              <p className="t-body text-sm max-w-sm">
+              <p className="text-sm max-w-sm" style={{ color: 'rgba(255,255,255,0.75)', fontWeight: 400 }}>
                 {isEN ? '120+ projects over 8 years, grouped below by the service that shipped them.' : '120+ โปรเจกต์ใน 8 ปี จัดกลุ่มด้านล่างตามบริการที่ใช้สร้างแต่ละโปรเจกต์'}
               </p>
             </div>
