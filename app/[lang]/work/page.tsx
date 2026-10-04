@@ -33,6 +33,7 @@ const projectsEN = [
   { id:10, service:'mobile', tags:['Healthcare','Mobile App'], year:'2024', title:'Telemedicine & Mental Health', client:'Health Platform', desc:'Video consultation app with mood tracking and care-plan reminders.', result:'92% Completion' },
   { id:11, service:'data', tags:['FinTech','Enterprise'], year:'2023', title:'InsurTech Claims Platform', client:'Insurance Group', desc:'Data pipeline and analytics dashboard powering automated claims decisions.', result:'73% Faster' },
   { id:12, service:'data', tags:['E-Commerce','AI'], year:'2024', title:'Personalization Engine', client:'Fashion Retailer', desc:'Behavioral data pipeline feeding a product-recommendation model.', result:'+45% AOV' },
+  { id:13, service:'web', tags:['Hospitality & F&B','Web Platform'], year:'2025', title:'Michelin-Starred Restaurant Website', client:'Savelberg Restaurant', desc:'New bilingual website with an AI concierge chatbot and content direction for a Michelin-starred French restaurant.', result:'New Website', slug:'savelberg' },
 ]
 
 const projectsTH = [
@@ -48,6 +49,7 @@ const projectsTH = [
   { id:10, service:'mobile', tags:['Healthcare','Mobile App'], year:'2024', title:'Telemedicine & Mental Health', client:'Health Platform', desc:'แอป Video Consultation พร้อม Mood Tracking และแจ้งเตือนแผนการดูแล', result:'92% Completion' },
   { id:11, service:'data', tags:['FinTech','Enterprise'], year:'2023', title:'InsurTech Claims Platform', client:'Insurance Group', desc:'Data Pipeline และ Dashboard วิเคราะห์ข้อมูลสำหรับตัดสินใจเคลมอัตโนมัติ', result:'73% Faster' },
   { id:12, service:'data', tags:['E-Commerce','AI'], year:'2024', title:'Personalization Engine', client:'Fashion Retailer', desc:'Data Pipeline พฤติกรรมผู้ใช้ป้อนโมเดลแนะนำสินค้า', result:'+45% AOV' },
+  { id:13, service:'web', tags:['Hospitality & F&B','Web Platform'], year:'2025', title:'เว็บไซต์ร้านอาหารระดับมิชลินสตาร์', client:'Savelberg Restaurant', desc:'เว็บไซต์สองภาษาพร้อมแชทบอท AI และวางแนวทางคอนเทนต์ให้ร้านอาหารฝรั่งเศสระดับมิชลินสตาร์', result:'เว็บไซต์ใหม่', slug:'savelberg' },
 ]
 
 const gradients = [
@@ -138,10 +140,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                     ref={(el) => { rowRefs.current[sg.key] = el }}
                     className="no-scrollbar flex gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory"
                   >
-                    {items.map((p, i) => (
-                      <div
+                    {items.map((p, i) => {
+                      const CardTag: any = (p as any).slug ? Link : 'div'
+                      const cardProps = (p as any).slug ? { href: `/${lang}/case-studies/${(p as any).slug}` } : {}
+                      return (
+                      <CardTag
                         key={p.id}
-                        className="group shrink-0 w-[300px] snap-start rounded-2xl p-4 transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+                        {...cardProps}
+                        className="group shrink-0 w-[300px] snap-start rounded-2xl p-4 transition-all duration-300 hover:-translate-y-1 cursor-pointer block"
                         style={{ background:'rgba(255,255,255,0.03)', border:'1px solid rgba(255,255,255,0.08)' }}
                       >
                         <div className="relative h-36 rounded-xl flex items-center justify-center mb-4" style={{ background: gradients[i % gradients.length] }}>
@@ -157,8 +163,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                         <span className="text-sm flex items-center gap-1.5 group-hover:gap-2.5 transition-all" style={{ color:'var(--purple-light)', fontWeight:400 }}>
                           {isEN ? 'View project' : 'ดูรายละเอียด'} <i className="ti ti-arrow-up-right" style={{ fontSize:13 }} aria-hidden="true" />
                         </span>
-                      </div>
-                    ))}
+                      </CardTag>
+                      )
+                    })}
                   </div>
                 </div>
               )

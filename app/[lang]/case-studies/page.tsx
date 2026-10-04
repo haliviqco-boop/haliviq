@@ -39,6 +39,7 @@ const groupsEN = [
   { label: 'Healthcare', ids: [3, 10] },
   { label: 'AI', ids: [4, 8] },
   { label: 'Enterprise', ids: [7, 9] },
+  { label: 'Hospitality & F&B', ids: [13] },
 ]
 
 const casesEN = [
@@ -54,6 +55,7 @@ const casesEN = [
   { id:10, tags:['Healthcare'], client:'Health Platform', title:'Telemedicine & Mental Health', desc:'Video consultation + mood tracking.', result:'92% Completion' },
   { id:11, tags:['FinTech'], client:'Insurance Group', title:'InsurTech Claims Platform', desc:'AI claims processing, 73% time reduction.', result:'73% Faster' },
   { id:12, tags:['E-Commerce'], client:'Fashion Retailer', title:'Personalization Engine', desc:'AI product recommendation increased AOV by 45%.', result:'+45% AOV' },
+  { id:13, tags:['Hospitality & F&B'], client:'Savelberg Restaurant', title:'Michelin-Starred Restaurant Website', desc:'New bilingual website and content direction for a Michelin-starred French restaurant.', result:'New Website', slug:'savelberg' },
 ]
 
 const groupsTH = groupsEN
@@ -70,6 +72,7 @@ const casesTH = [
   { id:10, tags:['Healthcare'], client:'Health Platform', title:'Telemedicine & Mental Health', desc:'Video Consultation + Mood Tracking', result:'92% Completion' },
   { id:11, tags:['FinTech'], client:'Insurance Group', title:'InsurTech Claims Platform', desc:'AI Claims Processing ลด 73% เวลา', result:'73% Faster' },
   { id:12, tags:['E-Commerce'], client:'Fashion Retailer', title:'Personalization Engine', desc:'AI Product Recommendation เพิ่ม AOV 45%', result:'+45% AOV' },
+  { id:13, tags:['Hospitality & F&B'], client:'Savelberg Restaurant', title:'เว็บไซต์ร้านอาหารระดับมิชลินสตาร์', desc:'เว็บไซต์สองภาษาและวางแนวทางคอนเทนต์ให้ร้านอาหารฝรั่งเศสระดับมิชลินสตาร์', result:'เว็บไซต์ใหม่', slug:'savelberg' },
 ]
 
 const gradients = [
@@ -253,7 +256,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                     {items.map((c, i) => (
                       <Link
                         key={c.id}
-                        href={`/${lang}/work`}
+                        href={(c as any).slug ? `/${lang}/case-studies/${(c as any).slug}` : `/${lang}/work`}
                         className="group shrink-0 w-[280px] snap-start rounded-2xl p-4 transition-all duration-300 hover:-translate-y-1"
                         style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}
                       >
