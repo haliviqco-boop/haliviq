@@ -7,18 +7,28 @@ import Footer from '@/components/Footer'
 import { getCaseStudy } from '@/lib/case-studies-data'
 
 const serviceGroupsEN = [
-  { key: 'web', label: 'Web Development' },
-  { key: 'mobile', label: 'Mobile Apps' },
-  { key: 'ai', label: 'AI Agent & Generative AI' },
-  { key: 'data', label: 'Data Analytics & Engineering' },
-  { key: 'enterprise', label: 'Digital Transformation & Enterprise' },
+  { key: 'fnb', label: 'F&B', desc: 'Restaurant and dessert brands built for online ordering, reservations, and guest experience.' },
+  { key: 'realestate', label: 'Real Estate & Construction', desc: 'Developers and home builders with branding, websites, and CRM from lead to contract.' },
+  { key: 'government', label: 'Government & Public Sector', desc: 'Public agencies and institutes digitizing services for citizens, exporters, and field officers.' },
+  { key: 'travel', label: 'Travel & Tourism', desc: 'Tour and travel companies with brand identity, booking websites, and AI-driven CRM.' },
+  { key: 'retail', label: 'Retail & Shopping Mall', desc: 'Malls and retail operators connecting shoppers to stores, promotions, and perks.' },
+  { key: 'telecom', label: 'Telecommunications', desc: 'Infrastructure and smart-city solution providers reaching enterprise customers.' },
+  { key: 'ecommerce', label: 'E-Commerce', desc: 'Direct-to-consumer brands selling online with full cart and checkout experiences.' },
+  { key: 'manufacturing', label: 'Manufacturing', desc: 'Industrial manufacturers presenting capabilities and quality standards to B2B buyers.' },
+  { key: 'apparel', label: 'Apparel & Uniforms', desc: 'Garment and uniform makers with catalogs and B2B order-inquiry flows.' },
+  { key: 'fitness', label: 'Fitness & Wellness', desc: 'Studios and wellness brands with class booking and trainer profiles.' },
 ]
 const serviceGroupsTH = [
-  { key: 'web', label: 'พัฒนาเว็บไซต์' },
-  { key: 'mobile', label: 'พัฒนาแอปมือถือ' },
-  { key: 'ai', label: 'AI Agent & Generative AI' },
-  { key: 'data', label: 'Data Analytics & Engineering' },
-  { key: 'enterprise', label: 'Digital Transformation & Enterprise' },
+  { key: 'fnb', label: 'ร้านอาหารและเครื่องดื่ม', desc: 'แบรนด์ร้านอาหารและของหวาน พร้อมระบบสั่งซื้อออนไลน์ จองโต๊ะ และประสบการณ์ลูกค้า' },
+  { key: 'realestate', label: 'อสังหาริมทรัพย์และก่อสร้าง', desc: 'ผู้พัฒนาโครงการและบริษัทรับสร้างบ้าน พร้อมแบรนด์ เว็บไซต์ และ CRM ตั้งแต่ลีดจนถึงเซ็นสัญญา' },
+  { key: 'government', label: 'หน่วยงานภาครัฐ', desc: 'หน่วยงานรัฐและสถาบันต่าง ๆ ยกระดับบริการดิจิทัลให้ประชาชน ผู้ส่งออก และเจ้าหน้าที่ภาคสนาม' },
+  { key: 'travel', label: 'การท่องเที่ยวและทัวร์', desc: 'บริษัททัวร์และท่องเที่ยว พร้อมแบรนด์ เว็บไซต์จองทัวร์ และ AI CRM' },
+  { key: 'retail', label: 'ค้าปลีกและศูนย์การค้า', desc: 'ศูนย์การค้าและธุรกิจค้าปลีก เชื่อมลูกค้ากับร้านค้า โปรโมชัน และสิทธิพิเศษ' },
+  { key: 'telecom', label: 'โทรคมนาคม', desc: 'ผู้ให้บริการโครงสร้างพื้นฐานและโซลูชันสมาร์ทซิตี้สำหรับลูกค้าองค์กร' },
+  { key: 'ecommerce', label: 'อีคอมเมิร์ซ', desc: 'แบรนด์ที่ขายตรงถึงผู้บริโภคออนไลน์ พร้อมระบบตะกร้าสินค้าและชำระเงินครบวงจร' },
+  { key: 'manufacturing', label: 'โรงงานผลิต', desc: 'ผู้ผลิตภาคอุตสาหกรรม นำเสนอขีดความสามารถและมาตรฐานคุณภาพต่อลูกค้า B2B' },
+  { key: 'apparel', label: 'เครื่องแต่งกายและยูนิฟอร์ม', desc: 'ผู้ผลิตเสื้อผ้าและยูนิฟอร์ม พร้อมแคตตาล็อกสินค้าและระบบติดต่อสั่งซื้อแบบองค์กร' },
+  { key: 'fitness', label: 'ฟิตเนสและเวลเนส', desc: 'สตูดิโอและแบรนด์เวลเนส พร้อมระบบจองคลาสและโปรไฟล์เทรนเนอร์' },
 ]
 
 const projectsEN = [
@@ -34,21 +44,21 @@ const projectsEN = [
   { id:10, service:'mobile', tags:['Healthcare','Mobile App'], year:'2024', title:'Telemedicine & Mental Health', client:'Health Platform', desc:'Video consultation app with mood tracking and care-plan reminders.', result:'92% Completion' },
   { id:11, service:'data', tags:['FinTech','Enterprise'], year:'2023', title:'InsurTech Claims Platform', client:'Insurance Group', desc:'Data pipeline and analytics dashboard powering automated claims decisions.', result:'73% Faster' },
   { id:12, service:'data', tags:['E-Commerce','AI'], year:'2024', title:'Personalization Engine', client:'Fashion Retailer', desc:'Behavioral data pipeline feeding a product-recommendation model.', result:'+45% AOV' },
-  { id:13, service:'web', tags:['F&B','Web Platform'], year:'2025', title:'Michelin-Starred Restaurant Website', client:'Savelberg Restaurant', desc:'New bilingual website with an AI concierge chatbot and content direction for a Michelin-starred French restaurant.', result:'New Website', slug:'savelberg' },
-  { id:14, service:'web', tags:['F&B','Web Platform'], year:'2025', title:'Ice Cream Brand Website', client:'OVO', desc:'New website for an ice cream and dessert brand, with online ordering and marketing content direction.', result:'New Website', slug:'ovo' },
-  { id:15, service:'web', tags:['Fitness & Wellness','Web Platform'], year:'2025', title:'Fitness Studio Website', client:'BASE', desc:'New website for a fitness studio with online class booking and trainer profiles.', result:'New Website', slug:'base' },
-  { id:16, service:'web', tags:['Apparel & Uniforms','Web Platform'], year:'2025', title:'Medical Uniform Manufacturer Website', client:'Blue Bear', desc:'New website with a product catalog and B2B order-inquiry flow for hospital and clinic customers.', result:'New Website', slug:'blue-bear' },
-  { id:17, service:'web', tags:['Manufacturing','Web Platform'], year:'2025', title:'Precision Manufacturing Website', client:'Thai Metal Aluminium', desc:'New corporate website presenting manufacturing capabilities and quality standards to industrial customers.', result:'New Website', slug:'thai-metal-aluminium' },
-  { id:18, service:'web', tags:['E-Commerce','Web Platform'], year:'2025', title:'Bag Brand E-Commerce Website', client:'VERA', desc:'New e-commerce website for a self-manufactured bag brand, with cart and checkout for nationwide sales.', result:'New Website', slug:'vera' },
-  { id:19, service:'web', tags:['Government','Web Platform'], year:'2025', title:'National Food Institute Website', client:'NFI – National Food Institute', desc:'New website organizing lab services and research for a public food-research institute.', result:'New Website', slug:'nfi' },
-  { id:20, service:'mobile', tags:['Retail','Mobile App'], year:'2025', title:'MBK Center Mobile App', client:'MBK Center', desc:'New mobile app letting shoppers find stores, promotions, and member perks in one place.', result:'New App', slug:'mbk' },
-  { id:21, service:'mobile', tags:['Government','Mobile App'], year:'2025', title:'DITP Export Promotion Mobile App', client:'DITP', desc:'New version of an export-promotion app, built on an earlier version we developed, for Thai exporters.', result:'New App', slug:'ditp' },
-  { id:22, service:'web', tags:['F&B','Web Platform'], year:'2025', title:'Fine-Dining Restaurant Website', client:'Sra Bua by Kiin Kiin', desc:'New bilingual website with online reservations for a modern Thai fine-dining restaurant.', result:'New Website', slug:'sra-bua' },
-  { id:23, service:'web', tags:['Travel','Web Platform'], year:'2025', title:'Website, Branding & AI CRM', client:'World Surprise Travel', desc:'New brand identity, website, and AI CRM for a tour company managing travel packages and customers.', result:'New Website', slug:'world-surprise-travel' },
-  { id:24, service:'web', tags:['Real Estate','Web Platform'], year:'2025', title:'Home Builder Website with CRM', client:'Awii House', desc:'New website and CRM for a home-building company, tracking customers from consultation to contract.', result:'New Website', slug:'awii-house' },
-  { id:25, service:'web', tags:['Real Estate','Web Platform'], year:'2025', title:'Website, Brand CI & Real Estate CRM', client:'Canapaya Residences', desc:'New brand identity, website, and a dedicated CRM for a luxury riverside residential project.', result:'New Website', slug:'canapaya-residences' },
-  { id:26, service:'web', tags:['Enterprise','Web Platform'], year:'2025', title:'Website with AI CRM', client:'RFS', desc:'New website and AI CRM for a Singapore-based telecom infrastructure and smart-city solutions provider.', result:'New Website', slug:'rfs' },
-  { id:27, service:'mobile', tags:['Government','Mobile App'], year:'2025', title:'Tax Inspection App', client:'Excise Department', desc:'New mobile app for field officers to verify excise tax payments, integrated with data from related agencies.', result:'New App', slug:'excise-department' },
+  { id:13, service:'fnb', tags:['F&B','Web Platform'], year:'2025', title:'Michelin-Starred Restaurant Website', client:'Savelberg Restaurant', desc:'New bilingual website with an AI concierge chatbot and content direction for a Michelin-starred French restaurant.', result:'New Website', slug:'savelberg' },
+  { id:14, service:'fnb', tags:['F&B','Web Platform'], year:'2025', title:'Ice Cream Brand Website', client:'OVO', desc:'New website for an ice cream and dessert brand, with online ordering and marketing content direction.', result:'New Website', slug:'ovo' },
+  { id:15, service:'fitness', tags:['Fitness & Wellness','Web Platform'], year:'2025', title:'Fitness Studio Website', client:'BASE', desc:'New website for a fitness studio with online class booking and trainer profiles.', result:'New Website', slug:'base' },
+  { id:16, service:'apparel', tags:['Apparel & Uniforms','Web Platform'], year:'2025', title:'Medical Uniform Manufacturer Website', client:'Blue Bear', desc:'New website with a product catalog and B2B order-inquiry flow for hospital and clinic customers.', result:'New Website', slug:'blue-bear' },
+  { id:17, service:'manufacturing', tags:['Manufacturing','Web Platform'], year:'2025', title:'Precision Manufacturing Website', client:'Thai Metal Aluminium', desc:'New corporate website presenting manufacturing capabilities and quality standards to industrial customers.', result:'New Website', slug:'thai-metal-aluminium' },
+  { id:18, service:'ecommerce', tags:['E-Commerce','Web Platform'], year:'2025', title:'Bag Brand E-Commerce Website', client:'VERA', desc:'New e-commerce website for a self-manufactured bag brand, with cart and checkout for nationwide sales.', result:'New Website', slug:'vera' },
+  { id:19, service:'government', tags:['Government','Web Platform'], year:'2025', title:'National Food Institute Website', client:'NFI – National Food Institute', desc:'New website organizing lab services and research for a public food-research institute.', result:'New Website', slug:'nfi' },
+  { id:20, service:'retail', tags:['Retail','Mobile App'], year:'2025', title:'MBK Center Mobile App', client:'MBK Center', desc:'New mobile app letting shoppers find stores, promotions, and member perks in one place.', result:'New App', slug:'mbk' },
+  { id:21, service:'government', tags:['Government','Mobile App'], year:'2025', title:'DITP Export Promotion Mobile App', client:'DITP', desc:'New version of an export-promotion app, built on an earlier version we developed, for Thai exporters.', result:'New App', slug:'ditp' },
+  { id:22, service:'fnb', tags:['F&B','Web Platform'], year:'2025', title:'Fine-Dining Restaurant Website', client:'Sra Bua by Kiin Kiin', desc:'New bilingual website with online reservations for a modern Thai fine-dining restaurant.', result:'New Website', slug:'sra-bua' },
+  { id:23, service:'travel', tags:['Travel','Web Platform'], year:'2025', title:'Website, Branding & AI CRM', client:'World Surprise Travel', desc:'New brand identity, website, and AI CRM for a tour company managing travel packages and customers.', result:'New Website', slug:'world-surprise-travel' },
+  { id:24, service:'realestate', tags:['Real Estate','Web Platform'], year:'2025', title:'Home Builder Website with CRM', client:'Awii House', desc:'New website and CRM for a home-building company, tracking customers from consultation to contract.', result:'New Website', slug:'awii-house' },
+  { id:25, service:'realestate', tags:['Real Estate','Web Platform'], year:'2025', title:'Website, Brand CI & Real Estate CRM', client:'Canapaya Residences', desc:'New brand identity, website, and a dedicated CRM for a luxury riverside residential project.', result:'New Website', slug:'canapaya-residences' },
+  { id:26, service:'telecom', tags:['Enterprise','Web Platform'], year:'2025', title:'Website with AI CRM', client:'RFS', desc:'New website and AI CRM for a Singapore-based telecom infrastructure and smart-city solutions provider.', result:'New Website', slug:'rfs' },
+  { id:27, service:'government', tags:['Government','Mobile App'], year:'2025', title:'Tax Inspection App', client:'Excise Department', desc:'New mobile app for field officers to verify excise tax payments, integrated with data from related agencies.', result:'New App', slug:'excise-department' },
 ]
 
 const projectsTH = [
@@ -64,21 +74,21 @@ const projectsTH = [
   { id:10, service:'mobile', tags:['Healthcare','Mobile App'], year:'2024', title:'Telemedicine & Mental Health', client:'Health Platform', desc:'แอป Video Consultation พร้อม Mood Tracking และแจ้งเตือนแผนการดูแล', result:'92% Completion' },
   { id:11, service:'data', tags:['FinTech','Enterprise'], year:'2023', title:'InsurTech Claims Platform', client:'Insurance Group', desc:'Data Pipeline และ Dashboard วิเคราะห์ข้อมูลสำหรับตัดสินใจเคลมอัตโนมัติ', result:'73% Faster' },
   { id:12, service:'data', tags:['E-Commerce','AI'], year:'2024', title:'Personalization Engine', client:'Fashion Retailer', desc:'Data Pipeline พฤติกรรมผู้ใช้ป้อนโมเดลแนะนำสินค้า', result:'+45% AOV' },
-  { id:13, service:'web', tags:['F&B','Web Platform'], year:'2025', title:'เว็บไซต์ร้านอาหารระดับมิชลินสตาร์', client:'Savelberg Restaurant', desc:'เว็บไซต์สองภาษาพร้อมแชทบอท AI และวางแนวทางคอนเทนต์ให้ร้านอาหารฝรั่งเศสระดับมิชลินสตาร์', result:'เว็บไซต์ใหม่', slug:'savelberg' },
-  { id:14, service:'web', tags:['F&B','Web Platform'], year:'2025', title:'เว็บไซต์แบรนด์ไอศกรีม', client:'OVO', desc:'เว็บไซต์ใหม่สำหรับแบรนด์ไอศกรีมและของหวาน พร้อมระบบสั่งซื้อออนไลน์และวางแนวทางคอนเทนต์การตลาด', result:'เว็บไซต์ใหม่', slug:'ovo' },
-  { id:15, service:'web', tags:['Fitness & Wellness','Web Platform'], year:'2025', title:'เว็บไซต์สตูดิโอฟิตเนส', client:'BASE', desc:'เว็บไซต์ใหม่สำหรับสตูดิโอฟิตเนส พร้อมระบบจองคลาสออนไลน์และโปรไฟล์เทรนเนอร์', result:'เว็บไซต์ใหม่', slug:'base' },
-  { id:16, service:'web', tags:['Apparel & Uniforms','Web Platform'], year:'2025', title:'เว็บไซต์ผู้ผลิตชุดยูนิฟอร์มทางการแพทย์', client:'Blue Bear', desc:'เว็บไซต์ใหม่พร้อมแคตตาล็อกสินค้าและระบบติดต่อสั่งซื้อแบบองค์กรสำหรับลูกค้าโรงพยาบาลและคลินิก', result:'เว็บไซต์ใหม่', slug:'blue-bear' },
-  { id:17, service:'web', tags:['Manufacturing','Web Platform'], year:'2025', title:'เว็บไซต์โรงงานผลิตชิ้นส่วนอะลูมิเนียม', client:'Thai Metal Aluminium', desc:'เว็บไซต์องค์กรใหม่ นำเสนอขีดความสามารถด้านการผลิตและมาตรฐานคุณภาพต่อลูกค้าอุตสาหกรรม', result:'เว็บไซต์ใหม่', slug:'thai-metal-aluminium' },
-  { id:18, service:'web', tags:['E-Commerce','Web Platform'], year:'2025', title:'เว็บไซต์อีคอมเมิร์ซแบรนด์กระเป๋า', client:'VERA', desc:'เว็บไซต์อีคอมเมิร์ซใหม่สำหรับแบรนด์กระเป๋าที่ผลิตและขายออนไลน์ พร้อมระบบตะกร้าสินค้าและชำระเงิน', result:'เว็บไซต์ใหม่', slug:'vera' },
-  { id:19, service:'web', tags:['Government','Web Platform'], year:'2025', title:'เว็บไซต์สถาบันอาหาร', client:'NFI สถาบันอาหาร', desc:'เว็บไซต์ใหม่จัดระเบียบบริการห้องปฏิบัติการและงานวิจัยให้สถาบันวิจัยอาหารภาครัฐ', result:'เว็บไซต์ใหม่', slug:'nfi' },
-  { id:20, service:'mobile', tags:['Retail','Mobile App'], year:'2025', title:'แอปมือถือศูนย์การค้า MBK', client:'MBK Center', desc:'แอปมือถือใหม่ให้ลูกค้าค้นหาร้านค้า โปรโมชัน และสิทธิพิเศษได้ในที่เดียว', result:'แอปใหม่', slug:'mbk' },
-  { id:21, service:'mobile', tags:['Government','Mobile App'], year:'2025', title:'แอปมือถือส่งเสริมผู้ประกอบการส่งออก DITP', client:'DITP', desc:'แอปเวอร์ชันใหม่ต่อยอดจากแอปที่เคยพัฒนาให้ เพื่อสนับสนุนผู้ประกอบการส่งออกไทย', result:'แอปใหม่', slug:'ditp' },
-  { id:22, service:'web', tags:['F&B','Web Platform'], year:'2025', title:'เว็บไซต์ร้านอาหารไฟน์ไดนิ่ง', client:'Sra Bua by Kiin Kiin', desc:'เว็บไซต์สองภาษาพร้อมระบบจองโต๊ะออนไลน์ให้ร้านอาหารไทยโมเดิร์นระดับไฟน์ไดนิ่ง', result:'เว็บไซต์ใหม่', slug:'sra-bua' },
-  { id:23, service:'web', tags:['Travel','Web Platform'], year:'2025', title:'เว็บไซต์ Branding และ AI CRM', client:'World Surprise Travel', desc:'วางแบรนด์ใหม่ เว็บไซต์ และ AI CRM ให้บริษัททัวร์บริหารแพ็กเกจและลูกค้า', result:'เว็บไซต์ใหม่', slug:'world-surprise-travel' },
-  { id:24, service:'web', tags:['Real Estate','Web Platform'], year:'2025', title:'เว็บไซต์พร้อม CRM ให้บริษัทรับสร้างบ้าน', client:'Awii House', desc:'เว็บไซต์และ CRM ใหม่ให้บริษัทรับสร้างบ้าน ติดตามลูกค้าตั้งแต่ปรึกษาจนถึงเซ็นสัญญา', result:'เว็บไซต์ใหม่', slug:'awii-house' },
-  { id:25, service:'web', tags:['Real Estate','Web Platform'], year:'2025', title:'เว็บไซต์ Brand CI และ CRM อสังหาริมทรัพย์', client:'Canapaya Residences', desc:'วางแบรนด์ เว็บไซต์ และ CRM เฉพาะทางให้โครงการที่พักอาศัยหรูริมแม่น้ำ', result:'เว็บไซต์ใหม่', slug:'canapaya-residences' },
-  { id:26, service:'web', tags:['Enterprise','Web Platform'], year:'2025', title:'เว็บไซต์พร้อม AI CRM', client:'RFS', desc:'เว็บไซต์และ AI CRM ใหม่ให้ผู้ให้บริการโครงสร้างพื้นฐานโทรคมนาคมและสมาร์ทซิตี้จากสิงคโปร์', result:'เว็บไซต์ใหม่', slug:'rfs' },
-  { id:27, service:'mobile', tags:['Government','Mobile App'], year:'2025', title:'แอปตรวจสอบภาษี', client:'กรมสรรพสามิต', desc:'แอปมือถือใหม่ให้เจ้าหน้าที่ตรวจสอบภาษีสรรพสามิต เชื่อมข้อมูลกับหน่วยงานที่เกี่ยวข้อง', result:'แอปใหม่', slug:'excise-department' },
+  { id:13, service:'fnb', tags:['F&B','Web Platform'], year:'2025', title:'เว็บไซต์ร้านอาหารระดับมิชลินสตาร์', client:'Savelberg Restaurant', desc:'เว็บไซต์สองภาษาพร้อมแชทบอท AI และวางแนวทางคอนเทนต์ให้ร้านอาหารฝรั่งเศสระดับมิชลินสตาร์', result:'เว็บไซต์ใหม่', slug:'savelberg' },
+  { id:14, service:'fnb', tags:['F&B','Web Platform'], year:'2025', title:'เว็บไซต์แบรนด์ไอศกรีม', client:'OVO', desc:'เว็บไซต์ใหม่สำหรับแบรนด์ไอศกรีมและของหวาน พร้อมระบบสั่งซื้อออนไลน์และวางแนวทางคอนเทนต์การตลาด', result:'เว็บไซต์ใหม่', slug:'ovo' },
+  { id:15, service:'fitness', tags:['Fitness & Wellness','Web Platform'], year:'2025', title:'เว็บไซต์สตูดิโอฟิตเนส', client:'BASE', desc:'เว็บไซต์ใหม่สำหรับสตูดิโอฟิตเนส พร้อมระบบจองคลาสออนไลน์และโปรไฟล์เทรนเนอร์', result:'เว็บไซต์ใหม่', slug:'base' },
+  { id:16, service:'apparel', tags:['Apparel & Uniforms','Web Platform'], year:'2025', title:'เว็บไซต์ผู้ผลิตชุดยูนิฟอร์มทางการแพทย์', client:'Blue Bear', desc:'เว็บไซต์ใหม่พร้อมแคตตาล็อกสินค้าและระบบติดต่อสั่งซื้อแบบองค์กรสำหรับลูกค้าโรงพยาบาลและคลินิก', result:'เว็บไซต์ใหม่', slug:'blue-bear' },
+  { id:17, service:'manufacturing', tags:['Manufacturing','Web Platform'], year:'2025', title:'เว็บไซต์โรงงานผลิตชิ้นส่วนอะลูมิเนียม', client:'Thai Metal Aluminium', desc:'เว็บไซต์องค์กรใหม่ นำเสนอขีดความสามารถด้านการผลิตและมาตรฐานคุณภาพต่อลูกค้าอุตสาหกรรม', result:'เว็บไซต์ใหม่', slug:'thai-metal-aluminium' },
+  { id:18, service:'ecommerce', tags:['E-Commerce','Web Platform'], year:'2025', title:'เว็บไซต์อีคอมเมิร์ซแบรนด์กระเป๋า', client:'VERA', desc:'เว็บไซต์อีคอมเมิร์ซใหม่สำหรับแบรนด์กระเป๋าที่ผลิตและขายออนไลน์ พร้อมระบบตะกร้าสินค้าและชำระเงิน', result:'เว็บไซต์ใหม่', slug:'vera' },
+  { id:19, service:'government', tags:['Government','Web Platform'], year:'2025', title:'เว็บไซต์สถาบันอาหาร', client:'NFI สถาบันอาหาร', desc:'เว็บไซต์ใหม่จัดระเบียบบริการห้องปฏิบัติการและงานวิจัยให้สถาบันวิจัยอาหารภาครัฐ', result:'เว็บไซต์ใหม่', slug:'nfi' },
+  { id:20, service:'retail', tags:['Retail','Mobile App'], year:'2025', title:'แอปมือถือศูนย์การค้า MBK', client:'MBK Center', desc:'แอปมือถือใหม่ให้ลูกค้าค้นหาร้านค้า โปรโมชัน และสิทธิพิเศษได้ในที่เดียว', result:'แอปใหม่', slug:'mbk' },
+  { id:21, service:'government', tags:['Government','Mobile App'], year:'2025', title:'แอปมือถือส่งเสริมผู้ประกอบการส่งออก DITP', client:'DITP', desc:'แอปเวอร์ชันใหม่ต่อยอดจากแอปที่เคยพัฒนาให้ เพื่อสนับสนุนผู้ประกอบการส่งออกไทย', result:'แอปใหม่', slug:'ditp' },
+  { id:22, service:'fnb', tags:['F&B','Web Platform'], year:'2025', title:'เว็บไซต์ร้านอาหารไฟน์ไดนิ่ง', client:'Sra Bua by Kiin Kiin', desc:'เว็บไซต์สองภาษาพร้อมระบบจองโต๊ะออนไลน์ให้ร้านอาหารไทยโมเดิร์นระดับไฟน์ไดนิ่ง', result:'เว็บไซต์ใหม่', slug:'sra-bua' },
+  { id:23, service:'travel', tags:['Travel','Web Platform'], year:'2025', title:'เว็บไซต์ Branding และ AI CRM', client:'World Surprise Travel', desc:'วางแบรนด์ใหม่ เว็บไซต์ และ AI CRM ให้บริษัททัวร์บริหารแพ็กเกจและลูกค้า', result:'เว็บไซต์ใหม่', slug:'world-surprise-travel' },
+  { id:24, service:'realestate', tags:['Real Estate','Web Platform'], year:'2025', title:'เว็บไซต์พร้อม CRM ให้บริษัทรับสร้างบ้าน', client:'Awii House', desc:'เว็บไซต์และ CRM ใหม่ให้บริษัทรับสร้างบ้าน ติดตามลูกค้าตั้งแต่ปรึกษาจนถึงเซ็นสัญญา', result:'เว็บไซต์ใหม่', slug:'awii-house' },
+  { id:25, service:'realestate', tags:['Real Estate','Web Platform'], year:'2025', title:'เว็บไซต์ Brand CI และ CRM อสังหาริมทรัพย์', client:'Canapaya Residences', desc:'วางแบรนด์ เว็บไซต์ และ CRM เฉพาะทางให้โครงการที่พักอาศัยหรูริมแม่น้ำ', result:'เว็บไซต์ใหม่', slug:'canapaya-residences' },
+  { id:26, service:'telecom', tags:['Enterprise','Web Platform'], year:'2025', title:'เว็บไซต์พร้อม AI CRM', client:'RFS', desc:'เว็บไซต์และ AI CRM ใหม่ให้ผู้ให้บริการโครงสร้างพื้นฐานโทรคมนาคมและสมาร์ทซิตี้จากสิงคโปร์', result:'เว็บไซต์ใหม่', slug:'rfs' },
+  { id:27, service:'government', tags:['Government','Mobile App'], year:'2025', title:'แอปตรวจสอบภาษี', client:'กรมสรรพสามิต', desc:'แอปมือถือใหม่ให้เจ้าหน้าที่ตรวจสอบภาษีสรรพสามิต เชื่อมข้อมูลกับหน่วยงานที่เกี่ยวข้อง', result:'แอปใหม่', slug:'excise-department' },
 ]
 
 const gradients = [
@@ -142,10 +152,13 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               return (
                 <div key={sg.key}>
                   <div className="flex items-end justify-between mb-8">
-                    <div>
+                    <div className="max-w-xl">
                       <h2 className="t-display text-[clamp(1.6rem,2.8vw,2.4rem)] leading-tight mb-2" style={{ color:'#fff' }}>{sg.label}</h2>
+                      <p className="text-sm mb-1.5" style={{ color:'rgba(255,255,255,0.6)', fontWeight:400, lineHeight:1.5 }}>
+                        {(sg as any).desc}
+                      </p>
                       <p className="text-sm" style={{ color:'var(--lime)', fontWeight:400 }}>
-                        {isEN ? `${items.length} project${items.length > 1 ? 's' : ''} in this service line` : `${items.length} โปรเจกต์ในบริการนี้`}
+                        {isEN ? `${items.length} project${items.length > 1 ? 's' : ''} in this category` : `${items.length} โปรเจกต์ในหมวดนี้`}
                       </p>
                     </div>
                     <div className="hidden sm:flex items-center gap-2 shrink-0">
