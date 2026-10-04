@@ -203,21 +203,28 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   return (
     <>
-      <Navbar lang={lang} tr={tr} />
+      <Navbar lang={lang} tr={tr} transparent />
       <main>
         {/* Hero */}
-        <section className="pt-[80px] bg-white">
-          <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg,var(--purple),var(--purple-light),var(--lime))' }} />
-          <div className="max-w-5xl mx-auto px-6 lg:px-10 pt-20 lg:pt-28 pb-16 text-center">
+        <section className="relative overflow-hidden pt-[80px]" style={{ background: '#08070F' }}>
+          <div
+            className="absolute inset-0 pointer-events-none opacity-[0.35]"
+            style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' }}
+          />
+          <div
+            className="absolute -top-40 -left-32 w-[560px] h-[560px] rounded-full pointer-events-none"
+            style={{ background: 'radial-gradient(circle, rgba(123,110,246,0.28) 0%, transparent 70%)', filter: 'blur(20px)' }}
+          />
+          <div className="relative max-w-5xl mx-auto px-6 lg:px-10 pt-20 lg:pt-28 pb-16 text-center">
             <p className="t-label mb-5">{isEN ? 'Industries' : 'อุตสาหกรรม'}</p>
-            <h1 className="t-display text-[clamp(2.6rem,5.5vw,4.8rem)] text-[#0A0A0F] leading-relaxed mb-6">
+            <h1 className="t-display text-[clamp(2.6rem,5.5vw,4.8rem)] leading-relaxed mb-6" style={{ color: '#fff' }}>
               {isEN ? (
                 <>Built for Your<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Industry</span></>
               ) : (
                 <>โซลูชันที่เข้าใจ<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>ธุรกิจคุณจริงๆ</span></>
               )}
             </h1>
-            <p className="t-body text-lg leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 400 }}>
               {isEN
                 ? 'Every industry has different rules, users, and risks. We bring domain-specific expertise to every product we build.'
                 : 'แต่ละอุตสาหกรรมมีกฎ ผู้ใช้ และความเสี่ยงที่ต่างกัน เรานำความเชี่ยวชาญเฉพาะด้านมาใช้ในทุกผลิตภัณฑ์ที่สร้าง'}
@@ -251,22 +258,29 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </section>
 
         {/* CTA */}
-        <section className="py-24 lg:py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg,#2D1B69 0%,var(--purple) 40%,var(--purple-light) 100%)' }}>
-          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle,#fff 1px,transparent 1px)', backgroundSize: '28px 28px' }} />
-          <div className="relative max-w-4xl mx-auto px-4 lg:px-10 text-center">
-            <p className="mb-6" style={{ color: '#ffffff', fontSize: '0.85rem', fontWeight: 400 }}>{isEN ? 'Start Today' : 'เริ่มต้นวันนี้'}</p>
-            <h2 className="t-display mb-4 leading-tight" style={{ color: '#ffffff', fontSize: 'clamp(2rem,4vw,4rem)', fontWeight: 500 }}>
+        <section className="relative overflow-hidden" style={{ background: '#050308' }}>
+          <div
+            className="absolute inset-0 pointer-events-none opacity-40"
+            style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '180px 180px, 260px 260px', backgroundPosition: '0 0, 90px 130px' }}
+          />
+          <div
+            className="absolute left-0 right-0 bottom-0 pointer-events-none"
+            style={{ height: 260, background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(123,110,246,0.35) 0%, rgba(83,195,215,0.08) 45%, transparent 75%)' }}
+          />
+          <div className="relative max-w-4xl mx-auto px-4 lg:px-10 py-24 lg:py-32 text-center">
+            <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#fff', fontWeight: 500 }}>{isEN ? 'Start Today' : 'เริ่มต้นวันนี้'}</p>
+            <h2 className="t-display mb-6 leading-tight" style={{ background: 'linear-gradient(135deg, var(--purple-light) 0%, #53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', fontSize: 'clamp(2rem,4vw,4rem)' }}>
               {isEN ? "Don't See Your Industry?" : 'ไม่เห็นอุตสาหกรรมของคุณ?'}
             </h2>
-            <p className="text-white text-base mb-10 max-w-lg mx-auto" style={{ fontWeight: 400 }}>
+            <p className="text-base mb-10 max-w-lg mx-auto" style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 400 }}>
               {isEN ? 'Tell us about your business and we will show you how we can help.' : 'เล่าให้เราฟังเรื่องธุรกิจของคุณ แล้วเราจะแสดงให้เห็นว่าเราช่วยอะไรได้บ้าง'}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link href={`${prefix}/contact`} className="inline-flex items-center gap-2 px-10 py-4 bg-white rounded-full text-sm font-medium hover:bg-[var(--purple-bg)] transition-colors" style={{ color: 'var(--purple)', fontWeight: 400 }}>
+              <Link href={`${prefix}/contact`} className="inline-flex items-center gap-2 px-10 py-4 rounded-full text-sm transition-opacity hover:opacity-90" style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}>
                 {isEN ? 'Talk to Us' : 'คุยกับเรา'}
                 <i className="ti ti-arrow-right" style={{ fontSize: 15 }} aria-hidden="true" />
               </Link>
-              <Link href="mailto:wu@haliviq.com" className="inline-flex items-center gap-2 px-10 py-4 border border-white/30 text-white rounded-full text-sm hover:border-white/60 transition-colors" style={{ fontWeight: 400 }}>
+              <Link href="mailto:wu@haliviq.com" className="inline-flex items-center gap-2 px-10 py-4 rounded-full text-sm transition-colors" style={{ border: '1px solid rgba(255,255,255,0.3)', color: '#fff', fontWeight: 400 }}>
                 wu@haliviq.com
               </Link>
             </div>
