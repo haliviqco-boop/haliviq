@@ -93,7 +93,7 @@ export default function Footer({ lang, tr }: Props) {
             <circle cx="12" cy="12" r="9.5" />
             <path d="M2.5 12h19M12 2.5c2.5 2.7 3.8 6 3.8 9.5s-1.3 6.8-3.8 9.5c-2.5-2.7-3.8-6-3.8-9.5S9.5 5.2 12 2.5z" />
           </svg>
-          {(['th', 'en'] as Lang[]).map(l => (
+          {(['en', 'th'] as Lang[]).map(l => (
             <button
               key={l}
               onClick={() => switchLang(l)}

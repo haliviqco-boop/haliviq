@@ -6,7 +6,7 @@ export default function LangSwitcher() {
   const pathname = usePathname()
   const router = useRouter()
   const segments = pathname.split('/')
-  const currentLang = (['th','en'].includes(segments[1]) ? segments[1] : 'th') as Lang
+  const currentLang = (['th','en'].includes(segments[1]) ? segments[1] : 'en') as Lang
 
   const switchLang = (lang: Lang) => {
     if (lang === currentLang) return
@@ -16,7 +16,7 @@ export default function LangSwitcher() {
 
   return (
     <div className="flex items-center gap-0.5 rounded-full p-0.5" style={{ border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.04)' }}>
-      {(['th', 'en'] as Lang[]).map(lang => (
+      {(['en', 'th'] as Lang[]).map(lang => (
         <button key={lang} onClick={() => switchLang(lang)}
           className="px-3 py-1.5 rounded-full text-xs transition-all"
           style={{ fontWeight:400, fontFamily:'var(--font-main)',
