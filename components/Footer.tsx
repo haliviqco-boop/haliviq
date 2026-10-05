@@ -21,7 +21,36 @@ export default function Footer({ lang, tr }: Props) {
   return (
     <footer style={{ background: '#08070F' }}>
       <div className="max-w-7xl mx-auto px-4 lg:px-10">
-        <div className="grid grid-cols-2 lg:grid-cols-6 gap-10 lg:gap-6 py-16 lg:py-20">
+        {/* Our Global Offices */}
+        <div className="pt-20 lg:pt-24 pb-4 text-center">
+          <h2 className="t-display mb-3" style={{ color: '#fff', fontSize: 'clamp(1.8rem,3.2vw,2.8rem)' }}>
+            {lang === 'en' ? 'Our Global Offices' : 'สำนักงานของเรา'}
+          </h2>
+          <p className="mb-10" style={{ color: 'rgba(255,255,255,0.65)', fontSize: '1.05rem', fontWeight: 400 }}>
+            {lang === 'en' ? "With offices in Thailand and the USA, we're ready to help you wherever you are." : 'ด้วยสำนักงานในประเทศไทยและสหรัฐอเมริกา เราพร้อมช่วยคุณไม่ว่าอยู่ที่ไหน'}
+          </p>
+          <div className="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
+            {[
+              { label: f.thailandLabel, lines: f.addressLines as string[], phone: f.phone, tel: 'tel:+66909189009' },
+              { label: f.usaLabel, lines: f.usaAddressLines as string[], phone: f.whatsapp, tel: 'tel:+12068496901' },
+            ].map(o => (
+              <div key={o.label} className="rounded-xl p-8" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                <p className="mb-4 uppercase" style={{ color: '#fff', fontWeight: 600, fontSize: '1.15rem', letterSpacing: '0.04em' }}>{o.label}</p>
+                <div className="mb-5" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem', fontWeight: 400, lineHeight: 1.8 }}>
+                  {o.lines.map((line: string) => <p key={line}>{line}</p>)}
+                </div>
+                <a href={o.tel} className="inline-flex items-center gap-2" style={{ color: 'var(--lime)', fontWeight: 500, fontSize: '0.95rem' }}>
+                  <i className="ti ti-phone" style={{ fontSize: 16 }} aria-hidden="true" />
+                  {o.phone}
+                </a>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-xs" style={{ color: 'rgba(255,255,255,0.45)', fontWeight: 400 }}>{f.legalName}</p>
+        </div>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 lg:px-10">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-6 py-16 lg:py-20">
           {/* Brand column */}
           <div className="col-span-2">
             <img src="/haliviq-logo-light.svg" alt="Haliviq" className="h-9 w-auto mb-4" />
@@ -68,24 +97,6 @@ export default function Footer({ lang, tr }: Props) {
             </div>
           ))}
 
-          {/* Company legal name + addresses — last column */}
-          <div>
-            <p className="mb-3.5" style={{ color: '#fff', fontSize: '0.95rem', fontWeight: 500, lineHeight: 1.4 }}>
-              {f.legalName}
-            </p>
-            <p className="mb-1.5" style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-              {f.thailandLabel}
-            </p>
-            <div className="mb-3.5" style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.8rem', fontWeight: 400, lineHeight: 1.6 }}>
-              {(f.addressLines as string[]).map((line: string) => <p key={line}>{line}</p>)}
-            </div>
-            <p className="mb-1.5" style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-              {f.usaLabel}
-            </p>
-            <div style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.8rem', fontWeight: 400, lineHeight: 1.6 }}>
-              {(f.usaAddressLines as string[]).map((line: string) => <p key={line}>{line}</p>)}
-            </div>
-          </div>
         </div>
 
         {/* Language switcher row */}
@@ -111,9 +122,16 @@ export default function Footer({ lang, tr }: Props) {
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-6" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
           <p className="text-xs" style={{ color: 'rgba(255,255,255,0.4)', fontWeight: 400 }}>© {year} {f.rights}</p>
-          <div className="flex gap-6">
-            <Link href="#" className="text-xs hover:text-white transition-colors" style={{ color: 'rgba(255,255,255,0.4)', fontWeight: 400 }}>{f.privacy}</Link>
-            <Link href="#" className="text-xs hover:text-white transition-colors" style={{ color: 'rgba(255,255,255,0.4)', fontWeight: 400 }}>{f.terms}</Link>
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            {[
+              { h: '/privacy', l: f.privacy },
+              { h: '/terms', l: f.terms },
+              { h: '/cookies', l: lang === 'en' ? 'Cookie Policy' : 'นโยบายคุกกี้' },
+              { h: '/code-of-conduct', l: lang === 'en' ? 'Code of Conduct' : 'จรรยาบรรณธุรกิจ' },
+              { h: '/anti-corruption', l: lang === 'en' ? 'ABAC Policy' : 'นโยบายต่อต้านทุจริต (ABAC)' },
+            ].map(i => (
+              <Link key={i.h} href={`${prefix}${i.h}`} className="text-xs hover:text-white transition-colors" style={{ color: 'rgba(255,255,255,0.4)', fontWeight: 400 }}>{i.l}</Link>
+            ))}
           </div>
         </div>
       </div>

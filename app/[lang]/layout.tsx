@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { type Lang } from '@/lib/i18n'
+import CookieBanner from '@/components/CookieBanner'
 
 export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
@@ -15,6 +16,12 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }): 
   }
 }
 
-export default function LangLayout({ children }: { children: React.ReactNode; params: { lang: Lang } }) {
-  return <>{children}</>
+export default function LangLayout({ children, params }: { children: React.ReactNode; params: { lang: Lang } }) {
+  const lang = (params.lang === 'en' ? 'en' : 'th') as Lang
+  return (
+    <>
+      {children}
+      <CookieBanner lang={lang} />
+    </>
+  )
 }
