@@ -13,6 +13,7 @@ const serviceGroupsEN = [
   { key: 'realestate', label: 'Real Estate & Construction', desc: 'Developers and home builders with branding, websites, and CRM from lead to contract.' },
   { key: 'industry', label: 'Industry & Manufacturing', desc: 'Industrial manufacturers and infrastructure providers presenting capabilities to enterprise and B2B buyers.' },
   { key: 'wellness', label: 'Wellness', desc: 'Fitness and wellness brands with class booking and membership experiences.' },
+  { key: 'beauty', label: 'Beauty & Aesthetics', desc: 'Aesthetic surgery clinics and hospitals with refined brands, websites, and AI-assisted CRM.' },
   { key: 'travel', label: 'Travel & Tourism', desc: 'Tour and travel companies with brand identity, booking websites, and AI-driven CRM.' },
 ]
 const serviceGroupsTH = [
@@ -22,6 +23,7 @@ const serviceGroupsTH = [
   { key: 'realestate', label: 'อสังหาริมทรัพย์และก่อสร้าง', desc: 'ผู้พัฒนาโครงการและบริษัทรับสร้างบ้าน พร้อมแบรนด์ เว็บไซต์ และ CRM ตั้งแต่ลีดจนถึงเซ็นสัญญา' },
   { key: 'industry', label: 'อุตสาหกรรมและการผลิต', desc: 'ผู้ผลิตภาคอุตสาหกรรมและผู้ให้บริการโครงสร้างพื้นฐาน นำเสนอขีดความสามารถต่อลูกค้าองค์กรและ B2B' },
   { key: 'wellness', label: 'เวลเนส', desc: 'แบรนด์ฟิตเนสและเวลเนส พร้อมระบบจองคลาสและสมาชิก' },
+  { key: 'beauty', label: 'ความงามและศัลยกรรม', desc: 'คลินิกและโรงพยาบาลศัลยกรรมความงาม พร้อมแบรนด์ เว็บไซต์ และ CRM ที่มี AI ช่วย' },
   { key: 'travel', label: 'การท่องเที่ยวและทัวร์', desc: 'บริษัททัวร์และท่องเที่ยว พร้อมแบรนด์ เว็บไซต์จองทัวร์ และ AI CRM' },
 ]
 
@@ -62,6 +64,11 @@ const projectsEN = [
   { id:34, service:'wellness', tags:['Wellness','Web Platform'], year:'2025', title:"Shopify E-commerce for a Wellness Brand", client:"PAÑPURI", desc:"UX/UI design followed by a Shopify e-commerce website for a Thai luxury wellness and skincare brand.", result:"New Website", slug:'panpuri' },
   { id:35, service:'travel', tags:['Hospitality','Web Platform'], year:'2025', title:"Hotel Website with Online Booking", client:"Shanghai Mansion Bangkok", desc:"Boutique hotel website with an online room booking system.", result:"New Website", slug:'shanghai-mansion-bangkok' },
   { id:36, service:'sme', tags:['Retail','Web Platform'], year:'2025', title:"E-commerce & AI for a Shopping Mall", client:"Jampha Shopping Mall", desc:"E-commerce website plus an AI system supporting operations and customers.", result:"Website + AI", slug:'jampha-shopping-mall' },
+  { id:38, service:'industry', tags:["Logistics", "Web Platform"], year:'2025', title:"Corporate Website for a Marine Logistics Company", client:"Prima Marine", desc:"A corporate website presenting the fleet, services and credibility of a publicly listed marine logistics company.", result:"New Website", slug:'prima-marine' },
+  { id:39, service:'fnb', tags:["F&B", "Web Platform"], year:'2025', title:"Website for a Renowned Thai Restaurant", client:"Baan Khanitha Thai Cuisine", desc:"UX/UI design and a website that carries the warmth and heritage of a well-known Thai fine-dining restaurant.", result:"New Website", slug:'baan-khanitha' },
+  { id:40, service:'beauty', tags:["Beauty", "CRM"], year:'2025', title:"Website, UX/UI and AI-Assisted CRM for an Aesthetic Clinic", client:"DSK", desc:"Business consulting, website design and UX/UI, plus AI-assisted CRM for an aesthetic surgery business.", result:"Website + CRM", slug:'dsk' },
+  { id:41, service:'realestate', tags:["Home Builder", "CRM"], year:'2025', title:"Website, UX/UI and AI-Assisted CRM for a Home Builder", client:"Admire", desc:"UX/UI design and a new website for a custom home builder, with AI-assisted CRM to manage leads.", result:"Website + CRM", slug:'admire' },
+  { id:42, service:'beauty', tags:["Beauty", "Brand"], year:'2025', title:"Brand, Website and Graphics for an Aesthetic Hospital", client:"MEKO International Hospital", desc:"Website design and UX/UI, graphic design and brand CI for a renowned aesthetic surgery hospital.", result:"Brand + Website", slug:'meko-international-hospital' },
 ]
 
 const projectsTH = [
@@ -101,6 +108,11 @@ const projectsTH = [
   { id:34, service:'wellness', tags:['Wellness','Web Platform'], year:'2025', title:"เว็บไซต์อีคอมเมิร์ซ Shopify สำหรับแบรนด์เวลเนส", client:"PAÑPURI", desc:"ออกแบบ UX/UI ก่อนพัฒนาเว็บไซต์อีคอมเมิร์ซบน Shopify สำหรับแบรนด์เวลเนสและสกินแคร์ไทย", result:"เว็บไซต์ใหม่", slug:'panpuri' },
   { id:35, service:'travel', tags:['Hospitality','Web Platform'], year:'2025', title:"เว็บไซต์โรงแรมพร้อมระบบจองห้องพักออนไลน์", client:"Shanghai Mansion Bangkok", desc:"เว็บไซต์โรงแรมบูติกพร้อมระบบจองห้องพักออนไลน์", result:"เว็บไซต์ใหม่", slug:'shanghai-mansion-bangkok' },
   { id:36, service:'sme', tags:['Retail','Web Platform'], year:'2025', title:"เว็บไซต์อีคอมเมิร์ซและระบบ AI สำหรับศูนย์การค้า", client:"Jampha Shopping Mall", desc:"เว็บไซต์อีคอมเมิร์ซพร้อมระบบ AI ช่วยงานปฏิบัติการและลูกค้า", result:"เว็บไซต์ + AI", slug:'jampha-shopping-mall' },
+  { id:38, service:'industry', tags:["Logistics", "Web Platform"], year:'2025', title:"เว็บไซต์องค์กรสำหรับธุรกิจโลจิสติกส์ทางทะเล", client:"Prima Marine", desc:"เว็บไซต์องค์กรที่นำเสนอกองเรือ บริการ และความน่าเชื่อถือของบริษัทมหาชนด้านโลจิสติกส์ทางทะเล", result:"เว็บไซต์ใหม่", slug:'prima-marine' },
+  { id:39, service:'fnb', tags:["F&B", "Web Platform"], year:'2025', title:"เว็บไซต์สำหรับร้านอาหารไทยชื่อดัง", client:"Baan Khanitha Thai Cuisine", desc:"ออกแบบ UX/UI และพัฒนาเว็บไซต์ที่ถ่ายทอดความอบอุ่นและเอกลักษณ์ของร้านอาหารไทยระดับแนวหน้า", result:"เว็บไซต์ใหม่", slug:'baan-khanitha' },
+  { id:40, service:'beauty', tags:["Beauty", "CRM"], year:'2025', title:"เว็บไซต์ UX/UI และ AI CRM สำหรับคลินิกศัลยกรรมความงาม", client:"DSK", desc:"ให้คำปรึกษาธุรกิจ ออกแบบเว็บไซต์และ UX/UI พร้อม CRM ที่มี AI ช่วยสำหรับธุรกิจศัลยกรรมความงาม", result:"เว็บไซต์ + CRM", slug:'dsk' },
+  { id:41, service:'realestate', tags:["Home Builder", "CRM"], year:'2025', title:"เว็บไซต์ UX/UI และ AI CRM สำหรับธุรกิจรับสร้างบ้าน", client:"Admire", desc:"ออกแบบ UX/UI และพัฒนาเว็บไซต์ใหม่สำหรับธุรกิจรับสร้างบ้าน พร้อม CRM ที่มี AI ช่วยจัดการลีด", result:"เว็บไซต์ + CRM", slug:'admire' },
+  { id:42, service:'beauty', tags:["Beauty", "Brand"], year:'2025', title:"แบรนด์ เว็บไซต์ และกราฟิกสำหรับโรงพยาบาลศัลยกรรมความงาม", client:"MEKO International Hospital", desc:"ออกแบบเว็บไซต์และ UX/UI กราฟิก และ Brand CI สำหรับโรงพยาบาลศัลยกรรมความงามชื่อดัง", result:"แบรนด์ + เว็บไซต์", slug:'meko-international-hospital' },
 ]
 
 const gradients = [

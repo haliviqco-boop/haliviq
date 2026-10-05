@@ -1657,6 +1657,706 @@ export const caseStudies: CaseStudy[] = [
       servicesLabel: "Services Provided",
     },
   },
+  {
+    "slug": "prima-marine",
+    "industryTag": "Logistics & Marine",
+    "result": "เว็บไซต์ใหม่",
+    "year": "2025",
+    "th": {
+      "badge": "โลจิสติกส์และการขนส่งทางทะเล",
+      "client": "Prima Marine",
+      "title": "เว็บไซต์องค์กรสำหรับธุรกิจโลจิสติกส์ทางทะเล",
+      "desc": "เว็บไซต์องค์กรที่นำเสนอกองเรือ บริการ และความน่าเชื่อถือของบริษัทมหาชนด้านโลจิสติกส์ทางทะเล",
+      "duration": "3 เดือน",
+      "servicesProvided": [
+        "พัฒนาเว็บไซต์",
+        "ออกแบบ UX/UI"
+      ],
+      "heroImage": "/images/case-studies/prima-marine/cover.jpg",
+      "challengeHeading": "โจทย์ของโปรเจกต์",
+      "challenge": "Prima Marine ในฐานะบริษัทมหาชนด้านโลจิสติกส์ทางทะเล ต้องการเว็บไซต์ที่สื่อถึงขนาดธุรกิจ ความปลอดภัย และความน่าเชื่อถือต่อลูกค้า พันธมิตร และนักลงทุน",
+      "solutionHeading": "แนวทางที่เราทำ",
+      "solution": "เราออกแบบและพัฒนาเว็บไซต์องค์กรที่ดูมืออาชีพ นำเสนอบริการและการดำเนินงานอย่างเป็นระเบียบ และดูแลรักษาได้ง่าย",
+      "overviewHeading": "ภาพรวมโปรเจกต์",
+      "overview": "โปรเจกต์นี้ของ Prima Marine ครอบคลุม: เว็บไซต์องค์กรที่นำเสนอกองเรือ บริการ และความน่าเชื่อถือของบริษัทมหาชนด้านโลจิสติกส์ทางทะเล",
+      "approachHeading": "แนวทางที่เราทำ",
+      "approach": [
+        {
+          "title": "พัฒนาเว็บไซต์",
+          "desc": "พัฒนาเว็บไซต์ที่รวดเร็ว รองรับทุกอุปกรณ์ และทีมงานอัปเดตเนื้อหาได้เอง"
+        },
+        {
+          "title": "ออกแบบ UX/UI",
+          "desc": "ออกแบบโครงสร้าง Wireframe และหน้าตาเว็บไซต์ให้ชัดเจนและใช้งานง่ายในทุกหน้า"
+        },
+        {
+          "title": "ศึกษาธุรกิจและกลุ่มเป้าหมาย",
+          "desc": "ทำความเข้าใจธุรกิจ กลุ่มลูกค้า และเป้าหมาย เพื่อกำหนดขอบเขตและตัวชี้วัดความสำเร็จ"
+        },
+        {
+          "title": "ทดสอบและเปิดใช้งาน",
+          "desc": "ทดสอบบนหลายอุปกรณ์และเบราว์เซอร์ เปิดใช้งานและส่งมอบให้ทีมงาน"
+        }
+      ],
+      "keyFeaturesHeading": "ฟีเจอร์เด่น",
+      "keyFeatures": [
+        {
+          "title": "การนำเสนอบริการ",
+          "bullets": [
+            "ภาพรวมบริการโลจิสติกส์ทางทะเลที่ชัดเจน",
+            "นำเสนอกองเรือและการดำเนินงานด้วยภาพที่แข็งแรง",
+            "ช่องทางสอบถามและติดต่อทีมงานที่เข้าถึงง่าย"
+          ]
+        },
+        {
+          "title": "ความน่าเชื่อถือขององค์กร",
+          "bullets": [
+            "เลย์เอาต์มืออาชีพเหมาะกับบริษัทมหาชน",
+            "จัดระเบียบข้อมูลบริษัทสำหรับพันธมิตรและนักลงทุน",
+            "ภาษาภาพที่สอดคล้องและน่าเชื่อถือ"
+          ]
+        },
+        {
+          "title": "พร้อมดูแลต่อเนื่อง",
+          "bullets": [
+            "เนื้อหาที่ทีมงานอัปเดตได้เอง",
+            "รวดเร็วและรองรับทุกอุปกรณ์",
+            "โครงสร้างพร้อมรองรับบริการและข่าวสารใหม่"
+          ]
+        }
+      ],
+      "backLabel": "กลับไปหน้า Case Studies",
+      "servicesLabel": "บริการที่ให้"
+    },
+    "en": {
+      "badge": "Logistics & Marine",
+      "client": "Prima Marine",
+      "title": "Corporate Website for a Marine Logistics Company",
+      "desc": "A corporate website presenting the fleet, services and credibility of a publicly listed marine logistics company.",
+      "duration": "3 months",
+      "servicesProvided": [
+        "Website Development",
+        "UX/UI Design"
+      ],
+      "heroImage": "/images/case-studies/prima-marine/cover.jpg",
+      "challengeHeading": "The Challenge",
+      "challenge": "As a publicly listed marine logistics company, Prima Marine needed a website that conveys scale, safety and reliability to customers, partners and investors.",
+      "solutionHeading": "Our Solution",
+      "solution": "We designed and built a clear, professional corporate website that presents services and operations in an organized way and is easy to maintain.",
+      "overviewHeading": "Project Overview",
+      "overview": "This project gave Prima Marine: A corporate website presenting the fleet, services and credibility of a publicly listed marine logistics company.",
+      "approachHeading": "Our Approach",
+      "approach": [
+        {
+          "title": "Website Development",
+          "desc": "Built a fast, responsive website that is easy for the team to update."
+        },
+        {
+          "title": "UX/UI Design",
+          "desc": "Designed the structure, wireframes and visual interface so every page is clear and easy to use."
+        },
+        {
+          "title": "Discovery & Research",
+          "desc": "Studied the business, audience and goals to define the scope and success criteria."
+        },
+        {
+          "title": "Testing & Launch",
+          "desc": "Tested across devices and browsers, launched and handed over to the team."
+        }
+      ],
+      "keyFeaturesHeading": "Key Features",
+      "keyFeatures": [
+        {
+          "title": "Service Presentation",
+          "bullets": [
+            "Clear overview of marine logistics services",
+            "Fleet and operations presented with strong imagery",
+            "Easy paths to enquire or contact the team"
+          ]
+        },
+        {
+          "title": "Corporate Credibility",
+          "bullets": [
+            "Professional layout suited to a listed company",
+            "Company information organized for partners and investors",
+            "Consistent, trustworthy visual language"
+          ]
+        },
+        {
+          "title": "Built to Maintain",
+          "bullets": [
+            "Content the team can update independently",
+            "Fast, responsive on every device",
+            "Structure ready for new services and news"
+          ]
+        }
+      ],
+      "backLabel": "Back to Case Studies",
+      "servicesLabel": "Services Provided"
+    }
+  },
+  {
+    "slug": "baan-khanitha",
+    "industryTag": "F&B",
+    "result": "เว็บไซต์ใหม่",
+    "year": "2025",
+    "th": {
+      "badge": "ร้านอาหารและเครื่องดื่ม",
+      "client": "Baan Khanitha Thai Cuisine",
+      "title": "เว็บไซต์สำหรับร้านอาหารไทยชื่อดัง",
+      "desc": "ออกแบบ UX/UI และพัฒนาเว็บไซต์ที่ถ่ายทอดความอบอุ่นและเอกลักษณ์ของร้านอาหารไทยระดับแนวหน้า",
+      "duration": "2 เดือน",
+      "servicesProvided": [
+        "พัฒนาเว็บไซต์",
+        "ออกแบบ UX/UI"
+      ],
+      "heroImage": "/images/case-studies/baan-khanitha/cover.jpg",
+      "challengeHeading": "โจทย์ของโปรเจกต์",
+      "challenge": "Baan Khanitha เป็นร้านอาหารไทยชื่อดังที่บรรยากาศและอาหารคือหัวใจของชื่อเสียง เว็บไซต์ต้องสะท้อนประสบการณ์นั้นและทำให้ค้นหาเมนูและมาเยือนได้ง่าย",
+      "solutionHeading": "แนวทางที่เราทำ",
+      "solution": "เราออกแบบประสบการณ์ตามเอกลักษณ์ของร้าน และพัฒนาเว็บไซต์ที่สวยงามเรียบง่าย สำหรับเมนู สาขา และการจอง",
+      "overviewHeading": "ภาพรวมโปรเจกต์",
+      "overview": "โปรเจกต์นี้ของ Baan Khanitha Thai Cuisine ครอบคลุม: ออกแบบ UX/UI และพัฒนาเว็บไซต์ที่ถ่ายทอดความอบอุ่นและเอกลักษณ์ของร้านอาหารไทยระดับแนวหน้า",
+      "approachHeading": "แนวทางที่เราทำ",
+      "approach": [
+        {
+          "title": "ศึกษาธุรกิจและกลุ่มเป้าหมาย",
+          "desc": "ทำความเข้าใจธุรกิจ กลุ่มลูกค้า และเป้าหมาย เพื่อกำหนดขอบเขตและตัวชี้วัดความสำเร็จ"
+        },
+        {
+          "title": "ออกแบบ UX/UI",
+          "desc": "ออกแบบโครงสร้าง Wireframe และหน้าตาเว็บไซต์ให้ชัดเจนและใช้งานง่ายในทุกหน้า"
+        },
+        {
+          "title": "พัฒนาเว็บไซต์",
+          "desc": "พัฒนาเว็บไซต์ที่รวดเร็ว รองรับทุกอุปกรณ์ และทีมงานอัปเดตเนื้อหาได้เอง"
+        },
+        {
+          "title": "ทดสอบและเปิดใช้งาน",
+          "desc": "ทดสอบบนหลายอุปกรณ์และเบราว์เซอร์ เปิดใช้งานและส่งมอบให้ทีมงาน"
+        }
+      ],
+      "keyFeaturesHeading": "ฟีเจอร์เด่น",
+      "keyFeatures": [
+        {
+          "title": "บรรยากาศแบรนด์",
+          "bullets": [
+            "ภาพและเลย์เอาต์ที่สะท้อนประสบการณ์การรับประทานอาหาร",
+            "ตัวอักษรประณีตและโทนสีอบอุ่น",
+            "เล่าเรื่องราวของอาหารและมรดกวัฒนธรรม"
+          ]
+        },
+        {
+          "title": "เมนูและการมาเยือน",
+          "bullets": [
+            "นำเสนอเมนูที่ชัดเจน",
+            "สาขา เวลา และช่องทางติดต่อดูได้ในทันที",
+            "ขั้นตอนจองโต๊ะที่เข้าถึงง่าย"
+          ]
+        },
+        {
+          "title": "พร้อมต้อนรับแขก",
+          "bullets": [
+            "รวดเร็วบนมือถือที่ลูกค้าส่วนใหญ่ใช้",
+            "ทีมงานอัปเดตเนื้อหาได้",
+            "พื้นฐาน SEO สำหรับการค้นหาในพื้นที่"
+          ]
+        }
+      ],
+      "backLabel": "กลับไปหน้า Case Studies",
+      "servicesLabel": "บริการที่ให้"
+    },
+    "en": {
+      "badge": "F&B",
+      "client": "Baan Khanitha Thai Cuisine",
+      "title": "Website for a Renowned Thai Restaurant",
+      "desc": "UX/UI design and a website that carries the warmth and heritage of a well-known Thai fine-dining restaurant.",
+      "duration": "2 months",
+      "servicesProvided": [
+        "Website Development",
+        "UX/UI Design"
+      ],
+      "heroImage": "/images/case-studies/baan-khanitha/cover.jpg",
+      "challengeHeading": "The Challenge",
+      "challenge": "Baan Khanitha is a well-known Thai restaurant whose atmosphere and cuisine are central to its reputation. Its website needed to reflect that experience and make it easy to discover the menu and visit.",
+      "solutionHeading": "Our Solution",
+      "solution": "We designed the experience around the restaurant's character and built an elegant, easy-to-browse website for menus, locations and reservations.",
+      "overviewHeading": "Project Overview",
+      "overview": "This project gave Baan Khanitha Thai Cuisine: UX/UI design and a website that carries the warmth and heritage of a well-known Thai fine-dining restaurant.",
+      "approachHeading": "Our Approach",
+      "approach": [
+        {
+          "title": "Discovery & Research",
+          "desc": "Studied the business, audience and goals to define the scope and success criteria."
+        },
+        {
+          "title": "UX/UI Design",
+          "desc": "Designed the structure, wireframes and visual interface so every page is clear and easy to use."
+        },
+        {
+          "title": "Website Development",
+          "desc": "Built a fast, responsive website that is easy for the team to update."
+        },
+        {
+          "title": "Testing & Launch",
+          "desc": "Tested across devices and browsers, launched and handed over to the team."
+        }
+      ],
+      "keyFeaturesHeading": "Key Features",
+      "keyFeatures": [
+        {
+          "title": "Brand Atmosphere",
+          "bullets": [
+            "Imagery and layout that echo the dining experience",
+            "Refined typography and warm palette",
+            "Storytelling about the cuisine and heritage"
+          ]
+        },
+        {
+          "title": "Menu & Visit",
+          "bullets": [
+            "Clear menu presentation",
+            "Location, hours and contact details at a glance",
+            "Easy path to book a table"
+          ]
+        },
+        {
+          "title": "Ready for Guests",
+          "bullets": [
+            "Fast on mobile where most guests browse",
+            "Content the team can update",
+            "SEO foundations for local search"
+          ]
+        }
+      ],
+      "backLabel": "Back to Case Studies",
+      "servicesLabel": "Services Provided"
+    }
+  },
+  {
+    "slug": "dsk",
+    "industryTag": "Beauty & Aesthetics",
+    "result": "เว็บไซต์ + CRM",
+    "year": "2025",
+    "th": {
+      "badge": "ความงามและศัลยกรรม",
+      "client": "DSK",
+      "title": "เว็บไซต์ UX/UI และ AI CRM สำหรับคลินิกศัลยกรรมความงาม",
+      "desc": "ให้คำปรึกษาธุรกิจ ออกแบบเว็บไซต์และ UX/UI พร้อม CRM ที่มี AI ช่วยสำหรับธุรกิจศัลยกรรมความงาม",
+      "duration": "4 เดือน",
+      "servicesProvided": [
+        "ให้คำปรึกษาธุรกิจ",
+        "ออกแบบเว็บไซต์",
+        "ออกแบบ UX/UI",
+        "CRM ที่มี AI ช่วย"
+      ],
+      "heroImage": "/images/case-studies/dsk/cover.jpg",
+      "challengeHeading": "โจทย์ของโปรเจกต์",
+      "challenge": "DSK ธุรกิจศัลยกรรมความงาม ต้องการภาพลักษณ์ออนไลน์ที่ประณีตและสร้างความไว้วางใจ พร้อมวิธีจัดการและติดตามลูกค้าที่สนใจได้ดีขึ้น",
+      "solutionHeading": "แนวทางที่เราทำ",
+      "solution": "เราเริ่มจากให้คำปรึกษาธุรกิจ แล้วออกแบบเว็บไซต์และ UX/UI ที่สง่างาม พร้อมเพิ่ม CRM ที่มี AI ช่วยจัดระเบียบและติดตามลูกค้า",
+      "overviewHeading": "ภาพรวมโปรเจกต์",
+      "overview": "โปรเจกต์นี้ของ DSK ครอบคลุม: ให้คำปรึกษาธุรกิจ ออกแบบเว็บไซต์และ UX/UI พร้อม CRM ที่มี AI ช่วยสำหรับธุรกิจศัลยกรรมความงาม",
+      "approachHeading": "แนวทางที่เราทำ",
+      "approach": [
+        {
+          "title": "ให้คำปรึกษาธุรกิจ",
+          "desc": "ให้คำปรึกษาด้านกลยุทธ์ดิจิทัลและบทบาทของเว็บไซต์ต่อเป้าหมายทางธุรกิจ"
+        },
+        {
+          "title": "ศึกษาธุรกิจและกลุ่มเป้าหมาย",
+          "desc": "ทำความเข้าใจธุรกิจ กลุ่มลูกค้า และเป้าหมาย เพื่อกำหนดขอบเขตและตัวชี้วัดความสำเร็จ"
+        },
+        {
+          "title": "ออกแบบ UX/UI",
+          "desc": "ออกแบบโครงสร้าง Wireframe และหน้าตาเว็บไซต์ให้ชัดเจนและใช้งานง่ายในทุกหน้า"
+        },
+        {
+          "title": "พัฒนาเว็บไซต์",
+          "desc": "พัฒนาเว็บไซต์ที่รวดเร็ว รองรับทุกอุปกรณ์ และทีมงานอัปเดตเนื้อหาได้เอง"
+        }
+      ],
+      "keyFeaturesHeading": "ฟีเจอร์เด่น",
+      "keyFeatures": [
+        {
+          "title": "เว็บไซต์ที่สร้างความไว้วางใจ",
+          "bullets": [
+            "อัตลักษณ์ภาพสง่างามเหมาะกับธุรกิจความงาม",
+            "นำเสนอบริการและข้อมูลอย่างชัดเจน",
+            "ช่องทางสอบถามและปรึกษาที่เรียบง่าย"
+          ]
+        },
+        {
+          "title": "CRM ที่มี AI ช่วย",
+          "bullets": [
+            "รวบรวมลูกค้าที่สนใจไว้ในที่เดียว",
+            "AI ช่วยคัดแยกและจัดลำดับการติดตาม",
+            "สื่อสารกับลูกค้าอย่างสม่ำเสมอ"
+          ]
+        },
+        {
+          "title": "คำปรึกษาธุรกิจ",
+          "bullets": [
+            "กลยุทธ์ดิจิทัลที่สอดคล้องกับเป้าหมายธุรกิจ",
+            "คำแนะนำเรื่อง Customer Journey",
+            "แผนพัฒนาต่อยอดในอนาคต"
+          ]
+        }
+      ],
+      "backLabel": "กลับไปหน้า Case Studies",
+      "servicesLabel": "บริการที่ให้"
+    },
+    "en": {
+      "badge": "Beauty & Aesthetics",
+      "client": "DSK",
+      "title": "Website, UX/UI and AI-Assisted CRM for an Aesthetic Clinic",
+      "desc": "Business consulting, website design and UX/UI, plus AI-assisted CRM for an aesthetic surgery business.",
+      "duration": "4 months",
+      "servicesProvided": [
+        "Business Consulting",
+        "Website Design",
+        "UX/UI Design",
+        "AI-Assisted CRM"
+      ],
+      "heroImage": "/images/case-studies/dsk/cover.jpg",
+      "challengeHeading": "The Challenge",
+      "challenge": "DSK, an aesthetic surgery business, needed a refined online presence that builds trust, along with a better way to manage and follow up customer enquiries.",
+      "solutionHeading": "Our Solution",
+      "solution": "We started with business consulting, then designed an elegant website and UX/UI, and added an AI-assisted CRM to organize and follow up enquiries.",
+      "overviewHeading": "Project Overview",
+      "overview": "This project gave DSK: Business consulting, website design and UX/UI, plus AI-assisted CRM for an aesthetic surgery business.",
+      "approachHeading": "Our Approach",
+      "approach": [
+        {
+          "title": "Business Consulting",
+          "desc": "Advised on digital strategy and how the website should support business goals."
+        },
+        {
+          "title": "Discovery & Research",
+          "desc": "Studied the business, audience and goals to define the scope and success criteria."
+        },
+        {
+          "title": "UX/UI Design",
+          "desc": "Designed the structure, wireframes and visual interface so every page is clear and easy to use."
+        },
+        {
+          "title": "Website Development",
+          "desc": "Built a fast, responsive website that is easy for the team to update."
+        }
+      ],
+      "keyFeaturesHeading": "Key Features",
+      "keyFeatures": [
+        {
+          "title": "Trust-Building Website",
+          "bullets": [
+            "Elegant visual identity suited to aesthetics",
+            "Clear presentation of services and information",
+            "Simple path to enquire or consult"
+          ]
+        },
+        {
+          "title": "AI-Assisted CRM",
+          "bullets": [
+            "Captures enquiries in one place",
+            "AI helps sort and prioritize follow-ups",
+            "Consistent customer communication"
+          ]
+        },
+        {
+          "title": "Business Guidance",
+          "bullets": [
+            "Digital strategy aligned with business goals",
+            "Recommendations on customer journey",
+            "Roadmap for future improvements"
+          ]
+        }
+      ],
+      "backLabel": "Back to Case Studies",
+      "servicesLabel": "Services Provided"
+    }
+  },
+  {
+    "slug": "admire",
+    "industryTag": "Construction & Real Estate",
+    "result": "เว็บไซต์ + CRM",
+    "year": "2025",
+    "th": {
+      "badge": "ก่อสร้างและอสังหาริมทรัพย์",
+      "client": "Admire",
+      "title": "เว็บไซต์ UX/UI และ AI CRM สำหรับธุรกิจรับสร้างบ้าน",
+      "desc": "ออกแบบ UX/UI และพัฒนาเว็บไซต์ใหม่สำหรับธุรกิจรับสร้างบ้าน พร้อม CRM ที่มี AI ช่วยจัดการลีด",
+      "duration": "4 เดือน",
+      "servicesProvided": [
+        "ออกแบบ UX/UI",
+        "พัฒนาเว็บไซต์",
+        "CRM ที่มี AI ช่วย"
+      ],
+      "heroImage": "/images/case-studies/admire/cover.jpg",
+      "challengeHeading": "โจทย์ของโปรเจกต์",
+      "challenge": "Admire รับสร้างบ้าน ซึ่งผู้ซื้อใช้เวลาศึกษาแบบบ้านและเปรียบเทียบผู้รับเหมา ธุรกิจต้องการเว็บไซต์ที่โชว์ผลงาน และระบบที่ไม่ปล่อยให้ลูกค้าที่สนใจหลุดมือ",
+      "solutionHeading": "แนวทางที่เราทำ",
+      "solution": "เราออกแบบ UX/UI ที่เน้นแบบบ้าน พัฒนาเว็บไซต์ และเพิ่ม CRM ที่มี AI ช่วยเก็บและติดตามทุกการสอบถาม",
+      "overviewHeading": "ภาพรวมโปรเจกต์",
+      "overview": "โปรเจกต์นี้ของ Admire ครอบคลุม: ออกแบบ UX/UI และพัฒนาเว็บไซต์ใหม่สำหรับธุรกิจรับสร้างบ้าน พร้อม CRM ที่มี AI ช่วยจัดการลีด",
+      "approachHeading": "แนวทางที่เราทำ",
+      "approach": [
+        {
+          "title": "ศึกษาธุรกิจและกลุ่มเป้าหมาย",
+          "desc": "ทำความเข้าใจธุรกิจ กลุ่มลูกค้า และเป้าหมาย เพื่อกำหนดขอบเขตและตัวชี้วัดความสำเร็จ"
+        },
+        {
+          "title": "ออกแบบ UX/UI",
+          "desc": "ออกแบบโครงสร้าง Wireframe และหน้าตาเว็บไซต์ให้ชัดเจนและใช้งานง่ายในทุกหน้า"
+        },
+        {
+          "title": "พัฒนาเว็บไซต์",
+          "desc": "พัฒนาเว็บไซต์ที่รวดเร็ว รองรับทุกอุปกรณ์ และทีมงานอัปเดตเนื้อหาได้เอง"
+        },
+        {
+          "title": "เชื่อมระบบ AI และ CRM",
+          "desc": "เพิ่ม CRM ที่มี AI ช่วย เพื่อเก็บ จัดระเบียบ และติดตามลูกค้าที่สนใจอย่างสม่ำเสมอ"
+        }
+      ],
+      "keyFeaturesHeading": "ฟีเจอร์เด่น",
+      "keyFeatures": [
+        {
+          "title": "โชว์แบบบ้านและผลงาน",
+          "bullets": [
+            "ภาพขนาดใหญ่ของแบบบ้านและผลงานจริง",
+            "เรียกดูตามสไตล์และโครงการได้ง่าย",
+            "ช่องทางขอรับคำปรึกษาที่ชัดเจน"
+          ]
+        },
+        {
+          "title": "CRM ที่มี AI ช่วย",
+          "bullets": [
+            "ทุกการสอบถามรวมอยู่ในที่เดียว",
+            "AI ช่วยจัดลำดับความสำคัญและเตือนการติดตาม",
+            "เห็นภาพตั้งแต่ลีดจนถึงเซ็นสัญญา"
+          ]
+        },
+        {
+          "title": "พร้อมเติบโต",
+          "bullets": [
+            "เพิ่มแบบบ้านและโครงการใหม่ได้ง่าย",
+            "รวดเร็วและรองรับทุกอุปกรณ์",
+            "พื้นฐาน SEO สำหรับการค้นหาบริการรับสร้างบ้าน"
+          ]
+        }
+      ],
+      "backLabel": "กลับไปหน้า Case Studies",
+      "servicesLabel": "บริการที่ให้"
+    },
+    "en": {
+      "badge": "Construction & Real Estate",
+      "client": "Admire",
+      "title": "Website, UX/UI and AI-Assisted CRM for a Home Builder",
+      "desc": "UX/UI design and a new website for a custom home builder, with AI-assisted CRM to manage leads.",
+      "duration": "4 months",
+      "servicesProvided": [
+        "UX/UI Design",
+        "Website Development",
+        "AI-Assisted CRM"
+      ],
+      "heroImage": "/images/case-studies/admire/cover.jpg",
+      "challengeHeading": "The Challenge",
+      "challenge": "Admire builds custom homes, where buyers take time to explore designs and compare builders. The business needed a website that showcases its work and a system that does not let promising leads slip away.",
+      "solutionHeading": "Our Solution",
+      "solution": "We designed a UX/UI centered on the home designs, built the website, and added AI-assisted CRM that captures and follows up every enquiry.",
+      "overviewHeading": "Project Overview",
+      "overview": "This project gave Admire: UX/UI design and a new website for a custom home builder, with AI-assisted CRM to manage leads.",
+      "approachHeading": "Our Approach",
+      "approach": [
+        {
+          "title": "Discovery & Research",
+          "desc": "Studied the business, audience and goals to define the scope and success criteria."
+        },
+        {
+          "title": "UX/UI Design",
+          "desc": "Designed the structure, wireframes and visual interface so every page is clear and easy to use."
+        },
+        {
+          "title": "Website Development",
+          "desc": "Built a fast, responsive website that is easy for the team to update."
+        },
+        {
+          "title": "AI & CRM Integration",
+          "desc": "Added AI-assisted CRM so enquiries are captured, organized and followed up consistently."
+        }
+      ],
+      "keyFeaturesHeading": "Key Features",
+      "keyFeatures": [
+        {
+          "title": "Home Showcase",
+          "bullets": [
+            "Large imagery for designs and finished homes",
+            "Easy browsing by style and project",
+            "Clear way to request a consultation"
+          ]
+        },
+        {
+          "title": "AI-Assisted CRM",
+          "bullets": [
+            "Every enquiry captured in one place",
+            "AI helps prioritize and remind follow-ups",
+            "Visibility from lead to contract"
+          ]
+        },
+        {
+          "title": "Built to Grow",
+          "bullets": [
+            "Add new designs and projects easily",
+            "Fast and responsive on every device",
+            "SEO foundations for home-building searches"
+          ]
+        }
+      ],
+      "backLabel": "Back to Case Studies",
+      "servicesLabel": "Services Provided"
+    }
+  },
+  {
+    "slug": "meko-international-hospital",
+    "industryTag": "Beauty & Aesthetics",
+    "result": "แบรนด์ + เว็บไซต์",
+    "year": "2025",
+    "th": {
+      "badge": "ความงามและศัลยกรรม",
+      "client": "MEKO International Hospital",
+      "title": "แบรนด์ เว็บไซต์ และกราฟิกสำหรับโรงพยาบาลศัลยกรรมความงาม",
+      "desc": "ออกแบบเว็บไซต์และ UX/UI กราฟิก และ Brand CI สำหรับโรงพยาบาลศัลยกรรมความงามชื่อดัง",
+      "duration": "5 เดือน",
+      "servicesProvided": [
+        "ออกแบบเว็บไซต์",
+        "ออกแบบ UX/UI",
+        "ออกแบบกราฟิก",
+        "Brand & CI"
+      ],
+      "heroImage": "/images/case-studies/meko-international-hospital/cover.jpg",
+      "challengeHeading": "โจทย์ของโปรเจกต์",
+      "challenge": "MEKO International Hospital เป็นชื่อที่รู้จักในวงการศัลยกรรมความงาม ภาพลักษณ์ดิจิทัลและสื่อแบรนด์ต้องประณีตและน่าเชื่อถือเท่ากับการบริการ",
+      "solutionHeading": "แนวทางที่เราทำ",
+      "solution": "เราพัฒนาอัตลักษณ์แบรนด์และกราฟิกควบคู่กับเว็บไซต์และ UX/UI เพื่อให้ผู้ใช้บริการพบประสบการณ์ที่สอดคล้องและประณีตในทุกช่องทาง",
+      "overviewHeading": "ภาพรวมโปรเจกต์",
+      "overview": "โปรเจกต์นี้ของ MEKO International Hospital ครอบคลุม: ออกแบบเว็บไซต์และ UX/UI กราฟิก และ Brand CI สำหรับโรงพยาบาลศัลยกรรมความงามชื่อดัง",
+      "approachHeading": "แนวทางที่เราทำ",
+      "approach": [
+        {
+          "title": "ศึกษาธุรกิจและกลุ่มเป้าหมาย",
+          "desc": "ทำความเข้าใจธุรกิจ กลุ่มลูกค้า และเป้าหมาย เพื่อกำหนดขอบเขตและตัวชี้วัดความสำเร็จ"
+        },
+        {
+          "title": "พัฒนาแบรนด์และ CI",
+          "desc": "พัฒนาอัตลักษณ์แบรนด์และแนวทางการใช้งาน เพื่อให้ทุกจุดสัมผัสสอดคล้องกัน"
+        },
+        {
+          "title": "ออกแบบ UX/UI",
+          "desc": "ออกแบบโครงสร้าง Wireframe และหน้าตาเว็บไซต์ให้ชัดเจนและใช้งานง่ายในทุกหน้า"
+        },
+        {
+          "title": "พัฒนาเว็บไซต์",
+          "desc": "พัฒนาเว็บไซต์ที่รวดเร็ว รองรับทุกอุปกรณ์ และทีมงานอัปเดตเนื้อหาได้เอง"
+        }
+      ],
+      "keyFeaturesHeading": "ฟีเจอร์เด่น",
+      "keyFeatures": [
+        {
+          "title": "อัตลักษณ์แบรนด์ (CI)",
+          "bullets": [
+            "แนวทางแบรนด์ทั้งโลโก้ สี และตัวอักษร",
+            "รูปลักษณ์สอดคล้องทั้งดิจิทัลและสื่อพิมพ์",
+            "โทนภาพที่ประณีตและน่าเชื่อถือ"
+          ]
+        },
+        {
+          "title": "เว็บไซต์และ UX/UI",
+          "bullets": [
+            "นำเสนอบริการและการรักษาอย่างชัดเจน",
+            "ช่องทางสอบถามและนัดปรึกษาที่เรียบง่าย",
+            "รวดเร็วและรองรับทุกอุปกรณ์"
+          ]
+        },
+        {
+          "title": "งานกราฟิก",
+          "bullets": [
+            "กราฟิกแคมเปญและโซเชียลมีเดีย",
+            "สื่อที่สอดคล้องกับแนวทางแบรนด์",
+            "เทมเพลตที่ทีมงานนำไปใช้ซ้ำได้"
+          ]
+        }
+      ],
+      "backLabel": "กลับไปหน้า Case Studies",
+      "servicesLabel": "บริการที่ให้"
+    },
+    "en": {
+      "badge": "Beauty & Aesthetics",
+      "client": "MEKO International Hospital",
+      "title": "Brand, Website and Graphics for an Aesthetic Hospital",
+      "desc": "Website design and UX/UI, graphic design and brand CI for a renowned aesthetic surgery hospital.",
+      "duration": "5 months",
+      "servicesProvided": [
+        "Website Design",
+        "UX/UI Design",
+        "Graphic Design",
+        "Brand & CI"
+      ],
+      "heroImage": "/images/case-studies/meko-international-hospital/cover.jpg",
+      "challengeHeading": "The Challenge",
+      "challenge": "MEKO International Hospital is a well-known name in aesthetic surgery. Its digital presence and brand materials needed to feel as refined and trustworthy as the care it provides.",
+      "solutionHeading": "Our Solution",
+      "solution": "We worked on the brand identity and graphics together with the website and UX/UI, so patients meet one consistent, polished experience across every channel.",
+      "overviewHeading": "Project Overview",
+      "overview": "This project gave MEKO International Hospital: Website design and UX/UI, graphic design and brand CI for a renowned aesthetic surgery hospital.",
+      "approachHeading": "Our Approach",
+      "approach": [
+        {
+          "title": "Discovery & Research",
+          "desc": "Studied the business, audience and goals to define the scope and success criteria."
+        },
+        {
+          "title": "Brand & CI",
+          "desc": "Developed the brand identity and guidelines so every touchpoint feels consistent."
+        },
+        {
+          "title": "UX/UI Design",
+          "desc": "Designed the structure, wireframes and visual interface so every page is clear and easy to use."
+        },
+        {
+          "title": "Website Development",
+          "desc": "Built a fast, responsive website that is easy for the team to update."
+        }
+      ],
+      "keyFeaturesHeading": "Key Features",
+      "keyFeatures": [
+        {
+          "title": "Brand Identity (CI)",
+          "bullets": [
+            "Brand guidelines for logo, color and typography",
+            "Consistent look across digital and print",
+            "Refined, trustworthy visual tone"
+          ]
+        },
+        {
+          "title": "Website & UX/UI",
+          "bullets": [
+            "Clear presentation of treatments and services",
+            "Simple paths to enquire and book a consultation",
+            "Responsive, fast on every device"
+          ]
+        },
+        {
+          "title": "Graphic Design",
+          "bullets": [
+            "Campaign and social graphics",
+            "Materials aligned with brand guidelines",
+            "Reusable templates for the team"
+          ]
+        }
+      ],
+      "backLabel": "Back to Case Studies",
+      "servicesLabel": "Services Provided"
+    }
+  },
 ]
 
 export function getCaseStudy(slug: string) {

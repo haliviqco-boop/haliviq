@@ -40,17 +40,19 @@ const groupsEN = [
   { label: 'Healthcare', ids: [3, 10] },
   { label: 'AI', ids: [4, 8] },
   { label: 'Enterprise', ids: [7, 9] },
-  { label: 'F&B', ids: [13, 14, 22, 32] },
+  { label: 'F&B', ids: [13, 14, 22, 32, 39] },
   { label: 'Fitness & Wellness', ids: [15] },
   { label: 'Apparel & Uniforms', ids: [16] },
   { label: 'Manufacturing', ids: [17] },
   { label: 'Government & Public Sector', ids: [19, 21, 27, 28, 29, 30, 31] },
   { label: 'Retail & Shopping Mall', ids: [20, 36] },
   { label: 'Travel & Tourism', ids: [23] },
-  { label: 'Construction & Real Estate', ids: [24] },
+  { label: 'Construction & Real Estate', ids: [24, 41] },
   { label: 'Real Estate', ids: [25, 33] },
   { label: 'Telecommunications', ids: [26] },
   { label: 'Hospitality & Travel', ids: [35] },
+  { label: 'Logistics & Marine', ids: [38] },
+  { label: 'Beauty & Aesthetics', ids: [40, 42] },
 ]
 
 const casesEN = [
@@ -90,6 +92,11 @@ const casesEN = [
   { id:34, tags:['E-Commerce'], client:"PAÑPURI", title:"Wellness & Skincare E-Commerce on Shopify", desc:"UX/UI design followed by a new Shopify e-commerce website for a Thai wellness and skincare brand.", result:"New Website", slug:"panpuri" },
   { id:35, tags:['Hospitality & Travel'], client:"Shanghai Mansion Bangkok", title:"Boutique Hotel Website with Online Booking", desc:"New hotel website with an online room-booking system for a boutique hotel.", result:"New Website", slug:"shanghai-mansion-bangkok" },
   { id:36, tags:['Retail & Shopping Mall'], client:"Jampha Shopping Mall", title:"E-Commerce Website with AI for Operations", desc:"New e-commerce website and AI system supporting operations and customers for a community shopping mall.", result:"New Website", slug:"jampha-shopping-mall" },
+  { id:38, tags:['Logistics & Marine'], client:"Prima Marine", title:"Corporate Website for a Marine Logistics Company", desc:"A corporate website presenting the fleet, services and credibility of a publicly listed marine logistics company.", result:"New Website", slug:"prima-marine" },
+  { id:39, tags:['F&B'], client:"Baan Khanitha Thai Cuisine", title:"Website for a Renowned Thai Restaurant", desc:"UX/UI design and a website that carries the warmth and heritage of a well-known Thai fine-dining restaurant.", result:"New Website", slug:"baan-khanitha" },
+  { id:40, tags:['Beauty & Aesthetics'], client:"DSK", title:"Website, UX/UI and AI-Assisted CRM for an Aesthetic Clinic", desc:"Business consulting, website design and UX/UI, plus AI-assisted CRM for an aesthetic surgery business.", result:"Website + CRM", slug:"dsk" },
+  { id:41, tags:['Construction & Real Estate'], client:"Admire", title:"Website, UX/UI and AI-Assisted CRM for a Home Builder", desc:"UX/UI design and a new website for a custom home builder, with AI-assisted CRM to manage leads.", result:"Website + CRM", slug:"admire" },
+  { id:42, tags:['Beauty & Aesthetics'], client:"MEKO International Hospital", title:"Brand, Website and Graphics for an Aesthetic Hospital", desc:"Website design and UX/UI, graphic design and brand CI for a renowned aesthetic surgery hospital.", result:"Brand + Website", slug:"meko-international-hospital" },
 ]
 
 const groupsTH = groupsEN
@@ -130,6 +137,11 @@ const casesTH = [
   { id:34, tags:['E-Commerce'], client:"PAÑPURI", title:"เว็บไซต์อีคอมเมิร์ซแบรนด์เวลเนสและสกินแคร์บน Shopify", desc:"ออกแบบ UX/UI ก่อนพัฒนาเว็บไซต์อีคอมเมิร์ซบน Shopify ให้แบรนด์เวลเนสและสกินแคร์ไทย", result:"เว็บไซต์ใหม่", slug:"panpuri" },
   { id:35, tags:['Hospitality & Travel'], client:"Shanghai Mansion Bangkok", title:"เว็บไซต์โรงแรมบูติกพร้อมระบบจองห้องพัก", desc:"เว็บไซต์โรงแรมใหม่พร้อมระบบจองห้องพักออนไลน์ให้โรงแรมบูติก", result:"เว็บไซต์ใหม่", slug:"shanghai-mansion-bangkok" },
   { id:36, tags:['Retail & Shopping Mall'], client:"Jampha Shopping Mall", title:"เว็บไซต์อีคอมเมิร์ซพร้อม AI ช่วยงานปฏิบัติการ", desc:"เว็บไซต์อีคอมเมิร์ซและระบบ AI ใหม่ช่วยสนับสนุนการดำเนินงานและลูกค้าของศูนย์การค้าชุมชน", result:"เว็บไซต์ใหม่", slug:"jampha-shopping-mall" },
+  { id:38, tags:['Logistics & Marine'], client:"Prima Marine", title:"เว็บไซต์องค์กรสำหรับธุรกิจโลจิสติกส์ทางทะเล", desc:"เว็บไซต์องค์กรที่นำเสนอกองเรือ บริการ และความน่าเชื่อถือของบริษัทมหาชนด้านโลจิสติกส์ทางทะเล", result:"เว็บไซต์ใหม่", slug:"prima-marine" },
+  { id:39, tags:['F&B'], client:"Baan Khanitha Thai Cuisine", title:"เว็บไซต์สำหรับร้านอาหารไทยชื่อดัง", desc:"ออกแบบ UX/UI และพัฒนาเว็บไซต์ที่ถ่ายทอดความอบอุ่นและเอกลักษณ์ของร้านอาหารไทยระดับแนวหน้า", result:"เว็บไซต์ใหม่", slug:"baan-khanitha" },
+  { id:40, tags:['Beauty & Aesthetics'], client:"DSK", title:"เว็บไซต์ UX/UI และ AI CRM สำหรับคลินิกศัลยกรรมความงาม", desc:"ให้คำปรึกษาธุรกิจ ออกแบบเว็บไซต์และ UX/UI พร้อม CRM ที่มี AI ช่วยสำหรับธุรกิจศัลยกรรมความงาม", result:"เว็บไซต์ + CRM", slug:"dsk" },
+  { id:41, tags:['Construction & Real Estate'], client:"Admire", title:"เว็บไซต์ UX/UI และ AI CRM สำหรับธุรกิจรับสร้างบ้าน", desc:"ออกแบบ UX/UI และพัฒนาเว็บไซต์ใหม่สำหรับธุรกิจรับสร้างบ้าน พร้อม CRM ที่มี AI ช่วยจัดการลีด", result:"เว็บไซต์ + CRM", slug:"admire" },
+  { id:42, tags:['Beauty & Aesthetics'], client:"MEKO International Hospital", title:"แบรนด์ เว็บไซต์ และกราฟิกสำหรับโรงพยาบาลศัลยกรรมความงาม", desc:"ออกแบบเว็บไซต์และ UX/UI กราฟิก และ Brand CI สำหรับโรงพยาบาลศัลยกรรมความงามชื่อดัง", result:"แบรนด์ + เว็บไซต์", slug:"meko-international-hospital" },
 ]
 
 const gradients = [

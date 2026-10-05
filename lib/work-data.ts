@@ -4969,6 +4969,1011 @@ export const workProjects: WorkProject[] = [
       "servicesLabel": "Services Provided",
       "ogImage": "/images/case-studies/jampha-shopping-mall/cover.jpg"
     }
+  },
+  {
+    "slug": "prima-marine",
+    "industryTag": "Logistics & Marine",
+    "year": "2025",
+    "th": {
+      "metaTitle": "Prima Marine เว็บไซต์องค์กรสำหรับธุรกิจโลจิสติกส์ทางทะเล — ผลงาน Haliviq",
+      "metaDescription": "สรุปงานที่ส่งมอบ เทคโนโลยี และแนวทางของโปรเจกต์ Prima Marine โดย Haliviq: พัฒนาเว็บไซต์, ออกแบบ UX/UI",
+      "h1": "Prima Marine — เว็บไซต์องค์กรสำหรับธุรกิจโลจิสติกส์ทางทะเล",
+      "client": "Prima Marine",
+      "badge": "โลจิสติกส์และการขนส่งทางทะเล",
+      "servicesProvided": [
+        "พัฒนาเว็บไซต์",
+        "ออกแบบ UX/UI"
+      ],
+      "intro": "Prima Marine ในฐานะบริษัทมหาชนด้านโลจิสติกส์ทางทะเล ต้องการเว็บไซต์ที่สื่อถึงขนาดธุรกิจ ความปลอดภัย และความน่าเชื่อถือต่อลูกค้า พันธมิตร และนักลงทุน เราออกแบบและพัฒนาเว็บไซต์องค์กรที่ดูมืออาชีพ นำเสนอบริการและการดำเนินงานอย่างเป็นระเบียบ และดูแลรักษาได้ง่าย หน้านี้สรุปงานที่ส่งมอบและแนวทางการทำงาน สำหรับธุรกิจที่มองหาสตูดิโอพัฒนาผลิตภัณฑ์ดิจิทัลในประเทศไทย",
+      "snapshot": [
+        {
+          "label": "อุตสาหกรรม",
+          "value": "โลจิสติกส์และการขนส่งทางทะเล"
+        },
+        {
+          "label": "ขอบเขต",
+          "value": "พัฒนาเว็บไซต์, ออกแบบ UX/UI"
+        },
+        {
+          "label": "ปี",
+          "value": "2025"
+        },
+        {
+          "label": "บริการ",
+          "value": "2"
+        }
+      ],
+      "objectivesHeading": "เป้าหมายของโปรเจกต์",
+      "objectives": [
+        "สะท้อนแบรนด์ Prima Marine ด้วยประสบการณ์ที่ชัดเจนและเป็นมืออาชีพ",
+        "ทำให้ข้อมูลสำคัญค้นหาได้ง่ายบนทุกอุปกรณ์",
+        "สร้างช่องทางที่ชัดเจนให้ลูกค้าสอบถามหรือดำเนินการต่อ",
+        "มอบเครื่องมือให้ทีมงานดูแลและต่อยอดสิ่งที่พัฒนาได้เอง"
+      ],
+      "deliverablesHeading": "สิ่งที่เราส่งมอบ",
+      "deliverables": [
+        "พัฒนาเว็บไซต์",
+        "ออกแบบ UX/UI",
+        "ระบบจัดการเนื้อหาสำหรับทีมงาน",
+        "ส่งมอบงานและอบรมทีมงาน"
+      ],
+      "approachHeading": "ขั้นตอนการทำงาน",
+      "approach": [
+        {
+          "title": "พัฒนาเว็บไซต์",
+          "desc": "พัฒนาเว็บไซต์ที่รวดเร็ว รองรับทุกอุปกรณ์ และทีมงานอัปเดตเนื้อหาได้เอง"
+        },
+        {
+          "title": "ออกแบบ UX/UI",
+          "desc": "ออกแบบโครงสร้าง Wireframe และหน้าตาเว็บไซต์ให้ชัดเจนและใช้งานง่ายในทุกหน้า"
+        },
+        {
+          "title": "ศึกษาธุรกิจและกลุ่มเป้าหมาย",
+          "desc": "ทำความเข้าใจธุรกิจ กลุ่มลูกค้า และเป้าหมาย เพื่อกำหนดขอบเขตและตัวชี้วัดความสำเร็จ"
+        },
+        {
+          "title": "ทดสอบและเปิดใช้งาน",
+          "desc": "ทดสอบบนหลายอุปกรณ์และเบราว์เซอร์ เปิดใช้งานและส่งมอบให้ทีมงาน"
+        }
+      ],
+      "techHeading": "เทคโนโลยีและเครื่องมือ",
+      "tech": [
+        "Next.js front end",
+        "Headless CMS สำหรับอัปเดตเนื้อหา",
+        "Cloud hosting & CDN",
+        "พื้นฐาน SEO และประสิทธิภาพ",
+        "Responsive design system"
+      ],
+      "resultsHeading": "ผลลัพธ์",
+      "results": [
+        "เปิดตัวประสบการณ์ที่ประณีตและสะท้อนแบรนด์ Prima Marine",
+        "ข้อมูลเป็นระเบียบ ค้นหาง่ายทั้งบนมือถือและเดสก์ท็อป",
+        "ลูกค้ามีช่องทางติดต่อที่ชัดเจน",
+        "ทีมงานอัปเดตเนื้อหาได้เองอย่างต่อเนื่อง"
+      ],
+      "faqHeading": "คำถามที่พบบ่อย",
+      "faq": [
+        {
+          "question": "เว็บไซต์รองรับความต้องการของบริษัทมหาชนได้หรือไม่",
+          "answer": "ได้ เราจัดโครงสร้างข้อมูลบริษัทและบริการให้ชัดเจน เพื่อให้ลูกค้า พันธมิตร และนักลงทุนค้นหาข้อมูลได้ง่าย"
+        },
+        {
+          "question": "ทีมงานอัปเดตเนื้อหาเองได้หรือไม่",
+          "answer": "ได้ เนื้อหาจัดการผ่าน CMS เจ้าหน้าที่จึงอัปเดตข่าวและบริการได้โดยไม่ต้องพึ่งนักพัฒนา"
+        }
+      ],
+      "backLabel": "กลับไปหน้า Work",
+      "servicesLabel": "บริการที่ให้",
+      "ogImage": "/images/case-studies/prima-marine/cover.jpg"
+    },
+    "en": {
+      "metaTitle": "Prima Marine Corporate Website for a Marine Logistics Company — Haliviq",
+      "metaDescription": "Deliverables, approach and tech behind Prima Marine's project by Haliviq: Website Development, UX/UI Design.",
+      "h1": "Prima Marine — Corporate Website for a Marine Logistics Company",
+      "client": "Prima Marine",
+      "badge": "Logistics & Marine",
+      "servicesProvided": [
+        "Website Development",
+        "UX/UI Design"
+      ],
+      "intro": "As a publicly listed marine logistics company, Prima Marine needed a website that conveys scale, safety and reliability to customers, partners and investors. We designed and built a clear, professional corporate website that presents services and operations in an organized way and is easy to maintain. This page summarizes the deliverables and approach, for businesses looking for a digital product studio in Thailand.",
+      "snapshot": [
+        {
+          "label": "Industry",
+          "value": "Logistics & Marine"
+        },
+        {
+          "label": "Scope",
+          "value": "Website Development, UX/UI Design"
+        },
+        {
+          "label": "Year",
+          "value": "2025"
+        },
+        {
+          "label": "Services",
+          "value": "2"
+        }
+      ],
+      "objectivesHeading": "Project Objectives",
+      "objectives": [
+        "Reflect the Prima Marine brand through a clear, professional experience.",
+        "Make key information easy to find on any device.",
+        "Create clear paths for customers to enquire or take action.",
+        "Give the team tools to maintain and grow what we built."
+      ],
+      "deliverablesHeading": "What We Delivered",
+      "deliverables": [
+        "Website Development",
+        "UX/UI Design",
+        "Content management for the team",
+        "Handover and team training"
+      ],
+      "approachHeading": "How We Built It",
+      "approach": [
+        {
+          "title": "Website Development",
+          "desc": "Built a fast, responsive website that is easy for the team to update."
+        },
+        {
+          "title": "UX/UI Design",
+          "desc": "Designed the structure, wireframes and visual interface so every page is clear and easy to use."
+        },
+        {
+          "title": "Discovery & Research",
+          "desc": "Studied the business, audience and goals to define the scope and success criteria."
+        },
+        {
+          "title": "Testing & Launch",
+          "desc": "Tested across devices and browsers, launched and handed over to the team."
+        }
+      ],
+      "techHeading": "Technology & Tools",
+      "tech": [
+        "Next.js front end",
+        "Headless CMS for content updates",
+        "Cloud hosting & CDN",
+        "SEO and performance foundations",
+        "Responsive design system"
+      ],
+      "resultsHeading": "Results",
+      "results": [
+        "Launched a polished experience that reflects the Prima Marine brand.",
+        "Information is organized and easy to find on mobile and desktop.",
+        "Customers have clear ways to get in touch.",
+        "The team can keep content up to date independently."
+      ],
+      "faqHeading": "Frequently Asked Questions",
+      "faq": [
+        {
+          "question": "Can the website support a listed company's needs?",
+          "answer": "Yes. We structure company information and service content clearly so customers, partners and investors can find what they need."
+        },
+        {
+          "question": "Can the team update content themselves?",
+          "answer": "Yes. Content is managed through a CMS so staff can update news and services without a developer."
+        }
+      ],
+      "backLabel": "Back to Work",
+      "servicesLabel": "Services Provided",
+      "ogImage": "/images/case-studies/prima-marine/cover.jpg"
+    }
+  },
+  {
+    "slug": "baan-khanitha",
+    "industryTag": "F&B",
+    "year": "2025",
+    "th": {
+      "metaTitle": "Baan Khanitha Thai Cuisine เว็บไซต์สำหรับร้านอาหารไทยชื่อดัง — ผลงาน Haliviq",
+      "metaDescription": "สรุปงานที่ส่งมอบ เทคโนโลยี และแนวทางของโปรเจกต์ Baan Khanitha Thai Cuisine โดย Haliviq: พัฒนาเว็บไซต์, ออกแบบ UX/UI",
+      "h1": "Baan Khanitha Thai Cuisine — เว็บไซต์สำหรับร้านอาหารไทยชื่อดัง",
+      "client": "Baan Khanitha Thai Cuisine",
+      "badge": "ร้านอาหารและเครื่องดื่ม",
+      "servicesProvided": [
+        "พัฒนาเว็บไซต์",
+        "ออกแบบ UX/UI"
+      ],
+      "intro": "Baan Khanitha เป็นร้านอาหารไทยชื่อดังที่บรรยากาศและอาหารคือหัวใจของชื่อเสียง เว็บไซต์ต้องสะท้อนประสบการณ์นั้นและทำให้ค้นหาเมนูและมาเยือนได้ง่าย เราออกแบบประสบการณ์ตามเอกลักษณ์ของร้าน และพัฒนาเว็บไซต์ที่สวยงามเรียบง่าย สำหรับเมนู สาขา และการจอง หน้านี้สรุปงานที่ส่งมอบและแนวทางการทำงาน สำหรับธุรกิจที่มองหาสตูดิโอพัฒนาผลิตภัณฑ์ดิจิทัลในประเทศไทย",
+      "snapshot": [
+        {
+          "label": "อุตสาหกรรม",
+          "value": "ร้านอาหารและเครื่องดื่ม"
+        },
+        {
+          "label": "ขอบเขต",
+          "value": "พัฒนาเว็บไซต์, ออกแบบ UX/UI"
+        },
+        {
+          "label": "ปี",
+          "value": "2025"
+        },
+        {
+          "label": "บริการ",
+          "value": "2"
+        }
+      ],
+      "objectivesHeading": "เป้าหมายของโปรเจกต์",
+      "objectives": [
+        "สะท้อนแบรนด์ Baan Khanitha Thai Cuisine ด้วยประสบการณ์ที่ชัดเจนและเป็นมืออาชีพ",
+        "ทำให้ข้อมูลสำคัญค้นหาได้ง่ายบนทุกอุปกรณ์",
+        "สร้างช่องทางที่ชัดเจนให้ลูกค้าสอบถามหรือดำเนินการต่อ",
+        "มอบเครื่องมือให้ทีมงานดูแลและต่อยอดสิ่งที่พัฒนาได้เอง"
+      ],
+      "deliverablesHeading": "สิ่งที่เราส่งมอบ",
+      "deliverables": [
+        "พัฒนาเว็บไซต์",
+        "ออกแบบ UX/UI",
+        "ระบบจัดการเนื้อหาสำหรับทีมงาน",
+        "ส่งมอบงานและอบรมทีมงาน"
+      ],
+      "approachHeading": "ขั้นตอนการทำงาน",
+      "approach": [
+        {
+          "title": "ศึกษาธุรกิจและกลุ่มเป้าหมาย",
+          "desc": "ทำความเข้าใจธุรกิจ กลุ่มลูกค้า และเป้าหมาย เพื่อกำหนดขอบเขตและตัวชี้วัดความสำเร็จ"
+        },
+        {
+          "title": "ออกแบบ UX/UI",
+          "desc": "ออกแบบโครงสร้าง Wireframe และหน้าตาเว็บไซต์ให้ชัดเจนและใช้งานง่ายในทุกหน้า"
+        },
+        {
+          "title": "พัฒนาเว็บไซต์",
+          "desc": "พัฒนาเว็บไซต์ที่รวดเร็ว รองรับทุกอุปกรณ์ และทีมงานอัปเดตเนื้อหาได้เอง"
+        },
+        {
+          "title": "ทดสอบและเปิดใช้งาน",
+          "desc": "ทดสอบบนหลายอุปกรณ์และเบราว์เซอร์ เปิดใช้งานและส่งมอบให้ทีมงาน"
+        }
+      ],
+      "techHeading": "เทคโนโลยีและเครื่องมือ",
+      "tech": [
+        "Next.js front end",
+        "Headless CMS สำหรับเมนูและเนื้อหา",
+        "เชื่อมระบบจอง/ติดต่อ",
+        "Cloud hosting & CDN",
+        "พื้นฐาน Local SEO"
+      ],
+      "resultsHeading": "ผลลัพธ์",
+      "results": [
+        "เปิดตัวประสบการณ์ที่ประณีตและสะท้อนแบรนด์ Baan Khanitha Thai Cuisine",
+        "ข้อมูลเป็นระเบียบ ค้นหาง่ายทั้งบนมือถือและเดสก์ท็อป",
+        "ลูกค้ามีช่องทางติดต่อที่ชัดเจน",
+        "ทีมงานอัปเดตเนื้อหาได้เองอย่างต่อเนื่อง"
+      ],
+      "faqHeading": "คำถามที่พบบ่อย",
+      "faq": [
+        {
+          "question": "อัปเดตเมนูได้ง่ายหรือไม่",
+          "answer": "ได้ เมนูและเนื้อหาจัดการผ่าน CMS ทีมงานอัปเดตอาหารและโปรโมชั่นได้เอง"
+        },
+        {
+          "question": "ใช้งานบนมือถือได้ดีหรือไม่",
+          "answer": "ได้ ออกแบบแบบ Mobile-first เพราะผู้เข้าชมร้านอาหารส่วนใหญ่ใช้โทรศัพท์"
+        }
+      ],
+      "backLabel": "กลับไปหน้า Work",
+      "servicesLabel": "บริการที่ให้",
+      "ogImage": "/images/case-studies/baan-khanitha/cover.jpg"
+    },
+    "en": {
+      "metaTitle": "Baan Khanitha Thai Cuisine Website for a Renowned Thai Restaurant — Haliviq",
+      "metaDescription": "Deliverables, approach and tech behind Baan Khanitha Thai Cuisine's project by Haliviq: Website Development, UX/UI Design.",
+      "h1": "Baan Khanitha Thai Cuisine — Website for a Renowned Thai Restaurant",
+      "client": "Baan Khanitha Thai Cuisine",
+      "badge": "F&B",
+      "servicesProvided": [
+        "Website Development",
+        "UX/UI Design"
+      ],
+      "intro": "Baan Khanitha is a well-known Thai restaurant whose atmosphere and cuisine are central to its reputation. Its website needed to reflect that experience and make it easy to discover the menu and visit. We designed the experience around the restaurant's character and built an elegant, easy-to-browse website for menus, locations and reservations. This page summarizes the deliverables and approach, for businesses looking for a digital product studio in Thailand.",
+      "snapshot": [
+        {
+          "label": "Industry",
+          "value": "F&B"
+        },
+        {
+          "label": "Scope",
+          "value": "Website Development, UX/UI Design"
+        },
+        {
+          "label": "Year",
+          "value": "2025"
+        },
+        {
+          "label": "Services",
+          "value": "2"
+        }
+      ],
+      "objectivesHeading": "Project Objectives",
+      "objectives": [
+        "Reflect the Baan Khanitha Thai Cuisine brand through a clear, professional experience.",
+        "Make key information easy to find on any device.",
+        "Create clear paths for customers to enquire or take action.",
+        "Give the team tools to maintain and grow what we built."
+      ],
+      "deliverablesHeading": "What We Delivered",
+      "deliverables": [
+        "Website Development",
+        "UX/UI Design",
+        "Content management for the team",
+        "Handover and team training"
+      ],
+      "approachHeading": "How We Built It",
+      "approach": [
+        {
+          "title": "Discovery & Research",
+          "desc": "Studied the business, audience and goals to define the scope and success criteria."
+        },
+        {
+          "title": "UX/UI Design",
+          "desc": "Designed the structure, wireframes and visual interface so every page is clear and easy to use."
+        },
+        {
+          "title": "Website Development",
+          "desc": "Built a fast, responsive website that is easy for the team to update."
+        },
+        {
+          "title": "Testing & Launch",
+          "desc": "Tested across devices and browsers, launched and handed over to the team."
+        }
+      ],
+      "techHeading": "Technology & Tools",
+      "tech": [
+        "Next.js front end",
+        "Headless CMS for menus and content",
+        "Reservation / contact integration",
+        "Cloud hosting & CDN",
+        "Local SEO foundations"
+      ],
+      "resultsHeading": "Results",
+      "results": [
+        "Launched a polished experience that reflects the Baan Khanitha Thai Cuisine brand.",
+        "Information is organized and easy to find on mobile and desktop.",
+        "Customers have clear ways to get in touch.",
+        "The team can keep content up to date independently."
+      ],
+      "faqHeading": "Frequently Asked Questions",
+      "faq": [
+        {
+          "question": "Can the menu be updated easily?",
+          "answer": "Yes. Menu and content are managed through a CMS so the team can update dishes and promotions themselves."
+        },
+        {
+          "question": "Does the site work well on mobile?",
+          "answer": "Yes. The design is built mobile-first because most restaurant visitors browse on their phones."
+        }
+      ],
+      "backLabel": "Back to Work",
+      "servicesLabel": "Services Provided",
+      "ogImage": "/images/case-studies/baan-khanitha/cover.jpg"
+    }
+  },
+  {
+    "slug": "dsk",
+    "industryTag": "Beauty & Aesthetics",
+    "year": "2025",
+    "th": {
+      "metaTitle": "DSK เว็บไซต์ UX/UI และ AI CRM สำหรับคลินิกศัลยกรรมความงาม — ผลงาน Haliviq",
+      "metaDescription": "สรุปงานที่ส่งมอบ เทคโนโลยี และแนวทางของโปรเจกต์ DSK โดย Haliviq: ให้คำปรึกษาธุรกิจ, ออกแบบเว็บไซต์, ออกแบบ UX/UI, CRM ที่มี AI ช่วย",
+      "h1": "DSK — เว็บไซต์ UX/UI และ AI CRM สำหรับคลินิกศัลยกรรมความงาม",
+      "client": "DSK",
+      "badge": "ความงามและศัลยกรรม",
+      "servicesProvided": [
+        "ให้คำปรึกษาธุรกิจ",
+        "ออกแบบเว็บไซต์",
+        "ออกแบบ UX/UI",
+        "CRM ที่มี AI ช่วย"
+      ],
+      "intro": "DSK ธุรกิจศัลยกรรมความงาม ต้องการภาพลักษณ์ออนไลน์ที่ประณีตและสร้างความไว้วางใจ พร้อมวิธีจัดการและติดตามลูกค้าที่สนใจได้ดีขึ้น เราเริ่มจากให้คำปรึกษาธุรกิจ แล้วออกแบบเว็บไซต์และ UX/UI ที่สง่างาม พร้อมเพิ่ม CRM ที่มี AI ช่วยจัดระเบียบและติดตามลูกค้า หน้านี้สรุปงานที่ส่งมอบและแนวทางการทำงาน สำหรับธุรกิจที่มองหาสตูดิโอพัฒนาผลิตภัณฑ์ดิจิทัลในประเทศไทย",
+      "snapshot": [
+        {
+          "label": "อุตสาหกรรม",
+          "value": "ความงามและศัลยกรรม"
+        },
+        {
+          "label": "ขอบเขต",
+          "value": "ให้คำปรึกษาธุรกิจ, ออกแบบเว็บไซต์, ออกแบบ UX/UI, CRM ที่มี AI ช่วย"
+        },
+        {
+          "label": "ปี",
+          "value": "2025"
+        },
+        {
+          "label": "บริการ",
+          "value": "4"
+        }
+      ],
+      "objectivesHeading": "เป้าหมายของโปรเจกต์",
+      "objectives": [
+        "สะท้อนแบรนด์ DSK ด้วยประสบการณ์ที่ชัดเจนและเป็นมืออาชีพ",
+        "ทำให้ข้อมูลสำคัญค้นหาได้ง่ายบนทุกอุปกรณ์",
+        "สร้างช่องทางที่ชัดเจนให้ลูกค้าสอบถามหรือดำเนินการต่อ",
+        "มอบเครื่องมือให้ทีมงานดูแลและต่อยอดสิ่งที่พัฒนาได้เอง"
+      ],
+      "deliverablesHeading": "สิ่งที่เราส่งมอบ",
+      "deliverables": [
+        "ให้คำปรึกษาธุรกิจ",
+        "ออกแบบเว็บไซต์",
+        "ออกแบบ UX/UI",
+        "CRM ที่มี AI ช่วย",
+        "ระบบจัดการเนื้อหาสำหรับทีมงาน",
+        "ส่งมอบงานและอบรมทีมงาน"
+      ],
+      "approachHeading": "ขั้นตอนการทำงาน",
+      "approach": [
+        {
+          "title": "ให้คำปรึกษาธุรกิจ",
+          "desc": "ให้คำปรึกษาด้านกลยุทธ์ดิจิทัลและบทบาทของเว็บไซต์ต่อเป้าหมายทางธุรกิจ"
+        },
+        {
+          "title": "ศึกษาธุรกิจและกลุ่มเป้าหมาย",
+          "desc": "ทำความเข้าใจธุรกิจ กลุ่มลูกค้า และเป้าหมาย เพื่อกำหนดขอบเขตและตัวชี้วัดความสำเร็จ"
+        },
+        {
+          "title": "ออกแบบ UX/UI",
+          "desc": "ออกแบบโครงสร้าง Wireframe และหน้าตาเว็บไซต์ให้ชัดเจนและใช้งานง่ายในทุกหน้า"
+        },
+        {
+          "title": "พัฒนาเว็บไซต์",
+          "desc": "พัฒนาเว็บไซต์ที่รวดเร็ว รองรับทุกอุปกรณ์ และทีมงานอัปเดตเนื้อหาได้เอง"
+        },
+        {
+          "title": "เชื่อมระบบ AI และ CRM",
+          "desc": "เพิ่ม CRM ที่มี AI ช่วย เพื่อเก็บ จัดระเบียบ และติดตามลูกค้าที่สนใจอย่างสม่ำเสมอ"
+        },
+        {
+          "title": "ทดสอบและเปิดใช้งาน",
+          "desc": "ทดสอบบนหลายอุปกรณ์และเบราว์เซอร์ เปิดใช้งานและส่งมอบให้ทีมงาน"
+        }
+      ],
+      "techHeading": "เทคโนโลยีและเครื่องมือ",
+      "tech": [
+        "Next.js front end",
+        "แพลตฟอร์ม CRM พร้อม AI ช่วย",
+        "ระบบรับข้อสอบถามและนัดหมาย",
+        "Cloud hosting & CDN",
+        "SEO และ Analytics ที่คำนึงถึงความเป็นส่วนตัว"
+      ],
+      "resultsHeading": "ผลลัพธ์",
+      "results": [
+        "เปิดตัวประสบการณ์ที่ประณีตและสะท้อนแบรนด์ DSK",
+        "ข้อมูลเป็นระเบียบ ค้นหาง่ายทั้งบนมือถือและเดสก์ท็อป",
+        "ลูกค้ามีช่องทางติดต่อที่ชัดเจน",
+        "ทีมงานอัปเดตเนื้อหาได้เองอย่างต่อเนื่อง"
+      ],
+      "faqHeading": "คำถามที่พบบ่อย",
+      "faq": [
+        {
+          "question": "AI ใน CRM ช่วยทำอะไร",
+          "answer": "ช่วยจัดระเบียบลูกค้าที่สนใจและแนะนำการติดตาม โดยเจ้าหน้าที่ยังเป็นผู้ดูแลการให้คำปรึกษาและสื่อสารกับลูกค้า"
+        },
+        {
+          "question": "ข้อมูลลูกค้าถูกจัดการอย่างไร",
+          "answer": "ข้อมูลลูกค้าจัดการตามกฎหมายคุ้มครองข้อมูลส่วนบุคคล (PDPA) และจำกัดสิทธิ์เฉพาะเจ้าหน้าที่ที่ได้รับอนุญาต"
+        }
+      ],
+      "backLabel": "กลับไปหน้า Work",
+      "servicesLabel": "บริการที่ให้",
+      "ogImage": "/images/case-studies/dsk/cover.jpg"
+    },
+    "en": {
+      "metaTitle": "DSK Website, UX/UI and AI-Assisted CRM for an Aesthetic Clinic — Haliviq",
+      "metaDescription": "Deliverables, approach and tech behind DSK's project by Haliviq: Business Consulting, Website Design, UX/UI Design, AI-Assisted CRM.",
+      "h1": "DSK — Website, UX/UI and AI-Assisted CRM for an Aesthetic Clinic",
+      "client": "DSK",
+      "badge": "Beauty & Aesthetics",
+      "servicesProvided": [
+        "Business Consulting",
+        "Website Design",
+        "UX/UI Design",
+        "AI-Assisted CRM"
+      ],
+      "intro": "DSK, an aesthetic surgery business, needed a refined online presence that builds trust, along with a better way to manage and follow up customer enquiries. We started with business consulting, then designed an elegant website and UX/UI, and added an AI-assisted CRM to organize and follow up enquiries. This page summarizes the deliverables and approach, for businesses looking for a digital product studio in Thailand.",
+      "snapshot": [
+        {
+          "label": "Industry",
+          "value": "Beauty & Aesthetics"
+        },
+        {
+          "label": "Scope",
+          "value": "Business Consulting, Website Design, UX/UI Design, AI-Assisted CRM"
+        },
+        {
+          "label": "Year",
+          "value": "2025"
+        },
+        {
+          "label": "Services",
+          "value": "4"
+        }
+      ],
+      "objectivesHeading": "Project Objectives",
+      "objectives": [
+        "Reflect the DSK brand through a clear, professional experience.",
+        "Make key information easy to find on any device.",
+        "Create clear paths for customers to enquire or take action.",
+        "Give the team tools to maintain and grow what we built."
+      ],
+      "deliverablesHeading": "What We Delivered",
+      "deliverables": [
+        "Business Consulting",
+        "Website Design",
+        "UX/UI Design",
+        "AI-Assisted CRM",
+        "Content management for the team",
+        "Handover and team training"
+      ],
+      "approachHeading": "How We Built It",
+      "approach": [
+        {
+          "title": "Business Consulting",
+          "desc": "Advised on digital strategy and how the website should support business goals."
+        },
+        {
+          "title": "Discovery & Research",
+          "desc": "Studied the business, audience and goals to define the scope and success criteria."
+        },
+        {
+          "title": "UX/UI Design",
+          "desc": "Designed the structure, wireframes and visual interface so every page is clear and easy to use."
+        },
+        {
+          "title": "Website Development",
+          "desc": "Built a fast, responsive website that is easy for the team to update."
+        },
+        {
+          "title": "AI & CRM Integration",
+          "desc": "Added AI-assisted CRM so enquiries are captured, organized and followed up consistently."
+        },
+        {
+          "title": "Testing & Launch",
+          "desc": "Tested across devices and browsers, launched and handed over to the team."
+        }
+      ],
+      "techHeading": "Technology & Tools",
+      "tech": [
+        "Next.js front end",
+        "CRM platform with AI assistance",
+        "Enquiry and appointment capture",
+        "Cloud hosting & CDN",
+        "SEO and privacy-conscious analytics"
+      ],
+      "resultsHeading": "Results",
+      "results": [
+        "Launched a polished experience that reflects the DSK brand.",
+        "Information is organized and easy to find on mobile and desktop.",
+        "Customers have clear ways to get in touch.",
+        "The team can keep content up to date independently."
+      ],
+      "faqHeading": "Frequently Asked Questions",
+      "faq": [
+        {
+          "question": "What does the AI in the CRM do?",
+          "answer": "It helps organize enquiries and suggest follow-ups; staff remain in charge of consultations and customer communication."
+        },
+        {
+          "question": "How is customer data handled?",
+          "answer": "Customer information is handled in line with applicable data protection law (PDPA), with access limited to authorized staff."
+        }
+      ],
+      "backLabel": "Back to Work",
+      "servicesLabel": "Services Provided",
+      "ogImage": "/images/case-studies/dsk/cover.jpg"
+    }
+  },
+  {
+    "slug": "admire",
+    "industryTag": "Real Estate & Construction",
+    "year": "2025",
+    "th": {
+      "metaTitle": "Admire เว็บไซต์ UX/UI และ AI CRM สำหรับธุรกิจรับสร้างบ้าน — ผลงาน Haliviq",
+      "metaDescription": "สรุปงานที่ส่งมอบ เทคโนโลยี และแนวทางของโปรเจกต์ Admire โดย Haliviq: ออกแบบ UX/UI, พัฒนาเว็บไซต์, CRM ที่มี AI ช่วย",
+      "h1": "Admire — เว็บไซต์ UX/UI และ AI CRM สำหรับธุรกิจรับสร้างบ้าน",
+      "client": "Admire",
+      "badge": "อสังหาริมทรัพย์และก่อสร้าง",
+      "servicesProvided": [
+        "ออกแบบ UX/UI",
+        "พัฒนาเว็บไซต์",
+        "CRM ที่มี AI ช่วย"
+      ],
+      "intro": "Admire รับสร้างบ้าน ซึ่งผู้ซื้อใช้เวลาศึกษาแบบบ้านและเปรียบเทียบผู้รับเหมา ธุรกิจต้องการเว็บไซต์ที่โชว์ผลงาน และระบบที่ไม่ปล่อยให้ลูกค้าที่สนใจหลุดมือ เราออกแบบ UX/UI ที่เน้นแบบบ้าน พัฒนาเว็บไซต์ และเพิ่ม CRM ที่มี AI ช่วยเก็บและติดตามทุกการสอบถาม หน้านี้สรุปงานที่ส่งมอบและแนวทางการทำงาน สำหรับธุรกิจที่มองหาสตูดิโอพัฒนาผลิตภัณฑ์ดิจิทัลในประเทศไทย",
+      "snapshot": [
+        {
+          "label": "อุตสาหกรรม",
+          "value": "อสังหาริมทรัพย์และก่อสร้าง"
+        },
+        {
+          "label": "ขอบเขต",
+          "value": "ออกแบบ UX/UI, พัฒนาเว็บไซต์, CRM ที่มี AI ช่วย"
+        },
+        {
+          "label": "ปี",
+          "value": "2025"
+        },
+        {
+          "label": "บริการ",
+          "value": "3"
+        }
+      ],
+      "objectivesHeading": "เป้าหมายของโปรเจกต์",
+      "objectives": [
+        "สะท้อนแบรนด์ Admire ด้วยประสบการณ์ที่ชัดเจนและเป็นมืออาชีพ",
+        "ทำให้ข้อมูลสำคัญค้นหาได้ง่ายบนทุกอุปกรณ์",
+        "สร้างช่องทางที่ชัดเจนให้ลูกค้าสอบถามหรือดำเนินการต่อ",
+        "มอบเครื่องมือให้ทีมงานดูแลและต่อยอดสิ่งที่พัฒนาได้เอง"
+      ],
+      "deliverablesHeading": "สิ่งที่เราส่งมอบ",
+      "deliverables": [
+        "ออกแบบ UX/UI",
+        "พัฒนาเว็บไซต์",
+        "CRM ที่มี AI ช่วย",
+        "ระบบจัดการเนื้อหาสำหรับทีมงาน",
+        "ส่งมอบงานและอบรมทีมงาน"
+      ],
+      "approachHeading": "ขั้นตอนการทำงาน",
+      "approach": [
+        {
+          "title": "ศึกษาธุรกิจและกลุ่มเป้าหมาย",
+          "desc": "ทำความเข้าใจธุรกิจ กลุ่มลูกค้า และเป้าหมาย เพื่อกำหนดขอบเขตและตัวชี้วัดความสำเร็จ"
+        },
+        {
+          "title": "ออกแบบ UX/UI",
+          "desc": "ออกแบบโครงสร้าง Wireframe และหน้าตาเว็บไซต์ให้ชัดเจนและใช้งานง่ายในทุกหน้า"
+        },
+        {
+          "title": "พัฒนาเว็บไซต์",
+          "desc": "พัฒนาเว็บไซต์ที่รวดเร็ว รองรับทุกอุปกรณ์ และทีมงานอัปเดตเนื้อหาได้เอง"
+        },
+        {
+          "title": "เชื่อมระบบ AI และ CRM",
+          "desc": "เพิ่ม CRM ที่มี AI ช่วย เพื่อเก็บ จัดระเบียบ และติดตามลูกค้าที่สนใจอย่างสม่ำเสมอ"
+        },
+        {
+          "title": "ทดสอบและเปิดใช้งาน",
+          "desc": "ทดสอบบนหลายอุปกรณ์และเบราว์เซอร์ เปิดใช้งานและส่งมอบให้ทีมงาน"
+        }
+      ],
+      "techHeading": "เทคโนโลยีและเครื่องมือ",
+      "tech": [
+        "Next.js front end",
+        "CRM พร้อม AI ช่วย",
+        "แกลเลอรีผลงาน/แบบบ้านพร้อม CMS",
+        "Cloud hosting & CDN",
+        "พื้นฐาน SEO"
+      ],
+      "resultsHeading": "ผลลัพธ์",
+      "results": [
+        "เปิดตัวประสบการณ์ที่ประณีตและสะท้อนแบรนด์ Admire",
+        "ข้อมูลเป็นระเบียบ ค้นหาง่ายทั้งบนมือถือและเดสก์ท็อป",
+        "ลูกค้ามีช่องทางติดต่อที่ชัดเจน",
+        "ทีมงานอัปเดตเนื้อหาได้เองอย่างต่อเนื่อง"
+      ],
+      "faqHeading": "คำถามที่พบบ่อย",
+      "faq": [
+        {
+          "question": "CRM ที่มี AI ช่วยธุรกิจรับสร้างบ้านอย่างไร",
+          "answer": "เก็บทุกการสอบถามไว้ในที่เดียว และช่วยจัดลำดับและเตือนการติดตาม ให้ทีมขายโฟกัสกับการพูดคุยกับลูกค้า"
+        },
+        {
+          "question": "ทีมงานเพิ่มโครงการใหม่เองได้หรือไม่",
+          "answer": "ได้ แบบบ้านและโครงการจัดการผ่าน CMS โดยไม่ต้องพึ่งนักพัฒนา"
+        }
+      ],
+      "backLabel": "กลับไปหน้า Work",
+      "servicesLabel": "บริการที่ให้",
+      "ogImage": "/images/case-studies/admire/cover.jpg"
+    },
+    "en": {
+      "metaTitle": "Admire Website, UX/UI and AI-Assisted CRM for a Home Builder — Haliviq",
+      "metaDescription": "Deliverables, approach and tech behind Admire's project by Haliviq: UX/UI Design, Website Development, AI-Assisted CRM.",
+      "h1": "Admire — Website, UX/UI and AI-Assisted CRM for a Home Builder",
+      "client": "Admire",
+      "badge": "Real Estate & Construction",
+      "servicesProvided": [
+        "UX/UI Design",
+        "Website Development",
+        "AI-Assisted CRM"
+      ],
+      "intro": "Admire builds custom homes, where buyers take time to explore designs and compare builders. The business needed a website that showcases its work and a system that does not let promising leads slip away. We designed a UX/UI centered on the home designs, built the website, and added AI-assisted CRM that captures and follows up every enquiry. This page summarizes the deliverables and approach, for businesses looking for a digital product studio in Thailand.",
+      "snapshot": [
+        {
+          "label": "Industry",
+          "value": "Real Estate & Construction"
+        },
+        {
+          "label": "Scope",
+          "value": "UX/UI Design, Website Development, AI-Assisted CRM"
+        },
+        {
+          "label": "Year",
+          "value": "2025"
+        },
+        {
+          "label": "Services",
+          "value": "3"
+        }
+      ],
+      "objectivesHeading": "Project Objectives",
+      "objectives": [
+        "Reflect the Admire brand through a clear, professional experience.",
+        "Make key information easy to find on any device.",
+        "Create clear paths for customers to enquire or take action.",
+        "Give the team tools to maintain and grow what we built."
+      ],
+      "deliverablesHeading": "What We Delivered",
+      "deliverables": [
+        "UX/UI Design",
+        "Website Development",
+        "AI-Assisted CRM",
+        "Content management for the team",
+        "Handover and team training"
+      ],
+      "approachHeading": "How We Built It",
+      "approach": [
+        {
+          "title": "Discovery & Research",
+          "desc": "Studied the business, audience and goals to define the scope and success criteria."
+        },
+        {
+          "title": "UX/UI Design",
+          "desc": "Designed the structure, wireframes and visual interface so every page is clear and easy to use."
+        },
+        {
+          "title": "Website Development",
+          "desc": "Built a fast, responsive website that is easy for the team to update."
+        },
+        {
+          "title": "AI & CRM Integration",
+          "desc": "Added AI-assisted CRM so enquiries are captured, organized and followed up consistently."
+        },
+        {
+          "title": "Testing & Launch",
+          "desc": "Tested across devices and browsers, launched and handed over to the team."
+        }
+      ],
+      "techHeading": "Technology & Tools",
+      "tech": [
+        "Next.js front end",
+        "CRM with AI assistance",
+        "Project / design gallery with CMS",
+        "Cloud hosting & CDN",
+        "SEO foundations"
+      ],
+      "resultsHeading": "Results",
+      "results": [
+        "Launched a polished experience that reflects the Admire brand.",
+        "Information is organized and easy to find on mobile and desktop.",
+        "Customers have clear ways to get in touch.",
+        "The team can keep content up to date independently."
+      ],
+      "faqHeading": "Frequently Asked Questions",
+      "faq": [
+        {
+          "question": "How does the AI-assisted CRM help a home builder?",
+          "answer": "It keeps every enquiry in one place and helps prioritize and remind follow-ups so sales staff can focus on conversations."
+        },
+        {
+          "question": "Can new projects be added by the team?",
+          "answer": "Yes. Designs and projects are managed through a CMS without developer help."
+        }
+      ],
+      "backLabel": "Back to Work",
+      "servicesLabel": "Services Provided",
+      "ogImage": "/images/case-studies/admire/cover.jpg"
+    }
+  },
+  {
+    "slug": "meko-international-hospital",
+    "industryTag": "Beauty & Aesthetics",
+    "year": "2025",
+    "th": {
+      "metaTitle": "MEKO International Hospital แบรนด์ เว็บไซต์ และกราฟิกสำหรับโรงพยาบาลศัลยกรรมความงาม — ผลงาน Haliviq",
+      "metaDescription": "สรุปงานที่ส่งมอบ เทคโนโลยี และแนวทางของโปรเจกต์ MEKO International Hospital โดย Haliviq: ออกแบบเว็บไซต์, ออกแบบ UX/UI, ออกแบบกราฟิก, Brand & CI",
+      "h1": "MEKO International Hospital — แบรนด์ เว็บไซต์ และกราฟิกสำหรับโรงพยาบาลศัลยกรรมความงาม",
+      "client": "MEKO International Hospital",
+      "badge": "ความงามและศัลยกรรม",
+      "servicesProvided": [
+        "ออกแบบเว็บไซต์",
+        "ออกแบบ UX/UI",
+        "ออกแบบกราฟิก",
+        "Brand & CI"
+      ],
+      "intro": "MEKO International Hospital เป็นชื่อที่รู้จักในวงการศัลยกรรมความงาม ภาพลักษณ์ดิจิทัลและสื่อแบรนด์ต้องประณีตและน่าเชื่อถือเท่ากับการบริการ เราพัฒนาอัตลักษณ์แบรนด์และกราฟิกควบคู่กับเว็บไซต์และ UX/UI เพื่อให้ผู้ใช้บริการพบประสบการณ์ที่สอดคล้องและประณีตในทุกช่องทาง หน้านี้สรุปงานที่ส่งมอบและแนวทางการทำงาน สำหรับธุรกิจที่มองหาสตูดิโอพัฒนาผลิตภัณฑ์ดิจิทัลในประเทศไทย",
+      "snapshot": [
+        {
+          "label": "อุตสาหกรรม",
+          "value": "ความงามและศัลยกรรม"
+        },
+        {
+          "label": "ขอบเขต",
+          "value": "ออกแบบเว็บไซต์, ออกแบบ UX/UI, ออกแบบกราฟิก, Brand & CI"
+        },
+        {
+          "label": "ปี",
+          "value": "2025"
+        },
+        {
+          "label": "บริการ",
+          "value": "4"
+        }
+      ],
+      "objectivesHeading": "เป้าหมายของโปรเจกต์",
+      "objectives": [
+        "สะท้อนแบรนด์ MEKO International Hospital ด้วยประสบการณ์ที่ชัดเจนและเป็นมืออาชีพ",
+        "ทำให้ข้อมูลสำคัญค้นหาได้ง่ายบนทุกอุปกรณ์",
+        "สร้างช่องทางที่ชัดเจนให้ลูกค้าสอบถามหรือดำเนินการต่อ",
+        "มอบเครื่องมือให้ทีมงานดูแลและต่อยอดสิ่งที่พัฒนาได้เอง"
+      ],
+      "deliverablesHeading": "สิ่งที่เราส่งมอบ",
+      "deliverables": [
+        "ออกแบบเว็บไซต์",
+        "ออกแบบ UX/UI",
+        "ออกแบบกราฟิก",
+        "Brand & CI",
+        "ระบบจัดการเนื้อหาสำหรับทีมงาน",
+        "ส่งมอบงานและอบรมทีมงาน"
+      ],
+      "approachHeading": "ขั้นตอนการทำงาน",
+      "approach": [
+        {
+          "title": "ศึกษาธุรกิจและกลุ่มเป้าหมาย",
+          "desc": "ทำความเข้าใจธุรกิจ กลุ่มลูกค้า และเป้าหมาย เพื่อกำหนดขอบเขตและตัวชี้วัดความสำเร็จ"
+        },
+        {
+          "title": "พัฒนาแบรนด์และ CI",
+          "desc": "พัฒนาอัตลักษณ์แบรนด์และแนวทางการใช้งาน เพื่อให้ทุกจุดสัมผัสสอดคล้องกัน"
+        },
+        {
+          "title": "ออกแบบ UX/UI",
+          "desc": "ออกแบบโครงสร้าง Wireframe และหน้าตาเว็บไซต์ให้ชัดเจนและใช้งานง่ายในทุกหน้า"
+        },
+        {
+          "title": "พัฒนาเว็บไซต์",
+          "desc": "พัฒนาเว็บไซต์ที่รวดเร็ว รองรับทุกอุปกรณ์ และทีมงานอัปเดตเนื้อหาได้เอง"
+        },
+        {
+          "title": "ออกแบบกราฟิก",
+          "desc": "ผลิตสื่อกราฟิกสำหรับช่องทางดิจิทัลและสื่อพิมพ์ให้เข้ากับแบรนด์"
+        },
+        {
+          "title": "ทดสอบและเปิดใช้งาน",
+          "desc": "ทดสอบบนหลายอุปกรณ์และเบราว์เซอร์ เปิดใช้งานและส่งมอบให้ทีมงาน"
+        }
+      ],
+      "techHeading": "เทคโนโลยีและเครื่องมือ",
+      "tech": [
+        "Next.js front end",
+        "Headless CMS สำหรับบริการและเนื้อหา",
+        "Brand design system และแนวทางแบรนด์",
+        "Cloud hosting & CDN",
+        "พื้นฐาน SEO และการเข้าถึง"
+      ],
+      "resultsHeading": "ผลลัพธ์",
+      "results": [
+        "เปิดตัวประสบการณ์ที่ประณีตและสะท้อนแบรนด์ MEKO International Hospital",
+        "ข้อมูลเป็นระเบียบ ค้นหาง่ายทั้งบนมือถือและเดสก์ท็อป",
+        "ลูกค้ามีช่องทางติดต่อที่ชัดเจน",
+        "ทีมงานอัปเดตเนื้อหาได้เองอย่างต่อเนื่อง"
+      ],
+      "faqHeading": "คำถามที่พบบ่อย",
+      "faq": [
+        {
+          "question": "ทำทั้งแบรนด์และเว็บไซต์ได้หรือไม่",
+          "answer": "ได้ การทำอัตลักษณ์แบรนด์ กราฟิก และเว็บไซต์ไปพร้อมกันช่วยให้ประสบการณ์ทั้งหมดสอดคล้องกัน"
+        },
+        {
+          "question": "ทีมงานผลิตสื่อใหม่เองภายหลังได้หรือไม่",
+          "answer": "ได้ เรามอบแนวทางและเทมเพลตให้ทีมงานผลิตสื่อที่ตรงแบรนด์ได้เอง"
+        }
+      ],
+      "backLabel": "กลับไปหน้า Work",
+      "servicesLabel": "บริการที่ให้",
+      "ogImage": "/images/case-studies/meko-international-hospital/cover.jpg"
+    },
+    "en": {
+      "metaTitle": "MEKO International Hospital Brand, Website and Graphics for an Aesthetic Hospital — Haliviq",
+      "metaDescription": "Deliverables, approach and tech behind MEKO International Hospital's project by Haliviq: Website Design, UX/UI Design, Graphic Design, Brand & CI.",
+      "h1": "MEKO International Hospital — Brand, Website and Graphics for an Aesthetic Hospital",
+      "client": "MEKO International Hospital",
+      "badge": "Beauty & Aesthetics",
+      "servicesProvided": [
+        "Website Design",
+        "UX/UI Design",
+        "Graphic Design",
+        "Brand & CI"
+      ],
+      "intro": "MEKO International Hospital is a well-known name in aesthetic surgery. Its digital presence and brand materials needed to feel as refined and trustworthy as the care it provides. We worked on the brand identity and graphics together with the website and UX/UI, so patients meet one consistent, polished experience across every channel. This page summarizes the deliverables and approach, for businesses looking for a digital product studio in Thailand.",
+      "snapshot": [
+        {
+          "label": "Industry",
+          "value": "Beauty & Aesthetics"
+        },
+        {
+          "label": "Scope",
+          "value": "Website Design, UX/UI Design, Graphic Design, Brand & CI"
+        },
+        {
+          "label": "Year",
+          "value": "2025"
+        },
+        {
+          "label": "Services",
+          "value": "4"
+        }
+      ],
+      "objectivesHeading": "Project Objectives",
+      "objectives": [
+        "Reflect the MEKO International Hospital brand through a clear, professional experience.",
+        "Make key information easy to find on any device.",
+        "Create clear paths for customers to enquire or take action.",
+        "Give the team tools to maintain and grow what we built."
+      ],
+      "deliverablesHeading": "What We Delivered",
+      "deliverables": [
+        "Website Design",
+        "UX/UI Design",
+        "Graphic Design",
+        "Brand & CI",
+        "Content management for the team",
+        "Handover and team training"
+      ],
+      "approachHeading": "How We Built It",
+      "approach": [
+        {
+          "title": "Discovery & Research",
+          "desc": "Studied the business, audience and goals to define the scope and success criteria."
+        },
+        {
+          "title": "Brand & CI",
+          "desc": "Developed the brand identity and guidelines so every touchpoint feels consistent."
+        },
+        {
+          "title": "UX/UI Design",
+          "desc": "Designed the structure, wireframes and visual interface so every page is clear and easy to use."
+        },
+        {
+          "title": "Website Development",
+          "desc": "Built a fast, responsive website that is easy for the team to update."
+        },
+        {
+          "title": "Graphic Design",
+          "desc": "Produced graphic assets for digital and print use across the brand."
+        },
+        {
+          "title": "Testing & Launch",
+          "desc": "Tested across devices and browsers, launched and handed over to the team."
+        }
+      ],
+      "techHeading": "Technology & Tools",
+      "tech": [
+        "Next.js front end",
+        "Headless CMS for services and content",
+        "Brand design system & guidelines",
+        "Cloud hosting & CDN",
+        "SEO and accessibility foundations"
+      ],
+      "resultsHeading": "Results",
+      "results": [
+        "Launched a polished experience that reflects the MEKO International Hospital brand.",
+        "Information is organized and easy to find on mobile and desktop.",
+        "Customers have clear ways to get in touch.",
+        "The team can keep content up to date independently."
+      ],
+      "faqHeading": "Frequently Asked Questions",
+      "faq": [
+        {
+          "question": "Can you handle both brand and website?",
+          "answer": "Yes. Working on brand identity, graphics and the website together keeps the whole experience consistent."
+        },
+        {
+          "question": "Can the team create new materials later?",
+          "answer": "Yes. We provide guidelines and reusable templates so the team can produce on-brand materials themselves."
+        }
+      ],
+      "backLabel": "Back to Work",
+      "servicesLabel": "Services Provided",
+      "ogImage": "/images/case-studies/meko-international-hospital/cover.jpg"
+    }
   }
 ]
 
