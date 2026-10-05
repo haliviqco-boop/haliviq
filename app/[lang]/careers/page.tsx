@@ -1,17 +1,7 @@
-import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import { t, type Lang } from '@/lib/i18n'
 import Footer from '@/components/Footer'
-
-const IP = ({ h, color, bg, label }: { h: number; color: string; bg: string; label: string }) => (
-  <div className="w-full rounded-2xl flex items-center justify-center"
-    style={{ minHeight: h, background: bg, border: `2px dashed ${color}18` }}>
-    <div className="text-center">
-      <i className="ti ti-photo" style={{ fontSize: 28, color, opacity: 0.2 }} aria-hidden="true" />
-      <p className="text-sm mt-2" style={{ color, opacity: 0.25, fontWeight: 400 }}>{label}</p>
-    </div>
-  </div>
-)
+import { HeroArt, CultureArt, OfficeArt, ActivityArt, WorkspaceArt, DrinksArt, HackathonArt } from '@/components/CareersArt'
 
 const openings = [
   { dept: 'Engineering', color: 'var(--purple)', bg: 'var(--purple-bg)', jobs: [
@@ -97,168 +87,183 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     ? ['No application fee', 'We reply to every application', 'Feedback given every round']
     : ['ไม่มีค่าธรรมเนียมในการสมัคร', 'ตอบกลับทุก Application', 'Feedback ให้ทุกรอบ']
 
+  const G = { background: 'linear-gradient(135deg,#A99CF8 0%,#7B6EF6 45%,#53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' } as const
+  const card = { background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.1)' } as const
+  const muted = { color: 'rgba(255,255,255,0.68)', fontWeight: 400 } as const
+  const dots = { backgroundImage: 'radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' } as const
+  const Tile = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
+    <div className={`rounded-2xl overflow-hidden ${className}`} style={{ border: '1px solid rgba(255,255,255,0.1)' }}>{children}</div>
+  )
+
   return (
     <>
-      <Navbar lang={lang} tr={tr} />
-      <main>
-        <section className="pt-[80px] bg-white overflow-hidden">
-          <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg,var(--purple),var(--purple-light),var(--lime))' }} />
-          <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-20 lg:pt-28 pb-0">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="pb-16 lg:pb-28">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8" style={{ background: 'var(--purple-bg)' }}>
-                  <span className="w-2 h-2 rounded-full bg-[var(--purple)] animate-pulse inline-block" />
-                  <span className="t-label" style={{ fontSize: '0.7rem' }}>{isEN ? 'Now Hiring 12 Positions' : 'กำลังเปิดรับ 12 ตำแหน่ง'}</span>
+      <Navbar lang={lang} tr={tr} transparent />
+      <main style={{ background: '#08070F' }}>
+        {/* Hero */}
+        <section className="relative overflow-hidden pt-[80px]" style={{ background: '#08070F' }}>
+          <div className="absolute inset-0 pointer-events-none opacity-[0.35]" style={dots} />
+          <div className="absolute -top-40 -left-32 w-[620px] h-[620px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(123,110,246,0.3) 0%, transparent 70%)', filter: 'blur(20px)' }} />
+          <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-20 lg:pt-28 pb-16 lg:pb-24">
+            <div className="grid lg:grid-cols-2 gap-14 items-center">
+              <div>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8" style={{ background: 'rgba(123,110,246,0.15)', border: '1px solid rgba(123,110,246,0.35)' }}>
+                  <span className="w-2 h-2 rounded-full bg-[var(--lime)] animate-pulse inline-block" />
+                  <span className="t-label" style={{ fontSize: '0.7rem', color: 'var(--purple-light)' }}>{isEN ? 'Now Hiring 12 Positions' : 'กำลังเปิดรับ 12 ตำแหน่ง'}</span>
                 </div>
-                <h1 className="t-display text-[clamp(3rem,6.5vw,6rem)] text-[#0A0A0F] leading-relaxed mb-8">
-                  {isEN ? <>Come build<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>something great</span><br />together</> : <>มาร่วมสร้าง<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>สิ่งที่ยิ่งใหญ่</span><br />ไปด้วยกัน</>}
+                <h1 className="t-display text-[clamp(3rem,6.5vw,5.6rem)] leading-relaxed mb-8" style={{ color: '#fff' }}>
+                  {isEN ? <>Come build<br /><span style={G}>something great</span><br />together</> : <>มาร่วมสร้าง<br /><span style={G}>สิ่งที่ยิ่งใหญ่</span><br />ไปด้วยกัน</>}
                 </h1>
-                <p className="t-body text-lg leading-relaxed mb-10 max-w-md">
+                <p className="text-lg leading-relaxed mb-10 max-w-md" style={muted}>
                   {isEN ? 'Haliviq is where Designers, Engineers, and Strategists come together to build digital products that make a real difference for businesses.' : 'Haliviq คือที่ที่ Designer, Engineer และ Strategist มารวมตัวกันเพื่อสร้างผลิตภัณฑ์ดิจิทัลที่สร้างความต่างให้ธุรกิจจริงๆ'}
                 </p>
                 <div className="flex flex-wrap gap-3">
-                  <a href="#openings" className="btn-primary" style={{ fontSize:'1rem', padding:'14px 32px' }}>
+                  <a href="#openings" className="btn-primary" style={{ fontSize: '1rem', padding: '14px 32px' }}>
                     {isEN ? 'View Open Roles' : 'ดูตำแหน่งงาน'}
-                    <i className="ti ti-arrow-down" style={{ fontSize:15 }} aria-hidden="true" />
+                    <i className="ti ti-arrow-down" style={{ fontSize: 15 }} aria-hidden="true" />
                   </a>
-                  <a href="mailto:careers@haliviq.co" className="btn-outline" style={{ fontSize:'1rem', padding:'14px 32px' }}>
+                  <a href="mailto:careers@haliviq.co" className="inline-flex items-center gap-2 rounded-full transition-colors hover:bg-white/10" style={{ fontSize: '1rem', padding: '13px 32px', border: '1.5px solid rgba(255,255,255,0.25)', color: '#fff', fontWeight: 400 }}>
                     {isEN ? 'Send Your CV' : 'ส่ง CV มาก่อน'}
                   </a>
                 </div>
               </div>
-              <div className="hidden lg:block h-full">
-                <IP h={560} color="var(--purple)" bg="var(--purple-bg)" label="Team Photo / Office Culture" />
+              <div className="hidden lg:block">
+                <Tile className="aspect-square max-w-[560px] ml-auto"><HeroArt /></Tile>
               </div>
             </div>
           </div>
         </section>
 
-        <div className="border-y border-[#E4E4EC] bg-[#F7F7FC]">
+        {/* Stats */}
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', borderBottom: '1px solid rgba(255,255,255,0.08)', background: '#0B0A14' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
-            <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-[#E4E4EC]">
-              {stats.map(s => (
-                <div key={s.l} className="px-6 lg:px-10 py-8">
-                  <div className="text-[clamp(2rem,3.5vw,2.8rem)] leading-none mb-1" style={{ fontFamily:'var(--font-main)', fontWeight:500, color:'var(--purple)' }}>{s.n}</div>
-                  <p className="text-base text-[#0A0A0F] mb-0.5" style={{ fontWeight:400 }}>{s.l}</p>
-                  <p className="text-sm text-[#AAAABC]" style={{ fontWeight:400 }}>{s.d}</p>
+            <div className="grid grid-cols-2 lg:grid-cols-4">
+              {stats.map((s, i) => (
+                <div key={s.l} className="px-6 lg:px-10 py-8" style={{ borderLeft: i ? '1px solid rgba(255,255,255,0.08)' : undefined }}>
+                  <div className="text-[clamp(2rem,3.5vw,2.8rem)] leading-none mb-1" style={{ fontFamily: 'var(--font-main)', fontWeight: 500, ...G }}>{s.n}</div>
+                  <p className="text-base mb-0.5" style={{ color: '#fff', fontWeight: 400 }}>{s.l}</p>
+                  <p className="text-sm" style={{ color: 'rgba(255,255,255,0.5)', fontWeight: 400 }}>{s.d}</p>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        <section className="bg-white py-24 lg:py-32">
+        {/* Culture */}
+        <section className="py-24 lg:py-32" style={{ background: '#08070F' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-20">
               <div>
-                <p className="t-label mb-5">{isEN ? 'Our Culture' : 'วัฒนธรรมองค์กร'}</p>
-                <h2 className="t-display text-[clamp(2.2rem,4.5vw,4rem)] text-[#0A0A0F] leading-tight mb-8">
-                  {isEN ? <>No<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Micromanagement</span></> : <>ที่นี่ไม่มี<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Micromanagement</span></>}
+                <p className="t-label mb-5" style={{ color: 'rgba(255,255,255,0.6)' }}>{isEN ? 'Our Culture' : 'วัฒนธรรมองค์กร'}</p>
+                <h2 className="t-display text-[clamp(2.2rem,4.5vw,4rem)] leading-tight mb-8" style={{ color: '#fff' }}>
+                  {isEN ? <>No<br /><span style={G}>Micromanagement</span></> : <>ที่นี่ไม่มี<br /><span style={G}>Micromanagement</span></>}
                 </h2>
-                <p className="t-body text-sm leading-relaxed mb-6">
+                <p className="text-sm leading-relaxed mb-6" style={muted}>
                   {isEN ? 'We believe the best people do their best work when trusted, given autonomy, and surrounded by others who are skilled and passionate.' : 'เราเชื่อว่าคนที่ดีที่สุดทำงานได้ดีที่สุดเมื่อได้รับความไว้วางใจ มี Autonomy และทำงานกับคนที่เก่งและ Passionate เหมือนกัน'}
                 </p>
-                <p className="t-body text-sm leading-relaxed">
+                <p className="text-sm leading-relaxed" style={muted}>
                   {isEN ? 'At Haliviq you will work on products with real impact, learn from top-tier teammates, and grow alongside a rapidly scaling company.' : 'ที่ Haliviq คุณจะได้ทำงานกับ Product ที่มี Impact จริง ได้เรียนรู้จากเพื่อนร่วมทีมที่ Top ในสายงาน และได้เติบโตไปพร้อมกับบริษัทที่ Scale อย่างรวดเร็ว'}
                 </p>
               </div>
-              <IP h={440} color="var(--purple)" bg="var(--purple-bg)" label="Team Culture / Workspace Photo" />
+              <Tile className="aspect-[4/3]"><CultureArt /></Tile>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {values.map(v => (
-                <div key={v.title} className="p-7 border border-[#E4E4EC] rounded-2xl group hover:border-[var(--purple)]/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-[var(--purple)]/5 transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-[var(--purple-bg)] flex items-center justify-center mb-5">
-                    <i className={`ti ${v.icon}`} style={{ fontSize:22, color:'var(--purple)' }} aria-hidden="true" />
+                <div key={v.title} className="p-7 rounded-2xl group hover:-translate-y-1 hover:border-[rgba(123,110,246,0.5)] transition-all duration-300" style={card}>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: 'rgba(123,110,246,0.18)' }}>
+                    <i className={`ti ${v.icon}`} style={{ fontSize: 22, color: 'var(--purple-light)' }} aria-hidden="true" />
                   </div>
-                  <h3 className="text-[#0A0A0F] mb-2 group-hover:text-[var(--purple)] transition-colors" style={{ fontWeight:500, fontSize:'1.3rem' }}>{v.title}</h3>
-                  <p className="t-body text-sm leading-relaxed">{v.desc}</p>
+                  <h3 className="mb-2" style={{ color: '#fff', fontWeight: 500, fontSize: '1.3rem' }}>{v.title}</h3>
+                  <p className="text-sm leading-relaxed" style={muted}>{v.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="bg-[#F7F7FC] py-24">
+        {/* Life */}
+        <section className="py-24" style={{ background: '#0B0A14' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="mb-12">
-              <p className="t-label mb-4">{isEN ? 'Life at Haliviq' : 'ชีวิตใน Haliviq'}</p>
-              <h2 className="t-display text-[clamp(2rem,4vw,3.5rem)] text-[#0A0A0F]">
-                {isEN ? <>Great Work,<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Great Life</span></> : <>งานดี<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>ชีวิตก็ดี</span></>}
+              <p className="t-label mb-4" style={{ color: 'rgba(255,255,255,0.6)' }}>{isEN ? 'Life at Haliviq' : 'ชีวิตใน Haliviq'}</p>
+              <h2 className="t-display text-[clamp(2rem,4vw,3.5rem)]" style={{ color: '#fff' }}>
+                {isEN ? <>Great Work,<br /><span style={G}>Great Life</span></> : <>งานดี<br /><span style={G}>ชีวิตก็ดี</span></>}
               </h2>
             </div>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="col-span-2 row-span-2"><IP h={440} color="var(--purple)" bg="var(--purple-bg)" label="Office / Team Photo" /></div>
-              <IP h={210} color="var(--purple-light)" bg="var(--purple-bg)" label="Team Activity" />
-              <IP h={210} color="var(--purple)" bg="var(--purple-bg)" label="Workspace" />
-              <IP h={210} color="var(--purple-light)" bg="var(--purple-bg)" label="Friday Drinks" />
-              <IP h={210} color="var(--purple)" bg="var(--purple-bg)" label="Hackathon" />
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[170px] lg:auto-rows-[210px]">
+              <Tile className="col-span-2 row-span-2"><OfficeArt /></Tile>
+              <Tile><ActivityArt /></Tile>
+              <Tile><WorkspaceArt /></Tile>
+              <Tile><DrinksArt /></Tile>
+              <Tile><HackathonArt /></Tile>
             </div>
           </div>
         </section>
 
-        <section className="bg-white py-24 lg:py-32">
+        {/* Benefits */}
+        <section className="py-24 lg:py-32" style={{ background: '#08070F' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="text-center max-w-2xl mx-auto mb-16">
-              <p className="t-label mb-5">{isEN ? 'Benefits' : 'สวัสดิการ'}</p>
-              <h2 className="t-display text-[clamp(2rem,4.5vw,3.8rem)] text-[#0A0A0F] leading-tight">
-                {isEN ? <>We care for our team<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>like we care for clients</span></> : <>ดูแลทีมเหมือน<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>ดูแลลูกค้า</span></>}
+              <p className="t-label mb-5" style={{ color: 'rgba(255,255,255,0.6)' }}>{isEN ? 'Benefits' : 'สวัสดิการ'}</p>
+              <h2 className="t-display text-[clamp(2rem,4.5vw,3.8rem)] leading-tight" style={{ color: '#fff' }}>
+                {isEN ? <>We care for our team<br /><span style={G}>like we care for clients</span></> : <>ดูแลทีมเหมือน<br /><span style={G}>ดูแลลูกค้า</span></>}
               </h2>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {benefits.map(b => (
-                <div key={b.title} className="p-7 border border-[#E4E4EC] rounded-2xl group hover:border-[var(--purple)]/30 hover:-translate-y-1 hover:shadow-lg hover:shadow-[var(--purple)]/5 transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-[var(--purple-bg)] flex items-center justify-center mb-5">
-                    <i className={`ti ${b.icon}`} style={{ fontSize:22, color:'var(--purple)' }} aria-hidden="true" />
+                <div key={b.title} className="p-7 rounded-2xl hover:-translate-y-1 hover:border-[rgba(123,110,246,0.5)] transition-all duration-300" style={card}>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: 'rgba(83,195,215,0.15)' }}>
+                    <i className={`ti ${b.icon}`} style={{ fontSize: 22, color: 'var(--lime)' }} aria-hidden="true" />
                   </div>
-                  <h3 className="text-[#0A0A0F] mb-2" style={{ fontWeight:500, fontSize:'1.25rem' }}>{b.title}</h3>
-                  <p className="t-body text-sm leading-relaxed">{b.desc}</p>
+                  <h3 className="mb-2" style={{ color: '#fff', fontWeight: 500, fontSize: '1.25rem' }}>{b.title}</h3>
+                  <p className="text-sm leading-relaxed" style={muted}>{b.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="openings" className="bg-[#F7F7FC] py-24 lg:py-32">
+        {/* Openings */}
+        <section id="openings" className="py-24 lg:py-32 scroll-mt-20" style={{ background: '#0B0A14' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
               <div>
-                <p className="t-label mb-5">{isEN ? 'Open Roles' : 'ตำแหน่งงาน'}</p>
-                <h2 className="t-display text-[clamp(2rem,4.5vw,3.8rem)] text-[#0A0A0F] leading-tight">
-                  {isEN ? <>12 open positions<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Starting now</span></> : <>เปิดรับ 12 ตำแหน่ง<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>เริ่มได้เดี๋ยวนี้</span></>}
+                <p className="t-label mb-5" style={{ color: 'rgba(255,255,255,0.6)' }}>{isEN ? 'Open Roles' : 'ตำแหน่งงาน'}</p>
+                <h2 className="t-display text-[clamp(2rem,4.5vw,3.8rem)] leading-tight" style={{ color: '#fff' }}>
+                  {isEN ? <>12 open positions<br /><span style={G}>Starting now</span></> : <>เปิดรับ 12 ตำแหน่ง<br /><span style={G}>เริ่มได้เดี๋ยวนี้</span></>}
                 </h2>
               </div>
-              <p className="t-body text-sm max-w-xs">
-                {isEN ? <>No role that fits? Send your CV to <a href="mailto:careers@haliviq.co" className="text-[var(--purple)] hover:underline">careers@haliviq.co</a></> : <>ไม่เจอตำแหน่งที่ใช่? ส่ง CV มาได้เลยที่ <a href="mailto:careers@haliviq.co" className="text-[var(--purple)] hover:underline">careers@haliviq.co</a></>}
+              <p className="text-sm max-w-xs" style={muted}>
+                {isEN ? <>No role that fits? Send your CV to <a href="mailto:careers@haliviq.co" className="hover:underline" style={{ color: 'var(--purple-light)' }}>careers@haliviq.co</a></> : <>ไม่เจอตำแหน่งที่ใช่? ส่ง CV มาได้เลยที่ <a href="mailto:careers@haliviq.co" className="hover:underline" style={{ color: 'var(--purple-light)' }}>careers@haliviq.co</a></>}
               </p>
             </div>
-            <div className="space-y-6">
+            <div className="space-y-8">
               {openings.map(dept => (
                 <div key={dept.dept}>
                   <div className="flex items-center gap-4 mb-4">
-                    <span className="px-4 py-2 rounded-full text-sm" style={{ background:dept.bg, color:dept.color, fontWeight:400 }}>{dept.dept}</span>
-                    <div className="flex-1 h-px bg-[#E4E4EC]" />
+                    <span className="px-4 py-2 rounded-full text-sm" style={{ background: 'rgba(123,110,246,0.18)', color: 'var(--purple-light)', fontWeight: 400 }}>{dept.dept}</span>
+                    <div className="flex-1 h-px" style={{ background: 'rgba(255,255,255,0.08)' }} />
                   </div>
                   <div className="grid sm:grid-cols-2 gap-4">
                     {dept.jobs.map(job => (
-                      <div key={job.title} className="group bg-white border border-[#E4E4EC] rounded-2xl p-7 hover:border-[var(--purple)]/30 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                      <a key={job.title} href={`mailto:careers@haliviq.co?subject=${encodeURIComponent(job.title)}`} className="group block rounded-2xl p-7 hover:-translate-y-0.5 hover:border-[rgba(123,110,246,0.5)] transition-all duration-300" style={card}>
                         <div className="flex items-start justify-between mb-4">
                           <div>
-                            <h3 className="text-[#0A0A0F] mb-1 group-hover:text-[var(--purple)] transition-colors" style={{ fontWeight:500, fontSize:'1.3rem' }}>{job.title}</h3>
+                            <h3 className="mb-2 group-hover:text-[var(--purple-light)] transition-colors" style={{ color: '#fff', fontWeight: 500, fontSize: '1.3rem' }}>{job.title}</h3>
                             <div className="flex items-center gap-2">
-                              <span className="text-sm px-2.5 py-1 rounded-full bg-[#F7F7FC] text-[#6E6E88]" style={{ fontWeight:400 }}>{job.type}</span>
-                              <span className="text-sm px-2.5 py-1 rounded-full" style={{ background:dept.bg, color:dept.color, fontWeight:400 }}>{job.level}</span>
+                              <span className="text-sm px-2.5 py-1 rounded-full" style={{ background: 'rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.7)', fontWeight: 400 }}>{job.type}</span>
+                              <span className="text-sm px-2.5 py-1 rounded-full" style={{ background: 'rgba(83,195,215,0.15)', color: 'var(--lime)', fontWeight: 400 }}>{job.level}</span>
                             </div>
                           </div>
-                          <div className="w-10 h-10 rounded-xl border border-[#E4E4EC] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all group-hover:border-[var(--purple)]">
-                            <i className="ti ti-arrow-up-right" style={{ fontSize:16, color:'var(--purple)' }} aria-hidden="true" />
+                          <div className="w-10 h-10 rounded-xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all" style={{ border: '1px solid var(--purple)' }}>
+                            <i className="ti ti-arrow-up-right" style={{ fontSize: 16, color: 'var(--purple-light)' }} aria-hidden="true" />
                           </div>
                         </div>
                         <div className="flex flex-wrap gap-2">
                           {job.skills.map(s => (
-                            <span key={s} className="text-sm px-3 py-1 rounded-full border border-[#E4E4EC] text-[#6E6E88]" style={{ fontWeight:400 }}>{s}</span>
+                            <span key={s} className="text-sm px-3 py-1 rounded-full" style={{ border: '1px solid rgba(255,255,255,0.14)', color: 'rgba(255,255,255,0.65)', fontWeight: 400 }}>{s}</span>
                           ))}
                         </div>
-                      </div>
+                      </a>
                     ))}
                   </div>
                 </div>
@@ -267,58 +272,61 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           </div>
         </section>
 
-        <section className="bg-white py-24">
+        {/* Process */}
+        <section className="py-24" style={{ background: '#08070F' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="mb-16 text-center">
-              <p className="t-label mb-5">{isEN ? 'Application Process' : 'กระบวนการสมัคร'}</p>
-              <h2 className="t-display text-[clamp(2rem,4vw,3.5rem)] text-[#0A0A0F]">
-                {isEN ? <>Straightforward<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>No Time Wasted</span></> : <>ตรงไปตรงมา<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>ไม่เสียเวลา</span></>}
+              <p className="t-label mb-5" style={{ color: 'rgba(255,255,255,0.6)' }}>{isEN ? 'Application Process' : 'กระบวนการสมัคร'}</p>
+              <h2 className="t-display text-[clamp(2rem,4vw,3.5rem)]" style={{ color: '#fff' }}>
+                {isEN ? <>Straightforward<br /><span style={G}>No Time Wasted</span></> : <>ตรงไปตรงมา<br /><span style={G}>ไม่เสียเวลา</span></>}
               </h2>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {steps.map(step => (
-                <div key={step.no} className="border border-[#E4E4EC] rounded-2xl p-7 group hover:border-[var(--purple)]/30 hover:-translate-y-1 transition-all duration-300">
+                <div key={step.no} className="rounded-2xl p-7 hover:-translate-y-1 hover:border-[rgba(123,110,246,0.5)] transition-all duration-300" style={card}>
                   <div className="flex items-center justify-between mb-5">
-                    <div className="w-12 h-12 rounded-xl bg-[var(--purple-bg)] flex items-center justify-center">
-                      <i className={`ti ${step.icon}`} style={{ fontSize:22, color:'var(--purple)' }} aria-hidden="true" />
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(123,110,246,0.18)' }}>
+                      <i className={`ti ${step.icon}`} style={{ fontSize: 22, color: 'var(--purple-light)' }} aria-hidden="true" />
                     </div>
-                    <span className="text-sm text-[#AAAABC] font-mono">{step.time}</span>
+                    <span className="text-sm font-mono" style={{ color: 'rgba(255,255,255,0.5)' }}>{step.time}</span>
                   </div>
-                  <span className="text-sm font-mono text-[#CCCCDA] block mb-2">{step.no}</span>
-                  <h3 className="text-[#0A0A0F] mb-2 group-hover:text-[var(--purple)] transition-colors" style={{ fontWeight:500, fontSize:'1.3rem' }}>{step.title}</h3>
-                  <p className="t-body text-sm leading-relaxed">{step.desc}</p>
+                  <span className="text-sm font-mono block mb-2" style={{ color: 'var(--lime)' }}>{step.no}</span>
+                  <h3 className="mb-2" style={{ color: '#fff', fontWeight: 500, fontSize: '1.3rem' }}>{step.title}</h3>
+                  <p className="text-sm leading-relaxed" style={muted}>{step.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="py-24 relative overflow-hidden" style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)' }}>
-          <div className="absolute inset-0 opacity-10" style={{ backgroundImage:'radial-gradient(circle,#fff 1px,transparent 1px)', backgroundSize:'28px 28px' }} />
+        {/* CTA */}
+        <section className="py-24 relative overflow-hidden" style={{ background: '#050308' }}>
+          <div className="absolute inset-0 opacity-[0.3]" style={dots} />
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[760px] h-[760px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(123,110,246,0.28) 0%, transparent 65%)' }} />
           <div className="relative max-w-4xl mx-auto px-6 lg:px-10 text-center">
-            <p className="text-white/60 text-xs tracking-widest uppercase mb-6 font-mono">{isEN ? 'No role that fits?' : 'ยังไม่เจอตำแหน่งที่ใช่?'}</p>
-            <h2 className="t-display text-white text-[clamp(2.2rem,5vw,5rem)] mb-8 leading-tight">
-              {isEN ? <>Send your CV first.<br />We will find a place for you.</> : <>ส่ง CV มาก่อน<br />เราจะหาที่ให้</>}
+            <p className="text-xs tracking-widest uppercase mb-6 font-mono" style={{ color: 'rgba(255,255,255,0.55)' }}>{isEN ? 'No role that fits?' : 'ยังไม่เจอตำแหน่งที่ใช่?'}</p>
+            <h2 className="t-display text-[clamp(2.2rem,5vw,4.6rem)] mb-8 leading-tight" style={{ color: '#fff' }}>
+              {isEN ? <>Send your CV first.<br /><span style={G}>We will find a place for you.</span></> : <>ส่ง CV มาก่อน<br /><span style={G}>เราจะหาที่ให้</span></>}
             </h2>
-            <p className="text-white/85 text-base mb-4 max-w-lg mx-auto" style={{ fontWeight:400 }}>
+            <p className="text-base mb-6 max-w-lg mx-auto" style={muted}>
               {isEN ? 'If you are talented and passionate, we want to talk — whether or not we have that exact role open.' : 'ถ้าคุณเก่งและ Passionate เราอยากคุยกับคุณ ไม่ว่าจะเปิดรับตำแหน่งนั้นอยู่หรือเปล่า'}
             </p>
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <div className="flex flex-wrap justify-center gap-5 mb-12">
               {ctaTrust.map(txt => (
                 <div key={txt} className="flex items-center gap-2">
-                  <i className="ti ti-circle-check" style={{ fontSize:14, color:'var(--lime)' }} aria-hidden="true" />
-                  <span className="text-base text-white/60" style={{ fontWeight:400 }}>{txt}</span>
+                  <i className="ti ti-circle-check" style={{ fontSize: 15, color: 'var(--lime)' }} aria-hidden="true" />
+                  <span className="text-base" style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 400 }}>{txt}</span>
                 </div>
               ))}
             </div>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href="mailto:careers@haliviq.co" className="inline-flex items-center gap-2 px-10 py-4 bg-white rounded-full text-sm hover:bg-[var(--purple-bg)] transition-colors" style={{ color:'var(--purple)', fontWeight:400 }}>
-                <i className="ti ti-mail" style={{ fontSize:15 }} aria-hidden="true" />
+              <a href="mailto:careers@haliviq.co" className="btn-primary" style={{ fontSize: '1rem', padding: '14px 36px' }}>
+                <i className="ti ti-mail" style={{ fontSize: 15 }} aria-hidden="true" />
                 careers@haliviq.co
               </a>
-              <a href="#openings" className="inline-flex items-center gap-2 px-10 py-4 border border-white/30 text-white rounded-full text-sm hover:border-white/60 transition-colors" style={{ fontWeight:400 }}>
+              <a href="#openings" className="inline-flex items-center gap-2 rounded-full transition-colors hover:bg-white/10" style={{ fontSize: '1rem', padding: '13px 36px', border: '1.5px solid rgba(255,255,255,0.25)', color: '#fff', fontWeight: 400 }}>
                 {isEN ? 'View Open Roles' : 'ดูตำแหน่งงาน'}
-                <i className="ti ti-arrow-down" style={{ fontSize:15 }} aria-hidden="true" />
+                <i className="ti ti-arrow-down" style={{ fontSize: 15 }} aria-hidden="true" />
               </a>
             </div>
           </div>
