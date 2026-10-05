@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { type Lang, type T } from '@/lib/i18n'
+import SocialIcons from '@/components/SocialIcons'
 type Props = { lang: Lang; tr: T }
 
 export default function Footer({ lang, tr }: Props) {
@@ -31,16 +32,16 @@ export default function Footer({ lang, tr }: Props) {
           </p>
           <div className="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
             {[
-              { label: f.thailandLabel, lines: f.addressLines as string[], phone: f.phone, tel: 'tel:+66909189009' },
-              { label: f.usaLabel, lines: f.usaAddressLines as string[], phone: f.whatsapp, tel: 'tel:+12068496901' },
+              { label: f.thailandLabel, lines: f.addressLines as string[], phone: f.phone, tel: 'tel:+66909189009', icon: 'ti-phone' },
+              { label: f.usaLabel, lines: f.usaAddressLines as string[], phone: f.whatsapp, tel: 'https://wa.me/message/TM3WC6DUJAFEK1', icon: 'ti-brand-whatsapp' },
             ].map(o => (
               <div key={o.label} className="rounded-xl p-8" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)' }}>
                 <p className="mb-4 uppercase" style={{ color: '#fff', fontWeight: 600, fontSize: '1.15rem', letterSpacing: '0.04em' }}>{o.label}</p>
                 <div className="mb-5" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem', fontWeight: 400, lineHeight: 1.8 }}>
                   {o.lines.map((line: string) => <p key={line}>{line}</p>)}
                 </div>
-                <a href={o.tel} className="inline-flex items-center gap-2" style={{ color: 'var(--lime)', fontWeight: 500, fontSize: '0.95rem' }}>
-                  <i className="ti ti-phone" style={{ fontSize: 16 }} aria-hidden="true" />
+                <a href={o.tel} {...(o.tel.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className="inline-flex items-center gap-2" style={{ color: 'var(--lime)', fontWeight: 500, fontSize: '0.95rem' }}>
+                  <i className={`ti ${o.icon}`} style={{ fontSize: 16 }} aria-hidden="true" />
                   {o.phone}
                 </a>
               </div>
@@ -58,24 +59,11 @@ export default function Footer({ lang, tr }: Props) {
               {f.locations}
             </p>
 
-            <div className="flex gap-3 mt-5 mb-8">
-              {[
-                { name: 'Facebook', url: 'https://www.facebook.com/haliviq', svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,0.7)"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg> },
-                { name: 'Instagram', url: 'https://www.instagram.com/haliviq', svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg> },
-                { name: 'LinkedIn', url: '#', svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,0.7)"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z" /></svg> },
-                { name: 'Line', url: 'https://lin.ee/zyTrkx4', svg: <svg width="16" height="16" viewBox="0 0 24 24" fill="rgba(255,255,255,0.7)"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" /></svg> },
-              ].map(({ name, url, svg }) => (
-                <a key={name} href={url} target="_blank" rel="noopener noreferrer" aria-label={name}
-                  className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110"
-                  style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}>
-                  {svg}
-                </a>
-              ))}
-            </div>
+            <SocialIcons className="mt-5 mb-8" />
 
             <div className="mt-3" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.85rem', fontWeight: 400, lineHeight: 1.8 }}>
               <p>{f.phone}</p>
-              <p>WhatsApp: {f.whatsapp}</p>
+              <p>WhatsApp: <a href="https://wa.me/message/TM3WC6DUJAFEK1" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">{f.whatsapp}</a></p>
               <p>LINE: {f.line}</p>
               <p>{f.salesLabel}: wu@haliviq.com</p>
               <p>{f.supportLabel}: info@haliviq.com</p>

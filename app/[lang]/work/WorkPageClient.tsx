@@ -58,6 +58,10 @@ const projectsEN = [
   { id:30, service:'government', tags:['Government','Mobile App'], year:'2025', title:'AI-Powered Immigration Inspection App', client:'Royal Thai Police Immigration Bureau', desc:'New mobile app with an AI module for document and facial verification at entry and exit points.', result:'New App', slug:'immigration-bureau' },
   { id:31, service:'government', tags:['Government','Mobile App'], year:'2025', title:'Culture & Heritage Mobile App', client:'Ministry of Culture', desc:"New mobile app bringing the ministry's existing website content to a wider audience.", result:'New App', slug:'ministry-of-culture' },
   { id:32, service:'fnb', tags:['F&B','Web Platform'], year:'2025', title:'Restaurant Discovery Website', client:'BBK Menu', desc:"UX/UI design followed by a new website for discovering Bangkok's best restaurants and must-try dishes.", result:'New Website', slug:'bbk-menu' },
+  { id:33, service:'realestate', tags:['Real Estate','CRM'], year:'2025', title:"CRM & AI for a Real Estate Developer", client:"Sena Development", desc:"Custom CRM system and AI development for a real estate developer.", result:"CRM + AI", slug:'sena-development' },
+  { id:34, service:'wellness', tags:['Wellness','Web Platform'], year:'2025', title:"Shopify E-commerce for a Wellness Brand", client:"PAÑPURI", desc:"UX/UI design followed by a Shopify e-commerce website for a Thai luxury wellness and skincare brand.", result:"New Website", slug:'panpuri' },
+  { id:35, service:'travel', tags:['Hospitality','Web Platform'], year:'2025', title:"Hotel Website with Online Booking", client:"Shanghai Mansion Bangkok", desc:"Boutique hotel website with an online room booking system.", result:"New Website", slug:'shanghai-mansion-bangkok' },
+  { id:36, service:'sme', tags:['Retail','Web Platform'], year:'2025', title:"E-commerce & AI for a Shopping Mall", client:"Jampha Shopping Mall", desc:"E-commerce website plus an AI system supporting operations and customers.", result:"Website + AI", slug:'jampha-shopping-mall' },
 ]
 
 const projectsTH = [
@@ -93,6 +97,10 @@ const projectsTH = [
   { id:30, service:'government', tags:['Government','Mobile App'], year:'2025', title:'แอปตรวจคนเข้าเมืองอัจฉริยะด้วย AI', client:'สำนักงานตรวจคนเข้าเมือง', desc:'แอปมือถือใหม่พร้อมโมดูล AI ตรวจสอบเอกสารและใบหน้าที่จุดตรวจคนเข้าเมือง', result:'แอปใหม่', slug:'immigration-bureau' },
   { id:31, service:'government', tags:['Government','Mobile App'], year:'2025', title:'แอปส่งเสริมงานด้านวัฒนธรรม', client:'กระทรวงวัฒนธรรม', desc:'แอปมือถือใหม่นำเนื้อหาจากเว็บไซต์เดิมของกระทรวงมาเข้าถึงประชาชนได้กว้างขึ้น', result:'แอปใหม่', slug:'ministry-of-culture' },
   { id:32, service:'fnb', tags:['F&B','Web Platform'], year:'2025', title:'เว็บไซต์แนะนำร้านอาหาร', client:'BBK Menu', desc:'ออกแบบ UX/UI ก่อนพัฒนาเว็บไซต์ใหม่สำหรับค้นพบร้านอาหารและเมนูเด็ดในกรุงเทพฯ', result:'เว็บไซต์ใหม่', slug:'bbk-menu' },
+  { id:33, service:'realestate', tags:['Real Estate','CRM'], year:'2025', title:"ระบบ CRM และ AI สำหรับผู้พัฒนาอสังหาริมทรัพย์", client:"Sena Development", desc:"พัฒนาระบบ CRM แบบกำหนดเองและงานพัฒนา AI สำหรับผู้พัฒนาอสังหาริมทรัพย์", result:"CRM + AI", slug:'sena-development' },
+  { id:34, service:'wellness', tags:['Wellness','Web Platform'], year:'2025', title:"เว็บไซต์อีคอมเมิร์ซ Shopify สำหรับแบรนด์เวลเนส", client:"PAÑPURI", desc:"ออกแบบ UX/UI ก่อนพัฒนาเว็บไซต์อีคอมเมิร์ซบน Shopify สำหรับแบรนด์เวลเนสและสกินแคร์ไทย", result:"เว็บไซต์ใหม่", slug:'panpuri' },
+  { id:35, service:'travel', tags:['Hospitality','Web Platform'], year:'2025', title:"เว็บไซต์โรงแรมพร้อมระบบจองห้องพักออนไลน์", client:"Shanghai Mansion Bangkok", desc:"เว็บไซต์โรงแรมบูติกพร้อมระบบจองห้องพักออนไลน์", result:"เว็บไซต์ใหม่", slug:'shanghai-mansion-bangkok' },
+  { id:36, service:'sme', tags:['Retail','Web Platform'], year:'2025', title:"เว็บไซต์อีคอมเมิร์ซและระบบ AI สำหรับศูนย์การค้า", client:"Jampha Shopping Mall", desc:"เว็บไซต์อีคอมเมิร์ซพร้อมระบบ AI ช่วยงานปฏิบัติการและลูกค้า", result:"เว็บไซต์ + AI", slug:'jampha-shopping-mall' },
 ]
 
 const gradients = [

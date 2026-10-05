@@ -36,7 +36,7 @@ const featuredTH = {
 
 const groupsEN = [
   { label: 'FinTech', ids: [1, 5, 11] },
-  { label: 'E-Commerce', ids: [2, 6, 12, 18] },
+  { label: 'E-Commerce', ids: [2, 6, 12, 18, 34] },
   { label: 'Healthcare', ids: [3, 10] },
   { label: 'AI', ids: [4, 8] },
   { label: 'Enterprise', ids: [7, 9] },
@@ -45,11 +45,12 @@ const groupsEN = [
   { label: 'Apparel & Uniforms', ids: [16] },
   { label: 'Manufacturing', ids: [17] },
   { label: 'Government & Public Sector', ids: [19, 21, 27, 28, 29, 30, 31] },
-  { label: 'Retail & Shopping Mall', ids: [20] },
+  { label: 'Retail & Shopping Mall', ids: [20, 36] },
   { label: 'Travel & Tourism', ids: [23] },
   { label: 'Construction & Real Estate', ids: [24] },
-  { label: 'Real Estate', ids: [25] },
+  { label: 'Real Estate', ids: [25, 33] },
   { label: 'Telecommunications', ids: [26] },
+  { label: 'Hospitality & Travel', ids: [35] },
 ]
 
 const casesEN = [
@@ -85,6 +86,10 @@ const casesEN = [
   { id:30, tags:['Government & Public Sector'], client:'Royal Thai Police Immigration Bureau', title:'AI-Powered Immigration Inspection App', desc:'New mobile app with an AI module for document and facial verification at entry and exit points.', result:'New App', slug:'immigration-bureau' },
   { id:31, tags:['Government & Public Sector'], client:'Ministry of Culture', title:"Culture & Heritage Mobile App", desc:"New mobile app bringing the ministry's existing website content to a wider audience.", result:'New App', slug:'ministry-of-culture' },
   { id:32, tags:['F&B'], client:'BBK Menu', title:'Restaurant Discovery Website', desc:"UX/UI design followed by a new website for discovering Bangkok's best restaurants and must-try dishes.", result:'New Website', slug:'bbk-menu' },
+  { id:33, tags:['Real Estate'], client:"Sena Development", title:"CRM & AI System for a Real-Estate Developer", desc:"New CRM and AI system for a real-estate developer to manage customers and sales data.", result:"New System", slug:"sena-development" },
+  { id:34, tags:['E-Commerce'], client:"PAÑPURI", title:"Wellness & Skincare E-Commerce on Shopify", desc:"UX/UI design followed by a new Shopify e-commerce website for a Thai wellness and skincare brand.", result:"New Website", slug:"panpuri" },
+  { id:35, tags:['Hospitality & Travel'], client:"Shanghai Mansion Bangkok", title:"Boutique Hotel Website with Online Booking", desc:"New hotel website with an online room-booking system for a boutique hotel.", result:"New Website", slug:"shanghai-mansion-bangkok" },
+  { id:36, tags:['Retail & Shopping Mall'], client:"Jampha Shopping Mall", title:"E-Commerce Website with AI for Operations", desc:"New e-commerce website and AI system supporting operations and customers for a community shopping mall.", result:"New Website", slug:"jampha-shopping-mall" },
 ]
 
 const groupsTH = groupsEN
@@ -121,6 +126,10 @@ const casesTH = [
   { id:30, tags:['Government & Public Sector'], client:'สำนักงานตรวจคนเข้าเมือง', title:'แอปตรวจคนเข้าเมืองอัจฉริยะด้วย AI', desc:'แอปมือถือใหม่พร้อมโมดูล AI ตรวจสอบเอกสารและใบหน้าที่จุดตรวจคนเข้าเมือง', result:'แอปใหม่', slug:'immigration-bureau' },
   { id:31, tags:['Government & Public Sector'], client:'กระทรวงวัฒนธรรม', title:'แอปส่งเสริมงานด้านวัฒนธรรม', desc:'แอปมือถือใหม่นำเนื้อหาจากเว็บไซต์เดิมของกระทรวงมาเข้าถึงประชาชนได้กว้างขึ้น', result:'แอปใหม่', slug:'ministry-of-culture' },
   { id:32, tags:['F&B'], client:'BBK Menu', title:'เว็บไซต์แนะนำร้านอาหาร', desc:'ออกแบบ UX/UI ก่อนพัฒนาเว็บไซต์ใหม่สำหรับค้นพบร้านอาหารและเมนูเด็ดในกรุงเทพฯ', result:'เว็บไซต์ใหม่', slug:'bbk-menu' },
+  { id:33, tags:['Real Estate'], client:"Sena Development", title:"ระบบ CRM และ AI สำหรับผู้พัฒนาอสังหาริมทรัพย์", desc:"ระบบ CRM และ AI ใหม่ให้ผู้พัฒนาอสังหาริมทรัพย์ บริหารจัดการลูกค้าและข้อมูลการขาย", result:"ระบบใหม่", slug:"sena-development" },
+  { id:34, tags:['E-Commerce'], client:"PAÑPURI", title:"เว็บไซต์อีคอมเมิร์ซแบรนด์เวลเนสและสกินแคร์บน Shopify", desc:"ออกแบบ UX/UI ก่อนพัฒนาเว็บไซต์อีคอมเมิร์ซบน Shopify ให้แบรนด์เวลเนสและสกินแคร์ไทย", result:"เว็บไซต์ใหม่", slug:"panpuri" },
+  { id:35, tags:['Hospitality & Travel'], client:"Shanghai Mansion Bangkok", title:"เว็บไซต์โรงแรมบูติกพร้อมระบบจองห้องพัก", desc:"เว็บไซต์โรงแรมใหม่พร้อมระบบจองห้องพักออนไลน์ให้โรงแรมบูติก", result:"เว็บไซต์ใหม่", slug:"shanghai-mansion-bangkok" },
+  { id:36, tags:['Retail & Shopping Mall'], client:"Jampha Shopping Mall", title:"เว็บไซต์อีคอมเมิร์ซพร้อม AI ช่วยงานปฏิบัติการ", desc:"เว็บไซต์อีคอมเมิร์ซและระบบ AI ใหม่ช่วยสนับสนุนการดำเนินงานและลูกค้าของศูนย์การค้าชุมชน", result:"เว็บไซต์ใหม่", slug:"jampha-shopping-mall" },
 ]
 
 const gradients = [
