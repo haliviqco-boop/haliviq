@@ -30,7 +30,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-mail', title: 'Sales', value: 'wu@haliviq.com', sub: 'New projects & partnerships', href: 'mailto:wu@haliviq.com' },
     { icon: 'ti-headset', title: 'Support', value: 'info@haliviq.com', sub: 'Existing clients & support', href: 'mailto:info@haliviq.com' },
     { icon: 'ti-brand-whatsapp', title: 'WhatsApp', value: '+1 (206) 849 6901', sub: 'US team', href: 'https://wa.me/12068496901' },
-    { icon: 'ti-brand-line', title: 'LINE OA', value: '@haliviq', sub: 'Fastest response', href: 'https://line.me/R/ti/p/@haliviq' },
+    { icon: 'ti-brand-line', title: 'LINE OA', value: '@haliviq', sub: 'Fastest response', href: 'https://lin.ee/zyTrkx4' },
     { icon: 'ti-map-pin', title: 'Office — Thailand', value: '111 Sukhumvit Rd, Bang Chak,', sub: 'Phra Khanong, Bangkok 10260', href: '#' },
     { icon: 'ti-map-pin', title: 'Office — USA', value: '2025 Olympic Hwy N Ste 105,', sub: 'Shelton, WA', href: '#' },
   ] : [
@@ -38,7 +38,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-mail', title: 'ฝ่ายขาย', value: 'wu@haliviq.com', sub: 'โปรเจกต์ใหม่และพาร์ทเนอร์', href: 'mailto:wu@haliviq.com' },
     { icon: 'ti-headset', title: 'ฝ่ายซัพพอร์ต', value: 'info@haliviq.com', sub: 'ลูกค้าเดิมและงานซัพพอร์ต', href: 'mailto:info@haliviq.com' },
     { icon: 'ti-brand-whatsapp', title: 'WhatsApp', value: '+1 (206) 849 6901', sub: 'ทีมสหรัฐฯ', href: 'https://wa.me/12068496901' },
-    { icon: 'ti-brand-line', title: 'LINE OA', value: '@haliviq', sub: 'ตอบไวที่สุด', href: 'https://line.me/R/ti/p/@haliviq' },
+    { icon: 'ti-brand-line', title: 'LINE OA', value: '@haliviq', sub: 'ตอบไวที่สุด', href: 'https://lin.ee/zyTrkx4' },
     { icon: 'ti-map-pin', title: 'ออฟฟิศ — ไทย', value: '111 ถนนสุขุมวิท แขวงบางจาก,', sub: 'เขตพระโขนง กรุงเทพฯ 10260', href: '#' },
     { icon: 'ti-map-pin', title: 'ออฟฟิศ — สหรัฐฯ', value: '2025 Olympic Hwy N Ste 105,', sub: 'Shelton, WA', href: '#' },
   ]
@@ -98,38 +98,125 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <div className="rounded-3xl p-8 lg:p-10 lg:sticky lg:top-24" style={{ background: '#141329', border: '1px solid rgba(255,255,255,0.08)' }}>
                 <h2 className="mb-8" style={{ fontWeight: 500, fontSize: '1.3rem', color: '#fff' }}>{isEN ? 'Tell us about your project' : 'เล่าให้เราฟังเรื่องโปรเจกต์'}</h2>
                 <div className="space-y-5">
-                  {[
-                    { label: isEN ? 'Name / Company' : 'ชื่อ / บริษัท', type: 'text', placeholder: isEN ? 'John Smith / Acme Co.' : 'คุณสมชาย / บริษัท ABC' },
-                    { label: 'Email', type: 'email', placeholder: 'hello@company.com' },
-                    { label: isEN ? 'Phone (optional)' : 'เบอร์โทร (ถ้ามี)', type: 'tel', placeholder: '+66 8X XXX XXXX' },
-                  ].map(field => (
-                    <div key={field.label}>
-                      <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>{field.label}</label>
-                      <input type={field.type} placeholder={field.placeholder}
+                  <div className="grid sm:grid-cols-2 gap-5">
+                    <div>
+                      <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>
+                        {isEN ? 'Name' : 'ชื่อ'} <span style={{ color: '#F87171' }}>*</span>
+                      </label>
+                      <input type="text" placeholder={isEN ? 'Your name' : 'ชื่อของคุณ'} required
                         className="w-full px-5 py-3.5 rounded-xl text-sm outline-none transition-colors"
                         style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff', fontWeight: 400 }} />
                     </div>
-                  ))}
-                  <div>
-                    <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>{isEN ? 'Project type' : 'ประเภทโปรเจกต์'}</label>
-                    <div className="flex flex-wrap gap-2">
-                      {(isEN ? ['Web App', 'Mobile App', 'Strategy', 'Design', 'AI/Data', 'Other'] : ['Web App', 'Mobile App', 'กลยุทธ์', 'ดีไซน์', 'AI/Data', 'อื่นๆ']).map(opt => (
-                        <button key={opt} className="px-4 py-2 rounded-full text-xs transition-all"
-                          style={{ border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.03)', color: 'rgba(255,255,255,0.7)', fontWeight: 400 }}>{opt}</button>
-                      ))}
+                    <div>
+                      <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>
+                        Email <span style={{ color: '#F87171' }}>*</span>
+                      </label>
+                      <input type="email" placeholder="your@email.com" required
+                        className="w-full px-5 py-3.5 rounded-xl text-sm outline-none transition-colors"
+                        style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff', fontWeight: 400 }} />
                     </div>
                   </div>
+
                   <div>
-                    <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>{isEN ? 'Tell us more' : 'รายละเอียดเพิ่มเติม'}</label>
-                    <textarea rows={4} placeholder={isEN ? 'What are you trying to build? What problem does it solve?' : 'อยากสร้างอะไร? แก้ปัญหาอะไร? มี Timeline หรือ Budget คร่าวๆ?'}
+                    <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>
+                      {isEN ? 'Phone Number' : 'เบอร์โทรศัพท์'} <span style={{ color: 'rgba(255,255,255,0.4)' }}>({isEN ? 'Optional' : 'ไม่บังคับ'})</span>
+                    </label>
+                    <div className="relative">
+                      <i className="ti ti-phone absolute" style={{ left: 18, top: '50%', transform: 'translateY(-50%)', fontSize: 16, color: 'rgba(255,255,255,0.4)' }} aria-hidden="true" />
+                      <input type="tel" placeholder="+66 8X XXX XXXX"
+                        className="w-full pl-11 pr-5 py-3.5 rounded-xl text-sm outline-none transition-colors"
+                        style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff', fontWeight: 400 }} />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>
+                      {isEN ? 'Message' : 'ข้อความ'} <span style={{ color: '#F87171' }}>*</span>
+                    </label>
+                    <textarea rows={5} placeholder={isEN ? 'Tell us about your project...' : 'เล่าให้เราฟังเรื่องโปรเจกต์ของคุณ...'} required
                       className="w-full px-5 py-3.5 rounded-xl text-sm outline-none transition-colors resize-none"
                       style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff', fontWeight: 400 }} />
                   </div>
+
+                  <div>
+                    <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>
+                      {isEN ? 'What is your budget?' : 'งบประมาณของคุณ'} <span style={{ color: 'rgba(255,255,255,0.4)' }}>({isEN ? 'Optional' : 'ไม่บังคับ'})</span>
+                    </label>
+                    <div className="grid grid-cols-[auto_1fr] gap-3">
+                      <select
+                        className="px-4 py-3.5 rounded-xl text-sm outline-none appearance-none"
+                        style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff', fontWeight: 400 }}
+                        defaultValue="THB"
+                      >
+                        <option value="THB" style={{ color: '#000' }}>THB (฿)</option>
+                        <option value="USD" style={{ color: '#000' }}>USD ($)</option>
+                      </select>
+                      <select
+                        className="w-full px-5 py-3.5 rounded-xl text-sm outline-none appearance-none"
+                        style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.6)', fontWeight: 400 }}
+                        defaultValue=""
+                      >
+                        <option value="" style={{ color: '#000' }}>{isEN ? 'Select a range...' : 'เลือกช่วงงบประมาณ...'}</option>
+                        {(isEN ? [
+                          'Under ฿300,000',
+                          '฿300,000 – ฿1,000,000',
+                          '฿1,000,000 – ฿3,000,000',
+                          '฿3,000,000 – ฿10,000,000',
+                          '฿10,000,000+',
+                        ] : [
+                          'ต่ำกว่า ฿300,000',
+                          '฿300,000 – ฿1,000,000',
+                          '฿1,000,000 – ฿3,000,000',
+                          '฿3,000,000 – ฿10,000,000',
+                          '฿10,000,000+',
+                        ]).map(opt => <option key={opt} value={opt} style={{ color: '#000' }}>{opt}</option>)}
+                      </select>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>
+                      {isEN ? 'How did you hear about Haliviq?' : 'คุณรู้จัก Haliviq จากช่องทางไหน?'} <span style={{ color: 'rgba(255,255,255,0.4)' }}>({isEN ? 'Optional' : 'ไม่บังคับ'})</span>
+                    </label>
+                    <select
+                      className="w-full px-5 py-3.5 rounded-xl text-sm outline-none appearance-none"
+                      style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.6)', fontWeight: 400 }}
+                      defaultValue=""
+                    >
+                      <option value="" style={{ color: '#000' }}>{isEN ? 'Please select...' : 'กรุณาเลือก...'}</option>
+                      {(isEN ? [
+                        'Google Search', 'LinkedIn', 'AI Chatbot', 'Referral / Word of mouth', 'Social Media (Facebook, X, etc.)', 'Event / Conference', 'News / Press', 'Other',
+                      ] : [
+                        'ค้นหาจาก Google', 'LinkedIn', 'AI Chatbot', 'คนรู้จักแนะนำ', 'โซเชียลมีเดีย (Facebook, X ฯลฯ)', 'งานอีเวนต์ / สัมมนา', 'ข่าว / สื่อ', 'อื่นๆ',
+                      ]).map(opt => <option key={opt} value={opt} style={{ color: '#000' }}>{opt}</option>)}
+                    </select>
+                  </div>
+
+                  <label className="flex items-start gap-3 p-4 rounded-xl cursor-pointer" style={{ border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.02)' }}>
+                    <input type="checkbox" defaultChecked
+                      className="mt-0.5 shrink-0"
+                      style={{ width: 18, height: 18, accentColor: 'var(--purple)' }} />
+                    <span>
+                      <span className="block text-sm mb-1" style={{ fontWeight: 500, color: '#fff' }}>{isEN ? 'Subscribe to our newsletter' : 'สมัครรับข่าวสารจากเรา'}</span>
+                      <span className="block text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)', fontWeight: 400 }}>
+                        {isEN ? 'Get the latest insights, articles, and updates about digital transformation and technology trends.' : 'รับข้อมูลเชิงลึก บทความ และอัปเดตล่าสุดเรื่อง Digital Transformation และเทคโนโลยี'}
+                      </span>
+                    </span>
+                  </label>
+
                   <button className="w-full justify-center py-4 rounded-full inline-flex items-center gap-2 transition-transform hover:scale-[1.02]"
                     style={{ fontSize: '1rem', background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500, boxShadow: '0 8px 28px rgba(123,110,246,0.35)' }}>
                     {isEN ? 'Send Message' : 'ส่งข้อความ'}
                     <i className="ti ti-arrow-right" style={{ fontSize: 15 }} aria-hidden="true" />
                   </button>
+
+                  <p className="text-center text-xs" style={{ color: 'rgba(255,255,255,0.4)', fontWeight: 400 }}>
+                    {isEN ? (
+                      <>By submitting this form, you agree to our <a href={`/${lang}/privacy`} className="hover:text-white transition-colors" style={{ color: 'var(--lime)', textDecoration: 'underline' }}>Privacy Policy</a>.</>
+                    ) : (
+                      <>การส่งแบบฟอร์มนี้ถือว่าคุณยอมรับ<a href={`/${lang}/privacy`} className="hover:text-white transition-colors" style={{ color: 'var(--lime)', textDecoration: 'underline' }}>นโยบายความเป็นส่วนตัว</a>ของเรา</>
+                    )}
+                  </p>
                 </div>
               </div>
             </div>
