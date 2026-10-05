@@ -2,9 +2,9 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { t, type Lang } from '@/lib/i18n'
 
-export type LegalSection = { title: string; body: string }
+export type LegalSection = { title: string; body?: string; items?: string[]; note?: string }
 
-export default function LegalPage({ lang, title, sections }: { lang: Lang; title: string; sections: LegalSection[] }) {
+export default function LegalPage({ lang, title, sections, intro }: { lang: Lang; title: string; sections: LegalSection[]; intro?: string }) {
   const isEN = lang === 'en'
   const tr = t[lang] as any
   return (
@@ -21,13 +21,39 @@ export default function LegalPage({ lang, title, sections }: { lang: Lang; title
           </div>
         </section>
         <section className="pb-24 pt-4" style={{ background: '#08070E' }}>
-          <div className="max-w-3xl mx-auto px-6 lg:px-10 py-12 space-y-10">
-            {sections.map((s) => (
-              <div key={s.title}>
-                <h2 className="mb-3" style={{ color: '#fff', fontWeight: 500, fontSize: '1.3rem' }}>{s.title}</h2>
-                <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1rem', fontWeight: 400 }}>{s.body}</p>
-              </div>
-            ))}
+          <div className="max-w-3xl mx-auto px-6 lg:px-10 py-12">
+            {intro && (
+              <p className="leading-relaxed mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>{intro}</p>
+            )}
+            <nav aria-label={isEN ? 'Contents' : 'สารบัญ'} className="rounded-2xl p-6 mb-14" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <p className="mb-3 text-xs uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.5)', fontWeight: 500 }}>{isEN ? 'Contents' : 'สารบัญ'}</p>
+              <ol className="grid sm:grid-cols-2 gap-x-8 gap-y-1.5 text-sm">
+                {sections.map((s, i) => (
+                  <li key={s.title}>
+                    <a href={`#section-${i + 1}`} className="hover:text-white transition-colors" style={{ color: 'var(--purple-light)', fontWeight: 400 }}>{s.title}</a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
+            <div className="space-y-12">
+              {sections.map((s, i) => (
+                <div key={s.title} id={`section-${i + 1}`} className="scroll-mt-28">
+                  <h2 className="mb-4" style={{ color: '#fff', fontWeight: 500, fontSize: '1.4rem' }}>{s.title}</h2>
+                  {s.body && <p className="leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.72)', fontSize: '1rem', fontWeight: 400 }}>{s.body}</p>}
+                  {s.items && (
+                    <ul className="space-y-2.5 mb-4">
+                      {s.items.map((it) => (
+                        <li key={it} className="flex gap-3 leading-relaxed" style={{ color: 'rgba(255,255,255,0.72)', fontSize: '1rem', fontWeight: 400 }}>
+                          <span className="mt-2.5 shrink-0 w-1.5 h-1.5 rounded-full" style={{ background: 'var(--lime)' }} />
+                          <span>{it}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {s.note && <p className="leading-relaxed text-sm" style={{ color: 'rgba(255,255,255,0.5)', fontWeight: 400 }}>{s.note}</p>}
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </main>
