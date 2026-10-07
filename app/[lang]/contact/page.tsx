@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar'
 import { t, type Lang } from '@/lib/i18n'
 import Footer from '@/components/Footer'
 import SocialIcons from '@/components/SocialIcons'
+import ContactFields from '@/components/ContactFields'
 
 export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
@@ -142,17 +143,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                     </div>
                   </div>
 
-                  <div>
-                    <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>
-                      {isEN ? 'Phone Number' : 'เบอร์โทรศัพท์'} <span style={{ color: 'rgba(255,255,255,0.4)' }}>({isEN ? 'Optional' : 'ไม่บังคับ'})</span>
-                    </label>
-                    <div className="relative">
-                      <i className="ti ti-phone absolute" style={{ left: 18, top: '50%', transform: 'translateY(-50%)', fontSize: 16, color: 'rgba(255,255,255,0.4)' }} aria-hidden="true" />
-                      <input type="tel" placeholder="+66 8X XXX XXXX"
-                        className="w-full pl-11 pr-5 py-3.5 rounded-xl text-sm outline-none transition-colors"
-                        style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff', fontWeight: 400 }} />
-                    </div>
-                  </div>
+                  <ContactFields lang={lang} part="phone" />
 
                   <div>
                     <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>
@@ -163,41 +154,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                       style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff', fontWeight: 400 }} />
                   </div>
 
-                  <div>
-                    <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>
-                      {isEN ? 'What is your budget?' : 'งบประมาณของคุณ'} <span style={{ color: 'rgba(255,255,255,0.4)' }}>({isEN ? 'Optional' : 'ไม่บังคับ'})</span>
-                    </label>
-                    <div className="grid grid-cols-[auto_1fr] gap-3">
-                      <select
-                        className="px-4 py-3.5 rounded-xl text-sm outline-none appearance-none"
-                        style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff', fontWeight: 400 }}
-                        defaultValue="THB"
-                      >
-                        <option value="THB" style={{ color: '#000' }}>THB (฿)</option>
-                        <option value="USD" style={{ color: '#000' }}>USD ($)</option>
-                      </select>
-                      <select
-                        className="w-full px-5 py-3.5 rounded-xl text-sm outline-none appearance-none"
-                        style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.6)', fontWeight: 400 }}
-                        defaultValue=""
-                      >
-                        <option value="" style={{ color: '#000' }}>{isEN ? 'Select a range...' : 'เลือกช่วงงบประมาณ...'}</option>
-                        {(isEN ? [
-                          'Under ฿300,000',
-                          '฿300,000 – ฿1,000,000',
-                          '฿1,000,000 – ฿3,000,000',
-                          '฿3,000,000 – ฿10,000,000',
-                          '฿10,000,000+',
-                        ] : [
-                          'ต่ำกว่า ฿300,000',
-                          '฿300,000 – ฿1,000,000',
-                          '฿1,000,000 – ฿3,000,000',
-                          '฿3,000,000 – ฿10,000,000',
-                          '฿10,000,000+',
-                        ]).map(opt => <option key={opt} value={opt} style={{ color: '#000' }}>{opt}</option>)}
-                      </select>
-                    </div>
-                  </div>
+                  <ContactFields lang={lang} part="budget" />
 
                   <div>
                     <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>
