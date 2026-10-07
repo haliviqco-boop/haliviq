@@ -2,6 +2,7 @@
 import { useRef, useState } from 'react'
 import Link from 'next/link'
 import { type Lang, type T } from '@/lib/i18n'
+import { articles, coverOf } from '@/lib/blog-data'
 
 type Props = { lang: Lang; tr: T }
 
@@ -13,7 +14,7 @@ const gradients = [
   'linear-gradient(135deg, #5A4ED4 0%, #53C3D7 100%)',
 ]
 
-function ArticleImage({ src, i }: { src: string; i: number }) {
+function ArticleImage({ src, i, top }: { src: string; i: number; top?: boolean }) {
   const [broken, setBroken] = useState(false)
   return (
     <div className="relative w-full rounded-2xl overflow-hidden" style={{ aspectRatio: '16/10' }}>
@@ -23,6 +24,7 @@ function ArticleImage({ src, i }: { src: string; i: number }) {
           alt=""
           onError={() => setBroken(true)}
           className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: top ? 'center top' : 'center' }}
         />
       ) : (
         <div className="absolute inset-0" style={{ background: gradients[i % gradients.length] }}>
@@ -42,7 +44,11 @@ function ArticleImage({ src, i }: { src: string; i: number }) {
 
 export default function LatestThinking({ lang, tr }: Props) {
   const lt = (tr as any).latestThinking
-  const items = lt.items as { slug: string; img: string; title: string; excerpt: string }[]
+  // one latest article per topic, so the carousel shows variety
+  const picked: typeof articles = []
+  for (const a of articles) if (!picked.some((x) => x.cat === a.cat)) picked.push(a)
+  for (const a of articles) if (picked.length < 6 && !picked.includes(a)) picked.push(a)
+  const items = picked.map((a) => ({ slug: a.slug, img: coverOf(a), top: a.cat === 'Case Study', title: a[lang].title, excerpt: a[lang].excerpt }))
   const prefix = `/${lang}`
   const scrollerRef = useRef<HTMLDivElement>(null)
 
@@ -127,15 +133,15 @@ export default function LatestThinking({ lang, tr }: Props) {
               className="group flex-none snap-start flex flex-col gap-5 p-5 rounded-3xl border border-white/10 hover:border-[var(--purple)]/50 transition-colors duration-300"
               style={{ width: 'clamp(210px, calc((100% - 4*1.25rem)/5), 280px)' }}
             >
-              <ArticleImage src={post.img} i={i} />
+              <ArticleImage src={post.img} i={i} top={post.top} />
               <div className="flex flex-col gap-3 px-1 pb-1">
                 <h3
-                  className="t-display leading-snug transition-colors duration-300"
-                  style={{ color: '#fff', fontSize: '0.95rem' }}
+                  className="t-display transition-colors duration-300"
+                  style={{ color: '#fff', fontSize: '1rem', lineHeight: 1.5, fontWeight: 600 }}
                 >
                   <span className="group-hover:opacity-80 transition-opacity">{post.title}</span>
                 </h3>
-                <p className="t-body" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.88rem', lineHeight: 1.6 }}>
+                <p className="t-body" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.88rem', lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                   {post.excerpt}
                 </p>
                 <span
