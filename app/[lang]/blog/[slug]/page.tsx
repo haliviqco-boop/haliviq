@@ -18,9 +18,9 @@ const ImagePlaceholder = ({ label, h, color, bg }: { label: string; h: number; c
 )
 
 const relatedPosts = [
-  { slug: 'ux-research-methods', cat: 'Design', title: 'เปรียบ User Research Methods 8 วิธี', readTime: '10 นาที', color: 'var(--purple)', bg: 'var(--purple-bg)' },
-  { slug: 'product-discovery', cat: 'Product', title: 'Product Discovery Framework ที่เราใช้จริง', readTime: '11 นาที', color: 'var(--purple-light)', bg: 'var(--purple-bg)' },
-  { slug: 'nextjs-performance', cat: 'Engineering', title: 'Next.js Performance จาก 45 ขึ้น 98', readTime: '15 นาที', color: 'var(--purple)', bg: 'var(--purple-bg)' },
+  { slug: 'ux-research-methods', cat: 'Design', title: 'เปรียบเทียบวิธีทำ User Research 8 แบบ', readTime: '10 นาที', color: 'var(--purple)', bg: 'var(--purple-bg)' },
+  { slug: 'product-discovery', cat: 'Product', title: 'กรอบทำ Product Discovery ที่เราใช้จริง', readTime: '11 นาที', color: 'var(--purple-light)', bg: 'var(--purple-bg)' },
+  { slug: 'nextjs-performance', cat: 'Engineering', title: 'เร่งความเร็ว Next.js จาก 45 เป็น 98', readTime: '15 นาที', color: 'var(--purple)', bg: 'var(--purple-bg)' },
 ]
 
 export default function Page({ params }: { params: { lang: Lang; slug: string } }) {
@@ -53,12 +53,12 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
 
             {/* Title */}
             <h1 className="t-display text-[clamp(2.2rem,5vw,4rem)] text-[#0A0A0F] leading-relaxed mb-8">
-              ทำไม Design System ถึงสำคัญกับทุกบริษัทที่ต้องการ Scale
+              ทำไมบริษัทที่กำลังเติบโตทุกแห่งควรมี Design System
             </h1>
 
             {/* Excerpt */}
             <p className="t-body text-lg leading-relaxed mb-10">
-              เมื่อทีมขยายและ Feature เพิ่มขึ้น ความไม่สม่ำเสมอของ UI เริ่มสะสม Design System ไม่ใช่แค่เรื่องของความสวยงาม แต่คือ Infrastructure ที่ช่วยให้ Ship ได้เร็วขึ้น ถูกต้องมากขึ้น
+              เมื่อทีมโตขึ้นและมีฟีเจอร์เพิ่ม UI ก็เริ่มไม่เป็นแบบเดียวกัน Design System ไม่ใช่แค่เรื่องความสวยงาม แต่เป็นพื้นฐานที่ช่วยให้ปล่อยงานได้เร็วขึ้นและผิดพลาดน้อยลง
             </p>
 
             {/* Author */}
@@ -93,10 +93,10 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
               Design System คืออะไรกันแน่?
             </h2>
             <p className="t-body text-base leading-relaxed mb-6">
-              Design System คือชุดของ Component, Pattern, Guideline และ Tool ที่ทีม Design และ Engineering ใช้ร่วมกันเพื่อสร้าง Product ที่มีความสม่ำเสมอและ Scale ได้ง่าย มันไม่ใช่แค่ Style Guide หรือ Component Library แต่คือระบบทั้งหมดที่ทำงานร่วมกัน
+              Design System คือชุด Component, Pattern, แนวทางการใช้ และเครื่องมือ ที่ทีมออกแบบและทีมพัฒนาใช้ร่วมกัน เพื่อสร้างผลิตภัณฑ์ที่หน้าตาเป็นแบบเดียวกันและขยายต่อได้ง่าย ไม่ใช่แค่ Style Guide หรือ Component Library แต่เป็นระบบทั้งหมดที่ทำงานร่วมกัน
             </p>
             <p className="t-body text-base leading-relaxed mb-8">
-              ลองนึกถึง Design System เหมือน Lego Bricks องค์กรที่ไม่มีจะเหมือนต้องหล่อ Brick ใหม่ทุกครั้งที่ต้องการสร้างอะไร ส่วนองค์กรที่มีจะสามารถ Mix and Match Brick ที่มีอยู่แล้วเพื่อสร้างสิ่งใหม่ได้เร็วกว่ามาก
+              ลองนึกถึง Design System เหมือนตัวต่อเลโก้ องค์กรที่ไม่มีต้องหล่อตัวต่อใหม่ทุกครั้งที่จะสร้างอะไร ส่วนองค์กรที่มีก็หยิบตัวต่อที่มีอยู่มาประกอบเป็นของใหม่ได้เร็วกว่ามาก
             </p>
 
             {/* Inline image */}
@@ -106,32 +106,32 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
             </div>
 
             <h2 className="t-display text-[#0A0A0F] mb-6" style={{ fontSize: '1.8rem', marginTop: '3rem' }}>
-              ทำไมบริษัทส่วนใหญ่ถึงยังไม่มี Design System?
+              ทำไมบริษัทส่วนใหญ่ยังไม่มี Design System?
             </h2>
             <p className="t-body text-base leading-relaxed mb-6">
-              มีสองเหตุผลหลัก: เวลาและ Priority ตอนเริ่มต้น Startup ต้องการ Ship เร็ว ไม่มีเวลาสร้าง System ที่ครบถ้วน ซึ่งเป็นเรื่องที่เข้าใจได้ แต่ปัญหาคือถ้าไม่ลงทุนในจุดนี้เร็วพอ Technical Debt ด้าน Design จะสะสมจนยากที่จะ Refactor
+              มีสองเหตุผลหลัก คือไม่มีเวลาและมีเรื่องอื่นสำคัญกว่า ตอนเริ่มต้น Startup อยากปล่อยงานเร็ว จึงไม่มีเวลาสร้างระบบให้ครบ ซึ่งเข้าใจได้ แต่ถ้าไม่ลงทุนเรื่องนี้ให้เร็วพอ ปัญหาสะสมด้านดีไซน์ (Technical Debt) จะพอกจนยากจะรื้อแก้
             </p>
 
             {/* Pull quote */}
             <blockquote className="my-10 pl-6 border-l-4 py-4" style={{ borderColor: 'var(--purple)' }}>
               <p className="text-xl text-[#0A0A0F] leading-relaxed" style={{ fontWeight: 400 }}>
-                "ทุกครั้งที่ Designer ต้องสร้าง Button ใหม่ หรือ Engineer ต้องเดา Color Code คือเวลาที่สูญเสียไปโดยไม่จำเป็น"
+                "ทุกครั้งที่ Designer ต้องสร้างปุ่มใหม่ หรือ Engineer ต้องเดารหัสสี คือเวลาที่เสียไปโดยเปล่าประโยชน์"
               </p>
             </blockquote>
 
             <h2 className="t-display text-[#0A0A0F] mb-6" style={{ fontSize: '1.8rem', marginTop: '3rem' }}>
-              ประโยชน์จริงๆ ที่วัดได้
+              ประโยชน์จริงที่วัดได้
             </h2>
             <p className="t-body text-base leading-relaxed mb-6">
-              จากประสบการณ์ที่ Haliviq ช่วยสร้าง Design System ให้กับลูกค้า เราพบตัวเลขที่น่าสนใจ:
+              จากที่ Haliviq ช่วยลูกค้าสร้าง Design System เราเห็นตัวเลขที่น่าสนใจ:
             </p>
 
             {/* Stats highlight */}
             <div className="grid sm:grid-cols-3 gap-4 my-8">
               {[
-                { n: '50%', l: 'ลดเวลา Design & Dev' },
-                { n: '90%', l: 'ลด UI Inconsistency' },
-                { n: '3×', l: 'Onboard ทีมใหม่เร็วขึ้น' },
+                { n: '50%', l: 'ลดเวลาออกแบบและพัฒนา' },
+                { n: '90%', l: 'UI ไม่ตรงกันน้อยลง' },
+                { n: '3×', l: 'ทีมใหม่เริ่มงานได้เร็วขึ้น' },
               ].map(s => (
                 <div key={s.l} className="p-6 rounded-2xl text-center border border-[#E4E4EC]">
                   <div className="text-3xl mb-2" style={{ fontWeight: 400, color: 'var(--purple)' }}>{s.n}</div>
@@ -147,18 +147,18 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
             </div>
 
             <h2 className="t-display text-[#0A0A0F] mb-6" style={{ fontSize: '1.8rem', marginTop: '3rem' }}>
-              เริ่มต้น Design System ยังไง?
+              เริ่มทำ Design System อย่างไร?
             </h2>
             <p className="t-body text-base leading-relaxed mb-6">
-              ไม่ต้องรอให้ Perfect ก่อน เริ่มจาก Foundation ก่อนเลย:
+              ไม่ต้องรอให้สมบูรณ์แบบ เริ่มจากพื้นฐานก่อนเลย:
             </p>
             <ol className="space-y-4 mb-8">
               {[
-                { n: '01', t: 'Audit สิ่งที่มีอยู่', d: 'รวบรวม UI Component ทั้งหมดที่ใช้อยู่ จัดกลุ่มและหา Pattern ที่ซ้ำๆ' },
-                { n: '02', t: 'สร้าง Design Token', d: 'กำหนด Color, Typography, Spacing ที่เป็น Source of Truth ร่วมกัน' },
-                { n: '03', t: 'Build Core Components', d: 'เริ่มจาก Component ที่ใช้บ่อยที่สุด เช่น Button, Input, Card' },
-                { n: '04', t: 'Document ทุกอย่าง', d: 'เขียน Usage Guide, Do/Don\'t และ Code Example ให้ครบ' },
-                { n: '05', t: 'Adopt และ Evolve', d: 'นำไปใช้ใน Project จริง เก็บ Feedback และ Iterate อย่างต่อเนื่อง' },
+                { n: '01', t: 'ตรวจสิ่งที่มีอยู่', d: 'รวบรวม UI Component ทั้งหมดที่ใช้อยู่ จัดกลุ่ม และหา Pattern ที่ซ้ำกัน' },
+                { n: '02', t: 'สร้าง Design Token', d: 'กำหนดสี ตัวอักษร และระยะห่าง ให้เป็นแหล่งข้อมูลกลางที่ทุกคนใช้ร่วมกัน' },
+                { n: '03', t: 'Build Core Components', d: 'เริ่มจาก Component ที่ใช้บ่อยที่สุด เช่น ปุ่ม ช่องกรอก การ์ด' },
+                { n: '04', t: 'จดบันทึกให้ครบ', d: 'เขียนวิธีใช้ ข้อควรทำและไม่ควรทำ และตัวอย่าง Code ให้ครบ' },
+                { n: '05', t: 'ใช้งานและพัฒนาต่อ', d: 'นำไปใช้ในโปรเจกต์จริง เก็บความเห็น และปรับปรุงอย่างต่อเนื่อง' },
               ].map(step => (
                 <li key={step.n} className="flex gap-4 p-5 rounded-2xl border border-[#E4E4EC]">
                   <span className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0 text-xs font-mono" style={{ background: 'var(--purple-bg)', color: 'var(--purple)' }}>{step.n}</span>
@@ -176,10 +176,10 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
             </div>
 
             <p className="t-body text-base leading-relaxed mb-6">
-              Design System ที่ดีไม่ได้เกิดขึ้นในวันเดียว แต่ทุก Investment ที่ใส่ลงไปจะ Compound ตามเวลา ยิ่งทีมใหญ่ขึ้น Product ซับซ้อนขึ้น มูลค่าของ Design System ยิ่งเพิ่มขึ้นเรื่อยๆ
+              Design System ที่ดีไม่ได้เกิดในวันเดียว แต่ทุกอย่างที่ลงทุนไปจะให้ผลทบต้นตามเวลา ยิ่งทีมใหญ่ขึ้นและผลิตภัณฑ์ซับซ้อนขึ้น Design System ก็ยิ่งมีค่ามากขึ้น
             </p>
             <p className="t-body text-base leading-relaxed">
-              ถ้าคุณยังไม่มี Design System และสนใจจะเริ่ม ทีม Haliviq ยินดีให้คำปรึกษาฟรี เราช่วยทั้ง Audit, Design และ Build ให้กับองค์กรทุกขนาด
+              ถ้าคุณยังไม่มี Design System และอยากเริ่มทำ ทีม Haliviq ยินดีให้คำปรึกษาฟรี เราช่วยได้ทั้งตรวจสถานะปัจจุบัน ออกแบบ และสร้างให้องค์กรทุกขนาด
             </p>
 
           </div>
@@ -200,7 +200,7 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
               <div>
                 <p className="text-[#0A0A0F] mb-1" style={{ fontWeight: 400 }}>Ploy S.</p>
                 <p className="text-xs text-[var(--purple)] mb-3" style={{ fontWeight: 400 }}>Lead Designer · Haliviq</p>
-                <p className="t-body text-sm leading-relaxed">Designer ที่หลงใหลใน Systems Thinking และ Inclusive Design มีประสบการณ์ 6 ปีในการสร้าง Design System ให้กับบริษัทชั้นนำในไทยและ SEA</p>
+                <p className="t-body text-sm leading-relaxed">Designer ที่สนใจการคิดเชิงระบบ (Systems Thinking) และการออกแบบที่ทุกคนใช้ได้ (Inclusive Design) มีประสบการณ์ 6 ปีในการสร้าง Design System ให้บริษัทชั้นนำในไทยและเอเชียตะวันออกเฉียงใต้</p>
               </div>
             </div>
           </div>

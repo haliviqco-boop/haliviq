@@ -16,7 +16,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge = isEN ? 'Industry / Real Estate' : 'อุตสาหกรรม / อสังหาริมทรัพย์'
   const heroSubhead = isEN
     ? 'Property technology solutions for the modern real estate industry.'
-    : 'โซลูชัน Proptech สำหรับอุตสาหกรรมอสังหาริมทรัพย์ยุคใหม่'
+    : 'ระบบ Proptech สำหรับธุรกิจอสังหาริมทรัพย์ยุคใหม่'
 
   const challenges = isEN ? [
     { icon: 'ti-building-skyscraper', title: 'Fragmented Listing Data', desc: 'Property information scattered across multiple portals, agents, and internal systems makes it difficult to maintain accurate, up-to-date listings and creates inconsistent experiences for buyers and renters.' },
@@ -24,16 +24,16 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-building-community', title: 'Property Management Complexity', desc: 'Managing maintenance requests, rent collection, and occupancy across dozens or hundreds of units requires operational systems most property managers have outgrown or never had.' },
     { icon: 'ti-shield-check', title: 'Trust & Transparency Expectations', desc: 'Buyers and tenants increasingly expect transparent pricing, verified listings, and clear communication throughout the process, putting pressure on operators to modernize how they build trust.' },
   ] : [
-    { icon: 'ti-building-skyscraper', title: 'ข้อมูล Listing ที่กระจัดกระจาย', desc: 'ข้อมูลอสังหาริมทรัพย์กระจายอยู่ในหลาย Portal ตัวแทน และระบบภายใน ทำให้ยากต่อการรักษาความถูกต้องและความทันสมัยของ Listing และสร้างประสบการณ์ที่ไม่สอดคล้องกันสำหรับผู้ซื้อและผู้เช่า' },
-    { icon: 'ti-file-invoice', title: 'กระบวนการทำธุรกรรมที่ยังใช้กระดาษ', desc: 'ธุรกรรมอสังหาริมทรัพย์ยังพึ่งพาเอกสารแบบ Manual การเซ็นสัญญาต่อหน้า และ Workflow เอกสารที่แยกส่วนกัน ทำให้การปิดดีลที่ควรใช้เวลาไม่กี่วันกลับใช้เวลาหลายสัปดาห์' },
-    { icon: 'ti-building-community', title: 'ความซับซ้อนของ Property Management', desc: 'การจัดการคำขอซ่อมบำรุง การเก็บค่าเช่า และอัตราการเข้าพักในหน่วยจำนวนหลายสิบถึงหลายร้อยยูนิต ต้องการระบบปฏิบัติการที่ผู้จัดการอสังหาฯ ส่วนใหญ่ยังไม่มีหรือเติบโตเกินกว่าระบบเดิม' },
-    { icon: 'ti-shield-check', title: 'ความคาดหวังด้าน Trust & Transparency', desc: 'ผู้ซื้อและผู้เช่าคาดหวังราคาที่โปร่งใส Listing ที่ตรวจสอบได้ และการสื่อสารที่ชัดเจนตลอดกระบวนการ สร้างแรงกดดันให้ผู้ประกอบการต้องปรับตัวสู่ดิจิทัลเพื่อสร้างความไว้วางใจ' },
+    { icon: 'ti-building-skyscraper', title: 'ข้อมูลประกาศขายและเช่ากระจัดกระจาย', desc: 'ข้อมูลอสังหาริมทรัพย์กระจายอยู่ในหลายเว็บ ตัวแทน และระบบภายใน ทำให้รักษาความถูกต้องและความทันสมัยของประกาศได้ยาก และผู้ซื้อกับผู้เช่าได้ประสบการณ์ไม่เหมือนกัน' },
+    { icon: 'ti-file-invoice', title: 'ขั้นตอนทำธุรกรรมที่ยังใช้กระดาษ', desc: 'ธุรกรรมอสังหาริมทรัพย์ยังพึ่งพาเอกสารที่ทำด้วยมือ การเซ็นสัญญาต่อหน้า และเอกสารที่แยกกัน ทำให้ดีลที่ควรปิดได้ในไม่กี่วันกลับใช้เวลาหลายสัปดาห์' },
+    { icon: 'ti-building-community', title: 'ความซับซ้อนของการบริหารอสังหาฯ', desc: 'การจัดการคำขอซ่อม การเก็บค่าเช่า และอัตราการเข้าพักของหลายสิบถึงหลายร้อยยูนิต ต้องมีระบบที่ผู้จัดการอสังหาฯ ส่วนใหญ่ยังไม่มี หรือที่ใหญ่เกินกว่าระบบเดิมจะรับไหว' },
+    { icon: 'ti-shield-check', title: 'ความคาดหวังเรื่องความน่าไว้ใจและความโปร่งใส', desc: 'ผู้ซื้อและผู้เช่าคาดหวังราคาที่โปร่งใส ประกาศที่ตรวจสอบได้ และการสื่อสารที่ชัดเจนตลอดทาง ผู้ประกอบการจึงต้องปรับตัวสู่ดิจิทัลเพื่อสร้างความไว้วางใจ' },
   ]
 
   const metrics = [
     { value: '$106.6B', label: isEN ? 'Global Proptech Market Size by 2029' : 'มูลค่าตลาด Proptech ทั่วโลกภายในปี 2029', source: 'MarketsandMarkets Proptech Forecast, 2024' },
-    { value: '40%', label: isEN ? 'Faster Leasing Cycles with Digital Property Tools' : 'รอบเวลาการปล่อยเช่าที่เร็วขึ้นด้วยเครื่องมือดิจิทัล', source: 'JLL Digital Real Estate Report, 2024' },
-    { value: '97%', label: isEN ? 'Of Buyers Who Start Their Property Search Online' : 'ของผู้ซื้อที่เริ่มค้นหาอสังหาริมทรัพย์ทางออนไลน์', source: 'NAR Real Estate in a Digital Age, 2024' },
+    { value: '40%', label: isEN ? 'Faster Leasing Cycles with Digital Property Tools' : 'เวลาปล่อยเช่าที่เร็วขึ้นเมื่อใช้เครื่องมือดิจิทัล', source: 'JLL Digital Real Estate Report, 2024' },
+    { value: '97%', label: isEN ? 'Of Buyers Who Start Their Property Search Online' : 'ของผู้ซื้อที่เริ่มหาอสังหาริมทรัพย์ทางออนไลน์', source: 'NAR Real Estate in a Digital Age, 2024' },
   ]
 
   const capabilities = isEN ? [
@@ -44,12 +44,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-users-group', title: 'Tenant & Landlord Portals', desc: 'Self-service portals that give tenants and landlords real-time visibility into payments, maintenance status, lease terms, and communication history.' },
     { icon: 'ti-chart-bar', title: 'Market Analytics Dashboards', desc: 'Data-driven dashboards that surface pricing trends, comparable sales, and portfolio performance to support smarter investment and leasing decisions.' },
   ] : [
-    { icon: 'ti-home-search', title: 'Property Listing & Search Platforms', desc: 'Marketplace ที่มุ่งเน้นผู้บริโภค พร้อมการค้นหาที่ทรงพลัง การกรอง และการค้นพบแบบ Map-based ที่เชื่อมผู้ซื้อและผู้เช่ากับอสังหาริมทรัพย์ที่ใช่ได้เร็วขึ้น' },
-    { icon: 'ti-view-360', title: 'Virtual Tour & 3D Visualization Tools', desc: 'ประสบการณ์ Walkthrough แบบ Immersive และการแสดงผล 3D ของอสังหาริมทรัพย์ ที่ให้ผู้ซื้อสำรวจได้จากระยะไกลและลดการเข้าชมสถานที่จริงที่ไม่จำเป็น' },
-    { icon: 'ti-building-community', title: 'Property Management Systems', desc: 'แพลตฟอร์มครบวงจรสำหรับจัดการคำขอซ่อมบำรุง การต่อสัญญาเช่า การเก็บค่าเช่า และอัตราการเข้าพักทั้งพอร์ตที่พักอาศัยและเชิงพาณิชย์' },
-    { icon: 'ti-signature', title: 'Digital Transaction & E-Signature Workflows', desc: 'Workflow เอกสารที่คล่องตัวพร้อม E-Signature การตรวจสอบ Compliance อัตโนมัติ และการจัดเก็บที่ปลอดภัย เปลี่ยนการปิดดีลที่ใช้เวลาหลายสัปดาห์ให้เหลือเพียงไม่กี่วัน' },
-    { icon: 'ti-users-group', title: 'Tenant & Landlord Portals', desc: 'Portal แบบ Self-service ที่ให้ผู้เช่าและเจ้าของบ้านเห็นสถานะการชำระเงิน สถานะซ่อมบำรุง เงื่อนไขสัญญา และประวัติการสื่อสารแบบ Real-time' },
-    { icon: 'ti-chart-bar', title: 'Market Analytics Dashboards', desc: 'Dashboard ที่ขับเคลื่อนด้วยข้อมูล แสดงแนวโน้มราคา การเปรียบเทียบยอดขาย และประสิทธิภาพพอร์ตโฟลิโอ เพื่อสนับสนุนการตัดสินใจลงทุนและปล่อยเช่าที่ชาญฉลาดขึ้น' },
+    { icon: 'ti-home-search', title: 'Property Listing & Search Platforms', desc: 'Marketplace สำหรับผู้บริโภค มีระบบค้นหาที่ทรงพลัง ตัวกรอง และการค้นหาบนแผนที่ ช่วยให้ผู้ซื้อและผู้เช่าเจอทรัพย์ที่ใช่ได้เร็วขึ้น' },
+    { icon: 'ti-view-360', title: 'Virtual Tour & 3D Visualization Tools', desc: 'ทัวร์เสมือนจริงและภาพ 3D ของทรัพย์ ให้ผู้ซื้อดูได้จากที่ไกล และลดการไปดูของจริงที่ไม่จำเป็น' },
+    { icon: 'ti-building-community', title: 'Property Management Systems', desc: 'แพลตฟอร์มครบชุดสำหรับจัดการคำขอซ่อม การต่อสัญญาเช่า การเก็บค่าเช่า และอัตราการเข้าพักของทั้งที่พักอาศัยและอาคารพาณิชย์' },
+    { icon: 'ti-signature', title: 'Digital Transaction & E-Signature Workflows', desc: 'ขั้นตอนเอกสารที่คล่องตัว พร้อมเซ็นชื่ออิเล็กทรอนิกส์ ตรวจสอบการทำตามกฎอัตโนมัติ และจัดเก็บอย่างปลอดภัย เปลี่ยนดีลที่ใช้เวลาหลายสัปดาห์ให้เหลือไม่กี่วัน' },
+    { icon: 'ti-users-group', title: 'Tenant & Landlord Portals', desc: 'Portal ให้ผู้เช่าและเจ้าของบ้านดูสถานะการชำระเงิน สถานะซ่อมบำรุง เงื่อนไขสัญญา และประวัติการติดต่อได้เองแบบเรียลไทม์' },
+    { icon: 'ti-chart-bar', title: 'Market Analytics Dashboards', desc: 'Dashboard ที่ใช้ข้อมูลแสดงแนวโน้มราคา เปรียบเทียบยอดขาย และผลงานของพอร์ต เพื่อช่วยตัดสินใจลงทุนและปล่อยเช่าให้ดีขึ้น' },
   ]
 
   const techStack = ['React', 'Next.js', 'Node.js', 'Google Maps API', 'PostgreSQL', 'GraphQL', 'AWS', 'DocuSign API', 'Machine Learning', 'Redis', 'Elasticsearch', 'WebGL', 'Stripe']
@@ -59,9 +59,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '02', title: 'Virtual Tour Platform', desc: 'Immersive 3D walkthrough and virtual staging platform that lets prospective buyers explore properties remotely, complete with floor plans and measurement tools.' },
     { no: '03', title: 'Property Management System', desc: 'Operations platform for landlords and property managers covering rent collection, maintenance tracking, lease management, and tenant communication across a multi-unit portfolio.' },
   ] : [
-    { no: '01', title: 'Property Listing Marketplace', desc: 'Marketplace สำหรับผู้บริโภคพร้อมการค้นหาขั้นสูง การค้นพบแบบ Map-based การบันทึกการค้นหา และการส่งข้อความระหว่างตัวแทนและผู้ซื้อ ที่เชื่อมโยง Listing หลายพันรายการกับผู้ซื้อและผู้เช่าที่กำลังมองหา' },
-    { no: '02', title: 'Virtual Tour Platform' , desc: 'แพลตฟอร์ม Walkthrough 3D แบบ Immersive และ Virtual Staging ที่ให้ผู้ซื้อที่มีศักยภาพสำรวจอสังหาริมทรัพย์จากระยะไกล พร้อมแผนผังชั้นและเครื่องมือวัดขนาด' },
-    { no: '03', title: 'Property Management System', desc: 'แพลตฟอร์มปฏิบัติการสำหรับเจ้าของบ้านและผู้จัดการอสังหาฯ ครอบคลุมการเก็บค่าเช่า การติดตามซ่อมบำรุง การจัดการสัญญาเช่า และการสื่อสารกับผู้เช่าทั่วทั้งพอร์ตหลายยูนิต' },
+    { no: '01', title: 'Property Listing Marketplace', desc: 'Marketplace สำหรับผู้บริโภค ค้นหาขั้นสูง ค้นหาบนแผนที่ บันทึกการค้นหา และส่งข้อความระหว่างตัวแทนกับผู้ซื้อ เชื่อมประกาศหลายพันรายการกับผู้ซื้อและผู้เช่าที่กำลังมองหา' },
+    { no: '02', title: 'Virtual Tour Platform' , desc: 'แพลตฟอร์มทัวร์ 3D และจัดห้องเสมือน ให้ผู้ซื้อที่สนใจดูทรัพย์จากที่ไกล พร้อมแผนผังชั้นและเครื่องมือวัดขนาด' },
+    { no: '03', title: 'Property Management System', desc: 'แพลตฟอร์มปฏิบัติการสำหรับเจ้าของบ้านและผู้จัดการอสังหาฯ ครอบคลุมการเก็บค่าเช่า ติดตามงานซ่อม จัดการสัญญาเช่า และสื่อสารกับผู้เช่าทั้งพอร์ตหลายยูนิต' },
   ]
 
   const heroVisual = (
@@ -173,7 +173,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
                   ? 'We help real estate developers, brokerages, and property managers build listing marketplaces, virtual tour platforms, property management systems, and digital transaction workflows that shorten sales cycles and cut operational overhead. Our solutions combine rich, map-based discovery experiences with rigorous backend engineering to turn browsers into buyers and tenants into long-term residents.'
-                  : 'เราช่วยผู้พัฒนาอสังหาริมทรัพย์ นายหน้า และผู้จัดการอสังหาฯ สร้าง Marketplace สำหรับ Listing แพลตฟอร์ม Virtual Tour ระบบ Property Management และ Workflow ธุรกรรมดิจิทัล ที่ทำให้รอบการขายสั้นลงและลดต้นทุนการดำเนินงาน โซลูชันของเราผสมผสานประสบการณ์การค้นพบแบบ Map-based ที่สมบูรณ์ กับวิศวกรรม Backend ที่รัดกุม เพื่อเปลี่ยนคนดูให้กลายเป็นผู้ซื้อ และผู้เช่าให้กลายเป็นผู้อยู่อาศัยระยะยาว'}
+                  : 'เราช่วยผู้พัฒนาอสังหาริมทรัพย์ นายหน้า และผู้จัดการอสังหาฯ สร้าง Marketplace สำหรับประกาศขายและเช่า แพลตฟอร์ม Virtual Tour ระบบบริหารอสังหาฯ และขั้นตอนธุรกรรมดิจิทัล เพื่อให้ปิดการขายเร็วขึ้นและลดต้นทุน ระบบของเราผสมประสบการณ์ค้นหาบนแผนที่ที่ครบถ้วนกับงาน Backend ที่รัดกุม เพื่อเปลี่ยนคนดูให้เป็นผู้ซื้อ และผู้เช่าให้เป็นผู้อยู่อาศัยระยะยาว'}
               </p>
             </div>
           </div>
@@ -191,7 +191,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Understanding the critical obstacles that drive digital transformation in this industry.'
-                : 'ความเข้าใจอุปสรรคสำคัญที่ผลักดันการปรับสู่ดิจิทัลในอุตสาหกรรมนี้'}
+                : 'ปัญหาหลักที่ธุรกิจในอุตสาหกรรมนี้ต้องเจอ'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -241,7 +241,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'โซลูชันที่พิสูจน์แล้วซึ่งเราสร้างเพื่อตอบโจทย์ที่สำคัญที่สุดของอุตสาหกรรมคุณ'}
+              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -264,12 +264,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Tech Stack' : 'เทคโนโลยีที่ใช้'}
             </p>
             <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
-              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้งาน'}
+              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้'}
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Industry-proven tools and frameworks we leverage to build robust solutions.'
-                : 'เครื่องมือและ Framework ที่พิสูจน์แล้วในอุตสาหกรรม ที่เราใช้สร้างโซลูชันที่แข็งแรงและเชื่อถือได้'}
+                : 'เครื่องมือและ Framework ที่เราเลือกใช้ เพราะมั่นคงและเชื่อถือได้'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -295,7 +295,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างโปรเจกต์ที่เราส่งมอบจริงให้กับลูกค้าในอุตสาหกรรมนี้'}
+              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างงานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -335,7 +335,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link

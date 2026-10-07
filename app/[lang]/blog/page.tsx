@@ -13,8 +13,8 @@ const featuredEN = {
 }
 const featuredTH = {
   slug: 'why-design-system-matters', cat: 'Design', date: '10 มิ.ย. 2025', readTime: '8 นาที',
-  title: 'ทำไม Design System ถึงสำคัญกับทุกบริษัทที่ต้องการ Scale',
-  excerpt: 'เมื่อทีมขยายและ Feature เพิ่มขึ้น ความไม่สม่ำเสมอของ UI เริ่มสะสม Design System ไม่ใช่แค่ความสวยงาม แต่คือ Infrastructure ที่ช่วยให้ Ship ได้เร็วขึ้น ถูกต้องมากขึ้น',
+  title: 'ทำไมบริษัทที่กำลังเติบโตทุกแห่งควรมี Design System',
+  excerpt: 'เมื่อทีมโตขึ้นและมีฟีเจอร์เพิ่ม UI ก็เริ่มไม่เป็นแบบเดียวกัน Design System ไม่ใช่แค่เรื่องความสวยงาม แต่เป็นพื้นฐานที่ช่วยให้ปล่อยงานได้เร็วขึ้นและผิดพลาดน้อยลง',
   author: 'Ploy S.', role: 'Lead Designer',
 }
 
@@ -47,29 +47,29 @@ const postsEN = [
 
 const postsTH = [
   // Product
-  { slug:'product-discovery', cat:'Product', date:'10 พ.ค. 2025', readTime:'11 นาที', title:'Product Discovery Framework ที่ Haliviq ใช้ในทุกโปรเจกต์', excerpt:'ก่อนเขียน Code บรรทัดแรก เราใช้เวลา 2-4 สัปดาห์กับ Discovery เสมอ', author:'Tarn W.' },
-  { slug:'roadmap-prioritization', cat:'Product', date:'22 เม.ย. 2025', readTime:'9 นาที', title:'Framework จัดลำดับความสำคัญที่รอดจาก Stakeholder จริง', excerpt:'RICE กับ MoSCoW ดูดีบนสไลด์ แต่นี่คือสิ่งที่เราใช้จริง', author:'Mark T.' },
-  { slug:'mvp-scope', cat:'Product', date:'8 เม.ย. 2025', readTime:'7 นาที', title:'วิธีตัด Scope ของ MVP โดยไม่ตัดส่วนที่สำคัญ', excerpt:'MVP ส่วนใหญ่ล้มเหลวเพราะทีมตัด 80% ผิดจุด', author:'Tarn W.' },
+  { slug:'product-discovery', cat:'Product', date:'10 พ.ค. 2025', readTime:'11 นาที', title:'กรอบทำ Product Discovery ที่ Haliviq ใช้ในทุกโปรเจกต์', excerpt:'ก่อนเขียน Code บรรทัดแรก เราใช้เวลา 2-4 สัปดาห์ทำ Discovery ทุกครั้ง', author:'Tarn W.' },
+  { slug:'roadmap-prioritization', cat:'Product', date:'22 เม.ย. 2025', readTime:'9 นาที', title:'วิธีจัดลำดับความสำคัญที่ใช้ได้จริงกับผู้มีส่วนได้ส่วนเสีย', excerpt:'RICE กับ MoSCoW ดูดีบนสไลด์ แต่นี่คือวิธีที่เราใช้จริง', author:'Mark T.' },
+  { slug:'mvp-scope', cat:'Product', date:'8 เม.ย. 2025', readTime:'7 นาที', title:'วิธีตัดขอบเขต MVP โดยไม่ตัดส่วนสำคัญ', excerpt:'MVP ส่วนใหญ่ล้มเหลวเพราะทีมตัด 80% ผิดจุด', author:'Tarn W.' },
   // Design
-  { slug:'ux-research', cat:'Design', date:'1 มิ.ย. 2025', readTime:'10 นาที', title:'เปรียบ User Research Methods 8 วิธี ใช้เมื่อไหร่ดีที่สุด', excerpt:'Interview, Survey, Usability Test — แต่ละวิธีมีจุดแข็งต่างกัน', author:'Nook P.' },
-  { slug:'design-tokens', cat:'Design', date:'24 พ.ค. 2025', readTime:'8 นาที', title:'Design Tokens 101: Source of Truth เดียวสำหรับทุก Platform', excerpt:'วิธีที่เรา Sync สี ระยะห่าง และ Typography ระหว่าง Figma, iOS และ Web', author:'Ploy S.' },
-  { slug:'thai-typography', cat:'Design', date:'30 เม.ย. 2025', readTime:'6 นาที', title:'ออกแบบสำหรับตัวอักษรไทย: จุดที่ Design System แบบ Latin พลาด', excerpt:'Line-height การซ้อนสระ และเหตุผลที่ UI Kit ส่วนใหญ่พังกับข้อความไทย', author:'Ploy S.' },
+  { slug:'ux-research', cat:'Design', date:'1 มิ.ย. 2025', readTime:'10 นาที', title:'เปรียบเทียบวิธีทำ User Research 8 แบบ ใช้แบบไหนเมื่อไหร่', excerpt:'สัมภาษณ์ แบบสำรวจ ทดสอบการใช้งาน — แต่ละวิธีมีจุดแข็งต่างกัน', author:'Nook P.' },
+  { slug:'design-tokens', cat:'Design', date:'24 พ.ค. 2025', readTime:'8 นาที', title:'Design Tokens เบื้องต้น: แหล่งข้อมูลกลางเดียวสำหรับทุกแพลตฟอร์ม', excerpt:'วิธีที่เราทำให้สี ระยะห่าง และตัวอักษรตรงกันระหว่าง Figma, iOS และเว็บ', author:'Ploy S.' },
+  { slug:'thai-typography', cat:'Design', date:'30 เม.ย. 2025', readTime:'6 นาที', title:'ออกแบบให้เหมาะกับตัวอักษรไทย: จุดที่ Design System แบบภาษาอังกฤษพลาด', excerpt:'ระยะบรรทัด การซ้อนสระ และเหตุผลที่ UI Kit ส่วนใหญ่ใช้กับข้อความไทยแล้วพัง', author:'Ploy S.' },
   // Engineering
-  { slug:'nextjs-perf', cat:'Engineering', date:'28 พ.ค. 2025', readTime:'15 นาที', title:'Next.js Performance จาก PageSpeed 45 ขึ้น 98 ใน 3 สัปดาห์', excerpt:'Image Optimization, Code Splitting, Edge Caching ที่ได้ผลจริงใน Production', author:'Arm K.' },
-  { slug:'api-versioning', cat:'Engineering', date:'12 พ.ค. 2025', readTime:'10 นาที', title:'กลยุทธ์ API Versioning ที่ไม่ทำแอปมือถือของคุณพัง', excerpt:'สิ่งที่เราเรียนรู้จากการ Ship Breaking Change ให้แอปที่บังคับ Update ไม่ได้', author:'Arm K.' },
-  { slug:'ci-cd-monorepo', cat:'Engineering', date:'18 เม.ย. 2025', readTime:'13 นาที', title:'CI/CD สำหรับ Monorepo: ลดเวลา Build ลง 68%', excerpt:'Caching, Affected-graph Build และข้อผิดพลาดของ Pipeline ที่เราแก้ไประหว่างทาง', author:'Tarn W.' },
+  { slug:'nextjs-perf', cat:'Engineering', date:'28 พ.ค. 2025', readTime:'15 นาที', title:'เร่งความเร็ว Next.js จาก PageSpeed 45 เป็น 98 ใน 3 สัปดาห์', excerpt:'การจัดการรูปภาพ การแบ่ง Code และ Edge Caching ที่ได้ผลจริงบนระบบใช้งานจริง', author:'Arm K.' },
+  { slug:'api-versioning', cat:'Engineering', date:'12 พ.ค. 2025', readTime:'10 นาที', title:'วิธีทำ API Versioning ไม่ให้แอปมือถือของคุณพัง', excerpt:'สิ่งที่เราเรียนรู้จากการปล่อยการเปลี่ยนแปลงที่ทำให้ของเดิมใช้ไม่ได้ ให้แอปที่บังคับอัปเดตไม่ได้', author:'Arm K.' },
+  { slug:'ci-cd-monorepo', cat:'Engineering', date:'18 เม.ย. 2025', readTime:'13 นาที', title:'CI/CD สำหรับ Monorepo: ลดเวลา Build ลง 68%', excerpt:'Caching การ Build เฉพาะส่วนที่ได้รับผลกระทบ และข้อผิดพลาดของ Pipeline ที่เราแก้ไประหว่างทาง', author:'Tarn W.' },
   // AI
-  { slug:'ai-product-2025', cat:'AI', date:'5 มิ.ย. 2025', readTime:'12 นาที', title:'คู่มือสร้างผลิตภัณฑ์ AI ในปี 2025 ที่ใช้งานได้จริง', excerpt:'AI Product Development ไม่ได้ยากอย่างที่คิด ถ้าเริ่มจาก Use Case ที่ชัดเจน', author:'Mark T.' },
-  { slug:'rag-in-production', cat:'AI', date:'18 พ.ค. 2025', readTime:'14 นาที', title:'RAG บน Production: สิ่งที่พังหลังจาก Demo ใช้งานได้', excerpt:'Chunking คุณภาพการ Retrieve และ Eval Loop ที่หลายทีมมองข้าม', author:'Mark T.' },
-  { slug:'ai-agent-guardrails', cat:'AI', date:'26 เม.ย. 2025', readTime:'9 นาที', title:'Guardrail สำหรับ AI Agent ที่ลงมือทำงานจริง', excerpt:'วิธีที่เราออกแบบขั้นตอนอนุมัติสำหรับ Agent ที่แตะข้อมูล Production', author:'Arm K.' },
+  { slug:'ai-product-2025', cat:'AI', date:'5 มิ.ย. 2025', readTime:'12 นาที', title:'คู่มือสร้างผลิตภัณฑ์ AI ในปี 2025 ให้ใช้งานได้จริง', excerpt:'การพัฒนาผลิตภัณฑ์ AI ไม่ยากอย่างที่คิด ถ้าเริ่มจากกรณีใช้งานที่ชัดเจน', author:'Mark T.' },
+  { slug:'rag-in-production', cat:'AI', date:'18 พ.ค. 2025', readTime:'14 นาที', title:'RAG บนระบบจริง: สิ่งที่พังหลังจาก Demo ใช้ได้แล้ว', excerpt:'การแบ่งเอกสาร คุณภาพการดึงข้อมูล และการประเมินผลซ้ำ ๆ ที่หลายทีมมองข้าม', author:'Mark T.' },
+  { slug:'ai-agent-guardrails', cat:'AI', date:'26 เม.ย. 2025', readTime:'9 นาที', title:'กรอบป้องกันสำหรับ AI Agent ที่ลงมือทำงานจริง', excerpt:'วิธีที่เราออกแบบขั้นตอนอนุมัติสำหรับ Agent ที่เข้าถึงข้อมูลบนระบบจริง', author:'Arm K.' },
   // Strategy
-  { slug:'dx-mistakes', cat:'Strategy', date:'20 พ.ค. 2025', readTime:'9 นาที', title:'7 ข้อผิดพลาดที่ทำให้ Digital Transformation ล้มเหลว', excerpt:'70% ของ DX Initiative ไม่บรรลุเป้า สาเหตุส่วนใหญ่ไม่ใช่เรื่อง Technology', author:'Tarn W.' },
-  { slug:'build-vs-buy', cat:'Strategy', date:'2 พ.ค. 2025', readTime:'8 นาที', title:'Build vs. Buy: Framework การตัดสินใจสำหรับ Enterprise Software', excerpt:'ต้นทุนจริงของการ "ซื้อ SaaS ไปเลย" ที่ไม่มีใครใส่ใน Business Case', author:'Mark T.' },
-  { slug:'vendor-lockin', cat:'Strategy', date:'14 เม.ย. 2025', readTime:'7 นาที', title:'วิธี Modernize ระบบเก่าโดยไม่ต้อง Rewrite ใหม่ทั้งหมด', excerpt:'แนวทาง Strangler-fig ที่เราใช้กับ Enterprise Platform อายุนับสิบปี', author:'Tarn W.' },
+  { slug:'dx-mistakes', cat:'Strategy', date:'20 พ.ค. 2025', readTime:'9 นาที', title:'7 ข้อผิดพลาดที่ทำให้การปรับธุรกิจสู่ดิจิทัล (Digital Transformation) ล้มเหลว', excerpt:'โครงการ DX 70% ไม่ถึงเป้า สาเหตุส่วนใหญ่ไม่ใช่เรื่องเทคโนโลยี', author:'Tarn W.' },
+  { slug:'build-vs-buy', cat:'Strategy', date:'2 พ.ค. 2025', readTime:'8 นาที', title:'สร้างเองหรือซื้อ (Build vs. Buy): วิธีตัดสินใจสำหรับซอฟต์แวร์องค์กร', excerpt:'ต้นทุนจริงของการ "ซื้อ SaaS ไปเลย" ที่ไม่มีใครใส่ไว้ในแผนธุรกิจ', author:'Mark T.' },
+  { slug:'vendor-lockin', cat:'Strategy', date:'14 เม.ย. 2025', readTime:'7 นาที', title:'วิธีปรับปรุงระบบเก่าโดยไม่ต้องเขียนใหม่ทั้งหมด', excerpt:'แนวทาง Strangler-fig ที่เราใช้กับระบบองค์กรอายุนับสิบปี', author:'Tarn W.' },
   // Case Study
-  { slug:'banking-case', cat:'Case Study', date:'15 พ.ค. 2025', readTime:'18 นาที', title:'Case Study: Banking App ทำให้ DAU เพิ่ม 62% ได้อย่างไร', excerpt:'เรื่องราวเบื้องหลัง Redesign Mobile Banking ที่มีผู้ใช้ 4 ล้านคน', author:'Ploy S.' },
-  { slug:'retail-omnichannel-case', cat:'Case Study', date:'27 เม.ย. 2025', readTime:'16 นาที', title:'Case Study: รวม Commerce ให้เป็นหนึ่งเดียวใน 2,000+ สาขาค้าปลีก', excerpt:'แพลตฟอร์มเดียวที่ทำให้ Conversion ของกลุ่มค้าปลีกระดับประเทศเพิ่มขึ้น 3 เท่า', author:'Nook P.' },
-  { slug:'healthcare-portal-case', cat:'Case Study', date:'3 เม.ย. 2025', readTime:'14 นาที', title:'Case Study: ลด No-show ของผู้ป่วยลง 40% ด้วย Digital Portal', excerpt:'สร้าง Patient Journey ใหม่ตั้งแต่ต้นจนจบให้กลุ่มโรงพยาบาล', author:'Ploy S.' },
+  { slug:'banking-case', cat:'Case Study', date:'15 พ.ค. 2025', readTime:'18 นาที', title:'กรณีศึกษา: แอปธนาคารเพิ่มผู้ใช้ประจำวัน (DAU) 62% ได้อย่างไร', excerpt:'เบื้องหลังการออกแบบ Mobile Banking ใหม่ที่มีผู้ใช้ 4 ล้านคน', author:'Ploy S.' },
+  { slug:'retail-omnichannel-case', cat:'Case Study', date:'27 เม.ย. 2025', readTime:'16 นาที', title:'กรณีศึกษา: รวมช่องทางขายให้เป็นหนึ่งเดียวใน 2,000+ สาขาค้าปลีก', excerpt:'แพลตฟอร์มเดียวที่ทำให้อัตราปิดการขาย (Conversion) ของกลุ่มค้าปลีกระดับประเทศเพิ่มขึ้น 3 เท่า', author:'Nook P.' },
+  { slug:'healthcare-portal-case', cat:'Case Study', date:'3 เม.ย. 2025', readTime:'14 นาที', title:'กรณีศึกษา: ลดผู้ป่วยที่ไม่มาตามนัดลง 40% ด้วยพอร์ทัลดิจิทัล', excerpt:'ออกแบบประสบการณ์ผู้ป่วยใหม่ตั้งแต่ต้นจนจบให้กลุ่มโรงพยาบาล', author:'Ploy S.' },
 ]
 
 const topicsEN = [
@@ -124,7 +124,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                 </h1>
               </div>
               <p className="text-sm max-w-sm" style={{ color: 'rgba(255,255,255,0.75)', fontWeight: 400 }}>
-                {isEN ? 'Insights on Digital Product, UX Design, Engineering, and AI from the Haliviq team.' : 'Insight ด้าน Digital Product, UX Design, Engineering และ AI จากทีม Haliviq'}
+                {isEN ? 'Insights on Digital Product, UX Design, Engineering, and AI from the Haliviq team.' : 'ความรู้ด้านผลิตภัณฑ์ดิจิทัล ออกแบบ UX วิศวกรรมซอฟต์แวร์ และ AI จากทีม Haliviq'}
               </p>
             </div>
 
@@ -134,7 +134,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                 <div className="min-h-[320px] flex items-center justify-center" style={{ background: gradients[0] }}>
                   <div className="text-center">
                     <i className="ti ti-photo" style={{ fontSize:40, color:'#fff', opacity:0.35 }} aria-hidden="true" />
-                    <p className="text-sm mt-3" style={{ color:'#fff', opacity:0.55, fontWeight:400 }}>{isEN ? 'Featured Article Cover' : 'รูปปก Featured'}</p>
+                    <p className="text-sm mt-3" style={{ color:'#fff', opacity:0.55, fontWeight:400 }}>{isEN ? 'Featured Article Cover' : 'ภาพปกบทความเด่น'}</p>
                   </div>
                 </div>
                 <div className="p-10 lg:p-14 flex flex-col justify-center" style={{ background: '#141329' }}>
@@ -237,10 +237,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <div className="relative max-w-4xl mx-auto px-6 lg:px-10 py-24 text-center">
             <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#fff', fontWeight: 500 }}>{isEN ? 'Newsletter' : 'จดหมายข่าว'}</p>
             <h2 className="t-display text-[clamp(1.75rem,4vw,3rem)] mb-6 leading-normal md:whitespace-nowrap" style={{ background: 'linear-gradient(135deg, var(--purple-light) 0%, #53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-              {isEN ? <>Get Insights Every Two Weeks</> : <>รับ Insight ทุกสองสัปดาห์</>}
+              {isEN ? <>Get Insights Every Two Weeks</> : <>รับบทความใหม่ทุกสองสัปดาห์</>}
             </h2>
             <p className="mb-10 max-w-md mx-auto" style={{ color: '#fff', fontWeight:400 }}>
-              {isEN ? 'Articles, case studies, and tools from the Haliviq team. No spam. Unsubscribe anytime.' : 'บทความ Case Study และเครื่องมือจากทีม Haliviq ไม่มี Spam ยกเลิกได้ตลอด'}
+              {isEN ? 'Articles, case studies, and tools from the Haliviq team. No spam. Unsubscribe anytime.' : 'บทความ กรณีศึกษา และเครื่องมือจากทีม Haliviq ไม่ส่งสแปม ยกเลิกได้ตลอด'}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input type="email" placeholder={isEN ? 'your@email.com' : 'อีเมลของคุณ'} className="flex-1 px-5 py-3.5 rounded-full text-sm outline-none transition-colors" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.15)', color: '#fff', fontWeight:400 }} />

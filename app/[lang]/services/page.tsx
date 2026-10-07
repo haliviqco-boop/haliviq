@@ -374,54 +374,54 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       key: 'strategy-design',
       label: isEN ? 'Strategy & Design' : 'กลยุทธ์และดีไซน์',
       items: [
-        { icon: 'ti-map', title: isEN ? 'Digital Transformation' : 'การเปลี่ยนแปลงสู่ดิจิทัล', href: '/services/digital-transformation', desc: isEN ? 'Modernize technology, process, and teams around outcomes that matter.' : 'ปรับองค์กรสู่ดิจิทัล เชื่อมเทคโนโลยี กระบวนการ และทีมเข้าด้วยกัน' },
-        { icon: 'ti-user-search', title: isEN ? 'UI/UX & Product Design' : 'ออกแบบ UI/UX & Product', href: '/services/ux-ui-design', desc: isEN ? 'Interfaces and design systems that make complex products feel simple.' : 'ออกแบบหน้าตาและระบบดีไซน์ที่ทำให้ผลิตภัณฑ์ซับซ้อนใช้งานง่าย' },
+        { icon: 'ti-map', title: isEN ? 'Digital Transformation' : 'ปรับองค์กรสู่ดิจิทัล', href: '/services/digital-transformation', desc: isEN ? 'Modernize technology, process, and teams around outcomes that matter.' : 'พาองค์กรเข้าสู่ยุคดิจิทัล เชื่อมเทคโนโลยี ขั้นตอนทำงาน และทีมเข้าด้วยกัน' },
+        { icon: 'ti-user-search', title: isEN ? 'UI/UX & Product Design' : 'ออกแบบ UI/UX และผลิตภัณฑ์', href: '/services/ux-ui-design', desc: isEN ? 'Interfaces and design systems that make complex products feel simple.' : 'ออกแบบหน้าตาและ Design System ที่ทำให้ผลิตภัณฑ์ซับซ้อนใช้งานง่าย' },
       ],
     },
     {
       key: 'engineering',
       label: isEN ? 'Engineering' : 'พัฒนาซอฟต์แวร์',
       items: [
-        { icon: 'ti-code', title: isEN ? 'Web Development' : 'พัฒนาเว็บไซต์', href: '/services/web-development', desc: isEN ? 'Production-grade web apps built for performance and maintainability.' : 'เว็บแอปพลิเคชันระดับ Production ที่เสถียร ปลอดภัย ดูแลง่าย' },
-        { icon: 'ti-device-mobile', title: isEN ? 'Mobile App Development' : 'พัฒนาแอปมือถือ', href: '/services/mobile-apps', desc: isEN ? 'Native and cross-platform apps with the polish users expect.' : 'แอป Native และ Cross-platform ที่ลื่นไหลตามมาตรฐานผู้ใช้ปัจจุบัน' },
-        { icon: 'ti-refresh-dot', title: isEN ? 'Application Modernization' : 'ปรับปรุงระบบเดิม', href: '/services/application-modernization', desc: isEN ? 'Incrementally modernize legacy systems without stopping the business.' : 'ปรับปรุงระบบเดิมทีละส่วน โดยไม่หยุดการทำงานของธุรกิจ' },
-        { icon: 'ti-cloud-cog', title: isEN ? 'Cloud Services & Migration' : 'Cloud Services & Migration', href: '/services/cloud-services-migration', desc: isEN ? 'Migrate, modernize, and optimize cloud infrastructure and spend.' : 'ย้าย ปรับปรุง และเพิ่มประสิทธิภาพ Cloud Infrastructure และค่าใช้จ่าย' },
-        { icon: 'ti-checklist', title: isEN ? 'Quality Assurance & Testing' : 'ทดสอบระบบ QA', href: '/services/quality-assurance-testing', desc: isEN ? 'Manual, exploratory, and automated testing that catches edge cases.' : 'ทดสอบระบบทั้งแบบ Manual และอัตโนมัติ ครอบคลุมทุก Edge Case' },
-        { icon: 'ti-code-dots', title: isEN ? 'Finish Your Vibe-Coded App' : 'ช่วยจบ App ที่สร้างด้วย AI', href: '/services/finish-your-vibe-coded-app', desc: isEN ? 'Security hardening and production infrastructure for AI-built apps.' : 'Security Hardening และ Production Infrastructure สำหรับ App ที่สร้างด้วย AI' },
-        { icon: 'ti-users', title: isEN ? 'Forward Deployed Engineering' : 'Forward Deployed Engineering', href: '/services/forward-deployed-engineering', desc: isEN ? 'Senior engineers embedded directly in your team to ship AI to production.' : 'Senior Engineer ที่ฝังตัวในทีมคุณ เพื่อส่งมอบ AI ถึง Production จริง' },
+        { icon: 'ti-code', title: isEN ? 'Web Development' : 'พัฒนาเว็บไซต์', href: '/services/web-development', desc: isEN ? 'Production-grade web apps built for performance and maintainability.' : 'เว็บแอปพลิเคชันสำหรับใช้งานจริง ที่เสถียร ปลอดภัย ดูแลง่าย' },
+        { icon: 'ti-device-mobile', title: isEN ? 'Mobile App Development' : 'พัฒนาแอปมือถือ', href: '/services/mobile-apps', desc: isEN ? 'Native and cross-platform apps with the polish users expect.' : 'แอป Native และ Cross-platform ที่ลื่นไหลตามที่ผู้ใช้ปัจจุบันคาดหวัง' },
+        { icon: 'ti-refresh-dot', title: isEN ? 'Application Modernization' : 'ปรับปรุงระบบเดิม', href: '/services/application-modernization', desc: isEN ? 'Incrementally modernize legacy systems without stopping the business.' : 'ปรับปรุงระบบเดิมทีละส่วน โดยธุรกิจไม่ต้องหยุดทำงาน' },
+        { icon: 'ti-cloud-cog', title: isEN ? 'Cloud Services & Migration' : 'Cloud Services & Migration', href: '/services/cloud-services-migration', desc: isEN ? 'Migrate, modernize, and optimize cloud infrastructure and spend.' : 'ย้าย ปรับปรุง และลดค่าใช้จ่ายของ Cloud Infrastructure' },
+        { icon: 'ti-checklist', title: isEN ? 'Quality Assurance & Testing' : 'ทดสอบระบบ QA', href: '/services/quality-assurance-testing', desc: isEN ? 'Manual, exploratory, and automated testing that catches edge cases.' : 'ทดสอบทั้งด้วยมือและแบบอัตโนมัติ ครอบคลุมทุกเคสพิเศษ' },
+        { icon: 'ti-code-dots', title: isEN ? 'Finish Your Vibe-Coded App' : 'ช่วยทำแอปที่สร้างด้วย AI ให้เสร็จ', href: '/services/finish-your-vibe-coded-app', desc: isEN ? 'Security hardening and production infrastructure for AI-built apps.' : 'เสริมความปลอดภัยและวางโครงสร้างระบบจริงสำหรับแอปที่สร้างด้วย AI' },
+        { icon: 'ti-users', title: isEN ? 'Forward Deployed Engineering' : 'Forward Deployed Engineering', href: '/services/forward-deployed-engineering', desc: isEN ? 'Senior engineers embedded directly in your team to ship AI to production.' : 'วิศวกรระดับ Senior ที่เข้ามาทำงานในทีมคุณ เพื่อส่งมอบ AI ให้ใช้งานจริง' },
       ],
     },
     {
       key: 'ai-data',
-      label: isEN ? 'AI & Data' : 'AI & ข้อมูล',
+      label: isEN ? 'AI & Data' : 'AI และข้อมูล',
       items: [
-        { icon: 'ti-robot', title: isEN ? 'AI Agents & Generative AI' : 'AI Agent และ Generative AI', href: '/services/ai', desc: isEN ? 'AI agents, RAG systems, and LLM products that automate real work.' : 'AI Agent และระบบ RAG ที่ทำงานได้จริง ไม่ใช่แค่ Demo' },
-        { icon: 'ti-phone-calling', title: isEN ? 'AI Voice Agents' : 'AI Voice Agents', href: '/services/ai-voice-agents', desc: isEN ? 'Natural, low-latency voice agents that handle real phone calls.' : 'Voice Agent ที่พูดคุยเป็นธรรมชาติ Latency ต่ำ รับสายโทรศัพท์จริงได้' },
-        { icon: 'ti-layout-dashboard', title: isEN ? 'Data Analytics & Engineering' : 'ข้อมูลและการวิเคราะห์', href: '/services/data-analytics', desc: isEN ? 'Dashboards and pipelines every team can understand and act on.' : 'Dashboard และ Pipeline ที่ทุกทีมเข้าใจและนำไปใช้ตัดสินใจได้ทันที' },
+        { icon: 'ti-robot', title: isEN ? 'AI Agents & Generative AI' : 'AI Agent และ Generative AI', href: '/services/ai', desc: isEN ? 'AI agents, RAG systems, and LLM products that automate real work.' : 'AI Agent และระบบ RAG ที่ใช้งานได้จริง ไม่ใช่แค่ Demo' },
+        { icon: 'ti-phone-calling', title: isEN ? 'AI Voice Agents' : 'AI Voice Agents', href: '/services/ai-voice-agents', desc: isEN ? 'Natural, low-latency voice agents that handle real phone calls.' : 'Voice Agent ที่พูดคุยเป็นธรรมชาติ หน่วงน้อย รับสายโทรศัพท์จริงได้' },
+        { icon: 'ti-layout-dashboard', title: isEN ? 'Data Analytics & Engineering' : 'ข้อมูลและการวิเคราะห์', href: '/services/data-analytics', desc: isEN ? 'Dashboards and pipelines every team can understand and act on.' : 'Dashboard และ Pipeline ที่ทุกทีมเข้าใจและใช้ตัดสินใจได้ทันที' },
       ],
     },
     {
       key: 'commerce',
       label: isEN ? 'Commerce' : 'Commerce',
       items: [
-        { icon: 'ti-shopping-cart', title: isEN ? 'E-Commerce Development' : 'พัฒนา E-Commerce', href: '/services/ecommerce', desc: isEN ? 'Headless, API-first commerce with a storefront built for your brand.' : 'Commerce แบบ Headless API-First พร้อม Storefront ที่สร้างเพื่อแบรนด์คุณ' },
-        { icon: 'ti-brand-line', title: isEN ? 'LINE Mini App Development' : 'พัฒนา LINE Mini App', href: '/services/line-mini-apps', desc: isEN ? 'Mini Apps, chat commerce, and payments inside LINE.' : 'Mini App, Chat Commerce และ Payment ภายใน LINE' },
+        { icon: 'ti-shopping-cart', title: isEN ? 'E-Commerce Development' : 'พัฒนา E-Commerce', href: '/services/ecommerce', desc: isEN ? 'Headless, API-first commerce with a storefront built for your brand.' : 'ระบบขายของแบบ Headless API-First พร้อมหน้าร้านที่สร้างเพื่อแบรนด์คุณ' },
+        { icon: 'ti-brand-line', title: isEN ? 'LINE Mini App Development' : 'พัฒนา LINE Mini App', href: '/services/line-mini-apps', desc: isEN ? 'Mini Apps, chat commerce, and payments inside LINE.' : 'Mini App ระบบขายผ่านแชท และการชำระเงินใน LINE' },
       ],
     },
     {
       key: 'enterprise-security',
       label: isEN ? 'Enterprise & Security' : 'องค์กรและความปลอดภัย',
       items: [
-        { icon: 'ti-building-factory', title: isEN ? 'Enterprise Solutions (ERP / CRM / POS)' : 'ระบบองค์กร (ERP / CRM / POS)', href: '/services/enterprise-solutions', desc: isEN ? 'Implement and configure ERP, CRM, and POS systems to your requirements.' : 'ติดตั้งและปรับแต่งระบบ ERP, CRM และ POS ให้ตรงกับความต้องการธุรกิจ' },
-        { icon: 'ti-shield-search', title: isEN ? 'Cybersecurity' : 'Cybersecurity', href: '/services/cybersecurity', desc: isEN ? 'Security assessments, secure-by-design engineering, and compliance support.' : 'Security Assessment, วิศวกรรมแบบ Secure-by-design และการสนับสนุน Compliance' },
-        { icon: 'ti-shield-lock', title: isEN ? 'PDPA Compliance' : 'PDPA Compliance', href: '/services/pdpa-compliance', desc: isEN ? 'PDPA audit, consent management, and privacy engineering built in.' : 'PDPA Audit, จัดการ Consent และ Privacy Engineering ที่ฝังเข้าไปจริง' },
+        { icon: 'ti-building-factory', title: isEN ? 'Enterprise Solutions (ERP / CRM / POS)' : 'ระบบองค์กร (ERP / CRM / POS)', href: '/services/enterprise-solutions', desc: isEN ? 'Implement and configure ERP, CRM, and POS systems to your requirements.' : 'ติดตั้งและปรับแต่งระบบ ERP, CRM และ POS ให้ตรงกับความต้องการของธุรกิจ' },
+        { icon: 'ti-shield-search', title: isEN ? 'Cybersecurity' : 'Cybersecurity', href: '/services/cybersecurity', desc: isEN ? 'Security assessments, secure-by-design engineering, and compliance support.' : 'ประเมินความปลอดภัย วางระบบให้ปลอดภัยตั้งแต่ออกแบบ และช่วยทำตามข้อกำหนด' },
+        { icon: 'ti-shield-lock', title: isEN ? 'PDPA Compliance' : 'PDPA Compliance', href: '/services/pdpa-compliance', desc: isEN ? 'PDPA audit, consent management, and privacy engineering built in.' : 'ตรวจ PDPA จัดการ Consent และวางระบบความเป็นส่วนตัวให้ใช้งานได้จริง' },
       ],
     },
     {
       key: 'support',
       label: isEN ? 'Support' : 'ดูแลและซัพพอร์ต',
       items: [
-        { icon: 'ti-headset', title: isEN ? 'Managed Services & Support' : 'บำรุงรักษาและซัพพอร์ต', href: '/services/support-maintenance', desc: isEN ? '24/7 monitoring, alerting, and ongoing support after launch.' : 'Monitor ระบบตลอด 24 ชม. พร้อมซัพพอร์ตต่อเนื่องหลัง Launch' },
+        { icon: 'ti-headset', title: isEN ? 'Managed Services & Support' : 'บำรุงรักษาและซัพพอร์ต', href: '/services/support-maintenance', desc: isEN ? '24/7 monitoring, alerting, and ongoing support after launch.' : 'เฝ้าระบบตลอด 24 ชม. พร้อมซัพพอร์ตต่อเนื่องหลังเปิดตัว' },
       ],
     },
   ]
@@ -430,8 +430,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-building-skyscraper', title: 'Enterprise', desc: 'Full delivery teams for complex platforms, with the security, compliance, and process rigor large organizations expect.' },
     { icon: 'ti-rocket', title: 'Small Business & Startups', desc: 'Lean, focused builds that get the essentials right. We help you trim scope, not quality, so a modest budget still ships a solid product.' },
   ] : [
-    { icon: 'ti-building-skyscraper', title: 'Enterprise', desc: 'ทีมงานครบวงจรสำหรับแพลตฟอร์มซับซ้อน พร้อมมาตรฐานความปลอดภัยและกระบวนการที่องค์กรใหญ่ต้องการ' },
-    { icon: 'ti-rocket', title: 'ธุรกิจขนาดเล็ก & Startup', desc: 'งานที่กระชับตรงจุด เราช่วยตัดสิ่งที่ไม่จำเป็นออก ไม่ใช่คุณภาพ งบไม่มากก็ได้โปรดักต์ที่แข็งแรง' },
+    { icon: 'ti-building-skyscraper', title: 'Enterprise', desc: 'ทีมครบทุกสายงานสำหรับแพลตฟอร์มซับซ้อน พร้อมมาตรฐานความปลอดภัยและขั้นตอนที่องค์กรใหญ่ต้องการ' },
+    { icon: 'ti-rocket', title: 'ธุรกิจขนาดเล็กและ Startup', desc: 'งานกระชับตรงจุด เราช่วยตัดสิ่งที่ไม่จำเป็นออก ไม่ใช่ตัดคุณภาพ งบไม่มากก็ได้ผลิตภัณฑ์ที่แข็งแรง' },
   ]
 
   return (
@@ -453,7 +453,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <p className="t-body text-lg leading-relaxed max-w-2xl mx-auto">
               {isEN
                 ? 'From strategy to design, engineering, and AI — we cover every discipline a digital product needs, under one roof.'
-                : 'ตั้งแต่กลยุทธ์ ดีไซน์ พัฒนาระบบ ไปจนถึง AI เราครอบคลุมทุกศาสตร์ที่ผลิตภัณฑ์ดิจิทัลต้องการ ในทีมเดียว'}
+                : 'ตั้งแต่กลยุทธ์ ดีไซน์ พัฒนาระบบ ไปจนถึง AI เรามีครบทุกด้านที่ผลิตภัณฑ์ดิจิทัลต้องการ ในทีมเดียว'}
             </p>
           </div>
         </section>
@@ -520,12 +520,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         <section className="py-24 lg:py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg,#2D1B69 0%,var(--purple) 40%,var(--purple-light) 100%)' }}>
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle,#fff 1px,transparent 1px)', backgroundSize: '28px 28px' }} />
           <div className="relative max-w-4xl mx-auto px-4 lg:px-10 text-center">
-            <p className="mb-6" style={{ color: '#ffffff', fontSize: '0.85rem', fontWeight: 400 }}>{isEN ? 'Start Today' : 'เริ่มต้นวันนี้'}</p>
+            <p className="mb-6" style={{ color: '#ffffff', fontSize: '0.85rem', fontWeight: 400 }}>{isEN ? 'Start Today' : 'เริ่มวันนี้'}</p>
             <h2 className="t-display mb-4 leading-tight" style={{ color: '#ffffff', fontSize: 'clamp(2rem,4vw,4rem)', fontWeight: 500 }}>
               {isEN ? 'Not Sure Where to Start?' : 'ไม่แน่ใจว่าจะเริ่มจากตรงไหน?'}
             </h2>
             <p className="text-white text-base mb-10 max-w-lg mx-auto" style={{ fontWeight: 400 }}>
-              {isEN ? 'Tell us about your project and we will point you to the right service.' : 'เล่าให้เราฟังเรื่องโปรเจกต์ของคุณ แล้วเราจะแนะนำบริการที่ใช่ที่สุด'}
+              {isEN ? 'Tell us about your project and we will point you to the right service.' : 'เล่าให้เราฟังเรื่องโปรเจกต์ของคุณ แล้วเราจะแนะนำบริการที่เหมาะที่สุด'}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href={`${prefix}/contact`} className="inline-flex items-center gap-2 px-10 py-4 bg-white rounded-full text-sm font-medium hover:bg-[var(--purple-bg)] transition-colors" style={{ color: 'var(--purple)', fontWeight: 400 }}>

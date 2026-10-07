@@ -16,7 +16,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge = isEN ? 'Industry / Professional Services' : 'อุตสาหกรรม / บริการวิชาชีพ'
   const heroSubhead = isEN
     ? 'Digital tools for consulting, legal, and business services.'
-    : 'เครื่องมือดิจิทัลสำหรับที่ปรึกษา กฎหมาย และธุรกิจบริการ'
+    : 'เครื่องมือสำหรับที่ปรึกษา สำนักงานกฎหมาย และธุรกิจบริการ'
 
   const challenges = isEN ? [
     { icon: 'ti-files', title: 'Manual Document-Heavy Workflows', desc: 'Contracts, reports, and engagement letters still move through email and paper-based approval chains, slowing delivery and introducing version-control errors that erode client trust.' },
@@ -24,16 +24,16 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-clock-dollar', title: 'Time-Tracking & Billing Accuracy', desc: 'Tracking billable hours accurately across dozens of concurrent engagements is error-prone with manual timesheets, leading to revenue leakage and disputed invoices.' },
     { icon: 'ti-network', title: 'Knowledge Silos Across Teams & Offices', desc: 'Institutional knowledge, precedents, and past deliverables stay locked in individual inboxes and local drives, forcing teams to repeatedly rebuild work that already exists elsewhere in the firm.' },
   ] : [
-    { icon: 'ti-files', title: 'ขั้นตอนงานเอกสารแบบ Manual', desc: 'สัญญา รายงาน และจดหมายว่าจ้างยังคงเดินทางผ่านอีเมลและสายอนุมัติแบบกระดาษ ทำให้การส่งมอบล่าช้าและเกิดข้อผิดพลาดด้าน Version Control ที่บั่นทอนความเชื่อมั่นของลูกค้า' },
-    { icon: 'ti-eye-search', title: 'การมองเห็น Client Engagement ที่ไม่สม่ำเสมอ', desc: 'พาร์ตเนอร์และทีมดูแลบัญชีขาดมุมมองเดียวของสถานะงาน Deliverable และความเสี่ยง ทำให้ยากที่จะจับ Scope Creep หรือความสัมพันธ์ที่มีความเสี่ยงก่อนที่จะลุกลาม' },
-    { icon: 'ti-clock-dollar', title: 'ความแม่นยำของ Time-Tracking & Billing', desc: 'การติดตามชั่วโมงทำงานที่เรียกเก็บเงินได้อย่างแม่นยำในหลายสิบโปรเจกต์พร้อมกันมีความเสี่ยงต่อความผิดพลาดเมื่อใช้ Timesheet แบบ Manual นำไปสู่รายได้ที่รั่วไหลและใบแจ้งหนี้ที่ถูกโต้แย้ง' },
-    { icon: 'ti-network', title: 'Knowledge Silos ระหว่างทีมและสำนักงาน', desc: 'องค์ความรู้ Precedent และงานที่เคยส่งมอบถูกเก็บไว้ในกล่องอีเมลและไดรฟ์ส่วนตัวของแต่ละคน ทำให้ทีมต้องสร้างงานที่มีอยู่แล้วในองค์กรซ้ำแล้วซ้ำเล่า' },
+    { icon: 'ti-files', title: 'งานเอกสารที่ยังทำด้วยมือ', desc: 'สัญญา รายงาน และจดหมายว่าจ้างยังส่งผ่านอีเมลและสายอนุมัติแบบกระดาษ ทำให้ส่งมอบช้าและเกิดปัญหาเอกสารคนละเวอร์ชัน ซึ่งทำให้ลูกค้าเสียความเชื่อมั่น' },
+    { icon: 'ti-eye-search', title: 'มองเห็นสถานะงานลูกค้าไม่สม่ำเสมอ', desc: 'พาร์ตเนอร์และทีมดูแลลูกค้าไม่มีภาพรวมเดียวของสถานะงาน งานที่ต้องส่งมอบ และความเสี่ยง จึงจับปัญหางานบานปลายหรือความสัมพันธ์ที่เสี่ยงได้ยากก่อนจะลุกลาม' },
+    { icon: 'ti-clock-dollar', title: 'บันทึกเวลาและออกบิลให้แม่นยำ', desc: 'การติดตามชั่วโมงทำงานที่เรียกเก็บเงินได้ในหลายสิบโปรเจกต์พร้อมกัน เสี่ยงผิดพลาดเมื่อใช้ Timesheet ที่กรอกด้วยมือ ทำให้รายได้รั่วไหลและลูกค้าโต้แย้งใบแจ้งหนี้' },
+    { icon: 'ti-network', title: 'ความรู้ถูกเก็บแยกกันระหว่างทีมและสำนักงาน', desc: 'ความรู้ ตัวอย่างงานเก่า และงานที่เคยส่งมอบ ถูกเก็บในกล่องอีเมลและไดรฟ์ส่วนตัวของแต่ละคน ทีมจึงต้องทำงานที่องค์กรมีอยู่แล้วซ้ำแล้วซ้ำเล่า' },
   ]
 
   const metrics = [
-    { value: '$122B', label: isEN ? 'Global Legal & Professional Services Software Market by 2030' : 'มูลค่าตลาด Software สำหรับบริการวิชาชีพและกฎหมายทั่วโลกภายในปี 2030', source: 'Grand View Research Professional Services Software Report, 2024' },
-    { value: '25%', label: isEN ? 'Improvement in Billable-Hour Recovery from Automation' : 'การปรับปรุงการเรียกเก็บ Billable Hour ที่เพิ่มขึ้นจากระบบอัตโนมัติ', source: 'Deloitte Professional Services Automation Study, 2024' },
-    { value: '61%', label: isEN ? 'Of Firms Now Piloting AI-Assisted Document Tools' : 'ของบริษัทที่กำลังทดลองใช้เครื่องมือเอกสารที่ขับเคลื่อนด้วย AI', source: 'Thomson Reuters Future of Professionals Report, 2024' },
+    { value: '$122B', label: isEN ? 'Global Legal & Professional Services Software Market by 2030' : 'มูลค่าตลาดซอฟต์แวร์สำหรับบริการวิชาชีพและกฎหมายทั่วโลกภายในปี 2030', source: 'Grand View Research Professional Services Software Report, 2024' },
+    { value: '25%', label: isEN ? 'Improvement in Billable-Hour Recovery from Automation' : 'ชั่วโมงงานที่เรียกเก็บเงินได้เพิ่มขึ้นจากระบบอัตโนมัติ', source: 'Deloitte Professional Services Automation Study, 2024' },
+    { value: '61%', label: isEN ? 'Of Firms Now Piloting AI-Assisted Document Tools' : 'ของบริษัทที่กำลังทดลองใช้เครื่องมือเอกสารที่มี AI ช่วย', source: 'Thomson Reuters Future of Professionals Report, 2024' },
   ]
 
   const capabilities = isEN ? [
@@ -44,12 +44,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-briefcase', title: 'Project & Matter-Management Systems', desc: 'End-to-end tracking of engagements or legal matters, with task assignment, budget-to-actual monitoring, and milestone reporting for every team.' },
     { icon: 'ti-robot', title: 'AI-Assisted Research Tools', desc: 'AI copilots that accelerate research, summarize case law or market data, and draft first-pass deliverables for professionals to review and refine.' },
   ] : [
-    { icon: 'ti-address-book', title: 'Client-Engagement CRM Dashboards', desc: 'แดชบอร์ดรวมศูนย์ที่ให้พาร์ตเนอร์และทีมดูแลบัญชีมองเห็นสถานะงาน Deliverable สัญญาณความเสี่ยง และสุขภาพความสัมพันธ์ลูกค้าแบบ Real-time' },
-    { icon: 'ti-signature', title: 'Document Automation & E-Signature Systems', desc: 'ระบบสร้างเอกสารจากเทมเพลตพร้อม E-Signature Workflow ในตัว ที่ลดเวลาจัดทำสัญญาและจดหมายว่าจ้างจากหลักวันเหลือเพียงไม่กี่นาที' },
-    { icon: 'ti-clock-hour-4', title: 'Time-Tracking & Billing Platforms', desc: 'การบันทึกเวลาที่แม่นยำและใช้งานง่าย เชื่อมต่อกับการออกใบแจ้งหนี้และกฎ Revenue Recognition เพื่อขจัดข้อพิพาทด้าน Billing และลดรายได้ที่รั่วไหล' },
-    { icon: 'ti-books', title: 'Knowledge-Management Portals', desc: 'คลังข้อมูล Precedent, Playbook และงานที่เคยส่งมอบ ที่ค้นหาได้และควบคุมสิทธิ์การเข้าถึง เพื่อให้ทีมนำองค์ความรู้กลับมาใช้ซ้ำแทนการสร้างใหม่' },
-    { icon: 'ti-briefcase', title: 'Project & Matter-Management Systems', desc: 'ระบบติดตามโปรเจกต์หรือคดีความแบบ End-to-end พร้อมมอบหมายงาน ติดตามงบประมาณเทียบกับค่าใช้จ่ายจริง และรายงานความคืบหน้าให้ทุกทีม' },
-    { icon: 'ti-robot', title: 'AI-Assisted Research Tools', desc: 'AI Copilot ที่เร่งการค้นคว้า สรุปคำพิพากษาหรือข้อมูลตลาด และร่าง Deliverable เบื้องต้นให้ผู้เชี่ยวชาญตรวจสอบและปรับปรุงต่อ' },
+    { icon: 'ti-address-book', title: 'Client-Engagement CRM Dashboards', desc: 'แดชบอร์ดกลางให้พาร์ตเนอร์และทีมดูแลลูกค้าเห็นสถานะงาน งานที่ต้องส่งมอบ สัญญาณความเสี่ยง และสุขภาพความสัมพันธ์กับลูกค้าแบบเรียลไทม์' },
+    { icon: 'ti-signature', title: 'Document Automation & E-Signature Systems', desc: 'ระบบสร้างเอกสารจากเทมเพลตพร้อมเซ็นชื่ออิเล็กทรอนิกส์ในตัว ลดเวลาทำสัญญาและจดหมายว่าจ้างจากหลายวันเหลือไม่กี่นาที' },
+    { icon: 'ti-clock-hour-4', title: 'Time-Tracking & Billing Platforms', desc: 'บันทึกเวลาได้แม่นยำและใช้ง่าย เชื่อมกับการออกใบแจ้งหนี้และกฎการรับรู้รายได้ เพื่อลดข้อพิพาทเรื่องบิลและรายได้ที่รั่วไหล' },
+    { icon: 'ti-books', title: 'Knowledge-Management Portals', desc: 'คลังข้อมูลตัวอย่างงานเก่า Playbook และงานที่เคยส่งมอบ ค้นหาได้และควบคุมสิทธิ์เข้าถึง เพื่อให้ทีมนำความรู้กลับมาใช้ซ้ำ ไม่ต้องทำใหม่' },
+    { icon: 'ti-briefcase', title: 'Project & Matter-Management Systems', desc: 'ระบบติดตามโปรเจกต์หรือคดีตั้งแต่ต้นจนจบ มอบหมายงาน เทียบงบประมาณกับค่าใช้จ่ายจริง และรายงานความคืบหน้าให้ทุกทีม' },
+    { icon: 'ti-robot', title: 'AI-Assisted Research Tools', desc: 'AI Copilot ช่วยค้นคว้าให้เร็วขึ้น สรุปคำพิพากษาหรือข้อมูลตลาด และร่างงานเบื้องต้น ให้ผู้เชี่ยวชาญตรวจและปรับต่อ' },
   ]
 
   const techStack = ['React', 'Next.js', 'Node.js', 'PostgreSQL', 'DocuSign API', 'AI/ML', 'GraphQL', 'AWS', 'Redis', 'Elasticsearch', 'OAuth 2.0', 'Stripe', 'PDF Processing']
@@ -59,9 +59,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '02', title: 'Document Automation Platform', desc: 'Template-based contract and engagement-letter generation with integrated e-signature and approval routing, cutting turnaround time from days to hours.' },
     { no: '03', title: 'Time-Tracking & Billing System', desc: 'Low-friction time capture connected to automated invoicing and revenue-recognition rules, eliminating manual reconciliation and billing disputes.' },
   ] : [
-    { no: '01', title: 'Client-Engagement CRM', desc: 'แพลตฟอร์มรวมศูนย์ที่ติดตามทุกงานที่กำลังดำเนินการ Deliverable และสัญญาณสุขภาพความสัมพันธ์ ให้พาร์ตเนอร์มีแหล่งข้อมูลเดียวที่เชื่อถือได้ทั่วทั้งบริษัท' },
-    { no: '02', title: 'Document Automation Platform', desc: 'ระบบสร้างสัญญาและจดหมายว่าจ้างจากเทมเพลต พร้อม E-Signature และเส้นทางอนุมัติในตัว ลดเวลาดำเนินการจากหลักวันเหลือหลักชั่วโมง' },
-    { no: '03', title: 'Time-Tracking & Billing System', desc: 'การบันทึกเวลาที่ใช้งานง่าย เชื่อมต่อกับการออกใบแจ้งหนี้อัตโนมัติและกฎ Revenue Recognition ขจัดการกระทบยอดแบบ Manual และข้อพิพาทด้าน Billing' },
+    { no: '01', title: 'Client-Engagement CRM', desc: 'แพลตฟอร์มกลางที่ติดตามทุกงานที่กำลังทำ งานที่ต้องส่งมอบ และสัญญาณสุขภาพความสัมพันธ์ ให้พาร์ตเนอร์มีแหล่งข้อมูลเดียวที่เชื่อถือได้ทั้งบริษัท' },
+    { no: '02', title: 'Document Automation Platform', desc: 'ระบบสร้างสัญญาและจดหมายว่าจ้างจากเทมเพลต พร้อมเซ็นชื่ออิเล็กทรอนิกส์และสายอนุมัติในตัว ลดเวลาจากหลายวันเหลือไม่กี่ชั่วโมง' },
+    { no: '03', title: 'Time-Tracking & Billing System', desc: 'ระบบบันทึกเวลาที่ใช้ง่าย เชื่อมกับการออกใบแจ้งหนี้อัตโนมัติและกฎการรับรู้รายได้ ไม่ต้องกระทบยอดด้วยมือ และลดข้อพิพาทเรื่องบิล' },
   ]
 
   const heroVisual = (
@@ -181,7 +181,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
                   ? 'We help consulting, legal, and business-services firms build client-engagement CRMs, document-automation systems, time-tracking and billing platforms, and knowledge-management portals that recover billable hours and strengthen client relationships. Our solutions integrate cleanly with existing practice-management tools and combine deep workflow expertise with secure, auditable engineering.'
-                  : 'เราช่วยบริษัทที่ปรึกษา กฎหมาย และธุรกิจบริการ สร้าง Client-Engagement CRM ระบบ Document Automation แพลตฟอร์ม Time-Tracking และ Billing รวมถึง Knowledge-Management Portal ที่ช่วยเรียกคืนชั่วโมงทำงานที่เรียกเก็บเงินได้และเสริมสร้างความสัมพันธ์กับลูกค้า โซลูชันของเราเชื่อมต่อกับเครื่องมือ Practice Management เดิมได้อย่างราบรื่น ผสมผสานความเชี่ยวชาญด้าน Workflow กับวิศวกรรมที่ปลอดภัยและตรวจสอบได้'}
+                  : 'เราช่วยบริษัทที่ปรึกษา สำนักงานกฎหมาย และธุรกิจบริการ สร้าง CRM ดูแลลูกค้า ระบบสร้างเอกสารอัตโนมัติ แพลตฟอร์มบันทึกเวลาและออกบิล รวมถึงระบบคลังความรู้ ที่ช่วยเก็บชั่วโมงงานที่เรียกเก็บได้ไม่ให้หลุด และทำให้ความสัมพันธ์กับลูกค้าแน่นแฟ้นขึ้น ระบบของเราเชื่อมกับเครื่องมือบริหารงานสำนักงานเดิมได้ราบรื่น เราผสมความรู้ด้านขั้นตอนงานกับงานวิศวกรรมที่ปลอดภัยและตรวจสอบย้อนหลังได้'}
               </p>
             </div>
           </div>
@@ -199,7 +199,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Understanding the critical obstacles that drive digital transformation in this industry.'
-                : 'ความเข้าใจอุปสรรคสำคัญที่ผลักดันการปรับสู่ดิจิทัลในอุตสาหกรรมนี้'}
+                : 'ปัญหาหลักที่ธุรกิจในอุตสาหกรรมนี้ต้องเจอ'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -249,7 +249,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'โซลูชันที่พิสูจน์แล้วซึ่งเราสร้างเพื่อตอบโจทย์ที่สำคัญที่สุดของอุตสาหกรรมคุณ'}
+              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -272,12 +272,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Tech Stack' : 'เทคโนโลยีที่ใช้'}
             </p>
             <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
-              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้งาน'}
+              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้'}
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Industry-proven tools and frameworks we leverage to build robust solutions.'
-                : 'เครื่องมือและ Framework ที่พิสูจน์แล้วในอุตสาหกรรม ที่เราใช้สร้างโซลูชันที่แข็งแรงและเชื่อถือได้'}
+                : 'เครื่องมือและ Framework ที่เราเลือกใช้ เพราะมั่นคงและเชื่อถือได้'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -303,7 +303,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างโปรเจกต์ที่เราส่งมอบจริงให้กับลูกค้าในอุตสาหกรรมนี้'}
+              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างงานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -343,7 +343,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link

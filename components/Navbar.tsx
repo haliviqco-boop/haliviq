@@ -8,8 +8,8 @@ type Props = { lang: Lang; tr: T; transparent?: boolean }
 
 const servicesMenuTh = {
   'กลยุทธ์': [
-    {label:'การเปลี่ยนแปลงสู่ดิจิทัล',href:'/services/digital-transformation'},
-    {label:'ค้นหาแนวทางผลิตภัณฑ์',href:'/services/product-discovery'},
+    {label:'ปรับองค์กรสู่ดิจิทัล',href:'/services/digital-transformation'},
+    {label:'หาแนวทางผลิตภัณฑ์',href:'/services/product-discovery'},
     {label:'กลยุทธ์การเติบโต',href:'/services/growth-strategy'},
     {label:'ข้อมูลและการวิเคราะห์',href:'/services/data-analytics'},
     {label:'วิจัยผู้ใช้งาน',href:'/services/user-research'},
@@ -17,7 +17,7 @@ const servicesMenuTh = {
   'ดีไซน์': [
     {label:'ออกแบบ UX / UI',href:'/services/ux-ui-design'},
     {label:'ระบบดีไซน์',href:'/services/design-systems'},
-    {label:'สร้าง Prototype',href:'/services/rapid-prototyping'},
+    {label:'ทำ Prototype',href:'/services/rapid-prototyping'},
     {label:'ประสบการณ์แบรนด์',href:'/services/brand-experience'},
   ],
   'พัฒนาซอฟต์แวร์': [
@@ -25,7 +25,7 @@ const servicesMenuTh = {
     {label:'แอปมือถือ iOS & Android',href:'/services/mobile-apps'},
     {label:'Backend & API',href:'/services/backend-api'},
     {label:'Cloud & DevOps',href:'/services/cloud-devops'},
-    {label:'ทดสอบระบบ QA',href:'/services/qa-testing'},
+    {label:'ทดสอบระบบ (QA)',href:'/services/qa-testing'},
     {label:'ระบบ ERP / CRM',href:'/services/erp-crm'},
   ],
   'AI & นวัตกรรม': [
@@ -81,13 +81,13 @@ const servicesMenuEn = {
 }
 
 const flagshipServicesTh = [
-  { icon:'ti-code', title:'พัฒนาเว็บไซต์', href:'/services/web-development', desc:'เว็บแอปพลิเคชันระดับ Production ที่มั่นคง ปลอดภัย และดูแลรักษาง่ายในระยะยาว' },
-  { icon:'ti-robot', title:'AI Agent & Generative AI', href:'/services/ai', desc:'AI Agent และระบบ RAG ที่ทำงานได้จริง ไม่ใช่แค่ Demo บนสไลด์' },
-  { icon:'ti-device-mobile', title:'พัฒนาแอปมือถือ', href:'/services/mobile-apps', desc:'แอป Native และ Cross-platform ที่ลื่นไหลใช้งานง่าย พร้อม Architecture ที่ขยายได้' },
-  { icon:'ti-chart-dots-3', title:'Data Analytics & Engineering', href:'/services/data-analytics', desc:'Pipeline และ Dashboard ที่แปลงข้อมูลให้เป็นการตัดสินใจที่วัดผลได้จริง' },
-  { icon:'ti-palette', title:'UI/UX & Product Design', href:'/services/ux-ui-design', desc:'งานวิจัยผู้ใช้และ Design System ที่ทำให้ผลิตภัณฑ์ซับซ้อนใช้งานง่ายขึ้น' },
-  { icon:'ti-replace', title:'Digital Transformation', href:'/services/digital-transformation', desc:'แผนปรับองค์กรสู่ดิจิทัลที่จับต้องได้ เชื่อมเทคโนโลยี กระบวนการ และทีมเข้าด้วยกัน' },
-  { icon:'ti-bulb', title:'AI Workshops', href:'/services/automation', desc:'Workshop ลงมือทำจริง พาทีมของคุณนำ AI ไปใช้ในงานประจำวัน' },
+  { icon:'ti-code', title:'พัฒนาเว็บไซต์', href:'/services/web-development', desc:'เว็บแอปที่พร้อมใช้งานจริง มั่นคง ปลอดภัย และดูแลต่อได้ง่าย' },
+  { icon:'ti-robot', title:'AI Agent & Generative AI', href:'/services/ai', desc:'AI Agent และระบบ RAG ที่ใช้งานได้จริง ไม่ใช่แค่ Demo บนสไลด์' },
+  { icon:'ti-device-mobile', title:'พัฒนาแอปมือถือ', href:'/services/mobile-apps', desc:'แอป Native และ Cross-platform ที่ลื่นไหล ใช้งานง่าย และขยายต่อได้' },
+  { icon:'ti-chart-dots-3', title:'Data Analytics & Engineering', href:'/services/data-analytics', desc:'Pipeline และ Dashboard ที่เปลี่ยนข้อมูลให้ช่วยตัดสินใจและวัดผลได้' },
+  { icon:'ti-palette', title:'UI/UX & Product Design', href:'/services/ux-ui-design', desc:'วิจัยผู้ใช้และ Design System ที่ทำให้ผลิตภัณฑ์ซับซ้อนใช้งานง่ายขึ้น' },
+  { icon:'ti-replace', title:'Digital Transformation', href:'/services/digital-transformation', desc:'แผนปรับองค์กรสู่ดิจิทัลที่ทำได้จริง เชื่อมเทคโนโลยี ขั้นตอนทำงาน และทีมเข้าด้วยกัน' },
+  { icon:'ti-bulb', title:'AI Workshops', href:'/services/automation', desc:'Workshop ลงมือทำจริง ช่วยให้ทีมของคุณใช้ AI ในงานประจำวันได้' },
 ]
 
 const flagshipServicesEn = [
@@ -101,19 +101,19 @@ const flagshipServicesEn = [
 ]
 
 const flagshipIndustriesTh = [
-  { icon: 'ti-building-bank', title: 'FinTech & ธนาคาร', href: '/industries/fintech', desc: 'Digital Banking และ Payment ที่ปลอดภัยและ Compliant' },
-  { icon: 'ti-heartbeat', title: 'สุขภาพ', href: '/industries/healthcare', desc: 'เทคโนโลยีที่ยกระดับการดูแลผู้ป่วยและงานวิจัยทางการแพทย์' },
-  { icon: 'ti-shopping-cart', title: 'ค้าปลีก & อีคอมเมิร์ซ', href: '/industries/retail', desc: 'สร้างประสบการณ์ช้อปปิ้งที่น่าดึงดูดและเพิ่ม Conversion' },
+  { icon: 'ti-building-bank', title: 'FinTech & ธนาคาร', href: '/industries/fintech', desc: 'Digital Banking และระบบชำระเงินที่ปลอดภัยและเป็นไปตามกฎระเบียบ' },
+  { icon: 'ti-heartbeat', title: 'สุขภาพ', href: '/industries/healthcare', desc: 'เทคโนโลยีที่ช่วยดูแลผู้ป่วยและสนับสนุนงานวิจัยทางการแพทย์' },
+  { icon: 'ti-shopping-cart', title: 'ค้าปลีก & อีคอมเมิร์ซ', href: '/industries/retail', desc: 'สร้างประสบการณ์ช้อปปิ้งที่น่าใช้ และช่วยให้ลูกค้าซื้อมากขึ้น' },
   { icon: 'ti-building-skyscraper', title: 'อสังหาริมทรัพย์', href: '/industries/real-estate', desc: 'แพลตฟอร์มดิจิทัลสำหรับค้นหา จัดการ และขายอสังหาฯ' },
-  { icon: 'ti-school', title: 'การศึกษา', href: '/industries/education', desc: 'ยกระดับการเรียนรู้ด้วยเทคโนโลยีการศึกษาสมัยใหม่' },
-  { icon: 'ti-truck-delivery', title: 'โลจิสติกส์', href: '/industries/logistics', desc: 'ระบบซัพพลายเชน ขนส่ง และคลังสินค้าที่ฉลาดขึ้น' },
+  { icon: 'ti-school', title: 'การศึกษา', href: '/industries/education', desc: 'ใช้เทคโนโลยีการศึกษาสมัยใหม่ช่วยให้เรียนรู้ได้ดีขึ้น' },
+  { icon: 'ti-truck-delivery', title: 'โลจิสติกส์', href: '/industries/logistics', desc: 'ระบบซัพพลายเชน ขนส่ง และคลังสินค้าที่ทำงานฉลาดขึ้น' },
 ]
 
 const workMenuTh = [
-  { title: 'Digital Banking Super App', href: '/work', client: 'ธนาคารชั้นนำ', desc: 'รีดีไซน์ Mobile Banking สำหรับผู้ใช้ 4 ล้านคน' },
-  { title: 'Patient Digital Ecosystem', href: '/work', client: 'กลุ่มโรงพยาบาล', desc: 'ระบบสุขภาพดิจิทัลครบวงจร ตั้งแต่ค้นหาแพทย์จนถึงจองนัดหมาย' },
-  { title: 'Omnichannel Retail Platform', href: '/work', client: 'เครือค้าปลีก', desc: 'Unified Commerce เชื่อม 2,000+ สาขาเข้าด้วยกัน' },
-  { title: 'AI Document Intelligence', href: '/work', client: 'บริษัทประกันภัย', desc: 'AI อ่านเอกสารอัตโนมัติ ลด Manual Work ลง 80%' },
+  { title: 'Digital Banking Super App', href: '/work', client: 'ธนาคารชั้นนำ', desc: 'ออกแบบ Mobile Banking ใหม่ สำหรับผู้ใช้ 4 ล้านคน' },
+  { title: 'Patient Digital Ecosystem', href: '/work', client: 'กลุ่มโรงพยาบาล', desc: 'ระบบสุขภาพดิจิทัล ตั้งแต่ค้นหาแพทย์จนถึงจองนัด' },
+  { title: 'Omnichannel Retail Platform', href: '/work', client: 'เครือค้าปลีก', desc: 'Unified Commerce เชื่อมกว่า 2,000 สาขาเข้าด้วยกัน' },
+  { title: 'AI Document Intelligence', href: '/work', client: 'บริษัทประกันภัย', desc: 'AI อ่านเอกสารอัตโนมัติ ลดงานที่ต้องทำเองลง 80%' },
 ]
 
 const workMenuEn = [
@@ -124,9 +124,9 @@ const workMenuEn = [
 ]
 
 const insightsMenuTh = [
-  { title: 'บทความ', href: '/blog', desc: 'บทความ มุมมอง และความรู้เชิงลึกจากทีมผู้เชี่ยวชาญของเรา' },
-  { title: 'Case Studies', href: '/case-studies', desc: 'ตัวอย่างจริงที่เราช่วยลูกค้าแก้โจทย์ที่ซับซ้อน' },
-  { title: 'Today I Learned', href: '/today-i-learned', desc: 'บันทึกสั้นๆ เชิงปฏิบัติจากทีมวิศวกรและดีไซเนอร์ของเรา' },
+  { title: 'บทความ', href: '/blog', desc: 'บทความ มุมมอง และความรู้เชิงลึกจากทีมของเรา' },
+  { title: 'Case Studies', href: '/case-studies', desc: 'ตัวอย่างจริงที่เราช่วยลูกค้าแก้ปัญหาซับซ้อน' },
+  { title: 'Today I Learned', href: '/today-i-learned', desc: 'บันทึกสั้นๆ จากการทำงานจริงของวิศวกรและดีไซเนอร์ในทีม' },
 ]
 
 const insightsMenuEn = [
@@ -145,8 +145,8 @@ const flagshipIndustriesEn = [
 ]
 
 const segmentsTh = [
-  { icon:'ti-building-skyscraper', title:'Enterprise', desc:'ทีมงานครบวงจรสำหรับแพลตฟอร์มซับซ้อน พร้อมมาตรฐานความปลอดภัยและกระบวนการที่องค์กรใหญ่ต้องการ' },
-  { icon:'ti-rocket', title:'ธุรกิจขนาดเล็ก & Startup', desc:'งานที่กระชับตรงจุด เราช่วยตัดสิ่งที่ไม่จำเป็นออก ไม่ใช่คุณภาพ งบไม่มากก็ได้โปรดักต์ที่แข็งแรง' },
+  { icon:'ti-building-skyscraper', title:'Enterprise', desc:'ทีมที่ดูแลครบสำหรับแพลตฟอร์มซับซ้อน ตามมาตรฐานความปลอดภัยและขั้นตอนที่องค์กรใหญ่ต้องการ' },
+  { icon:'ti-rocket', title:'ธุรกิจขนาดเล็ก & Startup', desc:'งานที่กระชับตรงจุด เราตัดสิ่งที่ไม่จำเป็นออก แต่ไม่ลดคุณภาพ งบไม่มากก็ได้ผลิตภัณฑ์ที่แข็งแรง' },
 ]
 
 const segmentsEn = [

@@ -32,17 +32,17 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const isEN = params.lang === 'en'
   const prefix = `/${params.lang}`
 
-  const badge    = isEN ? 'AI & Innovation / AI Development'  : 'AI & นวัตกรรม / AI Development'
+  const badge    = isEN ? 'AI & Innovation / AI Development'  : 'AI & นวัตกรรม / พัฒนา AI'
   const title    = isEN ? 'Smarter Products'  : 'ผลิตภัณฑ์ที่ฉลาดขึ้น'
   const subtitle = isEN ? 'Powered by AI'    : 'ด้วยพลัง AI'
-  const heroDesc = isEN ? 'AI agents, RAG systems, and LLM products that automate real work — not demos that never leave the slide deck.'  : 'เอเจนต์ AI, ระบบ RAG และผลิตภัณฑ์ LLM ที่ทำงานอัตโนมัติได้จริง ไม่ใช่แค่ Demo ที่จบอยู่ใน Slide'
-  const whyTitle = isEN ? 'Why AI is no longer optional'    : 'ทำไม AI ไม่ใช่ตัวเลือกอีกต่อไป'
-  const whyDesc  = isEN ? 'Early AI adopters are compounding advantages — faster service, lower costs, and personalisation at a scale humans cannot match.'  : 'บริษัทที่นำ AI มาใช้ก่อนกำลังสะสมความได้เปรียบแบบทบต้น ทั้งบริการที่เร็วขึ้น ต้นทุนที่ลดลง และ Personalization ในระดับที่มนุษย์ทำไม่ได้'
-  const ctaTitle = isEN ? 'Ready to build with AI?'    : 'พร้อมสร้างด้วย AI ไหม?'
-  const ctaDesc  = isEN ? 'Start with a free AI Opportunity Workshop. We will map the highest-value use cases for your business.'   : 'เริ่มด้วย AI Opportunity Workshop ฟรี เราจะ Map Use Case ที่คุ้มค่าที่สุดสำหรับธุรกิจของคุณ'
+  const heroDesc = isEN ? 'AI agents, RAG systems, and LLM products that automate real work — not demos that never leave the slide deck.'  : 'เอเจนต์ AI, ระบบ RAG และผลิตภัณฑ์ LLM ที่ช่วยทำงานแทนคนได้จริง ไม่ใช่แค่ตัวอย่างที่ใช้โชว์ในสไลด์'
+  const whyTitle = isEN ? 'Why AI is no longer optional'    : 'ทำไมตอนนี้ธุรกิจควรใช้ AI'
+  const whyDesc  = isEN ? 'Early AI adopters are compounding advantages — faster service, lower costs, and personalisation at a scale humans cannot match.'  : 'ธุรกิจที่เริ่มใช้ AI ก่อนจะได้เปรียบมากขึ้นเรื่อยๆ ทั้งบริการที่เร็วขึ้น ต้นทุนที่ต่ำลง และการนำเสนอที่ตรงกับลูกค้าแต่ละคนในระดับที่คนทำเองไม่ไหว'
+  const ctaTitle = isEN ? 'Ready to build with AI?'    : 'พร้อมสร้างด้วย AI หรือยัง?'
+  const ctaDesc  = isEN ? 'Start with a free AI Opportunity Workshop. We will map the highest-value use cases for your business.'   : 'เริ่มด้วย AI Opportunity Workshop ฟรี เราจะช่วยหางานที่คุ้มค่าที่สุดสำหรับธุรกิจของคุณ'
   const overviewText = isEN
     ? "We build AI systems that deliver measurable value — not chat demos that never leave the slide deck. Our work spans multi-step agents that plan and call tools, RAG knowledge assistants grounded in your own data, copilots embedded inside your existing products, and the evaluation pipelines that keep them reliable in production. We work with OpenAI, Anthropic Claude, and Google Gemini, building on LangChain and LangGraph, and we own the full lifecycle from an initial AI audit through agent design, integration, deployment, and ongoing monitoring."
-    : 'เราสร้างระบบ AI ที่สร้างมูลค่าที่วัดผลได้จริง ไม่ใช่แค่ Chat Demo ที่จบอยู่ใน Slide งานของเราครอบคลุมตั้งแต่เอเจนต์ AI แบบหลายขั้นตอนที่วางแผนและเรียกใช้ Tool ได้เอง, RAG Knowledge Assistant ที่อ้างอิงจากข้อมูลของคุณเอง, Copilot ที่ฝังอยู่ใน Product ที่มีอยู่แล้ว ไปจนถึง Evaluation Pipeline ที่ทำให้ระบบเชื่อถือได้เมื่อใช้งานจริง เราทำงานกับ OpenAI, Anthropic Claude และ Google Gemini โดยใช้ LangChain และ LangGraph เป็นรากฐาน และดูแลตลอดทั้งวงจรตั้งแต่ AI Audit เริ่มต้น ออกแบบเอเจนต์ Integration การ Deploy จนถึงการ Monitor อย่างต่อเนื่อง'
+    : 'เราสร้างระบบ AI ที่วัดผลได้จริง ไม่ใช่แค่แชตตัวอย่างที่ใช้โชว์ในสไลด์ งานของเราครอบคลุมเอเจนต์ AI ที่วางแผนและเรียกใช้เครื่องมือได้เองหลายขั้นตอน, ผู้ช่วยค้นความรู้แบบ RAG ที่ตอบจากข้อมูลของคุณเอง, Copilot ที่ฝังอยู่ในผลิตภัณฑ์ที่คุณใช้อยู่แล้ว และระบบทดสอบ (Evaluation Pipeline) ที่ช่วยให้ระบบเชื่อถือได้เมื่อใช้งานจริง เราทำงานกับ OpenAI, Anthropic Claude และ Google Gemini โดยใช้ LangChain และ LangGraph และดูแลครบทุกช่วง ตั้งแต่ตรวจประเมิน AI ออกแบบเอเจนต์ เชื่อมระบบ นำขึ้นใช้งาน ไปจนถึงติดตามผลต่อเนื่อง'
 
   const heroBullets = isEN ? [
       'Identify the highest-value AI use cases for your business',
@@ -51,10 +51,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'Monitor model performance and retrain continuously',
       'Ensure ethical, explainable, and secure AI deployment',
     ] : [
-      'ระบุ Use Case ที่สร้างมูลค่าสูงสุดสำหรับธุรกิจของคุณ',
-      'ออกแบบและ Train โมเดลบนข้อมูลของคุณเอง',
-      'Integrate AI เข้ากับ Product และกระบวนการที่มีอยู่',
-      'ติดตาม Performance ของโมเดลและ Retrain อย่างต่อเนื่อง',
+      'หางานที่ AI ช่วยได้และสร้างมูลค่าสูงสุดให้ธุรกิจของคุณ',
+      'ออกแบบและฝึกโมเดลจากข้อมูลของคุณเอง',
+      'ใส่ AI เข้าไปในผลิตภัณฑ์และขั้นตอนงานที่มีอยู่',
+      'ติดตามผลของโมเดลและฝึกใหม่อย่างต่อเนื่อง',
       'ดูแลให้ AI มีความโปร่งใส อธิบายได้ และปลอดภัย',
     ]
   const whyPoints   = isEN ? [
@@ -65,10 +65,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'Generative AI compresses weeks of content, code, and design work into hours',
     ] : [
       'บริษัทที่ใช้ AI ลดต้นทุนดำเนินงานได้เฉลี่ย 22% ในปีแรก',
-      'ML Personalization เพิ่ม Conversion Rate ได้ 3-5 เท่าเทียบกับการแบ่งกลุ่มด้วยมือ',
-      'AI ดูแล Customer Support Tier-1 ได้ตลอด 24/7 ลด Response Time จากชั่วโมงเหลือวินาที',
-      'Predictive Maintenance ช่วยลด Downtime ของเครื่องจักรได้ถึง 50%',
-      'Generative AI เร่ง Workflow ด้าน Content, Code และ Design ย่นเวลาสัปดาห์เหลือชั่วโมง',
+      'ระบบแนะนำด้วย ML เพิ่มอัตราการซื้อได้ 3-5 เท่าเมื่อเทียบกับการแบ่งกลุ่มลูกค้าด้วยมือ',
+      'AI ดูแลงานซัพพอร์ตลูกค้าด่านแรกได้ตลอด 24/7 ลดเวลาตอบจากหลายชั่วโมงเหลือไม่กี่วินาที',
+      'การซ่อมบำรุงเชิงพยากรณ์ช่วยลดเวลาเครื่องจักรหยุดทำงานได้ถึง 50%',
+      'Generative AI ช่วยย่นงานเนื้อหา โค้ด และดีไซน์ จากหลายสัปดาห์เหลือไม่กี่ชั่วโมง',
     ]
   const outcomes    = isEN ? [
       {stat: '22%', label: 'Operational Cost Reduction', desc: 'Average year-one result'},
@@ -77,9 +77,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {stat: '50%', label: 'Less Downtime', desc: 'With predictive maintenance'}
     ] : [
       {stat: '22%', label: 'ลดต้นทุนดำเนินงาน', desc: 'ผลเฉลี่ยในปีแรก'},
-      {stat: '5x', label: 'Conversion Rate เพิ่มขึ้น', desc: 'ด้วย ML Personalization'},
-      {stat: '24/7', label: 'AI Customer Support', desc: 'ไม่มี Downtime'},
-      {stat: '50%', label: 'ลด Downtime', desc: 'ด้วย Predictive Maintenance'}
+      {stat: '5x', label: 'อัตราการซื้อเพิ่มขึ้น', desc: 'ด้วยระบบแนะนำแบบ ML'},
+      {stat: '24/7', label: 'AI Customer Support', desc: 'ให้บริการไม่หยุด'},
+      {stat: '50%', label: 'ลดเวลาเครื่องหยุดทำงาน', desc: 'ด้วยการซ่อมบำรุงเชิงพยากรณ์'}
     ]
   const features    = isEN ? [
       {icon: 'ti-brain', title: 'AI Strategy & Use Case Discovery', desc: 'Identify AI use cases with the highest ROI for your business, analyse data readiness, and build the business case.'},
@@ -89,12 +89,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {icon: 'ti-file-text-ai', title: 'Document Intelligence', desc: 'Automatically read and extract data from documents, eliminating manual data entry and reducing errors.'},
       {icon: 'ti-chart-line', title: 'Predictive Analytics', desc: 'Forecast sales, churn, demand, or risk in advance using production-grade ML models.'}
     ] : [
-      {icon: 'ti-brain', title: 'AI Strategy & Use Case Discovery', desc: 'ระบุ Use Case AI ที่สร้างผลลัพธ์สูงสุดสำหรับธุรกิจของคุณ วิเคราะห์ความพร้อมของข้อมูลและ ROI ที่คาดหวัง'},
-      {icon: 'ti-robot', title: 'Custom ML Model Development', desc: 'ออกแบบและ Train โมเดล ML ที่ตรงกับปัญหาเฉพาะของคุณ ไม่ใช่ Off-the-shelf Solution'},
-      {icon: 'ti-message-chatbot', title: 'Conversational AI & Chatbot', desc: 'สร้าง AI Assistant ที่เข้าใจบริบทธุรกิจ ตอบคำถามได้แม่นยำ และเชื่อมต่อกับระบบที่มีอยู่'},
-      {icon: 'ti-eye', title: 'Computer Vision', desc: 'วิเคราะห์ภาพและวิดีโอ ตรวจสอบคุณภาพ นับสินค้า หรือจดจำใบหน้าสำหรับ Security'},
-      {icon: 'ti-file-text-ai', title: 'Document Intelligence', desc: 'อ่านและแยกข้อมูลจากเอกสารอัตโนมัติ ลด Manual Data Entry และ Error Rate'},
-      {icon: 'ti-chart-line', title: 'Predictive Analytics', desc: 'พยากรณ์ยอดขาย Churn ความต้องการสินค้า หรือความเสี่ยงล่วงหน้าด้วย ML Models'}
+      {icon: 'ti-brain', title: 'AI Strategy & Use Case Discovery', desc: 'ระบุงานที่ AI ช่วยได้และคุ้มค่าที่สุดสำหรับธุรกิจของคุณ ประเมินความพร้อมของข้อมูลและผลตอบแทนที่คาดไว้'},
+      {icon: 'ti-robot', title: 'Custom ML Model Development', desc: 'ออกแบบและฝึกโมเดล ML ให้ตรงกับปัญหาของคุณ ไม่ใช่โซลูชันสำเร็จรูปทั่วไป'},
+      {icon: 'ti-message-chatbot', title: 'Conversational AI & Chatbot', desc: 'สร้างผู้ช่วย AI ที่เข้าใจบริบทธุรกิจ ตอบได้แม่นยำ และเชื่อมกับระบบที่มีอยู่'},
+      {icon: 'ti-eye', title: 'Computer Vision', desc: 'วิเคราะห์ภาพและวิดีโอ เพื่อตรวจคุณภาพ นับสินค้า หรือจดจำใบหน้าเพื่อความปลอดภัย'},
+      {icon: 'ti-file-text-ai', title: 'Document Intelligence', desc: 'อ่านและดึงข้อมูลจากเอกสารอัตโนมัติ ลดการคีย์ข้อมูลด้วยมือและลดข้อผิดพลาด'},
+      {icon: 'ti-chart-line', title: 'Predictive Analytics', desc: 'พยากรณ์ยอดขาย ลูกค้าที่จะเลิกใช้ ความต้องการสินค้า หรือความเสี่ยงล่วงหน้า ด้วยโมเดล ML'}
     ]
   const steps       = isEN ? [
       {no: '01', title: 'AI Opportunity Assessment', desc: 'Analyse business processes to find the highest-impact, most feasible AI use cases.'},
@@ -103,20 +103,20 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {no: '04', title: 'Integration & Deployment', desc: 'Deploy models to production and integrate with existing systems.'},
       {no: '05', title: 'Monitor & Improve', desc: 'Track model performance, detect drift, and retrain when necessary.'}
     ] : [
-      {no: '01', title: 'AI Opportunity Assessment', desc: 'วิเคราะห์กระบวนการธุรกิจเพื่อหา Use Case AI ที่ Impact สูงสุดและ Feasible ที่สุด'},
-      {no: '02', title: 'Data Audit & Preparation', desc: 'ประเมินคุณภาพและปริมาณข้อมูล เตรียม Dataset สำหรับ Training'},
-      {no: '03', title: 'Model Development & Testing', desc: 'สร้างและ Test โมเดล ปรับ Hyperparameter และ Validate ความแม่นยำ'},
-      {no: '04', title: 'Integration & Deployment', desc: 'นำโมเดลไปใช้จริงใน Production เชื่อมต่อกับระบบที่มีอยู่'},
-      {no: '05', title: 'Monitor & Improve', desc: 'ติดตาม Performance ของโมเดล Detect Drift และ Retrain เมื่อจำเป็น'}
+      {no: '01', title: 'AI Opportunity Assessment', desc: 'วิเคราะห์ขั้นตอนการทำงานของธุรกิจ เพื่อหางาน AI ที่ให้ผลมากที่สุดและทำได้จริงที่สุด'},
+      {no: '02', title: 'Data Audit & Preparation', desc: 'ประเมินคุณภาพและปริมาณข้อมูล แล้วเตรียมชุดข้อมูลสำหรับฝึกโมเดล'},
+      {no: '03', title: 'Model Development & Testing', desc: 'สร้างและทดสอบโมเดล ปรับค่า Hyperparameter และตรวจความแม่นยำ'},
+      {no: '04', title: 'Integration & Deployment', desc: 'นำโมเดลขึ้นใช้งานจริงและเชื่อมกับระบบที่มีอยู่'},
+      {no: '05', title: 'Monitor & Improve', desc: 'ติดตามผลของโมเดล ตรวจจับ Drift และฝึกใหม่เมื่อจำเป็น'}
     ]
   const caseStudies = isEN ? [
       {tag: 'FinTech · Bangkok', title: 'AI Document Processing, 93% Faster', desc: 'OCR + Rule Engine model reads loan documents automatically, cutting manual work 80%.', result: 'Processing Time down 93%'},
       {tag: 'Healthcare · Bangkok', title: 'Medical Chatbot for Initial Triage', desc: 'AI answers health questions, screens symptoms, and books appointments automatically.', result: 'Doctor workload reduced 40%'},
       {tag: 'Retail · Nationwide', title: 'AI Product Recommendation, +32% Revenue', desc: 'Personalised recommendation engine tailored to each individual customer.', result: 'Revenue up 32%'}
     ] : [
-      {tag: 'FinTech · กรุงเทพฯ', title: 'AI อ่านเอกสารกู้เงิน ลด Processing 93%', desc: 'Train โมเดล OCR + Rule Engine อ่านเอกสารอัตโนมัติ ลด Manual Work 80%', result: 'Processing Time ลดลง 93%'},
-      {tag: 'Healthcare · กรุงเทพฯ', title: 'Chatbot แพทย์ตอบคำถามเบื้องต้น', desc: 'AI ตอบคำถามสุขภาพเบื้องต้น คัดกรองอาการ และนัดหมายแพทย์อัตโนมัติ', result: 'ลด Workload แพทย์ 40%'},
-      {tag: 'Retail · ทั่วประเทศ', title: 'AI แนะนำสินค้า เพิ่ม Revenue 32%', desc: 'Recommendation Engine ที่ Personalize สำหรับลูกค้าแต่ละคน', result: 'Revenue เพิ่ม 32%'}
+      {tag: 'FinTech · กรุงเทพฯ', title: 'AI อ่านเอกสารกู้เงิน ลดเวลาประมวลผล 93%', desc: 'ฝึกโมเดล OCR ร่วมกับ Rule Engine ให้อ่านเอกสารอัตโนมัติ ลดงานมือ 80%', result: 'เวลาประมวลผลลดลง 93%'},
+      {tag: 'Healthcare · กรุงเทพฯ', title: 'แชตบอตคัดกรองเบื้องต้นด้านการแพทย์', desc: 'AI ตอบคำถามสุขภาพเบื้องต้น คัดกรองอาการ และนัดหมายแพทย์อัตโนมัติ', result: 'ลดภาระงานแพทย์ 40%'},
+      {tag: 'Retail · ทั่วประเทศ', title: 'AI แนะนำสินค้า รายได้เพิ่ม 32%', desc: 'ระบบแนะนำสินค้าที่ปรับให้เหมาะกับลูกค้าแต่ละคน', result: 'รายได้เพิ่ม 32%'}
     ]
   const faqs        = isEN ? [
       {q: 'How much data do we need to start?', a: 'It depends on the use case. Some can start with a few hundred rows, others need tens of thousands. We assess this in the Discovery phase.'},
@@ -124,10 +124,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {q: 'Will AI replace our staff?', a: 'The goal is to augment, not replace. AI handles repetitive tasks so your team can focus on creative and decision-making work.'},
       {q: 'How much does an AI project cost?', a: 'It depends on complexity. A Proof of Concept starts at a few hundred thousand THB; a full production system can reach several million. Contact us for an estimate.'}
     ] : [
-      {q: 'ต้องมีข้อมูลเท่าไหร่ถึงจะเริ่มได้?', a: 'ขึ้นอยู่กับ Use Case ครับ บางกรณีเริ่มได้ด้วยข้อมูลหลักร้อยแถว บางกรณีต้องการหลักหมื่น เราประเมินให้ในขั้นตอน Assessment'},
-      {q: 'ใช้ AI สำเร็จรูปหรือสร้างเอง?', a: 'ทั้งสองอย่างครับ ถ้า Off-the-shelf ตอบโจทย์ก็ใช้เลย ถ้าต้องการความแม่นยำสูงหรือข้อมูล Sensitive เราสร้าง Custom Model'},
-      {q: 'AI จะแทนที่พนักงานไหม?', a: 'เป้าหมายคือ Augment ไม่ใช่ Replace ครับ AI จัดการงาน Repetitive ให้ทีมโฟกัสงานที่ใช้ความคิดสร้างสรรค์และการตัดสินใจ'},
-      {q: 'ค่าใช้จ่าย AI Project เท่าไหร่?', a: 'ขึ้นอยู่กับความซับซ้อนครับ Proof of Concept เริ่มต้นที่ไม่กี่แสน Full Production System อาจถึงหลักล้าน ติดต่อมาเพื่อ Estimate'}
+      {q: 'ต้องมีข้อมูลเท่าไหร่ถึงจะเริ่มได้?', a: 'ขึ้นอยู่กับงานที่ทำ บางงานเริ่มได้ด้วยข้อมูลหลักร้อยแถว บางงานต้องใช้หลักหมื่น เราจะประเมินให้ในขั้นตอนประเมินความพร้อม'},
+      {q: 'ใช้ AI สำเร็จรูปหรือสร้างเอง?', a: 'ได้ทั้งสองแบบ ถ้าของสำเร็จรูปตอบโจทย์ก็ใช้เลย ถ้าต้องการความแม่นยำสูงหรือต้องดูแลข้อมูลอ่อนไหว เราจะสร้างโมเดลเฉพาะให้'},
+      {q: 'AI จะแทนที่พนักงานไหม?', a: 'เป้าหมายคือช่วยเสริมงานคน ไม่ใช่มาแทนที่ AI รับงานซ้ำๆ เพื่อให้ทีมไปทำงานที่ต้องใช้ความคิดสร้างสรรค์และการตัดสินใจ'},
+      {q: 'ค่าใช้จ่ายโปรเจกต์ AI เท่าไหร่?', a: 'ขึ้นอยู่กับความซับซ้อน งานทดลองแนวคิด (Proof of Concept) เริ่มที่ไม่กี่แสนบาท ระบบเต็มรูปแบบอาจถึงหลักล้าน ติดต่อมาเพื่อประเมินราคา'}
     ]
   const related     = isEN ? [
       {label: 'Data & Analytics', href: '/services/data-analytics'},
@@ -176,7 +176,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         style={{ background: '#1B1A33', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 20px 50px -10px rgba(0,0,0,0.6)' }}
       >
         <div className="flex items-center justify-between mb-3">
-          <span className="text-[10px] tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.85)' }}>{isEN ? 'Eval Score' : 'คะแนน Evaluation'}</span>
+          <span className="text-[10px] tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.85)' }}>{isEN ? 'Eval Score' : 'คะแนนการทดสอบ'}</span>
           <span className="w-2 h-2 rounded-full" style={{ background: 'var(--lime)' }} />
         </div>
         <div className="flex items-center gap-3 mb-3">
@@ -203,10 +203,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-database-search', title: 'RAG & Knowledge Systems', desc: 'Retrieval-augmented generation over your docs, tickets, and databases with grounding and citations.' },
     { icon: 'ti-adjustments-cog', title: 'Agentic Automation', desc: 'Human-in-the-loop automations that reduce manual work while keeping high-stakes decisions reviewable.' },
   ] : [
-    { icon: 'ti-robot', title: 'AI Agents & Tool Use', desc: 'เอเจนต์ AI แบบหลายขั้นตอนที่วางแผน เรียกใช้ Tool และ API กู้คืนจากข้อผิดพลาด และทำงานได้ครบ Workflow ตั้งแต่ต้นจนจบ' },
-    { icon: 'ti-chart-line', title: 'Predictive Models', desc: 'โมเดลพยากรณ์ ให้คะแนน และแนะนำสิ่งต่างๆ ที่ Train จากข้อมูลของคุณเองและติดตาม Performance อย่างต่อเนื่องใน Production' },
-    { icon: 'ti-database-search', title: 'RAG & Knowledge Systems', desc: 'Retrieval-Augmented Generation จากเอกสาร Ticket และฐานข้อมูลของคุณ พร้อมการอ้างอิงแหล่งที่มาที่ตรวจสอบได้' },
-    { icon: 'ti-adjustments-cog', title: 'Agentic Automation', desc: 'Automation แบบ Human-in-the-loop ที่ลดงานที่ต้องทำด้วยมือ ในขณะที่การตัดสินใจสำคัญยังคงให้คนตรวจสอบได้' },
+    { icon: 'ti-robot', title: 'AI Agents & Tool Use', desc: 'เอเจนต์ AI หลายขั้นตอนที่วางแผนเอง เรียกใช้เครื่องมือและ API แก้ปัญหาเมื่อเกิดข้อผิดพลาด และทำงานได้ครบตั้งแต่ต้นจนจบ' },
+    { icon: 'ti-chart-line', title: 'Predictive Models', desc: 'โมเดลพยากรณ์ ให้คะแนน และแนะนำ ที่ฝึกจากข้อมูลของคุณเอง และติดตามผลต่อเนื่องหลังใช้งานจริง' },
+    { icon: 'ti-database-search', title: 'RAG & Knowledge Systems', desc: 'ระบบ RAG (Retrieval-Augmented Generation) ที่ตอบจากเอกสาร Ticket และฐานข้อมูลของคุณ พร้อมอ้างอิงแหล่งที่มาที่ตรวจสอบได้' },
+    { icon: 'ti-adjustments-cog', title: 'Agentic Automation', desc: 'ระบบอัตโนมัติที่ให้คนร่วมตรวจ ช่วยลดงานมือ โดยการตัดสินใจสำคัญยังให้คนตรวจสอบได้' },
   ]
 
   const techStack = [
@@ -230,12 +230,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '05', title: 'Deploy', desc: 'Ship to production with monitoring from day one' },
     { no: '06', title: 'Monitor', desc: 'Track drift, cost, and accuracy — retrain when needed' },
   ] : [
-    { no: '01', title: 'AI Audit', desc: 'สำรวจข้อมูล Workflow และ Use Case ที่มูลค่าสูงสุด' },
-    { no: '02', title: 'Agent Design', desc: 'กำหนด Tool, Guardrail และเกณฑ์ความสำเร็จ' },
-    { no: '03', title: 'Build & Evaluate', desc: 'พัฒนาแบบ Iteration พร้อม Evaluation Pipeline อัตโนมัติ' },
-    { no: '04', title: 'Integration', desc: 'เชื่อมต่อกับ Product และแหล่งข้อมูลที่มีอยู่' },
-    { no: '05', title: 'Deploy', desc: 'นำขึ้น Production พร้อมระบบ Monitoring ตั้งแต่วันแรก' },
-    { no: '06', title: 'Monitor', desc: 'ติดตาม Drift ต้นทุน และความแม่นยำ พร้อม Retrain เมื่อจำเป็น' },
+    { no: '01', title: 'AI Audit', desc: 'สำรวจข้อมูล ขั้นตอนงาน และงานที่ให้มูลค่าสูงสุด' },
+    { no: '02', title: 'Agent Design', desc: 'กำหนดเครื่องมือ ขอบเขตความปลอดภัย และเกณฑ์วัดความสำเร็จ' },
+    { no: '03', title: 'Build & Evaluate', desc: 'พัฒนาเป็นรอบๆ พร้อมระบบทดสอบอัตโนมัติ' },
+    { no: '04', title: 'Integration', desc: 'เชื่อมกับผลิตภัณฑ์และแหล่งข้อมูลที่มีอยู่' },
+    { no: '05', title: 'Deploy', desc: 'นำขึ้นใช้งานจริงพร้อมระบบติดตามตั้งแต่วันแรก' },
+    { no: '06', title: 'Monitor', desc: 'ติดตามความคลาดเคลื่อน (Drift) ต้นทุน และความแม่นยำ แล้วฝึกใหม่เมื่อจำเป็น' },
   ]
 
   const darkFaqs = isEN ? [
@@ -248,14 +248,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { q: 'What about data privacy and security with AI systems?', a: "Your data never trains a foundation model provider's public models — we use enterprise API tiers from OpenAI, Anthropic, and Google that contractually exclude your data from training. For RAG systems, sensitive documents stay in your own database (typically pgvector inside Postgres you control), and we scope exactly what an agent is allowed to read, call, or write to before it goes live. For regulated industries we can also design fully on-premise or VPC-isolated deployments where compliance requires it." },
     { q: 'Who owns the models, prompts, and code once the project is done?', a: "You do, entirely. All custom code, agent configurations, prompt templates, evaluation datasets, and fine-tuned model weights (where applicable) transfer to you on final payment — there's no proprietary lock-in to Haliviq's own tooling. If we build inside your own cloud account and GitHub organisation, which we recommend for anything production-bound, you have full visibility and control from day one and could, in principle, continue development without us." },
   ] : [
-    { q: 'Haliviq ให้บริการพัฒนา AI อะไรบ้าง?', a: 'เราสร้างเอเจนต์ AI แบบหลายขั้นตอนที่เรียกใช้ Tool และ API เพื่อทำงานจริงให้เสร็จสมบูรณ์, RAG Knowledge Assistant ที่อ้างอิงจากเอกสารและฐานข้อมูลส่วนตัวของคุณ, Copilot ที่ฝังอยู่ใน Product ที่คุณใช้งานอยู่แล้วโดยตรง และ Evaluation Pipeline ที่ทำให้ทุกอย่างเชื่อถือได้ในระยะยาว โปรเจกต์ทั่วไปเริ่มจาก AI Audit เพื่อหาจุดที่ AI สร้างมูลค่าได้ชัดเจนที่สุดในธุรกิจของคุณ ต่อด้วยการออกแบบเอเจนต์และทำ Proof of Concept ที่กำหนดขอบเขตชัดเจน แล้วต่อยอดไปสู่การออกแบบ Workflow แบบ Human-in-the-loop และ Monitoring หลัง Launch เพื่อไม่ให้จบแค่ Demo ที่ใช้งานได้ครั้งเดียวแล้วเงียบหายไป' },
-    { q: 'ใช้ AI Model และ Framework อะไรบ้าง?', a: 'เราสร้างระบบบนพื้นฐาน OpenAI, Anthropic Claude และ Google Gemini เป็นหลัก โดยเลือกใช้ตาม Use Case ทั้งเรื่อง Latency ต้นทุน และคุณภาพการให้เหตุผล ไม่ได้ยึดติดกับ Vendor ใดตายตัว สำหรับการจัดการ Workflow เราใช้ LangChain และ LangGraph ควบคุม Logic และ State ของเอเจนต์แบบหลายขั้นตอน ใช้ LlamaIndex และ pgvector สำหรับ Retrieval และ Embedding และใช้ Python ร่วมกับ Hugging Face เมื่องานต้องการโมเดลแบบ Custom หรือ Open-source การผสมผสานนี้ทำให้เปลี่ยน Model หรือ Provider ในภายหลังได้โดยไม่ต้องรื้อระบบทั้งหมด' },
-    { q: 'เพิ่ม AI เข้าไปใน Product ที่มีอยู่แล้วได้ไหม?', a: 'ได้ครับ งาน AI ส่วนใหญ่ของเราคือแบบนี้พอดี คือการฝัง Copilot, Assistant และ Automation เข้าไปใน Product ที่ Live อยู่แล้ว มากกว่าการสร้างใหม่ตั้งแต่ศูนย์ เราเริ่มด้วย AI Audit สั้นๆ ของ Product และข้อมูลที่คุณมี เพื่อหา Use Case ที่ให้ ROI ชัดเจนที่สุด แล้ว Ship ตัวที่ Impact สูงสุดก่อนในรูปแบบ Pilot ที่กำหนดขอบเขตไว้ ก่อนจะขยายผลต่อ วิธีนี้ช่วยลดความเสี่ยงและให้คุณเห็นผลลัพธ์จริงก่อนตัดสินใจลงทุน Roadmap ที่ใหญ่ขึ้น' },
-    { q: 'ทำให้ระบบ AI น่าเชื่อถือใน Production ได้อย่างไร?', a: 'ทุกระบบที่เราส่งมอบมี Evaluation Pipeline ที่ให้คะแนนผลลัพธ์เทียบกับตัวอย่างจริงทั้งก่อนและหลังการเปลี่ยนแปลงทุกครั้ง มีการอ้างอิงแหล่งที่มาสำหรับคำตอบแบบ RAG เพื่อให้ตรวจสอบย้อนกลับไปยังเอกสารต้นทางได้ มี Human-in-the-loop สำหรับการตัดสินใจที่มีความเสี่ยงสูงหรือย้อนกลับไม่ได้ และมี Production Monitoring ที่ติดตามความแม่นยำ Latency และ Cost Drift อย่างต่อเนื่อง เรามองว่าคุณภาพของ AI เป็นวินัยทางวิศวกรรมที่ต้องดูแลต่อเนื่อง เหมือน Uptime หรือ Security ไม่ใช่ Checklist ที่ทำครั้งเดียวตอน Launch' },
-    { q: 'โปรเจกต์ AI ใช้เวลานานแค่ไหน?', a: 'ขึ้นอยู่กับขอบเขตงาน แต่โดยเฉลี่ยแล้ว Proof of Concept สำหรับเอเจนต์หรือ RAG หนึ่ง Use Case ใช้เวลาประมาณ 3-6 สัปดาห์ตั้งแต่ Audit จนได้ Demo ที่ใช้งานได้จริงกับข้อมูลจริง การฝัง Copilot เข้ากับ Product ที่มีอยู่พร้อม Guardrail และ Evaluation ที่เหมาะสม มักใช้เวลา 8-14 สัปดาห์ ส่วนระบบ Multi-agent แบบเต็มรูปแบบที่มีหลาย Integration, Human-in-the-loop และ Production Monitoring อาจใช้เวลา 3-6 เดือน เราจะเริ่มจากเวอร์ชันที่เล็กที่สุดที่พิสูจน์คุณค่าได้ก่อนเสมอ แล้วค่อยขยายจาก Baseline ที่ใช้งานได้จริง แทนที่จะพยายามสร้างระบบสมบูรณ์ก่อนที่จะมีใครได้ลองใช้' },
-    { q: 'โปรเจกต์ AI มีค่าใช้จ่ายเท่าไหร่?', a: 'ต้นทุนขึ้นอยู่กับขอบเขตงานและความซับซ้อนของ Integration มากกว่าการเลือก Model โดยค่า API ของ OpenAI, Anthropic หรือ Gemini มักเป็นสัดส่วนเล็กน้อยเมื่อเทียบกับเวลา Engineering ทั้งหมด Proof of Concept สำหรับหนึ่ง Use Case โดยทั่วไปเริ่มต้นที่หลักแสนต้นๆ (บาท) ส่วนระบบ Agent หรือ RAG ระดับ Production ที่เชื่อมกับระบบเดิมของคุณ พร้อม Evaluation และ Monitoring ครบ มักอยู่ที่หลายเท่าของตัวเลขนั้น เราจะเสนอราคาคงที่ตาม Phase หลังการคุย Discovery และจะรวมประมาณการค่า Token/API ต่อเนื่องไว้ด้วยเสมอ เพื่อไม่ให้มีค่าใช้จ่ายที่ไม่คาดคิดหลังระบบใช้งานจริง' },
-    { q: 'เรื่อง Data Privacy และความปลอดภัยของระบบ AI เป็นอย่างไร?', a: 'ข้อมูลของคุณจะไม่ถูกนำไปใช้ Train Public Model ของผู้ให้บริการเลย เราใช้ Enterprise API Tier ของ OpenAI, Anthropic และ Google ที่มีข้อตกลงชัดเจนว่าจะไม่นำข้อมูลไป Train Model สำหรับระบบ RAG เอกสารที่ Sensitive จะถูกเก็บไว้ในฐานข้อมูลของคุณเอง (โดยทั่วไปคือ pgvector ภายใน Postgres ที่คุณควบคุมได้) และเราจะกำหนดขอบเขตชัดเจนว่าเอเจนต์อ่าน เรียกใช้ หรือเขียนอะไรได้บ้างก่อนขึ้นใช้งานจริง สำหรับอุตสาหกรรมที่มีข้อกำหนดเฉพาะ เรายังออกแบบ Deployment แบบ On-premise หรือแยก VPC ให้ได้ตามความจำเป็นด้าน Compliance' },
-    { q: 'Model, Prompt และ Code เป็นของใครหลังจบโปรเจกต์?', a: 'เป็นของคุณทั้งหมดครับ Code ที่กำหนดเอง, การตั้งค่าเอเจนต์, Prompt Template, Evaluation Dataset และน้ำหนักโมเดลที่ Fine-tune ไว้ (ถ้ามี) จะโอนเป็นของคุณเมื่อชำระเงินงวดสุดท้าย ไม่มีการผูกติดกับเครื่องมือเฉพาะของ Haliviq หากเราทำงานบน Cloud Account และ GitHub Organization ของคุณเอง ซึ่งเราแนะนำสำหรับทุกระบบที่จะขึ้น Production คุณจะมองเห็นและควบคุมได้เต็มที่ตั้งแต่วันแรก และสามารถพัฒนาต่อเองได้แม้ไม่มีเราก็ตาม' },
+    { q: 'Haliviq ให้บริการพัฒนา AI อะไรบ้าง?', a: 'เราสร้างเอเจนต์ AI หลายขั้นตอนที่เรียกใช้เครื่องมือและ API เพื่อทำงานจริงให้เสร็จ, ผู้ช่วยค้นความรู้แบบ RAG ที่ตอบจากเอกสารและฐานข้อมูลส่วนตัวของคุณ, Copilot ที่ฝังอยู่ในผลิตภัณฑ์ที่คุณใช้อยู่แล้ว และระบบทดสอบ (Evaluation Pipeline) ที่ช่วยให้ทุกอย่างเชื่อถือได้ในระยะยาว โปรเจกต์ทั่วไปเริ่มจากการตรวจประเมิน AI เพื่อหาจุดที่ AI สร้างมูลค่าได้ชัดที่สุดในธุรกิจของคุณ จากนั้นออกแบบเอเจนต์และทำ Proof of Concept ในขอบเขตที่ชัดเจน แล้วต่อด้วยการออกแบบขั้นตอนที่ให้คนร่วมตรวจ และติดตามผลหลังเปิดใช้งาน เพื่อไม่ให้จบแค่ตัวอย่างที่ใช้ได้ครั้งเดียวแล้วเงียบหายไป' },
+    { q: 'ใช้โมเดลและ Framework อะไรบ้าง?', a: 'เราสร้างระบบบน OpenAI, Anthropic Claude และ Google Gemini เป็นหลัก โดยเลือกตามงาน ทั้งความเร็วในการตอบ ต้นทุน และคุณภาพการให้เหตุผล ไม่ยึดติดกับผู้ให้บริการรายใดรายหนึ่ง ส่วนการจัดลำดับขั้นตอน เราใช้ LangChain และ LangGraph ควบคุมตรรกะและสถานะของเอเจนต์หลายขั้นตอน ใช้ LlamaIndex และ pgvector สำหรับการค้นข้อมูลและ Embedding และใช้ Python ร่วมกับ Hugging Face เมื่องานต้องใช้โมเดลเฉพาะหรือโอเพนซอร์ส การผสมแบบนี้ทำให้เปลี่ยนโมเดลหรือผู้ให้บริการภายหลังได้โดยไม่ต้องรื้อระบบทั้งหมด' },
+    { q: 'เพิ่ม AI เข้าไปในผลิตภัณฑ์ที่มีอยู่แล้วได้ไหม?', a: 'ได้ งาน AI ส่วนใหญ่ของเราเป็นแบบนี้พอดี คือฝัง Copilot ผู้ช่วย และระบบอัตโนมัติเข้าไปในผลิตภัณฑ์ที่เปิดใช้งานอยู่แล้ว มากกว่าสร้างใหม่ตั้งแต่ศูนย์ เราเริ่มด้วยการตรวจประเมิน AI สั้นๆ กับผลิตภัณฑ์และข้อมูลของคุณ เพื่อหางานที่ให้ผลตอบแทนชัดที่สุด แล้วส่งมอบงานที่ให้ผลมากที่สุดก่อนเป็นโครงการนำร่องในขอบเขตที่กำหนด ก่อนขยายต่อ วิธีนี้ลดความเสี่ยง และให้คุณเห็นผลจริงก่อนตัดสินใจลงทุนกับแผนงานที่ใหญ่ขึ้น' },
+    { q: 'ทำให้ระบบ AI เชื่อถือได้เมื่อใช้งานจริงอย่างไร?', a: 'ทุกระบบที่เราส่งมอบมีระบบทดสอบที่ให้คะแนนผลลัพธ์เทียบกับตัวอย่างจริงทั้งก่อนและหลังการแก้ไขทุกครั้ง มีการอ้างอิงแหล่งที่มาให้คำตอบแบบ RAG เพื่อให้ย้อนไปตรวจกับเอกสารต้นทางได้ มีให้คนร่วมตรวจสำหรับการตัดสินใจที่เสี่ยงสูงหรือย้อนกลับไม่ได้ และมีการติดตามความแม่นยำ ความเร็วในการตอบ และต้นทุนที่เปลี่ยนไปอย่างต่อเนื่อง เรามองว่าคุณภาพของ AI เป็นงานวิศวกรรมที่ต้องดูแลต่อเนื่อง เหมือนเรื่อง Uptime หรือความปลอดภัย ไม่ใช่รายการตรวจที่ทำครั้งเดียวตอนเปิดใช้งาน' },
+    { q: 'โปรเจกต์ AI ใช้เวลานานแค่ไหน?', a: 'ขึ้นอยู่กับขอบเขตงาน โดยประมาณ Proof of Concept ของเอเจนต์หรือ RAG หนึ่งงานใช้เวลา 3-6 สัปดาห์ ตั้งแต่ตรวจประเมินจนได้ตัวอย่างที่ใช้งานได้กับข้อมูลจริง การฝัง Copilot เข้ากับผลิตภัณฑ์ที่มีอยู่พร้อมขอบเขตความปลอดภัยและระบบทดสอบที่เหมาะสม มักใช้ 8-14 สัปดาห์ ส่วนระบบหลายเอเจนต์เต็มรูปแบบที่เชื่อมหลายระบบ มีคนร่วมตรวจ และมีการติดตามผลหลังใช้งานจริง อาจใช้ 3-6 เดือน เราจะเริ่มจากเวอร์ชันเล็กที่สุดที่พิสูจน์คุณค่าได้ก่อนเสมอ แล้วค่อยขยายจากจุดที่ใช้งานได้จริง แทนที่จะสร้างระบบสมบูรณ์ก่อนที่จะมีใครได้ลองใช้' },
+    { q: 'โปรเจกต์ AI มีค่าใช้จ่ายเท่าไหร่?', a: 'ต้นทุนขึ้นอยู่กับขอบเขตงานและความซับซ้อนของการเชื่อมระบบ มากกว่าการเลือกโมเดล ค่า API ของ OpenAI, Anthropic หรือ Gemini มักเป็นสัดส่วนเล็กน้อยเมื่อเทียบกับค่าแรงวิศวกร Proof of Concept หนึ่งงานโดยทั่วไปเริ่มที่หลักแสนต้นๆ (บาท) ส่วนระบบเอเจนต์หรือ RAG ระดับใช้งานจริงที่เชื่อมกับระบบเดิม พร้อมระบบทดสอบและติดตามผลครบ มักอยู่ที่หลายเท่าของตัวเลขนั้น เราเสนอราคาคงที่เป็นรายเฟสหลังคุยทำความเข้าใจโจทย์ และรวมประมาณการค่า Token/API ที่ต้องจ่ายต่อเนื่องไว้ด้วยเสมอ เพื่อไม่ให้มีค่าใช้จ่ายที่คาดไม่ถึงหลังระบบใช้งานจริง' },
+    { q: 'เรื่องความเป็นส่วนตัวของข้อมูลและความปลอดภัยของระบบ AI เป็นอย่างไร?', a: 'ข้อมูลของคุณจะไม่ถูกนำไปฝึกโมเดลสาธารณะของผู้ให้บริการ เราใช้ Enterprise API ของ OpenAI, Anthropic และ Google ที่มีข้อตกลงชัดเจนว่าไม่นำข้อมูลไปฝึกโมเดล สำหรับระบบ RAG เอกสารสำคัญจะเก็บไว้ในฐานข้อมูลของคุณเอง (โดยทั่วไปคือ pgvector ใน Postgres ที่คุณควบคุมได้) และเรากำหนดขอบเขตชัดเจนว่าเอเจนต์อ่าน เรียกใช้ หรือเขียนอะไรได้บ้างก่อนเปิดใช้งานจริง สำหรับอุตสาหกรรมที่มีกฎข้อบังคับเฉพาะ เรายังออกแบบให้ติดตั้งบนเซิร์ฟเวอร์ของคุณเอง (On-premise) หรือแยกใน VPC ได้ตามที่ต้องปฏิบัติตามกฎ' },
+    { q: 'โมเดล Prompt และโค้ดเป็นของใครหลังจบโปรเจกต์?', a: 'เป็นของคุณทั้งหมด โค้ดที่พัฒนาให้ การตั้งค่าเอเจนต์ Prompt Template ชุดข้อมูลทดสอบ และน้ำหนักโมเดลที่ Fine-tune ไว้ (ถ้ามี) จะโอนให้คุณเมื่อชำระเงินงวดสุดท้าย ไม่มีการผูกติดกับเครื่องมือเฉพาะของ Haliviq หากเราทำงานบน Cloud Account และ GitHub Organization ของคุณเอง ซึ่งเราแนะนำสำหรับทุกระบบที่จะใช้งานจริง คุณจะเห็นและควบคุมได้เต็มที่ตั้งแต่วันแรก และพัฒนาต่อเองได้แม้ไม่มีเรา' },
   ]
 
   const postHeroSlot = (
@@ -305,7 +305,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'Proven models, frameworks, and infrastructure we apply where they fit — chosen for the problem, not the trend cycle.'
-              : 'Model, Framework และ Infrastructure ที่พิสูจน์แล้ว เลือกใช้ตามโจทย์งานจริง ไม่ใช่ตามกระแส'}
+              : 'โมเดล เฟรมเวิร์ก และโครงสร้างพื้นฐานที่ผ่านการพิสูจน์แล้ว เลือกใช้ตามโจทย์งานจริง ไม่ใช่ตามกระแส'}
           </p>
 
           <div className="flex flex-wrap gap-3">
@@ -336,7 +336,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <p className="mb-16" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'A clear path from problem to production — adjusted per use case, never one-size-fits-all.'
-              : 'เส้นทางที่ชัดเจนจากปัญหาสู่ Production ปรับตามแต่ละ Use Case ไม่ใช่สูตรสำเร็จตายตัว'}
+              : 'เส้นทางที่ชัดเจนจากปัญหาไปจนถึงใช้งานจริง ปรับตามแต่ละงาน ไม่ใช่สูตรตายตัว'}
           </p>
 
           <div className="relative">
@@ -406,7 +406,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
         </h2>
         <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-          {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+          {isEN ? "We'd love to hear what you're building." : 'เรายินดีฟังว่าคุณกำลังสร้างอะไรอยู่'}
         </p>
         <div className="flex flex-wrap items-center gap-6">
           <Link
@@ -414,7 +414,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-medium transition-opacity hover:opacity-90"
             style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}
           >
-            {isEN ? 'Start a Conversation' : 'เริ่มบทสนทนา'}
+            {isEN ? 'Start a Conversation' : 'เริ่มคุยกับเรา'}
             <i className="ti ti-arrow-right" style={{ fontSize: 17 }} aria-hidden="true" />
           </Link>
           <a href="mailto:wu@haliviq.com" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>

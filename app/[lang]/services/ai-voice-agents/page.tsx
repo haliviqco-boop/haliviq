@@ -28,15 +28,15 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   const badge    = isEN ? 'AI / Voice Agents'  : 'AI / Voice Agents'
   const title    = isEN ? 'AI That Talks'  : 'AI ที่พูดคุยได้จริง'
-  const subtitle = isEN ? 'Like a Human, Not a Menu'    : 'เหมือนคุยกับคนจริง ไม่ใช่กด Menu'
-  const heroDesc = isEN ? 'Natural, low-latency voice agents that handle real phone calls — full telephony integration, 25+ languages including Thai, and deep integration into your existing systems.'  : 'Voice Agent ที่พูดคุยเป็นธรรมชาติ Latency ต่ำ รับสายโทรศัพท์จริงได้ พร้อม Telephony Integration เต็มรูปแบบ รองรับกว่า 25 ภาษารวมถึงภาษาไทย และเชื่อมต่อลึกเข้ากับระบบที่คุณมีอยู่'
-  const whyTitle = isEN ? 'Why voice is the interface customers still prefer'    : 'ทำไมเสียงยังเป็น Interface ที่ลูกค้าชอบที่สุด'
-  const whyDesc  = isEN ? 'Phone calls remain the fastest way for customers to get answers and the hardest channel to scale with humans alone. AI voice agents close that gap without making callers feel like they are talking to a machine.'  : 'โทรศัพท์ยังเป็นช่องทางที่ลูกค้าได้คำตอบเร็วที่สุด แต่เป็นช่องทางที่ Scale ด้วยคนล้วนๆ ยากที่สุด AI Voice Agent ช่วยปิดช่องว่างนี้ โดยที่ผู้โทรไม่รู้สึกเหมือนคุยกับเครื่องจักร'
+  const subtitle = isEN ? 'Like a Human, Not a Menu'    : 'เหมือนคุยกับคนจริง ไม่ใช่กดเมนู'
+  const heroDesc = isEN ? 'Natural, low-latency voice agents that handle real phone calls — full telephony integration, 25+ languages including Thai, and deep integration into your existing systems.'  : 'Voice Agent ที่คุยเป็นธรรมชาติ ตอบไว รับสายโทรศัพท์จริงได้ และเชื่อมกับระบบโทรศัพท์ได้เต็มรูปแบบ รองรับกว่า 25 ภาษารวมถึงภาษาไทย และเชื่อมลึกเข้ากับระบบที่คุณมีอยู่'
+  const whyTitle = isEN ? 'Why voice is the interface customers still prefer'    : 'ทำไมลูกค้ายังชอบคุยด้วยเสียงมากที่สุด'
+  const whyDesc  = isEN ? 'Phone calls remain the fastest way for customers to get answers and the hardest channel to scale with humans alone. AI voice agents close that gap without making callers feel like they are talking to a machine.'  : 'โทรศัพท์ยังเป็นช่องทางที่ลูกค้าได้คำตอบเร็วที่สุด แต่ก็เป็นช่องทางที่ขยายด้วยคนอย่างเดียวได้ยากที่สุด AI Voice Agent ช่วยแก้ตรงนี้ โดยที่ผู้โทรไม่รู้สึกว่ากำลังคุยกับเครื่อง'
   const ctaTitle = isEN ? 'Ready to let AI answer the phone?'    : 'พร้อมให้ AI รับสายแทนคุณหรือยัง?'
-  const ctaDesc  = isEN ? 'Start with a working prototype on your real call flows, not a generic demo script.'   : 'เริ่มต้นด้วย Prototype ที่ใช้งานได้จริงบน Call Flow ของคุณ ไม่ใช่ Demo Script ทั่วไป'
+  const ctaDesc  = isEN ? 'Start with a working prototype on your real call flows, not a generic demo script.'   : 'เริ่มด้วยต้นแบบที่ใช้งานได้จริงบนขั้นตอนการรับสายของคุณ ไม่ใช่สคริปต์สาธิตทั่วไป'
   const overviewText = isEN
     ? 'We build production-grade AI voice agents that handle real phone calls end to end: full telephony integration over SIP and PSTN, natural low-latency conversation that does not feel like a bot, support for 25+ languages including Thai, and deep integration into the systems that power the actual answer — CRM, booking, order status, and internal APIs. The result is a voice agent that resolves calls, not one that reads a script and transfers everything hard to a human.'
-    : 'เราสร้าง AI Voice Agent ระดับ Production ที่รับสายโทรศัพท์จริงได้ครบวงจร ตั้งแต่ Telephony Integration เต็มรูปแบบผ่าน SIP และ PSTN, การสนทนาที่เป็นธรรมชาติ Latency ต่ำ ไม่รู้สึกเหมือนคุยกับ Bot, รองรับกว่า 25 ภาษารวมถึงภาษาไทย และเชื่อมต่อลึกเข้ากับระบบที่ให้คำตอบจริง เช่น CRM, ระบบจอง, สถานะ Order และ API ภายใน ผลลัพธ์คือ Voice Agent ที่ปิดการโทรได้จริง ไม่ใช่แค่อ่าน Script แล้วโอนสายเรื่องยากทุกครั้ง'
+    : 'เราสร้าง AI Voice Agent ที่รับสายโทรศัพท์จริงได้ครบ ตั้งแต่เชื่อมระบบโทรศัพท์ผ่าน SIP และ PSTN, คุยเป็นธรรมชาติและตอบไว ไม่รู้สึกเหมือนคุยกับบอต, รองรับกว่า 25 ภาษารวมถึงภาษาไทย และเชื่อมลึกกับระบบที่ให้คำตอบจริง เช่น CRM ระบบจอง สถานะออเดอร์ และ API ภายใน ผลที่ได้คือ Voice Agent ที่ปิดเรื่องได้จริง ไม่ใช่แค่อ่านสคริปต์แล้วโอนสายทุกครั้งที่เจอเรื่องยาก'
 
   const heroBullets = isEN ? [
       'Full telephony integration over SIP and PSTN, ready for real call volume',
@@ -45,11 +45,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'Deep integration into CRM, booking, and internal systems for real answers',
       'Built to scale from pilot to full call-center volume',
     ] : [
-      'Telephony Integration เต็มรูปแบบผ่าน SIP และ PSTN รองรับปริมาณสายจริง',
-      'สนทนาเป็นธรรมชาติ Latency ต่ำ รองรับการพูดแทรกและตัดบท',
-      'รองรับกว่า 25 ภาษา รวมถึงภาษาไทยคุณภาพระดับเจ้าของภาษา',
-      'เชื่อมต่อลึกเข้ากับ CRM, ระบบจอง และระบบภายในเพื่อคำตอบที่ถูกต้องจริง',
-      'ออกแบบให้ Scale ได้ตั้งแต่ Pilot จนถึงปริมาณ Call Center เต็มรูปแบบ',
+      'เชื่อมระบบโทรศัพท์เต็มรูปแบบผ่าน SIP และ PSTN รองรับจำนวนสายจริง',
+      'คุยเป็นธรรมชาติ ตอบไว รองรับการพูดแทรกและตัดบท',
+      'รองรับกว่า 25 ภาษา รวมถึงภาษาไทยในระดับเจ้าของภาษา',
+      'เชื่อมลึกกับ CRM ระบบจอง และระบบภายใน เพื่อให้ตอบถูกต้องจริง',
+      'ขยายได้ตั้งแต่ทดลองใช้ไปจนถึงปริมาณสายระดับคอลเซ็นเตอร์',
     ]
   const whyPoints   = isEN ? [
       'Voice remains the channel customers reach for when something goes wrong and they want it fixed fast.',
@@ -58,11 +58,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'Deep system integration lets the agent actually resolve issues, not just collect information.',
       'A well-built voice agent absorbs volume spikes without hiring and training more staff.',
     ] : [
-      'เสียงยังเป็นช่องทางที่ลูกค้าเลือกใช้เมื่อมีปัญหาและต้องการคำตอบเร็วที่สุด',
-      'Agent ที่ Latency ต่ำและฟังเป็นธรรมชาติ ช่วยให้ลูกค้าไม่วางสายด้วยความหงุดหงิด',
-      'รองรับหลายภาษาทำให้ระบบเดียวดูแลลูกค้าได้ทุกคน ไม่ใช่แค่คนพูดอังกฤษ',
-      'การเชื่อมต่อระบบเชิงลึกทำให้ Agent แก้ปัญหาได้จริง ไม่ใช่แค่เก็บข้อมูลส่งต่อ',
-      'Voice Agent ที่สร้างมาดี รองรับปริมาณสายที่พุ่งสูงได้โดยไม่ต้องจ้างและเทรนคนเพิ่ม',
+      'ลูกค้ายังเลือกโทรเมื่อมีปัญหาและอยากได้คำตอบเร็วที่สุด',
+      'Agent ที่ตอบไวและฟังเป็นธรรมชาติ ช่วยให้ลูกค้าไม่วางสายด้วยความหงุดหงิด',
+      'รองรับหลายภาษา ระบบเดียวจึงดูแลลูกค้าได้ทุกคน ไม่ใช่แค่คนพูดอังกฤษ',
+      'เชื่อมระบบลึก ทำให้ Agent แก้ปัญหาได้จริง ไม่ใช่แค่จดข้อมูลแล้วส่งต่อ',
+      'Voice Agent ที่สร้างมาดีรับสายที่เข้ามาพุ่งสูงได้ โดยไม่ต้องจ้างและอบรมคนเพิ่ม',
     ]
   const outcomes    = isEN ? [
       {stat: '25+', label: 'Languages Supported', desc: 'Including native-quality Thai'},
@@ -71,9 +71,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {stat: '24/7', label: 'Availability', desc: 'No queue, no hold music'}
     ] : [
       {stat: '25+', label: 'ภาษาที่รองรับ', desc: 'รวมถึงภาษาไทยคุณภาพสูง'},
-      {stat: '<500ms', label: 'Response Latency', desc: 'จังหวะสนทนาที่เป็นธรรมชาติ'},
+      {stat: '<500ms', label: 'Response Latency', desc: 'จังหวะการคุยที่เป็นธรรมชาติ'},
       {stat: '70%', label: 'สายที่ปิดจบได้เอง', desc: 'ไม่ต้องโอนสายหาคน'},
-      {stat: '24/7', label: 'พร้อมให้บริการ', desc: 'ไม่มีคิว ไม่มีเพลงรอสาย'}
+      {stat: '24/7', label: 'พร้อมรับสายตลอดเวลา', desc: 'ไม่มีคิว ไม่มีเพลงรอสาย'}
     ]
   const features    = isEN ? [
       {icon: 'ti-phone-calling', title: 'Full Telephony Integration', desc: 'Native SIP and PSTN integration so the agent answers real phone lines, not just a web widget.'},
@@ -83,12 +83,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {icon: 'ti-adjustments', title: 'Conversation Design', desc: 'Call flows engineered around your actual use cases, escalation paths, and edge cases.'},
       {icon: 'ti-chart-line', title: 'Monitoring & Improvement', desc: 'Call transcripts, analytics, and ongoing tuning to keep resolution rates climbing.'}
     ] : [
-      {icon: 'ti-phone-calling', title: 'Full Telephony Integration', desc: 'เชื่อมต่อ SIP และ PSTN โดยตรง Agent รับสายโทรศัพท์จริง ไม่ใช่แค่ Web Widget'},
-      {icon: 'ti-language', title: '25+ ภาษารวมถึงภาษาไทย', desc: 'สนทนาเป็นธรรมชาติคุณภาพระดับเจ้าของภาษา ไม่ใช่คำตอบจากการแปลด้วยเครื่อง'},
-      {icon: 'ti-message-2', title: 'Natural Low-Latency Conversation', desc: 'Response Time ต่ำกว่า 1 วินาที รองรับการพูดแทรก ทำให้รู้สึกเหมือนคุยกับคนจริง'},
-      {icon: 'ti-plug-connected', title: 'Deep System Integration', desc: 'เชื่อมต่อสด CRM, ระบบจอง และ API ภายใน เพื่อให้ Agent ตอบคำถามได้ถูกต้องจริง'},
-      {icon: 'ti-adjustments', title: 'Conversation Design', desc: 'ออกแบบ Call Flow ตาม Use Case จริง เส้นทางการโอนสาย และกรณีขอบเขต'},
-      {icon: 'ti-chart-line', title: 'Monitoring & Improvement', desc: 'Transcript การโทร, Analytics และปรับปรุงต่อเนื่องเพื่อเพิ่มอัตราปิดจบสาย'}
+      {icon: 'ti-phone-calling', title: 'Full Telephony Integration', desc: 'เชื่อม SIP และ PSTN โดยตรง Agent รับสายโทรศัพท์จริง ไม่ใช่แค่วิดเจ็ตบนเว็บ'},
+      {icon: 'ti-language', title: '25+ ภาษารวมถึงภาษาไทย', desc: 'คุยเป็นธรรมชาติระดับเจ้าของภาษา ไม่ใช่คำตอบที่แปลด้วยเครื่อง'},
+      {icon: 'ti-message-2', title: 'Natural Low-Latency Conversation', desc: 'ตอบกลับภายในไม่ถึง 1 วินาที รองรับการพูดแทรก ให้ความรู้สึกเหมือนคุยกับคนจริง'},
+      {icon: 'ti-plug-connected', title: 'Deep System Integration', desc: 'เชื่อมสดกับ CRM ระบบจอง และ API ภายใน เพื่อให้ Agent ตอบคำถามได้ถูกต้อง'},
+      {icon: 'ti-adjustments', title: 'Conversation Design', desc: 'ออกแบบขั้นตอนการรับสายตามงานจริง เส้นทางการโอนสาย และกรณีพิเศษ'},
+      {icon: 'ti-chart-line', title: 'Monitoring & Improvement', desc: 'บันทึกคำพูดการโทร วิเคราะห์ผล และปรับปรุงต่อเนื่องเพื่อให้ปิดเรื่องได้มากขึ้น'}
     ]
   const steps       = isEN ? [
       {no: '01', title: 'Discovery', desc: 'Understand call volume, intents, and existing systems.'},
@@ -98,21 +98,21 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {no: '05', title: 'Testing', desc: 'Stress-test edge cases and real caller scenarios.'},
       {no: '06', title: 'Monitoring', desc: 'Live analytics and continuous tuning post-launch.'}
     ] : [
-      {no: '01', title: 'Discovery', desc: 'ทำความเข้าใจปริมาณสาย, Intent และระบบที่มีอยู่'},
-      {no: '02', title: 'Conversation Design', desc: 'ออกแบบ Call Flow, น้ำเสียง และเส้นทางการโอนสาย'},
-      {no: '03', title: 'Development', desc: 'สร้าง Agent ด้วยเสียง, ข้อมูล และการเชื่อมต่อของคุณ'},
-      {no: '04', title: 'Telephony Integration', desc: 'เชื่อมต่อสาย SIP/PSTN สำหรับรับสายจริง'},
-      {no: '05', title: 'Testing', desc: 'ทดสอบกรณีขอบเขตและสถานการณ์ผู้โทรจริง'},
-      {no: '06', title: 'Monitoring', desc: 'Analytics แบบสดและปรับปรุงต่อเนื่องหลัง Launch'}
+      {no: '01', title: 'Discovery', desc: 'ทำความเข้าใจจำนวนสาย เป้าหมายของผู้โทร และระบบที่มีอยู่'},
+      {no: '02', title: 'Conversation Design', desc: 'ออกแบบขั้นตอนการรับสาย น้ำเสียง และเส้นทางการโอนสาย'},
+      {no: '03', title: 'Development', desc: 'สร้าง Agent จากเสียง ข้อมูล และระบบของคุณ'},
+      {no: '04', title: 'Telephony Integration', desc: 'เชื่อมสาย SIP/PSTN เพื่อรับสายจริง'},
+      {no: '05', title: 'Testing', desc: 'ทดสอบกรณีพิเศษและสถานการณ์ผู้โทรจริง'},
+      {no: '06', title: 'Monitoring', desc: 'ดูผลแบบสดและปรับปรุงต่อเนื่องหลังเปิดใช้งาน'}
     ]
   const caseStudies = isEN ? [
       {tag: 'Retail · Bangkok', title: 'AI Agent Handles 70% of Support Calls', desc: 'Full telephony integration deployed across a national customer service line.', result: '70% resolved without transfer'},
       {tag: 'Healthcare · Bangkok', title: 'Bilingual Booking Line Built in 6 Weeks', desc: 'Thai and English voice agent connected directly to the clinic booking system.', result: 'Zero missed appointments from voicemail'},
       {tag: 'Logistics · Nationwide', title: 'Order Status Line Handles 24/7 Volume', desc: 'Voice agent integrated with live tracking API for instant status updates.', result: '24/7 coverage, zero hold time'}
     ] : [
-      {tag: 'Retail · กรุงเทพฯ', title: 'AI Agent ปิดจบสาย Support ได้ 70%', desc: 'Telephony Integration เต็มรูปแบบสำหรับสาย Customer Service ทั่วประเทศ', result: 'ปิดจบได้ 70% โดยไม่ต้องโอนสาย'},
-      {tag: 'Healthcare · กรุงเทพฯ', title: 'สายจองคิวสองภาษา สร้างเสร็จใน 6 สัปดาห์', desc: 'Voice Agent ไทย-อังกฤษ เชื่อมตรงกับระบบจองคิวของคลินิก', result: 'ไม่มีนัดหมายหลุดจาก Voicemail'},
-      {tag: 'Logistics · ทั่วประเทศ', title: 'สายเช็คสถานะ Order รองรับ 24 ชั่วโมง', desc: 'Voice Agent เชื่อมต่อ API Tracking สดเพื่อแจ้งสถานะทันที', result: 'รองรับ 24/7 ไม่มีเวลารอสาย'}
+      {tag: 'Retail · กรุงเทพฯ', title: 'AI Agent ปิดเรื่อง Support ได้ 70%', desc: 'เชื่อมระบบโทรศัพท์เต็มรูปแบบสำหรับสายลูกค้าสัมพันธ์ทั่วประเทศ', result: 'ปิดเรื่องได้ 70% โดยไม่ต้องโอนสาย'},
+      {tag: 'Healthcare · กรุงเทพฯ', title: 'สายจองคิวสองภาษา สร้างเสร็จใน 6 สัปดาห์', desc: 'Voice Agent ไทย-อังกฤษ เชื่อมตรงกับระบบจองคิวของคลินิก', result: 'ไม่มีนัดหมายตกหล่นไปอยู่ใน Voicemail'},
+      {tag: 'Logistics · ทั่วประเทศ', title: 'สายเช็คสถานะออเดอร์ รองรับ 24 ชั่วโมง', desc: 'Voice Agent เชื่อมกับ API ติดตามพัสดุแบบสด เพื่อแจ้งสถานะทันที', result: 'รับสาย 24/7 ไม่ต้องรอสาย'}
     ]
   const faqs        = isEN ? [
       {q: 'What can your AI voice agents actually do?', a: 'Answer real phone calls end to end: understand natural speech, hold a conversation, and resolve requests by connecting into your CRM, booking, or internal systems.'},
@@ -120,10 +120,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {q: 'Can it integrate with our existing phone system?', a: 'Yes. We integrate over SIP and PSTN with most existing telephony providers and PBX systems.'},
       {q: 'What happens when the agent cannot help?', a: 'It escalates cleanly to a human agent with full context passed along, so the caller never has to repeat themselves.'}
     ] : [
-      {q: 'AI Voice Agent ของ Haliviq ทำอะไรได้บ้าง?', a: 'รับสายโทรศัพท์จริงได้ครบวงจร เข้าใจคำพูดธรรมชาติ สนทนาได้ และปิดจบคำขอโดยเชื่อมต่อกับ CRM, ระบบจอง หรือระบบภายในของคุณ'},
-      {q: 'รองรับภาษาไทยไหม?', a: 'รองรับครับ ภาษาไทยเป็นภาษาหลักใน Voice Stack ของเรา ควบคู่กับอีกกว่า 25 ภาษา ด้วยการออกเสียงและความเข้าใจระดับเจ้าของภาษา'},
-      {q: 'เชื่อมต่อกับระบบโทรศัพท์ที่มีอยู่ได้ไหม?', a: 'ได้ครับ เราเชื่อมต่อผ่าน SIP และ PSTN กับผู้ให้บริการ Telephony และระบบ PBX ส่วนใหญ่'},
-      {q: 'ถ้า Agent ช่วยไม่ได้จะเกิดอะไรขึ้น?', a: 'จะโอนสายไปหาเจ้าหน้าที่อย่างราบรื่น พร้อมส่งบริบททั้งหมดไปด้วย ผู้โทรไม่ต้องพูดซ้ำ'}
+      {q: 'AI Voice Agent ของ Haliviq ทำอะไรได้บ้าง?', a: 'รับสายโทรศัพท์จริงได้ครบ เข้าใจคำพูดธรรมชาติ คุยโต้ตอบได้ และปิดคำขอได้โดยเชื่อมกับ CRM ระบบจอง หรือระบบภายในของคุณ'},
+      {q: 'รองรับภาษาไทยไหม?', a: 'รองรับ ภาษาไทยเป็นภาษาหลักของระบบเสียงของเรา ควบคู่กับอีกกว่า 25 ภาษา ทั้งการออกเสียงและความเข้าใจในระดับเจ้าของภาษา'},
+      {q: 'เชื่อมกับระบบโทรศัพท์ที่มีอยู่ได้ไหม?', a: 'ได้ เราเชื่อมผ่าน SIP และ PSTN กับผู้ให้บริการโทรศัพท์และระบบ PBX ส่วนใหญ่'},
+      {q: 'ถ้า Agent ช่วยไม่ได้จะเกิดอะไรขึ้น?', a: 'โอนสายไปหาเจ้าหน้าที่อย่างราบรื่น พร้อมส่งบริบททั้งหมดไปด้วย ผู้โทรไม่ต้องพูดซ้ำ'}
     ]
   const related     = isEN ? [
       {label: 'Enterprise Solutions', href: '/services/enterprise-solutions'},
@@ -139,13 +139,13 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   const voiceLines = [
     { n: 1, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>voice-agent --connect sip://line-01</span></> },
-    { n: 2, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Telephony line connected' : 'เชื่อมต่อสายโทรศัพท์แล้ว'}</> },
+    { n: 2, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Telephony line connected' : 'เชื่อมสายโทรศัพท์แล้ว'}</> },
     { n: 3, jsx: <>&nbsp;</> },
     { n: 4, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>call --lang th-TH --latency-target 400ms</span></> },
     { n: 5, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Response latency: 380ms' : 'Response Latency: 380ms'}</> },
     { n: 6, jsx: <>&nbsp;</> },
     { n: 7, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>resolve --intent booking.status</span></> },
-    { n: 8, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Call resolved, no transfer needed' : 'ปิดจบสาย ไม่ต้องโอนสาย'}</> },
+    { n: 8, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Call resolved, no transfer needed' : 'ปิดเรื่องโดยไม่ต้องโอนสาย'}</> },
   ]
 
   const heroSlot = (
@@ -187,7 +187,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </div>
         <div className="flex items-center gap-1.5 text-xs" style={{ color: 'var(--lime)' }}>
           <i className="ti ti-circle-check" style={{ fontSize: 13 }} aria-hidden="true" />
-          {isEN ? '70% calls resolved without transfer' : 'ปิดจบสาย 70% โดยไม่โอนสาย'}
+          {isEN ? '70% calls resolved without transfer' : 'ปิดเรื่อง 70% โดยไม่โอนสาย'}
         </div>
       </div>
     </div>
@@ -199,10 +199,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-message-2', title: 'Natural Low-Latency Conversation', desc: 'Sub-second response times with barge-in support so calls feel like talking to a person.' },
     { icon: 'ti-plug-connected', title: 'Deep System Integration', desc: 'Live connections into CRM, booking, and internal APIs so the agent gives real answers.' },
   ] : [
-    { icon: 'ti-phone-calling', title: 'Full Telephony Integration', desc: 'เชื่อมต่อ SIP และ PSTN โดยตรง Agent รับสายโทรศัพท์จริง ไม่ใช่แค่ Web Widget' },
-    { icon: 'ti-language', title: '25+ ภาษารวมถึงภาษาไทย', desc: 'สนทนาเป็นธรรมชาติคุณภาพระดับเจ้าของภาษา ไม่ใช่คำตอบจากการแปลด้วยเครื่อง' },
-    { icon: 'ti-message-2', title: 'Natural Low-Latency Conversation', desc: 'Response Time ต่ำกว่า 1 วินาที รองรับการพูดแทรก ทำให้รู้สึกเหมือนคุยกับคนจริง' },
-    { icon: 'ti-plug-connected', title: 'Deep System Integration', desc: 'เชื่อมต่อสด CRM, ระบบจอง และ API ภายใน เพื่อให้ Agent ตอบคำถามได้ถูกต้องจริง' },
+    { icon: 'ti-phone-calling', title: 'Full Telephony Integration', desc: 'เชื่อม SIP และ PSTN โดยตรง Agent รับสายโทรศัพท์จริง ไม่ใช่แค่วิดเจ็ตบนเว็บ' },
+    { icon: 'ti-language', title: '25+ ภาษารวมถึงภาษาไทย', desc: 'คุยเป็นธรรมชาติระดับเจ้าของภาษา ไม่ใช่คำตอบที่แปลด้วยเครื่อง' },
+    { icon: 'ti-message-2', title: 'Natural Low-Latency Conversation', desc: 'ตอบกลับภายในไม่ถึง 1 วินาที รองรับการพูดแทรก ให้ความรู้สึกเหมือนคุยกับคนจริง' },
+    { icon: 'ti-plug-connected', title: 'Deep System Integration', desc: 'เชื่อมสดกับ CRM ระบบจอง และ API ภายใน เพื่อให้ Agent ตอบคำถามได้ถูกต้อง' },
   ]
 
   const techStack = [
@@ -226,12 +226,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '05', title: 'Testing', desc: 'Stress-test edge cases and scenarios' },
     { no: '06', title: 'Monitoring', desc: 'Live analytics and continuous tuning' },
   ] : [
-    { no: '01', title: 'Discovery', desc: 'ปริมาณสาย, Intent และระบบที่มีอยู่' },
-    { no: '02', title: 'Conversation Design', desc: 'Call Flow, น้ำเสียง และการโอนสาย' },
-    { no: '03', title: 'Development', desc: 'สร้าง Agent ด้วยข้อมูลของคุณ' },
-    { no: '04', title: 'Telephony Integration', desc: 'เชื่อมต่อ SIP/PSTN สำหรับสายจริง' },
-    { no: '05', title: 'Testing', desc: 'ทดสอบกรณีขอบเขตและสถานการณ์จริง' },
-    { no: '06', title: 'Monitoring', desc: 'Analytics แบบสดและปรับปรุงต่อเนื่อง' },
+    { no: '01', title: 'Discovery', desc: 'จำนวนสาย เป้าหมายของผู้โทร และระบบที่มีอยู่' },
+    { no: '02', title: 'Conversation Design', desc: 'ขั้นตอนการรับสาย น้ำเสียง และการโอนสาย' },
+    { no: '03', title: 'Development', desc: 'สร้าง Agent จากข้อมูลของคุณ' },
+    { no: '04', title: 'Telephony Integration', desc: 'เชื่อม SIP/PSTN เพื่อรับสายจริง' },
+    { no: '05', title: 'Testing', desc: 'ทดสอบกรณีพิเศษและสถานการณ์จริง' },
+    { no: '06', title: 'Monitoring', desc: 'ดูผลแบบสดและปรับปรุงต่อเนื่อง' },
   ]
 
   const darkFaqs = isEN ? [
@@ -244,14 +244,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { q: 'Do we own the voice agent and its data after the project?', a: 'Yes. You own the conversation designs, integration code, and all call data and transcripts. We can host and operate the agent for you or hand over full deployment access, whichever fits your team.' },
     { q: 'Can the agent handle high call volume, like during a promotion or outage?', a: 'Yes, this is one of the core reasons to use a voice agent. It scales to handle simultaneous calls without hiring or training additional staff, and without hold queues or busy signals.' },
   ] : [
-    { q: 'AI Voice Agent ของ Haliviq ทำอะไรได้บ้าง?', a: 'รับสายโทรศัพท์จริงได้ครบวงจร เข้าใจคำพูดธรรมชาติ สนทนาได้จริงพร้อมรองรับการพูดแทรก และปิดจบคำขอโดยเชื่อมต่อสดเข้ากับ CRM, ระบบจอง หรือ API ภายใน ไม่ใช่แค่เก็บข้อมูลแล้วโอนสาย' },
-    { q: 'รองรับภาษาไทยไหม?', a: 'รองรับครับ ภาษาไทยเป็นภาษาหลักใน Voice Stack ของเรา ควบคู่กับอีกกว่า 25 ภาษา ด้วยการออกเสียง น้ำเสียง และความเข้าใจระดับเจ้าของภาษา ไม่ใช่ประสบการณ์จากการแปลด้วยเครื่อง' },
-    { q: 'เชื่อมต่อกับระบบโทรศัพท์ที่มีอยู่ได้ไหม?', a: 'ได้ครับ เราเชื่อมต่อผ่าน SIP และ PSTN กับผู้ให้บริการ Telephony และระบบ PBX ส่วนใหญ่ คุณยังใช้เบอร์และโครงสร้างพื้นฐานเดิม ส่วน Agent จะดูแลชั้นการสนทนา' },
-    { q: 'ถ้า Agent ช่วยไม่ได้จะเกิดอะไรขึ้น?', a: 'จะโอนสายไปหาเจ้าหน้าที่อย่างราบรื่น พร้อมส่งบริบทการสนทนาและข้อมูลที่เก็บมาทั้งหมดไปด้วย ผู้โทรไม่ต้องเริ่มพูดใหม่ตั้งแต่ต้น' },
-    { q: 'ใช้เวลานานแค่ไหนกว่าจะ Launch Voice Agent?', a: 'Pilot แบบเจาะจงหนึ่ง Call Flow เช่น การจองคิวหรือเช็คสถานะ Order มักใช้เวลา 4-6 สัปดาห์ ส่วนการขยายไปหลาย Call Type พร้อม Harden สำหรับ Production เต็มรูปแบบ มักใช้เวลา 8-12 สัปดาห์ ขึ้นอยู่กับความซับซ้อนของการเชื่อมต่อ' },
-    { q: 'โปรเจกต์ AI Voice Agent มีค่าใช้จ่ายเท่าไหร่?', a: 'ราคาขึ้นอยู่กับปริมาณสาย, จำนวนภาษา และความลึกของการเชื่อมต่อระบบ Pilot แบบ Flow เดียวมักเริ่มต้นที่หลักแสนต้นๆ (บาท) ส่วนการติดตั้ง Production แบบหลาย Flow จะเสนอราคาหลังคุย Discovery' },
-    { q: 'เราเป็นเจ้าของ Voice Agent และข้อมูลหลังโปรเจกต์จบไหม?', a: 'ใช่ครับ คุณเป็นเจ้าของ Conversation Design, Code การเชื่อมต่อ และข้อมูล/Transcript การโทรทั้งหมด เราสามารถ Host และดูแลระบบให้ หรือส่งมอบสิทธิ์ Deploy เต็มรูปแบบ แล้วแต่ทีมคุณสะดวก' },
-    { q: 'Agent รองรับปริมาณสายสูงๆ เช่นช่วงโปรโมชันหรือระบบล่มได้ไหม?', a: 'ได้ครับ นี่คือเหตุผลหลักที่ควรใช้ Voice Agent ระบบรองรับสายพร้อมกันจำนวนมากได้โดยไม่ต้องจ้างหรือเทรนคนเพิ่ม และไม่มีคิวรอสายหรือสัญญาณไม่ว่าง' },
+    { q: 'AI Voice Agent ของ Haliviq ทำอะไรได้บ้าง?', a: 'รับสายโทรศัพท์จริงได้ครบ เข้าใจคำพูดธรรมชาติ คุยโต้ตอบและรองรับการพูดแทรกได้จริง และปิดคำขอได้โดยเชื่อมสดกับ CRM ระบบจอง หรือ API ภายใน ไม่ใช่แค่จดข้อมูลแล้วโอนสาย' },
+    { q: 'รองรับภาษาไทยไหม?', a: 'รองรับ ภาษาไทยเป็นภาษาหลักของระบบเสียงของเรา ควบคู่กับอีกกว่า 25 ภาษา ทั้งการออกเสียง น้ำเสียง และความเข้าใจในระดับเจ้าของภาษา ไม่ใช่แค่การแปลด้วยเครื่อง' },
+    { q: 'เชื่อมกับระบบโทรศัพท์ที่มีอยู่ได้ไหม?', a: 'ได้ เราเชื่อมผ่าน SIP และ PSTN กับผู้ให้บริการโทรศัพท์และระบบ PBX ส่วนใหญ่ คุณยังใช้เบอร์และระบบเดิมได้ ส่วน Agent จะดูแลเรื่องการสนทนา' },
+    { q: 'ถ้า Agent ช่วยไม่ได้จะเกิดอะไรขึ้น?', a: 'โอนสายไปหาเจ้าหน้าที่อย่างราบรื่น พร้อมส่งบริบทการสนทนาและข้อมูลที่เก็บได้ทั้งหมดไปด้วย ผู้โทรไม่ต้องเริ่มพูดใหม่ตั้งแต่ต้น' },
+    { q: 'ใช้เวลานานแค่ไหนกว่าจะเปิดใช้ Voice Agent?', a: 'ทดลองใช้แบบเจาะจงหนึ่งขั้นตอนการรับสาย เช่น จองคิวหรือเช็คสถานะออเดอร์ มักใช้เวลา 4-6 สัปดาห์ ส่วนการขยายไปหลายประเภทสายและเตรียมให้พร้อมใช้งานจริงเต็มรูปแบบ มักใช้ 8-12 สัปดาห์ ขึ้นอยู่กับความซับซ้อนของการเชื่อมระบบ' },
+    { q: 'โปรเจกต์ AI Voice Agent มีค่าใช้จ่ายเท่าไหร่?', a: 'ราคาขึ้นอยู่กับจำนวนสาย จำนวนภาษา และความลึกของการเชื่อมระบบ การทดลองใช้แบบขั้นตอนเดียวมักเริ่มที่หลักแสนต้นๆ (บาท) ส่วนการใช้งานจริงแบบหลายขั้นตอนจะเสนอราคาหลังคุยทำความเข้าใจโจทย์' },
+    { q: 'เราเป็นเจ้าของ Voice Agent และข้อมูลหลังโปรเจกต์จบไหม?', a: 'ใช่ คุณเป็นเจ้าของการออกแบบบทสนทนา โค้ดที่เชื่อมระบบ และข้อมูลกับบันทึกการโทรทั้งหมด เราจะโฮสต์และดูแลระบบให้ หรือส่งมอบสิทธิ์การติดตั้งให้เต็มรูปแบบก็ได้ แล้วแต่ทีมคุณสะดวก' },
+    { q: 'Agent รองรับสายจำนวนมากช่วงโปรโมชันหรือระบบล่มได้ไหม?', a: 'ได้ นี่คือเหตุผลหลักที่ควรใช้ Voice Agent ระบบรับสายพร้อมกันจำนวนมากได้โดยไม่ต้องจ้างหรืออบรมคนเพิ่ม และไม่มีคิวรอสายหรือสายไม่ว่าง' },
   ]
 
   const postHeroSlot = (
@@ -301,7 +301,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'A modern voice AI stack chosen for latency, accuracy, and reliability at call-center scale.'
-              : 'Voice AI Stack สมัยใหม่ที่เลือกใช้เพื่อ Latency ต่ำ ความแม่นยำ และความน่าเชื่อถือระดับ Call Center'}
+              : 'Voice AI Stack ที่ทันสมัย เลือกมาเพื่อให้ตอบไว แม่นยำ และเชื่อถือได้ในระดับคอลเซ็นเตอร์'}
           </p>
 
           <div className="flex flex-wrap gap-3">
@@ -332,7 +332,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <p className="mb-16" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'A clear path from discovery to a production voice agent — adjusted per call flow, never one-size-fits-all.'
-              : 'เส้นทางที่ชัดเจนจาก Discovery สู่ Voice Agent ระดับ Production ปรับตามแต่ละ Call Flow ไม่ใช่สูตรสำเร็จตายตัว'}
+              : 'เส้นทางที่ชัดเจนจากการสำรวจโจทย์ไปจนถึง Voice Agent ที่ใช้งานจริง ปรับตามแต่ละขั้นตอนการรับสาย ไม่ใช่สูตรตายตัว'}
           </p>
 
           <div className="relative">
@@ -402,7 +402,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
         </h2>
         <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-          {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+          {isEN ? "We'd love to hear what you're building." : 'เรายินดีฟังว่าคุณกำลังสร้างอะไรอยู่'}
         </p>
         <div className="flex flex-wrap items-center gap-6">
           <Link
@@ -410,7 +410,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-medium transition-opacity hover:opacity-90"
             style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}
           >
-            {isEN ? 'Start a Conversation' : 'เริ่มบทสนทนา'}
+            {isEN ? 'Start a Conversation' : 'เริ่มคุยกับเรา'}
             <i className="ti ti-arrow-right" style={{ fontSize: 17 }} aria-hidden="true" />
           </Link>
           <a href="mailto:wu@haliviq.com" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>

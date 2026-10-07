@@ -181,24 +181,24 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const prefix = `/${lang}`
 
   const industries = [
-    { slug: 'aerospace-defense', icon: 'ti-satellite', title: isEN ? 'Aerospace & Defense' : 'การบินและอวกาศ & กลาโหม', href: '/industries/aerospace-defense', desc: isEN ? 'Secure software and data systems for aerospace and defense organizations.' : 'ซอฟต์แวร์และระบบข้อมูลที่ปลอดภัยสำหรับองค์กรด้านการบินและกลาโหม' },
-    { slug: 'agriculture', icon: 'ti-plant-2', title: isEN ? 'Agriculture' : 'เกษตรกรรม', href: '/industries/agriculture', desc: isEN ? 'AgTech solutions for modern farming and food production.' : 'โซลูชัน AgTech สำหรับการเกษตรและการผลิตอาหารยุคใหม่' },
-    { slug: 'automotive', icon: 'ti-car', title: isEN ? 'Automotive' : 'ยานยนต์', href: '/industries/automotive', desc: isEN ? 'Connected vehicle and automotive industry solutions.' : 'โซลูชันสำหรับยานยนต์เชื่อมต่อและอุตสาหกรรมยานยนต์' },
-    { slug: 'consumer-goods', icon: 'ti-package', title: isEN ? 'Consumer Goods' : 'สินค้าอุปโภคบริโภค', href: '/industries/consumer-goods', desc: isEN ? 'Digital transformation for consumer product companies.' : 'การปรับสู่ดิจิทัลสำหรับบริษัทสินค้าอุปโภคบริโภค' },
-    { slug: 'education', icon: 'ti-school', title: isEN ? 'Education' : 'การศึกษา', href: '/industries/education', desc: isEN ? 'Transform learning with modern educational technology.' : 'ยกระดับการเรียนรู้ด้วยเทคโนโลยีการศึกษาสมัยใหม่' },
-    { slug: 'energy-utilities', icon: 'ti-bolt', title: isEN ? 'Energy & Utilities' : 'พลังงานและสาธารณูปโภค', href: '/industries/energy-utilities', desc: isEN ? 'Smart solutions for energy management and utility services.' : 'โซลูชันอัจฉริยะสำหรับการจัดการพลังงานและสาธารณูปโภค' },
-    { slug: 'fintech', icon: 'ti-building-bank', title: isEN ? 'Financial Services' : 'บริการทางการเงิน', href: '/industries/fintech', desc: isEN ? 'Digital solutions for banks, insurance, and financial institutions.' : 'Digital Banking และ Payment ที่ปลอดภัยและ Compliant ตามมาตรฐาน ธปท.' },
-    { slug: 'government', icon: 'ti-building-bank', title: isEN ? 'Government & Public Sector' : 'ภาครัฐและหน่วยงานสาธารณะ', href: '/industries/government', desc: isEN ? 'Digital services for government and public institutions.' : 'บริการดิจิทัลสำหรับภาครัฐและหน่วยงานสาธารณะ' },
-    { slug: 'healthcare', icon: 'ti-heartbeat', title: isEN ? 'Healthcare & Life Sciences' : 'สุขภาพและวิทยาศาสตร์ชีวภาพ', href: '/industries/healthcare', desc: isEN ? 'Technology solutions that improve patient care and medical research.' : 'เทคโนโลยีที่ยกระดับการดูแลผู้ป่วยและงานวิจัยทางการแพทย์' },
-    { slug: 'hospitality-travel', icon: 'ti-bed', title: isEN ? 'Hospitality & Travel' : 'การบริการและการท่องเที่ยว', href: '/industries/hospitality-travel', desc: isEN ? 'Enhance guest experiences with innovative technology solutions.' : 'ยกระดับประสบการณ์ผู้เข้าพักด้วยเทคโนโลยีที่ล้ำสมัย' },
-    { slug: 'manufacturing', icon: 'ti-building-factory', title: isEN ? 'Manufacturing & Industrials' : 'การผลิตและอุตสาหกรรม', href: '/industries/manufacturing', desc: isEN ? 'Digital transformation for modern manufacturing operations.' : 'การปรับสู่ดิจิทัลสำหรับการดำเนินงานการผลิตยุคใหม่' },
-    { slug: 'media-entertainment', icon: 'ti-movie', title: isEN ? 'Media & Entertainment' : 'สื่อและบันเทิง', href: '/industries/media-entertainment', desc: isEN ? 'Digital platforms for content creation and distribution.' : 'แพลตฟอร์มดิจิทัลสำหรับสร้างและกระจายคอนเทนต์' },
-    { slug: 'professional-services', icon: 'ti-briefcase', title: isEN ? 'Professional Services' : 'บริการวิชาชีพ', href: '/industries/professional-services', desc: isEN ? 'Digital tools for consulting, legal, and business services.' : 'เครื่องมือดิจิทัลสำหรับที่ปรึกษา กฎหมาย และธุรกิจบริการ' },
-    { slug: 'real-estate', icon: 'ti-building-skyscraper', title: isEN ? 'Real Estate' : 'อสังหาริมทรัพย์', href: '/industries/real-estate', desc: isEN ? 'Property technology solutions for the modern real estate industry.' : 'แพลตฟอร์มดิจิทัลสำหรับค้นหา จัดการ และขายอสังหาฯ' },
-    { slug: 'retail', icon: 'ti-shopping-cart', title: isEN ? 'Retail & E-commerce' : 'ค้าปลีก & อีคอมเมิร์ซ', href: '/industries/retail', desc: isEN ? 'Build engaging shopping experiences that drive conversions.' : 'สร้างประสบการณ์ช้อปปิ้งที่น่าดึงดูดและเพิ่ม Conversion' },
-    { slug: 'technology', icon: 'ti-cpu', title: isEN ? 'Technology & Hi-Tech' : 'เทคโนโลยีและไฮเทค', href: '/industries/technology', desc: isEN ? 'Solutions for technology companies and startups.' : 'โซลูชันสำหรับบริษัทเทคโนโลยีและสตาร์ทอัพ' },
-    { slug: 'telecommunications', icon: 'ti-antenna', title: isEN ? 'Telecommunications' : 'โทรคมนาคม', href: '/industries/telecommunications', desc: isEN ? 'Next-generation solutions for telecom providers.' : 'โซลูชันยุคใหม่สำหรับผู้ให้บริการโทรคมนาคม' },
-    { slug: 'logistics', icon: 'ti-truck-delivery', title: isEN ? 'Transportation & Logistics' : 'คมนาคมและโลจิสติกส์', href: '/industries/logistics', desc: isEN ? 'Optimize supply chains and transportation networks.' : 'ระบบซัพพลายเชน ขนส่ง และคลังสินค้าที่ฉลาดขึ้น' },
+    { slug: 'aerospace-defense', icon: 'ti-satellite', title: isEN ? 'Aerospace & Defense' : 'การบินอวกาศและกลาโหม', href: '/industries/aerospace-defense', desc: isEN ? 'Secure software and data systems for aerospace and defense organizations.' : 'ซอฟต์แวร์และระบบข้อมูลที่ปลอดภัย สำหรับองค์กรด้านการบินอวกาศและกลาโหม' },
+    { slug: 'agriculture', icon: 'ti-plant-2', title: isEN ? 'Agriculture' : 'เกษตรกรรม', href: '/industries/agriculture', desc: isEN ? 'AgTech solutions for modern farming and food production.' : 'เทคโนโลยีช่วยงานเกษตรและการผลิตอาหาร' },
+    { slug: 'automotive', icon: 'ti-car', title: isEN ? 'Automotive' : 'ยานยนต์', href: '/industries/automotive', desc: isEN ? 'Connected vehicle and automotive industry solutions.' : 'ระบบสำหรับรถยนต์เชื่อมต่ออินเทอร์เน็ตและธุรกิจยานยนต์' },
+    { slug: 'consumer-goods', icon: 'ti-package', title: isEN ? 'Consumer Goods' : 'สินค้าอุปโภคบริโภค', href: '/industries/consumer-goods', desc: isEN ? 'Digital transformation for consumer product companies.' : 'ช่วยบริษัทสินค้าอุปโภคบริโภคทำงานบนระบบดิจิทัล' },
+    { slug: 'education', icon: 'ti-school', title: isEN ? 'Education' : 'การศึกษา', href: '/industries/education', desc: isEN ? 'Transform learning with modern educational technology.' : 'เทคโนโลยีที่ช่วยให้การเรียนการสอนง่ายและน่าสนใจขึ้น' },
+    { slug: 'energy-utilities', icon: 'ti-bolt', title: isEN ? 'Energy & Utilities' : 'พลังงานและสาธารณูปโภค', href: '/industries/energy-utilities', desc: isEN ? 'Smart solutions for energy management and utility services.' : 'ระบบอัจฉริยะช่วยบริหารพลังงานและงานสาธารณูปโภค' },
+    { slug: 'fintech', icon: 'ti-building-bank', title: isEN ? 'Financial Services' : 'บริการทางการเงิน', href: '/industries/fintech', desc: isEN ? 'Digital solutions for banks, insurance, and financial institutions.' : 'ระบบธนาคารดิจิทัลและระบบชำระเงินที่ปลอดภัย ตรงตามมาตรฐาน ธปท.' },
+    { slug: 'government', icon: 'ti-building-bank', title: isEN ? 'Government & Public Sector' : 'ภาครัฐและหน่วยงานสาธารณะ', href: '/industries/government', desc: isEN ? 'Digital services for government and public institutions.' : 'บริการออนไลน์สำหรับหน่วยงานรัฐและองค์กรสาธารณะ' },
+    { slug: 'healthcare', icon: 'ti-heartbeat', title: isEN ? 'Healthcare & Life Sciences' : 'สุขภาพและวิทยาศาสตร์ชีวภาพ', href: '/industries/healthcare', desc: isEN ? 'Technology solutions that improve patient care and medical research.' : 'เทคโนโลยีที่ช่วยดูแลผู้ป่วยและงานวิจัยทางการแพทย์' },
+    { slug: 'hospitality-travel', icon: 'ti-bed', title: isEN ? 'Hospitality & Travel' : 'การบริการและการท่องเที่ยว', href: '/industries/hospitality-travel', desc: isEN ? 'Enhance guest experiences with innovative technology solutions.' : 'ใช้เทคโนโลยีทำให้ผู้เข้าพักได้รับความสะดวกมากขึ้น' },
+    { slug: 'manufacturing', icon: 'ti-building-factory', title: isEN ? 'Manufacturing & Industrials' : 'การผลิตและอุตสาหกรรม', href: '/industries/manufacturing', desc: isEN ? 'Digital transformation for modern manufacturing operations.' : 'ช่วยโรงงานและงานผลิตทำงานบนระบบดิจิทัล' },
+    { slug: 'media-entertainment', icon: 'ti-movie', title: isEN ? 'Media & Entertainment' : 'สื่อและบันเทิง', href: '/industries/media-entertainment', desc: isEN ? 'Digital platforms for content creation and distribution.' : 'แพลตฟอร์มสำหรับสร้างและเผยแพร่คอนเทนต์' },
+    { slug: 'professional-services', icon: 'ti-briefcase', title: isEN ? 'Professional Services' : 'บริการวิชาชีพ', href: '/industries/professional-services', desc: isEN ? 'Digital tools for consulting, legal, and business services.' : 'เครื่องมือสำหรับที่ปรึกษา สำนักงานกฎหมาย และธุรกิจบริการ' },
+    { slug: 'real-estate', icon: 'ti-building-skyscraper', title: isEN ? 'Real Estate' : 'อสังหาริมทรัพย์', href: '/industries/real-estate', desc: isEN ? 'Property technology solutions for the modern real estate industry.' : 'แพลตฟอร์มสำหรับค้นหา จัดการ และขายอสังหาฯ' },
+    { slug: 'retail', icon: 'ti-shopping-cart', title: isEN ? 'Retail & E-commerce' : 'ค้าปลีกและอีคอมเมิร์ซ', href: '/industries/retail', desc: isEN ? 'Build engaging shopping experiences that drive conversions.' : 'สร้างหน้าร้านออนไลน์ที่ช้อปง่าย ช่วยให้ลูกค้าซื้อมากขึ้น' },
+    { slug: 'technology', icon: 'ti-cpu', title: isEN ? 'Technology & Hi-Tech' : 'เทคโนโลยีและไฮเทค', href: '/industries/technology', desc: isEN ? 'Solutions for technology companies and startups.' : 'ระบบสำหรับบริษัทเทคโนโลยีและสตาร์ทอัพ' },
+    { slug: 'telecommunications', icon: 'ti-antenna', title: isEN ? 'Telecommunications' : 'โทรคมนาคม', href: '/industries/telecommunications', desc: isEN ? 'Next-generation solutions for telecom providers.' : 'ระบบสำหรับผู้ให้บริการโทรคมนาคม' },
+    { slug: 'logistics', icon: 'ti-truck-delivery', title: isEN ? 'Transportation & Logistics' : 'คมนาคมและโลจิสติกส์', href: '/industries/logistics', desc: isEN ? 'Optimize supply chains and transportation networks.' : 'ระบบจัดการซัพพลายเชน การขนส่ง และคลังสินค้า' },
   ]
 
   return (
@@ -221,13 +221,13 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? (
                 <>Built for Your<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Industry</span></>
               ) : (
-                <>โซลูชันที่เข้าใจ<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>ธุรกิจคุณจริงๆ</span></>
+                <>ระบบที่เข้าใจ<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>ธุรกิจของคุณจริงๆ</span></>
               )}
             </h1>
             <p className="text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 400 }}>
               {isEN
                 ? 'Every industry has different rules, users, and risks. We bring domain-specific expertise to every product we build.'
-                : 'แต่ละอุตสาหกรรมมีกฎ ผู้ใช้ และความเสี่ยงที่ต่างกัน เรานำความเชี่ยวชาญเฉพาะด้านมาใช้ในทุกผลิตภัณฑ์ที่สร้าง'}
+                : 'แต่ละอุตสาหกรรมมีกฎ ผู้ใช้ และความเสี่ยงไม่เหมือนกัน เราจึงใช้ความรู้เฉพาะด้านของแต่ละธุรกิจในทุกงานที่ทำ'}
             </p>
           </div>
         </section>
@@ -268,12 +268,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             style={{ height: 260, background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(123,110,246,0.35) 0%, rgba(83,195,215,0.08) 45%, transparent 75%)' }}
           />
           <div className="relative max-w-4xl mx-auto px-4 lg:px-10 py-24 lg:py-32 text-center">
-            <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#fff', fontWeight: 500 }}>{isEN ? 'Start Today' : 'เริ่มต้นวันนี้'}</p>
+            <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#fff', fontWeight: 500 }}>{isEN ? 'Start Today' : 'เริ่มวันนี้'}</p>
             <h2 className="t-display mb-6 leading-tight" style={{ background: 'linear-gradient(135deg, var(--purple-light) 0%, #53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', fontSize: 'clamp(2rem,4vw,4rem)' }}>
               {isEN ? "Don't See Your Industry?" : 'ไม่เห็นอุตสาหกรรมของคุณ?'}
             </h2>
             <p className="text-base mb-10 max-w-lg mx-auto" style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 400 }}>
-              {isEN ? 'Tell us about your business and we will show you how we can help.' : 'เล่าให้เราฟังเรื่องธุรกิจของคุณ แล้วเราจะแสดงให้เห็นว่าเราช่วยอะไรได้บ้าง'}
+              {isEN ? 'Tell us about your business and we will show you how we can help.' : 'เล่าเรื่องธุรกิจของคุณให้เราฟัง แล้วเราจะบอกว่าช่วยอะไรได้บ้าง'}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href={`${prefix}/contact`} className="inline-flex items-center gap-2 px-10 py-4 rounded-full text-sm transition-opacity hover:opacity-90" style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}>

@@ -32,14 +32,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge    = isEN ? 'Infrastructure / Cloud Services'  : 'โครงสร้างพื้นฐาน / Cloud Services'
   const title    = isEN ? 'Cloud Architecture'  : 'สถาปัตยกรรม Cloud'
   const subtitle = isEN ? 'That Scales With You'    : 'ที่เติบโตไปพร้อมธุรกิจคุณ'
-  const heroDesc = isEN ? 'Cloud architecture, migration, and FinOps on AWS, Google Cloud, and Azure — secure, observable, and cost-aware.'  : 'ออกแบบ Cloud Architecture, ทำ Migration และดูแล FinOps บน AWS, Google Cloud และ Azure ปลอดภัย ตรวจสอบได้ และคุมต้นทุนได้จริง'
-  const whyTitle = isEN ? 'Why unmanaged cloud spend quietly bleeds your business'    : 'ทำไม Cloud ที่ไม่ถูกดูแลถึงเผาเงินคุณอย่างเงียบๆ'
-  const whyDesc  = isEN ? 'Most companies overspend on cloud by 30% or more without noticing — idle instances, unused storage, and over-provisioned services add up fast when nobody owns the bill.'  : 'ธุรกิจส่วนใหญ่จ่ายค่า Cloud เกินจริง 30% หรือมากกว่านั้นโดยไม่รู้ตัว จาก Instance ที่ไม่ได้ใช้ Storage ที่ค้างอยู่ และ Service ที่ Provision เกินความจำเป็น เมื่อไม่มีใครดูแลบิลอย่างจริงจัง'
-  const ctaTitle = isEN ? 'Ready to fix your cloud?'    : 'พร้อมจัดระเบียบ Cloud ของคุณไหม?'
-  const ctaDesc  = isEN ? 'Start with a free cloud cost & architecture review. We will show you where the money and risk are.'   : 'เริ่มด้วยการตรวจสอบ Cloud Cost และ Architecture ฟรี เราจะชี้ให้เห็นว่าเงินและความเสี่ยงอยู่ตรงไหน'
+  const heroDesc = isEN ? 'Cloud architecture, migration, and FinOps on AWS, Google Cloud, and Azure — secure, observable, and cost-aware.'  : 'ออกแบบสถาปัตยกรรม Cloud ย้ายระบบ และดูแลค่าใช้จ่าย (FinOps) บน AWS, Google Cloud และ Azure ให้ปลอดภัย ตรวจสอบได้ และคุมต้นทุนได้จริง'
+  const whyTitle = isEN ? 'Why unmanaged cloud spend quietly bleeds your business'    : 'ทำไม Cloud ที่ไม่มีคนดูแลถึงค่อยๆ เผาเงินคุณ'
+  const whyDesc  = isEN ? 'Most companies overspend on cloud by 30% or more without noticing — idle instances, unused storage, and over-provisioned services add up fast when nobody owns the bill.'  : 'ธุรกิจส่วนใหญ่จ่ายค่า Cloud เกินจริง 30% ขึ้นไปโดยไม่รู้ตัว จากเครื่องที่ไม่ได้ใช้ พื้นที่เก็บข้อมูลที่ค้างอยู่ และบริการที่เปิดไว้เกินจำเป็น เมื่อไม่มีใครดูบิลอย่างจริงจัง'
+  const ctaTitle = isEN ? 'Ready to fix your cloud?'    : 'พร้อมจัดระเบียบ Cloud ของคุณหรือยัง?'
+  const ctaDesc  = isEN ? 'Start with a free cloud cost & architecture review. We will show you where the money and risk are.'   : 'เริ่มด้วยการตรวจค่าใช้จ่ายและสถาปัตยกรรม Cloud ฟรี เราจะชี้ให้เห็นว่าเงินรั่วและความเสี่ยงอยู่ตรงไหน'
   const overviewText = isEN
     ? 'We design and operate scalable cloud platforms with cost predictability built in from day one. That covers migrations off on-premises systems, consolidating sprawling multi-cloud environments, and running production Kubernetes — with security, compliance, infrastructure automation, networking, identity, observability, and cost optimization treated as part of the architecture, not an afterthought bolted on after something breaks.'
-    : 'เราออกแบบและดูแล Cloud Platform ที่ Scale ได้ พร้อมควบคุมต้นทุนได้ตั้งแต่วันแรก ครอบคลุมตั้งแต่การ Migrate ออกจากระบบ On-premises การรวม Multi-cloud ที่กระจัดกระจายให้เป็นระบบเดียว ไปจนถึงการดูแล Kubernetes ระดับ Production โดยให้ Security, Compliance, Infrastructure Automation, Networking, Identity และ Cost Optimization เป็นส่วนหนึ่งของ Architecture ตั้งแต่ต้น ไม่ใช่สิ่งที่มาเสริมทีหลังตอนระบบมีปัญหา'
+    : 'เราออกแบบและดูแลแพลตฟอร์ม Cloud ที่ขยายได้และคุมต้นทุนได้ตั้งแต่วันแรก ตั้งแต่ย้ายออกจากระบบ On-premises รวม Multi-cloud ที่กระจัดกระจายให้เป็นระบบเดียว ไปจนถึงดูแล Kubernetes ระดับใช้งานจริง โดยวางเรื่องความปลอดภัย Compliance ระบบอัตโนมัติ เครือข่าย การจัดการสิทธิ์ผู้ใช้ และการลดต้นทุนไว้ในสถาปัตยกรรมตั้งแต่ต้น ไม่ใช่มาเสริมทีหลังเมื่อระบบมีปัญหา'
 
   const heroBullets = isEN ? [
       'Cloud migration with rollback-safe, phased cutover plans',
@@ -48,11 +48,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'Secure-by-default identity, network, and secrets management',
       'Kubernetes operations for teams running production workloads',
     ] : [
-      'Migrate Cloud ด้วยแผน Cutover แบบ Phased ที่ Rollback ได้ปลอดภัย',
-      'ออกแบบ Multi-cloud และ Hybrid Architecture โดยไม่ผูกติด Vendor เกินจำเป็น',
-      'วินัย FinOps ที่ทำให้ค่าใช้จ่ายคาดการณ์ได้และมองเห็นชัดเจน',
-      'วาง Identity, Network และ Secrets Management แบบ Secure-by-default',
-      'ดูแล Kubernetes สำหรับทีมที่รัน Production Workload จริง',
+      'ย้าย Cloud เป็นเฟสตามแผนการสลับระบบ พร้อมย้อนกลับได้อย่างปลอดภัย',
+      'ออกแบบ Multi-cloud และ Hybrid โดยไม่ผูกติดผู้ให้บริการเกินจำเป็น',
+      'วินัย FinOps ที่ทำให้คาดการณ์และเห็นค่าใช้จ่ายได้ชัดเจน',
+      'วางระบบสิทธิ์ผู้ใช้ เครือข่าย และการจัดการ Secrets ให้ปลอดภัยโดยค่าเริ่มต้น',
+      'ดูแล Kubernetes สำหรับทีมที่รันงานจริงบน Production',
     ]
   const whyPoints   = isEN ? [
       'Idle instances and over-provisioned services routinely account for 30%+ of a typical cloud bill.',
@@ -61,11 +61,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'A well-run Kubernetes platform reduces deployment time from days to minutes.',
       'Security built into the architecture from day one is far cheaper than retrofitting it after an incident.',
     ] : [
-      'Instance ที่ไม่ได้ใช้และ Service ที่ Provision เกินมักคิดเป็น 30% ขึ้นไปของบิล Cloud ทั่วไป',
-      'การ Migrate แบบ Phased พร้อมจุด Rollback ช่วยลด Disruption ทางธุรกิจให้เกือบเป็นศูนย์',
-      'Multi-cloud ที่กระจัดกระจายโดยไม่มี Architecture ชัดเจน สร้างทั้งจุดบอดด้านต้นทุนและความปลอดภัย',
-      'Kubernetes Platform ที่ดูแลดี ลดเวลา Deploy จากหลักวันเหลือหลักนาที',
-      'การวาง Security ไว้ใน Architecture ตั้งแต่ต้น ถูกกว่าการแก้ไขย้อนหลังหลังเกิดเหตุมาก',
+      'เครื่องที่ไม่ได้ใช้และบริการที่เปิดไว้เกินมักคิดเป็น 30% ขึ้นไปของบิล Cloud ทั่วไป',
+      'การย้ายเป็นเฟสพร้อมจุดย้อนกลับ ช่วยให้ธุรกิจแทบไม่สะดุด',
+      'Multi-cloud ที่กระจัดกระจายโดยไม่มีสถาปัตยกรรมชัดเจน สร้างจุดบอดทั้งด้านต้นทุนและความปลอดภัย',
+      'แพลตฟอร์ม Kubernetes ที่ดูแลดี ลดเวลา Deploy จากหลักวันเหลือหลักนาที',
+      'วางความปลอดภัยไว้ในสถาปัตยกรรมตั้งแต่ต้น ถูกกว่าการแก้ย้อนหลังหลังเกิดเหตุมาก',
     ]
   const outcomes    = isEN ? [
       {stat: '30%', label: 'Average Cost Reduction', desc: 'After FinOps review and right-sizing'},
@@ -73,10 +73,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {stat: '0', label: 'Downtime Migrations', desc: 'With rollback-safe cutover plans'},
       {stat: '24/7', label: 'Platform Monitoring', desc: 'Observability from day one'}
     ] : [
-      {stat: '30%', label: 'ลดต้นทุนเฉลี่ย', desc: 'หลังทำ FinOps Review และ Right-sizing'},
-      {stat: '99.9%', label: 'Uptime SLA', desc: 'Architecture แบบ Multi-AZ Redundant'},
-      {stat: '0', label: 'Downtime จากการ Migrate', desc: 'ด้วยแผน Cutover ที่ Rollback ได้'},
-      {stat: '24/7', label: 'Monitoring Platform', desc: 'วาง Observability ตั้งแต่วันแรก'}
+      {stat: '30%', label: 'ลดต้นทุนเฉลี่ย', desc: 'หลังรีวิว FinOps และปรับขนาดให้พอดี'},
+      {stat: '99.9%', label: 'Uptime SLA', desc: 'สถาปัตยกรรมแบบสำรองข้าม Multi-AZ'},
+      {stat: '0', label: 'ระบบหยุดจากการย้าย', desc: 'ด้วยแผนสลับระบบที่ย้อนกลับได้'},
+      {stat: '24/7', label: 'Monitoring Platform', desc: 'วางระบบติดตามสถานะตั้งแต่วันแรก'}
     ]
   const features    = isEN ? [
       {icon: 'ti-cloud-upload', title: 'Migration & Cutover', desc: 'Phased migrations with rollback checkpoints, data validation, and minimal downtime.'},
@@ -86,12 +86,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {icon: 'ti-brand-kubernetes', title: 'Kubernetes Operations', desc: 'Production-grade container orchestration with autoscaling and self-healing.'},
       {icon: 'ti-chart-dots', title: 'Observability', desc: 'Monitoring, logging, and alerting so issues are caught before customers notice.'}
     ] : [
-      {icon: 'ti-cloud-upload', title: 'Migration & Cutover', desc: 'Migrate แบบ Phased พร้อมจุด Rollback, Data Validation และ Downtime ต่ำสุด'},
-      {icon: 'ti-topology-star-3', title: 'Multi-Cloud & Hybrid', desc: 'Architecture ที่ไม่ผูกติด Vendor เกินจำเป็นและไม่บวมเกินความจำเป็น'},
-      {icon: 'ti-currency-dollar', title: 'FinOps & Cost Control', desc: 'Optimize Instance, วางแผน Capacity และมองเห็นค่าใช้จ่ายที่ผูกกับผลลัพธ์ธุรกิจ'},
-      {icon: 'ti-shield-lock', title: 'Cloud Security Posture', desc: 'Identity Control, Network Segmentation, Secrets Management และ Compliance ต่อเนื่อง'},
-      {icon: 'ti-brand-kubernetes', title: 'Kubernetes Operations', desc: 'Container Orchestration ระดับ Production พร้อม Autoscaling และ Self-healing'},
-      {icon: 'ti-chart-dots', title: 'Observability', desc: 'Monitoring, Logging และ Alerting เพื่อจับปัญหาก่อนที่ลูกค้าจะรู้ตัว'}
+      {icon: 'ti-cloud-upload', title: 'Migration & Cutover', desc: 'ย้ายเป็นเฟสพร้อมจุดย้อนกลับ ตรวจสอบข้อมูล และหยุดระบบน้อยที่สุด'},
+      {icon: 'ti-topology-star-3', title: 'Multi-Cloud & Hybrid', desc: 'สถาปัตยกรรมที่ไม่ผูกติดผู้ให้บริการเกินจำเป็น และไม่ใหญ่เกินความจำเป็น'},
+      {icon: 'ti-currency-dollar', title: 'FinOps & Cost Control', desc: 'ปรับขนาดเครื่อง วางแผนทรัพยากร และมองเห็นค่าใช้จ่ายที่โยงกับผลลัพธ์ทางธุรกิจ'},
+      {icon: 'ti-shield-lock', title: 'Cloud Security Posture', desc: 'ควบคุมสิทธิ์ผู้ใช้ แยกส่วนเครือข่าย จัดการ Secrets และดูแล Compliance ต่อเนื่อง'},
+      {icon: 'ti-brand-kubernetes', title: 'Kubernetes Operations', desc: 'จัดการ Container ระดับใช้งานจริง พร้อม Autoscaling และระบบซ่อมตัวเอง (Self-healing)'},
+      {icon: 'ti-chart-dots', title: 'Observability', desc: 'ติดตามระบบ เก็บ Log และแจ้งเตือน เพื่อจับปัญหาก่อนที่ลูกค้าจะรู้ตัว'}
     ]
   const steps       = isEN ? [
       {no: '01', title: 'Assessment', desc: 'Evaluate workloads, dependencies, and migration risks.'},
@@ -101,21 +101,21 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {no: '05', title: 'Observe', desc: 'Implement monitoring and operational procedures.'},
       {no: '06', title: 'Support', desc: 'Provide ongoing cloud platform operations.'}
     ] : [
-      {no: '01', title: 'Assessment', desc: 'ประเมิน Workload, Dependency และความเสี่ยงในการ Migrate'},
-      {no: '02', title: 'Planning', desc: 'ออกแบบ Landing Zone และลำดับขั้นตอนการ Migrate'},
-      {no: '03', title: 'Migration', desc: 'ดำเนินการย้ายระบบ ตรวจสอบความถูกต้องของข้อมูล'},
-      {no: '04', title: 'Optimize', desc: 'ปรับปรุงต้นทุน Throughput และความทนทานของระบบ'},
-      {no: '05', title: 'Observe', desc: 'วาง Monitoring และขั้นตอนการดูแลระบบ'},
-      {no: '06', title: 'Support', desc: 'ดูแล Cloud Platform อย่างต่อเนื่อง'}
+      {no: '01', title: 'Assessment', desc: 'ประเมินงานที่รันอยู่ ความเชื่อมโยงของระบบ และความเสี่ยงในการย้าย'},
+      {no: '02', title: 'Planning', desc: 'ออกแบบ Landing Zone และลำดับขั้นตอนการย้าย'},
+      {no: '03', title: 'Migration', desc: 'ย้ายระบบและตรวจสอบความถูกต้องของข้อมูล'},
+      {no: '04', title: 'Optimize', desc: 'ปรับต้นทุน ปริมาณงานที่รับได้ และความทนทานของระบบ'},
+      {no: '05', title: 'Observe', desc: 'วางระบบติดตามและขั้นตอนการดูแลระบบ'},
+      {no: '06', title: 'Support', desc: 'ดูแลแพลตฟอร์ม Cloud อย่างต่อเนื่อง'}
     ]
   const caseStudies = isEN ? [
       {tag: 'FinTech · Bangkok', title: 'On-prem to AWS Migration, Zero Downtime', desc: 'Phased cutover of core banking workloads with full rollback safety net.', result: 'Cost down 34%'},
       {tag: 'Retail · Nationwide', title: 'Multi-Cloud Consolidation to GCP', desc: 'Unified 6 scattered cloud accounts into one governed platform.', result: 'Ops overhead down 50%'},
       {tag: 'Logistics · Bangkok', title: 'Kubernetes Platform for 40+ Microservices', desc: 'Self-healing, autoscaling platform replacing manual VM deployments.', result: 'Deploy time: days to minutes'}
     ] : [
-      {tag: 'FinTech · กรุงเทพฯ', title: 'Migrate On-prem สู่ AWS แบบ Zero Downtime', desc: 'Cutover Workload ธนาคารแบบ Phased พร้อม Rollback Safety Net เต็มรูปแบบ', result: 'ต้นทุนลดลง 34%'},
-      {tag: 'Retail · ทั่วประเทศ', title: 'รวม Multi-Cloud เข้าสู่ GCP', desc: 'รวม Cloud Account ที่กระจัดกระจาย 6 บัญชีเป็น Platform เดียวที่ควบคุมได้', result: 'ภาระงาน Ops ลดลง 50%'},
-      {tag: 'Logistics · กรุงเทพฯ', title: 'Kubernetes Platform สำหรับ 40+ Microservices', desc: 'Platform แบบ Self-healing, Autoscaling แทนการ Deploy VM ด้วยมือ', result: 'เวลา Deploy: วัน เหลือ นาที'}
+      {tag: 'FinTech · กรุงเทพฯ', title: 'ย้าย On-prem สู่ AWS โดยไม่มีระบบหยุด', desc: 'สลับระบบธนาคารเป็นเฟส พร้อมแผนย้อนกลับเต็มรูปแบบ', result: 'ต้นทุนลดลง 34%'},
+      {tag: 'Retail · ทั่วประเทศ', title: 'รวม Multi-Cloud เข้าสู่ GCP', desc: 'รวม Cloud Account ที่กระจัดกระจาย 6 บัญชีเป็นแพลตฟอร์มเดียวที่ควบคุมได้', result: 'งานดูแลระบบลดลง 50%'},
+      {tag: 'Logistics · กรุงเทพฯ', title: 'แพลตฟอร์ม Kubernetes สำหรับ 40+ Microservices', desc: 'แพลตฟอร์มที่ซ่อมตัวเองและขยายอัตโนมัติ แทนการ Deploy VM ด้วยมือ', result: 'เวลา Deploy: จากหลักวันเหลือหลักนาที'}
     ]
   const faqs        = isEN ? [
       {q: 'Which cloud platforms do you support?', a: 'AWS, Google Cloud, and Azure, with Kubernetes, Docker, Terraform, and Helm for infrastructure as code.'},
@@ -124,9 +124,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {q: 'How do you approach security?', a: 'Secure by default — least-privilege IAM, network isolation, secrets management, and audit logging from day one.'}
     ] : [
       {q: 'รองรับ Cloud Platform ไหนบ้าง?', a: 'AWS, Google Cloud และ Azure พร้อม Kubernetes, Docker, Terraform และ Helm สำหรับ Infrastructure as Code'},
-      {q: 'Migrate ได้โดยไม่กระทบธุรกิจไหม?', a: 'ได้ครับ แผน Migrate แบบ Phased มีจุด Rollback และรันคู่ขนานจนกว่าจะ Validate สำเร็จ'},
-      {q: 'จะช่วยลดค่า Cloud ได้ไหม?', a: 'โดยทั่วไปได้ครับ Cost Review จะหาจุดประหยัดจาก Right-sizing และ Resource ที่ไม่ได้ใช้ก่อนปรับ Structure'},
-      {q: 'ดูแล Security ยังไง?', a: 'Secure by Default — IAM แบบ Least-privilege, Network Isolation, Secrets Management และ Audit Logging ตั้งแต่วันแรก'}
+      {q: 'ย้ายได้โดยไม่กระทบธุรกิจไหม?', a: 'ได้ แผนย้ายแบบเป็นเฟสมีจุดย้อนกลับ และรันระบบเก่าใหม่คู่ขนานจนกว่าจะตรวจสอบผ่าน'},
+      {q: 'จะช่วยลดค่า Cloud ได้ไหม?', a: 'โดยทั่วไปได้ การตรวจค่าใช้จ่ายจะหาจุดประหยัดจากการปรับขนาดให้พอดีและทรัพยากรที่ไม่ได้ใช้ ก่อนจะแตะโครงสร้างระบบ'},
+      {q: 'ดูแลความปลอดภัยยังไง?', a: 'ปลอดภัยโดยค่าเริ่มต้น มีการให้สิทธิ์น้อยที่สุดเท่าที่จำเป็น (Least-privilege) แยกเครือข่าย จัดการ Secrets และเก็บ Audit Log ตั้งแต่วันแรก'}
     ]
   const related     = isEN ? [
       {label: 'Application Modernization', href: '/services/application-modernization'},
@@ -202,10 +202,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-currency-dollar', title: 'FinOps & Cost Control', desc: 'Instance optimization, capacity reservations, and spending transparency aligned with business outcomes.' },
     { icon: 'ti-shield-lock', title: 'Cloud Security Posture', desc: 'Identity controls, network segmentation, secrets management, and continuous compliance monitoring.' },
   ] : [
-    { icon: 'ti-cloud-upload', title: 'Migration & Cutover', desc: 'Migrate แบบ Phased พร้อมกลยุทธ์ Rollback, Data Validation และลด Downtime' },
-    { icon: 'ti-topology-star-3', title: 'Multi-Cloud & Hybrid', desc: 'เลือก Architecture ที่ไม่ผูกติด Vendor เกินจำเป็นและไม่บวมเกินความจำเป็น' },
-    { icon: 'ti-currency-dollar', title: 'FinOps & Cost Control', desc: 'Optimize Instance, จอง Capacity และสร้างความโปร่งใสด้านค่าใช้จ่ายที่ผูกกับผลลัพธ์ธุรกิจ' },
-    { icon: 'ti-shield-lock', title: 'Cloud Security Posture', desc: 'Identity Control, Network Segmentation, Secrets Management และ Compliance ต่อเนื่อง' },
+    { icon: 'ti-cloud-upload', title: 'Migration & Cutover', desc: 'ย้ายเป็นเฟสพร้อมกลยุทธ์ย้อนกลับ ตรวจสอบข้อมูล และลดเวลาที่ระบบหยุด' },
+    { icon: 'ti-topology-star-3', title: 'Multi-Cloud & Hybrid', desc: 'เลือกสถาปัตยกรรมที่ไม่ผูกติดผู้ให้บริการเกินจำเป็น และไม่ใหญ่เกินความจำเป็น' },
+    { icon: 'ti-currency-dollar', title: 'FinOps & Cost Control', desc: 'ปรับขนาดเครื่อง จองทรัพยากรล่วงหน้า และทำให้ค่าใช้จ่ายโปร่งใสและโยงกับผลลัพธ์ทางธุรกิจ' },
+    { icon: 'ti-shield-lock', title: 'Cloud Security Posture', desc: 'ควบคุมสิทธิ์ผู้ใช้ แยกส่วนเครือข่าย จัดการ Secrets และดูแล Compliance ต่อเนื่อง' },
   ]
 
   const techStack = [
@@ -227,12 +227,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '05', title: 'Observe', desc: 'Monitoring and operational runbooks' },
     { no: '06', title: 'Support', desc: 'Ongoing platform operations' },
   ] : [
-    { no: '01', title: 'Assessment', desc: 'ประเมิน Workload, Dependency และความเสี่ยง' },
-    { no: '02', title: 'Planning', desc: 'ออกแบบ Landing Zone และลำดับการ Migrate' },
-    { no: '03', title: 'Migration', desc: 'ย้ายระบบ ตรวจสอบ และเปลี่ยนผ่าน' },
-    { no: '04', title: 'Optimize', desc: 'ปรับปรุงต้นทุน Throughput และความทนทาน' },
-    { no: '05', title: 'Observe', desc: 'วาง Monitoring และขั้นตอนดูแลระบบ' },
-    { no: '06', title: 'Support', desc: 'ดูแล Platform อย่างต่อเนื่อง' },
+    { no: '01', title: 'Assessment', desc: 'ประเมินงานที่รันอยู่ ความเชื่อมโยงของระบบ และความเสี่ยง' },
+    { no: '02', title: 'Planning', desc: 'ออกแบบ Landing Zone และลำดับการย้าย' },
+    { no: '03', title: 'Migration', desc: 'ย้ายระบบ ตรวจสอบ และสลับใช้งาน' },
+    { no: '04', title: 'Optimize', desc: 'ปรับต้นทุน ปริมาณงานที่รับได้ และความทนทาน' },
+    { no: '05', title: 'Observe', desc: 'วางระบบติดตามและขั้นตอนดูแลระบบ' },
+    { no: '06', title: 'Support', desc: 'ดูแลแพลตฟอร์มอย่างต่อเนื่อง' },
   ]
 
   const darkFaqs = isEN ? [
@@ -245,14 +245,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { q: 'What happens to our systems during Kubernetes adoption?', a: 'We containerize incrementally, starting with stateless services that benefit most from autoscaling, and build the platform around your existing CI/CD rather than forcing a rewrite. Legacy systems that are not good Kubernetes candidates stay on their current infrastructure until it makes sense to move them.' },
     { q: 'Who owns the infrastructure code and cloud accounts afterward?', a: 'You do, entirely. All Terraform/Pulumi code, CI/CD pipelines, and documentation live in your own repositories and cloud accounts from day one — we work inside your environment rather than a separate one we control, so there is no migration needed at handover.' },
   ] : [
-    { q: 'Haliviq รองรับ Cloud Platform ไหนบ้าง?', a: 'AWS, Google Cloud และ Azure พร้อม Kubernetes, Docker, Terraform, Pulumi และ Helm สำหรับ Infrastructure as Code เราเลือก Platform และเครื่องมือตามความเหมาะสมจริง ตามทักษะทีมคุณและความต้องการของ Workload ไม่ใช่ความชอบส่วนตัวที่ยัดเยียดให้ทุกลูกค้า' },
-    { q: 'Migrate ได้โดยไม่กระทบธุรกิจใช่ไหม?', a: 'ใช่ครับ ทุกแผน Migrate มีจุด Rollback ที่กำหนดไว้ล่วงหน้า มีการซ้อม Cutover ก่อนจริง และมีช่วงเวลาที่ระบบเก่าและใหม่รันคู่ขนานกันจนกว่าจะ Validate ว่าเสถียร หากมีปัญหาระหว่าง Cutover เราจะ Rollback กลับไปสถานะที่รู้ว่าปลอดภัย ไม่ฝืนดันต่อ' },
-    { q: 'จะช่วยลดค่าใช้จ่าย Cloud ได้จริงไหม?', a: 'เกือบทุกโปรเจกต์ได้ครับ เราคำนึงถึงต้นทุนในทุกการตัดสินใจด้าน Architecture ตั้งแต่ต้น และ FinOps Review ของเรามักพบโอกาสประหยัด 20-40% จาก Right-sizing, การตัด Resource ที่ไม่ได้ใช้ และ Optimize Storage Tier ก่อนที่จะเสนอปรับ Structure ใดๆ ด้วยซ้ำ' },
-    { q: 'ดูแล Security ของ Cloud อย่างไร?', a: 'Secure by Default ครับ — IAM แบบ Least-privilege, Network Isolation, Secrets Management และ Audit Logging เป็นส่วนหนึ่งของ Architecture ตั้งแต่ต้น ไม่ใช่มาติดตั้งเพิ่มทีหลัง เรามี Monitoring ครอบคลุมตั้งแต่วันแรกเพื่อจับความผิดปกติได้ไว ไม่ใช่มาพบตอนสอบสวนเหตุการณ์' },
-    { q: 'รองรับ Hybrid หรือ Multi-cloud ไหม?', a: 'รองรับครับ เมื่อมีเหตุผลทางธุรกิจจริง เช่น ข้อกำหนดด้าน Regulation, การกระจายความเสี่ยงด้าน Vendor หรือจุดแข็งเฉพาะของแต่ละ Workload เราจะบอกตรงๆ ถึงความซับซ้อนด้าน Operation ที่เพิ่มขึ้นจาก Multi-cloud และไม่แนะนำเพียงเพราะฟังดูทนทานกว่าบนกระดาษ' },
-    { q: 'การ Migrate ทั่วไปใช้เวลานานแค่ไหน?', a: 'Migrate แอปพลิเคชันเดียวที่ความซับซ้อนปานกลาง มักใช้เวลา 6-10 สัปดาห์ตั้งแต่ Assessment ถึง Cutover ส่วนการปิด Data Center ทั้งหมดหรือรวม Multi-cloud ขนาดใหญ่ อาจใช้เวลา 4-9 เดือน โดยแบ่งเป็น Phase ให้แต่ละกลุ่มแอปพลิเคชัน Validate บน Production ก่อนเริ่มกลุ่มถัดไป' },
-    { q: 'ระหว่างปรับใช้ Kubernetes ระบบเดิมจะเป็นอย่างไร?', a: 'เรา Containerize แบบค่อยเป็นค่อยไป เริ่มจาก Stateless Service ที่ได้ประโยชน์จาก Autoscaling มากที่สุด และสร้าง Platform รอบ CI/CD เดิมของคุณ แทนที่จะบังคับ Rewrite ระบบเก่าที่ไม่เหมาะกับ Kubernetes จะยังอยู่บน Infrastructure เดิมจนกว่าจะถึงเวลาที่ควรย้าย' },
-    { q: 'Infrastructure Code และ Cloud Account เป็นของใครหลังจบโปรเจกต์?', a: 'เป็นของคุณทั้งหมดครับ Terraform/Pulumi Code, CI/CD Pipeline และเอกสารทั้งหมดอยู่ใน Repository และ Cloud Account ของคุณเองตั้งแต่วันแรก เราทำงานในสภาพแวดล้อมของคุณ ไม่ใช่สภาพแวดล้อมแยกที่เราควบคุม จึงไม่ต้อง Migrate อะไรตอนส่งมอบ' },
+    { q: 'Haliviq รองรับ Cloud Platform ไหนบ้าง?', a: 'AWS, Google Cloud และ Azure พร้อม Kubernetes, Docker, Terraform, Pulumi และ Helm สำหรับ Infrastructure as Code เราเลือกแพลตฟอร์มและเครื่องมือตามความเหมาะสมจริง ทั้งทักษะของทีมคุณและความต้องการของงาน ไม่ใช่ตามความชอบส่วนตัวที่เอาไปยัดให้ลูกค้าทุกราย' },
+    { q: 'ย้ายได้โดยไม่กระทบธุรกิจใช่ไหม?', a: 'ใช่ ทุกแผนย้ายมีจุดย้อนกลับที่กำหนดไว้ล่วงหน้า ซ้อมสลับระบบก่อนทำจริง และให้ระบบเก่าใหม่รันคู่ขนานกันจนกว่าจะแน่ใจว่าเสถียร หากมีปัญหาระหว่างสลับระบบ เราจะย้อนกลับไปสถานะที่ปลอดภัย ไม่ฝืนดันต่อ' },
+    { q: 'จะช่วยลดค่าใช้จ่าย Cloud ได้จริงไหม?', a: 'เกือบทุกโปรเจกต์ทำได้ เราคิดเรื่องต้นทุนในทุกการตัดสินใจด้านสถาปัตยกรรมตั้งแต่ต้น และการรีวิว FinOps ของเรามักพบโอกาสประหยัด 20-40% จากการปรับขนาดให้พอดี ตัดทรัพยากรที่ไม่ได้ใช้ และปรับชั้นเก็บข้อมูล ก่อนจะเสนอให้ปรับโครงสร้างใดๆ ด้วยซ้ำ' },
+    { q: 'ดูแลความปลอดภัยของ Cloud อย่างไร?', a: 'ปลอดภัยโดยค่าเริ่มต้น มีการให้สิทธิ์น้อยที่สุดเท่าที่จำเป็น (Least-privilege) แยกเครือข่าย จัดการ Secrets และเก็บ Audit Log เป็นส่วนหนึ่งของสถาปัตยกรรมตั้งแต่ต้น ไม่ใช่มาติดตั้งเพิ่มทีหลัง เรามีระบบติดตามครอบคลุมตั้งแต่วันแรก เพื่อจับความผิดปกติได้เร็ว ไม่ใช่ไปพบตอนสอบสวนเหตุการณ์' },
+    { q: 'รองรับ Hybrid หรือ Multi-cloud ไหม?', a: 'รองรับ เมื่อมีเหตุผลทางธุรกิจจริง เช่น ข้อกำหนดทางกฎหมาย การกระจายความเสี่ยงจากผู้ให้บริการรายเดียว หรือจุดแข็งเฉพาะของแต่ละงาน เราจะบอกตรงๆ ถึงภาระการดูแลที่เพิ่มขึ้นจาก Multi-cloud และไม่แนะนำเพียงเพราะฟังดูทนทานกว่าบนกระดาษ' },
+    { q: 'การย้ายทั่วไปใช้เวลานานแค่ไหน?', a: 'ย้ายแอปพลิเคชันเดียวที่ความซับซ้อนปานกลาง มักใช้เวลา 6-10 สัปดาห์ ตั้งแต่ประเมินระบบจนสลับใช้งาน ส่วนการปิด Data Center ทั้งหมดหรือรวม Multi-cloud ขนาดใหญ่ อาจใช้เวลา 4-9 เดือน โดยแบ่งเป็นเฟส ให้แต่ละกลุ่มแอปพลิเคชันผ่านการตรวจสอบบนระบบจริงก่อนเริ่มกลุ่มถัดไป' },
+    { q: 'ระหว่างใช้ Kubernetes ระบบเดิมจะเป็นอย่างไร?', a: 'เราทำเป็น Container ทีละส่วน เริ่มจากบริการแบบ Stateless ที่ได้ประโยชน์จาก Autoscaling มากที่สุด และสร้างแพลตฟอร์มรอบ CI/CD เดิมของคุณ แทนที่จะบังคับให้เขียนใหม่ ระบบเก่าที่ไม่เหมาะกับ Kubernetes จะอยู่บนโครงสร้างเดิมจนกว่าจะถึงเวลาที่ควรย้าย' },
+    { q: 'Infrastructure Code และ Cloud Account เป็นของใครหลังจบโปรเจกต์?', a: 'เป็นของคุณทั้งหมด โค้ด Terraform/Pulumi, CI/CD Pipeline และเอกสารทั้งหมดอยู่ใน Repository และ Cloud Account ของคุณเองตั้งแต่วันแรก เราทำงานในสภาพแวดล้อมของคุณ ไม่ใช่สภาพแวดล้อมแยกที่เราควบคุม จึงไม่ต้องย้ายอะไรตอนส่งมอบ' },
   ]
 
   const postHeroSlot = (
@@ -333,7 +333,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <p className="mb-16" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'A clear path from assessment to steady-state operations — adjusted per platform, never one-size-fits-all.'
-              : 'เส้นทางที่ชัดเจนจากการประเมินสู่การดำเนินงานที่มั่นคง ปรับตามแต่ละ Platform ไม่ใช่สูตรสำเร็จตายตัว'}
+              : 'เส้นทางที่ชัดเจนจากการประเมินไปจนถึงการดูแลระบบที่มั่นคง ปรับตามแต่ละแพลตฟอร์ม ไม่ใช่สูตรตายตัว'}
           </p>
 
           <div className="relative">
@@ -403,7 +403,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
         </h2>
         <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-          {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+          {isEN ? "We'd love to hear what you're building." : 'เรายินดีฟังว่าคุณกำลังสร้างอะไรอยู่'}
         </p>
         <div className="flex flex-wrap items-center gap-6">
           <Link
@@ -411,7 +411,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-medium transition-opacity hover:opacity-90"
             style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}
           >
-            {isEN ? 'Start a Conversation' : 'เริ่มบทสนทนา'}
+            {isEN ? 'Start a Conversation' : 'เริ่มคุยกับเรา'}
             <i className="ti ti-arrow-right" style={{ fontSize: 17 }} aria-hidden="true" />
           </Link>
           <a href="mailto:wu@haliviq.com" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>

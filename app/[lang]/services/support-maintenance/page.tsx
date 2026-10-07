@@ -31,16 +31,16 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const prefix = `/${params.lang}`
 
   const badge    = isEN ? 'Operations / Managed Services'  : 'ปฏิบัติการ / Managed Services'
-  const title    = isEN ? 'Production That'  : 'Production ที่'
+  const title    = isEN ? 'Production That'  : 'ระบบจริงที่'
   const subtitle = isEN ? 'Stays Healthy'    : 'แข็งแรงตลอดเวลา'
-  const heroDesc = isEN ? 'Proactive monitoring, incident response, and continuous improvement so production stays healthy after launch.'  : 'Proactive Monitoring, Incident Response และการปรับปรุงต่อเนื่อง เพื่อให้ Production แข็งแรงหลัง Launch'
-  const whyTitle = isEN ? 'Why launch is the beginning, not the finish line'    : 'ทำไม Launch คือจุดเริ่มต้น ไม่ใช่เส้นชัย'
-  const whyDesc  = isEN ? 'Systems degrade quietly — dependencies drift out of date, traffic patterns shift, and small issues compound until they become outages nobody saw coming.'  : 'ระบบเสื่อมสภาพอย่างเงียบๆ Dependency ล้าสมัยไปเรื่อยๆ Traffic เปลี่ยนแปลง และปัญหาเล็กๆ ทบต้นจนกลายเป็น Outage ที่ไม่มีใครเห็นล่วงหน้า'
-  const ctaTitle = isEN ? 'Ready for production that just works?'    : 'พร้อมให้ Production ทำงานได้อย่างมั่นใจไหม?'
-  const ctaDesc  = isEN ? 'Start with a free observability audit. We will show you the blind spots in your current setup.'   : 'เริ่มด้วยการตรวจสอบ Observability ฟรี เราจะชี้ให้เห็นจุดบอดในระบบปัจจุบันของคุณ'
+  const heroDesc = isEN ? 'Proactive monitoring, incident response, and continuous improvement so production stays healthy after launch.'  : 'เฝ้าระบบล่วงหน้า รับมือเหตุขัดข้อง และปรับปรุงต่อเนื่อง ให้ระบบจริงแข็งแรงหลังเปิดตัว'
+  const whyTitle = isEN ? 'Why launch is the beginning, not the finish line'    : 'ทำไมวันเปิดตัวคือจุดเริ่มต้น ไม่ใช่เส้นชัย'
+  const whyDesc  = isEN ? 'Systems degrade quietly — dependencies drift out of date, traffic patterns shift, and small issues compound until they become outages nobody saw coming.'  : 'ระบบเสื่อมลงอย่างเงียบๆ Dependency ล้าสมัยไปเรื่อยๆ ปริมาณผู้ใช้เปลี่ยน และปัญหาเล็กๆ ทบกันจนกลายเป็นระบบล่มที่ไม่มีใครเห็นล่วงหน้า'
+  const ctaTitle = isEN ? 'Ready for production that just works?'    : 'พร้อมให้ระบบจริงทำงานได้อย่างมั่นใจหรือยัง?'
+  const ctaDesc  = isEN ? 'Start with a free observability audit. We will show you the blind spots in your current setup.'   : 'เริ่มด้วยการตรวจ Observability ฟรี เราจะชี้จุดบอดในระบบปัจจุบันของคุณ'
   const overviewText = isEN
     ? 'We offer post-launch support with defined service level agreements covering observability, on-call response, dependency updates, performance tuning, and improvement backlogs. You keep full product ownership and decision-making authority while our team maintains platform reliability, documentation, and readiness for whatever release comes next — so production stays healthy long after the initial excitement of launch day fades.'
-    : 'เราให้บริการ Support หลัง Launch พร้อม SLA ที่ชัดเจน ครอบคลุม Observability, On-call Response, Dependency Update, Performance Tuning และ Improvement Backlog คุณยังเป็นเจ้าของ Product และมีอำนาจตัดสินใจเต็มที่ ในขณะที่ทีมเราดูแลความน่าเชื่อถือของ Platform, เอกสาร และความพร้อมสำหรับ Release ถัดไป เพื่อให้ Production แข็งแรงต่อไปนานหลังจากความตื่นเต้นวัน Launch จางหายไป'
+    : 'เราดูแลหลังเปิดตัวพร้อม SLA ที่ชัดเจน ครอบคลุม Observability, เวรรับมือเหตุขัดข้อง, อัปเดต Dependency, ปรับประสิทธิภาพ และรายการงานปรับปรุง คุณยังเป็นเจ้าของผลิตภัณฑ์และตัดสินใจเองทั้งหมด ส่วนทีมเราดูแลความน่าเชื่อถือของแพลตฟอร์ม เอกสาร และความพร้อมสำหรับเวอร์ชันถัดไป เพื่อให้ระบบแข็งแรงต่อไปนานหลังความตื่นเต้นวันเปิดตัวผ่านไป'
 
   const heroBullets = isEN ? [
       'Metrics, logs, traces, and alerts before customers complain',
@@ -49,10 +49,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'Performance, cost, and reliability improvement backlogs',
       'SLAs sized to how critical your system actually is',
     ] : [
-      'Metrics, Logs, Traces และ Alert ก่อนที่ลูกค้าจะร้องเรียน',
-      'วางแผน Capacity และทำงานเชิงรุกก่อนระบบพัง',
-      'Patch ตามกำหนดการ พร้อมเส้นทาง Release ที่ทดสอบแล้วความเสี่ยงต่ำ',
-      'Backlog การปรับปรุง Performance, ต้นทุน และความน่าเชื่อถือ',
+      'Metrics, Logs, Traces และการแจ้งเตือน ก่อนที่ลูกค้าจะร้องเรียน',
+      'วางแผนรองรับผู้ใช้และลงมือแก้ล่วงหน้าก่อนระบบพัง',
+      'อุดช่องโหว่ตามกำหนด พร้อมขั้นตอนปล่อยเวอร์ชันที่ทดสอบแล้วและเสี่ยงต่ำ',
+      'รายการปรับปรุงด้านประสิทธิภาพ ต้นทุน และความน่าเชื่อถือ',
       'SLA ที่กำหนดตามความสำคัญของระบบจริง',
     ]
   const whyPoints   = isEN ? [
@@ -62,11 +62,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'Freeing internal teams from on-call rotation lets them focus on building the product.',
       'Predictable support costs beat unpredictable emergency-fix bills every time.',
     ] : [
-      'Outage ส่วนใหญ่มีสัญญาณเตือนล่วงหน้า แต่ถูกมองข้ามเพราะไม่มี Observability ที่ดีพอ',
-      'การอัปเดต Dependency เชิงรุก ป้องกันปัญหา Security และความเสถียรที่สะสมอย่างเงียบๆ',
-      'SLA ที่ชัดเจน เปลี่ยน "ใครสักคนควรแก้เรื่องนี้" ให้เป็นเวลาตอบสนองที่ชัดเจนและรับผิดชอบได้',
-      'การปลดทีมภายในจาก On-call Rotation ทำให้พวกเขาโฟกัสกับการสร้าง Product ได้เต็มที่',
-      'ค่าใช้จ่าย Support ที่คาดการณ์ได้ ดีกว่าบิลแก้ปัญหาฉุกเฉินที่คาดเดาไม่ได้เสมอ',
+      'ระบบล่มส่วนใหญ่มีสัญญาณเตือนล่วงหน้า แต่ถูกมองข้ามเพราะ Observability ไม่ดีพอ',
+      'การอัปเดต Dependency ล่วงหน้า ป้องกันปัญหาด้านความปลอดภัยและความเสถียรที่สะสมอย่างเงียบๆ',
+      'SLA ที่ชัดเจน เปลี่ยน "ใครสักคนควรแก้เรื่องนี้" ให้เป็นเวลาตอบสนองที่ชัดเจนและมีคนรับผิดชอบ',
+      'เมื่อทีมภายในไม่ต้องเข้าเวรรับเหตุขัดข้อง ก็โฟกัสกับการสร้างผลิตภัณฑ์ได้เต็มที่',
+      'ค่าดูแลที่คาดการณ์ได้ ดีกว่าบิลแก้ปัญหาฉุกเฉินที่เดาไม่ได้เสมอ',
     ]
   const outcomes    = isEN ? [
       {stat: '99.99%', label: 'Uptime', desc: 'Across managed production systems'},
@@ -74,10 +74,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {stat: '0', label: 'Unplanned Errors', desc: 'Caught before customer impact'},
       {stat: '<15min', label: 'Alert Response', desc: 'For critical severity incidents'}
     ] : [
-      {stat: '99.99%', label: 'Uptime', desc: 'ในระบบ Production ที่เราดูแล'},
-      {stat: '42ms', label: 'Latency เฉลี่ย', desc: 'ติดตามและ Optimize ต่อเนื่อง'},
-      {stat: '0', label: 'Error ที่ไม่ได้วางแผน', desc: 'จับได้ก่อนกระทบลูกค้า'},
-      {stat: '<15min', label: 'เวลาตอบสนอง Alert', desc: 'สำหรับเหตุการณ์ระดับ Critical'}
+      {stat: '99.99%', label: 'Uptime', desc: 'ในระบบจริงที่เราดูแล'},
+      {stat: '42ms', label: 'Latency เฉลี่ย', desc: 'ติดตามและปรับปรุงต่อเนื่อง'},
+      {stat: '0', label: 'ข้อผิดพลาดที่ไม่ได้วางแผนไว้', desc: 'จับได้ก่อนกระทบลูกค้า'},
+      {stat: '<15min', label: 'เวลาตอบสนองต่อการแจ้งเตือน', desc: 'สำหรับเหตุร้ายแรง'}
     ]
   const features    = isEN ? [
       {icon: 'ti-chart-dots', title: 'Observability & Alerts', desc: 'Metrics, logs, traces, and actionable alerts so issues surface before customers complain.'},
@@ -87,12 +87,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {icon: 'ti-phone-call', title: 'On-Call Response', desc: 'Defined SLAs with escalation paths sized to how critical each system is.'},
       {icon: 'ti-report-analytics', title: 'Clear Reporting', desc: 'Transparent status updates and recommendations, not black-box operations.'}
     ] : [
-      {icon: 'ti-chart-dots', title: 'Observability & Alerts', desc: 'Metrics, Logs, Traces และ Alert ที่ใช้งานได้จริง เพื่อจับปัญหาก่อนลูกค้าร้องเรียน'},
-      {icon: 'ti-shield-check', title: 'Proactive Support', desc: 'วางแผน Capacity, อัปเดต Dependency และทำงานเชิงรุกก่อนระบบพัง ไม่ใช่แค่ดับไฟ'},
-      {icon: 'ti-tool', title: 'Maintenance & Patching', desc: 'อัปเดต Framework, OS Image และ Service ตามกำหนดการ พร้อมเส้นทาง Release ที่ทดสอบแล้ว'},
-      {icon: 'ti-trending-up', title: 'Continuous Improvement', desc: 'ปรับปรุง Performance, ต้นทุน และความน่าเชื่อถือ ขับเคลื่อนด้วยข้อมูล Production จริง'},
-      {icon: 'ti-phone-call', title: 'On-Call Response', desc: 'SLA ที่ชัดเจนพร้อม Escalation Path ตามความสำคัญของแต่ละระบบ'},
-      {icon: 'ti-report-analytics', title: 'Clear Reporting', desc: 'รายงานสถานะและข้อเสนอแนะที่โปร่งใส ไม่ใช่การทำงานแบบ Black-box'}
+      {icon: 'ti-chart-dots', title: 'Observability & Alerts', desc: 'Metrics, Logs, Traces และการแจ้งเตือนที่ใช้งานได้จริง เพื่อจับปัญหาก่อนลูกค้าร้องเรียน'},
+      {icon: 'ti-shield-check', title: 'Proactive Support', desc: 'วางแผนรองรับผู้ใช้ อัปเดต Dependency และแก้ล่วงหน้าก่อนระบบพัง ไม่ใช่แค่ตามดับไฟ'},
+      {icon: 'ti-tool', title: 'Maintenance & Patching', desc: 'อัปเดต Framework, OS Image และบริการตามกำหนด พร้อมขั้นตอนปล่อยเวอร์ชันที่ทดสอบแล้ว'},
+      {icon: 'ti-trending-up', title: 'Continuous Improvement', desc: 'ปรับปรุงประสิทธิภาพ ต้นทุน และความน่าเชื่อถือ โดยดูจากข้อมูลระบบจริง'},
+      {icon: 'ti-phone-call', title: 'On-Call Response', desc: 'SLA ที่ชัดเจน พร้อมลำดับการส่งต่อปัญหาตามความสำคัญของแต่ละระบบ'},
+      {icon: 'ti-report-analytics', title: 'Clear Reporting', desc: 'รายงานสถานะและข้อเสนอแนะที่โปร่งใส ไม่ใช่การทำงานแบบปิดบัง'}
     ]
   const steps       = isEN ? [
       {no: '01', title: 'Onboard', desc: 'Knowledge transfer and access setup.'},
@@ -102,11 +102,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {no: '05', title: 'Improve', desc: 'Reliability and performance work.'},
       {no: '06', title: 'Report', desc: 'Clear status and recommendations.'}
     ] : [
-      {no: '01', title: 'Onboard', desc: 'Transfer Knowledge และตั้งค่าการเข้าถึง'},
-      {no: '02', title: 'Instrument', desc: 'วาง Monitoring, Alert และ Runbook'},
+      {no: '01', title: 'Onboard', desc: 'ถ่ายทอดความรู้และตั้งค่าสิทธิ์เข้าถึง'},
+      {no: '02', title: 'Instrument', desc: 'ตั้งระบบเฝ้าดู การแจ้งเตือน และคู่มือรับมือ'},
       {no: '03', title: 'Monitor', desc: 'ติดตามสุขภาพระบบและ SLO'},
-      {no: '04', title: 'Maintain', desc: 'Patch, Upgrade และแก้ไขปัญหา'},
-      {no: '05', title: 'Improve', desc: 'ปรับปรุงความน่าเชื่อถือและ Performance'},
+      {no: '04', title: 'Maintain', desc: 'อุดช่องโหว่ อัปเกรด และแก้ปัญหา'},
+      {no: '05', title: 'Improve', desc: 'ปรับปรุงความน่าเชื่อถือและประสิทธิภาพ'},
       {no: '06', title: 'Report', desc: 'รายงานสถานะและข้อเสนอแนะที่ชัดเจน'}
     ]
   const caseStudies = isEN ? [
@@ -114,9 +114,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {tag: 'E-Commerce · Nationwide', title: 'Sale-Day Traffic Handled Without Incident', desc: 'Capacity planning and load monitoring ahead of peak events.', result: '10x traffic, zero downtime'},
       {tag: 'Healthcare · Bangkok', title: 'Incident Response Time Cut to 12 Minutes', desc: 'PagerDuty escalation and runbooks replaced ad-hoc firefighting.', result: 'MTTR down from 3 hours'}
     ] : [
-      {tag: 'FinTech · กรุงเทพฯ', title: 'Uptime 99.99% ตลอด 18 เดือน', desc: 'Observability Stack เต็มรูปแบบพร้อมวางแผน Capacity เชิงรุก', result: 'ไม่มี Outage ระดับ Critical'},
-      {tag: 'E-Commerce · ทั่วประเทศ', title: 'รองรับ Traffic วัน Sale โดยไม่มีปัญหา', desc: 'วางแผน Capacity และ Monitor Load ล่วงหน้าก่อนงานใหญ่', result: 'Traffic 10 เท่า ไม่มี Downtime'},
-      {tag: 'Healthcare · กรุงเทพฯ', title: 'ลดเวลา Incident Response เหลือ 12 นาที', desc: 'PagerDuty Escalation และ Runbook แทนการดับไฟแบบเฉพาะหน้า', result: 'MTTR ลดจาก 3 ชั่วโมง'}
+      {tag: 'FinTech · กรุงเทพฯ', title: 'Uptime 99.99% ตลอด 18 เดือน', desc: 'Observability เต็มรูปแบบ พร้อมวางแผนรองรับผู้ใช้ล่วงหน้า', result: 'ไม่มีระบบล่มร้ายแรง'},
+      {tag: 'E-Commerce · ทั่วประเทศ', title: 'รองรับผู้ใช้วัน Sale ได้โดยไม่มีปัญหา', desc: 'วางแผนรองรับผู้ใช้และเฝ้าดูโหลดล่วงหน้าก่อนงานใหญ่', result: 'ผู้ใช้เพิ่ม 10 เท่า ไม่มีระบบล่ม'},
+      {tag: 'Healthcare · กรุงเทพฯ', title: 'ลดเวลารับมือเหตุขัดข้องเหลือ 12 นาที', desc: 'ใช้ PagerDuty ส่งต่อปัญหาและมีคู่มือรับมือ แทนการดับไฟเฉพาะหน้า', result: 'MTTR ลดจาก 3 ชั่วโมง'}
     ]
   const faqs        = isEN ? [
       {q: 'What does managed support cover?', a: 'Proactive monitoring, incident response, dependency and security updates, performance tuning, and continuous improvement.'},
@@ -124,10 +124,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {q: 'Do you support systems you did not build?', a: 'Yes. We onboard external systems with an audit, add observability, and take over operations once we understand failure modes.'},
       {q: 'Do you offer SLAs?', a: 'Yes. Support engagements come with defined response times sized to how critical the system is.'}
     ] : [
-      {q: 'บริการ Managed Support ครอบคลุมอะไรบ้าง?', a: 'Proactive Monitoring, Incident Response, อัปเดต Dependency และ Security, Performance Tuning และการปรับปรุงต่อเนื่อง'},
-      {q: 'ใช้เครื่องมือ Monitoring อะไรบ้าง?', a: 'Prometheus, Grafana, Datadog, New Relic, Sentry และ OpenTelemetry สำหรับ Observability พร้อม PagerDuty สำหรับ Alert'},
-      {q: 'ดูแลระบบที่ไม่ได้พัฒนาเองได้ไหม?', a: 'ได้ครับ เรา Onboard ระบบภายนอกด้วยการ Audit เพิ่ม Observability และรับดูแลเมื่อเข้าใจ Failure Mode แล้ว'},
-      {q: 'มี SLA ไหม?', a: 'มีครับ งาน Support มาพร้อมเวลาตอบสนองที่ชัดเจน ตามความสำคัญของระบบ'}
+      {q: 'บริการดูแลระบบ (Managed Support) ครอบคลุมอะไรบ้าง?', a: 'เฝ้าระบบล่วงหน้า รับมือเหตุขัดข้อง อัปเดต Dependency และความปลอดภัย ปรับประสิทธิภาพ และปรับปรุงต่อเนื่อง'},
+      {q: 'ใช้เครื่องมือเฝ้าระบบอะไรบ้าง?', a: 'Prometheus, Grafana, Datadog, New Relic, Sentry และ OpenTelemetry สำหรับ Observability พร้อม PagerDuty สำหรับแจ้งเตือน'},
+      {q: 'ดูแลระบบที่ไม่ได้พัฒนาเองได้ไหม?', a: 'ได้ครับ เรารับระบบภายนอกด้วยการตรวจสอบก่อน เพิ่ม Observability แล้วรับดูแลเมื่อเข้าใจว่าระบบพังได้แบบไหน'},
+      {q: 'มี SLA ไหม?', a: 'มีครับ งานดูแลมาพร้อมเวลาตอบสนองที่ชัดเจน ตามความสำคัญของระบบ'}
     ]
   const related     = isEN ? [
       {label: 'Cloud Services & Migration', href: '/services/cloud-services-migration'},
@@ -143,10 +143,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   const supportLines = [
     { n: 1, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>{isEN ? 'alert: p99 latency spike' : 'alert: p99 latency spike'}</span></> },
-    { n: 2, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Auto-scaled · resolved in 4min' : 'Scale อัตโนมัติ · แก้ใน 4 นาที'}</> },
+    { n: 2, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Auto-scaled · resolved in 4min' : 'ขยายระบบอัตโนมัติ · แก้ใน 4 นาที'}</> },
     { n: 3, jsx: <>&nbsp;</> },
     { n: 4, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>patch --apply security-updates</span></> },
-    { n: 5, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? '7 CVEs patched · zero downtime' : 'แก้ CVE 7 รายการ · ไม่มี Downtime'}</> },
+    { n: 5, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? '7 CVEs patched · zero downtime' : 'แก้ CVE 7 รายการ · ไม่มีระบบล่ม'}</> },
     { n: 6, jsx: <>&nbsp;</> },
     { n: 7, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>{isEN ? 'slo --report weekly' : 'slo --report weekly'}</span></> },
     { n: 8, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? '99.99% uptime maintained' : 'รักษา Uptime 99.99%'}</> },
@@ -203,10 +203,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-tool', title: 'Maintenance & Patching', desc: 'Scheduled updates for frameworks, OS images, and services with tested release paths.' },
     { icon: 'ti-trending-up', title: 'Continuous Improvement', desc: 'Performance, cost, and reliability workstreams driven by production data and product goals.' },
   ] : [
-    { icon: 'ti-chart-dots', title: 'Observability & Alerts', desc: 'Metrics, Logs, Traces และ Alert ที่ใช้งานได้จริง เพื่อจับปัญหาก่อนลูกค้าร้องเรียน' },
-    { icon: 'ti-shield-check', title: 'Proactive Support', desc: 'วางแผน Capacity, อัปเดต Dependency และทำงานเชิงรุกก่อนระบบพัง ไม่ใช่แค่ดับไฟตาม Ticket' },
-    { icon: 'ti-tool', title: 'Maintenance & Patching', desc: 'อัปเดต Framework, OS Image และ Service ตามกำหนดการ พร้อมเส้นทาง Release ที่ทดสอบแล้ว' },
-    { icon: 'ti-trending-up', title: 'Continuous Improvement', desc: 'ปรับปรุง Performance, ต้นทุน และความน่าเชื่อถือ ขับเคลื่อนด้วยข้อมูล Production และเป้าหมาย Product' },
+    { icon: 'ti-chart-dots', title: 'Observability & Alerts', desc: 'Metrics, Logs, Traces และการแจ้งเตือนที่ใช้งานได้จริง เพื่อจับปัญหาก่อนลูกค้าร้องเรียน' },
+    { icon: 'ti-shield-check', title: 'Proactive Support', desc: 'วางแผนรองรับผู้ใช้ อัปเดต Dependency และแก้ล่วงหน้าก่อนระบบพัง ไม่ใช่แค่ปิดงานตาม Ticket' },
+    { icon: 'ti-tool', title: 'Maintenance & Patching', desc: 'อัปเดต Framework, OS Image และบริการตามกำหนด พร้อมขั้นตอนปล่อยเวอร์ชันที่ทดสอบแล้ว' },
+    { icon: 'ti-trending-up', title: 'Continuous Improvement', desc: 'ปรับปรุงประสิทธิภาพ ต้นทุน และความน่าเชื่อถือ โดยดูจากข้อมูลระบบจริงและเป้าหมายของผลิตภัณฑ์' },
   ]
 
   const techStack = [
@@ -227,11 +227,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '05', title: 'Improve', desc: 'Reliability and performance' },
     { no: '06', title: 'Report', desc: 'Clear status and recommendations' },
   ] : [
-    { no: '01', title: 'Onboard', desc: 'Transfer Knowledge และตั้งค่าการเข้าถึง' },
-    { no: '02', title: 'Instrument', desc: 'Monitoring, Alert และ Runbook' },
+    { no: '01', title: 'Onboard', desc: 'ถ่ายทอดความรู้และตั้งค่าสิทธิ์เข้าถึง' },
+    { no: '02', title: 'Instrument', desc: 'ระบบเฝ้าดู การแจ้งเตือน และคู่มือรับมือ' },
     { no: '03', title: 'Monitor', desc: 'ติดตามสุขภาพระบบและ SLO' },
-    { no: '04', title: 'Maintain', desc: 'Patch, Upgrade และแก้ไขปัญหา' },
-    { no: '05', title: 'Improve', desc: 'ปรับปรุงความน่าเชื่อถือและ Performance' },
+    { no: '04', title: 'Maintain', desc: 'อุดช่องโหว่ อัปเกรด และแก้ปัญหา' },
+    { no: '05', title: 'Improve', desc: 'ปรับปรุงความน่าเชื่อถือและประสิทธิภาพ' },
     { no: '06', title: 'Report', desc: 'รายงานสถานะและข้อเสนอแนะ' },
   ]
 
@@ -245,14 +245,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { q: 'Can we cancel or scale support up and down?', a: 'Yes. Support engagements run month-to-month after an initial onboarding period, and coverage level can scale with a notice period rather than being locked into a long fixed contract. Many clients start with business-hours coverage and expand to 24/7 as the system becomes more critical.' },
     { q: 'Do you just monitor, or do you actually fix things?', a: 'Both. Monitoring without action is just a dashboard nobody looks at. Our engineers investigate root causes, apply fixes, and run the improvement backlog — proactive work like right-sizing infrastructure and patching dependencies — not only reactive firefighting when something breaks.' },
   ] : [
-    { q: 'บริการ Managed Support ของ Haliviq ครอบคลุมอะไรบ้าง?', a: 'Proactive Monitoring, Incident Response, อัปเดต Dependency และ Security, Performance Tuning และการปรับปรุงต่อเนื่อง เพื่อให้ Production แข็งแรงต่อไปนานหลัง Launch ไม่ใช่แค่ Ticket Queue แต่เป็นความใส่ใจด้าน Engineering ต่อระบบของคุณอย่างต่อเนื่อง' },
-    { q: 'ใช้เครื่องมือ Monitoring อะไรบ้าง?', a: 'Prometheus, Grafana, Datadog, New Relic, Sentry และ OpenTelemetry สำหรับ Observability พร้อม PagerDuty สำหรับ Alert และ On-call Escalation เราปรับให้เข้ากับเครื่องมือที่คุณมีอยู่แล้ว แทนที่จะรื้อระบบที่ใช้งานได้ดีอยู่แล้วทิ้ง' },
-    { q: 'ดูแลระบบที่ Haliviq ไม่ได้พัฒนาเองได้ไหม?', a: 'ได้ครับ เรา Onboard ระบบภายนอกด้วยการ Audit ก่อน โดยทำแผนที่ Architecture, Dependency และ Failure Mode ที่รู้อยู่แล้ว เพิ่ม Observability ในจุดที่ยังขาด และรับดูแล Operation เมื่อเข้าใจว่าระบบทำงานจริงอย่างไรภายใต้ Load' },
-    { q: 'มี SLA ไหม และมีโครงสร้างอย่างไร?', a: 'มีครับ งาน Support มาพร้อมเวลาตอบสนองและ Escalation Path ที่ชัดเจน ตามความสำคัญของระบบ ตั้งแต่ Coverage ในเวลาทำการสำหรับเครื่องมือภายใน ไปจนถึงการตอบสนองตลอด 24 ชั่วโมงสำหรับระบบ Production ที่ลูกค้าใช้งานจริง' },
-    { q: 'Managed Support มีค่าใช้จ่ายเท่าไหร่?', a: 'ราคาเป็นแบบ Retainer รายเดือน ตามความสำคัญของระบบ, ชั่วโมง On-call Coverage และจำนวนระบบที่ดูแล ระบบ Production เดียวพร้อม Coverage ในเวลาทำการ มักเริ่มต้นที่หลักหมื่นปลายๆ (บาท) ต่อเดือน ส่วน Coverage 24/7 สำหรับหลายระบบ Critical จะเสนอราคาหลัง Audit ตอน Onboard' },
-    { q: 'เกิดอะไรขึ้นจริงระหว่างเหตุการณ์ Incident?', a: 'Alert จะส่งผ่าน PagerDuty ไปยัง Engineer On-call ซึ่งทำตาม Runbook ที่เขียนไว้ล่วงหน้าเฉพาะระบบคุณ ไม่ใช่การด้นสด คุณจะได้รับ Status Update ตามช่วงเวลาที่กำหนดระหว่างเหตุการณ์ ไม่ใช่ความเงียบจนกว่าจะแก้เสร็จ และมี Review หลังเหตุการณ์ที่ครอบคลุม Root Cause และการป้องกัน' },
-    { q: 'ยกเลิกหรือปรับระดับ Support ขึ้นลงได้ไหม?', a: 'ได้ครับ งาน Support เป็นแบบรายเดือนหลังช่วง Onboard เริ่มต้น และระดับ Coverage ปรับได้ตามระยะเวลาแจ้งล่วงหน้า ไม่ใช่ถูกล็อคไว้ในสัญญาระยะยาวตายตัว ลูกค้าหลายรายเริ่มจาก Coverage ในเวลาทำการ แล้วขยายเป็น 24/7 เมื่อระบบสำคัญมากขึ้น' },
-    { q: 'มีแค่ Monitor หรือลงมือแก้ไขจริงด้วย?', a: 'ทำทั้งสองอย่างครับ Monitoring ที่ไม่มีการลงมือทำ ก็แค่ Dashboard ที่ไม่มีใครดู Engineer ของเราตรวจสอบ Root Cause, แก้ไขจริง และดูแล Improvement Backlog เช่น การปรับ Infrastructure ให้เหมาะสมและ Patch Dependency ไม่ใช่แค่ดับไฟเมื่อมีอะไรพัง' },
+    { q: 'บริการดูแลระบบ (Managed Support) ของ Haliviq ครอบคลุมอะไรบ้าง?', a: 'เฝ้าระบบล่วงหน้า รับมือเหตุขัดข้อง อัปเดต Dependency และความปลอดภัย ปรับประสิทธิภาพ และปรับปรุงต่อเนื่อง ให้ระบบแข็งแรงต่อไปนานหลังเปิดตัว ไม่ใช่แค่คิวรับ Ticket แต่เป็นการดูแลระบบของคุณด้วยความใส่ใจแบบวิศวกรอย่างต่อเนื่อง' },
+    { q: 'ใช้เครื่องมือเฝ้าระบบอะไรบ้าง?', a: 'Prometheus, Grafana, Datadog, New Relic, Sentry และ OpenTelemetry สำหรับ Observability พร้อม PagerDuty สำหรับแจ้งเตือนและส่งต่อวิศวกรเวร เราปรับให้เข้ากับเครื่องมือที่คุณมีอยู่ ไม่รื้อสิ่งที่ใช้ได้ดีอยู่แล้วทิ้ง' },
+    { q: 'ดูแลระบบที่ Haliviq ไม่ได้พัฒนาเองได้ไหม?', a: 'ได้ครับ เรารับระบบภายนอกด้วยการตรวจสอบก่อน โดยทำแผนที่สถาปัตยกรรม Dependency และจุดที่เคยพังที่รู้อยู่แล้ว เพิ่ม Observability ในจุดที่ยังขาด และรับดูแลเมื่อเข้าใจว่าระบบทำงานจริงอย่างไรเมื่อมีผู้ใช้มาก' },
+    { q: 'มี SLA ไหม และมีโครงสร้างอย่างไร?', a: 'มีครับ งานดูแลมาพร้อมเวลาตอบสนองและลำดับการส่งต่อปัญหาที่ชัดเจน ตามความสำคัญของระบบ ตั้งแต่ดูแลในเวลาทำการสำหรับเครื่องมือภายใน ไปจนถึงตอบสนองตลอด 24 ชั่วโมงสำหรับระบบจริงที่ลูกค้าใช้งาน' },
+    { q: 'ค่าดูแลระบบเท่าไหร่?', a: 'ราคาเป็นแบบรายเดือน ขึ้นกับความสำคัญของระบบ ชั่วโมงที่มีเวรดูแล และจำนวนระบบที่ดูแล ระบบจริงหนึ่งระบบพร้อมดูแลในเวลาทำการ มักเริ่มที่หลักหมื่นปลายๆ (บาท) ต่อเดือน ส่วนการดูแล 24/7 สำหรับหลายระบบสำคัญจะเสนอราคาหลังตรวจสอบตอนรับระบบ' },
+    { q: 'เกิดอะไรขึ้นจริงเมื่อมีเหตุขัดข้อง?', a: 'ระบบแจ้งเตือนผ่าน PagerDuty ไปยังวิศวกรเวร ซึ่งทำตามคู่มือที่เขียนไว้ล่วงหน้าเฉพาะระบบคุณ ไม่ใช่ด้นสด คุณจะได้รับการอัปเดตสถานะตามช่วงเวลาที่กำหนดระหว่างเกิดเหตุ ไม่ใช่เงียบไปจนกว่าจะแก้เสร็จ และมีการทบทวนหลังเหตุการณ์ที่ครอบคลุมสาเหตุราก และวิธีป้องกัน' },
+    { q: 'ยกเลิกหรือปรับระดับการดูแลขึ้นลงได้ไหม?', a: 'ได้ครับ งานดูแลเป็นรายเดือนหลังช่วงเริ่มต้น และปรับระดับได้ตามระยะเวลาแจ้งล่วงหน้า ไม่ได้ล็อกไว้ในสัญญาระยะยาว ลูกค้าหลายรายเริ่มจากดูแลในเวลาทำการ แล้วขยายเป็น 24/7 เมื่อระบบสำคัญขึ้น' },
+    { q: 'เฝ้าดูอย่างเดียว หรือลงมือแก้ไขจริงด้วย?', a: 'ทำทั้งสองอย่างครับ การเฝ้าดูโดยไม่ลงมือก็เป็นแค่ Dashboard ที่ไม่มีใครมอง วิศวกรของเราตรวจหาสาเหตุราก แก้ไขจริง และดูแลรายการงานปรับปรุง เช่น ปรับโครงสร้างพื้นฐานให้เหมาะสมและอุดช่องโหว่ใน Dependency ไม่ใช่แค่ดับไฟเมื่อมีอะไรพัง' },
   ]
 
   const postHeroSlot = (
@@ -273,7 +273,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           {isEN ? 'Key Capabilities' : 'ความสามารถหลัก'}
         </h2>
         <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400 }}>
-          {isEN ? 'Concrete capabilities we bring to this engagement — not buzzwords.' : 'ความสามารถที่จับต้องได้จริงที่เรานำมาใช้ในทุกโปรเจกต์ ไม่ใช่แค่คำสวยหรู'}
+          {isEN ? 'Concrete capabilities we bring to this engagement — not buzzwords.' : 'สิ่งที่เราทำได้จริงในทุกโปรเจกต์ ไม่ใช่แค่คำสวยหรู'}
         </p>
 
         <div className="grid sm:grid-cols-2 gap-5">
@@ -297,12 +297,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             {isEN ? 'Tools We Use' : 'เครื่องมือที่ใช้'}
           </p>
           <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
-            {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้งาน'}
+            {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้'}
           </h2>
           <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'Proven observability and alerting tools we apply where they fit — chosen for the problem, not the trend cycle.'
-              : 'เครื่องมือ Observability และ Alerting ที่พิสูจน์แล้ว เลือกใช้ตามโจทย์งานจริง ไม่ใช่ตามกระแส'}
+              : 'เครื่องมือ Observability และแจ้งเตือนที่ผ่านการใช้งานจริง เลือกตามโจทย์งาน ไม่ใช่ตามกระแส'}
           </p>
 
           <div className="flex flex-wrap gap-3">
@@ -333,7 +333,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <p className="mb-16" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'A clear path from onboarding to steady-state reliability — adjusted per system, never one-size-fits-all.'
-              : 'เส้นทางที่ชัดเจนจากการ Onboard สู่ความน่าเชื่อถือที่มั่นคง ปรับตามแต่ละระบบ ไม่ใช่สูตรสำเร็จตายตัว'}
+              : 'เส้นทางที่ชัดเจนตั้งแต่รับระบบจนถึงความน่าเชื่อถือที่มั่นคง ปรับตามแต่ละระบบ ไม่ใช่สูตรตายตัว'}
           </p>
 
           <div className="relative">
@@ -369,7 +369,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             {isEN ? 'Frequently Asked Questions' : 'คำถามที่พบบ่อย'}
           </h2>
           <p className="mb-4" style={{ color: 'var(--lime)', fontSize: '1.2rem', fontWeight: 600 }}>
-            {isEN ? 'Straight answers about how we support production.' : 'คำตอบตรงไปตรงมาเกี่ยวกับวิธีที่เราดูแล Production'}
+            {isEN ? 'Straight answers about how we support production.' : 'คำตอบตรงไปตรงมาเกี่ยวกับวิธีที่เราดูแลระบบจริง'}
           </p>
 
           <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
@@ -411,7 +411,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-medium transition-opacity hover:opacity-90"
             style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}
           >
-            {isEN ? 'Start a Conversation' : 'เริ่มบทสนทนา'}
+            {isEN ? 'Start a Conversation' : 'เริ่มคุยกัน'}
             <i className="ti ti-arrow-right" style={{ fontSize: 17 }} aria-hidden="true" />
           </Link>
           <a href="mailto:wu@haliviq.com" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>
@@ -429,7 +429,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       badge={badge} title={title} subtitle={subtitle}
       heroDesc={heroDesc} heroBullets={heroBullets}
       heroDark heroSlot={heroSlot} heroShowSecondaryCta={false}
-      heroCtaLabel={isEN ? 'Get Started' : 'เริ่มต้นเลย'}
+      heroCtaLabel={isEN ? 'Get Started' : 'เริ่มเลย'}
       postHeroSlot={postHeroSlot}
       whyTitle={whyTitle} whyDesc={whyDesc} whyPoints={whyPoints}
       outcomes={outcomes} ctaTitle={ctaTitle} ctaDesc={ctaDesc}

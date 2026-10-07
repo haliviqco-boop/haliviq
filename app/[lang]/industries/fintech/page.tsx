@@ -16,7 +16,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge = isEN ? 'Industry / Financial Services' : 'อุตสาหกรรม / บริการทางการเงิน'
   const heroSubhead = isEN
     ? 'Digital solutions for banks, insurance, and financial institutions.'
-    : 'Digital Banking และ Payment ที่ปลอดภัยและ Compliant ตามมาตรฐาน ธปท.'
+    : 'ระบบธนาคารดิจิทัลและระบบชำระเงินที่ปลอดภัย ตรงตามมาตรฐาน ธปท.'
 
   const challenges = isEN ? [
     { icon: 'ti-scale', title: 'Regulatory Complexity', desc: 'Navigating evolving regulations across jurisdictions while maintaining innovation velocity requires sophisticated compliance systems that adapt to changing requirements automatically.' },
@@ -24,16 +24,16 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-shield-exclamation', title: 'Escalating Cyber Threats', desc: 'Financial institutions face increasingly sophisticated attacks targeting customer data, transaction systems, and proprietary algorithms, demanding defense-in-depth security architectures.' },
     { icon: 'ti-star', title: 'Rising Customer Expectations', desc: 'Consumers expect instant, personalised, always-available financial services across every channel, setting a bar that legacy institutions struggle to meet with outdated technology.' },
   ] : [
-    { icon: 'ti-scale', title: 'ความซับซ้อนด้านกฎระเบียบ', desc: 'การปรับตัวตามกฎระเบียบที่เปลี่ยนแปลงในแต่ละประเทศ พร้อมรักษาความเร็วในการสร้างนวัตกรรม ต้องการระบบ Compliance ที่ปรับตามข้อกำหนดใหม่ได้อัตโนมัติ' },
-    { icon: 'ti-server-2', title: 'Legacy Infrastructure', desc: 'ระบบ Core Banking ที่สร้างมาหลายสิบปีเปราะบางและมีต้นทุนดูแลสูง แต่ยังต้องประมวลผล Transaction หลักล้านรายการต่อวันโดยรับ Downtime ระหว่าง Modernization ไม่ได้' },
-    { icon: 'ti-shield-exclamation', title: 'ภัยคุกคามไซเบอร์ที่ทวีความรุนแรง', desc: 'สถาบันการเงินเผชิญการโจมตีที่ซับซ้อนขึ้นเรื่อยๆ ทั้งข้อมูลลูกค้า ระบบ Transaction และ Algorithm เฉพาะทาง ต้องการสถาปัตยกรรมความปลอดภัยแบบ Defense-in-depth' },
-    { icon: 'ti-star', title: 'ความคาดหวังของลูกค้าที่สูงขึ้น', desc: 'ผู้บริโภคคาดหวังบริการทางการเงินที่รวดเร็ว Personalize และพร้อมใช้งานทุกช่องทางตลอดเวลา ซึ่งเป็นมาตรฐานที่สถาบันเดิมตามด้วยเทคโนโลยีเก่าได้ยาก' },
+    { icon: 'ti-scale', title: 'กฎระเบียบที่ซับซ้อน', desc: 'ต้องปรับตามกฎระเบียบที่ต่างกันในแต่ละประเทศ โดยยังสร้างสิ่งใหม่ได้เร็ว จึงต้องมีระบบ Compliance ที่ปรับตามข้อกำหนดใหม่ได้เอง' },
+    { icon: 'ti-server-2', title: 'Legacy Infrastructure', desc: 'ระบบ Core Banking ที่สร้างมาหลายสิบปีเปราะบางและดูแลแพง แต่ยังต้องประมวลผลธุรกรรมหลายล้านรายการต่อวัน และหยุดระบบระหว่างปรับปรุงไม่ได้' },
+    { icon: 'ti-shield-exclamation', title: 'ภัยไซเบอร์ที่รุนแรงขึ้น', desc: 'สถาบันการเงินถูกโจมตีด้วยวิธีที่ซับซ้อนขึ้นเรื่อยๆ ทั้งข้อมูลลูกค้า ระบบธุรกรรม และอัลกอริทึมเฉพาะ จึงต้องมีสถาปัตยกรรมความปลอดภัยแบบป้องกันหลายชั้น' },
+    { icon: 'ti-star', title: 'ลูกค้าคาดหวังสูงขึ้น', desc: 'ผู้บริโภคอยากได้บริการการเงินที่เร็ว ตรงใจ และใช้ได้ทุกช่องทางตลอดเวลา ซึ่งสถาบันเดิมที่ใช้เทคโนโลยีเก่าทำตามได้ยาก' },
   ]
 
   const metrics = [
-    { value: '$15.2B', label: isEN ? 'Global Digital Banking Platform Market by 2028' : 'ขนาดตลาด Digital Banking Platform ทั่วโลกภายในปี 2028', source: 'Grand View Research, 2024' },
-    { value: '$164B', label: isEN ? 'Global Fintech Investment in 2024' : 'เงินลงทุน Fintech ทั่วโลกในปี 2024', source: 'CB Insights State of Fintech, 2024' },
-    { value: '78%', label: isEN ? 'Consumers Using Mobile Payments Regularly in Southeast Asia' : 'ผู้บริโภคที่ใช้ Mobile Payment เป็นประจำในเอเชียตะวันออกเฉียงใต้', source: 'McKinsey Digital Payments, 2024' },
+    { value: '$15.2B', label: isEN ? 'Global Digital Banking Platform Market by 2028' : 'ขนาดตลาดแพลตฟอร์มธนาคารดิจิทัลทั่วโลกภายในปี 2028', source: 'Grand View Research, 2024' },
+    { value: '$164B', label: isEN ? 'Global Fintech Investment in 2024' : 'เงินลงทุนใน Fintech ทั่วโลกในปี 2024', source: 'CB Insights State of Fintech, 2024' },
+    { value: '78%', label: isEN ? 'Consumers Using Mobile Payments Regularly in Southeast Asia' : 'ผู้บริโภคในเอเชียตะวันออกเฉียงใต้ที่ใช้ Mobile Payment เป็นประจำ', source: 'McKinsey Digital Payments, 2024' },
   ]
 
   const capabilities = isEN ? [
@@ -43,11 +43,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-pig-money', title: 'Wealth Management Tools', desc: 'Portfolio management and advisory platforms with robo-advisory capabilities, risk profiling, and real-time market analytics.' },
     { icon: 'ti-api', title: 'Open Banking APIs', desc: 'Secure API platforms enabling third-party integrations, account aggregation, and data sharing in compliance with open banking regulations.' },
   ] : [
-    { icon: 'ti-building-bank', title: 'Digital Banking Platforms', desc: 'แอปธนาคารแบบ Mobile-first พร้อมจัดการบัญชี ชำระเงิน เครื่องมือ Budgeting และ Insight ทางการเงินที่ Personalize' },
-    { icon: 'ti-credit-card', title: 'Payment Solutions', desc: 'ระบบ Payment ที่ปลอดภัย รองรับโอนเงิน Real-time, QR Payment, Digital Wallet และ Transaction ข้ามประเทศ' },
-    { icon: 'ti-shield-check', title: 'Risk & Compliance Platforms', desc: 'ระบบ KYC, AML และรายงานตามกฎระเบียบแบบอัตโนมัติ ลดต้นทุน Compliance พร้อมพร้อมรับการตรวจสอบเสมอ' },
-    { icon: 'ti-pig-money', title: 'Wealth Management Tools', desc: 'แพลตฟอร์มจัดการ Portfolio และให้คำปรึกษา พร้อม Robo-advisory, Risk Profiling และ Market Analytics แบบ Real-time' },
-    { icon: 'ti-api', title: 'Open Banking APIs', desc: 'แพลตฟอร์ม API ที่ปลอดภัย รองรับ Third-party Integration, Account Aggregation และ Data Sharing ตาม Open Banking Regulation' },
+    { icon: 'ti-building-bank', title: 'Digital Banking Platforms', desc: 'แอปธนาคารบนมือถือเป็นหลัก จัดการบัญชี ชำระเงิน มีเครื่องมือวางงบประมาณ และให้คำแนะนำทางการเงินเฉพาะบุคคล' },
+    { icon: 'ti-credit-card', title: 'Payment Solutions', desc: 'ระบบชำระเงินที่ปลอดภัย รองรับโอนเงินแบบเรียลไทม์ QR Payment, Digital Wallet และธุรกรรมข้ามประเทศ' },
+    { icon: 'ti-shield-check', title: 'Risk & Compliance Platforms', desc: 'ระบบ KYC, AML และรายงานตามกฎระเบียบอัตโนมัติ ลดต้นทุน Compliance และพร้อมรับการตรวจสอบเสมอ' },
+    { icon: 'ti-pig-money', title: 'Wealth Management Tools', desc: 'แพลตฟอร์มจัดการพอร์ตลงทุนและให้คำปรึกษา มี Robo-advisory ประเมินความเสี่ยงของนักลงทุน และวิเคราะห์ตลาดแบบเรียลไทม์' },
+    { icon: 'ti-api', title: 'Open Banking APIs', desc: 'แพลตฟอร์ม API ที่ปลอดภัย รองรับการเชื่อมต่อกับบริษัทภายนอก การรวมบัญชี และการแชร์ข้อมูลตามกฎ Open Banking' },
   ]
 
   const techStack = ['React', 'Node.js', 'Kubernetes', 'PostgreSQL', 'Redis', 'Kafka', 'AWS', 'Blockchain', 'AI/ML', 'GraphQL', 'OAuth 2.0', 'PCI DSS']
@@ -57,9 +57,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '02', title: 'Fraud Detection Engine', desc: 'Real-time transaction monitoring system using machine learning to detect anomalous patterns, flag suspicious activity, and reduce false positive rates.' },
     { no: '03', title: 'Open Banking Integration', desc: 'API gateway platform enabling secure account data sharing, payment initiation, and third-party fintech integrations in compliance with open banking regulations.' },
   ] : [
-    { no: '01', title: 'Mobile Banking Application', desc: 'Mobile Banking ครบวงจร พร้อม Biometric Login, Transaction แบบ Real-time, เครื่องมือ Budgeting, จัดการบัตร และ Insight ทางการเงินที่ Personalize' },
-    { no: '02', title: 'Fraud Detection Engine', desc: 'ระบบ Monitor Transaction แบบ Real-time ด้วย Machine Learning ตรวจจับรูปแบบผิดปกติ แจ้งเตือนกิจกรรมน่าสงสัย และลด False Positive' },
-    { no: '03', title: 'Open Banking Integration', desc: 'แพลตฟอร์ม API Gateway ที่รองรับการแชร์ข้อมูลบัญชีอย่างปลอดภัย เริ่ม Payment และเชื่อมต่อกับ Fintech ภายนอกตาม Open Banking Regulation' },
+    { no: '01', title: 'Mobile Banking Application', desc: 'Mobile Banking ครบชุด ล็อกอินด้วยชีวมิติ ธุรกรรมเรียลไทม์ เครื่องมือวางงบประมาณ จัดการบัตร และคำแนะนำทางการเงินเฉพาะบุคคล' },
+    { no: '02', title: 'Fraud Detection Engine', desc: 'ระบบตรวจสอบธุรกรรมแบบเรียลไทม์ด้วย Machine Learning ตรวจจับรูปแบบผิดปกติ แจ้งเตือนกิจกรรมน่าสงสัย และลดการเตือนผิด (False Positive)' },
+    { no: '03', title: 'Open Banking Integration', desc: 'แพลตฟอร์ม API Gateway ที่รองรับการแชร์ข้อมูลบัญชีอย่างปลอดภัย เริ่มการชำระเงิน และเชื่อมกับ Fintech ภายนอกตามกฎ Open Banking' },
   ]
 
   const heroVisual = (
@@ -173,7 +173,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
                   ? 'We work with banks, insurers, asset managers, and fintech startups to build secure, scalable platforms — from mobile banking apps and fraud detection engines to payment systems and open banking integrations. Our approach combines deep financial domain knowledge with modern engineering, helping you move faster without compromising on compliance.'
-                  : 'เราทำงานร่วมกับธนาคาร บริษัทประกัน ผู้จัดการสินทรัพย์ และ Fintech Startup เพื่อสร้าง Platform ที่ปลอดภัยและ Scale ได้ ตั้งแต่ Mobile Banking App, Fraud Detection Engine ไปจนถึง Payment System และ Open Banking Integration แนวทางของเราผสมผสานความเข้าใจด้านการเงินอย่างลึกซึ้งกับวิศวกรรมยุคใหม่ ช่วยให้คุณก้าวได้เร็วขึ้นโดยไม่ประนีประนอมเรื่อง Compliance'}
+                  : 'เราทำงานร่วมกับธนาคาร บริษัทประกัน ผู้จัดการสินทรัพย์ และสตาร์ทอัพ Fintech เพื่อสร้างแพลตฟอร์มที่ปลอดภัยและขยายได้ ตั้งแต่แอป Mobile Banking ระบบตรวจจับการทุจริต ไปจนถึงระบบชำระเงินและการเชื่อมต่อ Open Banking เราผสมความเข้าใจด้านการเงินอย่างลึกซึ้งกับวิศวกรรมยุคใหม่ ช่วยให้คุณไปได้เร็วขึ้นโดยไม่ลดมาตรฐาน Compliance'}
               </p>
             </div>
           </div>
@@ -191,7 +191,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Understanding the critical obstacles that drive digital transformation in this industry.'
-                : 'ความเข้าใจอุปสรรคสำคัญที่ผลักดันการปรับสู่ดิจิทัลในอุตสาหกรรมนี้'}
+                : 'ปัญหาหลักที่ธุรกิจในอุตสาหกรรมนี้ต้องเจอ'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -241,7 +241,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'โซลูชันที่พิสูจน์แล้วซึ่งเราสร้างเพื่อตอบโจทย์ที่สำคัญที่สุดของอุตสาหกรรมคุณ'}
+              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -264,12 +264,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Tech Stack' : 'เทคโนโลยีที่ใช้'}
             </p>
             <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
-              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้งาน'}
+              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้'}
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Industry-proven tools and frameworks we leverage to build robust solutions.'
-                : 'เครื่องมือและ Framework ที่พิสูจน์แล้วในอุตสาหกรรม ที่เราใช้สร้างโซลูชันที่แข็งแรงและเชื่อถือได้'}
+                : 'เครื่องมือและ Framework ที่เราเลือกใช้ เพราะมั่นคงและเชื่อถือได้'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -295,7 +295,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างโปรเจกต์ที่เราส่งมอบจริงให้กับลูกค้าในอุตสาหกรรมนี้'}
+              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างงานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -335,7 +335,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link

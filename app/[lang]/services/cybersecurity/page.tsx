@@ -25,17 +25,17 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const isEN = params.lang === 'en'
   const prefix = `/${params.lang}`
 
-  const badge    = isEN ? 'Security / Cybersecurity'  : 'ความปลอดภัย / Cybersecurity'
+  const badge    = isEN ? 'Security / Cybersecurity'  : 'ความปลอดภัย / ความปลอดภัยไซเบอร์ (Cybersecurity)'
   const title    = isEN ? 'Secure by Design'  : 'ปลอดภัยตั้งแต่การออกแบบ'
   const subtitle = isEN ? 'Not by Accident'    : 'ไม่ใช่เรื่องบังเอิญ'
-  const heroDesc = isEN ? 'Security assessments, secure-by-design engineering, and compliance support for modern product teams.'  : 'Security Assessment, วิศวกรรมแบบ Secure-by-design และการสนับสนุน Compliance สำหรับทีม Product ยุคใหม่'
-  const whyTitle = isEN ? 'Why a breach costs far more than prevention'    : 'ทำไมเหตุการณ์ Breach ถึงแพงกว่าการป้องกันมาก'
-  const whyDesc  = isEN ? 'A security incident costs downtime, incident response, regulatory exposure, and customer trust that takes years to rebuild — all avoidable with controls built in from the start.'  : 'เหตุการณ์ด้าน Security หนึ่งครั้ง ต้องแลกด้วย Downtime, การรับมือเหตุการณ์, ความเสี่ยงด้านกฎหมาย และความเชื่อมั่นลูกค้าที่ต้องใช้เวลาหลายปีกว่าจะฟื้น ทั้งหมดนี้ป้องกันได้ถ้าวางระบบ Control ไว้ตั้งแต่ต้น'
-  const ctaTitle = isEN ? 'Ready to find out where you stand?'    : 'พร้อมรู้สถานะความปลอดภัยของคุณไหม?'
-  const ctaDesc  = isEN ? 'Start with a free security posture review. We will show you the real risks, not a generic checklist.'   : 'เริ่มด้วยการตรวจสอบ Security Posture ฟรี เราจะชี้ให้เห็นความเสี่ยงจริง ไม่ใช่ Checklist ทั่วไป'
+  const heroDesc = isEN ? 'Security assessments, secure-by-design engineering, and compliance support for modern product teams.'  : 'ตรวจประเมินความปลอดภัย พัฒนาระบบแบบ Secure-by-design และช่วยเรื่อง Compliance สำหรับทีมผลิตภัณฑ์ยุคใหม่'
+  const whyTitle = isEN ? 'Why a breach costs far more than prevention'    : 'ทำไมถูกโจมตีข้อมูลถึงแพงกว่าการป้องกันมาก'
+  const whyDesc  = isEN ? 'A security incident costs downtime, incident response, regulatory exposure, and customer trust that takes years to rebuild — all avoidable with controls built in from the start.'  : 'เหตุการณ์ด้านความปลอดภัยหนึ่งครั้งต้องแลกด้วยระบบหยุด ค่ารับมือเหตุ ความเสี่ยงทางกฎหมาย และความเชื่อมั่นของลูกค้าที่ต้องใช้เวลาหลายปีกว่าจะกลับมา ทั้งหมดนี้ป้องกันได้ถ้าวางมาตรการควบคุมไว้ตั้งแต่ต้น'
+  const ctaTitle = isEN ? 'Ready to find out where you stand?'    : 'พร้อมรู้สถานะความปลอดภัยของคุณหรือยัง?'
+  const ctaDesc  = isEN ? 'Start with a free security posture review. We will show you the real risks, not a generic checklist.'   : 'เริ่มด้วยการตรวจสถานะความปลอดภัยฟรี เราจะชี้ความเสี่ยงจริงให้ ไม่ใช่รายการตรวจทั่วไป'
   const overviewText = isEN
     ? 'We help organizations find and fix security vulnerabilities before attackers do, while embedding protective measures directly into how software gets built. That covers security architecture reviews, penetration testing, vulnerability management, identity and access design, and hands-on support for compliance frameworks including SOC 2, ISO 27001, and GDPR — treated as engineering work, not a once-a-year audit exercise.'
-    : 'เราช่วยองค์กรค้นหาและแก้ไขช่องโหว่ด้าน Security ก่อนที่ผู้ไม่หวังดีจะเจอ พร้อมฝังมาตรการป้องกันเข้าไปในกระบวนการพัฒนา Software โดยตรง ครอบคลุมตั้งแต่ Security Architecture Review, Penetration Testing, Vulnerability Management, การออกแบบ Identity และ Access ไปจนถึงการสนับสนุน Compliance Framework อย่าง SOC 2, ISO 27001 และ GDPR โดยมองเป็นงานวิศวกรรม ไม่ใช่การ Audit ปีละครั้ง'
+    : 'เราช่วยองค์กรค้นหาและแก้ช่องโหว่ด้านความปลอดภัยก่อนที่ผู้ไม่หวังดีจะเจอ พร้อมฝังมาตรการป้องกันเข้าไปในขั้นตอนพัฒนาซอฟต์แวร์โดยตรง ตั้งแต่รีวิวสถาปัตยกรรมความปลอดภัย ทดสอบเจาะระบบ (Penetration Testing) จัดการช่องโหว่ ออกแบบระบบยืนยันตัวตนและสิทธิ์การเข้าถึง ไปจนถึงช่วยเรื่อง Compliance อย่าง SOC 2, ISO 27001 และ GDPR โดยมองเป็นงานวิศวกรรม ไม่ใช่การตรวจสอบปีละครั้ง'
 
   const heroBullets = isEN ? [
       'Architecture reviews and risk assessments around real threats',
@@ -44,11 +44,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'Incident response playbooks and readiness practices',
       'Security built into engineering from the first sprint',
     ] : [
-      'Architecture Review และ Risk Assessment ตาม Threat จริง',
-      'Penetration Testing แบบลงมือทำจริง พร้อมแนวทางแก้ไขชัดเจน',
-      'สนับสนุน Compliance SOC 2, ISO 27001 และ GDPR แบบปฏิบัติได้จริง',
-      'วาง Incident Response Playbook และความพร้อมรับมือ',
-      'ฝัง Security เข้าไปในงาน Engineering ตั้งแต่ Sprint แรก',
+      'รีวิวสถาปัตยกรรมและประเมินความเสี่ยงตามภัยคุกคามจริง',
+      'ทดสอบเจาะระบบแบบลงมือทำจริง พร้อมแนวทางแก้ไขที่ชัดเจน',
+      'ช่วยเรื่อง Compliance SOC 2, ISO 27001 และ GDPR แบบนำไปใช้ได้จริง',
+      'วางแผนรับมือเหตุการณ์ (Incident Response Playbook) และเตรียมความพร้อม',
+      'ฝังความปลอดภัยไว้ในงานวิศวกรรมตั้งแต่ Sprint แรก',
     ]
   const whyPoints   = isEN ? [
       'The average data breach costs organizations millions once downtime, legal, and reputation damage are counted.',
@@ -57,11 +57,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'Dependency scanning catches the majority of exploited vulnerabilities before they ship.',
       'Incident readiness turns a potential crisis into a contained, well-handled event.',
     ] : [
-      'ค่าเสียหายเฉลี่ยจาก Data Breach สูงถึงหลักล้านเมื่อรวม Downtime, กฎหมาย และความเสียหายด้านชื่อเสียง',
-      'Zero-trust และ Least-privilege Access ช่วยจำกัดความเสียหายอย่างมากเมื่อเกิดปัญหา',
-      'Compliance Framework อย่าง SOC 2 และ ISO 27001 จำเป็นมากขึ้นในการปิดดีล Enterprise',
-      'Dependency Scanning จับช่องโหว่ส่วนใหญ่ที่ถูกใช้โจมตีจริงได้ก่อนปล่อยใช้งาน',
-      'ความพร้อมรับมือเหตุการณ์ เปลี่ยนวิกฤตที่อาจเกิดขึ้น ให้กลายเป็นเหตุการณ์ที่ควบคุมได้',
+      'ค่าเสียหายเฉลี่ยจากข้อมูลรั่วไหลสูงถึงหลักล้านเมื่อรวมระบบหยุด กฎหมาย และความเสียหายต่อชื่อเสียง',
+      'Zero-trust และการให้สิทธิ์น้อยที่สุดเท่าที่จำเป็น ช่วยจำกัดความเสียหายได้มากเมื่อเกิดปัญหา',
+      'มาตรฐานอย่าง SOC 2 และ ISO 27001 จำเป็นมากขึ้นในการปิดดีลกับองค์กรใหญ่',
+      'การสแกน Dependency จับช่องโหว่ส่วนใหญ่ที่ถูกใช้โจมตีจริงได้ก่อนปล่อยใช้งาน',
+      'การเตรียมความพร้อมรับมือเหตุการณ์ ทำให้วิกฤตที่อาจเกิดขึ้นกลายเป็นเรื่องที่ควบคุมได้',
     ]
   const outcomes    = isEN ? [
       {stat: '0', label: 'Critical Incidents', desc: 'Across audited client systems'},
@@ -69,10 +69,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {stat: '<24h', label: 'Incident Response', desc: 'Time to containment'},
       {stat: '40+', label: 'Vulnerabilities Fixed', desc: 'Average per assessment'}
     ] : [
-      {stat: '0', label: 'เหตุการณ์ Critical', desc: 'ในระบบลูกค้าที่ตรวจสอบ'},
-      {stat: '100%', label: 'อัตราผ่าน SOC 2', desc: 'ตั้งแต่การ Audit ครั้งแรก'},
+      {stat: '0', label: 'เหตุการณ์ระดับ Critical', desc: 'ในระบบของลูกค้าที่ตรวจสอบ'},
+      {stat: '100%', label: 'อัตราผ่าน SOC 2', desc: 'ตั้งแต่การตรวจครั้งแรก'},
       {stat: '<24h', label: 'Incident Response', desc: 'เวลาในการควบคุมสถานการณ์'},
-      {stat: '40+', label: 'ช่องโหว่ที่แก้ไข', desc: 'เฉลี่ยต่อการ Assessment'}
+      {stat: '40+', label: 'ช่องโหว่ที่แก้ไข', desc: 'เฉลี่ยต่อการตรวจประเมิน'}
     ]
   const features    = isEN ? [
       {icon: 'ti-shield-search', title: 'Security Assessments', desc: 'Architecture reviews and risk assessments prioritized around genuine business threats.'},
@@ -82,12 +82,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {icon: 'ti-lock-access', title: 'Identity & Access', desc: 'Least-privilege IAM, zero trust principles, and access reviews built into architecture.'},
       {icon: 'ti-key', title: 'Secrets Management', desc: 'Vault-based secrets handling and dependency scanning built into the engineering process.'}
     ] : [
-      {icon: 'ti-shield-search', title: 'Security Assessments', desc: 'Architecture Review และ Risk Assessment ที่จัดลำดับตาม Threat ทางธุรกิจจริง'},
-      {icon: 'ti-bug', title: 'Penetration Testing', desc: 'ทดสอบ App, API และ Infrastructure แบบลงมือจริง พร้อมแนวทางแก้ไขชัดเจน'},
-      {icon: 'ti-certificate', title: 'Compliance Readiness', desc: 'สนับสนุนแบบปฏิบัติได้จริงสำหรับ SOC 2, ISO 27001, GDPR และ Control เฉพาะอุตสาหกรรม'},
-      {icon: 'ti-alert-triangle', title: 'Incident Readiness', desc: 'วาง Playbook และแนวทางรับมือเหตุการณ์เพื่อควบคุมและถอดบทเรียน'},
-      {icon: 'ti-lock-access', title: 'Identity & Access', desc: 'IAM แบบ Least-privilege, หลัก Zero Trust และการทบทวนสิทธิ์เข้าถึงในระดับ Architecture'},
-      {icon: 'ti-key', title: 'Secrets Management', desc: 'จัดการ Secret ผ่าน Vault และ Dependency Scanning ที่ฝังในกระบวนการ Engineering'}
+      {icon: 'ti-shield-search', title: 'Security Assessments', desc: 'รีวิวสถาปัตยกรรมและประเมินความเสี่ยง โดยจัดลำดับตามภัยคุกคามทางธุรกิจจริง'},
+      {icon: 'ti-bug', title: 'Penetration Testing', desc: 'ทดสอบแอป API และโครงสร้างพื้นฐานแบบลงมือจริง พร้อมแนวทางแก้ไขที่ชัดเจน'},
+      {icon: 'ti-certificate', title: 'Compliance Readiness', desc: 'ช่วยเรื่อง SOC 2, ISO 27001, GDPR และมาตรการเฉพาะอุตสาหกรรม แบบนำไปใช้ได้จริง'},
+      {icon: 'ti-alert-triangle', title: 'Incident Readiness', desc: 'วางแผนและแนวทางรับมือเหตุการณ์ เพื่อควบคุมสถานการณ์และถอดบทเรียน'},
+      {icon: 'ti-lock-access', title: 'Identity & Access', desc: 'ให้สิทธิ์น้อยที่สุดเท่าที่จำเป็น (IAM) ใช้หลัก Zero Trust และทบทวนสิทธิ์การเข้าถึงในระดับสถาปัตยกรรม'},
+      {icon: 'ti-key', title: 'Secrets Management', desc: 'จัดการ Secret ผ่าน Vault และสแกน Dependency ในขั้นตอนวิศวกรรม'}
     ]
   const steps       = isEN ? [
       {no: '01', title: 'Assess', desc: 'Posture, assets, and threat model evaluation.'},
@@ -97,21 +97,21 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {no: '05', title: 'Respond', desc: 'Incident handling and recovery procedures.'},
       {no: '06', title: 'Improve', desc: 'Lessons learned integrated into the SDLC.'}
     ] : [
-      {no: '01', title: 'Assess', desc: 'ประเมิน Posture, Asset และ Threat Model'},
-      {no: '02', title: 'Plan', desc: 'วาง Control และ Roadmap การแก้ไข'},
-      {no: '03', title: 'Implement', desc: 'Harden ระบบและวาง Secure Delivery Practice'},
-      {no: '04', title: 'Monitor', desc: 'วางกลไก Detection และ Review ต่อเนื่อง'},
-      {no: '05', title: 'Respond', desc: 'รับมือเหตุการณ์และขั้นตอน Recovery'},
-      {no: '06', title: 'Improve', desc: 'นำบทเรียนกลับเข้า SDLC'}
+      {no: '01', title: 'Assess', desc: 'ประเมินสถานะความปลอดภัย ทรัพย์สิน และแบบจำลองภัยคุกคาม'},
+      {no: '02', title: 'Plan', desc: 'วางมาตรการควบคุมและแผนการแก้ไข'},
+      {no: '03', title: 'Implement', desc: 'เสริมความแข็งแรงของระบบและวางแนวปฏิบัติการส่งมอบที่ปลอดภัย'},
+      {no: '04', title: 'Monitor', desc: 'วางระบบตรวจจับและทบทวนอย่างต่อเนื่อง'},
+      {no: '05', title: 'Respond', desc: 'รับมือเหตุการณ์และขั้นตอนกู้คืนระบบ'},
+      {no: '06', title: 'Improve', desc: 'นำบทเรียนกลับเข้าสู่ขั้นตอนพัฒนาซอฟต์แวร์ (SDLC)'}
     ]
   const caseStudies = isEN ? [
       {tag: 'FinTech · Bangkok', title: 'SOC 2 Type II Passed on First Attempt', desc: 'Full architecture hardening and control implementation ahead of audit.', result: 'Zero audit findings'},
       {tag: 'Healthcare · Bangkok', title: '23 Critical Vulnerabilities Found & Fixed', desc: 'Penetration test across app, API, and infrastructure before launch.', result: 'Fixed before go-live'},
       {tag: 'E-Commerce · Nationwide', title: 'Incident Contained in 4 Hours', desc: 'Playbook and monitoring caught and contained an intrusion attempt.', result: 'Zero customer data lost'}
     ] : [
-      {tag: 'FinTech · กรุงเทพฯ', title: 'ผ่าน SOC 2 Type II ตั้งแต่ครั้งแรก', desc: 'Harden Architecture และติดตั้ง Control เต็มรูปแบบก่อนการ Audit', result: 'ไม่พบข้อบกพร่องจาก Audit'},
-      {tag: 'Healthcare · กรุงเทพฯ', title: 'พบและแก้ช่องโหว่ Critical 23 จุด', desc: 'Penetration Test ครอบคลุม App, API และ Infrastructure ก่อน Launch', result: 'แก้ไขเสร็จก่อน Go-live'},
-      {tag: 'E-Commerce · ทั่วประเทศ', title: 'ควบคุมเหตุการณ์ได้ใน 4 ชั่วโมง', desc: 'Playbook และ Monitoring จับและควบคุมการพยายามบุกรุกได้ทัน', result: 'ไม่มีข้อมูลลูกค้าสูญหาย'}
+      {tag: 'FinTech · กรุงเทพฯ', title: 'ผ่าน SOC 2 Type II ตั้งแต่ครั้งแรก', desc: 'เสริมความแข็งแรงของสถาปัตยกรรมและติดตั้งมาตรการควบคุมครบก่อนการตรวจ', result: 'ไม่พบข้อบกพร่องจากการตรวจ'},
+      {tag: 'Healthcare · กรุงเทพฯ', title: 'พบและแก้ช่องโหว่ Critical 23 จุด', desc: 'ทดสอบเจาะระบบครอบคลุมแอป API และโครงสร้างพื้นฐานก่อนเปิดใช้งาน', result: 'แก้ไขเสร็จก่อนเปิดใช้งานจริง'},
+      {tag: 'E-Commerce · ทั่วประเทศ', title: 'ควบคุมเหตุการณ์ได้ใน 4 ชั่วโมง', desc: 'แผนรับมือและระบบติดตามจับและควบคุมการพยายามบุกรุกได้ทัน', result: 'ไม่มีข้อมูลลูกค้าสูญหาย'}
     ]
   const faqs        = isEN ? [
       {q: 'What cybersecurity services do you provide?', a: 'Security assessments, secure-by-design engineering, and compliance support: threat modeling, hardening, identity and access management, and monitoring.'},
@@ -119,10 +119,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {q: 'Do you help with PDPA and GDPR compliance?', a: 'Yes. We support PDPA compliance in Thailand as a founding partner of PDPA.org, and build controls aligned with GDPR and ISO 27001.'},
       {q: 'How do you build security into new products?', a: 'Zero trust principles, least-privilege access, secrets management, and dependency scanning are built in from the first sprint.'}
     ] : [
-      {q: 'ให้บริการ Cybersecurity แบบไหนบ้าง?', a: 'Security Assessment, วิศวกรรมแบบ Secure-by-design และการสนับสนุน Compliance: Threat Modeling, Hardening, Identity และ Access Management และ Monitoring'},
-      {q: 'ตรวจสอบระบบเดิมที่มีอยู่แล้วได้ไหม?', a: 'ได้ครับ เราทำ Assessment ครอบคลุม Code, Infrastructure, Dependency และ Access Control พร้อมจัดลำดับการแก้ไข'},
-      {q: 'ช่วยเรื่อง PDPA และ GDPR ได้ไหม?', a: 'ได้ครับ เราสนับสนุน PDPA ในไทยในฐานะ Founding Partner ของ PDPA.org และวาง Control ให้สอดคล้องกับ GDPR และ ISO 27001'},
-      {q: 'สร้าง Security ให้ Product ใหม่อย่างไร?', a: 'หลัก Zero Trust, Least-privilege Access, Secrets Management และ Dependency Scanning ถูกฝังไว้ตั้งแต่ Sprint แรก'}
+      {q: 'ให้บริการด้านความปลอดภัยไซเบอร์แบบไหนบ้าง?', a: 'ตรวจประเมินความปลอดภัย พัฒนาระบบแบบ Secure-by-design และช่วยเรื่อง Compliance ได้แก่ Threat Modeling, การเสริมความแข็งแรงของระบบ, ระบบยืนยันตัวตนและสิทธิ์การเข้าถึง และการติดตามระบบ'},
+      {q: 'ตรวจสอบระบบเดิมที่มีอยู่แล้วได้ไหม?', a: 'ได้ เราตรวจประเมินครอบคลุมโค้ด โครงสร้างพื้นฐาน Dependency และการควบคุมสิทธิ์เข้าถึง พร้อมจัดลำดับสิ่งที่ต้องแก้'},
+      {q: 'ช่วยเรื่อง PDPA และ GDPR ได้ไหม?', a: 'ได้ เราช่วยเรื่อง PDPA ในไทยในฐานะ Founding Partner ของ PDPA.org และวางมาตรการให้สอดคล้องกับ GDPR และ ISO 27001'},
+      {q: 'สร้างความปลอดภัยให้ผลิตภัณฑ์ใหม่อย่างไร?', a: 'หลัก Zero Trust การให้สิทธิ์น้อยที่สุดเท่าที่จำเป็น การจัดการ Secrets และการสแกน Dependency ถูกฝังไว้ตั้งแต่ Sprint แรก'}
     ]
   const related     = isEN ? [
       {label: 'PDPA Compliance', href: '/services/pdpa-compliance'},
@@ -141,7 +141,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { n: 2, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? '0 high-severity vulnerabilities' : 'ไม่พบช่องโหว่ระดับ High'}</> },
     { n: 3, jsx: <>&nbsp;</> },
     { n: 4, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>pentest --scope app,api,infra</span></> },
-    { n: 5, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? '23 findings remediated' : 'แก้ไข Finding 23 จุด'}</> },
+    { n: 5, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? '23 findings remediated' : 'แก้ไขปัญหาที่พบ 23 จุด'}</> },
     { n: 6, jsx: <>&nbsp;</> },
     { n: 7, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>{isEN ? 'audit --framework soc2' : 'audit --framework soc2'}</span></> },
     { n: 8, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'SOC 2 Type II: passed' : 'SOC 2 Type II: ผ่าน'}</> },
@@ -186,7 +186,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </div>
         <div className="flex items-center gap-1.5 text-xs" style={{ color: 'var(--lime)' }}>
           <i className="ti ti-circle-check" style={{ fontSize: 13 }} aria-hidden="true" />
-          {isEN ? 'SOC 2 audit ready' : 'พร้อมสำหรับ SOC 2 Audit'}
+          {isEN ? 'SOC 2 audit ready' : 'พร้อมสำหรับการตรวจ SOC 2'}
         </div>
       </div>
     </div>
@@ -198,10 +198,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-certificate', title: 'Compliance Readiness', desc: 'Practical assistance with SOC 2, ISO 27001, GDPR, and industry-specific controls.' },
     { icon: 'ti-alert-triangle', title: 'Incident Readiness', desc: 'Playbooks and response practices to contain incidents and extract lessons.' },
   ] : [
-    { icon: 'ti-shield-search', title: 'Security Assessments', desc: 'Architecture Review และ Risk Assessment ที่จัดลำดับตาม Threat ทางธุรกิจจริง' },
-    { icon: 'ti-bug', title: 'Penetration Testing', desc: 'ทดสอบ App, API และ Infrastructure แบบลงมือจริง พร้อมแนวทางแก้ไขชัดเจน' },
-    { icon: 'ti-certificate', title: 'Compliance Readiness', desc: 'สนับสนุนแบบปฏิบัติได้จริงสำหรับ SOC 2, ISO 27001, GDPR และ Control เฉพาะอุตสาหกรรม' },
-    { icon: 'ti-alert-triangle', title: 'Incident Readiness', desc: 'วาง Playbook และแนวทางรับมือเหตุการณ์เพื่อควบคุมและถอดบทเรียน' },
+    { icon: 'ti-shield-search', title: 'Security Assessments', desc: 'รีวิวสถาปัตยกรรมและประเมินความเสี่ยง โดยจัดลำดับตามภัยคุกคามทางธุรกิจจริง' },
+    { icon: 'ti-bug', title: 'Penetration Testing', desc: 'ทดสอบแอป API และโครงสร้างพื้นฐานแบบลงมือจริง พร้อมแนวทางแก้ไขที่ชัดเจน' },
+    { icon: 'ti-certificate', title: 'Compliance Readiness', desc: 'ช่วยเรื่อง SOC 2, ISO 27001, GDPR และมาตรการเฉพาะอุตสาหกรรม แบบนำไปใช้ได้จริง' },
+    { icon: 'ti-alert-triangle', title: 'Incident Readiness', desc: 'วางแผนและแนวทางรับมือเหตุการณ์ เพื่อควบคุมสถานการณ์และถอดบทเรียน' },
   ]
 
   const techStack = [
@@ -222,12 +222,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '05', title: 'Respond', desc: 'Incident handling and recovery' },
     { no: '06', title: 'Improve', desc: 'Lessons integrated into the SDLC' },
   ] : [
-    { no: '01', title: 'Assess', desc: 'Posture, Asset และ Threat Model' },
-    { no: '02', title: 'Plan', desc: 'Control และ Roadmap การแก้ไข' },
-    { no: '03', title: 'Implement', desc: 'Harden และ Secure Delivery' },
-    { no: '04', title: 'Monitor', desc: 'Detection และ Review ต่อเนื่อง' },
-    { no: '05', title: 'Respond', desc: 'รับมือเหตุการณ์และ Recovery' },
-    { no: '06', title: 'Improve', desc: 'นำบทเรียนกลับเข้า SDLC' },
+    { no: '01', title: 'Assess', desc: 'สถานะความปลอดภัย ทรัพย์สิน และแบบจำลองภัยคุกคาม' },
+    { no: '02', title: 'Plan', desc: 'มาตรการควบคุมและแผนการแก้ไข' },
+    { no: '03', title: 'Implement', desc: 'เสริมความแข็งแรงและส่งมอบอย่างปลอดภัย' },
+    { no: '04', title: 'Monitor', desc: 'ตรวจจับและทบทวนอย่างต่อเนื่อง' },
+    { no: '05', title: 'Respond', desc: 'รับมือเหตุการณ์และกู้คืนระบบ' },
+    { no: '06', title: 'Improve', desc: 'นำบทเรียนกลับเข้าสู่ SDLC' },
   ]
 
   const darkFaqs = isEN ? [
@@ -240,14 +240,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { q: 'What happens if you find a critical vulnerability during testing?', a: 'We flag critical findings immediately rather than waiting for the final report, so your team can start remediation the same day. Our report includes reproduction steps and concrete fix guidance, not just a severity score.' },
     { q: 'Do you provide ongoing security monitoring, or only point-in-time assessments?', a: 'Both, depending on what you need. A point-in-time assessment gives you a snapshot and a fix list; ongoing monitoring with SIEM and SOAR tooling plus periodic re-testing keeps your posture current as your systems and the threat landscape change.' },
   ] : [
-    { q: 'Haliviq ให้บริการ Cybersecurity แบบไหนบ้าง?', a: 'Security Assessment, วิศวกรรมแบบ Secure-by-design และการสนับสนุน Compliance สำหรับทีม Product: Threat Modeling, Hardening, Identity และ Access Management และ Monitoring ด้วย SIEM และ SOAR เรามอง Security เป็นงานวิศวกรรมที่ผสานเข้ากับ Delivery ไม่ใช่การ Audit ปีละครั้ง' },
-    { q: 'ตรวจสอบความปลอดภัยของแอปพลิเคชันที่มีอยู่แล้วได้ไหม?', a: 'ได้ครับ เราทำ Assessment ครอบคลุม Code, Infrastructure, Dependency และ Access Control พร้อมส่งมอบแนวทางแก้ไขที่จัดลำดับความสำคัญและนำไปใช้ได้จริง แทนที่จะเป็นรายงานยาวๆ ที่ไม่มีใครอ่าน คุณจะได้ List ที่จัดลำดับว่าควรแก้อะไรก่อนและเพราะอะไร' },
-    { q: 'Haliviq ช่วยเรื่อง PDPA และ Compliance อื่นๆ ได้ไหม?', a: 'ได้ครับ เราสนับสนุน PDPA Compliance ในไทยในฐานะ Founding Partner ของ PDPA.org และวาง Control ให้สอดคล้องกับ GDPR และ ISO 27001 ตามที่ธุรกิจต้องการ เป็นการ Implement จริง ไม่ใช่แค่เอกสารนโยบาย' },
-    { q: 'สร้าง Security ให้ Product ใหม่ตั้งแต่ต้นอย่างไร?', a: 'หลัก Zero Trust, Least-privilege Access, Secrets Management ด้วยเครื่องมืออย่าง Vault และ Dependency Scanning ด้วย Snyk ถูกฝังไว้ในกระบวนการ Engineering ตั้งแต่ Sprint แรก ไม่ใช่มาเพิ่มเป็น Security Review ก่อน Launch' },
-    { q: 'Security Assessment มีค่าใช้จ่ายเท่าไหร่?', a: 'การ Assessment แบบเจาะจงหนึ่ง Application หรือระบบ มักเริ่มต้นที่หลักหมื่นปลายๆ (บาท) และปรับตามจำนวนระบบในขอบเขตและความลึกของการ Test ส่วนโปรแกรมเตรียมความพร้อม SOC 2 หรือ ISO 27001 เต็มรูปแบบ รวมการติดตั้ง Control จะเสนอราคาหลังคุย Scope เบื้องต้นตาม Gap ที่มีอยู่' },
-    { q: 'Penetration Testing ใช้เวลานานแค่ไหน?', a: 'Penetration Test แบบเจาะจงสำหรับหนึ่ง Application มักใช้เวลา 1-2 สัปดาห์ รวมรายงานและแนวทางแก้ไข ส่วน Assessment แบบครอบคลุม App, API และ Infrastructure สำหรับระบบขนาดใหญ่ มักใช้เวลา 3-5 สัปดาห์' },
-    { q: 'ถ้าเจอช่องโหว่ Critical ระหว่าง Test จะทำอย่างไร?', a: 'เราแจ้ง Finding ระดับ Critical ทันที ไม่รอจนถึงรายงานสุดท้าย เพื่อให้ทีมคุณเริ่มแก้ไขได้ตั้งแต่วันนั้น รายงานของเรามีขั้นตอน Reproduction และแนวทางแก้ไขที่ชัดเจน ไม่ใช่แค่คะแนนความรุนแรง' },
-    { q: 'มี Monitoring ต่อเนื่องไหม หรือตรวจแค่ครั้งเดียว?', a: 'มีทั้งสองแบบครับ ขึ้นอยู่กับความต้องการ การ Assessment แบบครั้งเดียวให้ภาพรวมและ List การแก้ไข ส่วน Monitoring ต่อเนื่องด้วย SIEM และ SOAR พร้อม Re-test เป็นระยะ ช่วยให้ Posture ของคุณทันสมัยตามระบบและภัยคุกคามที่เปลี่ยนไป' },
+    { q: 'Haliviq ให้บริการด้านความปลอดภัยไซเบอร์แบบไหนบ้าง?', a: 'ตรวจประเมินความปลอดภัย พัฒนาระบบแบบ Secure-by-design และช่วยเรื่อง Compliance สำหรับทีมผลิตภัณฑ์ ได้แก่ Threat Modeling, การเสริมความแข็งแรงของระบบ, ระบบยืนยันตัวตนและสิทธิ์การเข้าถึง และการติดตามระบบด้วย SIEM และ SOAR เรามอง Security เป็นงานวิศวกรรมที่อยู่ในขั้นตอนส่งมอบงาน ไม่ใช่การตรวจสอบปีละครั้ง' },
+    { q: 'ตรวจสอบความปลอดภัยของแอปพลิเคชันที่มีอยู่แล้วได้ไหม?', a: 'ได้ เราตรวจประเมินครอบคลุมโค้ด โครงสร้างพื้นฐาน Dependency และการควบคุมสิทธิ์เข้าถึง พร้อมส่งมอบแนวทางแก้ไขที่จัดลำดับความสำคัญและนำไปใช้ได้จริง แทนที่จะเป็นรายงานยาวที่ไม่มีใครอ่าน คุณจะได้รายการที่เรียงว่าควรแก้อะไรก่อนและเพราะอะไร' },
+    { q: 'Haliviq ช่วยเรื่อง PDPA และ Compliance อื่นๆ ได้ไหม?', a: 'ได้ เราช่วยเรื่อง PDPA ในไทยในฐานะ Founding Partner ของ PDPA.org และวางมาตรการให้สอดคล้องกับ GDPR และ ISO 27001 ตามที่ธุรกิจต้องการ เป็นการลงมือทำจริง ไม่ใช่แค่เอกสารนโยบาย' },
+    { q: 'สร้างความปลอดภัยให้ผลิตภัณฑ์ใหม่ตั้งแต่ต้นอย่างไร?', a: 'หลัก Zero Trust การให้สิทธิ์น้อยที่สุดเท่าที่จำเป็น การจัดการ Secrets ด้วยเครื่องมืออย่าง Vault และการสแกน Dependency ด้วย Snyk ถูกฝังไว้ในขั้นตอนวิศวกรรมตั้งแต่ Sprint แรก ไม่ใช่มาเพิ่มเป็นการรีวิวความปลอดภัยก่อนเปิดใช้งาน' },
+    { q: 'ตรวจประเมินความปลอดภัยมีค่าใช้จ่ายเท่าไหร่?', a: 'การตรวจประเมินแบบเจาะจงหนึ่งแอปพลิเคชันหรือระบบ มักเริ่มที่หลักหมื่นปลายๆ (บาท) และปรับตามจำนวนระบบในขอบเขตและความลึกของการทดสอบ ส่วนโปรแกรมเตรียมความพร้อม SOC 2 หรือ ISO 27001 เต็มรูปแบบ รวมการติดตั้งมาตรการควบคุม จะเสนอราคาหลังคุยขอบเขตเบื้องต้นตามช่องว่างที่มีอยู่' },
+    { q: 'Penetration Testing ใช้เวลานานแค่ไหน?', a: 'การทดสอบเจาะระบบแบบเจาะจงหนึ่งแอปพลิเคชันมักใช้เวลา 1-2 สัปดาห์ รวมรายงานและแนวทางแก้ไข ส่วนการตรวจประเมินแบบครอบคลุมแอป API และโครงสร้างพื้นฐานสำหรับระบบขนาดใหญ่ มักใช้เวลา 3-5 สัปดาห์' },
+    { q: 'ถ้าเจอช่องโหว่ Critical ระหว่างทดสอบจะทำอย่างไร?', a: 'เราแจ้งช่องโหว่ระดับ Critical ทันที ไม่รอจนถึงรายงานสุดท้าย เพื่อให้ทีมคุณเริ่มแก้ได้ตั้งแต่วันนั้น รายงานของเรามีขั้นตอนทำซ้ำปัญหาและแนวทางแก้ไขที่ชัดเจน ไม่ใช่แค่คะแนนความรุนแรง' },
+    { q: 'มีการติดตามระบบต่อเนื่องไหม หรือตรวจแค่ครั้งเดียว?', a: 'มีทั้งสองแบบ ขึ้นอยู่กับความต้องการ การตรวจประเมินครั้งเดียวให้ภาพรวมและรายการสิ่งที่ต้องแก้ ส่วนการติดตามต่อเนื่องด้วย SIEM และ SOAR พร้อมทดสอบซ้ำเป็นระยะ ช่วยให้ความปลอดภัยทันสมัยตามระบบและภัยคุกคามที่เปลี่ยนไป' },
   ]
 
   const postHeroSlot = (
@@ -297,7 +297,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'Proven security tools and practices we apply where they fit — chosen for the threat model, not the trend cycle.'
-              : 'เครื่องมือและแนวทาง Security ที่พิสูจน์แล้ว เลือกใช้ตาม Threat Model จริง ไม่ใช่ตามกระแส'}
+              : 'เครื่องมือและแนวทางด้านความปลอดภัยที่พิสูจน์แล้ว เลือกใช้ตามภัยคุกคามจริง ไม่ใช่ตามกระแส'}
           </p>
 
           <div className="flex flex-wrap gap-3">
@@ -328,7 +328,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <p className="mb-16" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'A clear path from assessment to continuous readiness — adjusted per system, never one-size-fits-all.'
-              : 'เส้นทางที่ชัดเจนจากการประเมินสู่ความพร้อมต่อเนื่อง ปรับตามแต่ละระบบ ไม่ใช่สูตรสำเร็จตายตัว'}
+              : 'เส้นทางที่ชัดเจนจากการประเมินไปจนถึงความพร้อมต่อเนื่อง ปรับตามแต่ละระบบ ไม่ใช่สูตรตายตัว'}
           </p>
 
           <div className="relative">
@@ -364,7 +364,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             {isEN ? 'Frequently Asked Questions' : 'คำถามที่พบบ่อย'}
           </h2>
           <p className="mb-4" style={{ color: 'var(--lime)', fontSize: '1.2rem', fontWeight: 600 }}>
-            {isEN ? 'Straight answers about how we handle security.' : 'คำตอบตรงไปตรงมาเกี่ยวกับวิธีที่เราดูแล Security'}
+            {isEN ? 'Straight answers about how we handle security.' : 'คำตอบตรงไปตรงมาเกี่ยวกับวิธีที่เราดูแลความปลอดภัย'}
           </p>
 
           <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
@@ -398,7 +398,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
         </h2>
         <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-          {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+          {isEN ? "We'd love to hear what you're building." : 'เรายินดีฟังว่าคุณกำลังสร้างอะไรอยู่'}
         </p>
         <div className="flex flex-wrap items-center gap-6">
           <Link
@@ -406,7 +406,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-medium transition-opacity hover:opacity-90"
             style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}
           >
-            {isEN ? 'Start a Conversation' : 'เริ่มบทสนทนา'}
+            {isEN ? 'Start a Conversation' : 'เริ่มคุยกับเรา'}
             <i className="ti ti-arrow-right" style={{ fontSize: 17 }} aria-hidden="true" />
           </Link>
           <a href="mailto:wu@haliviq.com" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>

@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }): 
     : 'เกี่ยวกับเรา — ทีมงานและเรื่องราวของเรา | Haliviq'
   const description = isEN
     ? 'Meet the team behind Haliviq — a Bangkok-based digital product studio building software and AI solutions for ambitious businesses.'
-    : 'รู้จักทีมงานเบื้องหลัง Haliviq สตูดิโอพัฒนาผลิตภัณฑ์ดิจิทัลในกรุงเทพฯ ที่สร้างซอฟต์แวร์และโซลูชัน AI ให้ธุรกิจที่มีความทะเยอทะยาน'
+    : 'รู้จักทีมงานเบื้องหลัง Haliviq สตูดิโอพัฒนาผลิตภัณฑ์ดิจิทัลในกรุงเทพฯ ที่สร้างซอฟต์แวร์และระบบ AI ให้ธุรกิจที่อยากเติบโต'
   const siteUrl = `https://haliviq.com/${params.lang}/about`
   return {
     title,
@@ -133,6 +133,113 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           </div>
         </section>
 
+        {/* Our Story — AI philosophy */}
+        <section className="relative overflow-hidden py-24" style={{ background: '#08070F' }}>
+          <div
+            className="absolute inset-0 pointer-events-none opacity-[0.3]"
+            style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' }}
+          />
+          <div
+            className="absolute -top-32 -right-32 w-[520px] h-[520px] rounded-full pointer-events-none"
+            style={{ background: 'radial-gradient(circle, rgba(123,110,246,0.22) 0%, transparent 70%)', filter: 'blur(20px)' }}
+          />
+          <div className="relative max-w-5xl mx-auto px-6 lg:px-10">
+            <div className="text-center mb-14">
+              <p className="t-label mb-5" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                {isEN ? 'Our Story' : 'ความเป็นมาของเรา'}
+              </p>
+              <h2 className="t-display text-[clamp(2rem,4.2vw,3.4rem)] mb-2" style={{ color: '#fff' }}>
+                {isEN ? 'Haliviq and ' : 'HALIVIQ กับ'}
+                <span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+                  {isEN ? 'Our Approach to AI' : 'แนวคิดด้าน AI'}
+                </span>
+              </h2>
+            </div>
+
+            <div className="space-y-6 mb-16">
+              {(isEN
+                ? [
+                    'Haliviq believes AI can help businesses run with far more agility — from finding information, summarizing documents, and supporting customers, to helping teams analyze data for better decisions. That\'s why we combine AI with our strategy, design, and engineering capabilities to build tools that fit the way each organization actually works.',
+                    'This approach grew out of our own experience working closely with businesses. We kept seeing how much time teams lost to gathering information, reading through documents, and repeating the same manual steps. That led us to look for ways AI could lift this burden, freeing people up for work that genuinely needs thought, experience, and care for others.',
+                    'For Haliviq, "Human Ideas. Intelligent Future." means a future where people can take their ideas further, backed by tools that help them find, understand, and act with real efficiency.',
+                  ]
+                : [
+                    'HALIVIQ เชื่อว่า AI ช่วยให้ธุรกิจทำงานคล่องตัวขึ้น ตั้งแต่ค้นหาข้อมูล สรุปเอกสาร ดูแลลูกค้า ไปจนถึงช่วยทีมวิเคราะห์ข้อมูลเพื่อตัดสินใจ เราจึงนำ AI มาใช้ร่วมกับงานกลยุทธ์ การออกแบบ และการพัฒนาระบบ เพื่อสร้างเครื่องมือที่เหมาะกับวิธีทำงานของแต่ละองค์กร',
+                    'แนวคิดนี้มาจากการทำงานใกล้ชิดกับธุรกิจ เราเห็นว่างานหลายอย่างเสียเวลาไปกับการรวบรวมข้อมูล อ่านเอกสาร และทำขั้นตอนเดิมซ้ำ ๆ เราจึงหาทางใช้ AI ช่วยลดภาระเหล่านี้ เพื่อให้ทีมมีเวลาให้กับงานที่ต้องใช้ความคิด ประสบการณ์ และการดูแลคนมากขึ้น',
+                    'สำหรับ HALIVIQ ประโยค "Human Ideas. Intelligent Future." หมายถึงอนาคตที่คนนำความคิดของตัวเองไปได้ไกลขึ้น ด้วยเครื่องมือที่ช่วยค้นหา ทำความเข้าใจ และลงมือทำได้เร็วขึ้น',
+                  ]
+              ).map((para, i) => (
+                <p key={i} className="text-lg leading-relaxed max-w-3xl mx-auto text-center" style={{ color: 'rgba(255,255,255,0.75)', fontWeight: 400 }}>
+                  {para}
+                </p>
+              ))}
+            </div>
+
+            <div className="text-center mb-10">
+              <p className="t-label mb-4" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                {isEN ? 'Where We Stand' : 'จุดยืนของเรา'}
+              </p>
+              <p className="text-lg max-w-2xl mx-auto mb-10" style={{ color: 'rgba(255,255,255,0.75)', fontWeight: 400 }}>
+                {isEN
+                  ? 'Our core strength is UX/UI design — extending end-to-end into websites, applications, and AI design.'
+                  : 'จุดแข็งหลักของเราคือการออกแบบ UX/UI และต่อยอดไปถึงการพัฒนาเว็บไซต์ แอปพลิเคชัน และการออกแบบ AI'}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 max-w-4xl mx-auto mb-16">
+              {[
+                { icon: 'ti-palette', titleEN: 'UX/UI Design', titleTH: 'ออกแบบ UX/UI' },
+                { icon: 'ti-world', titleEN: 'Website Development', titleTH: 'พัฒนาเว็บไซต์' },
+                { icon: 'ti-device-mobile', titleEN: 'Application Development', titleTH: 'พัฒนาแอปพลิเคชัน' },
+                { icon: 'ti-sparkles', titleEN: 'AI Design', titleTH: 'ออกแบบ AI' },
+              ].map((f, i) => (
+                <div key={i} className="rounded-2xl p-6 text-center" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4 mx-auto" style={{ background: 'rgba(123,110,246,0.15)' }}>
+                    <i className={`ti ${f.icon}`} style={{ fontSize: 20, color: 'var(--purple-light)' }} aria-hidden="true" />
+                  </div>
+                  <h4 className="text-white" style={{ fontWeight: 500, fontSize: '0.98rem' }}>{isEN ? f.titleEN : f.titleTH}</h4>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center mb-10">
+              <p className="t-label mb-4" style={{ color: 'rgba(255,255,255,0.6)' }}>
+                {isEN ? 'Our AI Services' : 'บริการด้าน AI ของเรา'}
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl mx-auto">
+              {[
+                {
+                  icon: 'ti-message-chatbot',
+                  titleEN: 'AI Assistants & Knowledge Search',
+                  titleTH: 'AI Assistants & Knowledge Search',
+                  descEN: 'Assistants that search and answer accurately from your own documents.',
+                  descTH: 'ทำผู้ช่วยที่ค้นหาและตอบคำถามจากเอกสาร',
+                },
+              ].map((s, i) => (
+                <div key={i} className="rounded-2xl p-6" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                  <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ background: 'rgba(123,110,246,0.15)' }}>
+                    <i className={`ti ${s.icon}`} style={{ fontSize: 20, color: 'var(--purple-light)' }} aria-hidden="true" />
+                  </div>
+                  <h4 className="text-white mb-2" style={{ fontWeight: 500, fontSize: '1.05rem' }}>{isEN ? s.titleEN : s.titleTH}</h4>
+                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 400 }}>{isEN ? s.descEN : s.descTH}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center mt-10">
+              <Link
+                href={`${prefix}/services/ai`}
+                className="inline-flex items-center gap-2 text-sm"
+                style={{ color: 'var(--lime)', fontWeight: 500 }}
+              >
+                {isEN ? 'See all AI services' : 'ดูบริการ AI ทั้งหมด'}
+                <i className="ti ti-arrow-right" style={{ fontSize: 15 }} aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Team / Leadership */}
         <section className="relative overflow-hidden py-24" style={{ background: '#0A0812' }}>
           <div
@@ -157,7 +264,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <p className="text-base max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 400 }}>
                 {isEN
                   ? 'A small, senior team that stays close to every project — from strategy to delivery.'
-                  : 'ทีมงานระดับมืออาชีพขนาดกะทัดรัด ที่ดูแลใกล้ชิดทุกโปรเจกต์ ตั้งแต่กลยุทธ์จนถึงส่งมอบงาน'}
+                  : 'ทีมเล็กที่มีประสบการณ์ ดูแลใกล้ชิดทุกโปรเจกต์ ตั้งแต่วางกลยุทธ์จนถึงส่งมอบงาน'}
               </p>
             </div>
 
@@ -210,10 +317,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               className="t-display mb-6 leading-tight"
               style={{ background: 'linear-gradient(135deg, var(--purple-light) 0%, #53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', fontSize: 'clamp(2rem,4vw,4rem)' }}
             >
-              {isEN ? "Let's Build Something Together" : 'มาสร้างสิ่งที่ยิ่งใหญ่ไปด้วยกัน'}
+              {isEN ? "Let's Build Something Together" : 'มาสร้างสิ่งดี ๆ ด้วยกัน'}
             </h2>
             <p className="text-base mb-10 max-w-lg mx-auto" style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 400 }}>
-              {isEN ? 'Tell us about your business and we will show you how we can help.' : 'เล่าให้เราฟังเรื่องธุรกิจของคุณ แล้วเราจะแสดงให้เห็นว่าเราช่วยอะไรได้บ้าง'}
+              {isEN ? 'Tell us about your business and we will show you how we can help.' : 'เล่าเรื่องธุรกิจของคุณให้เราฟัง แล้วเราจะบอกว่าช่วยอะไรได้บ้าง'}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href={`${prefix}/contact`} className="inline-flex items-center gap-2 px-10 py-4 rounded-full text-sm transition-opacity hover:opacity-90" style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}>

@@ -45,8 +45,8 @@ export default function ServiceLayout({
   heroSlot, heroDark=false, heroCtaLabel, heroShowSecondaryCta=true, postHeroSlot,
   whyTitle, whyDesc, whyPoints,
   features, steps, outcomes, caseStudies, faqs, related,
-  ctaTitle='พร้อมเริ่มโปรเจกต์กับเราไหม?',
-  ctaDesc='ปรึกษาฟรีครั้งแรก ตอบกลับภายใน 24 ชั่วโมง พร้อม NDA ลงนามได้ทันที',
+  ctaTitle='พร้อมเริ่มโปรเจกต์กับเราหรือยัง?',
+  ctaDesc='ปรึกษาครั้งแรกฟรี ตอบกลับภายใน 24 ชั่วโมง และลงนาม NDA ได้ทันที',
 }: Props) {
   const lang = langProp ?? 'th'
   const tr = t[lang] as any
@@ -87,7 +87,7 @@ export default function ServiceLayout({
                       className="inline-flex items-center gap-2 rounded-full transition-transform hover:scale-[1.03]"
                       style={{ fontSize: '1rem', padding: '14px 32px', background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500, boxShadow: '0 8px 28px rgba(123,110,246,0.35)' }}
                     >
-                      {heroCtaLabel ?? (lang === 'en' ? 'Get Started' : 'เริ่มต้นเลย')}
+                      {heroCtaLabel ?? (lang === 'en' ? 'Get Started' : 'เริ่มเลย')}
                       <svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                     </Link>
                     {heroShowSecondaryCta && (

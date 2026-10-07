@@ -19,11 +19,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { q: 'Do you handle maintenance after launch?', a: 'Yes. We offer maintenance packages covering bug fixes, updates, performance monitoring, and feature development.' },
     { q: 'Can you work with our existing team?', a: 'Absolutely. We can embed as an extension of your team, taking on specific roles or the entire product build.' },
   ] : [
-    { q: 'ราคาเริ่มต้นเท่าไหร่?', a: 'ขึ้นอยู่กับขอบเขต ความซับซ้อน และขนาดทีม โปรเจกต์เล็กเริ่มต้นราว 300,000 บาท โปรเจกต์ Enterprise ประเมินตาม Scope ติดต่อเราเพื่อขอ Quote ฟรี' },
-    { q: 'ใช้เวลานานแค่ไหน?', a: 'เว็บไซต์เรียบง่าย 4-8 สัปดาห์ ผลิตภัณฑ์เต็มรูปแบบ 3-6 เดือน เราเริ่มด้วย Discovery Phase เพื่อกำหนด Timeline ที่ชัดเจน' },
-    { q: 'รับงาน Startup ไหม?', a: 'รับครับ เราทำงานกับ Startup ที่ได้รับ Funding แล้ว SME และองค์กร สิ่งที่สำคัญคือเป้าหมายชัดเจนและพร้อม Commit' },
-    { q: 'ดูแลหลัง Launch ด้วยไหม?', a: 'ดูแลครับ มีแพ็กเกจ Maintenance ครอบคลุม Bug Fix, Update, Performance Monitoring และพัฒนา Feature เพิ่ม' },
-    { q: 'ทำงานร่วมกับทีมที่มีอยู่ได้ไหม?', a: 'ได้เลย เราสามารถเป็น Extension ของทีมคุณ รับบทบาทเฉพาะส่วน หรือดูแลทั้ง Product ก็ได้' },
+    { q: 'ราคาเริ่มต้นเท่าไหร่?', a: 'ขึ้นอยู่กับขอบเขตงาน ความซับซ้อน และขนาดทีม โปรเจกต์เล็กเริ่มราว 300,000 บาท ส่วนโปรเจกต์ระดับองค์กร (Enterprise) ประเมินตามขอบเขตงาน ติดต่อเราเพื่อขอใบเสนอราคาฟรี' },
+    { q: 'ใช้เวลานานแค่ไหน?', a: 'เว็บไซต์ทั่วไป 4-8 สัปดาห์ ผลิตภัณฑ์เต็มรูปแบบ 3-6 เดือน เราเริ่มจากช่วงสำรวจความต้องการ (Discovery) เพื่อกำหนดระยะเวลาให้ชัดเจน' },
+    { q: 'รับงาน Startup ไหม?', a: 'รับครับ เราทำงานกับ Startup ที่ได้รับเงินทุนแล้ว SME และองค์กร สิ่งสำคัญคือมีเป้าหมายชัดเจนและพร้อมทำจริง' },
+    { q: 'ดูแลหลัง Launch ด้วยไหม?', a: 'ดูแลครับ มีแพ็กเกจดูแลรักษาระบบ ครอบคลุมการแก้บั๊ก อัปเดต ตรวจสอบประสิทธิภาพ และพัฒนาฟีเจอร์เพิ่ม' },
+    { q: 'ทำงานร่วมกับทีมที่มีอยู่ได้ไหม?', a: 'ได้เลย เราเป็นส่วนเสริมของทีมคุณ รับเฉพาะบางหน้าที่ หรือดูแลทั้งผลิตภัณฑ์ก็ได้' },
   ]
 
   const channels = isEN ? [
@@ -64,10 +64,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                 <h1 className="t-display text-[clamp(3rem,6vw,5.5rem)] leading-relaxed mb-8" style={{ color: '#fff' }}>
                   {isEN
                     ? <>Let&apos;s build<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,#53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>something great</span></>
-                    : <>มาสร้าง<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,#53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>สิ่งที่ยิ่งใหญ่ด้วยกัน</span></>}
+                    : <>มาสร้าง<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,#53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>สิ่งดี ๆ ด้วยกัน</span></>}
                 </h1>
                 <p className="leading-relaxed mb-12" style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.85)', fontWeight: 400, maxWidth: 460 }}>
-                  {isEN ? 'Tell us about your project. We will get back to you within 24 hours with initial thoughts and next steps.' : 'เล่าให้เราฟังเรื่องโปรเจกต์ของคุณ เราจะตอบกลับภายใน 24 ชั่วโมงพร้อมความคิดเห็นเบื้องต้นและขั้นตอนถัดไป'}
+                  {isEN ? 'Tell us about your project. We will get back to you within 24 hours with initial thoughts and next steps.' : 'เล่าเรื่องโปรเจกต์ของคุณให้เราฟัง เราจะตอบกลับภายใน 24 ชั่วโมง พร้อมความเห็นเบื้องต้นและขั้นตอนถัดไป'}
                 </p>
                 <div className="space-y-4 mb-12">
                   {channels.map(c => (
@@ -98,7 +98,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               </div>
 
               <div className="rounded-3xl p-8 lg:p-10 lg:sticky lg:top-24" style={{ background: '#141329', border: '1px solid rgba(255,255,255,0.08)' }}>
-                <h2 className="mb-8" style={{ fontWeight: 500, fontSize: '1.3rem', color: '#fff' }}>{isEN ? 'Tell us about your project' : 'เล่าให้เราฟังเรื่องโปรเจกต์'}</h2>
+                <h2 className="mb-8" style={{ fontWeight: 500, fontSize: '1.3rem', color: '#fff' }}>{isEN ? 'Tell us about your project' : 'เล่าเรื่องโปรเจกต์ของคุณ'}</h2>
                 <div className="space-y-5">
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
@@ -135,7 +135,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                     <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>
                       {isEN ? 'Message' : 'ข้อความ'} <span style={{ color: '#F87171' }}>*</span>
                     </label>
-                    <textarea rows={5} placeholder={isEN ? 'Tell us about your project...' : 'เล่าให้เราฟังเรื่องโปรเจกต์ของคุณ...'} required
+                    <textarea rows={5} placeholder={isEN ? 'Tell us about your project...' : 'เล่าเรื่องโปรเจกต์ของคุณ...'} required
                       className="w-full px-5 py-3.5 rounded-xl text-sm outline-none transition-colors resize-none"
                       style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff', fontWeight: 400 }} />
                   </div>
@@ -201,7 +201,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                     <span>
                       <span className="block text-sm mb-1" style={{ fontWeight: 500, color: '#fff' }}>{isEN ? 'Subscribe to our newsletter' : 'สมัครรับข่าวสารจากเรา'}</span>
                       <span className="block text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)', fontWeight: 400 }}>
-                        {isEN ? 'Get the latest insights, articles, and updates about digital transformation and technology trends.' : 'รับข้อมูลเชิงลึก บทความ และอัปเดตล่าสุดเรื่อง Digital Transformation และเทคโนโลยี'}
+                        {isEN ? 'Get the latest insights, articles, and updates about digital transformation and technology trends.' : 'รับบทความและข่าวสารล่าสุดเรื่องการปรับธุรกิจสู่ดิจิทัล (Digital Transformation) และเทคโนโลยี'}
                       </span>
                     </span>
                   </label>
@@ -216,7 +216,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                     {isEN ? (
                       <>By submitting this form, you agree to our <a href={`/${lang}/privacy`} className="hover:text-white transition-colors" style={{ color: 'var(--lime)', textDecoration: 'underline' }}>Privacy Policy</a>.</>
                     ) : (
-                      <>การส่งแบบฟอร์มนี้ถือว่าคุณยอมรับ<a href={`/${lang}/privacy`} className="hover:text-white transition-colors" style={{ color: 'var(--lime)', textDecoration: 'underline' }}>นโยบายความเป็นส่วนตัว</a>ของเรา</>
+                      <>เมื่อส่งแบบฟอร์มนี้ ถือว่าคุณยอมรับ<a href={`/${lang}/privacy`} className="hover:text-white transition-colors" style={{ color: 'var(--lime)', textDecoration: 'underline' }}>นโยบายความเป็นส่วนตัว</a>ของเรา</>
                     )}
                   </p>
                 </div>

@@ -6,10 +6,10 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }): 
   const isEN = params.lang === 'en'
   const title = isEN
     ? 'Our Work — 20+ Digital Products Shipped | Haliviq'
-    : 'ผลงานของเรา — ผลิตภัณฑ์ดิจิทัลกว่า 20 โปรเจกต์ | Haliviq'
+    : 'ผลงานของเรา — ส่งมอบงานดิจิทัลกว่า 20 โปรเจกต์ | Haliviq'
   const description = isEN
     ? 'Browse Haliviq\'s portfolio of websites, mobile apps, and AI CRM systems across F&B, government, real estate, retail, and more — grouped by service category.'
-    : 'สำรวจผลงานของ Haliviq ทั้งเว็บไซต์ แอปมือถือ และระบบ AI CRM ครอบคลุมธุรกิจอาหาร ภาครัฐ อสังหาริมทรัพย์ ค้าปลีก และอื่นๆ จัดกลุ่มตามประเภทบริการ'
+    : 'ดูผลงานของ Haliviq ทั้งเว็บไซต์ แอปมือถือ และระบบ AI CRM ให้ธุรกิจอาหาร หน่วยงานรัฐ อสังหาริมทรัพย์ ค้าปลีก และอื่น ๆ แยกตามประเภทบริการ'
   const siteUrl = `https://haliviq.com/${params.lang}/work`
   return {
     title,

@@ -13,10 +13,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const prefix = `/${lang}`
   const tr = t[lang] as any
 
-  const badge = isEN ? 'Industry / Aerospace & Defense' : 'อุตสาหกรรม / การบินและอวกาศ & กลาโหม'
+  const badge = isEN ? 'Industry / Aerospace & Defense' : 'อุตสาหกรรม / การบินอวกาศและกลาโหม'
   const heroSubhead = isEN
     ? 'Secure software and mission-critical systems for aerospace and defense organizations.'
-    : 'ซอฟต์แวร์ที่ปลอดภัยและระบบ Mission-Critical สำหรับองค์กรด้านการบินและอวกาศและกลาโหม'
+    : 'ซอฟต์แวร์ที่ปลอดภัยและระบบสำคัญระดับภารกิจ สำหรับองค์กรด้านการบินอวกาศและกลาโหม'
 
   const challenges = isEN ? [
     { icon: 'ti-world-check', title: 'Export-Control Compliance Complexity', desc: 'Navigating ITAR, EAR, and multi-jurisdiction export-control regimes demands rigorous access segregation and audit trails, yet most engineering teams lack tooling built for this level of scrutiny.' },
@@ -24,14 +24,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-tool', title: 'Legacy & Long-Lifecycle Systems Integration', desc: 'Platforms designed to operate for decades must integrate with modern APIs and cloud services without compromising certification, safety cases, or decades-old avionics interfaces.' },
     { icon: 'ti-barcode', title: 'Supply-Chain & Parts-Traceability Assurance', desc: 'Ensuring every component is genuine, sourced from approved vendors, and traceable through its full lifecycle is essential for airworthiness and counterfeit-parts prevention.' },
   ] : [
-    { icon: 'ti-world-check', title: 'ความซับซ้อนของ Export-Control Compliance', desc: 'การปฏิบัติตามกฎ ITAR, EAR และข้อบังคับ Export-Control ในหลายเขตอำนาจศาล ต้องการการแบ่งแยกสิทธิ์เข้าถึงและ Audit Trail ที่รัดกุม แต่ทีมวิศวกรรมส่วนใหญ่ยังขาดเครื่องมือที่รองรับระดับความเข้มงวดนี้' },
-    { icon: 'ti-shield-lock', title: 'การจัดการข้อมูล Multi-Domain อย่างปลอดภัย', desc: 'ข้อมูลระดับ Classified, Controlled Unclassified และเชิงพาณิชย์ต้องเคลื่อนย้ายผ่านเครือข่ายที่มีระดับการรักษาความลับต่างกัน ต้องการ Encryption การแยก Network และการติดตามที่มาของข้อมูลในทุกจุดเชื่อมต่อ' },
-    { icon: 'ti-tool', title: 'การผสานระบบ Legacy และ Long-Lifecycle', desc: 'แพลตฟอร์มที่ออกแบบให้ใช้งานได้นานหลายสิบปี ต้องผสานกับ API และบริการ Cloud สมัยใหม่ โดยไม่กระทบต่อการรับรองมาตรฐาน Safety Case หรืออินเทอร์เฟซ Avionics เก่าแก่' },
-    { icon: 'ti-barcode', title: 'การรับประกัน Supply-Chain & Parts-Traceability', desc: 'การตรวจสอบให้แน่ใจว่าทุกชิ้นส่วนเป็นของแท้ มาจากผู้ผลิตที่ได้รับอนุมัติ และตรวจสอบย้อนกลับได้ตลอดวงจรชีวิต เป็นสิ่งจำเป็นต่อความปลอดภัยในการบินและการป้องกันชิ้นส่วนปลอม' },
+    { icon: 'ti-world-check', title: 'ความซับซ้อนของกฎควบคุมการส่งออก', desc: 'การทำตามกฎ ITAR, EAR และข้อบังคับควบคุมการส่งออกของหลายประเทศ ต้องแบ่งสิทธิ์เข้าถึงและเก็บ Audit Trail อย่างรัดกุม แต่ทีมวิศวกรรมส่วนใหญ่ยังไม่มีเครื่องมือที่เข้มงวดได้ถึงระดับนี้' },
+    { icon: 'ti-shield-lock', title: 'จัดการข้อมูลหลายระดับความลับอย่างปลอดภัย', desc: 'ข้อมูลทั้งชั้นความลับ ข้อมูลควบคุมที่ไม่จัดชั้นความลับ และข้อมูลเชิงพาณิชย์ ต้องส่งผ่านเครือข่ายที่ระดับความลับต่างกัน จึงต้องมีการเข้ารหัส แยกเครือข่าย และติดตามที่มาของข้อมูลทุกจุดที่เชื่อมต่อ' },
+    { icon: 'ti-tool', title: 'เชื่อมระบบเก่าที่ต้องใช้งานยาวนาน', desc: 'แพลตฟอร์มที่ออกแบบให้ใช้ได้หลายสิบปี ต้องเชื่อมกับ API และบริการ Cloud สมัยใหม่ โดยไม่กระทบใบรับรองมาตรฐาน Safety Case หรืออินเทอร์เฟซ Avionics รุ่นเก่า' },
+    { icon: 'ti-barcode', title: 'รับประกันห่วงโซ่อุปทานและตรวจสอบย้อนกลับชิ้นส่วน', desc: 'ต้องมั่นใจว่าทุกชิ้นส่วนเป็นของแท้ มาจากผู้ผลิตที่ได้รับอนุมัติ และตรวจย้อนกลับได้ตลอดอายุการใช้งาน เพื่อความปลอดภัยในการบินและป้องกันชิ้นส่วนปลอม' },
   ]
 
   const metrics = [
-    { value: '$650B', label: isEN ? 'Global Aerospace & Defense Software Market by 2030' : 'ตลาดซอฟต์แวร์การบินและอวกาศ & กลาโหมทั่วโลกภายในปี 2030', source: 'MarketsandMarkets Aerospace & Defense Software Forecast, 2024' },
+    { value: '$650B', label: isEN ? 'Global Aerospace & Defense Software Market by 2030' : 'ตลาดซอฟต์แวร์การบินอวกาศและกลาโหมทั่วโลกภายในปี 2030', source: 'MarketsandMarkets Aerospace & Defense Software Forecast, 2024' },
     { value: '12.4%', label: isEN ? 'CAGR in Defense IT Modernization Spending' : 'CAGR ของการลงทุนปรับปรุงระบบ IT ด้านกลาโหม', source: 'Gartner Defense IT Modernization Report, 2024' },
     { value: '68%', label: isEN ? 'Defense Contractors Investing in Digital-Twin Technology' : 'ผู้รับเหมาด้านกลาโหมที่ลงทุนในเทคโนโลยี Digital Twin', source: 'Deloitte Aerospace & Defense Industry Outlook, 2024' },
   ]
@@ -44,12 +44,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-world-check', title: 'Export-Control & Compliance Automation', desc: 'Automated classification, access control, and audit-trail systems that streamline ITAR/EAR compliance while reducing manual review burden.' },
     { icon: 'ti-tool', title: 'Mission-Critical Systems Modernization', desc: 'Incremental modernization of legacy avionics and command systems that preserves certification and safety cases while introducing modern interfaces and cloud connectivity.' },
   ] : [
-    { icon: 'ti-shield-lock', title: 'Secure Communications Platforms', desc: 'ระบบสื่อสารแบบ End-to-end Encrypted ด้วยสถาปัตยกรรม Zero-trust ที่ออกแบบให้ตรงตามข้อกำหนดความปลอดภัยที่เข้มงวดของงานด้านกลาโหมและการบินและอวกาศ' },
-    { icon: 'ti-satellite', title: 'Satellite & Ground-Station Dashboards', desc: 'อินเทอร์เฟซ Telemetry และ Command-and-control แบบ Real-time ที่ทำให้ผู้ปฏิบัติงานมองเห็นสถานะดาวเทียม วงโคจร และประสิทธิภาพของ Ground Station ได้อย่างชัดเจน' },
-    { icon: 'ti-truck-loading', title: 'Supply-Chain & Parts-Traceability Systems', desc: 'แพลตฟอร์มติดตามแบบ End-to-end ที่ตรวจสอบความแท้ของชิ้นส่วน การอนุมัติผู้ผลิต และที่มาตลอดวงจรชีวิต เพื่อป้องกันชิ้นส่วนปลอมและรับประกันความปลอดภัยในการบิน' },
-    { icon: 'ti-cube-3d-sphere', title: 'Simulation & Digital-Twin Tooling', desc: 'สภาพแวดล้อม Digital Twin และการจำลองความละเอียดสูงที่จำลองสถานการณ์ภารกิจ พฤติกรรมระบบ และคาดการณ์การบำรุงรักษาก่อนใช้งานจริง' },
-    { icon: 'ti-world-check', title: 'Export-Control & Compliance Automation', desc: 'ระบบจัดหมวดหมู่ ควบคุมการเข้าถึง และ Audit Trail อัตโนมัติ ที่ทำให้การปฏิบัติตาม ITAR/EAR ราบรื่นขึ้นและลดภาระการตรวจสอบด้วยมือ' },
-    { icon: 'ti-tool', title: 'Mission-Critical Systems Modernization', desc: 'การปรับปรุงระบบ Avionics และ Command System แบบ Legacy อย่างค่อยเป็นค่อยไป โดยรักษาการรับรองมาตรฐานและ Safety Case ไว้ พร้อมเพิ่มอินเทอร์เฟซสมัยใหม่และการเชื่อมต่อ Cloud' },
+    { icon: 'ti-shield-lock', title: 'Secure Communications Platforms', desc: 'ระบบสื่อสารเข้ารหัสตั้งแต่ต้นทางถึงปลายทาง บนสถาปัตยกรรม Zero-trust ออกแบบให้ตรงตามข้อกำหนดความปลอดภัยที่เข้มงวดของงานกลาโหมและการบินอวกาศ' },
+    { icon: 'ti-satellite', title: 'Satellite & Ground-Station Dashboards', desc: 'หน้าจอ Telemetry และสั่งการแบบเรียลไทม์ ให้ผู้ปฏิบัติงานเห็นสถานะดาวเทียม วงโคจร และประสิทธิภาพของ Ground Station ชัดเจน' },
+    { icon: 'ti-truck-loading', title: 'Supply-Chain & Parts-Traceability Systems', desc: 'แพลตฟอร์มติดตามตั้งแต่ต้นจนจบ ตรวจสอบความแท้ของชิ้นส่วน การอนุมัติผู้ผลิต และที่มาตลอดอายุการใช้งาน เพื่อป้องกันชิ้นส่วนปลอมและรักษาความปลอดภัยในการบิน' },
+    { icon: 'ti-cube-3d-sphere', title: 'Simulation & Digital-Twin Tooling', desc: 'สภาพแวดล้อม Digital Twin และการจำลองความละเอียดสูง ใช้จำลองสถานการณ์ภารกิจ พฤติกรรมของระบบ และคาดการณ์การบำรุงรักษาก่อนใช้งานจริง' },
+    { icon: 'ti-world-check', title: 'Export-Control & Compliance Automation', desc: 'ระบบจัดหมวดหมู่ ควบคุมการเข้าถึง และ Audit Trail อัตโนมัติ ช่วยให้ทำตาม ITAR/EAR ได้ง่ายขึ้น และลดงานตรวจสอบด้วยมือ' },
+    { icon: 'ti-tool', title: 'Mission-Critical Systems Modernization', desc: 'ปรับปรุงระบบ Avionics และระบบสั่งการรุ่นเก่าทีละขั้น โดยยังรักษาใบรับรองมาตรฐานและ Safety Case ไว้ พร้อมเพิ่มอินเทอร์เฟซสมัยใหม่และการเชื่อมต่อ Cloud' },
   ]
 
   const techStack = ['React', 'Node.js', 'Rust', 'Kubernetes', 'AWS GovCloud', 'PostgreSQL', 'gRPC', 'MQTT', 'Digital Twin', 'Machine Learning', 'Zero Trust', 'FIPS 140-2', 'DO-178C']
@@ -59,9 +59,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '02', title: 'Supply-Chain & Parts-Traceability System', desc: 'Full-lifecycle tracking platform that verifies part authenticity and vendor approval status, flags counterfeit-risk components, and generates audit-ready traceability records.' },
     { no: '03', title: 'Mission Simulation & Digital-Twin Platform', desc: 'High-fidelity digital-twin environment that models aircraft and satellite systems for mission rehearsal, maintenance forecasting, and operator training without real-world risk.' },
   ] : [
-    { no: '01', title: 'Secure Communications Platform', desc: 'ระบบส่งข้อความและ Command แบบ End-to-end Encrypted พร้อมการยืนยันตัวตนแบบ Zero-trust ออกแบบให้ทนต่อสภาพเครือข่ายที่เป็นปฏิปักษ์และตรงตามมาตรฐานความปลอดภัยระดับกลาโหม' },
-    { no: '02', title: 'Supply-Chain & Parts-Traceability System', desc: 'แพลตฟอร์มติดตามตลอดวงจรชีวิตที่ตรวจสอบความแท้ของชิ้นส่วนและสถานะการอนุมัติผู้ผลิต แจ้งเตือนความเสี่ยงชิ้นส่วนปลอม และสร้างบันทึก Traceability ที่พร้อมสำหรับการตรวจสอบ' },
-    { no: '03', title: 'Mission Simulation & Digital-Twin Platform', desc: 'สภาพแวดล้อม Digital Twin ความละเอียดสูงที่จำลองระบบอากาศยานและดาวเทียมสำหรับซ้อมภารกิจ คาดการณ์การบำรุงรักษา และฝึกอบรมผู้ปฏิบัติงานโดยไม่มีความเสี่ยงในโลกจริง' },
+    { no: '01', title: 'Secure Communications Platform', desc: 'ระบบส่งข้อความและคำสั่งเข้ารหัสตั้งแต่ต้นทางถึงปลายทาง ยืนยันตัวตนแบบ Zero-trust ทนต่อเครือข่ายที่ไม่ปลอดภัย และตรงตามมาตรฐานความปลอดภัยระดับกลาโหม' },
+    { no: '02', title: 'Supply-Chain & Parts-Traceability System', desc: 'แพลตฟอร์มติดตามตลอดอายุการใช้งาน ตรวจความแท้ของชิ้นส่วนและสถานะอนุมัติผู้ผลิต แจ้งเตือนความเสี่ยงชิ้นส่วนปลอม และสร้างบันทึกย้อนกลับที่พร้อมให้ตรวจสอบ' },
+    { no: '03', title: 'Mission Simulation & Digital-Twin Platform', desc: 'สภาพแวดล้อม Digital Twin ความละเอียดสูง จำลองอากาศยานและดาวเทียมเพื่อซ้อมภารกิจ คาดการณ์การบำรุงรักษา และฝึกผู้ปฏิบัติงานโดยไม่มีความเสี่ยงจริง' },
   ]
 
   const heroVisual = (
@@ -142,7 +142,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                   {badge}
                 </div>
                 <h1 className="t-display mb-6 leading-relaxed" style={{ fontSize: 'clamp(2.8rem,6vw,5.5rem)', background: 'linear-gradient(135deg, var(--purple-light) 0%, #53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                  {isEN ? 'Aerospace &' : 'การบินและอวกาศ &'}<br />{isEN ? 'Defense' : 'กลาโหม'}
+                  {isEN ? 'Aerospace &' : 'การบินอวกาศ &'}<br />{isEN ? 'Defense' : 'กลาโหม'}
                 </h1>
                 <p className="leading-relaxed mb-10" style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.85)', fontWeight: 400, maxWidth: 560 }}>
                   {heroSubhead}
@@ -176,7 +176,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
                   ? 'We help aerospace and defense organizations build secure communications platforms, satellite and ground-station dashboards, supply-chain traceability systems, and digital-twin simulation tools that meet the strictest security and compliance standards. Our solutions combine deep systems-engineering expertise with rigorous security practices to modernize mission-critical operations without compromising certification.'
-                  : 'เราช่วยองค์กรด้านการบินและอวกาศและกลาโหม สร้าง Secure Communications Platform, Dashboard สำหรับดาวเทียมและ Ground Station, ระบบตรวจสอบย้อนกลับ Supply-Chain และเครื่องมือจำลอง Digital Twin ที่ตรงตามมาตรฐานความปลอดภัยและ Compliance ที่เข้มงวดที่สุด โซลูชันของเราผสมผสานความเชี่ยวชาญด้าน Systems Engineering เชิงลึกกับแนวปฏิบัติด้านความปลอดภัยที่รัดกุม เพื่อปรับปรุงระบบ Mission-Critical ให้ทันสมัยโดยไม่กระทบต่อการรับรองมาตรฐาน'}
+                  : 'เราช่วยองค์กรด้านการบินอวกาศและกลาโหมสร้างแพลตฟอร์มสื่อสารที่ปลอดภัย แดชบอร์ดสำหรับดาวเทียมและ Ground Station ระบบตรวจสอบย้อนกลับห่วงโซ่อุปทาน และเครื่องมือจำลอง Digital Twin ให้ตรงตามมาตรฐานความปลอดภัยและกฎระเบียบที่เข้มงวดที่สุด เราผสมความรู้ด้าน Systems Engineering เชิงลึกกับแนวปฏิบัติด้านความปลอดภัยที่รัดกุม เพื่อปรับปรุงระบบสำคัญระดับภารกิจให้ทันสมัย โดยไม่กระทบใบรับรองมาตรฐาน'}
               </p>
             </div>
           </div>
@@ -194,7 +194,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Understanding the critical obstacles that drive digital transformation in this industry.'
-                : 'ความเข้าใจอุปสรรคสำคัญที่ผลักดันการปรับสู่ดิจิทัลในอุตสาหกรรมนี้'}
+                : 'ปัญหาหลักที่ธุรกิจในอุตสาหกรรมนี้ต้องเจอ'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -244,7 +244,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'โซลูชันที่พิสูจน์แล้วซึ่งเราสร้างเพื่อตอบโจทย์ที่สำคัญที่สุดของอุตสาหกรรมคุณ'}
+              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -267,12 +267,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Tech Stack' : 'เทคโนโลยีที่ใช้'}
             </p>
             <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
-              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้งาน'}
+              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้'}
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Industry-proven tools and frameworks we leverage to build robust solutions.'
-                : 'เครื่องมือและ Framework ที่พิสูจน์แล้วในอุตสาหกรรม ที่เราใช้สร้างโซลูชันที่แข็งแรงและเชื่อถือได้'}
+                : 'เครื่องมือและ Framework ที่เราเลือกใช้ เพราะมั่นคงและเชื่อถือได้'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -298,7 +298,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างโปรเจกต์ที่เราส่งมอบจริงให้กับลูกค้าในอุตสาหกรรมนี้'}
+              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างงานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -338,7 +338,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link

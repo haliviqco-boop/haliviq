@@ -13,14 +13,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge    = isEN ? 'Compliance / PDPA'  : 'Compliance / PDPA'
   const title    = isEN ? 'PDPA Compliance'  : 'PDPA Compliance'
   const subtitle = isEN ? 'Built In, Not Bolted On'    : 'ฝังเข้าไป ไม่ใช่แปะทีหลัง'
-  const heroDesc = isEN ? 'PDPA audit and gap analysis, consent and cookie management, data subject request workflows, and privacy engineering — as a founding partner of PDPA.org.'  : 'PDPA Audit และ Gap Analysis, จัดการ Consent และ Cookie, Workflow คำขอสิทธิ์เจ้าของข้อมูล และ Privacy Engineering ในฐานะ Founding Partner ของ PDPA.org'
-  const whyTitle = isEN ? 'Why PDPA compliance is engineering, not paperwork'    : 'ทำไม PDPA Compliance คืองานวิศวกรรม ไม่ใช่แค่เอกสาร'
-  const whyDesc  = isEN ? 'A privacy policy document does not stop a data breach or fulfill a deletion request. Real compliance requires consent flows, access controls, and workflows built into the product itself.'  : 'เอกสาร Privacy Policy ไม่ได้ช่วยหยุด Data Breach หรือทำตามคำขอลบข้อมูลได้จริง Compliance ที่แท้จริงต้องมี Consent Flow, Access Control และ Workflow ที่ฝังอยู่ใน Product จริงๆ'
-  const ctaTitle = isEN ? 'Ready to get a real compliance picture?'    : 'พร้อมรู้สถานะ Compliance ที่แท้จริงหรือยัง?'
-  const ctaDesc  = isEN ? 'Start with a gap analysis that shows exactly where you stand against PDPA requirements.'   : 'เริ่มด้วย Gap Analysis ที่แสดงสถานะจริงเทียบกับข้อกำหนด PDPA'
+  const heroDesc = isEN ? 'PDPA audit and gap analysis, consent and cookie management, data subject request workflows, and privacy engineering — as a founding partner of PDPA.org.'  : 'ตรวจ PDPA และวิเคราะห์ช่องว่าง จัดการ Consent และ Cookie ระบบรับคำขอสิทธิ์ของเจ้าของข้อมูล และวางระบบความเป็นส่วนตัว ในฐานะ Founding Partner ของ PDPA.org'
+  const whyTitle = isEN ? 'Why PDPA compliance is engineering, not paperwork'    : 'ทำไมการทำตาม PDPA คืองานวิศวกรรม ไม่ใช่แค่เอกสาร'
+  const whyDesc  = isEN ? 'A privacy policy document does not stop a data breach or fulfill a deletion request. Real compliance requires consent flows, access controls, and workflows built into the product itself.'  : 'เอกสารนโยบายความเป็นส่วนตัวไม่ได้ช่วยกันข้อมูลรั่ว หรือทำตามคำขอลบข้อมูลได้จริง การทำตามกฎหมายอย่างแท้จริงต้องมีขั้นตอนขอความยินยอม การควบคุมสิทธิ์เข้าถึง และกระบวนการที่ฝังอยู่ในผลิตภัณฑ์จริงๆ'
+  const ctaTitle = isEN ? 'Ready to get a real compliance picture?'    : 'พร้อมรู้สถานะการทำตามกฎหมายที่แท้จริงหรือยัง?'
+  const ctaDesc  = isEN ? 'Start with a gap analysis that shows exactly where you stand against PDPA requirements.'   : 'เริ่มด้วยการวิเคราะห์ช่องว่าง ที่แสดงสถานะจริงเทียบกับข้อกำหนด PDPA'
   const overviewText = isEN
     ? 'As a founding partner of PDPA.org, we help organizations move from a policy document to real, engineered compliance: PDPA audits and gap analysis against your actual data flows, consent and cookie management built into your product, data subject access request (DSAR) workflows that can actually be executed, and privacy and security engineering — encryption, access control, and audit logging — implemented as part of your systems rather than described in a document nobody follows.'
-    : 'ในฐานะ Founding Partner ของ PDPA.org เราช่วยองค์กรก้าวจากเอกสารนโยบาย ไปสู่ Compliance ที่ Implement จริง ตั้งแต่ PDPA Audit และ Gap Analysis เทียบกับ Data Flow จริงของคุณ, การจัดการ Consent และ Cookie ที่ฝังอยู่ใน Product, Workflow สำหรับคำขอสิทธิ์เจ้าของข้อมูล (DSAR) ที่ทำตามได้จริง ไปจนถึง Privacy และ Security Engineering เช่น Encryption, Access Control และ Audit Logging ที่ Implement เป็นส่วนหนึ่งของระบบ ไม่ใช่แค่เขียนไว้ในเอกสารที่ไม่มีใครทำตาม'
+    : 'ในฐานะ Founding Partner ของ PDPA.org เราช่วยองค์กรก้าวจากเอกสารนโยบายไปสู่การทำตามกฎหมายที่ใช้งานได้จริง ตั้งแต่ตรวจ PDPA และวิเคราะห์ช่องว่างเทียบกับการไหลของข้อมูลจริงของคุณ จัดการ Consent และ Cookie ที่ฝังอยู่ในผลิตภัณฑ์ ระบบรับคำขอสิทธิ์เจ้าของข้อมูล (DSAR) ที่ทำตามได้จริง ไปจนถึงวางระบบความเป็นส่วนตัวและความปลอดภัย เช่น การเข้ารหัส การควบคุมสิทธิ์เข้าถึง และบันทึกการใช้งาน ที่สร้างเป็นส่วนหนึ่งของระบบ ไม่ใช่แค่เขียนไว้ในเอกสารที่ไม่มีใครทำตาม'
 
   const heroBullets = isEN ? [
       'Full PDPA audit and gap analysis against your real data flows',
@@ -29,11 +29,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'Privacy and security engineering: encryption, access control, audit logs',
       'Founding partner of PDPA.org with hands-on implementation experience',
     ] : [
-      'PDPA Audit และ Gap Analysis เต็มรูปแบบเทียบกับ Data Flow จริง',
-      'จัดการ Consent และ Cookie ที่ฝังอยู่ใน Product ของคุณ',
-      'Workflow คำขอสิทธิ์เจ้าของข้อมูล (DSAR) ที่ทำตามได้จริง',
-      'Privacy และ Security Engineering: Encryption, Access Control, Audit Log',
-      'Founding Partner ของ PDPA.org พร้อมประสบการณ์ Implement จริง',
+      'ตรวจ PDPA และวิเคราะห์ช่องว่างเต็มรูปแบบ เทียบกับการไหลของข้อมูลจริง',
+      'จัดการ Consent และ Cookie ที่ฝังอยู่ในผลิตภัณฑ์ของคุณ',
+      'ระบบรับคำขอสิทธิ์เจ้าของข้อมูล (DSAR) ที่ทำตามได้จริง',
+      'วางระบบความเป็นส่วนตัวและความปลอดภัย: เข้ารหัส ควบคุมสิทธิ์เข้าถึง บันทึกการใช้งาน',
+      'Founding Partner ของ PDPA.org พร้อมประสบการณ์ลงมือทำจริง',
     ]
   const whyPoints   = isEN ? [
       'PDPA non-compliance carries real fines and reputational risk, not just a warning letter.',
@@ -42,11 +42,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'Data mapping reveals shadow data flows most organizations do not realize they have.',
       'Security engineering like encryption and access control protects data whether or not a request ever comes in.',
     ] : [
-      'การไม่ปฏิบัติตาม PDPA มีค่าปรับจริงและความเสี่ยงด้านชื่อเสียง ไม่ใช่แค่จดหมายเตือน',
-      'นโยบายที่เขียนไว้ ไม่สามารถทำตามคำขอของเจ้าของข้อมูลได้ ถ้าไม่มี Process ที่ใช้งานได้จริงรองรับ',
-      'การจัดการ Consent ที่ทำได้ดี ช่วยเพิ่มความไว้ใจของลูกค้า ไม่ใช่แค่สถานะทางกฎหมาย',
-      'Data Mapping ช่วยเผยให้เห็น Data Flow ที่ซ่อนอยู่ ที่องค์กรส่วนใหญ่ไม่รู้ตัวว่ามี',
-      'Security Engineering อย่าง Encryption และ Access Control ปกป้องข้อมูลได้ไม่ว่าจะมีคำขอเข้ามาหรือไม่',
+      'การไม่ทำตาม PDPA มีค่าปรับจริงและเสี่ยงต่อชื่อเสียง ไม่ใช่แค่จดหมายเตือน',
+      'นโยบายที่เขียนไว้ทำตามคำขอของเจ้าของข้อมูลไม่ได้ ถ้าไม่มีขั้นตอนที่ใช้งานได้จริงรองรับ',
+      'การจัดการ Consent ที่ทำได้ดี ช่วยเพิ่มความไว้ใจของลูกค้า ไม่ใช่แค่ผ่านเกณฑ์ทางกฎหมาย',
+      'การทำแผนผังข้อมูลช่วยให้เห็นการไหลของข้อมูลที่ซ่อนอยู่ ซึ่งองค์กรส่วนใหญ่ไม่รู้ว่ามี',
+      'ระบบความปลอดภัยอย่างการเข้ารหัสและควบคุมสิทธิ์เข้าถึง ปกป้องข้อมูลได้ไม่ว่าจะมีคำขอเข้ามาหรือไม่',
     ]
   const outcomes    = isEN ? [
       {stat: '100%', label: 'DSAR Fulfillment Rate', desc: 'Across implemented workflows'},
@@ -54,10 +54,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {stat: '<48h', label: 'DSAR Response Time', desc: 'From request to action'},
       {stat: '20+', label: 'Systems Data-Mapped', desc: 'Average per full audit'}
     ] : [
-      {stat: '100%', label: 'อัตราทำตามคำขอ DSAR', desc: 'ในทุก Workflow ที่ Implement'},
-      {stat: '0', label: 'ค่าปรับ Compliance', desc: 'ในองค์กรลูกค้าที่ตรวจสอบ'},
+      {stat: '100%', label: 'อัตราทำตามคำขอ DSAR', desc: 'ในทุกระบบรับคำขอที่เราสร้าง'},
+      {stat: '0', label: 'ค่าปรับจากการไม่ทำตามกฎหมาย', desc: 'ในองค์กรลูกค้าที่ตรวจสอบ'},
       {stat: '<48h', label: 'เวลาตอบคำขอ DSAR', desc: 'ตั้งแต่รับคำขอถึงดำเนินการ'},
-      {stat: '20+', label: 'ระบบที่ทำ Data Mapping', desc: 'เฉลี่ยต่อการ Audit เต็มรูปแบบ'}
+      {stat: '20+', label: 'ระบบที่ทำแผนผังข้อมูล', desc: 'เฉลี่ยต่อการตรวจเต็มรูปแบบ'}
     ]
   const features    = isEN ? [
       {icon: 'ti-search', title: 'PDPA Audit & Gap Analysis', desc: 'A full review of data flows, consent points, and current controls against PDPA requirements.'},
@@ -67,12 +67,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {icon: 'ti-map', title: 'Data Mapping', desc: 'Full visibility into where personal data lives, moves, and is processed across your systems.'},
       {icon: 'ti-certificate', title: 'Training & Governance', desc: 'Practical training and governance processes so compliance holds after the project ends.'}
     ] : [
-      {icon: 'ti-search', title: 'PDPA Audit & Gap Analysis', desc: 'ตรวจสอบ Data Flow, จุด Consent และ Control ปัจจุบัน เทียบกับข้อกำหนด PDPA เต็มรูปแบบ'},
-      {icon: 'ti-cookie', title: 'Consent & Cookie Management', desc: 'การเก็บ Consent, Preference Center และ Cookie Compliance ที่ฝังอยู่ใน Product'},
-      {icon: 'ti-file-check', title: 'Data Subject Request Workflows', desc: 'Process DSAR ที่ทำตามได้จริง สำหรับคำขอเข้าถึง, แก้ไข และลบข้อมูล'},
-      {icon: 'ti-lock', title: 'Privacy & Security Engineering', desc: 'Encryption, Access Control และ Audit Logging ที่ Implement ในระดับระบบ'},
+      {icon: 'ti-search', title: 'PDPA Audit & Gap Analysis', desc: 'ตรวจการไหลของข้อมูล จุดขอความยินยอม และมาตรการปัจจุบัน เทียบกับข้อกำหนด PDPA อย่างครบถ้วน'},
+      {icon: 'ti-cookie', title: 'Consent & Cookie Management', desc: 'เก็บ Consent, ศูนย์จัดการความต้องการของผู้ใช้ และทำ Cookie ให้ถูกต้อง โดยฝังอยู่ในผลิตภัณฑ์'},
+      {icon: 'ti-file-check', title: 'Data Subject Request Workflows', desc: 'ขั้นตอน DSAR ที่ทำตามได้จริง สำหรับคำขอเข้าถึง แก้ไข และลบข้อมูล'},
+      {icon: 'ti-lock', title: 'Privacy & Security Engineering', desc: 'การเข้ารหัส ควบคุมสิทธิ์เข้าถึง และบันทึกการใช้งาน ที่ทำในระดับระบบ'},
       {icon: 'ti-map', title: 'Data Mapping', desc: 'เห็นภาพเต็มว่าข้อมูลส่วนบุคคลอยู่ที่ไหน เคลื่อนย้ายอย่างไร และถูกประมวลผลที่ไหนบ้าง'},
-      {icon: 'ti-certificate', title: 'Training & Governance', desc: 'Training และ Governance Process ที่ใช้งานได้จริง เพื่อให้ Compliance คงอยู่หลังโปรเจกต์จบ'}
+      {icon: 'ti-certificate', title: 'Training & Governance', desc: 'อบรมและวางขั้นตอนกำกับดูแลที่ใช้ได้จริง เพื่อให้ทำตามกฎหมายต่อเนื่องหลังโปรเจกต์จบ'}
     ]
   const steps       = isEN ? [
       {no: '01', title: 'Audit', desc: 'Review current data flows and controls.'},
@@ -82,11 +82,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {no: '05', title: 'Training', desc: 'Train teams on new processes and tools.'},
       {no: '06', title: 'Monitoring', desc: 'Ongoing review as systems and law evolve.'}
     ] : [
-      {no: '01', title: 'Audit', desc: 'ตรวจสอบ Data Flow และ Control ปัจจุบัน'},
+      {no: '01', title: 'Audit', desc: 'ตรวจการไหลของข้อมูลและมาตรการปัจจุบัน'},
       {no: '02', title: 'Gap Analysis', desc: 'ระบุช่องว่างเทียบกับข้อกำหนด PDPA'},
       {no: '03', title: 'Roadmap', desc: 'จัดลำดับการแก้ไขตามความเสี่ยงและความยาก'},
-      {no: '04', title: 'Implementation', desc: 'สร้าง Consent, DSAR และ Security Control'},
-      {no: '05', title: 'Training', desc: 'เทรนทีมเรื่อง Process และเครื่องมือใหม่'},
+      {no: '04', title: 'Implementation', desc: 'สร้างระบบ Consent, DSAR และมาตรการความปลอดภัย'},
+      {no: '05', title: 'Training', desc: 'อบรมทีมเรื่องขั้นตอนและเครื่องมือใหม่'},
       {no: '06', title: 'Monitoring', desc: 'ทบทวนต่อเนื่องตามระบบและกฎหมายที่เปลี่ยนไป'}
     ]
   const caseStudies = isEN ? [
@@ -94,9 +94,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {tag: 'Healthcare · Bangkok', title: 'DSAR Response Time Cut from Weeks to 48 Hours', desc: 'Automated data subject request workflow across 8 internal systems.', result: '100% requests fulfilled on time'},
       {tag: 'Retail · Nationwide', title: 'Cookie Consent Rebuilt for Real Compliance', desc: 'Consent management platform integrated across web and mobile properties.', result: 'Full consent audit trail'}
     ] : [
-      {tag: 'FinTech · กรุงเทพฯ', title: 'PDPA Compliance เต็มรูปแบบใน 10 สัปดาห์', desc: 'Audit, Gap Analysis และ Implement Workflow Consent และ DSAR', result: 'ไม่พบข้อบกพร่องจากการตรวจสอบภายนอก'},
-      {tag: 'Healthcare · กรุงเทพฯ', title: 'ลดเวลาตอบ DSAR จากหลักสัปดาห์เหลือ 48 ชั่วโมง', desc: 'Automate Workflow คำขอสิทธิ์เจ้าของข้อมูล ครอบคลุม 8 ระบบภายใน', result: 'ตอบคำขอทันเวลา 100%'},
-      {tag: 'Retail · ทั่วประเทศ', title: 'สร้าง Cookie Consent ใหม่เพื่อ Compliance จริง', desc: 'เชื่อมต่อ Consent Management Platform ครอบคลุม Web และ Mobile', result: 'มี Audit Trail ของ Consent ครบถ้วน'}
+      {tag: 'FinTech · กรุงเทพฯ', title: 'ทำตาม PDPA ครบถ้วนใน 10 สัปดาห์', desc: 'ตรวจ วิเคราะห์ช่องว่าง และสร้างระบบ Consent และ DSAR', result: 'ไม่พบข้อบกพร่องจากการตรวจสอบภายนอก'},
+      {tag: 'Healthcare · กรุงเทพฯ', title: 'ลดเวลาตอบ DSAR จากหลักสัปดาห์เหลือ 48 ชั่วโมง', desc: 'ทำระบบรับคำขอสิทธิ์เจ้าของข้อมูลให้ทำงานอัตโนมัติ ครอบคลุม 8 ระบบภายใน', result: 'ตอบคำขอทันเวลา 100%'},
+      {tag: 'Retail · ทั่วประเทศ', title: 'สร้างระบบ Cookie Consent ใหม่ให้ทำตามกฎหมายจริง', desc: 'เชื่อมแพลตฟอร์มจัดการ Consent ครอบคลุมเว็บและมือถือ', result: 'มีบันทึกการให้ Consent ครบถ้วน'}
     ]
   const faqs        = isEN ? [
       {q: 'What is a PDPA gap analysis?', a: 'A structured review of your actual data flows, consent points, and controls compared against PDPA requirements, with a prioritized list of gaps to close.'},
@@ -104,10 +104,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {q: 'Are you a certified PDPA partner?', a: 'We are a founding partner of PDPA.org and bring hands-on implementation experience, not just policy templates.'},
       {q: 'Does this cover GDPR as well as PDPA?', a: 'Yes. Many controls overlap, and we build with both frameworks in mind where your business has international exposure.'}
     ] : [
-      {q: 'PDPA Gap Analysis คืออะไร?', a: 'การตรวจสอบ Data Flow จริง, จุด Consent และ Control ของคุณ เทียบกับข้อกำหนด PDPA อย่างเป็นระบบ พร้อม List ช่องว่างที่ต้องแก้ไขตามลำดับความสำคัญ'},
-      {q: 'ช่วยทำตามคำขอเจ้าของข้อมูลที่เรารับอยู่แล้วได้ไหม?', a: 'ได้ครับ เราออกแบบและสร้าง Workflow ให้ทีมของคุณทำตามคำขอเข้าถึง, แก้ไข และลบข้อมูลได้อย่างน่าเชื่อถือและทันกรอบเวลาที่กำหนด'},
-      {q: 'เป็น PDPA Partner ที่ได้รับการรับรองไหม?', a: 'เราเป็น Founding Partner ของ PDPA.org และมีประสบการณ์ Implement จริง ไม่ใช่แค่ Template นโยบาย'},
-      {q: 'ครอบคลุม GDPR ด้วยไหม นอกเหนือจาก PDPA?', a: 'ครอบคลุมครับ Control หลายอย่างซ้อนทับกัน เราสร้างโดยคำนึงถึงทั้งสอง Framework สำหรับธุรกิจที่มีการดำเนินงานระดับสากล'}
+      {q: 'PDPA Gap Analysis คืออะไร?', a: 'การตรวจการไหลของข้อมูลจริง จุดขอความยินยอม และมาตรการของคุณ เทียบกับข้อกำหนด PDPA อย่างเป็นระบบ พร้อมรายการช่องว่างที่ต้องแก้ไขเรียงตามความสำคัญ'},
+      {q: 'ช่วยทำตามคำขอเจ้าของข้อมูลที่เรารับอยู่แล้วได้ไหม?', a: 'ได้ครับ เราออกแบบและสร้างระบบให้ทีมของคุณทำตามคำขอเข้าถึง แก้ไข และลบข้อมูลได้อย่างน่าเชื่อถือ และทันกรอบเวลาที่กำหนด'},
+      {q: 'เป็นพาร์ตเนอร์ PDPA ที่ได้รับการรับรองไหม?', a: 'เราเป็น Founding Partner ของ PDPA.org และมีประสบการณ์ลงมือทำจริง ไม่ใช่แค่ให้แม่แบบนโยบาย'},
+      {q: 'ครอบคลุม GDPR ด้วยไหม นอกเหนือจาก PDPA?', a: 'ครอบคลุมครับ มาตรการหลายอย่างซ้อนทับกัน เราสร้างโดยคำนึงถึงทั้งสองกรอบ สำหรับธุรกิจที่ดำเนินงานในระดับสากล'}
     ]
   const related     = isEN ? [
       {label: 'Cybersecurity', href: '/services/cybersecurity'},
@@ -129,7 +129,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { n: 5, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Fulfilled in 36h, within SLA' : 'ดำเนินการเสร็จใน 36 ชม. ตาม SLA'}</> },
     { n: 6, jsx: <>&nbsp;</> },
     { n: 7, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>audit-log --verify encryption</span></> },
-    { n: 8, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'All PII encrypted at rest' : 'ข้อมูลส่วนบุคคลถูก Encrypt ทั้งหมด'}</> },
+    { n: 8, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'All PII encrypted at rest' : 'ข้อมูลส่วนบุคคลถูกเข้ารหัสทั้งหมด'}</> },
   ]
 
   const heroSlot = (
@@ -183,10 +183,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-file-check', title: 'Data Subject Request Workflows', desc: 'Executable DSAR processes for access, correction, and deletion requests.' },
     { icon: 'ti-lock', title: 'Privacy & Security Engineering', desc: 'Encryption, access control, and audit logging implemented at the systems level.' },
   ] : [
-    { icon: 'ti-search', title: 'PDPA Audit & Gap Analysis', desc: 'ตรวจสอบ Data Flow, จุด Consent และ Control ปัจจุบัน เทียบกับข้อกำหนด PDPA เต็มรูปแบบ' },
-    { icon: 'ti-cookie', title: 'Consent & Cookie Management', desc: 'การเก็บ Consent, Preference Center และ Cookie Compliance ที่ฝังอยู่ใน Product' },
-    { icon: 'ti-file-check', title: 'Data Subject Request Workflows', desc: 'Process DSAR ที่ทำตามได้จริง สำหรับคำขอเข้าถึง, แก้ไข และลบข้อมูล' },
-    { icon: 'ti-lock', title: 'Privacy & Security Engineering', desc: 'Encryption, Access Control และ Audit Logging ที่ Implement ในระดับระบบ' },
+    { icon: 'ti-search', title: 'PDPA Audit & Gap Analysis', desc: 'ตรวจการไหลของข้อมูล จุดขอความยินยอม และมาตรการปัจจุบัน เทียบกับข้อกำหนด PDPA อย่างครบถ้วน' },
+    { icon: 'ti-cookie', title: 'Consent & Cookie Management', desc: 'เก็บ Consent, ศูนย์จัดการความต้องการของผู้ใช้ และทำ Cookie ให้ถูกต้อง โดยฝังอยู่ในผลิตภัณฑ์' },
+    { icon: 'ti-file-check', title: 'Data Subject Request Workflows', desc: 'ขั้นตอน DSAR ที่ทำตามได้จริง สำหรับคำขอเข้าถึง แก้ไข และลบข้อมูล' },
+    { icon: 'ti-lock', title: 'Privacy & Security Engineering', desc: 'การเข้ารหัส ควบคุมสิทธิ์เข้าถึง และบันทึกการใช้งาน ที่ทำในระดับระบบ' },
   ]
 
   const techStack = [
@@ -210,11 +210,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '05', title: 'Training', desc: 'Teams on new processes and tools' },
     { no: '06', title: 'Monitoring', desc: 'Ongoing review as things evolve' },
   ] : [
-    { no: '01', title: 'Audit', desc: 'Data Flow และ Control ปัจจุบัน' },
+    { no: '01', title: 'Audit', desc: 'การไหลของข้อมูลและมาตรการปัจจุบัน' },
     { no: '02', title: 'Gap Analysis', desc: 'ช่องว่างเทียบข้อกำหนด PDPA' },
     { no: '03', title: 'Roadmap', desc: 'จัดลำดับตามความเสี่ยงและความยาก' },
     { no: '04', title: 'Implementation', desc: 'Consent, DSAR, Security Control' },
-    { no: '05', title: 'Training', desc: 'เทรนทีมเรื่อง Process และเครื่องมือ' },
+    { no: '05', title: 'Training', desc: 'อบรมทีมเรื่องขั้นตอนและเครื่องมือ' },
     { no: '06', title: 'Monitoring', desc: 'ทบทวนต่อเนื่องตามที่เปลี่ยนไป' },
   ]
 
@@ -228,14 +228,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { q: 'What happens if we already have a privacy policy but no real process behind it?', a: 'This is one of the most common situations we see. The gap analysis specifically checks whether stated policies are actually executable, and we build the missing workflows and controls rather than just editing the document.' },
     { q: 'Do you provide ongoing compliance monitoring, not just a one-time audit?', a: 'Yes, as an option. Data flows and systems change over time, so we offer periodic re-review and monitoring to keep your compliance posture current rather than accurate only on the day of the initial audit.' },
   ] : [
-    { q: 'PDPA Gap Analysis คืออะไร และได้อะไรจากมันบ้าง?', a: 'การตรวจสอบ Data Flow จริง, จุด Consent และ Control ที่มีอยู่ เทียบกับข้อกำหนด PDPA อย่างเป็นระบบ ผลลัพธ์คือ List ช่องว่างที่จัดลำดับความสำคัญและนำไปใช้ได้จริง ไม่ใช่ Checklist ทั่วไป' },
-    { q: 'ช่วยทำตามคำขอเจ้าของข้อมูลที่เรารับอยู่แล้วได้ไหม?', a: 'ได้ครับ เราออกแบบและสร้าง Workflow ให้ทีมของคุณทำตามคำขอเข้าถึง, แก้ไข และลบข้อมูลได้อย่างน่าเชื่อถือและทันกรอบเวลาที่กำหนด ครอบคลุมทุกระบบภายในที่เก็บข้อมูลนั้น' },
-    { q: 'เป็น PDPA Partner ที่ได้รับการรับรองไหม?', a: 'เราเป็น Founding Partner ของ PDPA.org และมีประสบการณ์ Implement จริงทั้ง Audit, ระบบ Consent และ Workflow DSAR ไม่ใช่แค่ Template นโยบาย' },
-    { q: 'ครอบคลุม GDPR ด้วยไหม นอกเหนือจาก PDPA?', a: 'ครอบคลุมครับ Control หลายอย่างซ้อนทับกันระหว่างสอง Framework เราสร้างโดยคำนึงถึงทั้งคู่ สำหรับธุรกิจที่มีการดำเนินงานหรือลูกค้าระดับสากล' },
-    { q: 'โปรแกรม PDPA Compliance เต็มรูปแบบใช้เวลานานแค่ไหน?', a: 'Audit และ Gap Analysis แบบเจาะจงมักใช้เวลา 2-3 สัปดาห์ ส่วนโปรแกรมแก้ไขเต็มรูปแบบ รวม Consent Management, DSAR Workflow และ Security Control มักใช้เวลา 8-12 สัปดาห์ ขึ้นอยู่กับจำนวนระบบที่เกี่ยวข้อง' },
-    { q: 'งาน PDPA Compliance มีค่าใช้จ่ายเท่าไหร่?', a: 'Audit และ Gap Analysis แบบเดี่ยว มักเริ่มต้นที่หลักหมื่นปลายๆ (บาท) ส่วนโปรแกรม Implementation เต็มรูปแบบจะเสนอราคาหลัง Audit ตามจำนวนระบบและช่องว่างที่ต้องแก้ไข' },
-    { q: 'ถ้าเรามี Privacy Policy อยู่แล้วแต่ไม่มี Process จริงรองรับ จะเกิดอะไรขึ้น?', a: 'นี่คือสถานการณ์ที่เราพบบ่อยที่สุด Gap Analysis จะตรวจสอบเฉพาะว่านโยบายที่ระบุไว้ทำตามได้จริงหรือไม่ และเราจะสร้าง Workflow และ Control ที่ขาดหายไป แทนที่จะแค่แก้เอกสาร' },
-    { q: 'มี Monitoring Compliance ต่อเนื่องไหม หรือแค่ Audit ครั้งเดียว?', a: 'มีเป็นตัวเลือกครับ เนื่องจาก Data Flow และระบบเปลี่ยนแปลงตลอดเวลา เราจึงมีบริการทบทวนและ Monitoring เป็นระยะ เพื่อให้สถานะ Compliance ทันสมัยอยู่เสมอ ไม่ใช่แค่ถูกต้องในวันที่ Audit ครั้งแรก' },
+    { q: 'PDPA Gap Analysis คืออะไร และได้อะไรบ้าง?', a: 'การตรวจการไหลของข้อมูลจริง จุดขอความยินยอม และมาตรการที่มีอยู่ เทียบกับข้อกำหนด PDPA อย่างเป็นระบบ ผลลัพธ์คือรายการช่องว่างที่จัดลำดับความสำคัญและนำไปทำต่อได้จริง ไม่ใช่เช็กลิสต์ทั่วไป' },
+    { q: 'ช่วยทำตามคำขอเจ้าของข้อมูลที่เรารับอยู่แล้วได้ไหม?', a: 'ได้ครับ เราออกแบบและสร้างระบบให้ทีมของคุณทำตามคำขอเข้าถึง แก้ไข และลบข้อมูลได้อย่างน่าเชื่อถือ และทันกรอบเวลาที่กำหนด ครอบคลุมทุกระบบภายในที่เก็บข้อมูลนั้น' },
+    { q: 'เป็นพาร์ตเนอร์ PDPA ที่ได้รับการรับรองไหม?', a: 'เราเป็น Founding Partner ของ PDPA.org และมีประสบการณ์ลงมือทำจริง ทั้งการตรวจ ระบบ Consent และระบบ DSAR ไม่ใช่แค่แม่แบบนโยบาย' },
+    { q: 'ครอบคลุม GDPR ด้วยไหม นอกเหนือจาก PDPA?', a: 'ครอบคลุมครับ มาตรการหลายอย่างซ้อนทับกันระหว่างสองกรอบ เราสร้างโดยคำนึงถึงทั้งคู่ สำหรับธุรกิจที่ดำเนินงานหรือมีลูกค้าในระดับสากล' },
+    { q: 'โปรแกรมทำตาม PDPA เต็มรูปแบบใช้เวลานานแค่ไหน?', a: 'การตรวจและวิเคราะห์ช่องว่างแบบเจาะจงมักใช้ 2-3 สัปดาห์ ส่วนโปรแกรมแก้ไขเต็มรูปแบบ รวมระบบ Consent, ระบบ DSAR และมาตรการความปลอดภัย มักใช้ 8-12 สัปดาห์ ขึ้นกับจำนวนระบบที่เกี่ยวข้อง' },
+    { q: 'งาน PDPA มีค่าใช้จ่ายเท่าไหร่?', a: 'การตรวจและวิเคราะห์ช่องว่างแบบเดี่ยวมักเริ่มที่หลักหมื่นปลายๆ (บาท) ส่วนโปรแกรมลงมือแก้เต็มรูปแบบจะเสนอราคาหลังตรวจ ตามจำนวนระบบและช่องว่างที่ต้องแก้' },
+    { q: 'ถ้าเรามีนโยบายความเป็นส่วนตัวแล้วแต่ไม่มีขั้นตอนจริงรองรับ จะเกิดอะไรขึ้น?', a: 'นี่คือสถานการณ์ที่เราเจอบ่อยที่สุด การวิเคราะห์ช่องว่างจะตรวจว่าสิ่งที่นโยบายระบุไว้ทำตามได้จริงหรือไม่ และเราจะสร้างระบบและมาตรการที่ขาดหายไป ไม่ใช่แค่แก้เอกสาร' },
+    { q: 'มีการเฝ้าดูการทำตามกฎหมายต่อเนื่องไหม หรือตรวจครั้งเดียว?', a: 'มีเป็นตัวเลือกครับ เพราะการไหลของข้อมูลและระบบเปลี่ยนตลอดเวลา เราจึงมีบริการทบทวนและเฝ้าดูเป็นระยะ ให้สถานะทันสมัยอยู่เสมอ ไม่ใช่แค่ถูกต้องในวันที่ตรวจครั้งแรก' },
   ]
 
   const postHeroSlot = (
@@ -256,7 +256,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           {isEN ? 'Key Capabilities' : 'ความสามารถหลัก'}
         </h2>
         <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400 }}>
-          {isEN ? 'Concrete capabilities we bring to this engagement — not buzzwords.' : 'ความสามารถที่จับต้องได้จริงที่เรานำมาใช้ในทุกโปรเจกต์ ไม่ใช่แค่คำสวยหรู'}
+          {isEN ? 'Concrete capabilities we bring to this engagement — not buzzwords.' : 'สิ่งที่เราทำได้จริงในทุกโปรเจกต์ ไม่ใช่แค่คำสวยหรู'}
         </p>
 
         <div className="grid sm:grid-cols-2 gap-5">
@@ -280,12 +280,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             {isEN ? 'Areas We Cover' : 'ขอบเขตที่เราครอบคลุม'}
           </p>
           <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
-            {isEN ? 'Frameworks & Controls' : 'Framework และ Control'}
+            {isEN ? 'Frameworks & Controls' : 'กรอบกฎหมายและมาตรการ'}
           </h2>
           <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'The compliance frameworks and technical controls we implement, chosen to match your actual risk profile.'
-              : 'Framework Compliance และ Control ทางเทคนิคที่เรา Implement เลือกให้ตรงกับความเสี่ยงจริงของคุณ'}
+              : 'กรอบกฎหมายและมาตรการทางเทคนิคที่เราลงมือทำ เลือกให้ตรงกับความเสี่ยงจริงของคุณ'}
           </p>
 
           <div className="flex flex-wrap gap-3">
@@ -312,7 +312,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <p className="mb-16" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'A clear path from audit to real, sustained compliance — adjusted per organization, never one-size-fits-all.'
-              : 'เส้นทางที่ชัดเจนจาก Audit สู่ Compliance ที่แท้จริงและยั่งยืน ปรับตามแต่ละองค์กร ไม่ใช่สูตรสำเร็จตายตัว'}
+              : 'เส้นทางที่ชัดเจนจากการตรวจไปสู่การทำตามกฎหมายอย่างแท้จริงและยั่งยืน ปรับตามแต่ละองค์กร ไม่ใช่สูตรตายตัว'}
           </p>
 
           <div className="relative">
@@ -348,7 +348,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             {isEN ? 'Frequently Asked Questions' : 'คำถามที่พบบ่อย'}
           </h2>
           <p className="mb-4" style={{ color: 'var(--lime)', fontSize: '1.2rem', fontWeight: 600 }}>
-            {isEN ? 'Straight answers about how we handle PDPA compliance.' : 'คำตอบตรงไปตรงมาเกี่ยวกับวิธีที่เราดูแล PDPA Compliance'}
+            {isEN ? 'Straight answers about how we handle PDPA compliance.' : 'คำตอบตรงไปตรงมาเกี่ยวกับวิธีที่เราดูแลเรื่อง PDPA'}
           </p>
 
           <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
@@ -390,7 +390,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-medium transition-opacity hover:opacity-90"
             style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}
           >
-            {isEN ? 'Start a Conversation' : 'เริ่มบทสนทนา'}
+            {isEN ? 'Start a Conversation' : 'เริ่มคุยกัน'}
             <i className="ti ti-arrow-right" style={{ fontSize: 17 }} aria-hidden="true" />
           </Link>
           <a href="mailto:wu@haliviq.com" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>
@@ -408,7 +408,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       badge={badge} title={title} subtitle={subtitle}
       heroDesc={heroDesc} heroBullets={heroBullets}
       heroDark heroSlot={heroSlot} heroShowSecondaryCta={false}
-      heroCtaLabel={isEN ? 'Get Started' : 'เริ่มต้นเลย'}
+      heroCtaLabel={isEN ? 'Get Started' : 'เริ่มเลย'}
       postHeroSlot={postHeroSlot}
       whyTitle={whyTitle} whyDesc={whyDesc} whyPoints={whyPoints}
       outcomes={outcomes} ctaTitle={ctaTitle} ctaDesc={ctaDesc}

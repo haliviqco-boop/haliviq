@@ -16,7 +16,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge = isEN ? 'Industry / Consumer Goods' : 'อุตสาหกรรม / สินค้าอุปโภคบริโภค'
   const heroSubhead = isEN
     ? 'Digital transformation for consumer product companies.'
-    : 'ขับเคลื่อนการปรับสู่ดิจิทัลให้กับบริษัทสินค้าอุปโภคบริโภค'
+    : 'ช่วยบริษัทสินค้าอุปโภคบริโภคทำงานบนระบบดิจิทัล'
 
   const challenges = isEN ? [
     { icon: 'ti-network', title: 'Fragmented DTC & Distribution Data', desc: 'Direct-to-consumer sales, retail partners, and distributors each generate siloed data on customers, orders, and inventory, making it nearly impossible to get a single view of demand across channels.' },
@@ -24,16 +24,16 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-currency-dollar', title: 'Rising Customer-Acquisition Costs', desc: 'As paid media costs climb and privacy changes limit targeting, brands need smarter retention, loyalty, and first-party data strategies to keep acquisition economics sustainable.' },
     { icon: 'ti-barcode', title: 'Product-Information Management at Scale', desc: 'Keeping product data, imagery, pricing, and compliance details consistent across thousands of SKUs and dozens of marketplaces and retail channels overwhelms manual, spreadsheet-driven processes.' },
   ] : [
-    { icon: 'ti-network', title: 'ข้อมูล DTC และ Distribution ที่กระจัดกระจาย', desc: 'ยอดขายแบบ Direct-to-Consumer พันธมิตรค้าปลีก และผู้จัดจำหน่าย ต่างสร้างข้อมูลลูกค้า คำสั่งซื้อ และสต๊อกที่แยกส่วนกัน ทำให้แทบเป็นไปไม่ได้ที่จะเห็นภาพ Demand แบบรวมศูนย์ในทุกช่องทาง' },
-    { icon: 'ti-chart-line', title: 'ความผันผวนของการพยากรณ์ Demand', desc: 'ยอดขายที่พุ่งตามฤดูกาล กระแสไวรัล และความชอบของผู้บริโภคที่เปลี่ยนเร็ว ทำให้พยากรณ์ Demand ได้ยาก นำไปสู่ Overstock, Stockout และการตัดสินใจ Supply Chain แบบเฉพาะหน้าที่มีต้นทุนสูง' },
-    { icon: 'ti-currency-dollar', title: 'ต้นทุนการหาลูกค้าใหม่ที่สูงขึ้น', desc: 'เมื่อค่าโฆษณาแพงขึ้นและนโยบาย Privacy จำกัดการ Targeting แบรนด์ต้องใช้กลยุทธ์ Retention, Loyalty และ First-party Data ที่ฉลาดขึ้นเพื่อรักษาความคุ้มค่าในการหาลูกค้า' },
-    { icon: 'ti-barcode', title: 'การจัดการ Product Information ในระดับใหญ่', desc: 'การรักษาข้อมูลสินค้า รูปภาพ ราคา และรายละเอียด Compliance ให้สอดคล้องกันในหลายพันรายการ SKU และหลายสิบช่องทาง Marketplace และค้าปลีก เกินกำลังของกระบวนการแบบ Spreadsheet' },
+    { icon: 'ti-network', title: 'ข้อมูลช่องทางขายตรงและตัวแทนจำหน่ายกระจัดกระจาย', desc: 'ยอดขายตรงถึงผู้บริโภค (DTC) พันธมิตรค้าปลีก และผู้จัดจำหน่าย ต่างสร้างข้อมูลลูกค้า คำสั่งซื้อ และสต็อกแยกกัน จึงแทบเป็นไปไม่ได้ที่จะเห็นภาพความต้องการซื้อรวมของทุกช่องทาง' },
+    { icon: 'ti-chart-line', title: 'พยากรณ์ความต้องการซื้อได้ยาก', desc: 'ยอดขายที่พุ่งตามฤดูกาล กระแสไวรัล และความชอบของผู้บริโภคที่เปลี่ยนเร็ว ทำให้คาดการณ์ยาก สินค้าจึงล้นสต็อกหรือขาดสต็อก และต้องตัดสินใจเรื่องซัพพลายเชนแบบเฉพาะหน้าซึ่งเสียต้นทุนสูง' },
+    { icon: 'ti-currency-dollar', title: 'ต้นทุนหาลูกค้าใหม่สูงขึ้น', desc: 'เมื่อค่าโฆษณาแพงขึ้นและนโยบายความเป็นส่วนตัวจำกัดการยิงโฆษณาตรงกลุ่ม แบรนด์ต้องรักษาลูกค้าเดิม สร้างความภักดี และใช้ First-party Data ให้ฉลาดขึ้น เพื่อให้การหาลูกค้ายังคุ้ม' },
+    { icon: 'ti-barcode', title: 'จัดการข้อมูลสินค้าจำนวนมาก', desc: 'การทำให้ข้อมูลสินค้า รูปภาพ ราคา และรายละเอียดตามข้อกำหนดตรงกันทุกที่ ทั้งหลายพันรายการ SKU และหลายสิบช่องทาง Marketplace และค้าปลีก เกินกว่าที่ Spreadsheet จะรับไหว' },
   ]
 
   const metrics = [
     { value: '$212B', label: isEN ? 'Global DTC E-commerce Market Size by 2028' : 'ขนาดตลาด DTC E-commerce ทั่วโลกภายในปี 2028', source: 'Grand View Research CPG & DTC Report, 2024' },
-    { value: '64%', label: isEN ? 'Consumers More Loyal to Brands with Strong Loyalty Programs' : 'ผู้บริโภคภักดีต่อแบรนด์ที่มี Loyalty Program ที่แข็งแรงมากขึ้น', source: 'Deloitte Consumer Loyalty Survey, 2024' },
-    { value: '35%', label: isEN ? 'Improvement in Forecast Accuracy from AI-Driven Demand Planning' : 'ความแม่นยำในการพยากรณ์ที่เพิ่มขึ้นจาก AI Demand Planning', source: 'McKinsey Consumer Goods Analytics, 2024' },
+    { value: '64%', label: isEN ? 'Consumers More Loyal to Brands with Strong Loyalty Programs' : 'ผู้บริโภคที่ภักดีต่อแบรนด์ซึ่งมีโปรแกรมสะสมแต้มที่ดี', source: 'Deloitte Consumer Loyalty Survey, 2024' },
+    { value: '35%', label: isEN ? 'Improvement in Forecast Accuracy from AI-Driven Demand Planning' : 'ความแม่นยำในการพยากรณ์ที่เพิ่มขึ้นจากการวางแผนความต้องการซื้อด้วย AI', source: 'McKinsey Consumer Goods Analytics, 2024' },
   ]
 
   const capabilities = isEN ? [
@@ -44,12 +44,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-database', title: 'Product Information Management (PIM)', desc: 'Centralized PIM systems that keep product data, imagery, and specifications consistent and compliant across every sales channel and marketplace.' },
     { icon: 'ti-tag', title: 'Trade-Promotion & Pricing Optimization', desc: 'Pricing and promotion-planning tools that model margin impact and recommend optimal discounts and trade-spend allocation.' },
   ] : [
-    { icon: 'ti-shopping-cart', title: 'DTC E-commerce Platforms', desc: 'Storefront แบบ Direct-to-Consumer ที่รวดเร็วและปรับให้ Convert สูง พร้อม Checkout ที่ยืดหยุ่น ระบบ Subscription และ Bundling สำหรับแบรนด์ยุคใหม่' },
-    { icon: 'ti-gift', title: 'Loyalty & Membership Apps', desc: 'แพลตฟอร์ม Loyalty และ Membership แบบสะสมคะแนน พร้อมรางวัลแบบ Tier โปรแกรม Referral และข้อเสนอ Personalize ที่กระชับความสัมพันธ์กับลูกค้า' },
-    { icon: 'ti-report-analytics', title: 'Retail-Distribution Dashboards', desc: 'Dashboard รายงานแบบรวมศูนย์ที่รวมข้อมูล Sell-in และ Sell-out จากพันธมิตรค้าปลีกและผู้จัดจำหน่ายให้เป็นแหล่งข้อมูลเดียวที่เชื่อถือได้' },
-    { icon: 'ti-chart-line', title: 'AI Demand-Forecasting Systems', desc: 'โมเดล Machine Learning ที่พยากรณ์ Demand ในทุก SKU และช่องทาง โดยคำนึงถึงฤดูกาล โปรโมชัน และสัญญาณตลาด เพื่อลดความสูญเปล่า' },
-    { icon: 'ti-database', title: 'Product Information Management (PIM)', desc: 'ระบบ PIM แบบรวมศูนย์ที่รักษาข้อมูลสินค้า รูปภาพ และ Specification ให้สอดคล้องและเป็นไปตาม Compliance ในทุกช่องทางขายและ Marketplace' },
-    { icon: 'ti-tag', title: 'Trade-Promotion & Pricing Optimization', desc: 'เครื่องมือวางแผนราคาและโปรโมชันที่จำลองผลกระทบต่อ Margin และแนะนำส่วนลดและการจัดสรร Trade Spend ที่เหมาะสมที่สุด' },
+    { icon: 'ti-shopping-cart', title: 'DTC E-commerce Platforms', desc: 'หน้าร้านขายตรงถึงผู้บริโภคที่เร็วและปรับให้ขายได้ดี พร้อมระบบ Checkout ยืดหยุ่น การสมัครสมาชิกรายเดือน และการขายเป็นชุด สำหรับแบรนด์ยุคใหม่' },
+    { icon: 'ti-gift', title: 'Loyalty & Membership Apps', desc: 'แพลตฟอร์มสะสมคะแนนและสมาชิก มีรางวัลตามระดับ โปรแกรมชวนเพื่อน และข้อเสนอเฉพาะบุคคลที่ทำให้ลูกค้าอยู่กับแบรนด์นานขึ้น' },
+    { icon: 'ti-report-analytics', title: 'Retail-Distribution Dashboards', desc: 'Dashboard รายงานกลางที่รวมข้อมูล Sell-in และ Sell-out จากพันธมิตรค้าปลีกและผู้จัดจำหน่าย ให้เป็นข้อมูลชุดเดียวที่เชื่อถือได้' },
+    { icon: 'ti-chart-line', title: 'AI Demand-Forecasting Systems', desc: 'โมเดล Machine Learning ที่พยากรณ์ความต้องการซื้อของทุก SKU และทุกช่องทาง โดยดูฤดูกาล โปรโมชัน และสัญญาณตลาด เพื่อลดของเหลือและของขาด' },
+    { icon: 'ti-database', title: 'Product Information Management (PIM)', desc: 'ระบบ PIM กลางที่ทำให้ข้อมูลสินค้า รูปภาพ และสเปกตรงกันและเป็นไปตามข้อกำหนดในทุกช่องทางขายและ Marketplace' },
+    { icon: 'ti-tag', title: 'Trade-Promotion & Pricing Optimization', desc: 'เครื่องมือวางแผนราคาและโปรโมชัน จำลองผลต่อกำไรขั้นต้น และแนะนำส่วนลดและการจัดสรรงบ Trade Spend ที่เหมาะสมที่สุด' },
   ]
 
   const techStack = ['React', 'Next.js', 'Node.js', 'Shopify APIs', 'Algolia', 'Machine Learning', 'PostgreSQL', 'Redis', 'AWS', 'GraphQL', 'Stripe', 'Elasticsearch']
@@ -59,9 +59,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '02', title: 'Loyalty & Rewards App', desc: 'A tiered loyalty and membership app with points, referrals, and personalized offers that increases repeat purchase rate and customer lifetime value.' },
     { no: '03', title: 'Demand-Forecasting System', desc: 'An AI-driven forecasting platform that predicts SKU-level demand across DTC, retail, and distribution channels to minimize stockouts and overstock.' },
   ] : [
-    { no: '01', title: 'DTC Storefront Platform', desc: 'Storefront แบบ Direct-to-Consumer ที่ Convert สูง พร้อม Subscription, Bundling และการเชื่อมต่อ Loyalty ที่ออกแบบมาให้ Scale รองรับ Demand ช่วงฤดูกาลได้' },
-    { no: '02', title: 'Loyalty & Rewards App', desc: 'แอป Loyalty และ Membership แบบ Tier พร้อมคะแนนสะสม โปรแกรม Referral และข้อเสนอ Personalize ที่เพิ่มอัตราการซื้อซ้ำและ Customer Lifetime Value' },
-    { no: '03', title: 'Demand-Forecasting System', desc: 'แพลตฟอร์มพยากรณ์ที่ขับเคลื่อนด้วย AI ซึ่งคาดการณ์ Demand ระดับ SKU ในทุกช่องทาง DTC ค้าปลีก และผู้จัดจำหน่าย เพื่อลด Stockout และ Overstock' },
+    { no: '01', title: 'DTC Storefront Platform', desc: 'หน้าร้านขายตรงถึงผู้บริโภคที่ขายได้ดี มีระบบสมัครสมาชิกรายเดือน การขายเป็นชุด และเชื่อมโปรแกรมสะสมแต้ม ขยายรองรับช่วงที่ยอดสั่งซื้อพุ่งตามฤดูกาลได้' },
+    { no: '02', title: 'Loyalty & Rewards App', desc: 'แอปสะสมคะแนนและสมาชิกแบบแบ่งระดับ มีโปรแกรมชวนเพื่อน และข้อเสนอเฉพาะบุคคล ช่วยให้ลูกค้ากลับมาซื้อซ้ำและเพิ่ม Customer Lifetime Value' },
+    { no: '03', title: 'Demand-Forecasting System', desc: 'แพลตฟอร์มพยากรณ์ด้วย AI ที่คาดการณ์ความต้องการซื้อระดับ SKU ในทุกช่องทาง ทั้ง DTC ค้าปลีก และผู้จัดจำหน่าย เพื่อลดของขาดและของเหลือ' },
   ]
 
   const heroVisual = (
@@ -172,7 +172,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
                   ? 'We help consumer goods companies build DTC e-commerce platforms, loyalty and membership apps, AI-driven demand-forecasting systems, and product information management platforms that unify data across every channel. Our solutions bridge the gap between direct-to-consumer growth and traditional retail distribution, turning fragmented data into a single source of truth that drives sharper decisions.'
-                  : 'เราช่วยบริษัทสินค้าอุปโภคบริโภคสร้าง DTC E-commerce Platform, แอป Loyalty และ Membership, ระบบพยากรณ์ Demand ด้วย AI และแพลตฟอร์ม Product Information Management ที่รวมข้อมูลจากทุกช่องทางเป็นหนึ่งเดียว โซลูชันของเราเชื่อมช่องว่างระหว่างการเติบโตแบบ Direct-to-Consumer กับการจัดจำหน่ายค้าปลีกแบบดั้งเดิม เปลี่ยนข้อมูลที่กระจัดกระจายให้กลายเป็นแหล่งข้อมูลเดียวที่ขับเคลื่อนการตัดสินใจที่แม่นยำขึ้น'}
+                  : 'เราช่วยบริษัทสินค้าอุปโภคบริโภคสร้างแพลตฟอร์ม DTC E-commerce แอปสะสมคะแนนและสมาชิก ระบบพยากรณ์ความต้องการซื้อด้วย AI และแพลตฟอร์มจัดการข้อมูลสินค้า (PIM) ที่รวมข้อมูลจากทุกช่องทางไว้ที่เดียว ระบบของเราเชื่อมการเติบโตของการขายตรงถึงผู้บริโภคเข้ากับการจัดจำหน่ายค้าปลีกแบบเดิม และรวมข้อมูลที่กระจัดกระจายให้เป็นแหล่งเดียวสำหรับตัดสินใจให้แม่นยำขึ้น'}
               </p>
             </div>
           </div>
@@ -190,7 +190,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Understanding the critical obstacles that drive digital transformation in this industry.'
-                : 'ความเข้าใจอุปสรรคสำคัญที่ผลักดันการปรับสู่ดิจิทัลในอุตสาหกรรมนี้'}
+                : 'ปัญหาหลักที่ธุรกิจในอุตสาหกรรมนี้ต้องเจอ'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -240,7 +240,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'โซลูชันที่พิสูจน์แล้วซึ่งเราสร้างเพื่อตอบโจทย์ที่สำคัญที่สุดของอุตสาหกรรมคุณ'}
+              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -263,12 +263,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Tech Stack' : 'เทคโนโลยีที่ใช้'}
             </p>
             <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
-              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้งาน'}
+              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้'}
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Industry-proven tools and frameworks we leverage to build robust solutions.'
-                : 'เครื่องมือและ Framework ที่พิสูจน์แล้วในอุตสาหกรรม ที่เราใช้สร้างโซลูชันที่แข็งแรงและเชื่อถือได้'}
+                : 'เครื่องมือและ Framework ที่เราเลือกใช้ เพราะมั่นคงและเชื่อถือได้'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -294,7 +294,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างโปรเจกต์ที่เราส่งมอบจริงให้กับลูกค้าในอุตสาหกรรมนี้'}
+              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างงานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -334,7 +334,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link

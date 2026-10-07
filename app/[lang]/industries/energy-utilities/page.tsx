@@ -16,7 +16,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge = isEN ? 'Industry / Energy & Utilities' : 'อุตสาหกรรม / พลังงานและสาธารณูปโภค'
   const heroSubhead = isEN
     ? 'Smart solutions for energy management and utility services.'
-    : 'โซลูชันอัจฉริยะสำหรับการจัดการพลังงานและบริการสาธารณูปโภค'
+    : 'ระบบอัจฉริยะสำหรับบริหารพลังงานและงานสาธารณูปโภค'
 
   const challenges = isEN ? [
     { icon: 'ti-building-factory', title: 'Aging Grid Infrastructure', desc: 'Decades-old transmission and distribution assets require costly modernization, yet utilities must keep the grid reliable while upgrading in phases without disrupting service.' },
@@ -24,16 +24,16 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-bolt-off', title: 'Real-Time Outage Detection', desc: 'Customers expect instant awareness and rapid restoration when outages occur, but many utilities still rely on manual reporting instead of automated, sensor-driven detection.' },
     { icon: 'ti-file-certificate', title: 'Evolving Regulatory Requirements', desc: 'Decarbonization mandates and shifting Compliance frameworks require continuous reporting and auditable data trails, adding operational complexity across the organization.' },
   ] : [
-    { icon: 'ti-building-factory', title: 'โครงสร้างพื้นฐาน Grid ที่เก่าแก่', desc: 'สินทรัพย์ระบบส่งและจำหน่ายไฟฟ้าที่ใช้งานมาหลายทศวรรษต้องการการปรับปรุงให้ทันสมัยด้วยต้นทุนสูง แต่การไฟฟ้าต้องรักษาความน่าเชื่อถือของ Grid ไว้ระหว่างการอัปเกรดเป็นระยะโดยไม่กระทบบริการ' },
-    { icon: 'ti-solar-panel', title: 'การรวม Renewable Energy และ Grid Balancing', desc: 'การผลิตไฟฟ้าจากพลังงานแสงอาทิตย์และลมที่ไม่สม่ำเสมอสร้างแรงกดดันต่อเสถียรภาพของ Grid ต้องการระบบพยากรณ์และ Load Balancing ที่ซับซ้อนเพื่อรักษาสมดุลระหว่างอุปสงค์และอุปทาน' },
-    { icon: 'ti-bolt-off', title: 'การตรวจจับไฟฟ้าขัดข้องแบบ Real-time', desc: 'ลูกค้าคาดหวังการรับรู้ทันทีและการฟื้นฟูบริการอย่างรวดเร็วเมื่อเกิดไฟฟ้าขัดข้อง แต่หลายการไฟฟ้ายังพึ่งพาการรายงานแบบ Manual แทนการตรวจจับอัตโนมัติด้วยเซนเซอร์' },
-    { icon: 'ti-file-certificate', title: 'ข้อกำหนดด้านกฎระเบียบที่เปลี่ยนแปลงตลอดเวลา', desc: 'นโยบาย Decarbonization และกรอบ Compliance ที่เปลี่ยนแปลงอยู่เสมอ ต้องการการรายงานอย่างต่อเนื่องและ Audit Trail ที่ตรวจสอบได้ เพิ่มความซับซ้อนในการดำเนินงานทั่วทั้งองค์กร' },
+    { icon: 'ti-building-factory', title: 'โครงข่ายไฟฟ้า (Grid) ที่เก่า', desc: 'อุปกรณ์ระบบส่งและจำหน่ายไฟฟ้าที่ใช้มาหลายสิบปีต้องปรับปรุงด้วยต้นทุนสูง แต่การไฟฟ้าต้องรักษาความเสถียรของ Grid ไว้ระหว่างอัปเกรดทีละช่วง โดยไม่กระทบการให้บริการ' },
+    { icon: 'ti-solar-panel', title: 'รวมพลังงานหมุนเวียนและรักษาสมดุล Grid', desc: 'ไฟฟ้าจากแสงอาทิตย์และลมที่ผลิตได้ไม่สม่ำเสมอ กดดันเสถียรภาพของ Grid ต้องใช้ระบบพยากรณ์และ Load Balancing ที่ซับซ้อนเพื่อรักษาสมดุลระหว่างความต้องการใช้และกำลังผลิต' },
+    { icon: 'ti-bolt-off', title: 'ตรวจจับไฟฟ้าดับแบบเรียลไทม์', desc: 'ลูกค้าอยากรู้ทันทีและอยากให้แก้ไฟดับเร็ว แต่การไฟฟ้าหลายแห่งยังรอคนแจ้งเอง แทนที่จะให้เซนเซอร์ตรวจจับอัตโนมัติ' },
+    { icon: 'ti-file-certificate', title: 'กฎระเบียบที่เปลี่ยนอยู่ตลอด', desc: 'นโยบายลดคาร์บอนและกรอบข้อกำหนดที่เปลี่ยนอยู่เสมอ ต้องรายงานต่อเนื่องและมี Audit Trail ที่ตรวจสอบได้ ทำให้งานทั้งองค์กรซับซ้อนขึ้น' },
   ]
 
   const metrics = [
     { value: '$145B', label: isEN ? 'Global Smart Grid Market Size by 2030' : 'ขนาดตลาด Smart Grid ทั่วโลกภายในปี 2030', source: 'MarketsandMarkets Smart Grid Report, 2024' },
-    { value: '38%', label: isEN ? 'Growth in Global Renewable Generation Capacity' : 'การเติบโตของกำลังผลิตไฟฟ้าจาก Renewable Energy ทั่วโลก', source: 'IEA Renewables Outlook, 2024' },
-    { value: '45%', label: isEN ? 'Reduction in Outage Duration with Predictive Analytics' : 'ระยะเวลาไฟฟ้าขัดข้องที่ลดลงด้วย Predictive Analytics', source: 'Deloitte Power & Utilities Study, 2024' },
+    { value: '38%', label: isEN ? 'Growth in Global Renewable Generation Capacity' : 'การเติบโตของกำลังผลิตไฟฟ้าจากพลังงานหมุนเวียนทั่วโลก', source: 'IEA Renewables Outlook, 2024' },
+    { value: '45%', label: isEN ? 'Reduction in Outage Duration with Predictive Analytics' : 'ระยะเวลาไฟฟ้าดับที่ลดลงเมื่อใช้ Predictive Analytics', source: 'Deloitte Power & Utilities Study, 2024' },
   ]
 
   const capabilities = isEN ? [
@@ -44,12 +44,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-adjustments-horizontal', title: 'Demand-Response Optimization Tools', desc: 'Automated systems that shift or curtail load during peak periods, incentivizing customer participation while easing pressure on the grid.' },
     { icon: 'ti-arrows-exchange', title: 'Energy Trading & Marketplace Systems', desc: 'Digital marketplaces and trading platforms that enable peer-to-peer energy exchange, settlement, and transparent pricing across the grid.' },
   ] : [
-    { icon: 'ti-gauge', title: 'Smart Grid Monitoring Dashboards', desc: 'แพลตฟอร์ม Visualization แบบ Real-time ที่รวมข้อมูลจาก Smart Meter และเซนเซอร์ ให้ผู้ปฏิบัติงานมองเห็นภาพรวมของ Load แรงดัน และประสิทธิภาพของ Grid ได้อย่างครบถ้วน' },
-    { icon: 'ti-battery', title: 'Solar & Battery Management Platforms', desc: 'ระบบตรวจสอบและควบคุมสำหรับแผงโซลาร์แบบกระจายและระบบกักเก็บพลังงานแบตเตอรี่ ที่เพิ่มประสิทธิภาพการผลิต รอบการชาร์จ และการจ่ายพลังงาน' },
-    { icon: 'ti-bell-ringing', title: 'Outage Reporting & Response Systems', desc: 'แพลตฟอร์มตรวจจับและ Dispatch อัตโนมัติที่ระบุตำแหน่งไฟฟ้าขัดข้อง แจ้งเตือนลูกค้าที่ได้รับผลกระทบ และประสานงานทีมภาคสนามเพื่อฟื้นฟูบริการได้เร็วขึ้น' },
-    { icon: 'ti-receipt-2', title: 'Usage Analytics & Billing Platforms', desc: 'ระบบติดตามการใช้พลังงานและ Billing Engine ที่แปลงข้อมูล Smart Meter แบบละเอียดให้เป็นใบแจ้งหนี้ที่แม่นยำและ Insight การใช้งานที่นำไปปฏิบัติได้จริง' },
-    { icon: 'ti-adjustments-horizontal', title: 'Demand-Response Optimization Tools', desc: 'ระบบอัตโนมัติที่เลื่อนหรือลด Load ในช่วง Peak Period จูงใจให้ลูกค้าเข้าร่วมพร้อมลดแรงกดดันต่อ Grid' },
-    { icon: 'ti-arrows-exchange', title: 'Energy Trading & Marketplace Systems', desc: 'Marketplace ดิจิทัลและแพลตฟอร์มซื้อขายที่เปิดให้แลกเปลี่ยนพลังงานแบบ Peer-to-Peer การชำระบัญชี และการตั้งราคาที่โปร่งใสทั่วทั้ง Grid' },
+    { icon: 'ti-gauge', title: 'Smart Grid Monitoring Dashboards', desc: 'แพลตฟอร์มแสดงภาพแบบเรียลไทม์ที่รวมข้อมูลจาก Smart Meter และเซนเซอร์ ให้ผู้ปฏิบัติงานเห็นภาพรวมของ Load แรงดัน และประสิทธิภาพของ Grid ครบถ้วน' },
+    { icon: 'ti-battery', title: 'Solar & Battery Management Platforms', desc: 'ระบบตรวจสอบและควบคุมแผงโซลาร์แบบกระจายและระบบกักเก็บพลังงานด้วยแบตเตอรี่ ช่วยเพิ่มประสิทธิภาพการผลิต รอบการชาร์จ และการจ่ายไฟ' },
+    { icon: 'ti-bell-ringing', title: 'Outage Reporting & Response Systems', desc: 'แพลตฟอร์มตรวจจับและส่งทีมอัตโนมัติ ระบุจุดที่ไฟดับ แจ้งลูกค้าที่ได้รับผลกระทบ และประสานทีมภาคสนามให้คืนระบบได้เร็วขึ้น' },
+    { icon: 'ti-receipt-2', title: 'Usage Analytics & Billing Platforms', desc: 'ระบบติดตามการใช้พลังงานและระบบคิดบิล ที่แปลงข้อมูล Smart Meter แบบละเอียดเป็นใบแจ้งหนี้ที่แม่นยำ และข้อมูลการใช้งานที่นำไปใช้ต่อได้จริง' },
+    { icon: 'ti-adjustments-horizontal', title: 'Demand-Response Optimization Tools', desc: 'ระบบอัตโนมัติที่เลื่อนหรือลดการใช้ไฟในช่วงที่ใช้สูงสุด จูงใจให้ลูกค้าเข้าร่วม และลดแรงกดดันต่อ Grid' },
+    { icon: 'ti-arrows-exchange', title: 'Energy Trading & Marketplace Systems', desc: 'Marketplace และแพลตฟอร์มซื้อขายที่ให้แลกเปลี่ยนพลังงานระหว่างผู้ใช้ด้วยกัน (Peer-to-Peer) ชำระบัญชี และตั้งราคาอย่างโปร่งใสทั่วทั้ง Grid' },
   ]
 
   const techStack = ['IoT', 'MQTT', 'Time Series DBs', 'React', 'Node.js', 'Python', 'Machine Learning', 'AWS IoT Core', 'Kafka', 'PostgreSQL', 'GraphQL', 'Edge Computing', 'Grafana']
@@ -59,9 +59,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '02', title: 'Solar & Battery Management Platform', desc: 'Distributed energy resource management system that monitors solar generation and battery storage, optimizing dispatch and charging schedules across sites.' },
     { no: '03', title: 'Outage Response System', desc: 'Automated outage detection and crew-dispatch platform that maps affected areas in real time, notifies customers, and tracks restoration progress end to end.' },
   ] : [
-    { no: '01', title: 'Smart Grid Monitoring Dashboard', desc: 'แพลตฟอร์ม Real-time ที่รวมข้อมูล Telemetry จาก Smart Meter และเซนเซอร์ทั่วสถานีไฟฟ้าและสายป้อน ให้ผู้ปฏิบัติงานเห็นภาพ Load แรงดัน และความผิดปกติแบบ Live' },
-    { no: '02', title: 'Solar & Battery Management Platform', desc: 'ระบบจัดการทรัพยากรพลังงานแบบกระจายที่ตรวจสอบการผลิตไฟฟ้าจากโซลาร์และระบบกักเก็บแบตเตอรี่ เพิ่มประสิทธิภาพการจ่ายไฟและตารางการชาร์จในทุกไซต์' },
-    { no: '03', title: 'Outage Response System', desc: 'แพลตฟอร์มตรวจจับไฟฟ้าขัดข้องและ Dispatch ทีมงานอัตโนมัติที่ทำแผนที่พื้นที่ได้รับผลกระทบแบบ Real-time แจ้งเตือนลูกค้า และติดตามความคืบหน้าการฟื้นฟูตั้งแต่ต้นจนจบ' },
+    { no: '01', title: 'Smart Grid Monitoring Dashboard', desc: 'แพลตฟอร์มเรียลไทม์ที่รวมข้อมูล Telemetry จาก Smart Meter และเซนเซอร์ทั่วสถานีไฟฟ้าและสายป้อน ให้ผู้ปฏิบัติงานเห็น Load แรงดัน และความผิดปกติแบบสด' },
+    { no: '02', title: 'Solar & Battery Management Platform', desc: 'ระบบจัดการทรัพยากรพลังงานแบบกระจาย ตรวจสอบการผลิตไฟฟ้าจากโซลาร์และแบตเตอรี่ ปรับการจ่ายไฟและตารางชาร์จของทุกไซต์ให้มีประสิทธิภาพ' },
+    { no: '03', title: 'Outage Response System', desc: 'แพลตฟอร์มตรวจจับไฟดับและส่งทีมอัตโนมัติ ทำแผนที่พื้นที่ที่ได้รับผลกระทบแบบเรียลไทม์ แจ้งลูกค้า และติดตามการแก้ไขตั้งแต่ต้นจนจบ' },
   ]
 
   const heroVisual = (
@@ -179,7 +179,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
                   ? 'We help energy and utility companies build smart grid monitoring dashboards, solar and battery management platforms, outage response systems, and demand-response tools that improve reliability and accelerate the transition to renewables. Our solutions integrate real-time IoT telemetry with resilient backend engineering to keep the lights on and the grid future-ready.'
-                  : 'เราช่วยบริษัทพลังงานและสาธารณูปโภคสร้าง Smart Grid Monitoring Dashboard, แพลตฟอร์มจัดการโซลาร์และแบตเตอรี่, ระบบตอบสนองไฟฟ้าขัดข้อง และเครื่องมือ Demand-Response ที่เพิ่มความน่าเชื่อถือและเร่งการเปลี่ยนผ่านสู่พลังงานหมุนเวียน โซลูชันของเราผสาน IoT Telemetry แบบ Real-time เข้ากับวิศวกรรม Backend ที่แข็งแรง เพื่อให้ไฟฟ้าไม่ดับและ Grid พร้อมสำหรับอนาคต'}
+                  : 'เราช่วยบริษัทพลังงานและสาธารณูปโภคสร้าง Dashboard ติดตาม Smart Grid แพลตฟอร์มจัดการโซลาร์และแบตเตอรี่ ระบบรับมือไฟดับ และเครื่องมือ Demand-Response เพื่อเพิ่มความเสถียรและเร่งการเปลี่ยนสู่พลังงานหมุนเวียน ระบบของเรารวมข้อมูล IoT Telemetry แบบเรียลไทม์เข้ากับงาน Backend ที่แข็งแรง เพื่อให้ไฟไม่ดับ และ Grid พร้อมรับอนาคต'}
               </p>
             </div>
           </div>
@@ -197,7 +197,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Understanding the critical obstacles that drive digital transformation in this industry.'
-                : 'ความเข้าใจอุปสรรคสำคัญที่ผลักดันการปรับสู่ดิจิทัลในอุตสาหกรรมนี้'}
+                : 'ปัญหาหลักที่ธุรกิจในอุตสาหกรรมนี้ต้องเจอ'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -247,7 +247,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'โซลูชันที่พิสูจน์แล้วซึ่งเราสร้างเพื่อตอบโจทย์ที่สำคัญที่สุดของอุตสาหกรรมคุณ'}
+              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -270,12 +270,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Tech Stack' : 'เทคโนโลยีที่ใช้'}
             </p>
             <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
-              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้งาน'}
+              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้'}
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Industry-proven tools and frameworks we leverage to build robust solutions.'
-                : 'เครื่องมือและ Framework ที่พิสูจน์แล้วในอุตสาหกรรม ที่เราใช้สร้างโซลูชันที่แข็งแรงและเชื่อถือได้'}
+                : 'เครื่องมือและ Framework ที่เราเลือกใช้ เพราะมั่นคงและเชื่อถือได้'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -301,7 +301,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างโปรเจกต์ที่เราส่งมอบจริงให้กับลูกค้าในอุตสาหกรรมนี้'}
+              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างงานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -341,7 +341,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link

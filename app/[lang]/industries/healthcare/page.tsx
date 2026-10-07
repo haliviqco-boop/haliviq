@@ -16,7 +16,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge = isEN ? 'Industry / Healthcare & Life Sciences' : 'อุตสาหกรรม / สุขภาพและวิทยาศาสตร์ชีวภาพ'
   const heroSubhead = isEN
     ? 'Technology solutions that improve patient care and medical research.'
-    : 'เทคโนโลยีที่ยกระดับการดูแลผู้ป่วยและงานวิจัยทางการแพทย์'
+    : 'เทคโนโลยีที่ช่วยดูแลผู้ป่วยและงานวิจัยทางการแพทย์'
 
   const challenges = isEN ? [
     { icon: 'ti-affiliate', title: 'Data Interoperability', desc: 'Healthcare data is trapped in siloed systems using incompatible standards, preventing the seamless information exchange needed for coordinated care and clinical decision-making.' },
@@ -24,16 +24,16 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-heart-handshake', title: 'Patient Engagement', desc: 'Patients expect convenient, transparent digital experiences from their healthcare providers, yet most health systems struggle to deliver consumer-grade portals and communication tools.' },
     { icon: 'ti-shield-lock', title: 'Healthcare Cybersecurity', desc: 'Medical records are among the most valuable targets for cybercriminals, and a breach can compromise patient safety, not just privacy, demanding robust security at every layer.' },
   ] : [
-    { icon: 'ti-affiliate', title: 'Data Interoperability', desc: 'ข้อมูลสุขภาพถูกแยกอยู่ในระบบที่ใช้มาตรฐานไม่เข้ากัน ทำให้แลกเปลี่ยนข้อมูลระหว่างระบบไม่ราบรื่น ซึ่งจำเป็นต่อการดูแลผู้ป่วยแบบประสานงานและการตัดสินใจทางคลินิก' },
-    { icon: 'ti-scale', title: 'Regulatory Compliance', desc: 'HIPAA, PDPA และกฎระเบียบด้านข้อมูลสุขภาพอื่นๆ กำหนดข้อบังคับเข้มงวดเรื่องการจัดเก็บ ส่งผ่าน และเข้าถึงข้อมูลผู้ป่วย เพิ่มความซับซ้อนในทุกการตัดสินใจด้านเทคนิค' },
-    { icon: 'ti-heart-handshake', title: 'Patient Engagement', desc: 'ผู้ป่วยคาดหวังประสบการณ์ดิจิทัลที่สะดวกและโปร่งใสจากผู้ให้บริการสุขภาพ แต่ระบบสุขภาพส่วนใหญ่ยังทำ Portal และเครื่องมือสื่อสารระดับ Consumer-grade ได้ยาก' },
-    { icon: 'ti-shield-lock', title: 'Healthcare Cybersecurity', desc: 'เวชระเบียนเป็นเป้าหมายที่มีมูลค่าสูงที่สุดสำหรับอาชญากรไซเบอร์ และการรั่วไหลของข้อมูลอาจกระทบความปลอดภัยของผู้ป่วยโดยตรง ไม่ใช่แค่ความเป็นส่วนตัว ต้องการความปลอดภัยที่แข็งแรงทุกชั้น' },
+    { icon: 'ti-affiliate', title: 'Data Interoperability', desc: 'ข้อมูลสุขภาพอยู่แยกกันในระบบที่ใช้มาตรฐานไม่เข้ากัน แลกเปลี่ยนข้อมูลกันไม่ราบรื่น ทั้งที่จำเป็นต่อการดูแลผู้ป่วยร่วมกันหลายฝ่ายและการตัดสินใจทางการแพทย์' },
+    { icon: 'ti-scale', title: 'Regulatory Compliance', desc: 'HIPAA, PDPA และกฎระเบียบข้อมูลสุขภาพอื่นๆ กำหนดข้อบังคับเข้มงวดเรื่องการเก็บ ส่ง และเข้าถึงข้อมูลผู้ป่วย ทำให้ทุกการตัดสินใจด้านเทคนิคซับซ้อนขึ้น' },
+    { icon: 'ti-heart-handshake', title: 'Patient Engagement', desc: 'ผู้ป่วยคาดหวังประสบการณ์ดิจิทัลที่สะดวกและโปร่งใสจากผู้ให้บริการสุขภาพ แต่ระบบสุขภาพส่วนใหญ่ยังทำ Portal และเครื่องมือสื่อสารที่ใช้ง่ายแบบแอปทั่วไปไม่ได้' },
+    { icon: 'ti-shield-lock', title: 'Healthcare Cybersecurity', desc: 'เวชระเบียนเป็นเป้าหมายที่มีมูลค่าสูงที่สุดของอาชญากรไซเบอร์ และข้อมูลรั่วไหลอาจกระทบความปลอดภัยของผู้ป่วยโดยตรง ไม่ใช่แค่ความเป็นส่วนตัว จึงต้องป้องกันให้แน่นหนาทุกชั้น' },
   ]
 
   const metrics = [
     { value: '$286B', label: isEN ? 'Global Telehealth Market by 2030' : 'ขนาดตลาด Telehealth ทั่วโลกภายในปี 2030', source: 'Grand View Research, 2024' },
     { value: '$45.2B', label: isEN ? 'Healthcare AI Market Size by 2028' : 'ขนาดตลาด Healthcare AI ภายในปี 2028', source: 'Statista Health AI Report, 2024' },
-    { value: '73%', label: isEN ? 'Patients Actively Using Digital Health Portals' : 'ผู้ป่วยที่ใช้งาน Digital Health Portal อย่างสม่ำเสมอ', source: 'ONC Health IT Dashboard, 2024' },
+    { value: '73%', label: isEN ? 'Patients Actively Using Digital Health Portals' : 'ผู้ป่วยที่ใช้ Digital Health Portal เป็นประจำ', source: 'ONC Health IT Dashboard, 2024' },
   ]
 
   const capabilities = isEN ? [
@@ -43,11 +43,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-user', title: 'Patient Engagement Portals', desc: 'Consumer-grade patient portals for appointment booking, lab results access, medication management, and secure provider communication.' },
     { icon: 'ti-activity', title: 'Remote Patient Monitoring', desc: 'IoT-enabled platforms that collect and analyze patient vitals data from wearable devices for continuous remote health monitoring.' },
   ] : [
-    { icon: 'ti-stethoscope', title: 'Telemedicine Platforms', desc: 'แพลตฟอร์ม Virtual Care ที่สอดคล้อง HIPAA พร้อม Video Consultation, จัดการใบสั่งยา, นัดหมาย และบันทึกเวชระเบียน' },
-    { icon: 'ti-clipboard-plus', title: 'EHR Integration Solutions', desc: 'Layer เชื่อมต่อด้วย HL7 FHIR ที่เชื่อมระบบเวชระเบียนอิเล็กทรอนิกส์ที่แตกต่างกันให้แลกเปลี่ยนข้อมูลทางคลินิกได้ราบรื่น' },
-    { icon: 'ti-heartbeat', title: 'Clinical Analytics Platforms', desc: 'Dashboard วิเคราะห์ข้อมูลด้วย AI ที่แสดง Insight ทางคลินิก ระบุผู้ป่วยกลุ่มเสี่ยง และสนับสนุนการตัดสินใจรักษาตาม Evidence' },
-    { icon: 'ti-user', title: 'Patient Engagement Portals', desc: 'Portal ผู้ป่วยระดับ Consumer-grade สำหรับนัดหมาย ดูผลตรวจ จัดการยา และสื่อสารกับแพทย์อย่างปลอดภัย' },
-    { icon: 'ti-activity', title: 'Remote Patient Monitoring', desc: 'แพลตฟอร์มที่เชื่อมต่อ IoT เก็บและวิเคราะห์ข้อมูลสัญญาณชีพจากอุปกรณ์ Wearable เพื่อติดตามสุขภาพจากระยะไกลต่อเนื่อง' },
+    { icon: 'ti-stethoscope', title: 'Telemedicine Platforms', desc: 'แพลตฟอร์ม Virtual Care ที่เป็นไปตาม HIPAA มี Video Consultation จัดการใบสั่งยา นัดหมาย และบันทึกเวชระเบียน' },
+    { icon: 'ti-clipboard-plus', title: 'EHR Integration Solutions', desc: 'ชั้นเชื่อมต่อด้วย HL7 FHIR ที่ทำให้ระบบเวชระเบียนอิเล็กทรอนิกส์ต่างระบบแลกเปลี่ยนข้อมูลทางคลินิกกันได้ราบรื่น' },
+    { icon: 'ti-heartbeat', title: 'Clinical Analytics Platforms', desc: 'Dashboard วิเคราะห์ด้วย AI แสดงข้อมูลเชิงลึกทางคลินิก ระบุผู้ป่วยกลุ่มเสี่ยง และช่วยตัดสินใจรักษาตามหลักฐานทางการแพทย์' },
+    { icon: 'ti-user', title: 'Patient Engagement Portals', desc: 'Portal สำหรับผู้ป่วยที่ใช้ง่ายแบบแอปทั่วไป ใช้นัดหมาย ดูผลตรวจ จัดการยา และคุยกับแพทย์ได้อย่างปลอดภัย' },
+    { icon: 'ti-activity', title: 'Remote Patient Monitoring', desc: 'แพลตฟอร์มเชื่อมต่อ IoT เก็บและวิเคราะห์สัญญาณชีพจากอุปกรณ์ Wearable เพื่อติดตามสุขภาพจากระยะไกลอย่างต่อเนื่อง' },
   ]
 
   const techStack = ['React', 'React Native', 'FHIR', 'HL7', 'AWS HealthLake', 'HIPAA', 'Python', 'TensorFlow', 'IoT', 'WebRTC', 'PostgreSQL', 'Redis']
@@ -57,9 +57,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '02', title: 'Clinical Decision Support Tool', desc: 'AI-assisted diagnostic support platform that analyzes patient data, lab results, and medical literature to provide evidence-based treatment recommendations to clinicians.' },
     { no: '03', title: 'Remote Patient Monitoring', desc: 'IoT-enabled platform collecting continuous vital signs from wearable devices with automated alerts, trend analysis, and clinician notification workflows.' },
   ] : [
-    { no: '01', title: 'Telemedicine Platform', desc: 'แอป Virtual Care ที่สอดคล้อง HIPAA พร้อม Video Consultation, ใบสั่งยาอิเล็กทรอนิกส์, นัดหมาย, บันทึกทางคลินิก และเชื่อมต่อตรวจสอบประกัน' },
-    { no: '02', title: 'Clinical Decision Support Tool', desc: 'แพลตฟอร์มช่วยวินิจฉัยด้วย AI ที่วิเคราะห์ข้อมูลผู้ป่วย ผลตรวจ และวรรณกรรมทางการแพทย์ เพื่อให้คำแนะนำการรักษาตาม Evidence แก่แพทย์' },
-    { no: '03', title: 'Remote Patient Monitoring', desc: 'แพลตฟอร์มที่เชื่อมต่อ IoT เก็บสัญญาณชีพต่อเนื่องจากอุปกรณ์ Wearable พร้อมแจ้งเตือนอัตโนมัติ วิเคราะห์แนวโน้ม และแจ้งแพทย์' },
+    { no: '01', title: 'Telemedicine Platform', desc: 'แอป Virtual Care ที่เป็นไปตาม HIPAA มี Video Consultation ใบสั่งยาอิเล็กทรอนิกส์ นัดหมาย บันทึกทางคลินิก และเชื่อมตรวจสอบสิทธิ์ประกัน' },
+    { no: '02', title: 'Clinical Decision Support Tool', desc: 'แพลตฟอร์มช่วยวินิจฉัยด้วย AI วิเคราะห์ข้อมูลผู้ป่วย ผลตรวจ และงานวิจัยทางการแพทย์ เพื่อแนะนำแนวทางรักษาตามหลักฐานให้แพทย์' },
+    { no: '03', title: 'Remote Patient Monitoring', desc: 'แพลตฟอร์มเชื่อมต่อ IoT เก็บสัญญาณชีพต่อเนื่องจากอุปกรณ์ Wearable แจ้งเตือนอัตโนมัติ วิเคราะห์แนวโน้ม และแจ้งแพทย์' },
   ]
 
   const heroVisual = (
@@ -177,7 +177,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
                   ? 'We partner with hospitals, clinics, healthtech startups, and pharmaceutical companies to build telemedicine platforms, EHR integrations, remote monitoring systems, and clinical analytics dashboards. Our teams understand HL7/FHIR standards and regulatory requirements like HIPAA and PDPA, building compliance in from day one so you can innovate confidently.'
-                  : 'เราร่วมงานกับโรงพยาบาล คลินิก Healthtech Startup และบริษัทยา เพื่อสร้าง Telemedicine Platform, EHR Integration, ระบบ Remote Monitoring และ Dashboard วิเคราะห์ทางคลินิก ทีมของเราเข้าใจมาตรฐาน HL7/FHIR และข้อกำหนดด้านกฎระเบียบอย่าง HIPAA และ PDPA โดยสร้าง Compliance เข้าไปตั้งแต่วันแรก เพื่อให้คุณสร้างนวัตกรรมได้อย่างมั่นใจ'}
+                  : 'เราร่วมงานกับโรงพยาบาล คลินิก สตาร์ทอัพ Healthtech และบริษัทยา เพื่อสร้างแพลตฟอร์ม Telemedicine การเชื่อมต่อ EHR ระบบติดตามผู้ป่วยทางไกล และ Dashboard วิเคราะห์ทางคลินิก ทีมเราเข้าใจมาตรฐาน HL7/FHIR และข้อกำหนดอย่าง HIPAA และ PDPA โดยใส่เรื่อง Compliance ไว้ตั้งแต่วันแรก เพื่อให้คุณสร้างสิ่งใหม่ได้อย่างมั่นใจ'}
               </p>
             </div>
           </div>
@@ -195,7 +195,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Understanding the critical obstacles that drive digital transformation in this industry.'
-                : 'ความเข้าใจอุปสรรคสำคัญที่ผลักดันการปรับสู่ดิจิทัลในอุตสาหกรรมนี้'}
+                : 'ปัญหาหลักที่ธุรกิจในอุตสาหกรรมนี้ต้องเจอ'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -245,7 +245,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'โซลูชันที่พิสูจน์แล้วซึ่งเราสร้างเพื่อตอบโจทย์ที่สำคัญที่สุดของอุตสาหกรรมคุณ'}
+              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -268,12 +268,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Tech Stack' : 'เทคโนโลยีที่ใช้'}
             </p>
             <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
-              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้งาน'}
+              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้'}
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Industry-proven tools and frameworks we leverage to build robust solutions.'
-                : 'เครื่องมือและ Framework ที่พิสูจน์แล้วในอุตสาหกรรม ที่เราใช้สร้างโซลูชันที่แข็งแรงและเชื่อถือได้'}
+                : 'เครื่องมือและ Framework ที่เราเลือกใช้ เพราะมั่นคงและเชื่อถือได้'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -299,7 +299,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างโปรเจกต์ที่เราส่งมอบจริงให้กับลูกค้าในอุตสาหกรรมนี้'}
+              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างงานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -339,7 +339,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link

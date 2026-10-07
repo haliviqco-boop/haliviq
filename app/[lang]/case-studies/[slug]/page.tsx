@@ -233,7 +233,7 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
                 className="inline-flex items-center gap-2 text-base transition-all hover:gap-3"
                 style={{ color: 'var(--lime)', fontWeight: 500 }}
               >
-                {lang === 'en' ? 'See the Work Summary' : 'ดูสรุปงาน Work'}
+                {lang === 'en' ? 'See the Work Summary' : 'ดูผลงานทั้งหมด'}
                 <i className="ti ti-arrow-right" style={{ fontSize: 15 }} aria-hidden="true" />
               </Link>
             </div>
@@ -252,10 +252,10 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
           />
           <div className="relative max-w-4xl mx-auto px-6 lg:px-10 py-24 text-center">
             <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#fff', fontWeight: 500 }}>
-              {lang === 'en' ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
+              {lang === 'en' ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจไหม?'}
             </p>
             <h2 className="t-display text-[clamp(1.75rem,4vw,3rem)] mb-6 leading-normal md:whitespace-nowrap" style={{ background: 'linear-gradient(135deg, var(--purple-light) 0%, #53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-              {lang === 'en' ? <>Let's build your next case study</> : <>มาสร้าง Case Study ถัดไปด้วยกัน</>}
+              {lang === 'en' ? <>Let's build your next case study</> : <>มาทำโปรเจกต์ถัดไปด้วยกัน</>}
             </h2>
             <Link href={`/${lang}/contact`} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm transition-opacity hover:opacity-90" style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}>
               {lang === 'en' ? 'Talk to Us' : 'คุยกับเรา'}

@@ -16,7 +16,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge = isEN ? 'Industry / Education' : 'อุตสาหกรรม / การศึกษา'
   const heroSubhead = isEN
     ? 'Transform learning with modern educational technology.'
-    : 'ยกระดับการเรียนรู้ด้วยเทคโนโลยีการศึกษาสมัยใหม่'
+    : 'เทคโนโลยีที่ช่วยให้การเรียนการสอนง่ายและน่าสนใจขึ้น'
 
   const challenges = isEN ? [
     { icon: 'ti-affiliate', title: 'Digital Access Divide', desc: 'Unequal access to devices, connectivity, and digital literacy leaves some learners behind, no matter how good the platform is.' },
@@ -24,16 +24,16 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-stack-2', title: 'Content Scalability', desc: 'Creating, localising, and maintaining quality learning content at scale strains even well-resourced institutions.' },
     { icon: 'ti-shield-check', title: 'Assessment Integrity', desc: 'Ensuring fair, reliable assessment in remote and hybrid settings requires more than just a video call and a timer.' },
   ] : [
-    { icon: 'ti-affiliate', title: 'ความเหลื่อมล้ำในการเข้าถึงดิจิทัล', desc: 'การเข้าถึงอุปกรณ์ อินเทอร์เน็ต และทักษะดิจิทัลที่ไม่เท่ากัน ทำให้ผู้เรียนบางกลุ่มถูกทิ้งไว้ข้างหลัง ไม่ว่า Platform จะดีแค่ไหน' },
-    { icon: 'ti-mood-sad', title: 'Engagement & Retention', desc: 'การรักษาแรงจูงใจและป้องกัน Dropout ทำได้ยากกว่าห้องเรียนจริงมากในสภาพแวดล้อมออนไลน์และไฮบริด' },
-    { icon: 'ti-stack-2', title: 'Content Scalability', desc: 'การสร้าง แปล และดูแลเนื้อหาการเรียนรู้คุณภาพสูงในระดับ Scale เป็นภาระแม้กับสถาบันที่มีทรัพยากรพร้อม' },
-    { icon: 'ti-shield-check', title: 'Assessment Integrity', desc: 'การประเมินผลที่เป็นธรรมและเชื่อถือได้ในรูปแบบ Remote และ Hybrid ต้องการมากกว่าแค่ Video Call กับตัวจับเวลา' },
+    { icon: 'ti-affiliate', title: 'ความเหลื่อมล้ำในการเข้าถึงดิจิทัล', desc: 'ผู้เรียนมีอุปกรณ์ อินเทอร์เน็ต และทักษะดิจิทัลไม่เท่ากัน บางกลุ่มจึงถูกทิ้งไว้ข้างหลัง ไม่ว่าแพลตฟอร์มจะดีแค่ไหน' },
+    { icon: 'ti-mood-sad', title: 'Engagement & Retention', desc: 'การรักษาแรงจูงใจและป้องกันผู้เรียนเลิกกลางคันทำได้ยากกว่าในห้องเรียนจริงมาก เมื่อเรียนออนไลน์และแบบไฮบริด' },
+    { icon: 'ti-stack-2', title: 'Content Scalability', desc: 'การสร้าง แปล และดูแลเนื้อหาการเรียนคุณภาพสูงในปริมาณมากเป็นภาระหนัก แม้กับสถาบันที่มีทรัพยากรพร้อม' },
+    { icon: 'ti-shield-check', title: 'Assessment Integrity', desc: 'การวัดผลที่เป็นธรรมและเชื่อถือได้ ทั้งแบบเรียนทางไกลและไฮบริด ต้องการมากกว่า Video Call กับตัวจับเวลา' },
   ]
 
   const metrics = [
     { value: '$400B', label: isEN ? 'Global EdTech Market Size by 2028' : 'ขนาดตลาด EdTech ทั่วโลกภายในปี 2028', source: 'HolonIQ, 2024' },
-    { value: '12%', label: isEN ? 'Annual Growth Rate of Online Learning Enrollment' : 'อัตราการเติบโตรายปีของผู้เรียนออนไลน์', source: 'UNESCO, 2024' },
-    { value: '60%', label: isEN ? 'Educational Institutions Planning AI Integration by 2027' : 'สถาบันการศึกษาที่วางแผนนำ AI มาใช้ภายในปี 2027', source: 'EDUCAUSE, 2024' },
+    { value: '12%', label: isEN ? 'Annual Growth Rate of Online Learning Enrollment' : 'อัตราการเติบโตต่อปีของผู้เรียนออนไลน์', source: 'UNESCO, 2024' },
+    { value: '60%', label: isEN ? 'Educational Institutions Planning AI Integration by 2027' : 'สถาบันการศึกษาที่วางแผนใช้ AI ภายในปี 2027', source: 'EDUCAUSE, 2024' },
   ]
 
   const capabilities = isEN ? [
@@ -43,11 +43,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-video', title: 'Virtual Classroom Platforms', desc: 'Live video, breakout rooms, and collaborative tools for real-time online teaching.' },
     { icon: 'ti-folders', title: 'Educational Content Management', desc: 'Systems to author, localise, version, and distribute learning content at scale.' },
   ] : [
-    { icon: 'ti-book', title: 'Learning Management Systems', desc: 'LMS ครบวงจรสำหรับส่งมอบคอร์ส ติดตามความคืบหน้า และออกใบรับรอง' },
-    { icon: 'ti-device-gamepad-2', title: 'Interactive Learning Experiences', desc: 'บทเรียนแบบ Gamification, Simulation และเนื้อหาแบบ Adaptive ที่ดึงดูดผู้เรียน' },
-    { icon: 'ti-chart-dots-3', title: 'Analytics & Assessment Tools', desc: 'ข้อมูลเชิงลึกด้านความคืบหน้า ผลการเรียน และสัญญาณเสี่ยง Dropout ของผู้เรียน' },
-    { icon: 'ti-video', title: 'Virtual Classroom Platforms', desc: 'Video สด, Breakout Room และเครื่องมือ Collaboration สำหรับสอนออนไลน์แบบ Real-time' },
-    { icon: 'ti-folders', title: 'Educational Content Management', desc: 'ระบบสร้าง แปล จัดเวอร์ชัน และกระจายเนื้อหาการเรียนรู้ในระดับ Scale' },
+    { icon: 'ti-book', title: 'Learning Management Systems', desc: 'LMS ครบชุดสำหรับสอนคอร์ส ติดตามความคืบหน้า และออกใบรับรอง' },
+    { icon: 'ti-device-gamepad-2', title: 'Interactive Learning Experiences', desc: 'บทเรียนแบบเกม การจำลองสถานการณ์ และเนื้อหาที่ปรับตามผู้เรียน ช่วยให้ผู้เรียนสนใจ' },
+    { icon: 'ti-chart-dots-3', title: 'Analytics & Assessment Tools', desc: 'ข้อมูลความคืบหน้า ผลการเรียน และสัญญาณเสี่ยงที่ผู้เรียนจะเลิกเรียน' },
+    { icon: 'ti-video', title: 'Virtual Classroom Platforms', desc: 'Video สด ห้องย่อย (Breakout Room) และเครื่องมือทำงานร่วมกัน สำหรับสอนออนไลน์แบบเรียลไทม์' },
+    { icon: 'ti-folders', title: 'Educational Content Management', desc: 'ระบบสร้าง แปล จัดเวอร์ชัน และเผยแพร่เนื้อหาการเรียนในปริมาณมาก' },
   ]
 
   const techStack = ['React', 'WebRTC', 'Canvas API', 'WebSocket', 'AI/ML', 'Cloud Platforms', 'Mobile SDKs', 'LTI', 'SCORM', 'xAPI']
@@ -57,9 +57,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '02', title: 'Virtual Classroom Solution', desc: 'Live video, interactive whiteboards, breakout rooms, polling, and session recording in one seamless platform.' },
     { no: '03', title: 'Student Analytics Dashboard', desc: 'Real-time engagement, performance, and at-risk metrics that help teachers intervene before students fall behind.' },
   ] : [
-    { no: '01', title: 'Adaptive Learning Platform', desc: 'AI ปรับความยากง่าย จังหวะการเรียน และรูปแบบเนื้อหาให้เหมาะกับความคืบหน้าและสไตล์การเรียนรู้ของผู้เรียนแต่ละคน' },
-    { no: '02', title: 'Virtual Classroom Solution', desc: 'Video สด, Whiteboard แบบโต้ตอบ, Breakout Room, Polling และการบันทึกคาบเรียนในแพลตฟอร์มเดียว' },
-    { no: '03', title: 'Student Analytics Dashboard', desc: 'ข้อมูล Engagement ผลการเรียน และความเสี่ยง Dropout แบบ Real-time ที่ช่วยให้ครูเข้าช่วยเหลือได้ทันก่อนสาย' },
+    { no: '01', title: 'Adaptive Learning Platform', desc: 'AI ปรับความยากง่าย จังหวะการเรียน และรูปแบบเนื้อหาให้เหมาะกับความคืบหน้าและแนวทางการเรียนของผู้เรียนแต่ละคน' },
+    { no: '02', title: 'Virtual Classroom Solution', desc: 'Video สด Whiteboard แบบโต้ตอบ Breakout Room Polling และบันทึกคาบเรียน ครบในแพลตฟอร์มเดียว' },
+    { no: '03', title: 'Student Analytics Dashboard', desc: 'ข้อมูลการมีส่วนร่วม ผลการเรียน และความเสี่ยงที่ผู้เรียนจะเลิกเรียนแบบเรียลไทม์ ช่วยให้ครูเข้าช่วยได้ทันก่อนสาย' },
   ]
 
   const heroVisual = (
@@ -173,7 +173,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
                   ? 'Haliviq helps educational institutions and EdTech startups build engaging learning platforms — from LMS and AI tutors to virtual classrooms and learning analytics — that hold up to real classroom scale, not just a demo.'
-                  : 'Haliviq ช่วยสถาบันการศึกษาและ EdTech Startup สร้าง Learning Platform ที่ดึงดูดผู้เรียนจริง ตั้งแต่ LMS, AI Tutor ไปจนถึง Virtual Classroom และ Learning Analytics ที่รองรับการใช้งานจริงในระดับห้องเรียน ไม่ใช่แค่ Demo'}
+                  : 'Haliviq ช่วยสถาบันการศึกษาและสตาร์ทอัพ EdTech สร้างแพลตฟอร์มการเรียนที่ผู้เรียนอยากใช้จริง ตั้งแต่ LMS, AI Tutor ไปจนถึงห้องเรียนเสมือนและ Learning Analytics ที่ใช้งานได้จริงในห้องเรียน ไม่ใช่แค่ตัวอย่างโชว์'}
               </p>
             </div>
           </div>
@@ -186,12 +186,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Key Challenges' : 'ความท้าทายหลัก'}
             </p>
             <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
-              {isEN ? 'What Education Providers Are Up Against' : 'สิ่งที่ผู้ให้บริการการศึกษาต้องเผชิญ'}
+              {isEN ? 'What Education Providers Are Up Against' : 'สิ่งที่สถาบันการศึกษาต้องเจอ'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Building for education means solving problems no generic software vendor has to think about.'
-                : 'การสร้างซอฟต์แวร์เพื่อการศึกษาต้องแก้ปัญหาที่ Vendor ซอฟต์แวร์ทั่วไปไม่ต้องเจอ'}
+                : 'การทำซอฟต์แวร์เพื่อการศึกษาต้องแก้ปัญหาที่ผู้ขายซอฟต์แวร์ทั่วไปไม่ต้องเจอ'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -241,7 +241,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Everything needed to build a modern education platform, end to end.' : 'ทุกอย่างที่จำเป็นสำหรับสร้าง Education Platform ยุคใหม่แบบครบวงจร'}
+              {isEN ? 'Everything needed to build a modern education platform, end to end.' : 'ทุกอย่างที่ต้องใช้สร้างแพลตฟอร์มการศึกษายุคใหม่'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -264,12 +264,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Tech Stack' : 'เทคโนโลยีที่ใช้'}
             </p>
             <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
-              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้งาน'}
+              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้'}
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Proven tools and frameworks chosen for reliability at classroom scale.'
-                : 'เครื่องมือและ Framework ที่พิสูจน์แล้วว่าเชื่อถือได้ในระดับการใช้งานจริงของห้องเรียน'}
+                : 'เครื่องมือและ Framework ที่เชื่อถือได้ ใช้งานจริงในระดับห้องเรียนได้'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -292,10 +292,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </p>
             <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
-              {isEN ? 'What We Build for Education' : 'สิ่งที่เราสร้างให้กับวงการการศึกษา'}
+              {isEN ? 'What We Build for Education' : 'สิ่งที่เราสร้างให้วงการการศึกษา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Real systems shipped for real learners, not proof-of-concept demos.' : 'ระบบจริงที่ Deploy ใช้งานกับผู้เรียนจริง ไม่ใช่แค่ Proof of Concept'}
+              {isEN ? 'Real systems shipped for real learners, not proof-of-concept demos.' : 'ระบบที่ใช้งานจริงกับผู้เรียนจริง ไม่ใช่แค่ Proof of Concept'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -335,7 +335,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link

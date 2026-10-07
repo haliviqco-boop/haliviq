@@ -33,15 +33,15 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   const badge    = isEN ? 'Engineering / Mobile Apps'  : 'Engineering / Mobile Apps'
   const title    = isEN ? 'Apps Users'  : 'แอปที่ผู้ใช้'
-  const subtitle = isEN ? 'Love and Use Every Day'    : 'รักและใช้ทุกวัน'
-  const heroDesc = isEN ? 'Native and cross-platform mobile apps with the polish users expect and the architecture teams can scale.'  : 'แอป Mobile ทั้ง Native และ Cross-platform ที่ประณีตในแบบที่ผู้ใช้คาดหวัง และมี Architecture ที่ทีมของคุณต่อยอดได้ในระยะยาว'
+  const subtitle = isEN ? 'Love and Use Every Day'    : 'รักและเปิดใช้ทุกวัน'
+  const heroDesc = isEN ? 'Native and cross-platform mobile apps with the polish users expect and the architecture teams can scale.'  : 'แอปมือถือทั้ง Native และ Cross-platform ที่ประณีตอย่างที่ผู้ใช้คาดหวัง และมีโครงสร้างที่ทีมของคุณต่อยอดได้ในระยะยาว'
   const whyTitle = isEN ? 'Why most apps fail within 90 days'    : 'ทำไมแอปส่วนใหญ่ล้มเหลวใน 90 วันแรก'
-  const whyDesc  = isEN ? 'The average app loses 77% of users within 3 days. The culprits are almost always the same: poor onboarding, slow performance, and features that miss real user needs.'  : 'แอปเฉลี่ยสูญเสียผู้ใช้ 77% ภายใน 3 วันแรก สาเหตุหลักคือ Onboarding ที่ยุ่งยาก Performance ที่ช้า และ Feature ที่ไม่ตรงกับความต้องการจริง'
-  const ctaTitle = isEN ? 'Ready to build your app?'    : 'พร้อมสร้างแอปของคุณไหม?'
-  const ctaDesc  = isEN ? 'Start with a free Product Discovery session. We will scope your MVP and get you to market fast.'   : 'เริ่มด้วย Product Discovery Session ฟรี เราจะ Scope MVP และพาคุณออก Market ได้เร็ว'
+  const whyDesc  = isEN ? 'The average app loses 77% of users within 3 days. The culprits are almost always the same: poor onboarding, slow performance, and features that miss real user needs.'  : 'แอปทั่วไปสูญเสียผู้ใช้ 77% ภายใน 3 วันแรก สาเหตุหลักคือขั้นตอนเริ่มใช้ที่ยุ่งยาก แอปช้า และฟีเจอร์ที่ไม่ตรงกับความต้องการจริง'
+  const ctaTitle = isEN ? 'Ready to build your app?'    : 'พร้อมสร้างแอปของคุณหรือยัง?'
+  const ctaDesc  = isEN ? 'Start with a free Product Discovery session. We will scope your MVP and get you to market fast.'   : 'เริ่มด้วยการคุยสำรวจผลิตภัณฑ์ฟรี เราจะกำหนดขอบเขต MVP และพาคุณออกสู่ตลาดได้เร็ว'
   const overviewText = isEN
     ? 'We deliver iOS and Android products using React Native, Flutter, Swift, and Kotlin — choosing the stack based on your product requirements, not a house preference. Every engagement covers offline-first architecture, engagement features like push and deep linking, app store preparation, and secure API integration, so what ships is fast, trustworthy, and built to scale from your first release to millions of users.'
-    : 'เราพัฒนาแอป iOS และ Android ด้วย React Native, Flutter, Swift และ Kotlin โดยเลือก Stack ตามความต้องการของ Product จริง ไม่ใช่ความชอบส่วนตัวของทีม ทุกโปรเจกต์ครอบคลุมทั้ง Offline-first Architecture, Feature ด้าน Engagement อย่าง Push Notification และ Deep Linking, การเตรียมพร้อมขึ้น App Store และการเชื่อมต่อ API อย่างปลอดภัย เพื่อให้แอปที่ Launch ออกไปเร็ว น่าเชื่อถือ และรองรับการเติบโตจาก Release แรกไปจนถึงผู้ใช้หลักล้าน'
+    : 'เราพัฒนาแอป iOS และ Android ด้วย React Native, Flutter, Swift และ Kotlin โดยเลือกเทคโนโลยีตามความต้องการของผลิตภัณฑ์จริง ไม่ใช่ตามความชอบของทีม ทุกโปรเจกต์ครอบคลุมสถาปัตยกรรมแบบ Offline-first ฟีเจอร์ดึงผู้ใช้กลับมาอย่าง Push Notification และ Deep Linking การเตรียมขึ้น App Store และการเชื่อมต่อ API อย่างปลอดภัย เพื่อให้แอปที่เปิดตัวออกไปเร็ว น่าเชื่อถือ และรองรับการเติบโตตั้งแต่เวอร์ชันแรกไปจนถึงผู้ใช้หลักล้าน'
 
   const heroBullets = isEN ? [
       'Product strategy and feature prioritisation before a line of code',
@@ -50,11 +50,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'App Store and Google Play submission and optimisation',
       'Continuous updates, monitoring, and iterative improvement',
     ] : [
-      'วางกลยุทธ์ Product และเลือก Feature ก่อนเขียน Code บรรทัดแรก',
-      'พัฒนา Native iOS, Android หรือ Cross-platform React Native',
-      'Optimize Performance สำหรับทุก Device และเครือข่าย',
-      'Submit App Store และ Google Play พร้อม Optimise Listing',
-      'อัปเดต ติดตาม และพัฒนาต่อเนื่องหลัง Launch',
+      'วางกลยุทธ์ผลิตภัณฑ์และเลือกฟีเจอร์ก่อนเขียนโค้ดบรรทัดแรก',
+      'พัฒนา Native iOS, Android หรือ Cross-platform ด้วย React Native',
+      'ปรับประสิทธิภาพให้เหมาะกับทุกอุปกรณ์และเครือข่าย',
+      'ส่งขึ้น App Store และ Google Play พร้อมปรับหน้าแสดงแอปให้ดึงดูด',
+      'อัปเดต ติดตามผล และพัฒนาต่อเนื่องหลังเปิดตัว',
     ]
   const whyPoints   = isEN ? [
       'Apps built with user research have 3x better 30-day retention',
@@ -64,10 +64,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'App Store Optimisation can double organic downloads without increasing ad spend',
     ] : [
       'แอปที่สร้างจาก User Research มี 30-day Retention ดีกว่า 3 เท่า',
-      '53% ของผู้ใช้ละทิ้งแอปที่ Load นานกว่า 3 วินาที',
-      'Offline-first Design ทำให้ใช้งานได้ดีแม้เน็ตไม่ดี',
-      'Push Notification Strategy ที่ดีเพิ่ม DAU ได้ 20-40%',
-      'App Store Optimisation เพิ่ม Organic Download ได้เป็นเท่าตัวโดยไม่เพิ่มค่าโฆษณา',
+      'ผู้ใช้ 53% เลิกใช้แอปที่โหลดนานกว่า 3 วินาที',
+      'ออกแบบแบบ Offline-first ให้ใช้งานได้ดีแม้เน็ตไม่ดี',
+      'กลยุทธ์ Push Notification ที่ดีเพิ่ม DAU ได้ 20-40%',
+      'การปรับหน้าแอปใน Store (ASO) เพิ่มยอดดาวน์โหลดแบบธรรมชาติได้เป็นเท่าตัวโดยไม่เพิ่มค่าโฆษณา',
     ]
   const outcomes    = isEN ? [
       {stat: '3x', label: 'Better Retention', desc: 'vs. non-research-led apps'},
@@ -75,9 +75,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {stat: '40%', label: 'DAU Increase', desc: 'With smart push strategy'},
       {stat: '4.7★', label: 'Average App Store Rating', desc: 'Across our published apps'}
     ] : [
-      {stat: '3x', label: 'Retention ดีกว่า', desc: 'เทียบกับแอปที่ไม่มี Research'},
-      {stat: '<2s', label: 'App Load Time', desc: 'Optimise สำหรับทุกเครือข่าย'},
-      {stat: '40%', label: 'DAU เพิ่มขึ้น', desc: 'ด้วย Push Strategy ที่ดี'},
+      {stat: '3x', label: 'Retention ดีกว่า', desc: 'เทียบกับแอปที่ไม่ได้ทำ Research'},
+      {stat: '<2s', label: 'App Load Time', desc: 'ปรับให้เหมาะกับทุกเครือข่าย'},
+      {stat: '40%', label: 'DAU เพิ่มขึ้น', desc: 'ด้วยกลยุทธ์ Push ที่ดี'},
       {stat: '4.7★', label: 'คะแนน App Store เฉลี่ย', desc: 'จากแอปที่เราพัฒนา'}
     ]
   const features    = isEN ? [
@@ -88,12 +88,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {icon: 'ti-bell', title: 'Push & Engagement', desc: 'Design a push notification strategy that increases engagement without annoying users.'},
       {icon: 'ti-shield-check', title: 'Security & Compliance', desc: 'Secure authentication, data encryption, and PDPA compliance from day one.'}
     ] : [
-      {icon: 'ti-device-mobile', title: 'Native iOS & Android', desc: 'พัฒนาแยก Native สำหรับ iOS (Swift) และ Android (Kotlin) เพื่อ Performance และ UX ที่ดีที่สุด'},
-      {icon: 'ti-brand-react-native', title: 'React Native', desc: 'พัฒนาครั้งเดียวใช้ได้ทั้ง iOS และ Android ลดต้นทุนโดยไม่เสีย Performance'},
-      {icon: 'ti-rocket', title: 'MVP & Rapid Development', desc: 'สร้าง MVP ที่ใช้งานได้จริงใน 6-10 สัปดาห์ เร็วพอที่จะ Test ตลาดก่อนลงทุนเต็มที่'},
-      {icon: 'ti-chart-arrows-vertical', title: 'Performance Optimization', desc: 'Profiling, Lazy Loading, Image Optimization ทำให้แอปเร็วและลื่นในทุกสภาวะ'},
-      {icon: 'ti-bell', title: 'Push & Engagement', desc: 'ออกแบบ Push Notification Strategy ที่เพิ่ม Engagement โดยไม่ทำให้ผู้ใช้รำคาญ'},
-      {icon: 'ti-shield-check', title: 'Security & Compliance', desc: 'Secure Authentication, Data Encryption และ PDPA Compliance ตั้งแต่วันแรก'}
+      {icon: 'ti-device-mobile', title: 'Native iOS & Android', desc: 'พัฒนา Native แยกสำหรับ iOS (Swift) และ Android (Kotlin) เพื่อประสิทธิภาพและ UX ที่ดีที่สุด'},
+      {icon: 'ti-brand-react-native', title: 'React Native', desc: 'พัฒนาครั้งเดียวใช้ได้ทั้ง iOS และ Android ลดต้นทุนโดยประสิทธิภาพไม่ตก'},
+      {icon: 'ti-rocket', title: 'MVP & Rapid Development', desc: 'สร้าง MVP ที่ใช้งานได้จริงใน 6-10 สัปดาห์ เร็วพอจะทดสอบตลาดก่อนลงทุนเต็มที่'},
+      {icon: 'ti-chart-arrows-vertical', title: 'Performance Optimization', desc: 'Profiling, Lazy Loading และปรับรูปภาพ ให้แอปเร็วและลื่นในทุกสภาพ'},
+      {icon: 'ti-bell', title: 'Push & Engagement', desc: 'ออกแบบกลยุทธ์ Push Notification ที่เพิ่มการกลับมาใช้โดยไม่ทำให้ผู้ใช้รำคาญ'},
+      {icon: 'ti-shield-check', title: 'Security & Compliance', desc: 'ยืนยันตัวตนปลอดภัย เข้ารหัสข้อมูล และรองรับ PDPA ตั้งแต่วันแรก'}
     ]
   const steps       = isEN ? [
       {no: '01', title: 'Product Discovery', desc: 'Understand users, market, and business goals before designing anything.'},
@@ -102,20 +102,20 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {no: '04', title: 'QA & Testing', desc: 'Test every device, OS version, and edge case before submission.'},
       {no: '05', title: 'Launch & Iterate', desc: 'Submit to stores, monitor metrics, and iterate based on real user feedback.'}
     ] : [
-      {no: '01', title: 'Product Discovery', desc: 'ทำความเข้าใจผู้ใช้ ตลาด และเป้าหมายธุรกิจก่อนออกแบบอะไร'},
-      {no: '02', title: 'UX Design & Prototype', desc: 'ออกแบบ Flow และ UI พร้อม Interactive Prototype ให้ Test ก่อน Build'},
-      {no: '03', title: 'Development Sprints', desc: 'พัฒนา 2-week Sprints พร้อม Demo ทุก Sprint ให้เห็นความคืบหน้า'},
-      {no: '04', title: 'QA & Testing', desc: 'Test ทุก Device, OS Version และ Edge Case ก่อน Submit'},
-      {no: '05', title: 'Launch & Iterate', desc: 'Submit Store, Monitor Metrics และ Iterate ตาม Feedback จริง'}
+      {no: '01', title: 'Product Discovery', desc: 'ทำความเข้าใจผู้ใช้ ตลาด และเป้าหมายธุรกิจก่อนออกแบบ'},
+      {no: '02', title: 'UX Design & Prototype', desc: 'ออกแบบขั้นตอนและ UI พร้อมต้นแบบที่กดใช้ได้ ให้ทดสอบก่อนสร้าง'},
+      {no: '03', title: 'Development Sprints', desc: 'พัฒนาเป็น Sprint ละ 2 สัปดาห์ พร้อมสาธิตทุก Sprint ให้เห็นความคืบหน้า'},
+      {no: '04', title: 'QA & Testing', desc: 'ทดสอบทุกอุปกรณ์ เวอร์ชัน OS และเคสพิเศษ ก่อนส่งขึ้น Store'},
+      {no: '05', title: 'Launch & Iterate', desc: 'ส่งขึ้น Store ติดตามตัวเลข และปรับปรุงตามความเห็นจริงจากผู้ใช้'}
     ]
   const caseStudies = isEN ? [
       {tag: 'FinTech · Bangkok', title: 'Mobile Banking App for 4 Million Users', desc: 'Full UX redesign, new features, and performance tuning for high load.', result: 'DAU up 62%'},
       {tag: 'Healthcare · Bangkok', title: 'End-to-end Telemedicine App', desc: 'Video consultation, prescription, and lab results in one app.', result: '92% Completion Rate'},
       {tag: 'Retail · Nationwide', title: 'Grocery Delivery in 30 Minutes', desc: 'Real-time inventory, route optimisation, and in-app payment.', result: '4.8★ App Store Rating'}
     ] : [
-      {tag: 'FinTech · กรุงเทพฯ', title: 'Mobile Banking App สำหรับ 4 ล้านคน', desc: 'Redesign UX ใหม่ทั้งหมด เพิ่ม Feature และปรับ Performance ให้รองรับ Load สูง', result: 'DAU เพิ่ม 62%'},
-      {tag: 'Healthcare · กรุงเทพฯ', title: 'Telemedicine App ครบวงจร', desc: 'Video Consultation, Prescription และ Lab Result ในแอปเดียว', result: '92% Completion Rate'},
-      {tag: 'Retail · ทั่วประเทศ', title: 'Grocery Delivery ส่งใน 30 นาที', desc: 'Real-time Inventory, Route Optimization และ In-app Payment', result: 'Rating 4.8★ App Store'}
+      {tag: 'FinTech · กรุงเทพฯ', title: 'แอป Mobile Banking สำหรับ 4 ล้านคน', desc: 'ออกแบบ UX ใหม่ทั้งหมด เพิ่มฟีเจอร์ และปรับประสิทธิภาพให้รองรับผู้ใช้จำนวนมาก', result: 'DAU เพิ่ม 62%'},
+      {tag: 'Healthcare · กรุงเทพฯ', title: 'แอป Telemedicine ครบในแอปเดียว', desc: 'ปรึกษาแพทย์ผ่านวิดีโอ ใบสั่งยา และผลตรวจแล็บ ในแอปเดียว', result: '92% Completion Rate'},
+      {tag: 'Retail · ทั่วประเทศ', title: 'ส่งของชำใน 30 นาที', desc: 'สต็อกเรียลไทม์ จัดเส้นทางส่งให้เหมาะสม และชำระเงินในแอป', result: 'Rating 4.8★ App Store'}
     ]
   const faqs        = isEN ? [
       {q: 'React Native or Native — which is better?', a: 'It depends on the use case. React Native is faster and more cost-effective for most apps. Native is better for apps requiring maximum performance or deep hardware features.'},
@@ -123,10 +123,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {q: 'Is App Store submission difficult?', a: 'There are steps involved, but we handle everything — screenshots, descriptions, privacy policy, and the review process.'},
       {q: 'How do you support after launch?', a: 'We offer maintenance packages covering bug fixes, OS updates, performance monitoring, and new feature development.'}
     ] : [
-      {q: 'React Native หรือ Native ดีกว่ากัน?', a: 'ขึ้นอยู่กับ Use Case ครับ React Native เร็วกว่าและประหยัดกว่าสำหรับแอปทั่วไป Native เหมาะกับแอปที่ต้องการ Performance สูงสุดหรือใช้ Hardware Feature ลึกๆ'},
-      {q: 'ใช้เวลานานแค่ไหนในการพัฒนา?', a: 'MVP ใช้เวลา 6-10 สัปดาห์ แอปเต็มรูปแบบ 3-6 เดือน ขึ้นอยู่กับ Feature และความซับซ้อน'},
-      {q: 'Submit App Store ยากไหม?', a: 'มีขั้นตอน แต่เราดูแลให้ครบครับ ตั้งแต่เตรียม Screenshot, Description, Privacy Policy จนถึง Review Process'},
-      {q: 'หลัง Launch ดูแลยังไง?', a: 'เรามีแพ็กเกจ Maintenance ครอบคลุม Bug Fix, OS Update, Performance Monitoring และพัฒนา Feature ใหม่'}
+      {q: 'React Native หรือ Native ดีกว่ากัน?', a: 'ขึ้นกับงานครับ React Native เร็วกว่าและประหยัดกว่าสำหรับแอปทั่วไป ส่วน Native เหมาะกับแอปที่ต้องการประสิทธิภาพสูงสุดหรือใช้ฟีเจอร์ฮาร์ดแวร์เชิงลึก'},
+      {q: 'ใช้เวลาพัฒนานานแค่ไหน?', a: 'MVP ใช้ 6-10 สัปดาห์ แอปเต็มรูปแบบ 3-6 เดือน ขึ้นกับฟีเจอร์และความซับซ้อน'},
+      {q: 'ส่งขึ้น App Store ยากไหม?', a: 'มีขั้นตอนครับ แต่เราดูแลให้ครบ ตั้งแต่เตรียมภาพหน้าจอ คำอธิบายแอป นโยบายความเป็นส่วนตัว จนถึงขั้นตอนตรวจสอบของ Store'},
+      {q: 'หลังเปิดตัวดูแลอย่างไร?', a: 'เรามีแพ็กเกจดูแลระบบ ครอบคลุมแก้บั๊ก อัปเดตตาม OS เฝ้าดูประสิทธิภาพ และพัฒนาฟีเจอร์ใหม่'}
     ]
   const related     = isEN ? [
       {label: 'UX & UI Design', href: '/services/ux-ui-design'},
@@ -146,9 +146,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { n: 3, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'iOS build succeeded' : 'Build iOS สำเร็จ'}</> },
     { n: 4, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Android build succeeded' : 'Build Android สำเร็จ'}</> },
     { n: 5, jsx: <>&nbsp;</> },
-    { n: 6, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>{isEN ? 'submitting to review' : 'ส่งเข้า Review'}</span></> },
+    { n: 6, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>{isEN ? 'submitting to review' : 'ส่งเข้าตรวจสอบ'}</span></> },
     { n: 7, jsx: <>&nbsp;</> },
-    { n: 8, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Approved · Live in 48h' : 'ผ่านการอนุมัติ · Live ใน 48 ชม.'}</> },
+    { n: 8, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Approved · Live in 48h' : 'ผ่านการอนุมัติ · ขึ้น Store ใน 48 ชม.'}</> },
   ]
 
   const heroSlot = (
@@ -202,10 +202,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-cloud-off', title: 'Offline-First Architecture', desc: 'Local persistence, sync strategies, and graceful degradation when connectivity is unreliable.' },
     { icon: 'ti-link', title: 'Engagement & Deep Links', desc: 'Push, in-app messaging, and deep linking designed for retention — not notification spam.' },
   ] : [
-    { icon: 'ti-git-merge', title: 'Cross-Platform Delivery', desc: 'ใช้ Codebase เดียวกันของ React Native หรือ Flutter เมื่อความเร็วและความสม่ำเสมอสำคัญ และใช้ Native เมื่อไม่ใช่' },
-    { icon: 'ti-bolt', title: 'Native-Grade Performance', desc: 'Animation ที่ลื่นไหล List ที่มีประสิทธิภาพ และ Convention ของแต่ละแพลตฟอร์มที่ให้ความรู้สึกเป็นธรรมชาติทั้ง iOS และ Android' },
-    { icon: 'ti-cloud-off', title: 'Offline-First Architecture', desc: 'Local Persistence, กลยุทธ์ Sync และการทำงานที่ยังใช้ได้อย่างนุ่มนวลแม้เครือข่ายไม่เสถียร' },
-    { icon: 'ti-link', title: 'Engagement & Deep Links', desc: 'Push Notification, In-app Messaging และ Deep Linking ที่ออกแบบมาเพื่อ Retention ไม่ใช่การสแปม' },
+    { icon: 'ti-git-merge', title: 'Cross-Platform Delivery', desc: 'ใช้โค้ดชุดเดียวด้วย React Native หรือ Flutter เมื่อความเร็วและความสม่ำเสมอสำคัญ และใช้ Native เมื่อไม่ใช่' },
+    { icon: 'ti-bolt', title: 'Native-Grade Performance', desc: 'แอนิเมชันที่ลื่นไหล รายการที่เลื่อนลื่น และรูปแบบการใช้งานตามแต่ละแพลตฟอร์ม ให้ความรู้สึกเป็นธรรมชาติทั้ง iOS และ Android' },
+    { icon: 'ti-cloud-off', title: 'Offline-First Architecture', desc: 'เก็บข้อมูลในเครื่อง มีกลยุทธ์ซิงก์ และยังใช้งานได้อย่างนุ่มนวลแม้เครือข่ายไม่เสถียร' },
+    { icon: 'ti-link', title: 'Engagement & Deep Links', desc: 'Push Notification ข้อความในแอป และ Deep Linking ที่ออกแบบให้ผู้ใช้กลับมา ไม่ใช่สแปม' },
   ]
 
   const techStack = [
@@ -227,12 +227,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '05', title: 'Store Launch', desc: 'App Store and Play release readiness' },
     { no: '06', title: 'Support', desc: 'Updates, crash triage, and OS changes' },
   ] : [
-    { no: '01', title: 'Discovery', desc: 'เป้าหมาย Product, Platform และข้อจำกัดต่างๆ' },
-    { no: '02', title: 'Design', desc: 'UX Pattern สำหรับ Mobile และ Prototype' },
-    { no: '03', title: 'Development', desc: 'พัฒนา Feature บน Stack ที่เลือกไว้' },
-    { no: '04', title: 'Testing', desc: 'Test บน Device หลากหลาย, Automation และ Beta' },
+    { no: '01', title: 'Discovery', desc: 'เป้าหมายผลิตภัณฑ์ แพลตฟอร์ม และข้อจำกัดต่างๆ' },
+    { no: '02', title: 'Design', desc: 'รูปแบบ UX สำหรับมือถือและต้นแบบ' },
+    { no: '03', title: 'Development', desc: 'พัฒนาฟีเจอร์บนเทคโนโลยีที่เลือกไว้' },
+    { no: '04', title: 'Testing', desc: 'ทดสอบบนอุปกรณ์หลากหลาย ทดสอบอัตโนมัติ และรุ่นทดลอง' },
     { no: '05', title: 'Store Launch', desc: 'เตรียมความพร้อมขึ้น App Store และ Play Store' },
-    { no: '06', title: 'Support', desc: 'อัปเดต, แก้ไข Crash และรองรับ OS ใหม่' },
+    { no: '06', title: 'Support', desc: 'อัปเดต แก้แอปค้าง และรองรับ OS ใหม่' },
   ]
 
   const darkFaqs = isEN ? [
@@ -245,14 +245,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { q: 'What happens when users have a poor or no internet connection?', a: 'We design offline-first from the start for apps where this matters: critical data persists locally, actions queue and sync automatically when connectivity returns, and the UI degrades gracefully instead of showing a blank error screen. This is scoped explicitly during discovery, since it changes both the architecture and the testing matrix.' },
     { q: 'Who owns the code, design files, and App Store listing after launch?', a: "You do, entirely. Source code, design files, and app store account ownership transfer to you on final payment. If you'd rather we build and submit directly under your own Apple Developer and Google Play accounts from day one, which we recommend, you have full control and visibility the moment the app goes live — with no dependency on us to keep it running." },
   ] : [
-    { q: 'Haliviq พัฒนาแอป Native หรือ Cross-platform?', a: 'ทั้งสองแบบครับ เราพัฒนาแอป Native ด้วย Swift และ Kotlin และแอป Cross-platform ด้วย React Native และ Flutter โดยแนะนำแนวทางตามความต้องการของแต่ละ Product ทั้งเรื่อง Performance, แผนของทีม และงบประมาณ ไม่ได้ยึดติดกับแนวทางใดแนวทางหนึ่ง แอป Trading ที่มี Animation หนักและใช้กล้องเยอะมักไปทาง Native ส่วนแอป Content หรือ E-commerce ที่ทีมเล็ก มักออกได้เร็วและประหยัดกว่าด้วย React Native หรือ Flutter โดยไม่ต่างกันมากในแง่ UX' },
-    { q: 'ใช้เทคโนโลยีอะไรในการพัฒนา Mobile?', a: 'Swift และ Kotlin สำหรับงาน Native, React Native ร่วมกับ Expo และ Flutter สำหรับ Cross-platform, Firebase สำหรับความต้องการ Backend ทั่วไปอย่าง Auth, Push และ Analytics และดูแล Release ทั้ง App Store และ Google Play ให้ครบ เรายังเลือกใช้แบบผสมได้ในระดับ Feature เช่น ใส่ Native Module ไว้ในแอป React Native เฉพาะหน้าที่ต้องการ Performance ระดับ Hardware จริงๆ' },
-    { q: 'Take Over แอปที่มีอยู่แล้วได้ไหม?', a: 'ได้ครับ เราจะ Audit Codebase ก่อน ทั้งสุขภาพของ Dependency, Crash Rate, Architecture และ Technical Debt แล้วตกลงแผนเพื่อทำให้ Release มีเสถียรภาพและพัฒนาแอปต่อแบบ Iteration ไม่ว่าเราจะเป็นคนสร้างแอปเดิมหรือไม่ก็ตาม เราจะบอกตรงๆ หากการเขียนใหม่คุ้มค่ากว่าการแพตช์ Codebase ที่เปราะบางต่อไป แต่โดยทั่วไปเราเลือกพัฒนาต่อแบบค่อยเป็นค่อยไปมากกว่าการ Rebuild ใหม่ทั้งหมด' },
-    { q: 'พัฒนาแอป Mobile ใช้เวลานานแค่ไหน?', a: 'ขึ้นอยู่กับขอบเขตงาน แต่ Release แรกส่วนใหญ่ใช้เวลาไม่กี่เดือนนับจาก Kickoff เราเริ่มจาก Discovery และ Design แล้วพัฒนาเป็น Sprint ละ 2 สัปดาห์ ทำให้คุณได้ทดสอบ Build จริงบนอุปกรณ์จริงตั้งแต่สัปดาห์แรกๆ แทนที่จะต้องรอจนจบโปรเจกต์ถึงจะเห็นอะไร' },
-    { q: 'แอป Mobile มีค่าใช้จ่ายเท่าไหร่?', a: 'ต้นทุนขึ้นอยู่กับจำนวน Feature, จำนวน Platform และความซับซ้อนของ Backend มากกว่าปัจจัยอื่น MVP ที่โฟกัสบนหนึ่ง Platform โดยทั่วไปเริ่มต้นที่หลักแสนกลางๆ (บาท) ส่วนแอปเต็มรูปแบบทั้ง iOS และ Android พร้อม Backend กำหนดเอง ระบบชำระเงิน และ Offline Support มักอยู่ที่หลายเท่าของตัวเลขนั้น เราจะเสนอราคาคงที่ตาม Phase หลัง Discovery เพื่อไม่ให้มีบิลแบบรายชั่วโมงที่ไม่มีเพดาน' },
-    { q: 'ดูแลเรื่อง Submit App Store และ Google Play รวมถึงกรณีถูก Reject ไหม?', a: 'ดูแลครับ เราจัดการกระบวนการ Release ทั้งหมด ตั้งแต่ Screenshot, ข้อความ Listing, Privacy Policy และการเปิดเผยการใช้ข้อมูล, Age Rating จนถึงการ Submit เข้า Review หากถูก Store ใดปฏิเสธ ซึ่งเกิดขึ้นได้แม้กับทีมที่มีประสบการณ์ เราจะวินิจฉัยประเด็นที่ขัด Guideline และ Submit ใหม่ให้ ซึ่งครอบคลุมอยู่ในขั้นตอน Launch อยู่แล้ว ไม่ใช่ค่าใช้จ่ายเพิ่มเติมที่ไม่คาดคิด' },
-    { q: 'ถ้าผู้ใช้เน็ตไม่ดีหรือไม่มีเน็ตเลยจะเป็นอย่างไร?', a: 'เราออกแบบแบบ Offline-first ตั้งแต่ต้นสำหรับแอปที่เรื่องนี้สำคัญ ข้อมูลสำคัญจะถูกเก็บไว้ในเครื่อง คำสั่งต่างๆ จะเข้าคิวและ Sync อัตโนมัติเมื่อกลับมามีสัญญาณ และ UI จะลดระดับการทำงานอย่างนุ่มนวลแทนที่จะขึ้นหน้า Error ว่างเปล่า เรื่องนี้จะถูกกำหนดขอบเขตชัดเจนตั้งแต่ขั้นตอน Discovery เพราะมีผลต่อทั้ง Architecture และ Test Matrix' },
-    { q: 'Code, ไฟล์ดีไซน์ และ Listing บน App Store เป็นของใครหลัง Launch?', a: 'เป็นของคุณทั้งหมดครับ Source Code, ไฟล์ดีไซน์ และความเป็นเจ้าของบัญชี App Store จะโอนเป็นของคุณเมื่อชำระเงินงวดสุดท้าย หากต้องการให้เราพัฒนาและ Submit ภายใต้บัญชี Apple Developer และ Google Play ของคุณเองตั้งแต่วันแรก ซึ่งเราแนะนำ คุณจะมีสิทธิ์ควบคุมและมองเห็นได้เต็มที่ทันทีที่แอป Live โดยไม่ต้องพึ่งเราเพื่อให้แอปทำงานต่อได้' },
+    { q: 'Haliviq พัฒนาแอป Native หรือ Cross-platform?', a: 'ทั้งสองแบบครับ เราพัฒนาแอป Native ด้วย Swift และ Kotlin และแอป Cross-platform ด้วย React Native และ Flutter โดยแนะนำตามความต้องการของแต่ละผลิตภัณฑ์ ทั้งเรื่องประสิทธิภาพ แผนของทีม และงบประมาณ ไม่ยึดติดกับแนวทางใดแนวทางหนึ่ง แอปเทรดที่มีแอนิเมชันหนักและใช้กล้องเยอะมักไปทาง Native ส่วนแอปคอนเทนต์หรือ E-commerce ที่ทีมเล็ก มักออกได้เร็วและประหยัดกว่าด้วย React Native หรือ Flutter โดย UX ไม่ต่างกันมาก' },
+    { q: 'ใช้เทคโนโลยีอะไรพัฒนาแอปมือถือ?', a: 'Swift และ Kotlin สำหรับงาน Native, React Native ร่วมกับ Expo และ Flutter สำหรับ Cross-platform, Firebase สำหรับความต้องการ Backend ทั่วไปอย่างยืนยันตัวตน Push และ Analytics และดูแลการปล่อยเวอร์ชันทั้ง App Store และ Google Play ให้ครบ เรายังเลือกใช้แบบผสมได้ในระดับฟีเจอร์ เช่น ใส่ Native Module ไว้ในแอป React Native เฉพาะหน้าที่ต้องการประสิทธิภาพระดับฮาร์ดแวร์จริงๆ' },
+    { q: 'รับช่วงดูแลแอปที่มีอยู่แล้วได้ไหม?', a: 'ได้ครับ เราจะตรวจโค้ดก่อน ทั้งสุขภาพของ Dependency อัตราแอปค้าง สถาปัตยกรรม และหนี้ทางเทคนิค แล้วตกลงแผนเพื่อให้การปล่อยเวอร์ชันเสถียรและพัฒนาแอปต่อเป็นรอบๆ ไม่ว่าเราจะเป็นคนสร้างแอปเดิมหรือไม่ก็ตาม เราจะบอกตรงๆ ถ้าการเขียนใหม่คุ้มกว่าการปะโค้ดที่เปราะบางต่อไป แต่โดยทั่วไปเราเลือกพัฒนาต่อแบบค่อยเป็นค่อยไปมากกว่าสร้างใหม่ทั้งหมด' },
+    { q: 'พัฒนาแอปมือถือใช้เวลานานแค่ไหน?', a: 'ขึ้นกับขอบเขตงาน แต่เวอร์ชันแรกส่วนใหญ่ใช้เวลาไม่กี่เดือนนับจากเริ่มโปรเจกต์ เราเริ่มจากสำรวจความต้องการและออกแบบ แล้วพัฒนาเป็น Sprint ละ 2 สัปดาห์ ทำให้คุณได้ลองใช้ Build จริงบนอุปกรณ์จริงตั้งแต่สัปดาห์แรกๆ ไม่ต้องรอจนจบโปรเจกต์ถึงจะเห็นอะไร' },
+    { q: 'แอปมือถือมีค่าใช้จ่ายเท่าไหร่?', a: 'ต้นทุนขึ้นกับจำนวนฟีเจอร์ จำนวนแพลตฟอร์ม และความซับซ้อนของ Backend มากกว่าปัจจัยอื่น MVP ที่โฟกัสแพลตฟอร์มเดียวโดยทั่วไปเริ่มที่หลักแสนกลางๆ (บาท) ส่วนแอปเต็มรูปแบบทั้ง iOS และ Android พร้อม Backend ที่ทำเอง ระบบชำระเงิน และใช้งานออฟไลน์ได้ มักอยู่ที่หลายเท่าของตัวเลขนั้น เราเสนอราคาคงที่แบ่งตามช่วงงานหลังสำรวจความต้องการ เพื่อไม่ให้มีบิลรายชั่วโมงแบบไม่มีเพดาน' },
+    { q: 'ดูแลเรื่องส่งขึ้น App Store และ Google Play รวมถึงกรณีถูกปฏิเสธไหม?', a: 'ดูแลครับ เราจัดการขั้นตอนปล่อยแอปทั้งหมด ตั้งแต่ภาพหน้าจอ ข้อความหน้าแสดงแอป นโยบายความเป็นส่วนตัวและการเปิดเผยการใช้ข้อมูล การจัดเรตอายุ จนถึงส่งเข้าตรวจสอบ ถ้า Store ใดปฏิเสธ ซึ่งเกิดขึ้นได้แม้กับทีมที่มีประสบการณ์ เราจะหาว่าขัดกับข้อกำหนดข้อไหนและส่งใหม่ให้ ซึ่งรวมอยู่ในขั้นตอนเปิดตัวอยู่แล้ว ไม่ใช่ค่าใช้จ่ายเพิ่มที่ไม่คาดคิด' },
+    { q: 'ถ้าผู้ใช้เน็ตไม่ดีหรือไม่มีเน็ตเลยจะเป็นอย่างไร?', a: 'เราออกแบบแบบ Offline-first ตั้งแต่ต้นสำหรับแอปที่เรื่องนี้สำคัญ ข้อมูลสำคัญจะเก็บไว้ในเครื่อง คำสั่งต่างๆ จะเข้าคิวและซิงก์อัตโนมัติเมื่อกลับมามีสัญญาณ และหน้าจอจะลดความสามารถลงอย่างนุ่มนวล แทนที่จะขึ้นหน้า Error ว่างเปล่า เรื่องนี้จะกำหนดขอบเขตชัดเจนตั้งแต่ขั้นสำรวจความต้องการ เพราะมีผลต่อทั้งสถาปัตยกรรมและแผนการทดสอบ' },
+    { q: 'โค้ด ไฟล์ดีไซน์ และหน้าแสดงแอปบน App Store เป็นของใครหลังเปิดตัว?', a: 'เป็นของคุณทั้งหมดครับ ซอร์สโค้ด ไฟล์ดีไซน์ และความเป็นเจ้าของบัญชี App Store จะโอนเป็นของคุณเมื่อชำระเงินงวดสุดท้าย ถ้าต้องการให้เราพัฒนาและส่งแอปภายใต้บัญชี Apple Developer และ Google Play ของคุณเองตั้งแต่วันแรก ซึ่งเราแนะนำ คุณจะควบคุมและเห็นทุกอย่างได้เต็มที่ทันทีที่แอปออนไลน์ โดยไม่ต้องพึ่งเราเพื่อให้แอปทำงานต่อ' },
   ]
 
   const postHeroSlot = (
@@ -273,7 +273,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           {isEN ? 'Key Capabilities' : 'ความสามารถหลัก'}
         </h2>
         <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400 }}>
-          {isEN ? 'Concrete capabilities we bring to this engagement — not buzzwords.' : 'ความสามารถที่จับต้องได้จริงที่เรานำมาใช้ในทุกโปรเจกต์ ไม่ใช่แค่คำสวยหรู'}
+          {isEN ? 'Concrete capabilities we bring to this engagement — not buzzwords.' : 'สิ่งที่เราทำได้จริงในทุกโปรเจกต์ ไม่ใช่แค่คำสวยหรู'}
         </p>
 
         <div className="grid sm:grid-cols-2 gap-5">
@@ -297,12 +297,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             {isEN ? 'Tech Stack' : 'เทคโนโลยีที่ใช้'}
           </p>
           <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
-            {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้งาน'}
+            {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้'}
           </h2>
           <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'Proven mobile stacks and services we apply where they fit — chosen for the product, not the trend cycle.'
-              : 'Stack และ Service สำหรับ Mobile ที่พิสูจน์แล้ว เลือกใช้ตามโจทย์ของ Product จริง ไม่ใช่ตามกระแส'}
+              : 'เทคโนโลยีและบริการสำหรับมือถือที่ผ่านการใช้งานจริง เลือกตามโจทย์ของผลิตภัณฑ์จริง ไม่ใช่ตามกระแส'}
           </p>
 
           <div className="flex flex-wrap gap-3">
@@ -333,7 +333,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <p className="mb-16" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'A clear path from problem to production — adjusted per product, never one-size-fits-all.'
-              : 'เส้นทางที่ชัดเจนจากปัญหาสู่ Production ปรับตามแต่ละ Product ไม่ใช่สูตรสำเร็จตายตัว'}
+              : 'เส้นทางที่ชัดเจนจากโจทย์ปัญหาสู่ระบบจริง ปรับตามแต่ละผลิตภัณฑ์ ไม่ใช่สูตรตายตัว'}
           </p>
 
           <div className="relative">
@@ -369,7 +369,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             {isEN ? 'Frequently Asked Questions' : 'คำถามที่พบบ่อย'}
           </h2>
           <p className="mb-4" style={{ color: 'var(--lime)', fontSize: '1.2rem', fontWeight: 600 }}>
-            {isEN ? 'Straight answers about how we build mobile apps.' : 'คำตอบตรงไปตรงมาเกี่ยวกับวิธีที่เราพัฒนาแอป Mobile'}
+            {isEN ? 'Straight answers about how we build mobile apps.' : 'คำตอบตรงไปตรงมาเกี่ยวกับวิธีที่เราพัฒนาแอปมือถือ'}
           </p>
 
           <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
@@ -411,7 +411,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-medium transition-opacity hover:opacity-90"
             style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}
           >
-            {isEN ? 'Start a Conversation' : 'เริ่มบทสนทนา'}
+            {isEN ? 'Start a Conversation' : 'เริ่มคุยกัน'}
             <i className="ti ti-arrow-right" style={{ fontSize: 17 }} aria-hidden="true" />
           </Link>
           <a href="mailto:wu@haliviq.com" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>
@@ -429,7 +429,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       badge={badge} title={title} subtitle={subtitle}
       heroDesc={heroDesc} heroBullets={heroBullets}
       heroDark heroSlot={heroSlot} heroShowSecondaryCta={false}
-      heroCtaLabel={isEN ? 'Get Started' : 'เริ่มต้นเลย'}
+      heroCtaLabel={isEN ? 'Get Started' : 'เริ่มเลย'}
       postHeroSlot={postHeroSlot}
       whyTitle={whyTitle} whyDesc={whyDesc} whyPoints={whyPoints}
       outcomes={outcomes} ctaTitle={ctaTitle} ctaDesc={ctaDesc}

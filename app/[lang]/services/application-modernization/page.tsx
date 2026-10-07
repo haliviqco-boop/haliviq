@@ -24,17 +24,17 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const isEN = params.lang === 'en'
   const prefix = `/${params.lang}`
 
-  const badge    = isEN ? 'Engineering / Application Modernization'  : 'วิศวกรรม / Application Modernization'
+  const badge    = isEN ? 'Engineering / Application Modernization'  : 'วิศวกรรม / ปรับปรุงระบบเดิม (Application Modernization)'
   const title    = isEN ? 'Modernize Legacy Systems'  : 'ปรับปรุงระบบเดิม'
   const subtitle = isEN ? 'Without Stopping the Business'    : 'โดยไม่หยุดธุรกิจ'
-  const heroDesc = isEN ? 'Evolve legacy systems into maintainable, API-first, cloud-ready platforms without stopping the business.'  : 'ปรับระบบเดิมให้เป็น Platform แบบ API-first, พร้อม Cloud และดูแลรักษาง่าย โดยไม่ต้องหยุดธุรกิจ'
-  const whyTitle = isEN ? 'Why legacy systems quietly cap your growth'    : 'ทำไมระบบเดิมถึงเป็นเพดานการเติบโตแบบเงียบๆ'
-  const whyDesc  = isEN ? 'Every feature that takes weeks instead of days, every outage from a fragile dependency, every engineer who avoids touching "that module" — that is legacy debt compounding against you.'  : 'ทุก Feature ที่ใช้เวลาเป็นสัปดาห์แทนที่จะเป็นวัน ทุก Outage จาก Dependency ที่เปราะบาง ทุก Engineer ที่ไม่กล้าแตะ "Module นั้น" คือหนี้ทางเทคนิคที่ทบต้นอยู่ตลอดเวลา'
-  const ctaTitle = isEN ? 'Ready to modernize without the risk?'    : 'พร้อมปรับปรุงระบบโดยไม่เสี่ยงไหม?'
-  const ctaDesc  = isEN ? 'Start with a free legacy system assessment. We will tell you honestly what to rewrite, wrap, or leave alone.'   : 'เริ่มด้วยการประเมินระบบเดิมฟรี เราจะบอกตรงๆ ว่าอะไรควร Rewrite, Wrap หรือปล่อยไว้'
+  const heroDesc = isEN ? 'Evolve legacy systems into maintainable, API-first, cloud-ready platforms without stopping the business.'  : 'ปรับระบบเดิมให้เป็นแพลตฟอร์มแบบ API-first พร้อมใช้บน Cloud และดูแลง่าย โดยไม่ต้องหยุดธุรกิจ'
+  const whyTitle = isEN ? 'Why legacy systems quietly cap your growth'    : 'ทำไมระบบเดิมถึงค่อยๆ ฉุดการเติบโตโดยไม่มีใครรู้ตัว'
+  const whyDesc  = isEN ? 'Every feature that takes weeks instead of days, every outage from a fragile dependency, every engineer who avoids touching "that module" — that is legacy debt compounding against you.'  : 'ฟีเจอร์ที่ต้องใช้เป็นสัปดาห์แทนที่จะเป็นวัน ระบบล่มเพราะส่วนที่เปราะบาง วิศวกรที่ไม่กล้าแตะโมดูลนั้น ทั้งหมดคือหนี้ทางเทคนิคที่พอกพูนขึ้นเรื่อยๆ'
+  const ctaTitle = isEN ? 'Ready to modernize without the risk?'    : 'พร้อมปรับปรุงระบบโดยไม่เสี่ยงหรือยัง?'
+  const ctaDesc  = isEN ? 'Start with a free legacy system assessment. We will tell you honestly what to rewrite, wrap, or leave alone.'   : 'เริ่มด้วยการประเมินระบบเดิมฟรี เราจะบอกตรงๆ ว่าส่วนไหนควรเขียนใหม่ ครอบด้วย API หรือปล่อยไว้ตามเดิม'
   const overviewText = isEN
     ? "We modernize critical applications through assessment, strangler-fig migrations, refactoring, and re-architecture — deliberately avoiding prolonged, risky rewrites. That means decomposing monoliths, introducing APIs and event-driven patterns, containerizing workloads, and executing data migrations with cutover strategies that preserve revenue while your users stay productive throughout, not after a six-month blackout."
-    : 'เราปรับปรุง Application สำคัญผ่าน Assessment, Strangler-fig Migration, Refactoring และ Re-architecture โดยตั้งใจหลีกเลี่ยงการ Rewrite แบบยาวนานที่มีความเสี่ยงสูง หมายถึงการแตก Monolith ออกเป็นส่วนย่อย นำ API และ Event-driven Pattern เข้ามาใช้ Containerize Workload และดำเนินการย้ายข้อมูลด้วยกลยุทธ์ Cutover ที่รักษารายได้ไว้ ในขณะที่ผู้ใช้ของคุณยังทำงานได้ต่อเนื่องตลอดกระบวนการ ไม่ใช่หลังจากหยุดระบบ 6 เดือน'
+    : 'เราปรับปรุงแอปพลิเคชันหลักของคุณด้วยการประเมินระบบ ย้ายแบบ Strangler-fig ปรับโครงสร้างโค้ด และออกแบบสถาปัตยกรรมใหม่ โดยตั้งใจเลี่ยงการเขียนใหม่ทั้งระบบที่ใช้เวลานานและเสี่ยงสูง คือแตก Monolith เป็นส่วนย่อย ใช้ API และการทำงานแบบ Event-driven ใช้ Container ย้ายข้อมูล และวางแผนสลับไปใช้ระบบใหม่โดยไม่กระทบรายได้ ผู้ใช้ของคุณทำงานต่อได้ตลอด ไม่ใช่หยุดระบบไป 6 เดือน'
 
   const heroBullets = isEN ? [
       'Incremental modernization using the strangler-fig pattern',
@@ -43,11 +43,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'Data migrations with parity verification, not guesswork',
       'The business keeps running throughout — no rewrite blackout',
     ] : [
-      'ปรับปรุงแบบค่อยเป็นค่อยไปด้วย Strangler-fig Pattern',
-      'แตก Monolith เป็น Service ย่อยผ่าน API Gateway',
-      'Containerize และย้าย Workload ขึ้น Kubernetes',
-      'ย้ายข้อมูลพร้อมตรวจสอบความถูกต้อง ไม่ใช่การเดา',
-      'ธุรกิจดำเนินต่อได้ตลอดกระบวนการ ไม่มีการหยุดระบบยาวๆ'
+      'ปรับปรุงทีละส่วนด้วย Strangler-fig Pattern',
+      'แตก Monolith เป็นบริการย่อยผ่าน API Gateway',
+      'ใช้ Container และย้ายงานขึ้น Kubernetes',
+      'ย้ายข้อมูลพร้อมตรวจความถูกต้อง ไม่ใช่การเดา',
+      'ธุรกิจทำงานต่อได้ตลอด ไม่ต้องหยุดระบบนานๆ'
     ]
   const whyPoints   = isEN ? [
       'Legacy systems with no tests make every change a gamble — modernization starts by locking in behavior first.',
@@ -56,11 +56,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'API-first architecture unlocks new channels (mobile, partners, AI) without touching the legacy core.',
       'Total cost of ownership drops significantly once hosting, licensing, and maintenance move to modern patterns.',
     ] : [
-      'ระบบเดิมที่ไม่มี Test ทำให้ทุกการเปลี่ยนแปลงเป็นการพนัน การ Modernize จึงเริ่มจากการล็อค Behavior ไว้ก่อน',
-      'Strangler Pattern ให้ Service ใหม่เข้ามาแทนที่ทีละความสามารถ พร้อม Rollback ได้เสมอ',
-      'การ Rewrite ทั้งหมดมักไม่ใช่คำตอบที่ถูกต้อง เพราะช้ากว่า เสี่ยงกว่า และแพงกว่าการเปลี่ยนแบบค่อยเป็นค่อยไป',
-      'Architecture แบบ API-first เปิดช่องทางใหม่ (Mobile, Partner, AI) โดยไม่ต้องแตะ Core ระบบเดิม',
-      'Total Cost of Ownership ลดลงอย่างมากเมื่อ Hosting, Licensing และ Maintenance ย้ายมาใช้ Pattern สมัยใหม่',
+      'ระบบเดิมที่ไม่มี Test ทำให้ทุกการแก้ไขเหมือนการเสี่ยงโชค เราจึงเริ่มจากล็อกพฤติกรรมของระบบไว้ก่อน',
+      'Strangler Pattern ให้บริการใหม่เข้ามาแทนที่ทีละส่วน และย้อนกลับได้เสมอ',
+      'การเขียนใหม่ทั้งหมดมักไม่ใช่คำตอบ เพราะช้ากว่า เสี่ยงกว่า และแพงกว่าการเปลี่ยนทีละส่วน',
+      'สถาปัตยกรรมแบบ API-first เปิดช่องทางใหม่ (Mobile, พาร์ทเนอร์, AI) โดยไม่ต้องแตะแกนหลักของระบบเดิม',
+      'ต้นทุนรวมในการเป็นเจ้าของระบบลดลงมาก เมื่อค่าโฮสติ้ง ค่าไลเซนส์ และค่าดูแลรักษาย้ายมาใช้แนวทางสมัยใหม่',
     ]
   const outcomes    = isEN ? [
       {stat: '5x', label: 'Faster Feature Delivery', desc: 'After decomposition and API layer'},
@@ -68,10 +68,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {stat: '45%', label: 'Lower TCO', desc: 'Hosting, licensing, and maintenance combined'},
       {stat: '100%', label: 'Data Parity Verified', desc: 'Before every cutover'}
     ] : [
-      {stat: '5x', label: 'ส่ง Feature เร็วขึ้น', desc: 'หลังแตก Service และเพิ่ม API Layer'},
-      {stat: '0', label: 'Downtime ทางธุรกิจ', desc: 'ตลอดการ Cutover ทุกครั้ง'},
-      {stat: '45%', label: 'TCO ลดลง', desc: 'รวม Hosting, Licensing และ Maintenance'},
-      {stat: '100%', label: 'ตรวจสอบ Data Parity', desc: 'ก่อนทุกการ Cutover'}
+      {stat: '5x', label: 'ส่งฟีเจอร์ได้เร็วขึ้น', desc: 'หลังแตกเป็นบริการย่อยและเพิ่มชั้น API'},
+      {stat: '0', label: 'ธุรกิจหยุดชะงัก', desc: 'ในทุกครั้งที่สลับระบบ'},
+      {stat: '45%', label: 'ต้นทุนรวม (TCO) ลดลง', desc: 'รวมค่าโฮสติ้ง ค่าไลเซนส์ และค่าดูแลรักษา'},
+      {stat: '100%', label: 'ตรวจความตรงกันของข้อมูล', desc: 'ก่อนสลับระบบทุกครั้ง'}
     ]
   const features    = isEN ? [
       {icon: 'ti-search', title: 'Legacy Assessment', desc: 'Technical and business analysis determining what to rewrite, wrap, replace, or retain.'},
@@ -81,12 +81,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {icon: 'ti-database-export', title: 'Data Migration', desc: 'Parity-verified data transitions with rollback safety at every cutover.'},
       {icon: 'ti-topology-star-3', title: 'Microservices Decomposition', desc: 'Breaking monoliths apart at natural seams, not arbitrary boundaries.'}
     ] : [
-      {icon: 'ti-search', title: 'Legacy Assessment', desc: 'วิเคราะห์ทั้งด้านเทคนิคและธุรกิจ เพื่อตัดสินใจว่าอะไรควร Rewrite, Wrap, Replace หรือ Retain'},
-      {icon: 'ti-adjustments', title: 'Incremental Refactoring', desc: 'ปรับปรุงโครงสร้างและ Testability ทีละส่วน พร้อมรักษา Continuous Delivery'},
+      {icon: 'ti-search', title: 'Legacy Assessment', desc: 'วิเคราะห์ทั้งด้านเทคนิคและธุรกิจ เพื่อตัดสินใจว่าส่วนไหนควรเขียนใหม่ ครอบด้วย API เปลี่ยนใหม่ หรือคงไว้'},
+      {icon: 'ti-adjustments', title: 'Incremental Refactoring', desc: 'ปรับโครงสร้างและทำให้ทดสอบได้ทีละส่วน โดยยังส่งงานได้ต่อเนื่อง'},
       {icon: 'ti-cloud', title: 'Cloud-Native Patterns', desc: 'Container, Microservices, Serverless และ Event-driven Design เมื่อมีเหตุผลรองรับ'},
-      {icon: 'ti-api', title: 'API Modernization', desc: 'สร้าง API และ Integration Layer ที่มั่นคง เปิดช่องทางใหม่โดยไม่ต้อง Rewrite ทั้งหมด'},
-      {icon: 'ti-database-export', title: 'Data Migration', desc: 'ย้ายข้อมูลพร้อมตรวจสอบ Parity และ Rollback ได้ปลอดภัยทุกการ Cutover'},
-      {icon: 'ti-topology-star-3', title: 'Microservices Decomposition', desc: 'แตก Monolith ตามรอยต่อที่เป็นธรรมชาติ ไม่ใช่การแบ่งแบบสุ่ม'}
+      {icon: 'ti-api', title: 'API Modernization', desc: 'สร้างชั้น API และการเชื่อมระบบที่มั่นคง เปิดช่องทางใหม่ได้โดยไม่ต้องเขียนใหม่ทั้งหมด'},
+      {icon: 'ti-database-export', title: 'Data Migration', desc: 'ย้ายข้อมูลพร้อมตรวจความตรงกัน และย้อนกลับได้อย่างปลอดภัยในทุกการสลับระบบ'},
+      {icon: 'ti-topology-star-3', title: 'Microservices Decomposition', desc: 'แตก Monolith ตามรอยต่อที่เป็นธรรมชาติ ไม่ใช่แบ่งแบบสุ่ม'}
     ]
   const steps       = isEN ? [
       {no: '01', title: 'Assess', desc: 'Examine code, data, and operational conditions.'},
@@ -96,21 +96,21 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {no: '05', title: 'Verify', desc: 'Confirm parity, performance, no regressions.'},
       {no: '06', title: 'Optimize', desc: 'Improve cost efficiency, scalability, operability.'}
     ] : [
-      {no: '01', title: 'Assess', desc: 'ตรวจสอบ Code, Data และสภาพการทำงานจริง'},
-      {no: '02', title: 'Strategy', desc: 'กำหนดแนวทาง Rewrite, Refactor หรือ Replace'},
-      {no: '03', title: 'Modernize', desc: 'ปรับปรุงโครงสร้างแบบค่อยเป็นค่อยไป'},
-      {no: '04', title: 'Migrate', desc: 'จัดการการเปลี่ยนผ่าน Platform และ Data'},
-      {no: '05', title: 'Verify', desc: 'ยืนยัน Parity, Performance และไม่มี Regression'},
-      {no: '06', title: 'Optimize', desc: 'ปรับปรุงต้นทุน Scalability และการดูแลระบบ'}
+      {no: '01', title: 'Assess', desc: 'ตรวจโค้ด ข้อมูล และสภาพการทำงานจริง'},
+      {no: '02', title: 'Strategy', desc: 'กำหนดว่าจะเขียนใหม่ ปรับโครงสร้าง หรือเปลี่ยนใหม่'},
+      {no: '03', title: 'Modernize', desc: 'ปรับโครงสร้างทีละขั้น'},
+      {no: '04', title: 'Migrate', desc: 'จัดการการย้ายแพลตฟอร์มและข้อมูล'},
+      {no: '05', title: 'Verify', desc: 'ยืนยันว่าข้อมูลตรงกัน ประสิทธิภาพดี และไม่มีของเดิมพัง'},
+      {no: '06', title: 'Optimize', desc: 'ปรับต้นทุน การขยายระบบ และการดูแลระบบ'}
     ]
   const caseStudies = isEN ? [
       {tag: 'Banking · Bangkok', title: 'Monolith to Microservices, Zero Downtime', desc: 'Strangler-fig migration of core banking over 8 months, no outage.', result: 'Feature delivery: 5x faster'},
       {tag: 'Retail · Nationwide', title: 'Legacy ERP Wrapped with Modern APIs', desc: 'New mobile and partner channels shipped without touching the core.', result: '3 new channels in 4 months'},
       {tag: 'Logistics · Bangkok', title: '15-Year-Old System Moved to Kubernetes', desc: 'Containerized and migrated with full data parity verification.', result: 'Infra cost down 45%'}
     ] : [
-      {tag: 'ธนาคาร · กรุงเทพฯ', title: 'จาก Monolith สู่ Microservices แบบ Zero Downtime', desc: 'Migrate ระบบธนาคารหลักด้วย Strangler-fig ตลอด 8 เดือน ไม่มี Outage', result: 'ส่ง Feature เร็วขึ้น 5 เท่า'},
-      {tag: 'Retail · ทั่วประเทศ', title: 'Wrap ERP เดิมด้วย API สมัยใหม่', desc: 'เปิดช่องทาง Mobile และ Partner ใหม่โดยไม่ต้องแตะ Core เดิม', result: 'เปิด 3 ช่องทางใหม่ใน 4 เดือน'},
-      {tag: 'Logistics · กรุงเทพฯ', title: 'ย้ายระบบอายุ 15 ปีขึ้น Kubernetes', desc: 'Containerize และ Migrate พร้อมตรวจสอบ Data Parity เต็มรูปแบบ', result: 'ต้นทุน Infra ลดลง 45%'}
+      {tag: 'ธนาคาร · กรุงเทพฯ', title: 'จาก Monolith สู่ Microservices โดยไม่มีระบบหยุด', desc: 'ย้ายระบบธนาคารหลักด้วย Strangler-fig ตลอด 8 เดือน ไม่มีระบบล่ม', result: 'ส่งฟีเจอร์เร็วขึ้น 5 เท่า'},
+      {tag: 'Retail · ทั่วประเทศ', title: 'ครอบ ERP เดิมด้วย API สมัยใหม่', desc: 'เปิดช่องทาง Mobile และพาร์ทเนอร์ใหม่ โดยไม่ต้องแตะระบบหลักเดิม', result: 'เปิด 3 ช่องทางใหม่ใน 4 เดือน'},
+      {tag: 'Logistics · กรุงเทพฯ', title: 'ย้ายระบบอายุ 15 ปีขึ้น Kubernetes', desc: 'ใช้ Container และย้ายระบบ พร้อมตรวจความตรงกันของข้อมูลครบทุกส่วน', result: 'ต้นทุนโครงสร้างพื้นฐานลดลง 45%'}
     ]
   const faqs        = isEN ? [
       {q: 'How do you modernize without stopping the business?', a: 'Incrementally, using the strangler pattern — new services take over one capability at a time while the legacy system keeps running.'},
@@ -118,10 +118,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {q: 'Our system has no documentation. Can you still work with it?', a: 'Yes. We start by mapping what the system actually does from its code, data, and traffic, and lock in behavior with tests first.'},
       {q: 'When is a full rewrite the right choice?', a: 'Rarely, and only when the cost of incremental change genuinely exceeds a rebuild. We tell you honestly after an assessment.'}
     ] : [
-      {q: 'ปรับปรุงระบบโดยไม่หยุดธุรกิจได้อย่างไร?', a: 'ปรับแบบค่อยเป็นค่อยไปด้วย Strangler Pattern — Service ใหม่เข้ามาแทนที่ทีละความสามารถ ในขณะที่ระบบเดิมยังทำงานต่อไป'},
-      {q: 'ระบบเดิมจะกลายเป็นอะไร?', a: 'Platform ที่ดูแลง่าย, API-first และพร้อม Cloud โดยทั่วไปคือ Service บน Container ใน Kubernetes และ Event-driven เมื่อเหมาะสม'},
-      {q: 'ระบบเราไม่มีเอกสารเลย ทำได้ไหม?', a: 'ได้ครับ เป็นเรื่องปกติ เราเริ่มจากทำแผนที่สิ่งที่ระบบทำจริงจาก Code, Data และ Traffic แล้วล็อค Behavior ด้วย Test ก่อน'},
-      {q: 'เมื่อไหร่ควร Rewrite ทั้งหมด?', a: 'น้อยครั้งมาก และเฉพาะเมื่อต้นทุนของการเปลี่ยนแบบค่อยเป็นค่อยไปสูงกว่าการสร้างใหม่จริงๆ เราจะบอกตรงๆ หลัง Assessment'}
+      {q: 'ปรับปรุงระบบโดยไม่หยุดธุรกิจได้อย่างไร?', a: 'ปรับแบบค่อยเป็นค่อยไปด้วย Strangler Pattern บริการใหม่เข้ามาแทนที่ทีละส่วน ขณะที่ระบบเดิมยังทำงานต่อไป'},
+      {q: 'ระบบเดิมจะกลายเป็นอะไร?', a: 'แพลตฟอร์มที่ดูแลง่าย เป็น API-first และพร้อมใช้บน Cloud โดยทั่วไปคือบริการบน Container ใน Kubernetes และใช้ Event-driven เมื่อเหมาะสม'},
+      {q: 'ระบบเราไม่มีเอกสารเลย ทำได้ไหม?', a: 'ได้ เป็นเรื่องปกติ เราเริ่มจากทำแผนที่สิ่งที่ระบบทำจริงจากโค้ด ข้อมูล และปริมาณการใช้งาน แล้วล็อกพฤติกรรมด้วย Test ก่อน'},
+      {q: 'เมื่อไหร่ควรเขียนใหม่ทั้งหมด?', a: 'น้อยครั้งมาก และเฉพาะเมื่อการเปลี่ยนทีละส่วนมีต้นทุนสูงกว่าการสร้างใหม่จริงๆ เราจะบอกตรงๆ หลังประเมินระบบ'}
     ]
   const related     = isEN ? [
       {label: 'Cloud Services & Migration', href: '/services/cloud-services-migration'},
@@ -137,13 +137,13 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   const modLines = [
     { n: 1, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>strangler --route orders-v2</span></> },
-    { n: 2, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? '12% traffic on new service' : 'Traffic 12% เข้า Service ใหม่'}</> },
+    { n: 2, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? '12% traffic on new service' : 'Traffic 12% เข้าบริการใหม่'}</> },
     { n: 3, jsx: <>&nbsp;</> },
     { n: 4, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>diff --parity legacy vs new</span></> },
     { n: 5, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? '0 discrepancies found' : 'ไม่พบความแตกต่าง'}</> },
     { n: 6, jsx: <>&nbsp;</> },
     { n: 7, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>{isEN ? 'cutover --module orders' : 'cutover --module orders'}</span></> },
-    { n: 8, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Legacy module retired safely' : 'ปิด Module เดิมได้ปลอดภัย'}</> },
+    { n: 8, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Legacy module retired safely' : 'ปิดโมดูลเดิมได้อย่างปลอดภัย'}</> },
   ]
 
   const heroSlot = (
@@ -170,7 +170,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         style={{ background: '#1B1A33', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 20px 50px -10px rgba(0,0,0,0.6)' }}
       >
         <div className="flex items-center justify-between mb-3">
-          <span className="text-[10px] tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.85)' }}>{isEN ? 'Migration Progress' : 'ความคืบหน้า Migrate'}</span>
+          <span className="text-[10px] tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.85)' }}>{isEN ? 'Migration Progress' : 'ความคืบหน้าการย้ายระบบ'}</span>
           <span className="w-2 h-2 rounded-full" style={{ background: 'var(--lime)' }} />
         </div>
         <div className="flex items-center gap-3 mb-3">
@@ -185,7 +185,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </div>
         <div className="flex items-center gap-1.5 text-xs" style={{ color: 'var(--lime)' }}>
           <i className="ti ti-circle-check" style={{ fontSize: 13 }} aria-hidden="true" />
-          {isEN ? 'Zero downtime maintained' : 'ไม่มี Downtime ตลอดโปรเจกต์'}
+          {isEN ? 'Zero downtime maintained' : 'ไม่มีระบบหยุดตลอดโปรเจกต์'}
         </div>
       </div>
     </div>
@@ -197,10 +197,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-cloud', title: 'Cloud-Native Patterns', desc: 'Containers, microservices, serverless, and event-driven designs where justified.' },
     { icon: 'ti-api', title: 'API Modernization', desc: 'Stable APIs and integration layers enabling new channels without full rewrites.' },
   ] : [
-    { icon: 'ti-search', title: 'Legacy Assessment', desc: 'วิเคราะห์ด้านเทคนิคและธุรกิจ เพื่อตัดสินใจว่าอะไรควร Rewrite, Wrap, Replace หรือ Retain' },
-    { icon: 'ti-adjustments', title: 'Incremental Refactoring', desc: 'ปรับปรุงโครงสร้างและ Testability ทีละส่วน พร้อมรักษา Continuous Delivery' },
+    { icon: 'ti-search', title: 'Legacy Assessment', desc: 'วิเคราะห์ด้านเทคนิคและธุรกิจ เพื่อตัดสินใจว่าส่วนไหนควรเขียนใหม่ ครอบด้วย API เปลี่ยนใหม่ หรือคงไว้' },
+    { icon: 'ti-adjustments', title: 'Incremental Refactoring', desc: 'ปรับโครงสร้างและทำให้ทดสอบได้ทีละส่วน โดยยังส่งงานได้ต่อเนื่อง' },
     { icon: 'ti-cloud', title: 'Cloud-Native Patterns', desc: 'Container, Microservices, Serverless และ Event-driven Design เมื่อมีเหตุผลรองรับ' },
-    { icon: 'ti-api', title: 'API Modernization', desc: 'สร้าง API และ Integration Layer ที่มั่นคง เปิดช่องทางใหม่โดยไม่ต้อง Rewrite ทั้งหมด' },
+    { icon: 'ti-api', title: 'API Modernization', desc: 'สร้างชั้น API และการเชื่อมระบบที่มั่นคง เปิดช่องทางใหม่ได้โดยไม่ต้องเขียนใหม่ทั้งหมด' },
   ]
 
   const techStack = [
@@ -221,12 +221,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '05', title: 'Verify', desc: 'Parity, performance, no regressions' },
     { no: '06', title: 'Optimize', desc: 'Cost, scalability, operability' },
   ] : [
-    { no: '01', title: 'Assess', desc: 'Code, Data และสภาพการทำงานจริง' },
-    { no: '02', title: 'Strategy', desc: 'Rewrite, Refactor หรือ Replace' },
-    { no: '03', title: 'Modernize', desc: 'ปรับปรุงโครงสร้างแบบค่อยเป็นค่อยไป' },
-    { no: '04', title: 'Migrate', desc: 'เปลี่ยนผ่าน Platform และ Data' },
-    { no: '05', title: 'Verify', desc: 'Parity, Performance และไม่มี Regression' },
-    { no: '06', title: 'Optimize', desc: 'ต้นทุน Scalability และการดูแลระบบ' },
+    { no: '01', title: 'Assess', desc: 'โค้ด ข้อมูล และสภาพการทำงานจริง' },
+    { no: '02', title: 'Strategy', desc: 'เขียนใหม่ ปรับโครงสร้าง หรือเปลี่ยนใหม่' },
+    { no: '03', title: 'Modernize', desc: 'ปรับโครงสร้างทีละขั้น' },
+    { no: '04', title: 'Migrate', desc: 'ย้ายแพลตฟอร์มและข้อมูล' },
+    { no: '05', title: 'Verify', desc: 'ข้อมูลตรงกัน ประสิทธิภาพดี และไม่มีของเดิมพัง' },
+    { no: '06', title: 'Optimize', desc: 'ต้นทุน การขยายระบบ และการดูแลระบบ' },
   ]
 
   const darkFaqs = isEN ? [
@@ -239,14 +239,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { q: 'What happens to our team during the modernization process?', a: 'We work alongside your engineers rather than in a silo, pairing on the parts of the system they know best and transferring knowledge as we go. By the time we hand over, your team understands the new architecture because they helped build it, not because they read a document afterward.' },
     { q: 'Who owns the code and infrastructure after the project?', a: 'You do, entirely. All new services, infrastructure code, and documentation live in your own repositories and cloud accounts from day one. We work inside your environment, so there is no separate system to migrate away from us at handover.' },
   ] : [
-    { q: 'ปรับปรุงระบบเดิมโดยไม่หยุดธุรกิจได้อย่างไร?', a: 'ปรับแบบค่อยเป็นค่อยไปครับ เราใช้ Strangler Pattern โดย Service ใหม่จะเข้ามาแทนที่ทีละความสามารถผ่าน API Gateway ในขณะที่ระบบเดิมยังทำงานต่อไป ธุรกิจจึงไม่ต้องหยุดเพื่อรอ Rewrite Traffic จะค่อยๆ ย้ายไปเมื่อแต่ละส่วนใหม่พิสูจน์ตัวเองบน Production แล้ว' },
-    { q: 'Haliviq ปรับระบบเดิมให้กลายเป็นอะไร?', a: 'Platform ที่ดูแลรักษาง่าย, API-first และพร้อม Cloud โดยทั่วไปคือ Service บน Container ใน Kubernetes, Event-driven เมื่อช่วยได้จริง และ Serverless เมื่อง่ายกว่า Architecture เป้าหมายจะตามทีมและ Workload ของคุณ ไม่ใช่ตามกระแส เราไม่ Default ไปที่ Microservices เพียงเพราะฟังดูทันสมัย' },
-    { q: 'ระบบเดิมของเราไม่มีเอกสารเลย ยังทำงานด้วยได้ไหม?', a: 'ได้ครับ เป็นเรื่องปกติ ไม่ใช่อุปสรรค เราเริ่มจากทำแผนที่สิ่งที่ระบบทำจริงจาก Code, Data และ Traffic บน Production แล้วล็อค Behavior ปัจจุบันด้วย Test ก่อนเปลี่ยนแปลงอะไร เพื่อให้รู้ทันทีถ้าการเปลี่ยนแปลงทำให้อะไรพัง' },
-    { q: 'เมื่อไหร่ควรเลือก Rewrite ทั้งหมดแทนการปรับปรุงแบบค่อยเป็นค่อยไป?', a: 'น้อยครั้งมาก และเฉพาะเมื่อต้นทุนของการเปลี่ยนแบบค่อยเป็นค่อยไปสูงกว่าการสร้างใหม่จริงๆ มักเกิดขึ้นเมื่อเทคโนโลยีเดิมไม่มีใครรองรับแล้ว หรือ Domain Model เองผิดตั้งแต่ต้น เราจะบอกตรงๆ ว่าระบบคุณอยู่ฝั่งไหนหลัง Assessment ไม่ใช่ขาย Rewrite เป็น Default' },
-    { q: 'โปรเจกต์ Modernization ทั่วไปใช้เวลานานแค่ไหน?', a: 'Migrate หนึ่ง Module ด้วย Strangler Pattern มักใช้เวลา 2-4 เดือนตั้งแต่ Assessment ถึง Cutover เต็มรูปแบบ ส่วนการแตก Monolith ทั้งระบบสำหรับระบบขนาดใหญ่ แบ่งเป็น Phase ตลอด 6-18 เดือน แต่ละ Phase ส่งมอบ Software ที่ใช้งานได้จริงและความคืบหน้าที่วัดผลได้ ไม่ใช่โปรเจกต์ยาวๆ ที่ไม่มีอะไรให้เห็นจนจบ' },
-    { q: 'Application Modernization มีค่าใช้จ่ายเท่าไหร่?', a: 'ต้นทุนขึ้นอยู่กับขนาดและความซับซ้อนของระบบเดิม และปริมาณที่ต้องเปลี่ยนแปลง การ Assessment แบบเจาะจงมักเริ่มต้นที่หลักหมื่นปลายๆ (บาท) ส่วนโปรแกรม Modernization แบบแบ่ง Phase จะเสนอราคาต่อ Phase หลัง Assessment นั้น เพื่อให้คุณ Validate คุณค่าก่อนตัดสินใจ Phase ถัดไป' },
-    { q: 'ทีมของเราจะเป็นอย่างไรระหว่างกระบวนการ Modernization?', a: 'เราทำงานเคียงข้างทีม Engineer ของคุณ ไม่ใช่แยกทำเงียบๆ โดย Pair กับส่วนของระบบที่พวกเขาเข้าใจดีที่สุด และ Transfer Knowledge ไปตลอดทาง เมื่อถึงตอนส่งมอบ ทีมคุณจะเข้าใจ Architecture ใหม่เพราะพวกเขาช่วยสร้างมันขึ้นมา ไม่ใช่เพราะอ่านเอกสารทีหลัง' },
-    { q: 'Code และ Infrastructure เป็นของใครหลังจบโปรเจกต์?', a: 'เป็นของคุณทั้งหมดครับ Service ใหม่, Infrastructure Code และเอกสารทั้งหมดอยู่ใน Repository และ Cloud Account ของคุณเองตั้งแต่วันแรก เราทำงานในสภาพแวดล้อมของคุณ จึงไม่มีระบบแยกที่ต้อง Migrate ออกจากเราตอนส่งมอบ' },
+    { q: 'ปรับปรุงระบบเดิมโดยไม่หยุดธุรกิจได้อย่างไร?', a: 'ปรับแบบค่อยเป็นค่อยไป เราใช้ Strangler Pattern โดยบริการใหม่จะเข้ามาแทนที่ทีละส่วนผ่าน API Gateway ขณะที่ระบบเดิมยังทำงานต่อไป ธุรกิจจึงไม่ต้องหยุดรอการเขียนใหม่ Traffic จะค่อยๆ ย้ายไปเมื่อแต่ละส่วนใหม่พิสูจน์ตัวเองบนระบบจริงแล้ว' },
+    { q: 'Haliviq ปรับระบบเดิมให้กลายเป็นอะไร?', a: 'แพลตฟอร์มที่ดูแลง่าย เป็น API-first และพร้อมใช้บน Cloud โดยทั่วไปคือบริการบน Container ใน Kubernetes ใช้ Event-driven เมื่อช่วยได้จริง และใช้ Serverless เมื่อง่ายกว่า สถาปัตยกรรมปลายทางจะดูตามทีมและงานของคุณ ไม่ใช่ตามกระแส เราไม่เลือก Microservices ทันทีเพียงเพราะฟังดูทันสมัย' },
+    { q: 'ระบบเดิมของเราไม่มีเอกสารเลย ยังทำงานด้วยได้ไหม?', a: 'ได้ เป็นเรื่องปกติ ไม่ใช่อุปสรรค เราเริ่มจากทำแผนที่สิ่งที่ระบบทำจริงจากโค้ด ข้อมูล และ Traffic บนระบบจริง แล้วล็อกพฤติกรรมปัจจุบันด้วย Test ก่อนแก้อะไร เพื่อให้รู้ทันทีถ้าการแก้ไขทำให้อะไรพัง' },
+    { q: 'เมื่อไหร่ควรเลือก Rewrite ทั้งหมดแทนการปรับปรุงแบบค่อยเป็นค่อยไป?', a: 'น้อยครั้งมาก และเฉพาะเมื่อการเปลี่ยนทีละส่วนมีต้นทุนสูงกว่าการสร้างใหม่จริงๆ มักเกิดเมื่อเทคโนโลยีเดิมไม่มีใครรองรับแล้ว หรือโครงสร้างของข้อมูลธุรกิจผิดมาตั้งแต่ต้น เราจะบอกตรงๆ ว่าระบบของคุณอยู่ฝั่งไหนหลังประเมินระบบ ไม่ได้ขายการเขียนใหม่เป็นค่าเริ่มต้น' },
+    { q: 'โปรเจกต์ Modernization ทั่วไปใช้เวลานานแค่ไหน?', a: 'ย้ายหนึ่งโมดูลด้วย Strangler Pattern มักใช้เวลา 2-4 เดือน ตั้งแต่ประเมินระบบจนสลับใช้ระบบใหม่เต็มรูปแบบ ส่วนการแตก Monolith ทั้งระบบสำหรับระบบขนาดใหญ่ จะแบ่งเป็นเฟสตลอด 6-18 เดือน แต่ละเฟสส่งมอบซอฟต์แวร์ที่ใช้งานได้จริงและความคืบหน้าที่วัดผลได้ ไม่ใช่โปรเจกต์ยาวที่ไม่มีอะไรให้เห็นจนจบ' },
+    { q: 'Application Modernization มีค่าใช้จ่ายเท่าไหร่?', a: 'ต้นทุนขึ้นอยู่กับขนาดและความซับซ้อนของระบบเดิม และปริมาณที่ต้องเปลี่ยน การประเมินระบบแบบเจาะจงมักเริ่มที่หลักหมื่นปลายๆ (บาท) ส่วนโปรแกรมปรับปรุงที่แบ่งเป็นเฟสจะเสนอราคาเป็นรายเฟสหลังการประเมิน เพื่อให้คุณเห็นคุณค่าก่อนตัดสินใจเฟสถัดไป' },
+    { q: 'ทีมของเราจะเป็นอย่างไรระหว่างกระบวนการ Modernization?', a: 'เราทำงานเคียงข้างทีมวิศวกรของคุณ ไม่ใช่แยกทำเงียบๆ โดยทำงานคู่กับส่วนของระบบที่พวกเขาเข้าใจดีที่สุด และถ่ายทอดความรู้ไปตลอดทาง เมื่อส่งมอบ ทีมของคุณจะเข้าใจสถาปัตยกรรมใหม่ เพราะพวกเขาช่วยสร้างมันขึ้นมา ไม่ใช่เพราะอ่านเอกสารทีหลัง' },
+    { q: 'Code และ Infrastructure เป็นของใครหลังจบโปรเจกต์?', a: 'เป็นของคุณทั้งหมด บริการใหม่ โค้ดโครงสร้างพื้นฐาน และเอกสารทั้งหมดอยู่ใน Repository และ Cloud Account ของคุณเองตั้งแต่วันแรก เราทำงานในสภาพแวดล้อมของคุณ จึงไม่มีระบบแยกที่ต้องย้ายออกจากเราตอนส่งมอบ' },
   ]
 
   const postHeroSlot = (
@@ -296,7 +296,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'Proven architecture patterns we apply where they fit — chosen for the problem, not the trend cycle.'
-              : 'Architecture Pattern ที่พิสูจน์แล้ว เลือกใช้ตามโจทย์งานจริง ไม่ใช่ตามกระแส'}
+              : 'รูปแบบสถาปัตยกรรมที่พิสูจน์แล้ว เลือกใช้ตามโจทย์งานจริง ไม่ใช่ตามกระแส'}
           </p>
 
           <div className="flex flex-wrap gap-3">
@@ -327,7 +327,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <p className="mb-16" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'A clear path from legacy to modern — adjusted per system, never one-size-fits-all.'
-              : 'เส้นทางที่ชัดเจนจากระบบเดิมสู่ระบบสมัยใหม่ ปรับตามแต่ละระบบ ไม่ใช่สูตรสำเร็จตายตัว'}
+              : 'เส้นทางที่ชัดเจนจากระบบเดิมสู่ระบบสมัยใหม่ ปรับตามแต่ละระบบ ไม่ใช่สูตรตายตัว'}
           </p>
 
           <div className="relative">
@@ -397,7 +397,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
         </h2>
         <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-          {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+          {isEN ? "We'd love to hear what you're building." : 'เรายินดีฟังว่าคุณกำลังสร้างอะไรอยู่'}
         </p>
         <div className="flex flex-wrap items-center gap-6">
           <Link
@@ -405,7 +405,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-medium transition-opacity hover:opacity-90"
             style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}
           >
-            {isEN ? 'Start a Conversation' : 'เริ่มบทสนทนา'}
+            {isEN ? 'Start a Conversation' : 'เริ่มคุยกับเรา'}
             <i className="ti ti-arrow-right" style={{ fontSize: 17 }} aria-hidden="true" />
           </Link>
           <a href="mailto:wu@haliviq.com" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>

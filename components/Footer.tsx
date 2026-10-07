@@ -28,7 +28,7 @@ export default function Footer({ lang, tr }: Props) {
             {lang === 'en' ? 'Our Global Offices' : 'สำนักงานของเรา'}
           </h2>
           <p className="mb-10" style={{ color: 'rgba(255,255,255,0.65)', fontSize: '1.05rem', fontWeight: 400 }}>
-            {lang === 'en' ? "With offices in Thailand and the USA, we're ready to help you wherever you are." : 'ด้วยสำนักงานในประเทศไทยและสหรัฐอเมริกา เราพร้อมช่วยคุณไม่ว่าอยู่ที่ไหน'}
+            {lang === 'en' ? "With offices in Thailand and the USA, we're ready to help you wherever you are." : 'เรามีสำนักงานในไทยและสหรัฐอเมริกา พร้อมช่วยคุณไม่ว่าจะอยู่ที่ไหน'}
           </p>
           <div className="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
             {[
@@ -116,7 +116,7 @@ export default function Footer({ lang, tr }: Props) {
               { h: '/terms', l: f.terms },
               { h: '/cookies', l: lang === 'en' ? 'Cookie Policy' : 'นโยบายคุกกี้' },
               { h: '/code-of-conduct', l: lang === 'en' ? 'Code of Conduct' : 'จรรยาบรรณธุรกิจ' },
-              { h: '/anti-corruption', l: lang === 'en' ? 'ABAC Policy' : 'นโยบายต่อต้านทุจริต (ABAC)' },
+              { h: '/anti-corruption', l: lang === 'en' ? 'ABAC Policy' : 'นโยบายต่อต้านการทุจริต (ABAC)' },
             ].map(i => (
               <Link key={i.h} href={`${prefix}${i.h}`} className="text-xs hover:text-white transition-colors" style={{ color: 'rgba(255,255,255,0.4)', fontWeight: 400 }}>{i.l}</Link>
             ))}

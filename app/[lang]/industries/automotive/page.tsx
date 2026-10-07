@@ -16,7 +16,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge = isEN ? 'Industry / Automotive' : 'อุตสาหกรรม / ยานยนต์'
   const heroSubhead = isEN
     ? 'Connected vehicle and mobility solutions for the automotive industry.'
-    : 'โซลูชันยานยนต์เชื่อมต่อและ Mobility สำหรับอุตสาหกรรมยานยนต์'
+    : 'ระบบรถยนต์เชื่อมต่ออินเทอร์เน็ตและบริการ Mobility สำหรับธุรกิจยานยนต์'
 
   const challenges = isEN ? [
     { icon: 'ti-plug', title: 'EV Charging Infrastructure Fragmentation', desc: 'Charging networks span dozens of hardware vendors and payment systems with no unified standard, leaving drivers with inconsistent availability data and fragmented apps across providers.' },
@@ -24,15 +24,15 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-tool', title: 'Dealer & Service Network Experience Gaps', desc: 'Dealers and service centers still rely on disconnected legacy systems for scheduling, parts, and warranty claims, creating friction that erodes customer trust at every touchpoint.' },
     { icon: 'ti-cpu', title: 'Software-Defined-Vehicle Complexity', desc: 'As vehicles shift from hardware-defined to software-defined architectures, OEMs must manage over-the-air updates, feature flags, and safety-critical compliance across an ever-growing codebase.' },
   ] : [
-    { icon: 'ti-plug', title: 'ความกระจัดกระจายของโครงสร้างพื้นฐาน EV Charging', desc: 'เครือข่ายสถานีชาร์จกระจายอยู่ในผู้ผลิตฮาร์ดแวร์และระบบชำระเงินหลายสิบเจ้าโดยไม่มีมาตรฐานร่วมกัน ทำให้ผู้ขับเจอข้อมูลความพร้อมใช้งานที่ไม่ตรงกันและแอปที่แยกกันในแต่ละผู้ให้บริการ' },
-    { icon: 'ti-shield-lock', title: 'ปริมาณข้อมูลและความปลอดภัยของ Connected Car', desc: 'รถยนต์สมัยใหม่สร้างข้อมูล Telemetry หลาย Terabyte ต่อวัน การรักษาความปลอดภัย Data Pipeline จากการดักจับหรือแก้ไขข้อมูล ในขณะที่ยังต้อง Query ได้แบบ Real-time เป็นความท้าทายทางวิศวกรรมตลอดเวลา' },
-    { icon: 'ti-tool', title: 'ช่องว่างประสบการณ์ดิจิทัลของเครือข่ายดีลเลอร์และศูนย์บริการ', desc: 'ดีลเลอร์และศูนย์บริการยังพึ่งพาระบบเก่าที่แยกจากกันสำหรับการนัดหมาย อะไหล่ และการเคลม Warranty สร้างความไม่ราบรื่นที่บั่นทอนความไว้วางใจของลูกค้าในทุกจุดสัมผัส' },
-    { icon: 'ti-cpu', title: 'ความซับซ้อนของ Software-Defined Vehicle', desc: 'เมื่อรถยนต์เปลี่ยนจากสถาปัตยกรรมที่ขับเคลื่อนด้วยฮาร์ดแวร์ไปเป็น Software-Defined ผู้ผลิตต้องจัดการ OTA Update, Feature Flag และ Compliance ด้าน Safety ที่ครอบคลุม Codebase ที่ขยายตัวตลอดเวลา' },
+    { icon: 'ti-plug', title: 'สถานีชาร์จ EV กระจัดกระจาย', desc: 'สถานีชาร์จกระจายอยู่กับผู้ผลิตฮาร์ดแวร์และระบบชำระเงินหลายสิบเจ้า ไม่มีมาตรฐานร่วมกัน ผู้ขับจึงเจอข้อมูลสถานะที่ไม่ตรงกัน และต้องใช้แอปแยกกันของแต่ละผู้ให้บริการ' },
+    { icon: 'ti-shield-lock', title: 'ข้อมูลจำนวนมากและความปลอดภัยของรถเชื่อมต่อ', desc: 'รถยนต์สมัยใหม่สร้างข้อมูล Telemetry หลาย Terabyte ต่อวัน การป้องกัน Data Pipeline ไม่ให้ถูกดักหรือแก้ไขข้อมูล โดยยังค้นข้อมูลแบบเรียลไทม์ได้ เป็นโจทย์วิศวกรรมที่ยากอยู่เสมอ' },
+    { icon: 'ti-tool', title: 'ประสบการณ์ดิจิทัลของดีลเลอร์และศูนย์บริการยังไม่ดี', desc: 'ดีลเลอร์และศูนย์บริการยังใช้ระบบเก่าแยกกันสำหรับการนัดหมาย อะไหล่ และการเคลมประกัน ทำให้ติดขัด และลดความไว้วางใจของลูกค้าในทุกขั้นตอน' },
+    { icon: 'ti-cpu', title: 'ความซับซ้อนของรถที่ขับเคลื่อนด้วยซอฟต์แวร์', desc: 'เมื่อรถเปลี่ยนจากฮาร์ดแวร์เป็นหลักไปเป็น Software-Defined ผู้ผลิตต้องจัดการ OTA Update, Feature Flag และความปลอดภัยตามข้อกำหนด บน Codebase ที่ใหญ่ขึ้นเรื่อยๆ' },
   ]
 
   const metrics = [
-    { value: '$285B', label: isEN ? 'Global Connected Car Market Size by 2030' : 'ขนาดตลาด Connected Car ทั่วโลกภายในปี 2030', source: 'MarketsandMarkets Connected Car Market Report, 2024' },
-    { value: '26%', label: isEN ? 'Projected Annual Growth in Global EV Adoption' : 'อัตราการเติบโตต่อปีที่คาดการณ์ของการใช้งาน EV ทั่วโลก', source: 'IEA Global EV Outlook, 2024' },
+    { value: '$285B', label: isEN ? 'Global Connected Car Market Size by 2030' : 'ขนาดตลาดรถยนต์เชื่อมต่ออินเทอร์เน็ตทั่วโลกภายในปี 2030', source: 'MarketsandMarkets Connected Car Market Report, 2024' },
+    { value: '26%', label: isEN ? 'Projected Annual Growth in Global EV Adoption' : 'อัตราการเติบโตต่อปีที่คาดการณ์ของการใช้รถ EV ทั่วโลก', source: 'IEA Global EV Outlook, 2024' },
     { value: '20%', label: isEN ? 'Cost Savings from Telematics-Driven Fleet Management' : 'ต้นทุนที่ประหยัดได้จากการบริหารกองยานด้วย Telematics', source: 'Deloitte Future of Mobility Study, 2024' },
   ]
 
@@ -44,12 +44,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-steering-wheel', title: 'In-Car UX & Infotainment Software', desc: 'Infotainment and HMI software built for automotive-grade constraints, delivering responsive navigation, media, and voice experiences behind the wheel.' },
     { icon: 'ti-chart-dots', title: 'Predictive Vehicle-Maintenance Analytics', desc: 'Machine learning models that analyze sensor data to predict component failures before they happen, reducing downtime and unplanned service visits.' },
   ] : [
-    { icon: 'ti-bolt', title: 'EV Charging Network Apps', desc: 'แอปสำหรับผู้ใช้และผู้ให้บริการที่รวมการค้นหาสถานี ความพร้อมใช้งานแบบ Real-time การจอง และการชำระเงินในเครือข่ายชาร์จหลายผู้ให้บริการไว้ในที่เดียว' },
-    { icon: 'ti-truck', title: 'Fleet Management Platforms', desc: 'แพลตฟอร์มบริหารกองยานแบบครบวงจร พร้อม Route Optimization, การให้คะแนนพฤติกรรมผู้ขับ, ติดตามเชื้อเพลิงและพลังงาน และรายงาน Compliance สำหรับผู้ให้บริการโลจิสติกส์' },
-    { icon: 'ti-dashboard', title: 'Connected-Car Telematics Dashboards', desc: 'Dashboard แบบ Real-time ที่รับข้อมูล Telemetry จากรถยนต์เพื่อแสดงผลการวินิจฉัย ตำแหน่ง และ Insight การใช้งานสำหรับเจ้าของรถ กองยาน และทีมปฏิบัติการของผู้ผลิต' },
-    { icon: 'ti-calendar-event', title: 'Dealer & Service Booking Systems', desc: 'แพลตฟอร์มจัดตารางนัดหมายและบริหารศูนย์บริการดิจิทัล ที่เชื่อมดีลเลอร์ ช่างบริการ คลังอะไหล่ และลูกค้าไว้ใน Workflow เดียวที่ราบรื่น' },
-    { icon: 'ti-steering-wheel', title: 'In-Car UX & Infotainment Software', desc: 'ซอฟต์แวร์ Infotainment และ HMI ที่ออกแบบภายใต้ข้อจำกัดระดับยานยนต์ มอบประสบการณ์นำทาง มีเดีย และการสั่งงานด้วยเสียงที่ตอบสนองรวดเร็วขณะขับขี่' },
-    { icon: 'ti-chart-dots', title: 'Predictive Vehicle-Maintenance Analytics', desc: 'โมเดล Machine Learning ที่วิเคราะห์ข้อมูลจากเซนเซอร์เพื่อพยากรณ์ความเสียหายของชิ้นส่วนก่อนที่จะเกิดขึ้นจริง ลด Downtime และการเข้าศูนย์บริการที่ไม่ได้วางแผนไว้' },
+    { icon: 'ti-bolt', title: 'EV Charging Network Apps', desc: 'แอปสำหรับผู้ขับและผู้ให้บริการ รวมการค้นหาสถานี สถานะแบบเรียลไทม์ การจอง และการชำระเงินของเครือข่ายชาร์จหลายผู้ให้บริการไว้ในที่เดียว' },
+    { icon: 'ti-truck', title: 'Fleet Management Platforms', desc: 'แพลตฟอร์มบริหารกองยานครบทุกด้าน มี Route Optimization ให้คะแนนพฤติกรรมผู้ขับ ติดตามเชื้อเพลิงและพลังงาน และรายงานตามข้อกำหนดสำหรับผู้ให้บริการโลจิสติกส์' },
+    { icon: 'ti-dashboard', title: 'Connected-Car Telematics Dashboards', desc: 'Dashboard แบบเรียลไทม์ที่รับข้อมูล Telemetry จากรถ แสดงผลวินิจฉัย ตำแหน่ง และข้อมูลการใช้งาน สำหรับเจ้าของรถ กองยาน และทีมปฏิบัติการของผู้ผลิต' },
+    { icon: 'ti-calendar-event', title: 'Dealer & Service Booking Systems', desc: 'แพลตฟอร์มนัดหมายและบริหารศูนย์บริการ เชื่อมดีลเลอร์ ช่างบริการ คลังอะไหล่ และลูกค้าไว้ในขั้นตอนเดียวที่ต่อเนื่อง' },
+    { icon: 'ti-steering-wheel', title: 'In-Car UX & Infotainment Software', desc: 'ซอฟต์แวร์ Infotainment และ HMI ที่ออกแบบตามข้อจำกัดของรถยนต์ นำทาง เล่นสื่อ และสั่งงานด้วยเสียงได้ไว ขณะขับขี่' },
+    { icon: 'ti-chart-dots', title: 'Predictive Vehicle-Maintenance Analytics', desc: 'โมเดล Machine Learning วิเคราะห์ข้อมูลเซนเซอร์เพื่อทำนายว่าชิ้นส่วนจะเสียก่อนเกิดขึ้นจริง ลด Downtime และการเข้าศูนย์บริการโดยไม่ได้วางแผน' },
   ]
 
   const techStack = ['React', 'React Native', 'IoT', 'MQTT', 'Kubernetes', 'AWS', 'PostgreSQL', 'GraphQL', 'Machine Learning', 'Edge Computing', 'gRPC', 'Digital Twin', 'TimescaleDB']
@@ -59,9 +59,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '02', title: 'Fleet Telematics Dashboard', desc: 'Live operations dashboard aggregating vehicle location, driver behavior, and energy consumption data to optimize routes and reduce fleet operating costs.' },
     { no: '03', title: 'Predictive Maintenance Platform', desc: 'Sensor-driven analytics platform that flags at-risk components ahead of failure, scheduling proactive service and minimizing vehicle downtime.' },
   ] : [
-    { no: '01', title: 'EV Charging Network App', desc: 'แอปมือถือข้ามเครือข่ายที่ให้ผู้ขับค้นหา จอง และชำระเงินสำหรับการชาร์จแบบ Real-time ในเครือข่ายผู้ให้บริการสถานีชาร์จหลายราย' },
-    { no: '02', title: 'Fleet Telematics Dashboard', desc: 'Dashboard ปฏิบัติการแบบสดที่รวมข้อมูลตำแหน่งรถ พฤติกรรมผู้ขับ และการใช้พลังงาน เพื่อเพิ่มประสิทธิภาพเส้นทางและลดต้นทุนการดำเนินงานของกองยาน' },
-    { no: '03', title: 'Predictive Maintenance Platform', desc: 'แพลตฟอร์มวิเคราะห์ข้อมูลจากเซนเซอร์ที่แจ้งเตือนชิ้นส่วนที่มีความเสี่ยงก่อนเกิดความเสียหาย พร้อมจัดตารางบริการเชิงรุกเพื่อลด Downtime ของยานพาหนะ' },
+    { no: '01', title: 'EV Charging Network App', desc: 'แอปมือถือที่ให้ผู้ขับค้นหา จอง และจ่ายเงินค่าชาร์จแบบเรียลไทม์ ได้ในสถานีของผู้ให้บริการหลายราย' },
+    { no: '02', title: 'Fleet Telematics Dashboard', desc: 'Dashboard ปฏิบัติการแบบสด รวมข้อมูลตำแหน่งรถ พฤติกรรมผู้ขับ และการใช้พลังงาน เพื่อปรับเส้นทางให้มีประสิทธิภาพและลดต้นทุนของกองยาน' },
+    { no: '03', title: 'Predictive Maintenance Platform', desc: 'แพลตฟอร์มวิเคราะห์ข้อมูลเซนเซอร์ แจ้งเตือนชิ้นส่วนเสี่ยงก่อนเสียหาย และจัดตารางเข้าศูนย์บริการล่วงหน้าเพื่อลด Downtime ของรถ' },
   ]
 
   const heroVisual = (
@@ -173,7 +173,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
                   ? 'We help automotive OEMs, dealers, and mobility operators build EV charging apps, fleet management platforms, connected-car telematics dashboards, and predictive maintenance systems that keep vehicles on the road and customers loyal. Our solutions handle massive sensor data volumes in real time while combining automotive-grade reliability with modern, delightful software experiences.'
-                  : 'เราช่วยผู้ผลิตรถยนต์ ดีลเลอร์ และผู้ให้บริการ Mobility สร้างแอป EV Charging, แพลตฟอร์มบริหารกองยาน, Dashboard Telematics สำหรับ Connected Car และระบบ Predictive Maintenance ที่ทำให้รถวิ่งได้อย่างต่อเนื่องและลูกค้าภักดี โซลูชันของเรารองรับปริมาณข้อมูลเซนเซอร์มหาศาลแบบ Real-time พร้อมผสาน Reliability ระดับยานยนต์เข้ากับประสบการณ์ซอฟต์แวร์ที่ทันสมัยและใช้งานง่าย'}
+                  : 'เราช่วยผู้ผลิตรถยนต์ ดีลเลอร์ และผู้ให้บริการ Mobility สร้างแอปชาร์จ EV แพลตฟอร์มบริหารกองยาน Dashboard Telematics สำหรับรถเชื่อมต่ออินเทอร์เน็ต และระบบทำนายการซ่อมบำรุง เพื่อให้รถใช้งานได้ต่อเนื่องและลูกค้าอยู่กับแบรนด์ ระบบของเรารองรับข้อมูลเซนเซอร์ปริมาณมหาศาลแบบเรียลไทม์ ด้วยความเสถียรระดับยานยนต์ และซอฟต์แวร์ที่ทันสมัยใช้งานง่าย'}
               </p>
             </div>
           </div>
@@ -191,7 +191,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Understanding the critical obstacles that drive digital transformation in this industry.'
-                : 'ความเข้าใจอุปสรรคสำคัญที่ผลักดันการปรับสู่ดิจิทัลในอุตสาหกรรมนี้'}
+                : 'ปัญหาหลักที่ธุรกิจในอุตสาหกรรมนี้ต้องเจอ'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -241,7 +241,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'โซลูชันที่พิสูจน์แล้วซึ่งเราสร้างเพื่อตอบโจทย์ที่สำคัญที่สุดของอุตสาหกรรมคุณ'}
+              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -264,12 +264,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Tech Stack' : 'เทคโนโลยีที่ใช้'}
             </p>
             <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
-              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้งาน'}
+              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้'}
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Industry-proven tools and frameworks we leverage to build robust solutions.'
-                : 'เครื่องมือและ Framework ที่พิสูจน์แล้วในอุตสาหกรรม ที่เราใช้สร้างโซลูชันที่แข็งแรงและเชื่อถือได้'}
+                : 'เครื่องมือและ Framework ที่เราเลือกใช้ เพราะมั่นคงและเชื่อถือได้'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -295,7 +295,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างโปรเจกต์ที่เราส่งมอบจริงให้กับลูกค้าในอุตสาหกรรมนี้'}
+              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างงานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -335,7 +335,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link

@@ -15,12 +15,12 @@ const featureCardsEN = [
   { icon: 'ti-language', title: 'Language Support', desc: 'Built-in support for the languages an international patient base needs.' },
 ]
 const featureCardsTH = [
-  { icon: 'ti-code', title: 'Scalability', desc: 'ออกแบบให้ต่อยอด Feature ใหม่ๆ ได้อย่างต่อเนื่องในอนาคต' },
-  { icon: 'ti-search', title: 'Find a Doctor', desc: 'ค้นหาและกรองแพทย์ได้ครบทุกความเชี่ยวชาญและสาขา' },
-  { icon: 'ti-users-group', title: 'Connect with Patients', desc: 'เปิดหลายช่องทางให้ผู้ป่วยติดต่อโรงพยาบาลได้ ทั้งแอป ฟอร์ม และ Call Center' },
-  { icon: 'ti-affiliate', title: 'Seamless Integration', desc: 'เชื่อมต่อกับเว็บไซต์เดิมได้อย่างไร้รอยต่อ รักษา Brand Identity ไว้ครบ' },
-  { icon: 'ti-calendar-check', title: 'Easy Bookings', desc: 'จองนัดหมายตามเงื่อนไขที่ผู้ป่วยให้ความสำคัญจริงๆ' },
-  { icon: 'ti-language', title: 'Language Support', desc: 'รองรับหลายภาษาสำหรับฐานผู้ป่วยนานาชาติ' },
+  { icon: 'ti-code', title: 'Scalability', desc: 'ออกแบบให้เพิ่มฟีเจอร์ใหม่ได้ในอนาคต' },
+  { icon: 'ti-search', title: 'Find a Doctor', desc: 'ค้นหาและกรองแพทย์ได้ทุกสาขาและความเชี่ยวชาญ' },
+  { icon: 'ti-users-group', title: 'Connect with Patients', desc: 'ผู้ป่วยติดต่อโรงพยาบาลได้หลายช่องทาง ทั้งแอป ฟอร์ม และ Call Center' },
+  { icon: 'ti-affiliate', title: 'Seamless Integration', desc: 'เชื่อมกับเว็บไซต์เดิมได้ลื่นไหล และคงเอกลักษณ์แบรนด์ไว้ครบ' },
+  { icon: 'ti-calendar-check', title: 'Easy Bookings', desc: 'จองนัดตามเงื่อนไขที่ผู้ป่วยต้องการจริง ๆ' },
+  { icon: 'ti-language', title: 'Language Support', desc: 'รองรับหลายภาษา สำหรับผู้ป่วยต่างชาติ' },
 ]
 
 const featuredEN = {
@@ -30,8 +30,8 @@ const featuredEN = {
 }
 const featuredTH = {
   badge: 'Healthcare & Life Sciences', client: 'เครือโรงพยาบาลสุขุมวิท',
-  title: 'แอปมือถือระบบสุขภาพดิจิทัลครบวงจร',
-  desc: 'สร้างแอปมือถือด้านสุขภาพแบบครบวงจร ให้ผู้ป่วยค้นหาแพทย์ จองนัดหมาย และเข้าถึงบริการทางการแพทย์ได้หลายภาษา',
+  title: 'แอปมือถือระบบสุขภาพดิจิทัล',
+  desc: 'แอปมือถือด้านสุขภาพ ให้ผู้ป่วยค้นหาแพทย์ จองนัด และใช้บริการทางการแพทย์ได้หลายภาษา',
 }
 
 const groupsEN = [
@@ -101,47 +101,47 @@ const casesEN = [
 
 const groupsTH = groupsEN
 const casesTH = [
-  { id:1, tags:['FinTech'], client:'ธนาคารชั้นนำ', title:'Digital Banking Super App', desc:'รีดีไซน์ Mobile Banking สำหรับผู้ใช้ 4 ล้านคน', result:'+62% DAU' },
-  { id:2, tags:['E-Commerce'], client:'เครือค้าปลีก', title:'Omnichannel Retail Platform', desc:'Unified Commerce เชื่อม 2,000+ สาขา', result:'3× Conversion' },
-  { id:3, tags:['Healthcare'], client:'กลุ่มโรงพยาบาล', title:'Patient Digital Ecosystem', desc:'ระบบสุขภาพดิจิทัลครบวงจร', result:'-40% No-show' },
-  { id:4, tags:['AI'], client:'บริษัทประกันภัย', title:'AI Document Intelligence', desc:'AI อ่านเอกสารอัตโนมัติ ลด Manual 80%', result:'-80% Processing' },
-  { id:5, tags:['FinTech'], client:'FinTech Startup', title:'Payment Gateway Platform', desc:'รองรับ 500K Transaction/วัน', result:'99.97% Success' },
-  { id:6, tags:['E-Commerce'], client:'Retail Chain', title:'Grocery Delivery App', desc:'Delivery 30 นาที, Real-time Inventory', result:'4.8★ App Store' },
-  { id:7, tags:['Enterprise'], client:'โรงงาน 500 คน', title:'ERP & Workforce Management', desc:'ERP ครบวงจร Finance, HR, Inventory', result:'-28% OpEx' },
-  { id:8, tags:['AI'], client:'Online Academy', title:'AI-powered EdTech Platform', desc:'AI Tutor Personalized สำหรับ 50K ผู้เรียน', result:'4× Completion' },
-  { id:9, tags:['Enterprise'], client:'Express Logistics', title:'Logistics & Fleet Management', desc:'Last-mile สำหรับ 3,000 Driver', result:'97% On-time' },
+  { id:1, tags:['FinTech'], client:'ธนาคารชั้นนำ', title:'Digital Banking Super App', desc:'ออกแบบแอปธนาคารใหม่สำหรับผู้ใช้ 4 ล้านคน', result:'+62% DAU' },
+  { id:2, tags:['E-Commerce'], client:'เครือค้าปลีก', title:'Omnichannel Retail Platform', desc:'ระบบขายหลายช่องทาง เชื่อม 2,000+ สาขา', result:'3× Conversion' },
+  { id:3, tags:['Healthcare'], client:'กลุ่มโรงพยาบาล', title:'Patient Digital Ecosystem', desc:'ระบบสุขภาพดิจิทัลตั้งแต่ค้นหาแพทย์ถึงติดตามผล', result:'-40% No-show' },
+  { id:4, tags:['AI'], client:'บริษัทประกันภัย', title:'AI Document Intelligence', desc:'AI อ่านเอกสารอัตโนมัติ ลดงานคนทำเองลง 80%', result:'-80% Processing' },
+  { id:5, tags:['FinTech'], client:'FinTech Startup', title:'Payment Gateway Platform', desc:'รองรับ 500,000 รายการต่อวัน', result:'99.97% Success' },
+  { id:6, tags:['E-Commerce'], client:'Retail Chain', title:'Grocery Delivery App', desc:'ส่งของใน 30 นาที สต๊อกอัปเดตเรียลไทม์', result:'4.8★ App Store' },
+  { id:7, tags:['Enterprise'], client:'โรงงาน 500 คน', title:'ERP & Workforce Management', desc:'ERP รวมการเงิน HR และสต๊อก', result:'-28% OpEx' },
+  { id:8, tags:['AI'], client:'Online Academy', title:'AI-powered EdTech Platform', desc:'AI ติวเตอร์เฉพาะบุคคล สำหรับผู้เรียน 50,000 คน', result:'4× Completion' },
+  { id:9, tags:['Enterprise'], client:'Express Logistics', title:'Logistics & Fleet Management', desc:'ขนส่งช่วงสุดท้ายสำหรับคนขับ 3,000 คน', result:'97% On-time' },
   { id:10, tags:['Healthcare'], client:'Health Platform', title:'Telemedicine & Mental Health', desc:'Video Consultation + Mood Tracking', result:'92% Completion' },
-  { id:11, tags:['FinTech'], client:'Insurance Group', title:'InsurTech Claims Platform', desc:'AI Claims Processing ลด 73% เวลา', result:'73% Faster' },
-  { id:12, tags:['E-Commerce'], client:'Fashion Retailer', title:'Personalization Engine', desc:'AI Product Recommendation เพิ่ม AOV 45%', result:'+45% AOV' },
-  { id:13, tags:['F&B'], client:'Savelberg Restaurant', title:'เว็บไซต์ร้านอาหารระดับมิชลินสตาร์', desc:'เว็บไซต์สองภาษาและวางแนวทางคอนเทนต์ให้ร้านอาหารฝรั่งเศสระดับมิชลินสตาร์', result:'เว็บไซต์ใหม่', slug:'savelberg' },
-  { id:14, tags:['F&B'], client:'OVO', title:'เว็บไซต์แบรนด์ไอศกรีม', desc:'เว็บไซต์ใหม่สำหรับแบรนด์ไอศกรีมและของหวาน พร้อมระบบสั่งซื้อออนไลน์และวางแนวทางคอนเทนต์การตลาด', result:'เว็บไซต์ใหม่', slug:'ovo' },
-  { id:15, tags:['Fitness & Wellness'], client:'BASE', title:'เว็บไซต์สตูดิโอฟิตเนส', desc:'เว็บไซต์ใหม่สำหรับสตูดิโอฟิตเนส พร้อมระบบจองคลาสออนไลน์และโปรไฟล์เทรนเนอร์', result:'เว็บไซต์ใหม่', slug:'base' },
-  { id:16, tags:['Apparel & Uniforms'], client:'Blue Bear', title:'เว็บไซต์ผู้ผลิตชุดยูนิฟอร์มทางการแพทย์', desc:'เว็บไซต์ใหม่พร้อมแคตตาล็อกสินค้าและระบบติดต่อสั่งซื้อแบบองค์กรสำหรับลูกค้าโรงพยาบาลและคลินิก', result:'เว็บไซต์ใหม่', slug:'blue-bear' },
-  { id:17, tags:['Manufacturing'], client:'Thai Metal Aluminium', title:'เว็บไซต์โรงงานผลิตชิ้นส่วนอะลูมิเนียม', desc:'เว็บไซต์องค์กรใหม่ นำเสนอขีดความสามารถด้านการผลิตและมาตรฐานคุณภาพต่อลูกค้าอุตสาหกรรม', result:'เว็บไซต์ใหม่', slug:'thai-metal-aluminium' },
-  { id:18, tags:['E-Commerce'], client:'VERA', title:'เว็บไซต์อีคอมเมิร์ซแบรนด์กระเป๋า', desc:'เว็บไซต์อีคอมเมิร์ซใหม่สำหรับแบรนด์กระเป๋าที่ผลิตและขายออนไลน์ พร้อมระบบตะกร้าสินค้าและชำระเงิน', result:'เว็บไซต์ใหม่', slug:'vera' },
-  { id:19, tags:['Government & Public Sector'], client:'NFI สถาบันอาหาร', title:'เว็บไซต์สถาบันอาหาร', desc:'เว็บไซต์ใหม่จัดระเบียบบริการห้องปฏิบัติการและงานวิจัยให้สถาบันวิจัยอาหารภาครัฐ', result:'เว็บไซต์ใหม่', slug:'nfi' },
-  { id:20, tags:['Retail & Shopping Mall'], client:'MBK Center', title:'แอปมือถือศูนย์การค้า MBK', desc:'แอปมือถือใหม่ให้ลูกค้าค้นหาร้านค้า โปรโมชัน และสิทธิพิเศษได้ในที่เดียว', result:'แอปใหม่', slug:'mbk' },
-  { id:21, tags:['Government & Public Sector'], client:'DITP', title:'แอปมือถือส่งเสริมผู้ประกอบการส่งออก DITP', desc:'แอปเวอร์ชันใหม่ต่อยอดจากแอปที่เคยพัฒนาให้ เพื่อสนับสนุนผู้ประกอบการส่งออกไทย', result:'แอปใหม่', slug:'ditp' },
-  { id:22, tags:['F&B'], client:'Sra Bua by Kiin Kiin', title:'เว็บไซต์ร้านอาหารไฟน์ไดนิ่ง', desc:'เว็บไซต์สองภาษาพร้อมระบบจองโต๊ะออนไลน์ให้ร้านอาหารไทยโมเดิร์นระดับไฟน์ไดนิ่ง', result:'เว็บไซต์ใหม่', slug:'sra-bua' },
-  { id:23, tags:['Travel & Tourism'], client:'World Surprise Travel', title:'เว็บไซต์ Branding และ AI CRM', desc:'วางแบรนด์ใหม่ เว็บไซต์ และ AI CRM ให้บริษัททัวร์บริหารแพ็กเกจและลูกค้า', result:'เว็บไซต์ใหม่', slug:'world-surprise-travel' },
-  { id:24, tags:['Construction & Real Estate'], client:'Awii House', title:'เว็บไซต์พร้อม CRM ให้บริษัทรับสร้างบ้าน', desc:'เว็บไซต์และ CRM ใหม่ให้บริษัทรับสร้างบ้าน ติดตามลูกค้าตั้งแต่ปรึกษาจนถึงเซ็นสัญญา', result:'เว็บไซต์ใหม่', slug:'awii-house' },
-  { id:25, tags:['Real Estate'], client:'Canapaya Residences', title:'เว็บไซต์ Brand CI และ CRM อสังหาริมทรัพย์', desc:'วางแบรนด์ เว็บไซต์ และ CRM เฉพาะทางให้โครงการที่พักอาศัยหรูริมแม่น้ำ', result:'เว็บไซต์ใหม่', slug:'canapaya-residences' },
-  { id:26, tags:['Telecommunications'], client:'RFS', title:'เว็บไซต์พร้อม AI CRM', desc:'เว็บไซต์และ AI CRM ใหม่ให้ผู้ให้บริการโครงสร้างพื้นฐานโทรคมนาคมและสมาร์ทซิตี้จากสิงคโปร์', result:'เว็บไซต์ใหม่', slug:'rfs' },
-  { id:27, tags:['Government & Public Sector'], client:'กรมสรรพสามิต', title:'แอปตรวจสอบภาษี', desc:'แอปมือถือใหม่ให้เจ้าหน้าที่ตรวจสอบภาษีสรรพสามิต เชื่อมข้อมูลกับหน่วยงานที่เกี่ยวข้อง', result:'แอปใหม่', slug:'excise-department' },
-  { id:28, tags:['Government & Public Sector'], client:'ITAGC', title:'เว็บไซต์ระบบตรวจสอบความโปร่งใสผู้รับเหมาภาครัฐ', desc:'ออกแบบ UX/UI ก่อนพัฒนาเว็บไซต์ใหม่ให้หน่วยงานประเมินความซื่อตรงและความโปร่งใสของผู้รับเหมาภาครัฐ', result:'เว็บไซต์ใหม่', slug:'itagc' },
-  { id:29, tags:['Government & Public Sector'], client:'กรมทรัพยากรน้ำ', title:'แอปมือถือต่อยอดด้วย AI', desc:'ต่อยอดแอปที่เคยพัฒนาให้เมื่อ 4 ปีก่อน ด้วยความสามารถ AI ใหม่สำหรับบริหารจัดการทรัพยากรน้ำ', result:'แอปใหม่', slug:'department-of-water-resources' },
-  { id:30, tags:['Government & Public Sector'], client:'สำนักงานตรวจคนเข้าเมือง', title:'แอปตรวจคนเข้าเมืองอัจฉริยะด้วย AI', desc:'แอปมือถือใหม่พร้อมโมดูล AI ตรวจสอบเอกสารและใบหน้าที่จุดตรวจคนเข้าเมือง', result:'แอปใหม่', slug:'immigration-bureau' },
-  { id:31, tags:['Government & Public Sector'], client:'กระทรวงวัฒนธรรม', title:'แอปส่งเสริมงานด้านวัฒนธรรม', desc:'แอปมือถือใหม่นำเนื้อหาจากเว็บไซต์เดิมของกระทรวงมาเข้าถึงประชาชนได้กว้างขึ้น', result:'แอปใหม่', slug:'ministry-of-culture' },
-  { id:32, tags:['F&B'], client:'BBK Menu', title:'เว็บไซต์แนะนำร้านอาหาร', desc:'ออกแบบ UX/UI ก่อนพัฒนาเว็บไซต์ใหม่สำหรับค้นพบร้านอาหารและเมนูเด็ดในกรุงเทพฯ', result:'เว็บไซต์ใหม่', slug:'bbk-menu' },
-  { id:33, tags:['Real Estate'], client:"Sena Development", title:"ระบบ CRM และ AI สำหรับผู้พัฒนาอสังหาริมทรัพย์", desc:"ระบบ CRM และ AI ใหม่ให้ผู้พัฒนาอสังหาริมทรัพย์ บริหารจัดการลูกค้าและข้อมูลการขาย", result:"ระบบใหม่", slug:"sena-development" },
-  { id:34, tags:['E-Commerce'], client:"PAÑPURI", title:"เว็บไซต์อีคอมเมิร์ซแบรนด์เวลเนสและสกินแคร์บน Shopify", desc:"ออกแบบ UX/UI ก่อนพัฒนาเว็บไซต์อีคอมเมิร์ซบน Shopify ให้แบรนด์เวลเนสและสกินแคร์ไทย", result:"เว็บไซต์ใหม่", slug:"panpuri" },
-  { id:35, tags:['Hospitality & Travel'], client:"Shanghai Mansion Bangkok", title:"เว็บไซต์โรงแรมบูติกพร้อมระบบจองห้องพัก", desc:"เว็บไซต์โรงแรมใหม่พร้อมระบบจองห้องพักออนไลน์ให้โรงแรมบูติก", result:"เว็บไซต์ใหม่", slug:"shanghai-mansion-bangkok" },
-  { id:36, tags:['Retail & Shopping Mall'], client:"Jampha Shopping Mall", title:"เว็บไซต์อีคอมเมิร์ซพร้อม AI ช่วยงานปฏิบัติการ", desc:"เว็บไซต์อีคอมเมิร์ซและระบบ AI ใหม่ช่วยสนับสนุนการดำเนินงานและลูกค้าของศูนย์การค้าชุมชน", result:"เว็บไซต์ใหม่", slug:"jampha-shopping-mall" },
-  { id:38, tags:['Logistics & Marine'], client:"Prima Marine", title:"เว็บไซต์องค์กรสำหรับธุรกิจโลจิสติกส์ทางทะเล", desc:"เว็บไซต์องค์กรที่นำเสนอกองเรือ บริการ และความน่าเชื่อถือของบริษัทมหาชนด้านโลจิสติกส์ทางทะเล", result:"เว็บไซต์ใหม่", slug:"prima-marine" },
-  { id:39, tags:['F&B'], client:"Baan Khanitha Thai Cuisine", title:"เว็บไซต์สำหรับร้านอาหารไทยชื่อดัง", desc:"ออกแบบ UX/UI และพัฒนาเว็บไซต์ที่ถ่ายทอดความอบอุ่นและเอกลักษณ์ของร้านอาหารไทยระดับแนวหน้า", result:"เว็บไซต์ใหม่", slug:"baan-khanitha" },
-  { id:40, tags:['Beauty & Aesthetics'], client:"DSK", title:"เว็บไซต์ UX/UI และ AI CRM สำหรับคลินิกศัลยกรรมความงาม", desc:"ให้คำปรึกษาธุรกิจ ออกแบบเว็บไซต์และ UX/UI พร้อม CRM ที่มี AI ช่วยสำหรับธุรกิจศัลยกรรมความงาม", result:"เว็บไซต์ + CRM", slug:"dsk" },
-  { id:41, tags:['Construction & Real Estate'], client:"Admire", title:"เว็บไซต์ UX/UI และ AI CRM สำหรับธุรกิจรับสร้างบ้าน", desc:"ออกแบบ UX/UI และพัฒนาเว็บไซต์ใหม่สำหรับธุรกิจรับสร้างบ้าน พร้อม CRM ที่มี AI ช่วยจัดการลีด", result:"เว็บไซต์ + CRM", slug:"admire" },
-  { id:42, tags:['Beauty & Aesthetics'], client:"MEKO International Hospital", title:"แบรนด์ เว็บไซต์ และกราฟิกสำหรับโรงพยาบาลศัลยกรรมความงาม", desc:"ออกแบบเว็บไซต์และ UX/UI กราฟิก และ Brand CI สำหรับโรงพยาบาลศัลยกรรมความงามชื่อดัง", result:"แบรนด์ + เว็บไซต์", slug:"meko-international-hospital" },
+  { id:11, tags:['FinTech'], client:'Insurance Group', title:'InsurTech Claims Platform', desc:'AI ช่วยประมวลผลเคลม ลดเวลา 73%', result:'73% Faster' },
+  { id:12, tags:['E-Commerce'], client:'Fashion Retailer', title:'Personalization Engine', desc:'AI แนะนำสินค้า เพิ่มยอดต่อออเดอร์ 45%', result:'+45% AOV' },
+  { id:13, tags:['F&B'], client:'Savelberg Restaurant', title:'เว็บไซต์ร้านอาหารมิชลินสตาร์', desc:'เว็บไซต์สองภาษาและแนวทางทำคอนเทนต์ สำหรับร้านอาหารฝรั่งเศสระดับมิชลินสตาร์', result:'เว็บไซต์ใหม่', slug:'savelberg' },
+  { id:14, tags:['F&B'], client:'OVO', title:'เว็บไซต์แบรนด์ไอศกรีม', desc:'เว็บไซต์ใหม่ของแบรนด์ไอศกรีมและของหวาน มีระบบสั่งซื้อออนไลน์ และแนวทางทำคอนเทนต์การตลาด', result:'เว็บไซต์ใหม่', slug:'ovo' },
+  { id:15, tags:['Fitness & Wellness'], client:'BASE', title:'เว็บไซต์สตูดิโอฟิตเนส', desc:'เว็บไซต์ใหม่ของสตูดิโอฟิตเนส มีระบบจองคลาสออนไลน์และข้อมูลเทรนเนอร์', result:'เว็บไซต์ใหม่', slug:'base' },
+  { id:16, tags:['Apparel & Uniforms'], client:'Blue Bear', title:'เว็บไซต์ผู้ผลิตชุดยูนิฟอร์มทางการแพทย์', desc:'เว็บไซต์ใหม่ มีแคตตาล็อกสินค้าและช่องทางติดต่อสั่งซื้อสำหรับลูกค้าองค์กร เช่น โรงพยาบาลและคลินิก', result:'เว็บไซต์ใหม่', slug:'blue-bear' },
+  { id:17, tags:['Manufacturing'], client:'Thai Metal Aluminium', title:'เว็บไซต์โรงงานผลิตชิ้นส่วนอะลูมิเนียม', desc:'เว็บไซต์องค์กรใหม่ แสดงความสามารถด้านการผลิตและมาตรฐานคุณภาพให้ลูกค้าอุตสาหกรรม', result:'เว็บไซต์ใหม่', slug:'thai-metal-aluminium' },
+  { id:18, tags:['E-Commerce'], client:'VERA', title:'เว็บไซต์อีคอมเมิร์ซแบรนด์กระเป๋า', desc:'เว็บไซต์อีคอมเมิร์ซใหม่ของแบรนด์กระเป๋าที่ผลิตและขายออนไลน์ มีตะกร้าสินค้าและระบบชำระเงิน', result:'เว็บไซต์ใหม่', slug:'vera' },
+  { id:19, tags:['Government & Public Sector'], client:'NFI สถาบันอาหาร', title:'เว็บไซต์สถาบันอาหาร', desc:'เว็บไซต์ใหม่ที่จัดบริการห้องปฏิบัติการและงานวิจัยของสถาบันวิจัยอาหารภาครัฐให้เป็นระเบียบ', result:'เว็บไซต์ใหม่', slug:'nfi' },
+  { id:20, tags:['Retail & Shopping Mall'], client:'MBK Center', title:'แอปมือถือศูนย์การค้า MBK', desc:'แอปมือถือใหม่ ให้ลูกค้าค้นหาร้านค้า โปรโมชัน และสิทธิพิเศษได้ในที่เดียว', result:'แอปใหม่', slug:'mbk' },
+  { id:21, tags:['Government & Public Sector'], client:'DITP', title:'แอปมือถือส่งเสริมผู้ประกอบการส่งออก DITP', desc:'แอปเวอร์ชันใหม่ ต่อยอดจากแอปที่เราเคยทำให้ เพื่อช่วยผู้ประกอบการส่งออกไทย', result:'แอปใหม่', slug:'ditp' },
+  { id:22, tags:['F&B'], client:'Sra Bua by Kiin Kiin', title:'เว็บไซต์ร้านอาหารไฟน์ไดนิ่ง', desc:'เว็บไซต์สองภาษา มีระบบจองโต๊ะออนไลน์ สำหรับร้านอาหารไทยโมเดิร์นระดับไฟน์ไดนิ่ง', result:'เว็บไซต์ใหม่', slug:'sra-bua' },
+  { id:23, tags:['Travel & Tourism'], client:'World Surprise Travel', title:'เว็บไซต์ แบรนด์ และ AI CRM', desc:'ทำแบรนด์ใหม่ เว็บไซต์ และ AI CRM ให้บริษัททัวร์ ใช้จัดการแพ็กเกจทัวร์และลูกค้า', result:'เว็บไซต์ใหม่', slug:'world-surprise-travel' },
+  { id:24, tags:['Construction & Real Estate'], client:'Awii House', title:'เว็บไซต์และ CRM สำหรับบริษัทรับสร้างบ้าน', desc:'เว็บไซต์และ CRM ใหม่ของบริษัทรับสร้างบ้าน ติดตามลูกค้าตั้งแต่ปรึกษาจนถึงเซ็นสัญญา', result:'เว็บไซต์ใหม่', slug:'awii-house' },
+  { id:25, tags:['Real Estate'], client:'Canapaya Residences', title:'เว็บไซต์ แบรนด์ CI และ CRM อสังหาริมทรัพย์', desc:'ทำแบรนด์ เว็บไซต์ และ CRM เฉพาะทางให้โครงการที่พักอาศัยหรูริมแม่น้ำ', result:'เว็บไซต์ใหม่', slug:'canapaya-residences' },
+  { id:26, tags:['Telecommunications'], client:'RFS', title:'เว็บไซต์และ AI CRM', desc:'เว็บไซต์และ AI CRM ใหม่ของผู้ให้บริการโครงสร้างพื้นฐานโทรคมนาคมและสมาร์ทซิตี้จากสิงคโปร์', result:'เว็บไซต์ใหม่', slug:'rfs' },
+  { id:27, tags:['Government & Public Sector'], client:'กรมสรรพสามิต', title:'แอปตรวจสอบภาษี', desc:'แอปมือถือใหม่ให้เจ้าหน้าที่ใช้ตรวจสอบภาษีสรรพสามิต และเชื่อมข้อมูลกับหน่วยงานที่เกี่ยวข้อง', result:'แอปใหม่', slug:'excise-department' },
+  { id:28, tags:['Government & Public Sector'], client:'ITAGC', title:'เว็บไซต์ตรวจสอบความโปร่งใสของผู้รับเหมาภาครัฐ', desc:'ออกแบบ UX/UI แล้วพัฒนาเว็บไซต์ใหม่ ให้หน่วยงานใช้ประเมินความซื่อตรงและความโปร่งใสของผู้รับเหมาภาครัฐ', result:'เว็บไซต์ใหม่', slug:'itagc' },
+  { id:29, tags:['Government & Public Sector'], client:'กรมทรัพยากรน้ำ', title:'แอปมือถือต่อยอดด้วย AI', desc:'ต่อยอดแอปที่เราเคยทำให้เมื่อ 4 ปีก่อน โดยเพิ่ม AI สำหรับบริหารจัดการทรัพยากรน้ำ', result:'แอปใหม่', slug:'department-of-water-resources' },
+  { id:30, tags:['Government & Public Sector'], client:'สำนักงานตรวจคนเข้าเมือง', title:'แอปตรวจคนเข้าเมืองที่ใช้ AI', desc:'แอปมือถือใหม่ มี AI ช่วยตรวจเอกสารและใบหน้าที่จุดตรวจคนเข้าเมือง', result:'แอปใหม่', slug:'immigration-bureau' },
+  { id:31, tags:['Government & Public Sector'], client:'กระทรวงวัฒนธรรม', title:'แอปงานด้านวัฒนธรรม', desc:'แอปมือถือใหม่ นำเนื้อหาจากเว็บไซต์เดิมของกระทรวงไปถึงประชาชนได้มากขึ้น', result:'แอปใหม่', slug:'ministry-of-culture' },
+  { id:32, tags:['F&B'], client:'BBK Menu', title:'เว็บไซต์แนะนำร้านอาหาร', desc:'ออกแบบ UX/UI แล้วพัฒนาเว็บไซต์ใหม่ สำหรับค้นหาร้านอาหารและเมนูเด็ดในกรุงเทพฯ', result:'เว็บไซต์ใหม่', slug:'bbk-menu' },
+  { id:33, tags:['Real Estate'], client:"Sena Development", title:"ระบบ CRM และ AI สำหรับผู้พัฒนาอสังหาริมทรัพย์", desc:"ระบบ CRM และ AI ใหม่ ให้ผู้พัฒนาอสังหาริมทรัพย์ใช้จัดการลูกค้าและข้อมูลการขาย", result:"ระบบใหม่", slug:"sena-development" },
+  { id:34, tags:['E-Commerce'], client:"PAÑPURI", title:"เว็บไซต์อีคอมเมิร์ซบน Shopify แบรนด์เวลเนสและสกินแคร์", desc:"ออกแบบ UX/UI แล้วพัฒนาเว็บไซต์อีคอมเมิร์ซบน Shopify ให้แบรนด์เวลเนสและสกินแคร์ไทย", result:"เว็บไซต์ใหม่", slug:"panpuri" },
+  { id:35, tags:['Hospitality & Travel'], client:"Shanghai Mansion Bangkok", title:"เว็บไซต์โรงแรมบูติก มีระบบจองห้องพัก", desc:"เว็บไซต์ใหม่ของโรงแรมบูติก มีระบบจองห้องพักออนไลน์", result:"เว็บไซต์ใหม่", slug:"shanghai-mansion-bangkok" },
+  { id:36, tags:['Retail & Shopping Mall'], client:"Jampha Shopping Mall", title:"เว็บไซต์อีคอมเมิร์ซพร้อม AI ช่วยงานหลังบ้าน", desc:"เว็บไซต์อีคอมเมิร์ซและระบบ AI ใหม่ ช่วยงานหลังบ้านและดูแลลูกค้าของศูนย์การค้าชุมชน", result:"เว็บไซต์ใหม่", slug:"jampha-shopping-mall" },
+  { id:38, tags:['Logistics & Marine'], client:"Prima Marine", title:"เว็บไซต์องค์กรสำหรับธุรกิจขนส่งทางทะเล", desc:"เว็บไซต์องค์กรที่แสดงกองเรือ บริการ และความน่าเชื่อถือของบริษัทมหาชนด้านขนส่งทางทะเล", result:"เว็บไซต์ใหม่", slug:"prima-marine" },
+  { id:39, tags:['F&B'], client:"Baan Khanitha Thai Cuisine", title:"เว็บไซต์ร้านอาหารไทยชื่อดัง", desc:"ออกแบบ UX/UI และพัฒนาเว็บไซต์ที่สื่อถึงความอบอุ่นและเอกลักษณ์ของร้านอาหารไทยชั้นนำ", result:"เว็บไซต์ใหม่", slug:"baan-khanitha" },
+  { id:40, tags:['Beauty & Aesthetics'], client:"DSK", title:"เว็บไซต์ UX/UI และ AI CRM สำหรับคลินิกศัลยกรรมความงาม", desc:"ให้คำปรึกษาธุรกิจ ออกแบบเว็บไซต์และ UX/UI พร้อม CRM ที่มี AI ช่วย สำหรับธุรกิจศัลยกรรมความงาม", result:"เว็บไซต์ + CRM", slug:"dsk" },
+  { id:41, tags:['Construction & Real Estate'], client:"Admire", title:"เว็บไซต์ UX/UI และ AI CRM สำหรับธุรกิจรับสร้างบ้าน", desc:"ออกแบบ UX/UI และพัฒนาเว็บไซต์ใหม่สำหรับธุรกิจรับสร้างบ้าน พร้อม CRM ที่มี AI ช่วยจัดการลูกค้าที่สนใจ", result:"เว็บไซต์ + CRM", slug:"admire" },
+  { id:42, tags:['Beauty & Aesthetics'], client:"MEKO International Hospital", title:"แบรนด์ เว็บไซต์ และกราฟิกสำหรับโรงพยาบาลศัลยกรรมความงาม", desc:"ออกแบบเว็บไซต์ UX/UI กราฟิก และ Brand CI สำหรับโรงพยาบาลศัลยกรรมความงามชื่อดัง", result:"แบรนด์ + เว็บไซต์", slug:"meko-international-hospital" },
 ]
 
 const gradients = [
@@ -227,7 +227,7 @@ export default function CaseStudiesPageClient({ params }: { params: { lang: Lang
                 {isEN ? <>Real work,<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Real results</span></> : <>ผลงานจริง<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>ผลลัพธ์ที่วัดได้</span></>}
               </h1>
               <p className="text-sm max-w-lg" style={{ color: 'rgba(255,255,255,0.75)', fontWeight: 400 }}>
-                {isEN ? "How we've helped clients across industries solve complex challenges with technology." : 'ตัวอย่างที่เราช่วยลูกค้าในหลากหลายอุตสาหกรรมแก้โจทย์ที่ซับซ้อนด้วยเทคโนโลยี'}
+                {isEN ? "How we've helped clients across industries solve complex challenges with technology." : 'ตัวอย่างงานที่เราช่วยลูกค้าหลายอุตสาหกรรมแก้ปัญหายาก ๆ ด้วยเทคโนโลยี'}
               </p>
             </div>
 
@@ -295,7 +295,7 @@ export default function CaseStudiesPageClient({ params }: { params: { lang: Lang
                     <div>
                       <h2 className="t-display text-[clamp(1.8rem,3vw,2.6rem)] leading-none mb-2" style={{ color: '#fff' }}>{g.label}</h2>
                       <p className="text-sm" style={{ color: 'var(--lime)', fontWeight: 400 }}>
-                        {isEN ? 'Case studies from this industry.' : 'ผลงานจริงในอุตสาหกรรมนี้'}
+                        {isEN ? 'Case studies from this industry.' : 'ผลงานในอุตสาหกรรมนี้'}
                       </p>
                     </div>
                     <div className="hidden sm:flex items-center gap-2 shrink-0">
@@ -366,9 +366,9 @@ export default function CaseStudiesPageClient({ params }: { params: { lang: Lang
             style={{ height: 260, background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(123,110,246,0.35) 0%, rgba(83,195,215,0.08) 45%, transparent 75%)' }}
           />
           <div className="relative max-w-4xl mx-auto px-6 lg:px-10 py-24 text-center">
-            <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#fff', fontWeight: 500 }}>{isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}</p>
+            <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#fff', fontWeight: 500 }}>{isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจไหม?'}</p>
             <h2 className="t-display text-[clamp(1.75rem,4vw,3rem)] mb-6 leading-normal md:whitespace-nowrap" style={{ background: 'linear-gradient(135deg, var(--purple-light) 0%, #53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-              {isEN ? <>Let's build your next case study</> : <>มาสร้าง Case Study ถัดไปด้วยกัน</>}
+              {isEN ? <>Let's build your next case study</> : <>มาทำโปรเจกต์ถัดไปด้วยกัน</>}
             </h2>
             <Link href={`/${lang}/contact`} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm transition-opacity hover:opacity-90" style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}>
               {isEN ? 'Talk to Us' : 'คุยกับเรา'}

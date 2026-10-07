@@ -46,7 +46,7 @@ export default function CookieBanner({ lang }: { lang: Lang }) {
   return (
     <div
       role="dialog"
-      aria-label={isEN ? 'Cookie consent' : 'ความยินยอมการใช้คุกกี้'}
+      aria-label={isEN ? 'Cookie consent' : 'ความยินยอมใช้คุกกี้'}
       className="fixed left-4 right-4 bottom-4 md:left-auto md:right-6 md:bottom-6 md:max-w-md z-[100] rounded-2xl p-5"
       style={{ background: '#141329', border: '1px solid rgba(255,255,255,0.12)', boxShadow: '0 20px 50px -10px rgba(0,0,0,0.6)' }}
     >
@@ -56,7 +56,7 @@ export default function CookieBanner({ lang }: { lang: Lang }) {
       <p className="text-xs leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 400 }}>
         {isEN
           ? 'We use essential cookies to run this site, and optional analytics cookies to understand how it is used. You can accept all or keep essential only. '
-          : 'เราใช้คุกกี้ที่จำเป็นเพื่อให้เว็บไซต์ทำงาน และคุกกี้เพื่อการวิเคราะห์ (ไม่บังคับ) เพื่อเข้าใจการใช้งานเว็บไซต์ ท่านสามารถยอมรับทั้งหมดหรือเลือกเฉพาะที่จำเป็น '}
+          : 'เราใช้คุกกี้ที่จำเป็นเพื่อให้เว็บไซต์ทำงานได้ และคุกกี้วิเคราะห์ (ไม่บังคับ) เพื่อดูว่าผู้ใช้ใช้เว็บไซต์อย่างไร คุณจะยอมรับทั้งหมด หรือเลือกเฉพาะที่จำเป็นก็ได้ '}
         <Link href={`/${lang}/cookies`} style={{ color: 'var(--lime)', textDecoration: 'underline' }}>
           {isEN ? 'Cookie Policy' : 'นโยบายคุกกี้'}
         </Link>

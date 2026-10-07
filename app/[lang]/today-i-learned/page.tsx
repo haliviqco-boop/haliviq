@@ -27,24 +27,24 @@ const notesEN = [
 ]
 
 const notesTH = [
-  { topic: 'React', date: '16 ก.พ. 2026', title: 'ห่อ List ที่ Re-render หนักๆ ด้วย useDeferredValue แทน Debounce', excerpt: 'Debounce แค่หน่วงการอัปเดต แต่ useDeferredValue ให้ React แทรก Render ได้ พิมพ์ลื่นแม้บนตาราง 5,000 แถว' },
-  { topic: 'React', date: '20 ม.ค. 2026', title: 'key={index} ทำให้ Animation ตอนลบ Element ของ Framer Motion พังแบบไม่รู้ตัว', excerpt: 'การเรียง List ใหม่โดยใช้ Index เป็น Key ทำให้ Reconciler สับสนและใช้ Node ผิดตัว Animation ตอนลบเลยเล่นผิด Item' },
-  { topic: 'React', date: '3 พ.ย. 2025', title: 'useEffect Cleanup ทำงาน 2 รอบใน Strict Mode ไม่ใช่บั๊กที่ต้องแก้', excerpt: 'มันช่วยจับ Effect ที่ไม่ Idempotent ถ้า Double-invoke แล้วพัง แสดงว่า Effect นั้นไม่ปลอดภัยตั้งแต่ React 18 อยู่แล้ว' },
-  { topic: 'Next.js', date: '22 ก.ย. 2025', title: 'React Server Components Re-render ทุกครั้งที่เปลี่ยนหน้า ไม่ใช่แค่ตอน Mount', excerpt: 'เราเข้าใจผิดว่า RSC จะถูก Cache ข้ามการเปลี่ยนหน้า แต่ Next.js จะ Fetch ใหม่ทุกครั้งที่ Navigate เว้นแต่ตั้งค่า Caching เอง' },
-  { topic: 'Next.js', date: '4 ส.ค. 2025', title: 'revalidatePath ไม่ได้ล้าง Client-side Router Cache', excerpt: 'ข้อมูลบน Server สดใหม่แล้ว แต่ผู้ใช้ยังเห็นข้อมูลเก่าอยู่นานถึง 30 วินาที เพราะ Router Cache ฝั่ง Client ไม่รับรู้' },
-  { topic: 'TypeScript', date: '12 ก.ค. 2025', title: 'satisfies เก็บ Literal Type ไว้ พร้อมเช็ค Shape ไปด้วย', excerpt: 'การใส่ Type ตรงๆ ทำให้ Type กว้างขึ้น แต่ satisfies ตรวจสอบตาม Type แล้วยังคง Literal Inference ที่แคบไว้เหมือนเดิม' },
-  { topic: 'TypeScript', date: '28 พ.ค. 2025', title: 'Optional Chaining ซ่อน Typo ในชื่อ Property จาก Compiler', excerpt: 'user?.emial คืนค่า undefined เงียบๆ แทนที่จะ Error ทำให้ Typo หลุดไปถึง Production โดยไม่มีใครรู้' },
-  { topic: 'PostgreSQL', date: '10 ก.ย. 2025', title: 'Partial Index ใน Postgres ทำให้ Query Soft-delete เร็วขึ้น 40 เท่า', excerpt: 'เรา Index แถว Soft-delete กว่า 2 ล้านแถวที่แอปไม่เคย Query ถึง Partial Index ด้วย WHERE deleted_at IS NULL ลดเวลา Query จาก 800ms เหลือ 20ms' },
-  { topic: 'PostgreSQL', date: '30 มิ.ย. 2025', title: 'EXPLAIN ANALYZE โกหกเรื่อง Buffer Cache ในการรันครั้งแรก', excerpt: 'การรันครั้งแรกดึงหน้าข้อมูลเย็นจาก Disk ต้องรัน 2 ครั้งเสมอ ครั้งที่สองถึงจะเห็นตัวเลขที่ใกล้เคียง Production จริง' },
-  { topic: 'Docker', date: '18 ก.ย. 2025', title: 'Multi-stage Docker Build ลดขนาด Image ลง 71%', excerpt: 'การ Copy node_modules ตรงจาก Build Stage ทำให้ติดเครื่องมือที่ไม่จำเป็นมาด้วย ใช้ COPY --from แบบสะอาด ลด Image จาก 1.2GB เหลือ 340MB' },
-  { topic: 'Docker', date: '2 เม.ย. 2025', title: '.dockerignore ไม่มีผลกับ COPY --from จาก Stage อื่น', excerpt: 'เราเจอ .env หลุดเข้า Image สุดท้ายซ้ำๆ เพราะไฟล์ Ignore กรองแค่ Build Context ไม่ได้กรองการ Copy ข้าม Stage' },
-  { topic: 'Figma', date: '15 ก.ย. 2025', title: 'เครื่องมือเช็ค Color Contrast โกหกเรื่อง Gradient Text', excerpt: 'เครื่องมือ WCAG ส่วนใหญ่สุ่มเช็คแค่สีเดียว หัวข้อที่ใช้ Gradient เลยผ่านเครื่องมือ แต่ผู้ใช้จริงมองไม่เห็นฝั่งสีอ่อนของ Gradient' },
-  { topic: 'Figma', date: '11 มี.ค. 2025', title: "Auto Layout 'Hug Contents' พังเงียบๆ เมื่อข้อความว่าง", excerpt: 'Frame ที่ตั้งเป็น Hug จะยุบเหลือความกว้าง 0 ทันทีที่ข้อความที่ผูกไว้ว่างเปล่า และไม่มี Warning ใน Layer Panel เลย' },
-  { topic: 'CLI', date: '29 ส.ค. 2025', title: 'Debounce Search Input อย่างเดียวไม่พอ ต้องมี Request Cancellation ด้วย', excerpt: 'Response ที่ช้าอาจกลับมาไม่เรียงลำดับ การเพิ่ม AbortController ต่อการพิมพ์แต่ละครั้งแก้บั๊กผล Search ค้างของคนพิมพ์เร็ว' },
-  { topic: 'CLI', date: '2 ก.พ. 2025', title: 'fzf + ripgrep เร็วกว่า grep -r สำหรับงานใน Monorepo', excerpt: 'rg --files | fzf สำหรับกระโดดไปไฟล์แบบ Fuzzy และห่อ rg ด้วย fzf สำหรับค้นเนื้อหาพร้อม Preview ลดเวลาค้นหาลงเกือบเป็นศูนย์' },
-  { topic: 'macOS', date: '25 ส.ค. 2025', title: 'Quick Look ค้าง Thumbnail เก่าหลังไฟล์ถูกเขียนทับ', excerpt: 'ใช้ qlmanage -r เพื่อ Reset Cache ไม่งั้น PNG ที่ Export ใหม่จะโชว์ Preview เดิมค้างใน Finder อยู่หลายชั่วโมง' },
-  { topic: 'Design', date: '20 มิ.ย. 2025', title: 'Line-height ภาษาไทยต้องการ ~1.7 ไม่ใช่ 1.5 แบบภาษาอังกฤษ', excerpt: 'ตัวอักษรไทยมีวรรณยุกต์และสระซ้อนทั้งบนและล่างบรรทัด การปรับเป็น 1.7 แก้ปัญหาสระถูกตัดทั้งเว็บไซต์' },
-  { topic: 'Security', date: '19 ส.ค. 2025', title: 'Rotate API Key ที่รั่วไหล ไม่เหมือนกับการ Revoke Session', excerpt: 'Session ที่เซ็นด้วย Key เก่ายังใช้ได้อีก 24 ชั่วโมงหลัง Rotate Checklist รับมือ Incident ของเราเลยมีขั้นตอน Revoke Session เสมอ' },
+  { topic: 'React', date: '16 ก.พ. 2026', title: 'ใช้ useDeferredValue แทน Debounce กับ List ที่ Re-render หนัก', excerpt: 'Debounce แค่หน่วงการอัปเดต แต่ useDeferredValue ให้ React แทรก Render ได้ จึงพิมพ์ลื่นแม้บนตาราง 5,000 แถว' },
+  { topic: 'React', date: '20 ม.ค. 2026', title: 'key={index} ทำให้ Animation ตอนลบ Element ใน Framer Motion พังโดยไม่รู้ตัว', excerpt: 'เมื่อเรียง List ใหม่โดยใช้ Index เป็น Key Reconciler จะสับสนและจับ Node ผิดตัว Animation ตอนลบจึงเล่นผิด Item' },
+  { topic: 'React', date: '3 พ.ย. 2025', title: 'useEffect Cleanup ทำงาน 2 รอบใน Strict Mode ไม่ใช่บั๊ก', excerpt: 'มันช่วยจับ Effect ที่รันซ้ำแล้วให้ผลไม่เหมือนเดิม ถ้ารันสองรอบแล้วพัง แสดงว่า Effect นั้นไม่ปลอดภัยอยู่แล้วตั้งแต่ React 18' },
+  { topic: 'Next.js', date: '22 ก.ย. 2025', title: 'React Server Components Render ใหม่ทุกครั้งที่เปลี่ยนหน้า ไม่ใช่แค่ตอน Mount', excerpt: 'เราเข้าใจผิดว่า RSC จะถูก Cache ข้ามหน้า แต่ Next.js จะ Fetch ใหม่ทุกครั้งที่เปลี่ยนหน้า เว้นแต่ตั้งค่า Caching เอง' },
+  { topic: 'Next.js', date: '4 ส.ค. 2025', title: 'revalidatePath ไม่ได้ล้าง Client-side Router Cache', excerpt: 'ข้อมูลบน Server เป็นปัจจุบันแล้ว แต่ผู้ใช้ยังเห็นข้อมูลเก่านานถึง 30 วินาที เพราะ Router Cache ฝั่ง Client ไม่รู้เรื่องด้วย' },
+  { topic: 'TypeScript', date: '12 ก.ค. 2025', title: 'satisfies เก็บ Literal Type ไว้ และตรวจ Shape ไปพร้อมกัน', excerpt: 'การกำหนด Type ตรง ๆ ทำให้ Type กว้างขึ้น แต่ satisfies ตรวจตาม Type แล้วยังเก็บ Literal Inference แบบแคบไว้เหมือนเดิม' },
+  { topic: 'TypeScript', date: '28 พ.ค. 2025', title: 'Optional Chaining ซ่อนคำสะกดผิดในชื่อ Property ไม่ให้ Compiler เห็น', excerpt: 'user?.emial คืนค่า undefined เงียบ ๆ แทนที่จะ Error ทำให้คำสะกดผิดหลุดไปถึงระบบจริงโดยไม่มีใครรู้' },
+  { topic: 'PostgreSQL', date: '10 ก.ย. 2025', title: 'Partial Index ใน Postgres ทำให้ Query ที่ใช้ Soft-delete เร็วขึ้น 40 เท่า', excerpt: 'เรา Index แถว Soft-delete กว่า 2 ล้านแถวที่แอปไม่เคย Query ถึง การใช้ Partial Index ด้วย WHERE deleted_at IS NULL ลดเวลา Query จาก 800ms เหลือ 20ms' },
+  { topic: 'PostgreSQL', date: '30 มิ.ย. 2025', title: 'EXPLAIN ANALYZE ให้ตัวเลขไม่จริงเรื่อง Buffer Cache ในการรันครั้งแรก', excerpt: 'การรันครั้งแรกต้องดึงข้อมูลที่ยังไม่อยู่ใน Cache จาก Disk จึงควรรัน 2 ครั้งเสมอ ครั้งที่สองจึงจะเห็นตัวเลขใกล้เคียงระบบจริง' },
+  { topic: 'Docker', date: '18 ก.ย. 2025', title: 'Multi-stage Docker Build ลดขนาด Image ลง 71%', excerpt: 'การ Copy node_modules ตรงจาก Build Stage ทำให้เครื่องมือที่ไม่จำเป็นติดมาด้วย เมื่อใช้ COPY --from อย่างสะอาด Image ลดจาก 1.2GB เหลือ 340MB' },
+  { topic: 'Docker', date: '2 เม.ย. 2025', title: '.dockerignore ไม่มีผลกับ COPY --from จาก Stage อื่น', excerpt: 'เราเจอ .env หลุดเข้า Image สุดท้ายซ้ำ ๆ เพราะไฟล์ Ignore กรองแค่ Build Context ไม่ได้กรองการ Copy ข้าม Stage' },
+  { topic: 'Figma', date: '15 ก.ย. 2025', title: 'เครื่องมือเช็ค Color Contrast ให้ผลไม่จริงกับข้อความที่ใช้ Gradient', excerpt: 'เครื่องมือ WCAG ส่วนใหญ่เช็คแค่สีเดียว หัวข้อที่ใช้ Gradient จึงผ่านเครื่องมือ แต่ผู้ใช้จริงมองไม่เห็นฝั่งสีอ่อนของ Gradient' },
+  { topic: 'Figma', date: '11 มี.ค. 2025', title: "Auto Layout 'Hug Contents' พังเงียบ ๆ เมื่อข้อความว่าง", excerpt: 'Frame ที่ตั้งเป็น Hug จะหดเหลือความกว้าง 0 ทันทีที่ข้อความที่ผูกไว้ว่างเปล่า และ Layer Panel ไม่เตือนอะไรเลย' },
+  { topic: 'CLI', date: '29 ส.ค. 2025', title: 'Debounce ช่องค้นหาอย่างเดียวไม่พอ ต้องยกเลิก Request ด้วย', excerpt: 'Response ที่ช้าอาจกลับมาไม่เรียงลำดับ การใช้ AbortController กับการพิมพ์แต่ละครั้งช่วยแก้บั๊กผลค้นหาเก่าค้างของคนที่พิมพ์เร็ว' },
+  { topic: 'CLI', date: '2 ก.พ. 2025', title: 'fzf + ripgrep เร็วกว่า grep -r เมื่อทำงานใน Monorepo', excerpt: 'rg --files | fzf ใช้กระโดดไปไฟล์แบบ Fuzzy และครอบ rg ด้วย fzf เพื่อค้นเนื้อหาพร้อม Preview ช่วยให้ค้นหาเร็วแทบไม่ต้องรอ' },
+  { topic: 'macOS', date: '25 ส.ค. 2025', title: 'Quick Look ยังแสดง Thumbnail เก่าหลังไฟล์ถูกเขียนทับ', excerpt: 'ใช้ qlmanage -r เพื่อล้าง Cache ไม่เช่นนั้น PNG ที่ Export ใหม่จะยังโชว์ Preview เดิมใน Finder อยู่หลายชั่วโมง' },
+  { topic: 'Design', date: '20 มิ.ย. 2025', title: 'Line-height ภาษาไทยควรอยู่ที่ราว 1.7 ไม่ใช่ 1.5 แบบภาษาอังกฤษ', excerpt: 'ตัวอักษรไทยมีวรรณยุกต์และสระซ้อนทั้งบนและล่างบรรทัด การปรับเป็น 1.7 แก้ปัญหาสระโดนตัดได้ทั้งเว็บไซต์' },
+  { topic: 'Security', date: '19 ส.ค. 2025', title: 'การเปลี่ยน API Key ที่รั่วไม่เท่ากับการยกเลิก Session', excerpt: 'Session ที่เซ็นด้วย Key เก่ายังใช้ได้อีก 24 ชั่วโมงหลังเปลี่ยน Key เช็กลิสต์รับมือเหตุการณ์ของเราจึงมีขั้นตอนยกเลิก Session เสมอ' },
 ]
 
 const topicColors: Record<string, string> = {
@@ -86,7 +86,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Today I Learned' : 'Today I Learned'}
             </h1>
             <p className="max-w-xl mb-10" style={{ color: 'rgba(255,255,255,0.55)', fontWeight: 400, fontSize: '1rem', lineHeight: 1.6 }}>
-              {isEN ? 'Short, practical notes from the Haliviq team: quick lessons from daily engineering and design work.' : 'บันทึกสั้นๆ เชิงปฏิบัติจากทีม Haliviq — บทเรียนเล็กๆ จากงานวิศวกรรมและดีไซน์ในแต่ละวัน'}
+              {isEN ? 'Short, practical notes from the Haliviq team: quick lessons from daily engineering and design work.' : 'บันทึกสั้น ๆ ที่ใช้ได้จริงจากทีม Haliviq — บทเรียนเล็ก ๆ จากงานวิศวกรรมและดีไซน์ในแต่ละวัน'}
             </p>
 
             {/* Topic filter pills — horizontal slider instead of wrapping into many rows */}
@@ -146,11 +146,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <div className="relative max-w-4xl mx-auto px-6 lg:px-10 py-24 text-center">
             <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#fff', fontWeight: 500 }}>{isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}</p>
             <h2 className="t-display text-[clamp(1.75rem,4vw,3rem)] mb-6 leading-normal md:whitespace-nowrap" style={{ background: 'linear-gradient(135deg, var(--purple-light) 0%, #53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-              {isEN ? "We'd love to hear what you're building." : 'เราอยากได้ยินสิ่งที่คุณกำลังสร้าง'}
+              {isEN ? "We'd love to hear what you're building." : 'เราอยากฟังว่าคุณกำลังสร้างอะไรอยู่'}
             </h2>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href={`/${lang}/contact`} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm transition-opacity hover:opacity-90" style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}>
-                {isEN ? 'Start a Conversation' : 'เริ่มบทสนทนา'}
+                {isEN ? 'Start a Conversation' : 'เริ่มคุยกับเรา'}
                 <i className="ti ti-arrow-right" style={{ fontSize: 14 }} aria-hidden="true" />
               </Link>
               <a href="mailto:wu@haliviq.com" className="text-sm transition-colors" style={{ color: '#fff', fontWeight: 400 }}>wu@haliviq.com</a>

@@ -16,7 +16,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge = isEN ? 'Industry / Media & Entertainment' : 'อุตสาหกรรม / สื่อและบันเทิง'
   const heroSubhead = isEN
     ? 'Digital platforms for content creation and distribution.'
-    : 'แพลตฟอร์มดิจิทัลสำหรับสร้างและกระจายคอนเทนต์'
+    : 'แพลตฟอร์มสำหรับสร้างและเผยแพร่คอนเทนต์'
 
   const challenges = isEN ? [
     { icon: 'ti-server-2', title: 'Streaming Infrastructure & Scaling Costs', desc: 'Delivering smooth, low-latency video to millions of concurrent viewers requires elastic transcoding, CDN, and storage infrastructure that can balloon in cost as audiences grow.' },
@@ -24,16 +24,16 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-shield-lock', title: 'Content-Rights & DRM Complexity', desc: 'Licensing content across territories and devices while enforcing digital rights management and anti-piracy controls adds significant technical and legal overhead.' },
     { icon: 'ti-coin', title: 'Monetization Beyond Subscriptions', desc: 'Subscription fatigue is pushing platforms toward ad-supported tiers, pay-per-view, and creator payouts, all of which demand new billing and analytics infrastructure.' },
   ] : [
-    { icon: 'ti-server-2', title: 'โครงสร้างพื้นฐาน Streaming และต้นทุนการ Scale', desc: 'การส่งวิดีโอคุณภาพสูงแบบ Low-latency ให้ผู้ชมพร้อมกันหลายล้านคนต้องการโครงสร้างพื้นฐานด้าน Transcoding, CDN และ Storage ที่ยืดหยุ่น ซึ่งต้นทุนอาจพุ่งสูงเมื่อผู้ชมเพิ่มขึ้น' },
-    { icon: 'ti-users', title: 'แรงกดดันด้าน Audience Retention', desc: 'ท่ามกลางแพลตฟอร์มมากมายที่แข่งขันแย่งความสนใจของผู้ชม การรักษาผู้ชมให้เข้าใช้งานและสมัครสมาชิกต่อเนื่องต้องการการลงทุนด้าน Content Discovery และ Personalization อย่างต่อเนื่อง' },
-    { icon: 'ti-shield-lock', title: 'ความซับซ้อนของ Content Rights และ DRM', desc: 'การขอลิขสิทธิ์คอนเทนต์ในหลายภูมิภาคและอุปกรณ์ พร้อมบังคับใช้ Digital Rights Management และมาตรการป้องกันการละเมิดลิขสิทธิ์ เพิ่มภาระด้านเทคนิคและกฎหมายอย่างมาก' },
-    { icon: 'ti-coin', title: 'การสร้างรายได้นอกเหนือจาก Subscription', desc: 'ความเหนื่อยล้าจาก Subscription ผลักดันให้แพลตฟอร์มหันไปใช้ Ad-supported Tier, Pay-per-view และการจ่ายเงินให้ Creator ซึ่งต้องการโครงสร้างพื้นฐานด้าน Billing และ Analytics แบบใหม่' },
+    { icon: 'ti-server-2', title: 'ระบบ Streaming และต้นทุนเมื่อผู้ชมเพิ่ม', desc: 'การส่งวิดีโอคุณภาพสูงแบบหน่วงน้อยให้ผู้ชมหลายล้านคนพร้อมกัน ต้องมีระบบ Transcoding, CDN และ Storage ที่ยืดหยุ่น และต้นทุนอาจพุ่งสูงเมื่อผู้ชมเพิ่มขึ้น' },
+    { icon: 'ti-users', title: 'แรงกดดันในการรักษาผู้ชม', desc: 'เมื่อมีแพลตฟอร์มมากมายแย่งความสนใจผู้ชม การทำให้ผู้ชมอยู่ต่อและสมัครสมาชิกต่อเนื่องต้องลงทุนกับระบบแนะนำคอนเทนต์และการปรับให้ตรงใจผู้ชมอยู่เสมอ' },
+    { icon: 'ti-shield-lock', title: 'ความซับซ้อนของลิขสิทธิ์คอนเทนต์และ DRM', desc: 'การขอลิขสิทธิ์คอนเทนต์หลายภูมิภาคและหลายอุปกรณ์ พร้อมบังคับใช้ DRM และมาตรการกันละเมิดลิขสิทธิ์ เป็นภาระทั้งด้านเทคนิคและกฎหมายอย่างมาก' },
+    { icon: 'ti-coin', title: 'หารายได้นอกเหนือจากค่าสมาชิก', desc: 'ผู้ใช้เริ่มเบื่อการจ่ายค่าสมาชิก แพลตฟอร์มจึงหันไปใช้แพ็กเกจที่มีโฆษณา Pay-per-view และการจ่ายเงินให้ Creator ซึ่งต้องมีระบบ Billing และ Analytics แบบใหม่' },
   ]
 
   const metrics = [
     { value: '$332B', label: isEN ? 'Global Streaming/OTT Market Size by 2030' : 'ขนาดตลาด Streaming/OTT ทั่วโลกภายในปี 2030', source: 'Grand View Research OTT Market Report, 2024' },
-    { value: '41%', label: isEN ? 'Average Annual Subscriber Churn Rate' : 'อัตรา Subscriber Churn เฉลี่ยต่อปี', source: 'Deloitte Digital Media Trends, 2024' },
-    { value: '22%', label: isEN ? 'Ad-Revenue Growth from Targeted, Programmatic Ads' : 'การเติบโตของรายได้โฆษณาจาก Targeted และ Programmatic Ads', source: 'PwC Global Entertainment & Media Outlook, 2024' },
+    { value: '41%', label: isEN ? 'Average Annual Subscriber Churn Rate' : 'อัตราสมาชิกยกเลิกเฉลี่ยต่อปี', source: 'Deloitte Digital Media Trends, 2024' },
+    { value: '22%', label: isEN ? 'Ad-Revenue Growth from Targeted, Programmatic Ads' : 'การเติบโตของรายได้โฆษณาแบบเจาะกลุ่มและ Programmatic', source: 'PwC Global Entertainment & Media Outlook, 2024' },
   ]
 
   const capabilities = isEN ? [
@@ -44,12 +44,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-coin', title: 'Creator-Monetization Tools', desc: 'Payout, tipping, and subscription infrastructure that lets creators earn directly from their audience with transparent revenue splits.' },
     { icon: 'ti-sparkles', title: 'Recommendation Engines', desc: 'AI-driven content-recommendation systems that personalize discovery, increase watch-time, and reduce subscriber churn.' },
   ] : [
-    { icon: 'ti-device-tv', title: 'Streaming & OTT Platforms', desc: 'แพลตฟอร์ม Video-on-demand และ Live Streaming ที่ Scale ได้ พร้อม Adaptive Bitrate Playback, รองรับหลายอุปกรณ์ และการส่งข้อมูลผ่าน CDN ที่เสถียร' },
-    { icon: 'ti-folders', title: 'Content Management Systems', desc: 'ระบบ CMS ที่ยืดหยุ่นสำหรับนำเข้า ติดแท็ก และเผยแพร่เนื้อหาวิดีโอ เสียง และบทความ ทั้งบนเว็บ มือถือ และแอป Connected-TV' },
-    { icon: 'ti-chart-bar', title: 'Audience Analytics Dashboards', desc: 'Dashboard วิเคราะห์ผู้ชมและ Engagement แบบ Real-time ที่แสดง Watch-time จุดที่ผู้ชมออกจากคอนเทนต์ และแนวโน้มของกลุ่มผู้ชม เพื่อช่วยตัดสินใจด้านคอนเทนต์' },
-    { icon: 'ti-ticket', title: 'Ticketing & Event Platforms', desc: 'ระบบ Ticketing แบบครบวงจรสำหรับอีเวนต์สดและการฉายแบบเสมือนจริง พร้อมผังที่นั่ง ราคาแบบ Dynamic และ Checkout ที่ป้องกันการทุจริต' },
-    { icon: 'ti-coin', title: 'Creator-Monetization Tools', desc: 'โครงสร้างพื้นฐานด้านการจ่ายเงิน การ Tip และ Subscription ที่ให้ Creator สร้างรายได้จากผู้ชมโดยตรง พร้อมการแบ่งรายได้ที่โปร่งใส' },
-    { icon: 'ti-sparkles', title: 'Recommendation Engines', desc: 'ระบบแนะนำคอนเทนต์ที่ขับเคลื่อนด้วย AI ที่ Personalize การค้นพบเนื้อหา เพิ่ม Watch-time และลด Subscriber Churn' },
+    { icon: 'ti-device-tv', title: 'Streaming & OTT Platforms', desc: 'แพลตฟอร์ม Video-on-demand และ Live Streaming ที่ขยายได้ ปรับคุณภาพภาพตามความเร็วเน็ต รองรับหลายอุปกรณ์ และส่งข้อมูลผ่าน CDN ได้เสถียร' },
+    { icon: 'ti-folders', title: 'Content Management Systems', desc: 'ระบบ CMS ยืดหยุ่น สำหรับนำเข้า ติดแท็ก และเผยแพร่วิดีโอ เสียง และบทความ ทั้งบนเว็บ มือถือ และแอป Connected-TV' },
+    { icon: 'ti-chart-bar', title: 'Audience Analytics Dashboards', desc: 'Dashboard วิเคราะห์ผู้ชมแบบเรียลไทม์ แสดงเวลารับชม จุดที่ผู้ชมเลิกดู และแนวโน้มของกลุ่มผู้ชม เพื่อช่วยตัดสินใจเรื่องคอนเทนต์' },
+    { icon: 'ti-ticket', title: 'Ticketing & Event Platforms', desc: 'ระบบขายบัตรครบวงจรสำหรับอีเวนต์สดและการฉายออนไลน์ มีผังที่นั่ง ราคาปรับตามช่วง และ Checkout ที่ป้องกันการทุจริต' },
+    { icon: 'ti-coin', title: 'Creator-Monetization Tools', desc: 'ระบบจ่ายเงิน ทิป และสมาชิก ให้ Creator หารายได้จากผู้ชมโดยตรง พร้อมแบ่งรายได้อย่างโปร่งใส' },
+    { icon: 'ti-sparkles', title: 'Recommendation Engines', desc: 'ระบบแนะนำคอนเทนต์ด้วย AI ให้ผู้ชมเจอเนื้อหาที่ตรงใจ ดูนานขึ้น และลดการยกเลิกสมาชิก' },
   ]
 
   const techStack = ['React', 'Next.js', 'Node.js', 'WebRTC', 'HLS/DASH', 'AWS Media Services', 'Redis', 'PostgreSQL', 'Machine Learning', 'GraphQL', 'Stripe', 'CDN', 'Elasticsearch']
@@ -59,9 +59,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '02', title: 'Creator-Monetization App', desc: 'Platform enabling creators to publish content, sell subscriptions, and receive tips and payouts directly from their audience.' },
     { no: '03', title: 'Audience-Analytics Dashboard', desc: 'Real-time analytics suite tracking watch-time, engagement, and churn signals to help content and marketing teams make data-driven decisions.' },
   ] : [
-    { no: '01', title: 'Streaming/OTT Platform', desc: 'บริการ Video-on-demand และ Live Streaming ครบวงจร พร้อม Adaptive Bitrate Delivery, แอปรองรับหลายอุปกรณ์ และ Billing ทั้ง Subscription และ Ad-tier' },
-    { no: '02', title: 'Creator-Monetization App', desc: 'แพลตฟอร์มที่ให้ Creator เผยแพร่คอนเทนต์ ขาย Subscription และรับ Tip พร้อมการจ่ายเงินโดยตรงจากผู้ชม' },
-    { no: '03', title: 'Audience-Analytics Dashboard', desc: 'ชุด Analytics แบบ Real-time ที่ติดตาม Watch-time, Engagement และสัญญาณ Churn เพื่อช่วยทีมคอนเทนต์และการตลาดตัดสินใจด้วยข้อมูล' },
+    { no: '01', title: 'Streaming/OTT Platform', desc: 'บริการ Video-on-demand และ Live Streaming ครบชุด ปรับคุณภาพภาพตามความเร็วเน็ต มีแอปรองรับหลายอุปกรณ์ และ Billing ทั้งแบบสมาชิกและแบบมีโฆษณา' },
+    { no: '02', title: 'Creator-Monetization App', desc: 'แพลตฟอร์มให้ Creator เผยแพร่คอนเทนต์ ขายสมาชิก และรับทิป พร้อมรับเงินตรงจากผู้ชม' },
+    { no: '03', title: 'Audience-Analytics Dashboard', desc: 'ชุด Analytics แบบเรียลไทม์ ติดตามเวลารับชม การมีส่วนร่วม และสัญญาณที่ผู้ชมจะยกเลิก ช่วยทีมคอนเทนต์และการตลาดตัดสินใจจากข้อมูล' },
   ]
 
   const heroVisual = (
@@ -177,7 +177,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
                   ? 'We help media and entertainment companies build streaming and OTT platforms, content management systems, audience analytics dashboards, and creator-monetization tools that turn viewers into loyal, paying audiences. Our solutions scale reliably through viral spikes and live events, combining resilient streaming infrastructure with the personalization and analytics that keep audiences coming back.'
-                  : 'เราช่วยบริษัทสื่อและบันเทิงสร้าง Streaming และ OTT Platform, ระบบ Content Management, Dashboard วิเคราะห์ผู้ชม และเครื่องมือสร้างรายได้ให้ Creator ที่เปลี่ยนผู้ชมให้กลายเป็นผู้ชมที่ภักดีและยอมจ่าย โซลูชันของเรา Scale ได้อย่างเสถียรแม้ช่วงคอนเทนต์ไวรัลหรืออีเวนต์สด ผสมผสานโครงสร้างพื้นฐาน Streaming ที่แข็งแรงเข้ากับ Personalization และ Analytics ที่ทำให้ผู้ชมกลับมาซ้ำ'}
+                  : 'เราช่วยบริษัทสื่อและบันเทิงสร้างแพลตฟอร์ม Streaming และ OTT ระบบจัดการคอนเทนต์ Dashboard วิเคราะห์ผู้ชม และเครื่องมือหารายได้ให้ Creator เพื่อให้ผู้ชมกลายเป็นแฟนประจำที่ยอมจ่าย ระบบของเรารองรับได้เสถียรแม้ช่วงคอนเทนต์ไวรัลหรืออีเวนต์สด เราผสมโครงสร้าง Streaming ที่แข็งแรงกับระบบแนะนำและ Analytics ที่ทำให้ผู้ชมกลับมาดูซ้ำ'}
               </p>
             </div>
           </div>
@@ -195,7 +195,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Understanding the critical obstacles that drive digital transformation in this industry.'
-                : 'ความเข้าใจอุปสรรคสำคัญที่ผลักดันการปรับสู่ดิจิทัลในอุตสาหกรรมนี้'}
+                : 'ปัญหาหลักที่ธุรกิจในอุตสาหกรรมนี้ต้องเจอ'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -245,7 +245,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'โซลูชันที่พิสูจน์แล้วซึ่งเราสร้างเพื่อตอบโจทย์ที่สำคัญที่สุดของอุตสาหกรรมคุณ'}
+              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -268,12 +268,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Tech Stack' : 'เทคโนโลยีที่ใช้'}
             </p>
             <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
-              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้งาน'}
+              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้'}
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Industry-proven tools and frameworks we leverage to build robust solutions.'
-                : 'เครื่องมือและ Framework ที่พิสูจน์แล้วในอุตสาหกรรม ที่เราใช้สร้างโซลูชันที่แข็งแรงและเชื่อถือได้'}
+                : 'เครื่องมือและ Framework ที่เราเลือกใช้ เพราะมั่นคงและเชื่อถือได้'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -299,7 +299,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างโปรเจกต์ที่เราส่งมอบจริงให้กับลูกค้าในอุตสาหกรรมนี้'}
+              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างงานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -339,7 +339,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link

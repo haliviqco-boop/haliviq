@@ -13,10 +13,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const prefix = `/${lang}`
   const tr = t[lang] as any
 
-  const badge = isEN ? 'Industry / Retail & E-commerce' : 'อุตสาหกรรม / ค้าปลีก & อีคอมเมิร์ซ'
+  const badge = isEN ? 'Industry / Retail & E-commerce' : 'อุตสาหกรรม / ค้าปลีกและอีคอมเมิร์ซ'
   const heroSubhead = isEN
     ? 'Build engaging shopping experiences that drive conversions.'
-    : 'สร้างประสบการณ์ช้อปปิ้งที่น่าดึงดูดและเพิ่ม Conversion'
+    : 'สร้างหน้าร้านออนไลน์ที่ช้อปง่าย ช่วยให้ลูกค้าซื้อมากขึ้น'
 
   const challenges = isEN ? [
     { icon: 'ti-affiliate', title: 'Omnichannel Complexity', desc: 'Delivering a seamless experience across online, mobile, in-store, and marketplace channels requires unified inventory, pricing, and customer data that most retailers struggle to achieve.' },
@@ -24,16 +24,16 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-atom-2', title: 'Inventory Management Complexity', desc: 'Managing inventory across multiple warehouses, stores, and fulfillment channels while avoiding stockouts and overstock requires sophisticated demand forecasting and allocation systems.' },
     { icon: 'ti-truck', title: 'Last-Mile Delivery Expectations', desc: 'Consumers expect same-day or next-day delivery at minimal cost, putting enormous pressure on fulfillment operations and logistics partnerships to deliver faster and cheaper.' },
   ] : [
-    { icon: 'ti-affiliate', title: 'ความซับซ้อนของ Omnichannel', desc: 'การมอบประสบการณ์ที่ราบรื่นทั้งออนไลน์ มือถือ หน้าร้าน และ Marketplace ต้องการข้อมูลสต๊อก ราคา และลูกค้าที่รวมเป็นหนึ่งเดียว ซึ่งผู้ค้าปลีกส่วนใหญ่ทำได้ยาก' },
-    { icon: 'ti-user-check', title: 'แรงกดดันด้าน Customer Retention', desc: 'การหาลูกค้าใหม่มีต้นทุนสูงขึ้นเรื่อยๆ ทำให้การรักษาลูกค้าและเพิ่ม Lifetime Value เป็นเรื่องสำคัญ แต่ผู้ค้าปลีกส่วนใหญ่ยังขาดเครื่องมือ Personalization และ Engagement ที่เพียงพอ' },
-    { icon: 'ti-atom-2', title: 'ความซับซ้อนของ Inventory Management', desc: 'การจัดการสต๊อกในหลายคลังสินค้า หน้าร้าน และช่องทาง Fulfillment โดยหลีกเลี่ยง Stockout และ Overstock ต้องการระบบพยากรณ์ Demand และจัดสรรที่ซับซ้อน' },
-    { icon: 'ti-truck', title: 'ความคาดหวังด้าน Last-Mile Delivery', desc: 'ผู้บริโภคคาดหวังการจัดส่งแบบ Same-day หรือ Next-day ด้วยต้นทุนต่ำที่สุด สร้างแรงกดดันมหาศาลต่อการดำเนินงานและพันธมิตร Logistics ให้ส่งเร็วขึ้นและถูกลง' },
+    { icon: 'ti-affiliate', title: 'ความซับซ้อนของการขายหลายช่องทาง', desc: 'การให้ประสบการณ์ที่ราบรื่นทั้งออนไลน์ มือถือ หน้าร้าน และ Marketplace ต้องมีข้อมูลสต็อก ราคา และลูกค้าที่รวมเป็นชุดเดียว ซึ่งผู้ค้าปลีกส่วนใหญ่ทำได้ยาก' },
+    { icon: 'ti-user-check', title: 'แรงกดดันในการรักษาลูกค้า', desc: 'ต้นทุนหาลูกค้าใหม่สูงขึ้นเรื่อยๆ การรักษาลูกค้าเดิมและเพิ่มมูลค่าที่ลูกค้าให้ตลอดช่วงเวลา (Lifetime Value) จึงสำคัญ แต่ผู้ค้าปลีกส่วนใหญ่ยังไม่มีเครื่องมือเสนอสิ่งที่ตรงใจลูกค้าและสร้างการมีส่วนร่วมเพียงพอ' },
+    { icon: 'ti-atom-2', title: 'ความซับซ้อนของการจัดการสต็อก', desc: 'การจัดการสต็อกในหลายคลัง หน้าร้าน และช่องทางจัดส่ง โดยไม่ให้ของขาดหรือล้นสต็อก ต้องมีระบบพยากรณ์ความต้องการซื้อและจัดสรรสินค้าที่ซับซ้อน' },
+    { icon: 'ti-truck', title: 'ความคาดหวังเรื่องการส่งช่วงสุดท้าย', desc: 'ผู้บริโภคคาดหวังส่งภายในวันเดียวหรือวันถัดไปด้วยต้นทุนต่ำที่สุด กดดันการดำเนินงานและพันธมิตรขนส่งอย่างมากให้ส่งเร็วขึ้นและถูกลง' },
   ]
 
   const metrics = [
     { value: '$8.1T', label: isEN ? 'Global E-commerce Sales by 2026' : 'ยอดขาย E-commerce ทั่วโลกภายในปี 2026', source: 'eMarketer Global E-commerce Forecast, 2024' },
-    { value: '3.5x', label: isEN ? 'Higher Conversion Rate with Personalized Shopping Experiences' : 'Conversion Rate ที่สูงขึ้นด้วยประสบการณ์ช้อปปิ้งที่ Personalize', source: 'McKinsey Retail Personalization, 2024' },
-    { value: '30%', label: isEN ? 'Higher Customer Lifetime Value for Omnichannel Shoppers' : 'Customer Lifetime Value ที่สูงขึ้นสำหรับลูกค้า Omnichannel', source: 'Harvard Business Review Retail Study, 2024' },
+    { value: '3.5x', label: isEN ? 'Higher Conversion Rate with Personalized Shopping Experiences' : 'Conversion Rate ที่สูงขึ้นเมื่อประสบการณ์ช้อปปิ้งตรงใจลูกค้า', source: 'McKinsey Retail Personalization, 2024' },
+    { value: '30%', label: isEN ? 'Higher Customer Lifetime Value for Omnichannel Shoppers' : 'Customer Lifetime Value ที่สูงขึ้นของลูกค้าที่ซื้อหลายช่องทาง', source: 'Harvard Business Review Retail Study, 2024' },
   ]
 
   const capabilities = isEN ? [
@@ -44,12 +44,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-gift', title: 'Loyalty Program Platforms', desc: 'Flexible loyalty and rewards platforms with points management, tier systems, personalized offers, and behavioral analytics.' },
     { icon: 'ti-building-store', title: 'Multi-Vendor Marketplaces', desc: 'Marketplace platforms with seller onboarding, catalog and inventory management, order splitting, payouts, and admin operations.' },
   ] : [
-    { icon: 'ti-shopping-cart', title: 'Headless Commerce Platforms', desc: 'สถาปัตยกรรม E-commerce แบบ API-first ที่แยก Frontend ออกจาก Backend Commerce Logic เพื่อความยืดหยุ่นและความเร็วสูงสุด' },
-    { icon: 'ti-package', title: 'Inventory Management Systems', desc: 'แพลตฟอร์มติดตามและจัดสรรสต๊อกแบบ Real-time ที่เพิ่มประสิทธิภาพระดับสต๊อกในคลัง หน้าร้าน และศูนย์ Fulfillment' },
-    { icon: 'ti-sparkles', title: 'Personalization Engines', desc: 'แพลตฟอร์มแนะนำสินค้าและ Personalize เนื้อหาด้วย AI ที่เพิ่ม Conversion Rate และมูลค่าการสั่งซื้อเฉลี่ย' },
-    { icon: 'ti-affiliate', title: 'Omnichannel Integration', desc: 'แพลตฟอร์ม Commerce แบบรวมศูนย์ที่ Sync สต๊อก ราคา โปรโมชัน และข้อมูลลูกค้าในทุกช่องทางขาย' },
-    { icon: 'ti-gift', title: 'Loyalty Program Platforms', desc: 'แพลตฟอร์ม Loyalty และ Rewards ที่ยืดหยุ่น พร้อมจัดการคะแนน ระบบ Tier ข้อเสนอ Personalize และ Behavioral Analytics' },
-    { icon: 'ti-building-store', title: 'Multi-Vendor Marketplaces', desc: 'แพลตฟอร์ม Marketplace พร้อม Seller Onboarding, จัดการ Catalog และสต๊อก, แบ่งคำสั่งซื้อ, การจ่ายเงิน และงาน Admin' },
+    { icon: 'ti-shopping-cart', title: 'Headless Commerce Platforms', desc: 'สถาปัตยกรรม E-commerce แบบ API-first แยก Frontend ออกจากระบบขายฝั่ง Backend เพื่อความยืดหยุ่นและความเร็วสูงสุด' },
+    { icon: 'ti-package', title: 'Inventory Management Systems', desc: 'แพลตฟอร์มติดตามและจัดสรรสต็อกแบบเรียลไทม์ ช่วยปรับระดับสต็อกในคลัง หน้าร้าน และศูนย์จัดส่งให้เหมาะสม' },
+    { icon: 'ti-sparkles', title: 'Personalization Engines', desc: 'แพลตฟอร์มแนะนำสินค้าและปรับเนื้อหาให้ตรงใจลูกค้าด้วย AI เพิ่ม Conversion Rate และมูลค่าการสั่งซื้อเฉลี่ย' },
+    { icon: 'ti-affiliate', title: 'Omnichannel Integration', desc: 'แพลตฟอร์ม Commerce กลางที่ซิงค์สต็อก ราคา โปรโมชัน และข้อมูลลูกค้าในทุกช่องทางขาย' },
+    { icon: 'ti-gift', title: 'Loyalty Program Platforms', desc: 'แพลตฟอร์มสะสมแต้มและให้รางวัลที่ยืดหยุ่น จัดการคะแนน ระดับสมาชิก ข้อเสนอที่ตรงใจลูกค้า และวิเคราะห์พฤติกรรม' },
+    { icon: 'ti-building-store', title: 'Multi-Vendor Marketplaces', desc: 'แพลตฟอร์ม Marketplace พร้อมระบบรับผู้ขายใหม่ จัดการ Catalog และสต็อก แบ่งคำสั่งซื้อ การจ่ายเงิน และงานแอดมิน' },
   ]
 
   const techStack = ['React', 'Next.js', 'Node.js', 'Medusa.js', 'Shopify APIs', 'Stripe', 'Algolia', 'Redis', 'PostgreSQL', 'Machine Learning', 'AWS', 'Elasticsearch', 'GraphQL']
@@ -59,9 +59,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '02', title: 'Personalized Shopping Experience', desc: 'AI-driven storefront that adapts product displays, search results, promotions, and navigation based on individual customer behavior and preference signals.' },
     { no: '03', title: 'Inventory Optimization System', desc: 'Demand forecasting and inventory allocation platform that balances stock across locations, minimizes carrying costs, and prevents stockouts during peak demand.' },
   ] : [
-    { no: '01', title: 'Headless Commerce Platform', desc: 'Backend Commerce แบบ API-first ที่ขับเคลื่อนหลาย Storefront ด้วย Catalog สต๊อก ราคา และ Checkout Logic ร่วมกันทั้งเว็บ มือถือ และ Marketplace' },
-    { no: '02', title: 'Personalized Shopping Experience', desc: 'Storefront ที่ขับเคลื่อนด้วย AI ปรับการแสดงสินค้า ผลการค้นหา โปรโมชัน และการนำทางตามพฤติกรรมและความชอบของลูกค้าแต่ละคน' },
-    { no: '03', title: 'Inventory Optimization System', desc: 'แพลตฟอร์มพยากรณ์ Demand และจัดสรรสต๊อกที่สมดุลระหว่างสาขา ลดต้นทุนการถือครองสินค้า และป้องกัน Stockout ช่วง Demand พุ่งสูง' },
+    { no: '01', title: 'Headless Commerce Platform', desc: 'Backend Commerce แบบ API-first ที่ขับเคลื่อนหลายหน้าร้านด้วย Catalog สต็อก ราคา และระบบ Checkout ชุดเดียวกัน ทั้งเว็บ มือถือ และ Marketplace' },
+    { no: '02', title: 'Personalized Shopping Experience', desc: 'หน้าร้านที่ใช้ AI ปรับการแสดงสินค้า ผลการค้นหา โปรโมชัน และการนำทาง ให้ตรงกับพฤติกรรมและความชอบของลูกค้าแต่ละคน' },
+    { no: '03', title: 'Inventory Optimization System', desc: 'แพลตฟอร์มพยากรณ์ความต้องการซื้อและจัดสรรสต็อกให้สมดุลระหว่างสาขา ลดต้นทุนการเก็บสินค้า และป้องกันของขาดเมื่อยอดซื้อพุ่งสูง' },
   ]
 
   const heroVisual = (
@@ -170,7 +170,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
                   ? 'We help retailers and e-commerce companies build headless commerce platforms, personalization engines, inventory optimization systems, and loyalty programs that drive measurable revenue growth. Our solutions scale effortlessly during peak demand and combine deep UX expertise with robust backend engineering to convert browsers into buyers.'
-                  : 'เราช่วยผู้ค้าปลีกและบริษัทอีคอมเมิร์ซ สร้าง Headless Commerce Platform, Personalization Engine, ระบบ Inventory Optimization และ Loyalty Program ที่สร้างการเติบโตของรายได้ที่วัดผลได้ โซลูชันของเรา Scale ได้อย่างราบรื่นช่วง Demand พุ่งสูง ผสมผสานความเชี่ยวชาญด้าน UX กับวิศวกรรม Backend ที่แข็งแรง เพื่อเปลี่ยนคนดูให้กลายเป็นผู้ซื้อ'}
+                  : 'เราช่วยผู้ค้าปลีกและบริษัทอีคอมเมิร์ซสร้างแพลตฟอร์ม Headless Commerce ระบบแนะนำสินค้าตรงใจลูกค้า ระบบจัดการสต็อก และโปรแกรมสะสมแต้ม ที่ช่วยให้รายได้โตแบบวัดผลได้ ระบบของเรารองรับช่วงยอดซื้อพุ่งสูงได้ราบรื่น เราผสมความรู้ด้าน UX กับงาน Backend ที่แข็งแรง เพื่อเปลี่ยนคนดูให้เป็นผู้ซื้อ'}
               </p>
             </div>
           </div>
@@ -188,7 +188,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Understanding the critical obstacles that drive digital transformation in this industry.'
-                : 'ความเข้าใจอุปสรรคสำคัญที่ผลักดันการปรับสู่ดิจิทัลในอุตสาหกรรมนี้'}
+                : 'ปัญหาหลักที่ธุรกิจในอุตสาหกรรมนี้ต้องเจอ'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -238,7 +238,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'โซลูชันที่พิสูจน์แล้วซึ่งเราสร้างเพื่อตอบโจทย์ที่สำคัญที่สุดของอุตสาหกรรมคุณ'}
+              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -261,12 +261,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Tech Stack' : 'เทคโนโลยีที่ใช้'}
             </p>
             <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
-              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้งาน'}
+              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้'}
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Industry-proven tools and frameworks we leverage to build robust solutions.'
-                : 'เครื่องมือและ Framework ที่พิสูจน์แล้วในอุตสาหกรรม ที่เราใช้สร้างโซลูชันที่แข็งแรงและเชื่อถือได้'}
+                : 'เครื่องมือและ Framework ที่เราเลือกใช้ เพราะมั่นคงและเชื่อถือได้'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -292,7 +292,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างโปรเจกต์ที่เราส่งมอบจริงให้กับลูกค้าในอุตสาหกรรมนี้'}
+              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างงานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -332,7 +332,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link

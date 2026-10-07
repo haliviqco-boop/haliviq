@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }): 
     title: isEN ? 'Haliviq — Digital Product Studio' : 'Haliviq — สตูดิโอพัฒนาผลิตภัณฑ์ดิจิทัล',
     description: isEN
       ? 'Strategy, design, and engineering under one roof.'
-      : 'กลยุทธ์ ดีไซน์ และพัฒนาซอฟต์แวร์ภายใต้หลังคาเดียวกัน',
+      : 'กลยุทธ์ ดีไซน์ และพัฒนาซอฟต์แวร์ ที่เดียวจบ',
   }
 }
 

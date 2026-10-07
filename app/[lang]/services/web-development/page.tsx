@@ -46,14 +46,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge    = isEN ? 'Engineering / Web Development'  : 'Engineering / Web Development'
   const title    = isEN ? 'Web Development'  : 'พัฒนาเว็บไซต์'
   const subtitle = ''
-  const heroDesc = isEN ? 'Production-grade web apps and platforms built for performance, security, and long-term maintainability.'  : 'เว็บแอปพลิเคชันระดับ Production ที่มั่นคง ปลอดภัย และดูแลรักษาง่ายในระยะยาว'
-  const whyTitle = isEN ? 'Why a slow website is a business liability'    : 'ทำไมเว็บที่ช้าถึงเป็นภาระทางธุรกิจ'
-  const whyDesc  = isEN ? 'A one-second delay in page load reduces conversions by 7%. Google penalises slow sites in search rankings. And first impressions form in 50 milliseconds — before a user reads a word.'  : 'Page Load ที่ช้า 1 วินาทีลด Conversion 7% Google ลงโทษเว็บที่ช้าใน Search Ranking และ First Impression เกิดขึ้นใน 50 มิลลิวินาที ก่อนที่ผู้ใช้จะอ่านคำใดเลย'
-  const ctaTitle = isEN ? 'Ready to build a website that works?'    : 'พร้อมสร้างเว็บที่ได้ผลไหม?'
-  const ctaDesc  = isEN ? 'Get a free technical audit of your current site. We will show you exactly what to fix and what to build.'   : 'ขอ Technical Audit เว็บปัจจุบันฟรี เราจะบอกว่าต้องแก้อะไรและสร้างอะไรเพิ่ม'
+  const heroDesc = isEN ? 'Production-grade web apps and platforms built for performance, security, and long-term maintainability.'  : 'เว็บแอปพลิเคชันสำหรับใช้งานจริง ที่มั่นคง ปลอดภัย และดูแลรักษาง่ายในระยะยาว'
+  const whyTitle = isEN ? 'Why a slow website is a business liability'    : 'ทำไมเว็บที่ช้าถึงเป็นภาระของธุรกิจ'
+  const whyDesc  = isEN ? 'A one-second delay in page load reduces conversions by 7%. Google penalises slow sites in search rankings. And first impressions form in 50 milliseconds — before a user reads a word.'  : 'หน้าเว็บที่ช้าลง 1 วินาที ทำให้ Conversion ลด 7% Google ลดอันดับเว็บที่ช้า และความประทับใจแรกเกิดขึ้นภายใน 50 มิลลิวินาที ก่อนผู้ใช้จะอ่านคำใดเลย'
+  const ctaTitle = isEN ? 'Ready to build a website that works?'    : 'พร้อมสร้างเว็บที่ได้ผลหรือยัง?'
+  const ctaDesc  = isEN ? 'Get a free technical audit of your current site. We will show you exactly what to fix and what to build.'   : 'ขอตรวจเว็บปัจจุบันด้านเทคนิคฟรี เราจะบอกว่าต้องแก้อะไรและสร้างอะไรเพิ่ม'
   const overviewText = isEN
     ? 'We design and build full-stack web applications — customer-facing products, internal tools, and multi-tenant platforms — with React, Next.js, TypeScript, and solid backend APIs. Every engagement covers architecture, accessibility, SEO, observability, and CI/CD so what ships on day one is ready to grow. We optimize for Core Web Vitals, clean domain models, and codebases your team can own.'
-    : 'เราออกแบบและพัฒนาเว็บแอปพลิเคชันแบบครบวงจร ทั้งผลิตภัณฑ์ที่ลูกค้าใช้งานโดยตรง เครื่องมือภายในองค์กร และแพลตฟอร์มแบบ Multi-tenant ด้วย React, Next.js, TypeScript และ Backend API ที่แข็งแรง ทุกโปรเจกต์ครอบคลุมทั้ง Architecture, Accessibility, SEO, Observability และ CI/CD เพื่อให้สิ่งที่ Launch วันแรกพร้อมเติบโตต่อได้ เราให้ความสำคัญกับ Core Web Vitals, Domain Model ที่สะอาด และ Codebase ที่ทีมของคุณเป็นเจ้าของได้เอง'
+    : 'เราออกแบบและพัฒนาเว็บแอปพลิเคชันตั้งแต่ต้นจนจบ ทั้งผลิตภัณฑ์ที่ลูกค้าใช้โดยตรง เครื่องมือภายในองค์กร และแพลตฟอร์มแบบ Multi-tenant ด้วย React, Next.js, TypeScript และ Backend API ที่แข็งแรง ทุกโปรเจกต์ครอบคลุมสถาปัตยกรรม การเข้าถึงสำหรับทุกคน SEO การเฝ้าระบบ และ CI/CD เพื่อให้สิ่งที่เปิดตัววันแรกโตต่อได้ เราให้ความสำคัญกับ Core Web Vitals โครงสร้างข้อมูลที่สะอาด และโค้ดที่ทีมของคุณเป็นเจ้าของได้เอง'
 
   const heroBullets = isEN ? [
       'React, Next.js, and modern JAMstack architecture',
@@ -62,11 +62,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'CMS integration so your team can update content independently',
       'Security hardening, performance monitoring, and ongoing support',
     ] : [
-      'React, Next.js และ Modern JAMstack Architecture',
-      'Core Web Vitals Optimization เพื่อ Google Ranking',
-      'Responsive Design รองรับทุก Device',
-      'CMS Integration ให้ทีม Update Content เองได้',
-      'Security Hardening, Performance Monitoring และ Support',
+      'React, Next.js และสถาปัตยกรรม JAMstack ยุคใหม่',
+      'ปรับ Core Web Vitals เพื่ออันดับบน Google',
+      'รองรับทุกขนาดหน้าจอ',
+      'เชื่อมต่อ CMS ให้ทีมอัปเดตเนื้อหาเองได้',
+      'เสริมความปลอดภัย เฝ้าดูประสิทธิภาพ และดูแลระบบ',
     ]
   const whyPoints   = isEN ? [
       'Core Web Vitals are now a direct Google ranking factor — technical performance is SEO',
@@ -75,11 +75,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'Progressive Web App features bring app-like experiences to the browser',
       'Accessibility compliance expands your audience and reduces legal risk',
     ] : [
-      'Core Web Vitals เป็น Google Ranking Factor โดยตรง Performance คือ SEO',
-      'Landing Page ที่ A/B Test แล้ว Convert ได้ 2-4 เท่าเทียบกับ Template ทั่วไป',
-      'Headless CMS ช่วยทีม Marketing Publish Content โดยไม่ต้องรอ Developer',
-      'Progressive Web App Feature นำ App-like Experience มาสู่ Browser',
-      'Accessibility Compliance ขยายกลุ่มผู้ใช้และลดความเสี่ยงทางกฎหมาย',
+      'Core Web Vitals เป็นปัจจัยจัดอันดับของ Google โดยตรง ประสิทธิภาพเว็บจึงเป็นเรื่องเดียวกับ SEO',
+      'Landing Page ที่ผ่านการทำ A/B Test แล้ว ได้ Conversion สูงกว่าเทมเพลตทั่วไป 2-4 เท่า',
+      'Headless CMS ช่วยให้ทีมการตลาดเผยแพร่เนื้อหาได้โดยไม่ต้องรอนักพัฒนา',
+      'ฟีเจอร์ Progressive Web App ทำให้เว็บใช้งานได้เหมือนแอป',
+      'เว็บที่ผู้ใช้ทุกคนเข้าถึงได้ ขยายกลุ่มผู้ใช้และลดความเสี่ยงทางกฎหมาย',
     ]
   const outcomes    = isEN ? [
       {stat: '<1s', label: 'Page Load Time', desc: 'Lighthouse score 90+'},
@@ -88,9 +88,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {stat: '99.9%', label: 'Uptime SLA', desc: 'With proactive monitoring'}
     ] : [
       {stat: '<1s', label: 'Page Load Time', desc: 'Lighthouse Score 90+'},
-      {stat: '2-4x', label: 'Conversion Rate', desc: 'เทียบกับ Template ทั่วไป'},
-      {stat: 'Top 3', label: 'Google Ranking', desc: 'สำหรับ Target Keywords'},
-      {stat: '99.9%', label: 'Uptime SLA', desc: 'ด้วย Proactive Monitoring'}
+      {stat: '2-4x', label: 'Conversion Rate', desc: 'เทียบกับเทมเพลตทั่วไป'},
+      {stat: 'Top 3', label: 'Google Ranking', desc: 'สำหรับคีย์เวิร์ดเป้าหมาย'},
+      {stat: '99.9%', label: 'Uptime SLA', desc: 'ด้วยการเฝ้าระบบล่วงหน้า'}
     ]
   const features    = isEN ? [
       {icon: 'ti-brand-nextjs', title: 'Next.js & React', desc: 'The fastest web framework supporting SSR, SSG, and ISR based on your use case.'},
@@ -100,12 +100,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {icon: 'ti-shield', title: 'Security & Performance', desc: 'HTTPS, CSP, rate limiting, image optimisation, and the right caching strategy.'},
       {icon: 'ti-refresh', title: 'CI/CD & Deployment', desc: 'Automated deployment via Vercel, Netlify, or AWS with preview branches on every PR.'}
     ] : [
-      {icon: 'ti-brand-nextjs', title: 'Next.js & React', desc: 'Framework ที่เร็วที่สุดสำหรับ Web ทั้ง SSR, SSG และ ISR ตาม Use Case'},
-      {icon: 'ti-search', title: 'SEO & Core Web Vitals', desc: 'Optimize ทุก Technical SEO ตั้งแต่ Schema, Sitemap จนถึง Page Speed'},
-      {icon: 'ti-device-tablet', title: 'Responsive Design', desc: 'สวยงามและใช้งานได้บนทุก Device ตั้งแต่ Mobile ถึง 4K Display'},
-      {icon: 'ti-edit', title: 'CMS Integration', desc: 'Headless CMS เช่น Sanity, Contentful หรือ Strapi ให้ทีม Update Content ได้เอง'},
-      {icon: 'ti-shield', title: 'Security & Performance', desc: 'HTTPS, CSP, Rate Limiting, Image Optimization และ Caching Strategy ที่เหมาะสม'},
-      {icon: 'ti-refresh', title: 'CI/CD & Deployment', desc: 'Automated Deployment ผ่าน Vercel, Netlify หรือ AWS ด้วย Preview Branch ทุก PR'}
+      {icon: 'ti-brand-nextjs', title: 'Next.js & React', desc: 'Framework ที่เร็วที่สุดสำหรับเว็บ ทั้ง SSR, SSG และ ISR ตามลักษณะงาน'},
+      {icon: 'ti-search', title: 'SEO & Core Web Vitals', desc: 'ปรับ Technical SEO ครบทุกด้าน ตั้งแต่ Schema, Sitemap ไปจนถึงความเร็วหน้าเว็บ'},
+      {icon: 'ti-device-tablet', title: 'Responsive Design', desc: 'สวยและใช้งานได้บนทุกอุปกรณ์ ตั้งแต่มือถือถึงจอ 4K'},
+      {icon: 'ti-edit', title: 'CMS Integration', desc: 'ใช้ Headless CMS เช่น Sanity, Contentful หรือ Strapi ให้ทีมอัปเดตเนื้อหาเองได้'},
+      {icon: 'ti-shield', title: 'Security & Performance', desc: 'HTTPS, CSP, จำกัดอัตราการเรียกใช้ ปรับรูปภาพ และวางกลยุทธ์ Cache ที่เหมาะสม'},
+      {icon: 'ti-refresh', title: 'CI/CD & Deployment', desc: 'ปล่อยเวอร์ชันอัตโนมัติผ่าน Vercel, Netlify หรือ AWS พร้อมเวอร์ชันตัวอย่างให้ดูทุก PR'}
     ]
   const steps       = isEN ? [
       {no: '01', title: 'Discovery & Planning', desc: 'Understand goals, audience, and technical requirements before designing.'},
@@ -114,20 +114,20 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {no: '04', title: 'Testing & Optimization', desc: 'Test performance, SEO, accessibility, and cross-browser compatibility.'},
       {no: '05', title: 'Launch & Monitor', desc: 'Deploy, set up analytics, and monitor continuously after launch.'}
     ] : [
-      {no: '01', title: 'Discovery & Planning', desc: 'ทำความเข้าใจ Goal, Audience และ Technical Requirements ก่อนออกแบบ'},
-      {no: '02', title: 'Design & Prototype', desc: 'ออกแบบ UI และสร้าง Interactive Prototype ให้ Approve ก่อน Build'},
-      {no: '03', title: 'Development', desc: 'พัฒนาด้วย Next.js, TypeScript และ Best Practice ทั้งหมด'},
-      {no: '04', title: 'Testing & Optimization', desc: 'Test Performance, SEO, Accessibility และ Cross-browser Compatibility'},
-      {no: '05', title: 'Launch & Monitor', desc: 'Deploy, Setup Analytics และ Monitor ต่อเนื่องหลัง Launch'}
+      {no: '01', title: 'Discovery & Planning', desc: 'ทำความเข้าใจเป้าหมาย กลุ่มผู้ใช้ และความต้องการด้านเทคนิคก่อนออกแบบ'},
+      {no: '02', title: 'Design & Prototype', desc: 'ออกแบบ UI และสร้างต้นแบบที่กดใช้ได้ ให้อนุมัติก่อนเริ่มสร้าง'},
+      {no: '03', title: 'Development', desc: 'พัฒนาด้วย Next.js, TypeScript และแนวปฏิบัติที่ดีที่สุด'},
+      {no: '04', title: 'Testing & Optimization', desc: 'ทดสอบประสิทธิภาพ SEO การเข้าถึง และการใช้งานข้ามเบราว์เซอร์'},
+      {no: '05', title: 'Launch & Monitor', desc: 'ปล่อยระบบ ตั้งค่า Analytics และเฝ้าดูต่อเนื่องหลังเปิดตัว'}
     ]
   const caseStudies = isEN ? [
       {tag: 'E-Commerce · Bangkok', title: 'Page 1 Google Rankings for Every Target Keyword', desc: 'Next.js + headless commerce that loads in <1s with complete SEO.', result: 'Organic Traffic up 3x'},
       {tag: 'Healthcare · Nationwide', title: 'Hospital Website Handling 50,000 Visits/Day', desc: 'Performance optimisation for fast load even at traffic spikes.', result: 'Bounce Rate down 40%'},
       {tag: 'SaaS · Bangkok', title: 'Marketing Site Converting 8% to Trial', desc: 'A/B tested landing pages with a CMS the team manages themselves.', result: 'Trial Signup up 8%'}
     ] : [
-      {tag: 'E-Commerce · กรุงเทพฯ', title: 'เว็บ E-Commerce ติด Page 1 Google ทุก Keyword', desc: 'Next.js + Headless Commerce ที่ Load <1s และ SEO ครบ', result: 'Organic Traffic เพิ่ม 3x'},
-      {tag: 'Healthcare · ทั่วประเทศ', title: 'เว็บโรงพยาบาลรองรับ 50,000 Visit/วัน', desc: 'Performance Optimization ทำให้ Load ได้เร็วแม้ Traffic พุ่ง', result: 'Bounce Rate ลด 40%'},
-      {tag: 'SaaS · กรุงเทพฯ', title: 'Marketing Site Convert Trial ได้ 8%', desc: 'Landing Page ที่ A/B Test แล้ว ด้วย CMS ที่ทีม Update เองได้', result: 'Trial Signup เพิ่ม 8%'}
+      {tag: 'E-Commerce · กรุงเทพฯ', title: 'เว็บ E-Commerce ติดหน้าแรก Google ทุกคีย์เวิร์ด', desc: 'Next.js + Headless Commerce โหลดเร็วไม่ถึง 1 วินาที และทำ SEO ครบ', result: 'ผู้เข้าเว็บจากการค้นหาเพิ่ม 3 เท่า'},
+      {tag: 'Healthcare · ทั่วประเทศ', title: 'เว็บโรงพยาบาลรองรับ 50,000 ครั้งต่อวัน', desc: 'ปรับประสิทธิภาพให้โหลดได้เร็วแม้ผู้ใช้พุ่งสูง', result: 'Bounce Rate ลด 40%'},
+      {tag: 'SaaS · กรุงเทพฯ', title: 'เว็บการตลาดแปลงผู้ใช้ทดลองได้ 8%', desc: 'Landing Page ที่ผ่านการทำ A/B Test พร้อม CMS ที่ทีมอัปเดตเองได้', result: 'ผู้สมัครทดลองใช้เพิ่ม 8%'}
     ]
   const faqs        = isEN ? [
       {q: 'How long does it take?', a: 'Timelines depend on scope and integrations, but as a rough guide: a corporate or marketing website takes about 4-8 weeks from discovery to launch, an e-commerce platform with payments, inventory, and CMS typically runs 8-16 weeks, and a custom web application with user accounts, dashboards, or third-party integrations usually needs 3-6 months. We break every project into phases with clear milestones, so you always know what is shipping next and when — and we flag scope changes immediately instead of letting them quietly push the deadline.'},
@@ -139,14 +139,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {q: 'Who owns the code and the design once the project is done?', a: 'You do, fully. On final payment, all source code, design files, and any custom assets we produced transfer to you — there is no vendor lock-in, licensing fee, or dependency on us to keep the site running. We are also happy to sign an NDA before any work begins, and can work inside your own GitHub organisation from day one if you prefer to have visibility into every commit as we build.'},
       {q: 'How does pricing and payment work?', a: 'After a discovery phase where we scope requirements together, we quote a fixed price broken into phases, so you are never billed hourly with an open-ended total. Payment is milestone-based — typically 30% to begin, with the remainder tied to agreed deliverables like design approval, a staging build, and final launch. For ongoing work after launch, we offer monthly retainers instead of one-off invoices, which keeps budgeting predictable on both sides.'},
     ] : [
-      {q: 'ใช้เวลานานแค่ไหน?', a: 'ระยะเวลาขึ้นอยู่กับขอบเขตงานและ Integration ที่ต้องทำ แต่โดยเฉลี่ยแล้ว เว็บไซต์ Corporate หรือ Marketing ใช้เวลาประมาณ 4-8 สัปดาห์ตั้งแต่ Discovery จนถึง Launch เว็บ E-Commerce ที่มีระบบชำระเงิน สต๊อกสินค้า และ CMS มักใช้เวลา 8-16 สัปดาห์ ส่วน Web Application ที่มีระบบสมาชิก Dashboard หรือเชื่อมต่อกับระบบภายนอกมักใช้เวลา 3-6 เดือน เราแบ่งทุกโปรเจกต์เป็น Phase พร้อม Milestone ที่ชัดเจน คุณจะรู้เสมอว่าขั้นตอนต่อไปคืออะไรและเมื่อไหร่จะเสร็จ และหากมีการเปลี่ยนขอบเขตงานระหว่างทาง เราจะแจ้งผลกระทบต่อ Timeline ทันทีแทนที่จะปล่อยให้ Deadline เลื่อนแบบเงียบๆ'},
-      {q: 'ใช้ CMS อะไร?', a: 'เราเลือก CMS ตามโครงสร้าง Content และทีมที่จะเป็นคนดูแล ไม่ได้ใช้ตัวเดียวตายตัว Sanity เป็นตัวเลือกหลักสำหรับทีมที่ต้องการ Content แบบ Structured ที่ยืดหยุ่นและแก้ไขได้เร็วทั้งบนเว็บและแอป Contentful เหมาะเมื่อ Content ต้องถูกใช้หลายช่องทางพร้อมกัน ทั้งเว็บ มือถือ และเครื่องมือ Marketing จากแหล่งข้อมูลเดียว ส่วน WordPress (แบบ Headless) ยังคงเหมาะกับเว็บที่มี Content จำนวนมากอย่าง Blog หรือ Media ไม่ว่าจะเลือกตัวไหน ทีมของคุณจะได้ Editor Interface, เอกสารประกอบ และ Training Session สั้นๆ เพื่อให้ Publish Content ได้เองโดยไม่ต้องพึ่งเรา'},
-      {q: 'SEO ทำได้แค่ไหน?', a: 'เราดูแล Technical SEO ครบทุกด้าน ตั้งแต่ URL Structure ที่สะอาด, Semantic HTML, Schema Markup, Sitemap และ Robots.txt ที่ถูกต้อง, Canonical Tag, การปรับ Core Web Vitals, Image Optimization และ Internal Linking ที่สอดคล้องกับโครงสร้างข้อมูลจริงของเว็บไซต์ นี่คือพื้นฐานที่ทุกหน้าต้องมีเพื่อให้ Search Engine เข้าถึงและจัดอันดับได้ ส่วน Content SEO เช่น Keyword Research, การเขียน Copy บนหน้าเว็บ และการสร้าง Topical Authority ในระยะยาว เป็นงานต่อเนื่องแยกต่างหาก เราสามารถเสนอเป็น Add-on เพิ่มเติม หรือแนะนำ Partner ให้ได้หากไม่ได้อยู่ในขอบเขตงานนี้'},
-      {q: 'Host ที่ไหนดี?', a: 'สำหรับโปรเจกต์ Next.js ส่วนใหญ่เราจะ Deploy บน Vercel ซึ่งให้ Preview Deployment อัตโนมัติทุก Pull Request, Edge Caching ทั่วโลก และ Release ที่แทบไม่มี Downtime สำหรับ Infrastructure ที่ใหญ่หรือกำหนดเองมากขึ้น เราใช้ AWS (CloudFront, ECS หรือ Lambda ขึ้นอยู่กับ Workload) หรือ Google Cloud หากองค์กรของคุณต้องการ On-premise หรือ Cloud Provider เฉพาะเจาะจงด้วยเหตุผลด้าน Compliance เราจะออกแบบ Deployment Pipeline ให้รองรับข้อจำกัดนั้นตั้งแต่วันแรก ไม่ใช่มาปรับทีหลัง'},
-      {q: 'มี Support หลัง Launch ไหม?', a: 'มีครับ ทุกโปรเจกต์มีช่วง Warranty (โดยทั่วไป 30 วัน) ที่เราแก้บั๊กที่เกิดจากขั้นตอนพัฒนาให้ฟรีโดยไม่มีค่าใช้จ่ายเพิ่ม หลังจากนั้นลูกค้าส่วนใหญ่จะเปลี่ยนมาใช้ Retainer รายเดือนที่ครอบคลุม Uptime Monitoring, Security Patching, การอัปเดต Dependency, ตรวจสอบ Performance และชั่วโมงทำงานสำหรับ Feature เล็กๆ หรือแก้ไข Content เพิ่มเติม เพื่อให้เว็บไซต์พัฒนาต่อเนื่องแทนที่จะล้าหลังไปเรื่อยๆ'},
-      {q: 'ทีมเราอัปเดตเนื้อหาเองหลัง Launch ได้ไหม?', a: 'ได้ครับ นั่นคือจุดประสงค์ของการตั้งค่า Headless CMS หลังส่งมอบโปรเจกต์ เราจะจัด Walkthrough Session (บันทึกวิดีโอไว้ พร้อมเอกสารประกอบ) ให้ทีม Marketing หรือ Content ของคุณเพิ่มหน้าใหม่ เปลี่ยนรูปภาพ แก้ไข Copy และเผยแพร่บทความใหม่ได้เองโดยไม่ต้องแตะ Code หรือรอ Developer ส่วนงานที่ต้องใช้ Engineering จริงๆ เช่น Page Type ใหม่หรือ Integration ใหม่ จะเป็น Request แยกที่มีขอบเขตชัดเจน ไม่ใช่ปัญหาคอขวดสำหรับการแก้ไขทั่วไป'},
-      {q: 'Code และดีไซน์เป็นของใครหลังจบโปรเจกต์?', a: 'เป็นของคุณทั้งหมดครับ เมื่อชำระเงินงวดสุดท้าย Source Code, ไฟล์ดีไซน์ และ Asset ที่กำหนดเองทั้งหมดจะโอนเป็นของคุณ ไม่มี Vendor Lock-in ค่า License หรือการต้องพึ่งเราเพื่อให้เว็บไซต์ทำงานต่อได้ เรายินดีเซ็น NDA ก่อนเริ่มงานได้ และสามารถทำงานบน GitHub Organization ของคุณเองตั้งแต่วันแรก หากคุณต้องการเห็นทุก Commit ระหว่างที่เราพัฒนา'},
-      {q: 'ค่าใช้จ่ายและการชำระเงินเป็นอย่างไร?', a: 'หลังจากขั้นตอน Discovery ที่เรากำหนดขอบเขตงานร่วมกัน เราจะเสนอราคาคงที่แบ่งตาม Phase คุณจะไม่ถูกคิดค่าใช้จ่ายแบบรายชั่วโมงที่ไม่มีเพดาน การชำระเงินอิงตาม Milestone โดยทั่วไปมัดจำ 30% เพื่อเริ่มงาน ส่วนที่เหลือผูกกับ Deliverable ที่ตกลงกัน เช่น การ Approve ดีไซน์, Build บน Staging และการ Launch จริง สำหรับงานต่อเนื่องหลัง Launch เรามี Retainer รายเดือนแทนการออกใบแจ้งหนี้แบบครั้งเดียว ทำให้การวางงบประมาณคาดการณ์ได้ทั้งสองฝ่าย'},
+      {q: 'ใช้เวลานานแค่ไหน?', a: 'ระยะเวลาขึ้นกับขอบเขตงานและระบบที่ต้องเชื่อมต่อ โดยเฉลี่ยเว็บไซต์องค์กรหรือเว็บการตลาดใช้ประมาณ 4-8 สัปดาห์ ตั้งแต่เริ่มสำรวจจนถึงเปิดตัว เว็บ E-Commerce ที่มีระบบชำระเงิน สต๊อกสินค้า และ CMS มักใช้ 8-16 สัปดาห์ ส่วนเว็บแอปพลิเคชันที่มีระบบสมาชิก Dashboard หรือเชื่อมระบบภายนอกมักใช้ 3-6 เดือน เราแบ่งทุกโปรเจกต์เป็นช่วงๆ พร้อมหมุดหมายที่ชัดเจน คุณจะรู้เสมอว่าขั้นถัดไปคืออะไรและเสร็จเมื่อไหร่ ถ้าขอบเขตงานเปลี่ยนระหว่างทาง เราจะแจ้งผลกระทบต่อกำหนดการทันที ไม่ปล่อยให้เส้นตายเลื่อนไปเงียบๆ'},
+      {q: 'ใช้ CMS อะไร?', a: 'เราเลือก CMS ตามโครงสร้างเนื้อหาและทีมที่จะดูแล ไม่ได้ใช้ตัวเดียวตายตัว Sanity เป็นตัวเลือกหลักสำหรับทีมที่ต้องการเนื้อหาแบบมีโครงสร้างที่ยืดหยุ่นและแก้ไขได้เร็วทั้งบนเว็บและแอป Contentful เหมาะเมื่อต้องใช้เนื้อหาชุดเดียวกันหลายช่องทางพร้อมกัน ทั้งเว็บ มือถือ และเครื่องมือการตลาด ส่วน WordPress (แบบ Headless) ยังเหมาะกับเว็บที่มีเนื้อหาจำนวนมากอย่างบล็อกหรือสื่อ ไม่ว่าเลือกตัวไหน ทีมของคุณจะได้หน้าแก้ไขเนื้อหา เอกสารประกอบ และอบรมสั้นๆ เพื่อเผยแพร่เนื้อหาได้เองโดยไม่ต้องพึ่งเรา'},
+      {q: 'ทำ SEO ได้แค่ไหน?', a: 'เราดูแล Technical SEO ครบทุกด้าน ตั้งแต่ URL ที่สะอาด, Semantic HTML, Schema Markup, Sitemap และ Robots.txt ที่ถูกต้อง, Canonical Tag, การปรับ Core Web Vitals, การปรับรูปภาพ และ Internal Linking ที่ตรงกับโครงสร้างข้อมูลจริงของเว็บ นี่คือพื้นฐานที่ทุกหน้าต้องมี เพื่อให้ Search Engine เข้าถึงและจัดอันดับได้ ส่วน Content SEO เช่น หาคีย์เวิร์ด เขียนข้อความบนหน้าเว็บ และสร้างความน่าเชื่อถือในหัวข้อนั้นระยะยาว เป็นงานต่อเนื่องแยกต่างหาก เราเสนอเป็นบริการเสริมได้ หรือแนะนำพาร์ตเนอร์ให้ ถ้าไม่ได้อยู่ในขอบเขตงานนี้'},
+      {q: 'โฮสต์ที่ไหนดี?', a: 'สำหรับโปรเจกต์ Next.js ส่วนใหญ่เราปล่อยบน Vercel ซึ่งมีเวอร์ชันตัวอย่างอัตโนมัติทุก Pull Request, Edge Caching ทั่วโลก และปล่อยเวอร์ชันได้โดยแทบไม่มีระบบหยุดทำงาน สำหรับโครงสร้างพื้นฐานที่ใหญ่หรือกำหนดเองมากขึ้น เราใช้ AWS (CloudFront, ECS หรือ Lambda ขึ้นกับงาน) หรือ Google Cloud ถ้าองค์กรของคุณต้องใช้ On-premise หรือ Cloud ของเจ้าใดเจ้าหนึ่งด้วยเหตุผลด้านข้อกำหนด เราจะออกแบบขั้นตอนปล่อยระบบให้รองรับตั้งแต่วันแรก ไม่ใช่มาแก้ทีหลัง'},
+      {q: 'มีดูแลหลังเปิดตัวไหม?', a: 'มีครับ ทุกโปรเจกต์มีช่วงรับประกัน (โดยทั่วไป 30 วัน) ที่เราแก้บั๊กจากขั้นตอนพัฒนาให้ฟรี ไม่คิดค่าใช้จ่ายเพิ่ม หลังจากนั้นลูกค้าส่วนใหญ่เปลี่ยนมาใช้แพ็กเกจรายเดือนที่ครอบคลุมการเฝ้าดู Uptime, อุดช่องโหว่, อัปเดต Dependency, ตรวจประสิทธิภาพ และชั่วโมงงานสำหรับฟีเจอร์เล็กๆ หรือแก้เนื้อหาเพิ่มเติม เพื่อให้เว็บพัฒนาต่อเนื่อง ไม่ล้าหลังไปเรื่อยๆ'},
+      {q: 'ทีมเราอัปเดตเนื้อหาเองหลังเปิดตัวได้ไหม?', a: 'ได้ครับ นั่นคือจุดประสงค์ของการตั้งค่า Headless CMS หลังส่งมอบโปรเจกต์ เราจะจัดสอนการใช้งาน (บันทึกวิดีโอไว้ พร้อมเอกสารประกอบ) ให้ทีมการตลาดหรือทีมคอนเทนต์ของคุณ เพิ่มหน้าใหม่ เปลี่ยนรูปภาพ แก้ข้อความ และเผยแพร่บทความใหม่ได้เองโดยไม่ต้องแตะโค้ดหรือรอนักพัฒนา ส่วนงานที่ต้องใช้วิศวกรจริงๆ เช่น หน้าประเภทใหม่หรือการเชื่อมระบบใหม่ จะเป็นงานแยกที่มีขอบเขตชัดเจน ไม่ทำให้การแก้ไขทั่วไปติดขัด'},
+      {q: 'โค้ดและดีไซน์เป็นของใครหลังจบโปรเจกต์?', a: 'เป็นของคุณทั้งหมดครับ เมื่อชำระเงินงวดสุดท้าย ซอร์สโค้ด ไฟล์ดีไซน์ และไฟล์ที่ทำขึ้นเฉพาะงานทั้งหมดจะโอนเป็นของคุณ ไม่มีการผูกติดกับผู้ให้บริการ ไม่มีค่าลิขสิทธิ์ และไม่ต้องพึ่งเราเพื่อให้เว็บทำงานต่อ เรายินดีเซ็น NDA ก่อนเริ่มงาน และทำงานบน GitHub Organization ของคุณเองตั้งแต่วันแรกได้ ถ้าคุณอยากเห็นทุก Commit ระหว่างที่เราพัฒนา'},
+      {q: 'ค่าใช้จ่ายและการชำระเงินเป็นอย่างไร?', a: 'หลังขั้นตอนสำรวจที่เรากำหนดขอบเขตงานร่วมกัน เราจะเสนอราคาคงที่แบ่งตามช่วงงาน คุณจะไม่ถูกคิดเป็นรายชั่วโมงแบบไม่มีเพดาน การชำระเงินอิงตามหมุดหมาย โดยทั่วไปมัดจำ 30% เพื่อเริ่มงาน ส่วนที่เหลือผูกกับงานที่ส่งมอบตามที่ตกลง เช่น อนุมัติดีไซน์ เวอร์ชันทดสอบบน Staging และเปิดตัวจริง สำหรับงานต่อเนื่องหลังเปิดตัว เรามีแพ็กเกจรายเดือนแทนการออกใบแจ้งหนี้ครั้งเดียว ทำให้ทั้งสองฝ่ายวางงบได้ล่วงหน้า'},
     ]
   const related     = isEN ? [
       {label: 'UX & UI Design', href: '/services/ux-ui-design'},
@@ -224,10 +224,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-search', title: 'SEO & Discoverability', desc: 'Semantic markup, metadata, structured data, and rendering strategies that search engines can rank.' },
     { icon: 'ti-shield-check', title: 'Secure by Default', desc: 'Auth, authorization, input validation, secrets management, and dependency hygiene built into the stack.' },
   ] : [
-    { icon: 'ti-device-mobile', title: 'UI ที่ Responsive และเข้าถึงได้', desc: 'อินเทอร์เฟซที่ใช้งานได้ทุกอุปกรณ์และผ่านมาตรฐาน Accessibility โดยไม่ลดทอนคุณภาพงานดีไซน์' },
-    { icon: 'ti-gauge', title: 'Performance Engineering', desc: 'First Paint ที่เร็ว, Data Fetching และ Caching ที่มีประสิทธิภาพ พร้อม Core Web Vitals ที่ปรับให้เหมาะกับผู้ใช้จริง' },
-    { icon: 'ti-search', title: 'SEO & การค้นพบได้ง่าย', desc: 'Semantic Markup, Metadata, Structured Data และกลยุทธ์ Rendering ที่ Search Engine จัดอันดับได้' },
-    { icon: 'ti-shield-check', title: 'ปลอดภัยตั้งแต่เริ่มต้น', desc: 'Auth, Authorization, Input Validation, Secrets Management และ Dependency Hygiene ฝังอยู่ในสถาปัตยกรรม' },
+    { icon: 'ti-device-mobile', title: 'UI ที่ปรับตามหน้าจอและเข้าถึงได้ทุกคน', desc: 'หน้าจอที่ใช้ได้ทุกอุปกรณ์และผ่านมาตรฐานการเข้าถึง โดยไม่ลดคุณภาพงานดีไซน์' },
+    { icon: 'ti-gauge', title: 'Performance Engineering', desc: 'แสดงผลครั้งแรกเร็ว ดึงข้อมูลและ Cache อย่างมีประสิทธิภาพ พร้อม Core Web Vitals ที่ปรับให้เหมาะกับผู้ใช้จริง' },
+    { icon: 'ti-search', title: 'SEO และการค้นพบได้ง่าย', desc: 'Semantic Markup, Metadata, Structured Data และวิธีแสดงผลที่ Search Engine จัดอันดับได้' },
+    { icon: 'ti-shield-check', title: 'ปลอดภัยตั้งแต่เริ่มต้น', desc: 'การยืนยันตัวตน การกำหนดสิทธิ์ การตรวจข้อมูลนำเข้า การจัดการความลับ และดูแล Dependency ฝังอยู่ในสถาปัตยกรรม' },
   ]
 
   const techStack = [
@@ -262,12 +262,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '05', title: 'Deployment', desc: 'Safe production release and observability' },
     { no: '06', title: 'Support', desc: 'Post-launch fixes, tuning, and growth work' },
   ] : [
-    { no: '01', title: 'Discovery', desc: 'เป้าหมาย, ผู้ใช้, ข้อจำกัด และตัวชี้วัดความสำเร็จ' },
-    { no: '02', title: 'Design', desc: 'UX Flow, UI และ Technical Architecture' },
-    { no: '03', title: 'Development', desc: 'พัฒนาแบบ Full-stack ทีละ Iteration พร้อม CI/CD' },
-    { no: '04', title: 'Testing', desc: 'Quality Gate ทั้งแบบ Automated และ Exploratory' },
-    { no: '05', title: 'Deployment', desc: 'Release ขึ้น Production อย่างปลอดภัยพร้อม Observability' },
-    { no: '06', title: 'Support', desc: 'แก้ไข, ปรับจูน และพัฒนาต่อยอดหลัง Launch' },
+    { no: '01', title: 'Discovery', desc: 'เป้าหมาย ผู้ใช้ ข้อจำกัด และตัวชี้วัดความสำเร็จ' },
+    { no: '02', title: 'Design', desc: 'ลำดับการใช้งาน UI และสถาปัตยกรรมทางเทคนิค' },
+    { no: '03', title: 'Development', desc: 'พัฒนา Full-stack ทีละรอบ พร้อม CI/CD' },
+    { no: '04', title: 'Testing', desc: 'ด่านตรวจคุณภาพทั้งแบบอัตโนมัติและแบบสำรวจ' },
+    { no: '05', title: 'Deployment', desc: 'ปล่อยขึ้นระบบจริงอย่างปลอดภัย พร้อม Observability' },
+    { no: '06', title: 'Support', desc: 'แก้ไข ปรับจูน และพัฒนาต่อยอดหลังเปิดตัว' },
   ]
 
   const postHeroSlot = (
@@ -288,7 +288,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           {isEN ? 'Key Capabilities' : 'ความสามารถหลัก'}
         </h2>
         <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400 }}>
-          {isEN ? 'Concrete capabilities we bring to this engagement — not buzzwords.' : 'ความสามารถที่จับต้องได้จริงที่เรานำมาใช้ในทุกโปรเจกต์ ไม่ใช่แค่คำสวยหรู'}
+          {isEN ? 'Concrete capabilities we bring to this engagement — not buzzwords.' : 'สิ่งที่เราทำได้จริงในทุกโปรเจกต์ ไม่ใช่แค่คำสวยหรู'}
         </p>
 
         <div className="grid sm:grid-cols-2 gap-5">
@@ -312,12 +312,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             {isEN ? 'Tech Stack' : 'เทคโนโลยีที่ใช้'}
           </p>
           <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
-            {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้งาน'}
+            {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้'}
           </h2>
           <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'Proven tools and platforms we apply where they fit — chosen for the problem, not the trend cycle.'
-              : 'เครื่องมือและแพลตฟอร์มที่พิสูจน์แล้ว เลือกใช้ตามโจทย์งานจริง ไม่ใช่ตามกระแส'}
+              : 'เครื่องมือและแพลตฟอร์มที่ผ่านการใช้งานจริง เลือกตามโจทย์งาน ไม่ใช่ตามกระแส'}
           </p>
 
           <div className="flex flex-wrap gap-3">
@@ -348,7 +348,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <p className="mb-16" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'A clear path from problem to production — adjusted per service, never one-size-fits-all.'
-              : 'เส้นทางที่ชัดเจนจากปัญหาสู่ Production ปรับตามแต่ละบริการ ไม่ใช่สูตรสำเร็จตายตัว'}
+              : 'เส้นทางที่ชัดเจนจากโจทย์ปัญหาสู่ระบบจริง ปรับตามแต่ละบริการ ไม่ใช่สูตรตายตัว'}
           </p>
 
           <div className="relative">
@@ -426,7 +426,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-medium transition-opacity hover:opacity-90"
             style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}
           >
-            {isEN ? 'Start a Conversation' : 'เริ่มบทสนทนา'}
+            {isEN ? 'Start a Conversation' : 'เริ่มคุยกัน'}
             <i className="ti ti-arrow-right" style={{ fontSize: 17 }} aria-hidden="true" />
           </Link>
           <a href="mailto:wu@haliviq.com" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>
@@ -444,7 +444,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       badge={badge} title={title} subtitle={subtitle}
       heroDesc={heroDesc} heroBullets={heroBullets}
       heroDark heroSlot={heroSlot} heroShowSecondaryCta={false}
-      heroCtaLabel={isEN ? 'Get Started' : 'เริ่มต้นเลย'}
+      heroCtaLabel={isEN ? 'Get Started' : 'เริ่มเลย'}
       postHeroSlot={postHeroSlot}
       whyTitle={whyTitle} whyDesc={whyDesc} whyPoints={whyPoints}
       outcomes={outcomes} ctaTitle={ctaTitle} ctaDesc={ctaDesc}

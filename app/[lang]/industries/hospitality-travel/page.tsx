@@ -16,7 +16,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge = isEN ? 'Industry / Hospitality & Travel' : 'อุตสาหกรรม / การบริการและการท่องเที่ยว'
   const heroSubhead = isEN
     ? 'Enhance guest experiences with innovative technology solutions.'
-    : 'ยกระดับประสบการณ์ผู้เข้าพักด้วยเทคโนโลยีที่ล้ำสมัย'
+    : 'ใช้เทคโนโลยีทำให้ผู้เข้าพักได้รับความสะดวกมากขึ้น'
 
   const challenges = isEN ? [
     { icon: 'ti-star', title: 'Elevated Guest Expectations', desc: 'Modern travelers expect seamless digital experiences from booking through checkout, including mobile check-in, personalised recommendations, and instant service requests.' },
@@ -24,16 +24,16 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-calendar', title: 'Seasonal Demand Volatility', desc: 'Dramatic demand fluctuations require dynamic pricing, flexible staffing, and revenue optimisation systems that adapt in real time to maximise occupancy and profitability.' },
     { icon: 'ti-user', title: 'Persistent Staff Shortages', desc: 'The hospitality industry faces chronic labour shortages, driving the need for automation and self-service technologies that maintain service quality with fewer team members.' },
   ] : [
-    { icon: 'ti-star', title: 'ความคาดหวังของผู้เข้าพักที่สูงขึ้น', desc: 'นักเดินทางยุคใหม่คาดหวังประสบการณ์ดิจิทัลที่ราบรื่นตั้งแต่จองจนถึง Checkout รวมถึง Mobile Check-in คำแนะนำที่ Personalize และคำขอบริการแบบทันที' },
-    { icon: 'ti-refresh', title: 'ความไม่มีประสิทธิภาพในการดำเนินงาน', desc: 'ระบบจัดการทรัพย์สิน การจอง และการสื่อสารกับผู้เข้าพักที่แยกส่วนกัน ทำให้เกิด Silo ในการทำงาน เพิ่มต้นทุน และลดคุณภาพประสบการณ์ในทุกจุดสัมผัส' },
-    { icon: 'ti-calendar', title: 'ความผันผวนของ Demand ตามฤดูกาล', desc: 'ความต้องการที่ผันผวนมากต้องการ Dynamic Pricing กำลังคนที่ยืดหยุ่น และระบบ Revenue Optimization ที่ปรับตัวแบบ Real-time เพื่อเพิ่ม Occupancy และกำไรสูงสุด' },
-    { icon: 'ti-user', title: 'ปัญหาขาดแคลนพนักงานเรื้อรัง', desc: 'อุตสาหกรรม Hospitality เผชิญปัญหาขาดแคลนแรงงานเรื้อรัง ผลักดันความต้องการ Automation และเทคโนโลยี Self-service ที่รักษาคุณภาพบริการด้วยทีมที่เล็กลง' },
+    { icon: 'ti-star', title: 'ผู้เข้าพักคาดหวังสูงขึ้น', desc: 'นักเดินทางยุคใหม่อยากได้ประสบการณ์ดิจิทัลที่ราบรื่นตั้งแต่จองจนถึงเช็กเอาต์ ทั้งเช็กอินผ่านมือถือ คำแนะนำที่ตรงใจ และขอบริการได้ทันที' },
+    { icon: 'ti-refresh', title: 'การทำงานที่ไม่คล่องตัว', desc: 'ระบบจัดการที่พัก การจอง และการสื่อสารกับผู้เข้าพักที่แยกกัน ทำให้แต่ละฝ่ายทำงานแยกส่วน ต้นทุนสูงขึ้น และประสบการณ์ของผู้เข้าพักแย่ลงในทุกขั้นตอน' },
+    { icon: 'ti-calendar', title: 'ความต้องการที่ขึ้นลงตามฤดูกาล', desc: 'ความต้องการที่ผันผวนมากต้องใช้ราคาที่ปรับตามช่วง กำลังคนที่ยืดหยุ่น และระบบเพิ่มรายได้ที่ปรับตัวแบบเรียลไทม์ เพื่อให้ห้องเต็มและได้กำไรสูงสุด' },
+    { icon: 'ti-user', title: 'ขาดแคลนพนักงานเรื้อรัง', desc: 'ธุรกิจโรงแรมและท่องเที่ยวขาดแรงงานมาต่อเนื่อง จึงต้องการระบบอัตโนมัติและเทคโนโลยีให้ลูกค้าบริการตัวเอง เพื่อรักษาคุณภาพบริการด้วยทีมที่เล็กลง' },
   ]
 
   const metrics = [
-    { value: '$24.3B', label: isEN ? 'Global Hospitality Technology Market by 2028' : 'ขนาดตลาดเทคโนโลยี Hospitality ทั่วโลกภายในปี 2028', source: 'Mordor Intelligence, 2024' },
-    { value: '72%', label: isEN ? 'Hotel Bookings Made on Mobile Devices' : 'การจองโรงแรมที่ทำผ่านอุปกรณ์มือถือ', source: 'Phocuswright Travel Research, 2024' },
-    { value: '23%', label: isEN ? 'Revenue Uplift from Personalized Guest Experiences' : 'รายได้ที่เพิ่มขึ้นจากประสบการณ์ผู้เข้าพักที่ Personalize', source: 'Deloitte Hospitality Insights, 2024' },
+    { value: '$24.3B', label: isEN ? 'Global Hospitality Technology Market by 2028' : 'ขนาดตลาดเทคโนโลยีธุรกิจโรงแรมและท่องเที่ยวทั่วโลกภายในปี 2028', source: 'Mordor Intelligence, 2024' },
+    { value: '72%', label: isEN ? 'Hotel Bookings Made on Mobile Devices' : 'การจองโรงแรมที่ทำผ่านมือถือ', source: 'Phocuswright Travel Research, 2024' },
+    { value: '23%', label: isEN ? 'Revenue Uplift from Personalized Guest Experiences' : 'รายได้ที่เพิ่มขึ้นจากการดูแลผู้เข้าพักแบบเฉพาะบุคคล', source: 'Deloitte Hospitality Insights, 2024' },
   ]
 
   const capabilities = isEN ? [
@@ -43,11 +43,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-trending-up', title: 'Revenue Optimization Systems', desc: 'AI-driven pricing and revenue management platforms that maximise occupancy and RevPAR through dynamic rate optimisation.' },
     { icon: 'ti-wifi', title: 'Contactless Experience Solutions', desc: 'Mobile check-in, digital key, and contactless payment systems that streamline the guest journey while reducing operational overhead.' },
   ] : [
-    { icon: 'ti-calendar-event', title: 'Booking Engine Platforms', desc: 'ระบบ Direct Booking พร้อมความพร้อมของห้องแบบ Real-time, Dynamic Pricing, การตั้งค่า Package และการชำระเงินที่ราบรื่น' },
-    { icon: 'ti-building', title: 'Property Management Systems', desc: 'แพลตฟอร์ม PMS แบบรวมศูนย์ จัดการการจอง แม่บ้าน ซ่อมบำรุง โปรไฟล์ผู้เข้าพัก และการดำเนินงานหลายทรัพย์สิน' },
-    { icon: 'ti-bell', title: 'Guest Engagement Tools', desc: 'แอปมือถือและแพลตฟอร์ม Digital Concierge สำหรับคำแนะนำที่ Personalize คำขอบริการ และสื่อสารกับผู้เข้าพักแบบ Real-time' },
-    { icon: 'ti-trending-up', title: 'Revenue Optimization Systems', desc: 'แพลตฟอร์มตั้งราคาและจัดการรายได้ด้วย AI ที่เพิ่ม Occupancy และ RevPAR สูงสุดผ่านการปรับราคาแบบ Dynamic' },
-    { icon: 'ti-wifi', title: 'Contactless Experience Solutions', desc: 'Mobile Check-in, Digital Key และระบบชำระเงินแบบ Contactless ที่ทำให้เส้นทางผู้เข้าพักราบรื่นขึ้นและลดภาระงานปฏิบัติการ' },
+    { icon: 'ti-calendar-event', title: 'Booking Engine Platforms', desc: 'ระบบจองตรงที่แสดงห้องว่างแบบเรียลไทม์ ปรับราคาตามช่วง จัดแพ็กเกจ และชำระเงินได้ราบรื่น' },
+    { icon: 'ti-building', title: 'Property Management Systems', desc: 'แพลตฟอร์ม PMS กลาง จัดการการจอง แม่บ้าน ซ่อมบำรุง ข้อมูลผู้เข้าพัก และงานของหลายที่พัก' },
+    { icon: 'ti-bell', title: 'Guest Engagement Tools', desc: 'แอปมือถือและ Digital Concierge ให้คำแนะนำตรงใจ รับคำขอบริการ และคุยกับผู้เข้าพักแบบเรียลไทม์' },
+    { icon: 'ti-trending-up', title: 'Revenue Optimization Systems', desc: 'แพลตฟอร์มตั้งราคาและจัดการรายได้ด้วย AI เพิ่มอัตราเข้าพักและ RevPAR ด้วยการปรับราคาตามสถานการณ์' },
+    { icon: 'ti-wifi', title: 'Contactless Experience Solutions', desc: 'เช็กอินผ่านมือถือ กุญแจดิจิทัล และชำระเงินแบบไม่สัมผัส ทำให้ผู้เข้าพักสะดวกขึ้นและลดงานของพนักงาน' },
   ]
 
   const techStack = ['React', 'React Native', 'Node.js', 'Redis', 'Elasticsearch', 'AWS', 'Stripe', 'Google Maps API', 'IoT', 'Machine Learning']
@@ -57,9 +57,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '02', title: 'Guest Experience Mobile App', desc: 'White-label mobile application for guests with mobile check-in, digital key, service requests, local recommendations, and in-app messaging with staff.' },
     { no: '03', title: 'Revenue Management System', desc: 'AI-driven revenue optimization platform that analyzes market demand, competitor rates, and booking patterns to recommend dynamic pricing strategies.' },
   ] : [
-    { no: '01', title: 'Direct Booking Engine', desc: 'แพลตฟอร์ม Booking ที่ปรับให้ Conversion สูงสุด พร้อมความพร้อมของห้องแบบ Real-time, Dynamic Pricing, Package Upsell, โค้ดส่วนลด และระบบชำระเงินครบวงจร' },
-    { no: '02', title: 'Guest Experience Mobile App', desc: 'แอปมือถือแบบ White-label สำหรับผู้เข้าพัก พร้อม Mobile Check-in, Digital Key, คำขอบริการ คำแนะนำสถานที่ และแชทกับพนักงานในแอป' },
-    { no: '03', title: 'Revenue Management System', desc: 'แพลตฟอร์ม Revenue Optimization ด้วย AI ที่วิเคราะห์ Demand ตลาด ราคาคู่แข่ง และรูปแบบการจอง เพื่อแนะนำกลยุทธ์ตั้งราคาแบบ Dynamic' },
+    { no: '01', title: 'Direct Booking Engine', desc: 'แพลตฟอร์มจองที่ปรับให้ปิดการขายได้มากที่สุด แสดงห้องว่างแบบเรียลไทม์ ปรับราคาตามช่วง ขายแพ็กเกจเพิ่ม โค้ดส่วนลด และชำระเงินครบ' },
+    { no: '02', title: 'Guest Experience Mobile App', desc: 'แอปมือถือแบรนด์ของคุณเองสำหรับผู้เข้าพัก เช็กอินผ่านมือถือ กุญแจดิจิทัล ขอบริการ แนะนำสถานที่ และแชตกับพนักงานในแอป' },
+    { no: '03', title: 'Revenue Management System', desc: 'แพลตฟอร์มเพิ่มรายได้ด้วย AI วิเคราะห์ความต้องการของตลาด ราคาคู่แข่ง และรูปแบบการจอง เพื่อแนะนำกลยุทธ์ตั้งราคาตามสถานการณ์' },
   ]
 
   const heroVisual = (
@@ -148,7 +148,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
                   ? 'We help hotels, resorts, and travel companies build direct booking engines, property management systems, guest experience apps, and revenue optimization platforms. Our solutions handle seasonal demand fluctuations and multi-property complexity while delighting guests with intuitive, seamless digital experiences.'
-                  : 'เราช่วยโรงแรม รีสอร์ท และบริษัทท่องเที่ยว สร้าง Direct Booking Engine, Property Management System, แอปประสบการณ์ผู้เข้าพัก และแพลตฟอร์ม Revenue Optimization โซลูชันของเรารองรับความผันผวนตามฤดูกาลและความซับซ้อนของหลายทรัพย์สิน พร้อมมอบประสบการณ์ดิจิทัลที่ใช้งานง่ายและราบรื่นให้ผู้เข้าพัก'}
+                  : 'เราช่วยโรงแรม รีสอร์ต และบริษัทท่องเที่ยวสร้างระบบจองตรง ระบบจัดการที่พัก (PMS) แอปสำหรับผู้เข้าพัก และแพลตฟอร์มเพิ่มรายได้ ระบบของเรารองรับความต้องการที่ขึ้นลงตามฤดูกาลและการดูแลหลายที่พัก พร้อมให้ผู้เข้าพักใช้งานดิจิทัลได้ง่ายและราบรื่น'}
               </p>
             </div>
           </div>
@@ -166,7 +166,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Understanding the critical obstacles that drive digital transformation in this industry.'
-                : 'ความเข้าใจอุปสรรคสำคัญที่ผลักดันการปรับสู่ดิจิทัลในอุตสาหกรรมนี้'}
+                : 'ปัญหาหลักที่ธุรกิจในอุตสาหกรรมนี้ต้องเจอ'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -216,7 +216,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'โซลูชันที่พิสูจน์แล้วซึ่งเราสร้างเพื่อตอบโจทย์ที่สำคัญที่สุดของอุตสาหกรรมคุณ'}
+              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -239,12 +239,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Tech Stack' : 'เทคโนโลยีที่ใช้'}
             </p>
             <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
-              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้งาน'}
+              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้'}
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Industry-proven tools and frameworks we leverage to build robust solutions.'
-                : 'เครื่องมือและ Framework ที่พิสูจน์แล้วในอุตสาหกรรม ที่เราใช้สร้างโซลูชันที่แข็งแรงและเชื่อถือได้'}
+                : 'เครื่องมือและ Framework ที่เราเลือกใช้ เพราะมั่นคงและเชื่อถือได้'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -270,7 +270,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างโปรเจกต์ที่เราส่งมอบจริงให้กับลูกค้าในอุตสาหกรรมนี้'}
+              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างงานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -310,7 +310,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link

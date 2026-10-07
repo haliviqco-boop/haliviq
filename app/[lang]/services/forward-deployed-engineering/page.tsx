@@ -35,14 +35,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge    = isEN ? 'Engineering / Forward-Deployed'  : 'Engineering / Forward-Deployed'
   const title    = isEN ? 'Your Team,'  : 'ทีมของคุณ,'
   const subtitle = isEN ? 'Your Tools, Your Office'    : 'เครื่องมือของคุณ, ออฟฟิศของคุณ'
-  const heroDesc = isEN ? 'Senior engineers embedded directly in your organization to ship AI that reaches production, tackle the integrations nobody wants, and leave you with a handover you can actually live with.'  : 'Senior Engineer ที่ฝังตัวอยู่ในองค์กรของคุณโดยตรง เพื่อส่ง AI ที่ไปถึง Production จัดการ Integration ที่ไม่มีใครอยากทำ และส่งมอบงานในแบบที่คุณดูแลต่อได้จริง'
-  const whyTitle = isEN ? 'Why embedded engineering beats a typical vendor'    : 'ทำไม Embedded Engineering ถึงดีกว่า Vendor ทั่วไป'
-  const whyDesc  = isEN ? 'A vendor delivers a spec from a distance. An embedded team sits with yours, sees the real constraints, and ships weekly instead of disappearing for months and returning with a mismatch.'  : 'Vendor ทั่วไปส่งมอบตาม Spec จากระยะไกล แต่ Embedded Team จะนั่งทำงานร่วมกับทีมคุณ เห็นข้อจำกัดจริง และส่งงานทุกสัปดาห์ แทนที่จะหายไปหลายเดือนแล้วกลับมาพร้อมงานที่ไม่ตรงกับที่ต้องการ'
-  const ctaTitle = isEN ? 'Ready to embed a team that ships?'    : 'พร้อมมีทีมที่ฝังตัวและส่งงานได้จริงหรือยัง?'
-  const ctaDesc  = isEN ? 'Start with a scoping call to define the mission and the team you actually need.'   : 'เริ่มด้วย Call วางขอบเขต เพื่อกำหนดภารกิจและทีมที่คุณต้องการจริง'
+  const heroDesc = isEN ? 'Senior engineers embedded directly in your organization to ship AI that reaches production, tackle the integrations nobody wants, and leave you with a handover you can actually live with.'  : 'วิศวกรอาวุโสที่เข้ามาทำงานในองค์กรคุณโดยตรง เพื่อส่งมอบ AI ที่ใช้งานจริงได้ จัดการงานเชื่อมต่อระบบที่ไม่มีใครอยากทำ และส่งมอบงานแบบที่คุณดูแลต่อได้จริง'
+  const whyTitle = isEN ? 'Why embedded engineering beats a typical vendor'    : 'ทำไมทีมวิศวกรที่ทำงานร่วมกับคุณถึงดีกว่าผู้รับเหมาทั่วไป'
+  const whyDesc  = isEN ? 'A vendor delivers a spec from a distance. An embedded team sits with yours, sees the real constraints, and ships weekly instead of disappearing for months and returning with a mismatch.'  : 'ผู้รับเหมาทั่วไปส่งงานตามสเปกจากระยะไกล แต่ทีมที่เข้ามาทำงานร่วมกับคุณจะนั่งทำงานกับทีมของคุณ เห็นข้อจำกัดจริง และส่งงานทุกสัปดาห์ แทนที่จะหายไปหลายเดือนแล้วกลับมาพร้อมงานที่ไม่ตรงกับที่ต้องการ'
+  const ctaTitle = isEN ? 'Ready to embed a team that ships?'    : 'พร้อมมีทีมที่เข้ามาทำงานร่วมและส่งงานได้จริงหรือยัง?'
+  const ctaDesc  = isEN ? 'Start with a scoping call to define the mission and the team you actually need.'   : 'เริ่มด้วยการคุยเพื่อกำหนดขอบเขต กำหนดภารกิจและทีมที่คุณต้องการจริง'
   const overviewText = isEN
     ? 'Forward-deployed engineering puts senior engineers physically or virtually embedded inside your organization — your tools, your repos, your standups — to ship AI systems that actually reach production, not just a slide deck. That means tackling the integrations nobody else wants to touch, working inside your security and compliance constraints, shipping in weekly increments your team can see, and leaving behind a handover that a normal engineering team can maintain without needing us on standby forever.'
-    : 'Forward-Deployed Engineering คือการฝัง Senior Engineer เข้าไปในองค์กรของคุณ ทั้งแบบ Physical หรือ Virtual ใช้เครื่องมือของคุณ, Repo ของคุณ, Standup ของคุณ เพื่อส่งมอบระบบ AI ที่ไปถึง Production จริง ไม่ใช่แค่ Slide นำเสนอ หมายความว่าเราจะจัดการ Integration ที่ไม่มีใครอยากแตะ ทำงานภายใต้ข้อจำกัดด้าน Security และ Compliance ของคุณ ส่งมอบงานเป็นรายสัปดาห์ให้ทีมเห็นความคืบหน้า และส่งมอบงานในรูปแบบที่ทีม Engineering ปกติของคุณดูแลต่อได้เอง โดยไม่ต้องพึ่งเราตลอดไป'
+    : 'Forward-Deployed Engineering คือการส่งวิศวกรอาวุโสเข้าไปทำงานในองค์กรของคุณ ทั้งแบบที่ออฟฟิศหรือทางไกล ใช้เครื่องมือของคุณ Repo ของคุณ และประชุม Standup ของคุณ เพื่อส่งมอบระบบ AI ที่ใช้งานจริงได้ ไม่ใช่แค่สไลด์นำเสนอ เราจะจัดการงานเชื่อมต่อระบบที่ไม่มีใครอยากแตะ ทำงานภายใต้ข้อจำกัดด้านความปลอดภัยและกฎระเบียบของคุณ ส่งงานเป็นรายสัปดาห์ให้ทีมเห็นความคืบหน้า และส่งมอบงานในรูปแบบที่ทีมวิศวกรของคุณดูแลต่อได้เอง โดยไม่ต้องพึ่งเราตลอดไป'
 
   const heroBullets = isEN ? [
       'Senior engineers embedded in your team, tools, and workflows',
@@ -51,10 +51,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'Weekly shipping cadence your team can see and react to',
       'A handover documented and structured for your team to own',
     ] : [
-      'Senior Engineer ที่ฝังตัวในทีม, เครื่องมือ และ Workflow ของคุณ',
-      'ส่งมอบระบบ AI ถึง Production จริง ไม่ใช่แค่ Proof of Concept',
-      'จัดการ Integration ที่ยากและ Vendor รายอื่นมักเลี่ยง',
-      'ส่งมอบงานเป็นรายสัปดาห์ ให้ทีมคุณเห็นและปรับได้ทัน',
+      'วิศวกรอาวุโสที่เข้าไปอยู่ในทีม เครื่องมือ และขั้นตอนทำงานของคุณ',
+      'ส่งมอบระบบ AI ที่ใช้งานจริงได้ ไม่ใช่แค่ Proof of Concept',
+      'จัดการงานเชื่อมต่อระบบที่ยาก ซึ่งผู้รับเหมารายอื่นมักเลี่ยง',
+      'ส่งงานเป็นรายสัปดาห์ ให้ทีมคุณเห็นและปรับได้ทัน',
       'ส่งมอบงานพร้อมเอกสารที่ทีมคุณดูแลต่อได้เอง',
     ]
   const whyPoints   = isEN ? [
@@ -64,11 +64,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'Working inside your security perimeter avoids the friction of shipping data to an external vendor.',
       'A well-documented handover means your team is not dependent on us indefinitely to keep the system running.',
     ] : [
-      'Vendor จากระยะไกลส่งมอบตาม Spec แต่ Embedded Team ส่งมอบตามความจริง ปรับตามข้อจำกัดที่พบระหว่างทาง',
-      'จังหวะส่งมอบรายสัปดาห์ ช่วยเจอปัญหาตั้งแต่เนิ่นๆ แทนที่จะเจอตอน Handoff ใหญ่หลังผ่านไปหลายเดือน',
-      'การเชื่อมต่อกับระบบเดิมและเครื่องมือภายใน มักเป็นตัวขวางจริง มากกว่าตัว AI Model เอง',
-      'การทำงานภายใน Security Perimeter ของคุณ ช่วยลดความยุ่งยากจากการส่งข้อมูลออกไปหา Vendor ภายนอก',
-      'Handover ที่มีเอกสารครบถ้วน ทำให้ทีมคุณไม่ต้องพึ่งเราตลอดไปเพื่อดูแลระบบให้ทำงานต่อ',
+      'ผู้รับเหมาที่ทำงานจากระยะไกลส่งงานตามสเปก แต่ทีมที่ทำงานร่วมกับคุณส่งงานตามความเป็นจริง และปรับตามข้อจำกัดที่เจอระหว่างทาง',
+      'การส่งงานทุกสัปดาห์ช่วยให้เจอปัญหาตั้งแต่เนิ่นๆ แทนที่จะเจอตอนส่งมอบครั้งใหญ่หลังผ่านไปหลายเดือน',
+      'การเชื่อมต่อกับระบบเดิมและเครื่องมือภายใน มักเป็นตัวขวางจริง มากกว่าตัวโมเดล AI เอง',
+      'การทำงานภายในระบบความปลอดภัยของคุณ ช่วยลดความยุ่งยากจากการส่งข้อมูลออกไปให้ผู้รับเหมาภายนอก',
+      'เอกสารส่งมอบที่ครบถ้วน ทำให้ทีมคุณไม่ต้องพึ่งเราตลอดไปเพื่อดูแลระบบให้ทำงานต่อ',
     ]
   const outcomes    = isEN ? [
       {stat: '1wk', label: 'First Shipped Increment', desc: 'From embed to first production commit'},
@@ -76,10 +76,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {stat: '0', label: 'Vendor Black Boxes', desc: 'Every line of code is yours'},
       {stat: '15+', label: 'Systems Integrated', desc: 'Across forward-deployed engagements'}
     ] : [
-      {stat: '1wk', label: 'ส่งงานแรกภายใน', desc: 'ตั้งแต่เข้าฝังตัวจนถึง Commit แรกใน Production'},
-      {stat: '100%', label: 'Handover มีเอกสารครบ', desc: 'Runbook, Architecture และการตัดสินใจ'},
-      {stat: '0', label: 'Black Box จาก Vendor', desc: 'Code ทุกบรรทัดเป็นของคุณ'},
-      {stat: '15+', label: 'ระบบที่เชื่อมต่อแล้ว', desc: 'ตลอด Engagement แบบ Forward-Deployed'}
+      {stat: '1wk', label: 'ส่งงานแรกภายใน', desc: 'ตั้งแต่เข้าไปทำงานจนถึง Commit แรกบนระบบจริง'},
+      {stat: '100%', label: 'เอกสารส่งมอบครบ', desc: 'Runbook, Architecture และการตัดสินใจ'},
+      {stat: '0', label: 'กล่องดำจากผู้รับเหมา', desc: 'โค้ดทุกบรรทัดเป็นของคุณ'},
+      {stat: '15+', label: 'ระบบที่เชื่อมต่อแล้ว', desc: 'ตลอดโครงการแบบ Forward-Deployed'}
     ]
   const features    = isEN ? [
       {icon: 'ti-users', title: 'Your Team, Your Tools, Your Office', desc: 'Engineers embedded directly into your workflows, standups, and repos.'},
@@ -89,12 +89,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {icon: 'ti-calendar-time', title: 'Weekly Shipping Cadence', desc: 'Visible progress every week, not a black box until the final delivery.'},
       {icon: 'ti-shield-lock', title: 'Works Inside Your Perimeter', desc: 'Engineering within your security, compliance, and data boundaries.'}
     ] : [
-      {icon: 'ti-users', title: 'Your Team, Your Tools, Your Office', desc: 'Engineer ฝังตัวเข้าไปใน Workflow, Standup และ Repo ของคุณโดยตรง'},
-      {icon: 'ti-rocket', title: 'AI That Reaches Production', desc: 'สร้างระบบที่ส่งมอบและทำงานได้จริงอย่างน่าเชื่อถือ ไม่ใช่แค่ Demo ดูดี'},
-      {icon: 'ti-plug-connected', title: 'The Integrations Nobody Wants', desc: 'จัดการระบบเดิม, API ภายใน และแหล่งข้อมูลที่ยุ่งยากโดยตรง'},
-      {icon: 'ti-file-check', title: 'A Handover You Can Live With', desc: 'เอกสาร, Runbook และ Architecture ที่ทีมคุณดูแลต่อได้'},
-      {icon: 'ti-calendar-time', title: 'Weekly Shipping Cadence', desc: 'เห็นความคืบหน้าทุกสัปดาห์ ไม่ใช่ Black Box จนถึงวันส่งมอบสุดท้าย'},
-      {icon: 'ti-shield-lock', title: 'Works Inside Your Perimeter', desc: 'ทำงานภายใต้ขอบเขต Security, Compliance และข้อมูลของคุณ'}
+      {icon: 'ti-users', title: 'Your Team, Your Tools, Your Office', desc: 'วิศวกรเข้าไปอยู่ในขั้นตอนทำงาน Standup และ Repo ของคุณโดยตรง'},
+      {icon: 'ti-rocket', title: 'AI That Reaches Production', desc: 'สร้างระบบที่ส่งมอบและใช้งานได้จริงอย่างน่าเชื่อถือ ไม่ใช่แค่เดโมที่ดูดี'},
+      {icon: 'ti-plug-connected', title: 'The Integrations Nobody Wants', desc: 'จัดการระบบเดิม API ภายใน และแหล่งข้อมูลที่ยุ่งยากโดยตรง'},
+      {icon: 'ti-file-check', title: 'A Handover You Can Live With', desc: 'เอกสาร Runbook และ Architecture ที่ทีมคุณดูแลต่อได้'},
+      {icon: 'ti-calendar-time', title: 'Weekly Shipping Cadence', desc: 'เห็นความคืบหน้าทุกสัปดาห์ ไม่ใช่กล่องดำจนถึงวันส่งมอบสุดท้าย'},
+      {icon: 'ti-shield-lock', title: 'Works Inside Your Perimeter', desc: 'ทำงานภายใต้ขอบเขตความปลอดภัย กฎระเบียบ และข้อมูลของคุณ'}
     ]
   const steps       = isEN ? [
       {no: '01', title: 'Scope the Mission', desc: 'Define the problem, constraints, and success criteria.'},
@@ -104,21 +104,21 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {no: '05', title: 'Harden for Production', desc: 'Security, reliability, and scale work before go-live.'},
       {no: '06', title: 'Hand Over or Extend', desc: 'Full documented handover, or continue the engagement.'}
     ] : [
-      {no: '01', title: 'Scope the Mission', desc: 'กำหนดปัญหา, ข้อจำกัด และเกณฑ์ความสำเร็จ'},
-      {no: '02', title: 'Meet Your Engineers', desc: 'จับคู่ Senior Engineer ที่เหมาะกับภารกิจและ Stack ของคุณ'},
-      {no: '03', title: 'Embed in Week One', desc: 'เข้าร่วมเครื่องมือ, Repo และ Standup ตั้งแต่วันแรก'},
-      {no: '04', title: 'Ship Every Week', desc: 'ส่งมอบความคืบหน้าที่มองเห็นได้ให้ทีมปรับตามได้ทัน'},
-      {no: '05', title: 'Harden for Production', desc: 'ทำงาน Security, Reliability และ Scale ก่อน Go-live'},
-      {no: '06', title: 'Hand Over or Extend', desc: 'ส่งมอบพร้อมเอกสารครบ หรือขยาย Engagement ต่อ'}
+      {no: '01', title: 'Scope the Mission', desc: 'กำหนดปัญหา ข้อจำกัด และเกณฑ์ความสำเร็จ'},
+      {no: '02', title: 'Meet Your Engineers', desc: 'จับคู่วิศวกรอาวุโสที่เหมาะกับภารกิจและเทคโนโลยีของคุณ'},
+      {no: '03', title: 'Embed in Week One', desc: 'เข้าร่วมเครื่องมือ Repo และ Standup ตั้งแต่วันแรก'},
+      {no: '04', title: 'Ship Every Week', desc: 'ส่งงานที่มองเห็นได้ให้ทีมปรับตามได้ทัน'},
+      {no: '05', title: 'Harden for Production', desc: 'ทำงานด้านความปลอดภัย ความเสถียร และการรองรับผู้ใช้เพิ่ม ก่อนเปิดใช้จริง'},
+      {no: '06', title: 'Hand Over or Extend', desc: 'ส่งมอบพร้อมเอกสารครบ หรือขยายโครงการต่อ'}
     ]
   const caseStudies = isEN ? [
       {tag: 'FinTech · Bangkok', title: 'AI System Reached Production in 6 Weeks', desc: 'Embedded team shipped weekly, integrated with 4 legacy internal systems.', result: 'Zero handover dependency after 6 months'},
       {tag: 'Logistics · Nationwide', title: 'Legacy Integration Nobody Else Would Touch', desc: 'Direct integration with a 15-year-old dispatch system via undocumented APIs.', result: '15+ systems connected successfully'},
       {tag: 'Enterprise SaaS · Bangkok', title: 'SSO & Compliance Work Inside Client Perimeter', desc: 'Engineers worked entirely inside client security boundary with SAML/OIDC.', result: 'Zero data left client infrastructure'}
     ] : [
-      {tag: 'FinTech · กรุงเทพฯ', title: 'ระบบ AI ถึง Production ภายใน 6 สัปดาห์', desc: 'Embedded Team ส่งงานรายสัปดาห์ เชื่อมต่อระบบภายในเดิม 4 ระบบ', result: 'ไม่ต้องพึ่งทีมหลัง 6 เดือน'},
-      {tag: 'Logistics · ทั่วประเทศ', title: 'เชื่อมต่อระบบเดิมที่ไม่มีใครอยากแตะ', desc: 'เชื่อมต่อโดยตรงกับระบบ Dispatch อายุ 15 ปี ผ่าน API ที่ไม่มีเอกสาร', result: 'เชื่อมต่อสำเร็จมากกว่า 15 ระบบ'},
-      {tag: 'Enterprise SaaS · กรุงเทพฯ', title: 'ทำงาน SSO และ Compliance ใน Perimeter ลูกค้า', desc: 'Engineer ทำงานทั้งหมดภายใน Security Boundary ของลูกค้าด้วย SAML/OIDC', result: 'ไม่มีข้อมูลออกจาก Infrastructure ลูกค้า'}
+      {tag: 'FinTech · กรุงเทพฯ', title: 'ระบบ AI ใช้งานจริงภายใน 6 สัปดาห์', desc: 'ทีมที่เข้าไปทำงานร่วมส่งงานรายสัปดาห์ เชื่อมต่อระบบภายในเดิม 4 ระบบ', result: 'ไม่ต้องพึ่งทีมเราหลังผ่านไป 6 เดือน'},
+      {tag: 'Logistics · ทั่วประเทศ', title: 'เชื่อมต่อระบบเดิมที่ไม่มีใครอยากแตะ', desc: 'เชื่อมต่อโดยตรงกับระบบจัดส่งอายุ 15 ปี ผ่าน API ที่ไม่มีเอกสาร', result: 'เชื่อมต่อสำเร็จมากกว่า 15 ระบบ'},
+      {tag: 'Enterprise SaaS · กรุงเทพฯ', title: 'ทำงาน SSO และด้านกฎระเบียบภายในระบบของลูกค้า', desc: 'วิศวกรทำงานทั้งหมดภายในขอบเขตความปลอดภัยของลูกค้าด้วย SAML/OIDC', result: 'ไม่มีข้อมูลออกจากระบบของลูกค้า'}
     ]
   const faqs        = isEN ? [
       {q: 'How is this different from a typical outsourced project?', a: 'Engineers work embedded inside your tools, repos, and standups, shipping weekly rather than disappearing for months and returning with a mismatch.'},
@@ -126,10 +126,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {q: 'What happens after the engagement ends?', a: 'You get a fully documented handover — architecture, runbooks, and decisions — so your team can maintain the system independently.'},
       {q: 'What kind of integrations do you typically handle?', a: 'Legacy systems, undocumented internal APIs, and messy data sources that other vendors typically avoid.'}
     ] : [
-      {q: 'ต่างจากโปรเจกต์ Outsource ทั่วไปอย่างไร?', a: 'Engineer ทำงานฝังตัวอยู่ในเครื่องมือ, Repo และ Standup ของคุณ ส่งงานรายสัปดาห์ แทนที่จะหายไปหลายเดือนแล้วกลับมาพร้อมงานที่ไม่ตรง'},
-      {q: 'ทำงานภายใน Security Perimeter ของเราได้ไหม?', a: 'ได้ครับ เราทำงานภายใน Infrastructure และ Security Boundary ของลูกค้าเป็นประจำ รวมถึง SSO ผ่าน SAML/OIDC'},
-      {q: 'หลังจบ Engagement แล้วจะเกิดอะไรขึ้น?', a: 'คุณจะได้รับ Handover ที่มีเอกสารครบถ้วน ทั้ง Architecture, Runbook และการตัดสินใจต่างๆ เพื่อให้ทีมคุณดูแลระบบต่อได้เอง'},
-      {q: 'มักจัดการ Integration แบบไหนบ้าง?', a: 'ระบบเดิม, API ภายในที่ไม่มีเอกสาร และแหล่งข้อมูลที่ยุ่งยาก ซึ่ง Vendor รายอื่นมักเลี่ยง'}
+      {q: 'ต่างจากโปรเจกต์ Outsource ทั่วไปอย่างไร?', a: 'วิศวกรทำงานอยู่ในเครื่องมือ Repo และ Standup ของคุณ ส่งงานรายสัปดาห์ แทนที่จะหายไปหลายเดือนแล้วกลับมาพร้อมงานที่ไม่ตรง'},
+      {q: 'ทำงานภายในระบบความปลอดภัยของเราได้ไหม?', a: 'ได้ครับ เราทำงานภายในระบบและขอบเขตความปลอดภัยของลูกค้าเป็นประจำ รวมถึง SSO ผ่าน SAML/OIDC'},
+      {q: 'หลังจบโครงการแล้วจะเกิดอะไรขึ้น?', a: 'คุณจะได้รับเอกสารส่งมอบที่ครบถ้วน ทั้ง Architecture, Runbook และการตัดสินใจต่างๆ เพื่อให้ทีมคุณดูแลระบบต่อได้เอง'},
+      {q: 'มักจัดการงานเชื่อมต่อแบบไหนบ้าง?', a: 'ระบบเดิม API ภายในที่ไม่มีเอกสาร และแหล่งข้อมูลที่ยุ่งยาก ซึ่งผู้รับเหมารายอื่นมักเลี่ยง'}
     ]
   const related     = isEN ? [
       {label: 'AI Voice Agents', href: '/services/ai-voice-agents'},
@@ -145,13 +145,13 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   const fdeLines = [
     { n: 1, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>embed --team senior-engineers --week 1</span></> },
-    { n: 2, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Joined repos, standups, tools' : 'เข้าร่วม Repo, Standup, เครื่องมือแล้ว'}</> },
+    { n: 2, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Joined repos, standups, tools' : 'เข้าร่วม Repo, Standup และเครื่องมือแล้ว'}</> },
     { n: 3, jsx: <>&nbsp;</> },
     { n: 4, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>integrate --system legacy-dispatch</span></> },
     { n: 5, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? '15-year-old system connected' : 'เชื่อมต่อระบบอายุ 15 ปีสำเร็จ'}</> },
     { n: 6, jsx: <>&nbsp;</> },
     { n: 7, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>handover --docs runbooks,architecture</span></> },
-    { n: 8, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Team can maintain independently' : 'ทีมดูแลต่อได้อย่างอิสระ'}</> },
+    { n: 8, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Team can maintain independently' : 'ทีมดูแลต่อได้เอง'}</> },
   ]
 
   const heroSlot = (
@@ -193,7 +193,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </div>
         <div className="flex items-center gap-1.5 text-xs" style={{ color: 'var(--lime)' }}>
           <i className="ti ti-circle-check" style={{ fontSize: 13 }} aria-hidden="true" />
-          {isEN ? 'First increment shipped in week 1' : 'ส่งมอบงานแรกภายในสัปดาห์แรก'}
+          {isEN ? 'First increment shipped in week 1' : 'ส่งงานแรกภายในสัปดาห์แรก'}
         </div>
       </div>
     </div>
@@ -205,10 +205,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-plug-connected', title: 'The Integrations Nobody Wants', desc: 'Legacy systems, internal APIs, and messy data sources handled directly.' },
     { icon: 'ti-file-check', title: 'A Handover You Can Live With', desc: 'Documentation, runbooks, and architecture your team can maintain.' },
   ] : [
-    { icon: 'ti-users', title: 'Your Team, Your Tools, Your Office', desc: 'Engineer ฝังตัวเข้าไปใน Workflow, Standup และ Repo ของคุณโดยตรง' },
-    { icon: 'ti-rocket', title: 'AI That Reaches Production', desc: 'สร้างระบบที่ส่งมอบและทำงานได้จริงอย่างน่าเชื่อถือ ไม่ใช่แค่ Demo ดูดี' },
-    { icon: 'ti-plug-connected', title: 'The Integrations Nobody Wants', desc: 'จัดการระบบเดิม, API ภายใน และแหล่งข้อมูลที่ยุ่งยากโดยตรง' },
-    { icon: 'ti-file-check', title: 'A Handover You Can Live With', desc: 'เอกสาร, Runbook และ Architecture ที่ทีมคุณดูแลต่อได้' },
+    { icon: 'ti-users', title: 'Your Team, Your Tools, Your Office', desc: 'วิศวกรเข้าไปอยู่ในขั้นตอนทำงาน Standup และ Repo ของคุณโดยตรง' },
+    { icon: 'ti-rocket', title: 'AI That Reaches Production', desc: 'สร้างระบบที่ส่งมอบและใช้งานได้จริงอย่างน่าเชื่อถือ ไม่ใช่แค่เดโมที่ดูดี' },
+    { icon: 'ti-plug-connected', title: 'The Integrations Nobody Wants', desc: 'จัดการระบบเดิม API ภายใน และแหล่งข้อมูลที่ยุ่งยากโดยตรง' },
+    { icon: 'ti-file-check', title: 'A Handover You Can Live With', desc: 'เอกสาร Runbook และ Architecture ที่ทีมคุณดูแลต่อได้' },
   ]
 
   const techStack = [
@@ -236,12 +236,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '05', title: 'Harden for Production', desc: 'Security, reliability, scale' },
     { no: '06', title: 'Hand Over or Extend', desc: 'Full documented handover' },
   ] : [
-    { no: '01', title: 'Scope the Mission', desc: 'ปัญหา, ข้อจำกัด, เกณฑ์ความสำเร็จ' },
-    { no: '02', title: 'Meet Your Engineers', desc: 'จับคู่ตามภารกิจและ Stack' },
-    { no: '03', title: 'Embed in Week One', desc: 'เข้าร่วมเครื่องมือ, Repo, Standup' },
+    { no: '01', title: 'Scope the Mission', desc: 'ปัญหา ข้อจำกัด เกณฑ์ความสำเร็จ' },
+    { no: '02', title: 'Meet Your Engineers', desc: 'จับคู่ตามภารกิจและเทคโนโลยีที่ใช้' },
+    { no: '03', title: 'Embed in Week One', desc: 'เข้าร่วมเครื่องมือ Repo Standup' },
     { no: '04', title: 'Ship Every Week', desc: 'ส่งงานที่มองเห็นได้ให้ทีมตรวจ' },
     { no: '05', title: 'Harden for Production', desc: 'Security, Reliability, Scale' },
-    { no: '06', title: 'Hand Over or Extend', desc: 'Handover พร้อมเอกสารครบ' },
+    { no: '06', title: 'Hand Over or Extend', desc: 'เอกสารส่งมอบครบ' },
   ]
 
   const darkFaqs = isEN ? [
@@ -254,14 +254,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { q: 'Do we own everything that gets built?', a: 'Yes, entirely. All code, infrastructure configuration, and documentation belong to you. There is no vendor lock-in or dependency on proprietary tooling we control.' },
     { q: 'Can the engagement scale up or down as our needs change?', a: 'Yes. Team composition can flex as the mission evolves — adding specialists for a specific integration, or scaling down once the system stabilizes and your team is ready to take over.' },
   ] : [
-    { q: 'Forward-Deployed Engineering ต่างจากโปรเจกต์ Outsource ทั่วไปอย่างไร?', a: 'Engineer ของเราทำงานฝังตัวอยู่ในเครื่องมือ, Repository และ Standup ของคุณโดยตรง ไม่ใช่ทำงานจากระยะไกลตาม Spec ตายตัว หมายความว่าส่งงานเป็นรายสัปดาห์ให้ทีมคุณเห็นและปรับได้ทัน แทนที่จะหายไปหลายเดือนแล้วกลับมาพร้อมงานที่ไม่ตรงเป้า' },
-    { q: 'ทำงานภายใน Security Perimeter ของเราได้ไหม?', a: 'ได้ครับ เราทำงานภายใน Infrastructure และ Security Boundary ของลูกค้าเป็นประจำ รวมถึงการเชื่อมต่อ SSO ผ่าน SAML หรือ OIDC โดยไม่ต้องนำข้อมูลสำคัญออกนอกสภาพแวดล้อมของคุณ' },
-    { q: 'หลังจบ Engagement แล้วจะเกิดอะไรขึ้น?', a: 'คุณจะได้รับ Handover ที่มีเอกสารครบถ้วน ทั้งการตัดสินใจด้าน Architecture, Runbook และคำแนะนำการดำเนินงาน เพื่อให้ทีม Engineering ของคุณดูแลและต่อยอดระบบได้เอง โดยไม่ต้องพึ่งเราตลอดไป' },
-    { q: 'มักจัดการ Integration แบบไหนบ้าง?', a: 'ระบบเดิม, API ภายในที่ไม่มีเอกสาร และแหล่งข้อมูลที่ยุ่งยากหรือไม่สอดคล้องกัน ซึ่งเป็นงาน Integration ที่ Vendor รายอื่นมักเลี่ยงหรือประเมิน Scope ต่ำเกินไป' },
-    { q: 'Engagement ทั่วไปใช้เวลานานแค่ไหน?', a: 'Engagement กำหนดขอบเขตตามภารกิจเฉพาะ ไม่ใช่ระยะเวลาตายตัว โปรเจกต์ Integration แบบเจาะจงอาจใช้เวลา 6-8 สัปดาห์ ส่วน Engagement แบบ Embedded Team ที่กว้างขึ้นสำหรับสร้างและ Harden ระบบ AI เต็มรูปแบบ มักใช้เวลา 3-6 เดือน' },
-    { q: 'Forward-Deployed Engagement คิดราคาอย่างไร?', a: 'ราคาคิดตามองค์ประกอบทีมและระยะเวลา Engagement มากกว่าค่าธรรมเนียมโปรเจกต์ตายตัว เนื่องจาก Scope จะพัฒนาไปตามภารกิจที่กำหนด เราจะให้โครงสร้างราคาที่ชัดเจนหลัง Call วางขอบเขต' },
-    { q: 'เราเป็นเจ้าของทุกอย่างที่สร้างขึ้นไหม?', a: 'ใช่ครับ เป็นเจ้าของทั้งหมด ทั้ง Code, การตั้งค่า Infrastructure และเอกสารทั้งหมดเป็นของคุณ ไม่มี Vendor Lock-in หรือการพึ่งพา Tooling เฉพาะที่เราควบคุม' },
-    { q: 'Engagement ปรับขนาดขึ้นลงตามความต้องการที่เปลี่ยนไปได้ไหม?', a: 'ได้ครับ องค์ประกอบทีมสามารถปรับตามภารกิจที่พัฒนาไป เช่น เพิ่ม Specialist สำหรับ Integration เฉพาะ หรือลดขนาดลงเมื่อระบบเสถียรและทีมคุณพร้อมรับช่วงต่อ' },
+    { q: 'Forward-Deployed Engineering ต่างจากโปรเจกต์ Outsource ทั่วไปอย่างไร?', a: 'วิศวกรของเราทำงานอยู่ในเครื่องมือ Repository และ Standup ของคุณโดยตรง ไม่ใช่ทำงานจากระยะไกลตามสเปกตายตัว คือส่งงานเป็นรายสัปดาห์ให้ทีมคุณเห็นและปรับได้ทัน แทนที่จะหายไปหลายเดือนแล้วกลับมาพร้อมงานที่ไม่ตรงเป้า' },
+    { q: 'ทำงานภายในระบบความปลอดภัยของเราได้ไหม?', a: 'ได้ครับ เราทำงานภายในระบบและขอบเขตความปลอดภัยของลูกค้าเป็นประจำ รวมถึงการเชื่อมต่อ SSO ผ่าน SAML หรือ OIDC โดยไม่ต้องนำข้อมูลสำคัญออกนอกสภาพแวดล้อมของคุณ' },
+    { q: 'หลังจบโครงการแล้วจะเกิดอะไรขึ้น?', a: 'คุณจะได้รับเอกสารส่งมอบที่ครบถ้วน ทั้งการตัดสินใจด้าน Architecture, Runbook และคำแนะนำการดูแลระบบ เพื่อให้ทีมวิศวกรของคุณดูแลและต่อยอดระบบได้เอง โดยไม่ต้องพึ่งเราตลอดไป' },
+    { q: 'มักจัดการงานเชื่อมต่อแบบไหนบ้าง?', a: 'ระบบเดิม API ภายในที่ไม่มีเอกสาร และแหล่งข้อมูลที่ยุ่งยากหรือไม่เป็นระเบียบ ซึ่งเป็นงานเชื่อมต่อที่ผู้รับเหมารายอื่นมักเลี่ยงหรือประเมินขอบเขตต่ำเกินไป' },
+    { q: 'โครงการทั่วไปใช้เวลานานแค่ไหน?', a: 'ขอบเขตกำหนดตามภารกิจเฉพาะ ไม่ใช่ระยะเวลาตายตัว โปรเจกต์เชื่อมต่อระบบเฉพาะจุดอาจใช้เวลา 6-8 สัปดาห์ ส่วนโครงการที่ทีมเข้าไปทำงานร่วมในวงกว้าง เพื่อสร้างและเสริมความแข็งแรงให้ระบบ AI เต็มรูปแบบ มักใช้เวลา 3-6 เดือน' },
+    { q: 'Forward-Deployed Engineering คิดราคาอย่างไร?', a: 'ราคาคิดตามองค์ประกอบของทีมและระยะเวลา มากกว่าคิดเป็นค่าโปรเจกต์ตายตัว เพราะขอบเขตจะพัฒนาไปตามภารกิจที่กำหนด เราจะแจ้งโครงสร้างราคาที่ชัดเจนหลังคุยเพื่อกำหนดขอบเขต' },
+    { q: 'เราเป็นเจ้าของทุกอย่างที่สร้างขึ้นไหม?', a: 'ใช่ครับ เป็นเจ้าของทั้งหมด ทั้งโค้ด การตั้งค่าระบบ และเอกสารเป็นของคุณ ไม่ผูกติดผู้รับเหมา และไม่ต้องพึ่งเครื่องมือเฉพาะที่เราควบคุมไว้' },
+    { q: 'โครงการปรับขนาดขึ้นลงตามความต้องการที่เปลี่ยนไปได้ไหม?', a: 'ได้ครับ ปรับองค์ประกอบทีมตามภารกิจที่เปลี่ยนไปได้ เช่น เพิ่มผู้เชี่ยวชาญสำหรับงานเชื่อมต่อเฉพาะ หรือลดขนาดลงเมื่อระบบเสถียรและทีมคุณพร้อมรับช่วงต่อ' },
   ]
 
   const postHeroSlot = (
@@ -282,7 +282,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           {isEN ? 'Key Capabilities' : 'ความสามารถหลัก'}
         </h2>
         <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400 }}>
-          {isEN ? 'Concrete capabilities we bring to this engagement — not buzzwords.' : 'ความสามารถที่จับต้องได้จริงที่เรานำมาใช้ในทุกโปรเจกต์ ไม่ใช่แค่คำสวยหรู'}
+          {isEN ? 'Concrete capabilities we bring to this engagement — not buzzwords.' : 'สิ่งที่เราทำได้จริงในทุกโปรเจกต์ ไม่ใช่แค่คำสวยหรู'}
         </p>
 
         <div className="grid sm:grid-cols-2 gap-5">
@@ -311,7 +311,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'A broad, production-grade stack we adapt to whatever your organization already runs.'
-              : 'Stack ระดับ Production ที่หลากหลาย ปรับให้เข้ากับสิ่งที่องค์กรคุณใช้งานอยู่แล้ว'}
+              : 'Stack ระดับ Production ที่หลากหลาย ปรับให้เข้ากับสิ่งที่องค์กรคุณใช้อยู่แล้ว'}
           </p>
 
           <div className="flex flex-wrap gap-3">
@@ -342,7 +342,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <p className="mb-16" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'A clear path from scoping to a shipped, handed-over system — adjusted per mission, never one-size-fits-all.'
-              : 'เส้นทางที่ชัดเจนจากการวางขอบเขตสู่ระบบที่ส่งมอบแล้ว ปรับตามแต่ละภารกิจ ไม่ใช่สูตรสำเร็จตายตัว'}
+              : 'เส้นทางที่ชัดเจนจากการกำหนดขอบเขตสู่ระบบที่ส่งมอบแล้ว ปรับตามแต่ละภารกิจ ไม่ใช่สูตรสำเร็จ'}
           </p>
 
           <div className="relative">
@@ -378,7 +378,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             {isEN ? 'Frequently Asked Questions' : 'คำถามที่พบบ่อย'}
           </h2>
           <p className="mb-4" style={{ color: 'var(--lime)', fontSize: '1.2rem', fontWeight: 600 }}>
-            {isEN ? 'Straight answers about how forward-deployed engagements work.' : 'คำตอบตรงไปตรงมาเกี่ยวกับวิธีที่ Forward-Deployed Engagement ทำงาน'}
+            {isEN ? 'Straight answers about how forward-deployed engagements work.' : 'คำตอบตรงๆ เรื่องวิธีที่เราทำงานแบบ Forward-Deployed'}
           </p>
 
           <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
@@ -420,7 +420,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-medium transition-opacity hover:opacity-90"
             style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}
           >
-            {isEN ? 'Start a Conversation' : 'เริ่มบทสนทนา'}
+            {isEN ? 'Start a Conversation' : 'เริ่มคุยกัน'}
             <i className="ti ti-arrow-right" style={{ fontSize: 17 }} aria-hidden="true" />
           </Link>
           <a href="mailto:wu@haliviq.com" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>

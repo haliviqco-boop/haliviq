@@ -16,7 +16,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge = isEN ? 'Industry / Telecommunications' : 'อุตสาหกรรม / โทรคมนาคม'
   const heroSubhead = isEN
     ? 'Next-generation solutions for telecom providers.'
-    : 'โซลูชันยุคใหม่สำหรับผู้ให้บริการโทรคมนาคม'
+    : 'ระบบสำหรับผู้ให้บริการโทรคมนาคม'
 
   const challenges = isEN ? [
     { icon: 'ti-server-2', title: 'Legacy OSS/BSS Complexity', desc: 'Decades-old operations and billing support systems are tightly coupled and poorly documented, making every new feature or integration a slow, high-risk undertaking.' },
@@ -24,16 +24,16 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-antenna-bars-5', title: 'Network Monitoring at Massive Scale', desc: 'Tracking the health of millions of cell sites, routers, and endpoints in real time requires observability infrastructure most legacy NOC tooling was never built to handle.' },
     { icon: 'ti-router', title: '5G/IoT Rollout Integration Demands', desc: 'Rolling out 5G and onboarding millions of IoT devices means integrating new radio, edge, and connectivity-management platforms into systems that were designed for a single-purpose voice and data network.' },
   ] : [
-    { icon: 'ti-server-2', title: 'ความซับซ้อนของ Legacy OSS/BSS', desc: 'ระบบ Operations และ Billing Support ที่ใช้งานมานานหลายสิบปีมีความผูกพันกันแน่นและเอกสารไม่ครบถ้วน ทำให้ทุกฟีเจอร์ใหม่หรือการ Integration เป็นงานที่ช้าและเสี่ยงสูง' },
-    { icon: 'ti-trending-down', title: 'แรงกดดันด้าน Customer Churn ที่เพิ่มขึ้น', desc: 'ลูกค้าเปลี่ยนผู้ให้บริการได้ง่ายกว่าที่เคย หากไม่มี Insight เชิงพยากรณ์และการซัพพอร์ตที่รวดเร็วและ Personalize ผู้ให้บริการจะสูญเสียลูกค้าก่อนที่จะแก้ไขได้ทัน' },
-    { icon: 'ti-antenna-bars-5', title: 'Network Monitoring ในระดับ Massive Scale', desc: 'การติดตามสถานะของเสาสัญญาณ เราเตอร์ และอุปกรณ์ปลายทางนับล้านชิ้นแบบ Real-time ต้องการโครงสร้าง Observability ที่เครื่องมือ NOC แบบเดิมไม่เคยถูกออกแบบมารองรับ' },
-    { icon: 'ti-router', title: 'ความต้องการ Integration ของ 5G/IoT', desc: 'การเปิดให้บริการ 5G และเชื่อมต่ออุปกรณ์ IoT นับล้านชิ้น หมายถึงการ Integrate แพลตฟอร์ม Radio, Edge และ Connectivity Management ใหม่เข้ากับระบบที่ออกแบบมาเพื่อเครือข่ายเสียงและข้อมูลแบบเดิม' },
+    { icon: 'ti-server-2', title: 'ความซับซ้อนของระบบ OSS/BSS รุ่นเก่า', desc: 'ระบบดูแลเครือข่ายและระบบออกบิลที่ใช้มาหลายสิบปี เชื่อมกันแน่นและเอกสารไม่ครบ ทำให้ทุกฟีเจอร์ใหม่หรือการเชื่อมต่อระบบเป็นงานที่ช้าและเสี่ยงสูง' },
+    { icon: 'ti-trending-down', title: 'แรงกดดันจากลูกค้าที่ย้ายค่ายมากขึ้น', desc: 'ลูกค้าย้ายค่ายได้ง่ายกว่าเดิม ถ้าไม่มีข้อมูลที่ช่วยคาดการณ์ และไม่มีการดูแลที่เร็วและตรงใจ ผู้ให้บริการก็เสียลูกค้าไปก่อนจะทันแก้ไข' },
+    { icon: 'ti-antenna-bars-5', title: 'ติดตามเครือข่ายขนาดใหญ่มาก', desc: 'การดูเสาสัญญาณ เราเตอร์ และอุปกรณ์ปลายทางนับล้านชิ้นแบบเรียลไทม์ ต้องใช้ระบบติดตามที่เครื่องมือ NOC แบบเดิมไม่ได้ออกแบบมารองรับ' },
+    { icon: 'ti-router', title: 'ต้องเชื่อมระบบสำหรับ 5G/IoT', desc: 'การเปิดบริการ 5G และเชื่อมอุปกรณ์ IoT นับล้านชิ้น ต้องนำแพลตฟอร์มใหม่ทั้งด้าน Radio, Edge และการจัดการการเชื่อมต่อ ไปเชื่อมกับระบบเดิมที่ออกแบบมาสำหรับเครือข่ายเสียงและข้อมูลอย่างเดียว' },
   ]
 
   const metrics = [
     { value: '$1.2T', label: isEN ? 'Global Telecom Software Market by 2030' : 'มูลค่าตลาดซอฟต์แวร์โทรคมนาคมทั่วโลกภายในปี 2030', source: 'MarketsandMarkets Telecom Software Report, 2024' },
-    { value: '25%', label: isEN ? 'Reduction in Customer Churn with AI-Powered Support' : 'Customer Churn ที่ลดลงด้วยการซัพพอร์ตขับเคลื่อนด้วย AI', source: 'Deloitte Telecom AI Study, 2024' },
-    { value: '18B', label: isEN ? 'IoT Connections Worldwide by 2027' : 'การเชื่อมต่อ IoT ทั่วโลกภายในปี 2027', source: 'GSMA Mobile Economy Report, 2024' },
+    { value: '25%', label: isEN ? 'Reduction in Customer Churn with AI-Powered Support' : 'ลูกค้าย้ายค่ายลดลงเมื่อใช้ฝ่ายซัพพอร์ตที่มี AI ช่วย', source: 'Deloitte Telecom AI Study, 2024' },
+    { value: '18B', label: isEN ? 'IoT Connections Worldwide by 2027' : 'จำนวนการเชื่อมต่อ IoT ทั่วโลกภายในปี 2027', source: 'GSMA Mobile Economy Report, 2024' },
   ]
 
   const capabilities = isEN ? [
@@ -44,12 +44,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-antenna', title: '5G/IoT Connectivity Tooling', desc: 'Device provisioning, connectivity management, and edge-orchestration platforms built for large-scale 5G and IoT deployments.' },
     { icon: 'ti-trending-up', title: 'Customer Churn Prediction Systems', desc: 'Machine learning models that flag at-risk subscribers early and trigger targeted retention offers before they cancel.' },
   ] : [
-    { icon: 'ti-device-mobile', title: 'Self-Service Customer Apps', desc: 'แพลตฟอร์ม Self-care บนมือถือและเว็บที่ให้ลูกค้าจัดการแพ็กเกจ เติมเงิน และแจ้งปัญหาได้เองโดยไม่ต้องโทรหา Call Center' },
-    { icon: 'ti-chart-dots', title: 'Network Monitoring Dashboards', desc: 'แพลตฟอร์ม Observability แบบ Real-time ที่แสดงสถานะเครือข่าย Latency และเหตุการณ์ขัดข้องในเสาสัญญาณและอุปกรณ์ปลายทางนับพัน' },
-    { icon: 'ti-file-invoice', title: 'Billing & OSS/BSS Integration', desc: 'เลเยอร์ Integration สมัยใหม่ที่เชื่อมระบบ Billing และ Operations แบบเดิมเข้ากับผลิตภัณฑ์ดิจิทัลใหม่ โดยไม่ต้อง Rip-and-Replace ที่มีต้นทุนสูง' },
-    { icon: 'ti-message-chatbot', title: 'AI Support Chatbots', desc: 'ผู้ช่วย Conversational AI ที่แก้ปัญหาการเรียกเก็บเงิน แพ็กเกจ และปัญหาการใช้งานทั่วไปได้ทันที ทั้งภาษาไทยและอังกฤษ' },
-    { icon: 'ti-antenna', title: '5G/IoT Connectivity Tooling', desc: 'แพลตฟอร์ม Device Provisioning, Connectivity Management และ Edge Orchestration ที่ออกแบบมาสำหรับการติดตั้ง 5G และ IoT ขนาดใหญ่' },
-    { icon: 'ti-trending-up', title: 'Customer Churn Prediction Systems', desc: 'โมเดล Machine Learning ที่ระบุลูกค้ากลุ่มเสี่ยงตั้งแต่เนิ่นๆ และกระตุ้นข้อเสนอ Retention แบบเจาะจงก่อนที่ลูกค้าจะยกเลิก' },
+    { icon: 'ti-device-mobile', title: 'Self-Service Customer Apps', desc: 'แพลตฟอร์มบนมือถือและเว็บที่ให้ลูกค้าจัดการแพ็กเกจ เติมเงิน และแจ้งปัญหาได้เอง โดยไม่ต้องโทรหา Call Center' },
+    { icon: 'ti-chart-dots', title: 'Network Monitoring Dashboards', desc: 'ระบบติดตามแบบเรียลไทม์ แสดงสถานะเครือข่าย Latency และเหตุขัดข้องของเสาสัญญาณและอุปกรณ์ปลายทางนับพัน' },
+    { icon: 'ti-file-invoice', title: 'Billing & OSS/BSS Integration', desc: 'ชั้นเชื่อมต่อที่ทันสมัย ต่อระบบ Billing และระบบปฏิบัติการเดิมเข้ากับผลิตภัณฑ์ดิจิทัลใหม่ โดยไม่ต้องรื้อระบบเก่าทิ้งทั้งหมดซึ่งเสียค่าใช้จ่ายสูง' },
+    { icon: 'ti-message-chatbot', title: 'AI Support Chatbots', desc: 'ผู้ช่วย AI ที่คุยโต้ตอบได้ ตอบปัญหาเรื่องบิล แพ็กเกจ และการใช้งานทั่วไปได้ทันที ทั้งภาษาไทยและอังกฤษ' },
+    { icon: 'ti-antenna', title: '5G/IoT Connectivity Tooling', desc: 'แพลตฟอร์มลงทะเบียนอุปกรณ์ จัดการการเชื่อมต่อ และควบคุม Edge สำหรับการติดตั้ง 5G และ IoT ขนาดใหญ่' },
+    { icon: 'ti-trending-up', title: 'Customer Churn Prediction Systems', desc: 'โมเดล Machine Learning ที่หาลูกค้ากลุ่มเสี่ยงได้ตั้งแต่เนิ่นๆ แล้วส่งข้อเสนอรักษาลูกค้าที่ตรงกลุ่มก่อนที่เขาจะยกเลิก' },
   ]
 
   const techStack = ['React', 'React Native', 'Node.js', 'Kafka', 'Kubernetes', 'AWS', 'PostgreSQL', 'GraphQL', 'Machine Learning', '5G', 'IoT', 'Time Series DBs', 'Redis']
@@ -59,9 +59,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '02', title: 'Network Monitoring Dashboard', desc: 'Unified observability platform aggregating signal, latency, and outage data across thousands of cell sites into a single real-time operations view.' },
     { no: '03', title: 'Churn Prediction System', desc: 'Machine learning platform that scores subscriber churn risk daily and automatically triggers targeted retention offers for at-risk accounts.' },
   ] : [
-    { no: '01', title: 'Self-Service Customer App', desc: 'แอปมือถือ Self-care ที่ให้ลูกค้าดูการใช้งาน จัดการแพ็กเกจ เติมเงิน และรับการซัพพอร์ตด้วย AI โดยไม่ต้องโทรหา Call Center เลย' },
-    { no: '02', title: 'Network Monitoring Dashboard', desc: 'แพลตฟอร์ม Observability แบบรวมศูนย์ที่รวมข้อมูลสัญญาณ Latency และเหตุการณ์ขัดข้องจากเสาสัญญาณนับพันไว้ในมุมมอง Operations แบบ Real-time เดียว' },
-    { no: '03', title: 'Churn Prediction System', desc: 'แพลตฟอร์ม Machine Learning ที่คำนวณความเสี่ยง Churn ของลูกค้าทุกวัน และกระตุ้นข้อเสนอ Retention แบบเจาะจงให้กับบัญชีกลุ่มเสี่ยงโดยอัตโนมัติ' },
+    { no: '01', title: 'Self-Service Customer App', desc: 'แอปมือถือที่ให้ลูกค้าดูการใช้งาน จัดการแพ็กเกจ เติมเงิน และคุยกับ AI เมื่อมีปัญหา โดยไม่ต้องโทรหา Call Center เลย' },
+    { no: '02', title: 'Network Monitoring Dashboard', desc: 'แพลตฟอร์มกลางที่รวมข้อมูลสัญญาณ Latency และเหตุขัดข้องจากเสาสัญญาณนับพันไว้ในหน้าจอเรียลไทม์เดียว' },
+    { no: '03', title: 'Churn Prediction System', desc: 'แพลตฟอร์ม Machine Learning ที่คำนวณความเสี่ยงที่ลูกค้าจะเลิกใช้ทุกวัน และส่งข้อเสนอรักษาลูกค้าให้บัญชีกลุ่มเสี่ยงโดยอัตโนมัติ' },
   ]
 
   const heroVisual = (
@@ -177,7 +177,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
                   ? 'We help telecom providers build self-service customer apps, network monitoring dashboards, modern OSS/BSS integration layers, and AI-driven support and churn-prediction systems that keep subscribers connected and loyal. Our solutions scale to millions of devices and combine deep systems engineering with real-time data infrastructure to modernize legacy networks without disrupting live service.'
-                  : 'เราช่วยผู้ให้บริการโทรคมนาคมสร้าง Self-Service Customer App, Network Monitoring Dashboard, เลเยอร์ Integration OSS/BSS สมัยใหม่ และระบบซัพพอร์ตกับ Churn Prediction ที่ขับเคลื่อนด้วย AI เพื่อรักษาความพึงพอใจของลูกค้า โซลูชันของเรา Scale ได้ถึงระดับอุปกรณ์หลายล้านชิ้น ผสมผสานวิศวกรรมระบบเชิงลึกกับโครงสร้างข้อมูล Real-time เพื่อปรับปรุงเครือข่าย Legacy โดยไม่กระทบการให้บริการจริง'}
+                  : 'เราช่วยผู้ให้บริการโทรคมนาคมสร้างแอปให้ลูกค้าดูแลบริการเอง แดชบอร์ดติดตามเครือข่าย ชั้นเชื่อมต่อ OSS/BSS ที่ทันสมัย รวมถึงระบบซัพพอร์ตและระบบทำนายลูกค้าที่จะเลิกใช้บริการด้วย AI เพื่อให้ลูกค้าพอใจและอยู่กับเรานาน ระบบของเรารองรับอุปกรณ์ได้หลายล้านชิ้น เราผสมงานวิศวกรรมระบบเชิงลึกกับโครงสร้างข้อมูลเรียลไทม์ เพื่อปรับปรุงเครือข่ายเดิมโดยไม่กระทบบริการที่ใช้งานอยู่'}
               </p>
             </div>
           </div>
@@ -195,7 +195,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Understanding the critical obstacles that drive digital transformation in this industry.'
-                : 'ความเข้าใจอุปสรรคสำคัญที่ผลักดันการปรับสู่ดิจิทัลในอุตสาหกรรมนี้'}
+                : 'ปัญหาหลักที่ธุรกิจในอุตสาหกรรมนี้ต้องเจอ'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -245,7 +245,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'โซลูชันที่พิสูจน์แล้วซึ่งเราสร้างเพื่อตอบโจทย์ที่สำคัญที่สุดของอุตสาหกรรมคุณ'}
+              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -268,12 +268,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Tech Stack' : 'เทคโนโลยีที่ใช้'}
             </p>
             <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
-              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้งาน'}
+              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้'}
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Industry-proven tools and frameworks we leverage to build robust solutions.'
-                : 'เครื่องมือและ Framework ที่พิสูจน์แล้วในอุตสาหกรรม ที่เราใช้สร้างโซลูชันที่แข็งแรงและเชื่อถือได้'}
+                : 'เครื่องมือและ Framework ที่เราเลือกใช้ เพราะมั่นคงและเชื่อถือได้'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -299,7 +299,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างโปรเจกต์ที่เราส่งมอบจริงให้กับลูกค้าในอุตสาหกรรมนี้'}
+              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างงานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -339,7 +339,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link

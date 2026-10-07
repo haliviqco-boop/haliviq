@@ -1,7 +1,7 @@
 import Navbar from '@/components/Navbar'
 import { t, type Lang } from '@/lib/i18n'
 import Footer from '@/components/Footer'
-import { HeroArt, CultureArt, OfficeArt, ActivityArt, WorkspaceArt, DrinksArt, HackathonArt } from '@/components/CareersArt'
+import { CultureArt, OfficeArt, ActivityArt, WorkspaceArt, DrinksArt, HackathonArt } from '@/components/CareersArt'
 
 const openings = [
   { dept: 'Engineering', color: 'var(--purple)', bg: 'var(--purple-bg)', jobs: [
@@ -45,14 +45,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-trophy', title: 'Performance Bonus', desc: 'Annual bonus based on individual and company performance.' },
     { icon: 'ti-users', title: 'Team Activities', desc: 'Team outings, hackathons, and Friday drinks every month.' },
   ] : [
-    { icon: 'ti-home-2', title: 'Hybrid Work', desc: 'ทำงาน Remote ได้ 3 วัน/สัปดาห์ ไม่ต้องติดออฟฟิศทุกวัน' },
-    { icon: 'ti-clock', title: 'Flexible Hours', desc: 'ยืดหยุ่น Core Hours 10.00–16.00 น. นอกนั้นจัดการเองได้' },
-    { icon: 'ti-school', title: 'Learning Budget', desc: 'งบ Learning 20,000 บาท/ปี สำหรับ Course, Conference, Books' },
-    { icon: 'ti-heart', title: 'ประกันสุขภาพ', desc: 'ประกันสุขภาพเอกชนครอบคลุม IPD+OPD ตั้งแต่วันแรก' },
-    { icon: 'ti-airplane', title: 'Vacation', desc: 'วันหยุดพักร้อน 15 วัน/ปี + วันหยุดนักขัตฤกษ์ครบ' },
-    { icon: 'ti-device-laptop', title: 'Work Equipment', desc: 'MacBook Pro + Monitor + Ergonomic Chair จัดให้ครบ' },
-    { icon: 'ti-trophy', title: 'Performance Bonus', desc: 'โบนัสประจำปีตาม Performance ทั้งทีมและบริษัท' },
-    { icon: 'ti-users', title: 'Team Activities', desc: 'งาน Team Outing, Hackathon และ Friday Drinks ทุกเดือน' },
+    { icon: 'ti-home-2', title: 'ทำงานแบบไฮบริด', desc: 'ทำงานจากที่บ้านได้ 3 วันต่อสัปดาห์ ไม่ต้องเข้าออฟฟิศทุกวัน' },
+    { icon: 'ti-clock', title: 'เวลาทำงานยืดหยุ่น', desc: 'ช่วงเวลาหลักคือ 10.00–16.00 น. นอกเหนือจากนั้นจัดเวลาเองได้' },
+    { icon: 'ti-school', title: 'งบพัฒนาตัวเอง', desc: 'งบเรียนรู้ 20,000 บาทต่อปี ใช้กับคอร์สเรียน งานสัมมนา หรือหนังสือได้' },
+    { icon: 'ti-heart', title: 'ประกันสุขภาพ', desc: 'ประกันสุขภาพเอกชน คุ้มครองทั้งผู้ป่วยในและผู้ป่วยนอก ตั้งแต่วันแรก' },
+    { icon: 'ti-airplane', title: 'วันหยุดพักร้อน', desc: 'พักร้อน 15 วันต่อปี และหยุดวันนักขัตฤกษ์ครบ' },
+    { icon: 'ti-device-laptop', title: 'อุปกรณ์ทำงาน', desc: 'จัดให้ครบ ทั้ง MacBook Pro จอภาพ และเก้าอี้เพื่อสุขภาพ' },
+    { icon: 'ti-trophy', title: 'โบนัสประจำปี', desc: 'โบนัสตามผลงานของแต่ละคนและของบริษัท' },
+    { icon: 'ti-users', title: 'กิจกรรมทีม', desc: 'มีทริปกับทีม แฮ็กกาธอน และสังสรรค์วันศุกร์ทุกเดือน' },
   ]
 
   const values = isEN ? [
@@ -61,15 +61,15 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-eye', title: 'Craft with Care', desc: 'We are proud of our work, reject mediocrity, and continuously develop our skills.' },
     { icon: 'ti-shield', title: 'Honest & Transparent', desc: 'Straight talk with the team, clients, and ourselves. No politics, no hidden information.' },
   ] : [
-    { icon: 'ti-rocket', title: 'Ship เร็ว เรียนรู้เร็ว', desc: 'เราเชื่อใน Iteration ที่รวดเร็ว ไม่กลัวทดลองสิ่งใหม่ และเรียนรู้จากทุก Mistake' },
-    { icon: 'ti-users', title: 'ทีมคือทุกอย่าง', desc: 'Ego ไม่มีที่ทางที่นี่ เราชนะและแพ้พร้อมกัน ช่วยเหลือซึ่งกันและกันก่อนเสมอ' },
-    { icon: 'ti-eye', title: 'Craft ที่ใส่ใจ', desc: 'เราภาคภูมิใจในงานที่ทำ ไม่ยอมรับ Mediocre และพัฒนาทักษะอย่างต่อเนื่อง' },
-    { icon: 'ti-shield', title: 'ซื่อตรงและโปร่งใส', desc: 'พูดตรงๆ กับทีม ลูกค้า และตัวเอง ไม่มีการ Politics ไม่มีการซ่อนข้อมูล' },
+    { icon: 'ti-rocket', title: 'ลงมือเร็ว เรียนรู้เร็ว', desc: 'เราลองทำจริงและปรับปรุงต่อเนื่อง ไม่กลัวที่จะลองของใหม่ และเรียนรู้จากทุกความผิดพลาด' },
+    { icon: 'ti-users', title: 'ทีมมาก่อน', desc: 'เราไม่ยึดติดกับตัวเอง ชนะและพลาดไปด้วยกัน และช่วยเหลือกันก่อนเสมอ' },
+    { icon: 'ti-eye', title: 'ใส่ใจในงาน', desc: 'เราภูมิใจในงานของเรา ไม่ทำแบบขอไปที และพัฒนาฝีมืออย่างต่อเนื่อง' },
+    { icon: 'ti-shield', title: 'ตรงไปตรงมา', desc: 'พูดกันตรงๆ ทั้งกับทีม ลูกค้า และตัวเอง ไม่เล่นการเมือง ไม่ปิดบังข้อมูล' },
   ]
 
   const stats = isEN
     ? [{ n:'40+',l:'Team Members',d:'And growing' },{ n:'8 yrs',l:'Company Age',d:'Founded 2017' },{ n:'120+',l:'Projects',d:'Delivered' },{ n:'4.9★',l:'Glassdoor Score',d:'From real employees' }]
-    : [{ n:'40+',l:'คนในทีม',d:'และยังเติบโตต่อเนื่อง' },{ n:'8 ปี',l:'อายุบริษัท',d:'ก่อตั้งปี 2017' },{ n:'120+',l:'โปรเจกต์',d:'ส่งมอบแล้ว' },{ n:'4.9★',l:'คะแนน Glassdoor',d:'จากพนักงานจริง' }]
+    : [{ n:'40+',l:'คนในทีม',d:'และกำลังเติบโต' },{ n:'8 ปี',l:'อายุบริษัท',d:'ก่อตั้งปี 2017' },{ n:'120+',l:'โปรเจกต์',d:'ส่งมอบแล้ว' },{ n:'4.9★',l:'คะแนน Glassdoor',d:'จากพนักงานจริง' }]
 
   const steps = isEN ? [
     { no:'01', icon:'ti-mail', title:'Apply', desc:'Send your CV + Portfolio to careers@haliviq.co or fill in the form below. We reply within 3 business days.', time:'~1 day' },
@@ -77,15 +77,15 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no:'03', icon:'ti-code', title:'Technical Round', desc:'A technical interview or take-home assignment designed to show real skills — not tricks.', time:'~1-2 hrs' },
     { no:'04', icon:'ti-users', title:'Team Meet', desc:'Meet the team you will work with. Full Q&A — we evaluate each other.', time:'~1 hr' },
   ] : [
-    { no:'01', icon:'ti-mail', title:'ส่ง Application', desc:'ส่ง CV + Portfolio มาที่ careers@haliviq.co หรือกรอก Form ด้านล่าง ตอบกลับภายใน 3 วันทำการ', time:'~1 วัน' },
-    { no:'02', icon:'ti-video', title:'Intro Call', desc:'คุยกับ HR 30 นาที เพื่อทำความรู้จักกัน ถามตอบเรื่องตำแหน่งและ Expectation', time:'~30 นาที' },
-    { no:'03', icon:'ti-code', title:'Technical Round', desc:'Technical Interview หรือ Take-home Assignment ที่ออกแบบมาเพื่อแสดง Real Skill ไม่ใช่ Trick', time:'~1-2 ชั่วโมง' },
-    { no:'04', icon:'ti-users', title:'Team Meet', desc:'พบทีมที่จะร่วมงานด้วย ถามตอบอย่างเต็มที่ ทั้งคุณและเราประเมินกันและกัน', time:'~1 ชั่วโมง' },
+    { no:'01', icon:'ti-mail', title:'สมัครงาน', desc:'ส่ง CV และผลงานมาที่ careers@haliviq.co หรือกรอกแบบฟอร์มด้านล่าง เราจะตอบกลับภายใน 3 วันทำการ', time:'~1 วัน' },
+    { no:'02', icon:'ti-video', title:'คุยเบื้องต้น', desc:'คุยกับฝ่ายบุคคลประมาณ 30 นาที เพื่อทำความรู้จักกัน และคุยเรื่องตำแหน่งกับสิ่งที่คาดหวัง', time:'~30 นาที' },
+    { no:'03', icon:'ti-code', title:'สัมภาษณ์เชิงเทคนิค', desc:'สัมภาษณ์ หรือโจทย์ให้ทำที่บ้าน เพื่อดูฝีมือจริงของคุณ ไม่ใช่ข้อสอบหลอก', time:'1–2 ชั่วโมง' },
+    { no:'04', icon:'ti-users', title:'พบทีม', desc:'พบกับทีมที่จะทำงานด้วยกัน ถามได้เต็มที่ เพราะทั้งคุณและเราต่างประเมินกันและกัน', time:'~1 ชั่วโมง' },
   ]
 
   const ctaTrust = isEN
     ? ['No application fee', 'We reply to every application', 'Feedback given every round']
-    : ['ไม่มีค่าธรรมเนียมในการสมัคร', 'ตอบกลับทุก Application', 'Feedback ให้ทุกรอบ']
+    : ['ไม่มีค่าสมัคร', 'ตอบกลับทุกใบสมัคร', 'แจ้งผลทุกรอบการสัมภาษณ์']
 
   const G = { background: 'linear-gradient(135deg,#A99CF8 0%,#7B6EF6 45%,#53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' } as const
   const card = { background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.1)' } as const
@@ -111,10 +111,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                   <span className="t-label" style={{ fontSize: '0.7rem', color: 'var(--purple-light)' }}>{isEN ? 'Now Hiring 12 Positions' : 'กำลังเปิดรับ 12 ตำแหน่ง'}</span>
                 </div>
                 <h1 className="t-display text-[clamp(3rem,6.5vw,5.6rem)] leading-relaxed mb-8" style={{ color: '#fff' }}>
-                  {isEN ? <>Come build<br /><span style={G}>something great</span><br />together</> : <>มาร่วมสร้าง<br /><span style={G}>สิ่งที่ยิ่งใหญ่</span><br />ไปด้วยกัน</>}
+                  {isEN ? <>Come build<br /><span style={G}>something great</span><br />together</> : <>มาสร้าง<br /><span style={G}>สิ่งดีๆ</span><br />ไปด้วยกัน</>}
                 </h1>
                 <p className="text-lg leading-relaxed mb-10 max-w-md" style={muted}>
-                  {isEN ? 'Haliviq is where Designers, Engineers, and Strategists come together to build digital products that make a real difference for businesses.' : 'Haliviq คือที่ที่ Designer, Engineer และ Strategist มารวมตัวกันเพื่อสร้างผลิตภัณฑ์ดิจิทัลที่สร้างความต่างให้ธุรกิจจริงๆ'}
+                  {isEN ? 'Haliviq is where Designers, Engineers, and Strategists come together to build digital products that make a real difference for businesses.' : 'Haliviq เป็นที่รวมตัวของนักออกแบบ วิศวกร และนักวางกลยุทธ์ ที่ช่วยกันสร้างผลิตภัณฑ์ดิจิทัลให้ธุรกิจเติบโตได้จริง'}
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <a href="#openings" className="btn-primary" style={{ fontSize: '1rem', padding: '14px 32px' }}>
@@ -127,7 +127,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                 </div>
               </div>
               <div className="hidden lg:block">
-                <Tile className="aspect-square max-w-[560px] ml-auto"><HeroArt /></Tile>
+                <Tile className="aspect-[4/5] max-w-[540px] ml-auto relative"><img src="/images/careers/hero.jpg" alt={isEN ? 'Haliviq careers' : 'ร่วมงานกับ Haliviq'} className="absolute inset-0 w-full h-full object-cover" /><div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(8,7,15,0) 55%, rgba(8,7,15,0.55) 100%)' }} /></Tile>
               </div>
             </div>
           </div>
@@ -155,13 +155,13 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <div>
                 <p className="t-label mb-5" style={{ color: 'rgba(255,255,255,0.6)' }}>{isEN ? 'Our Culture' : 'วัฒนธรรมองค์กร'}</p>
                 <h2 className="t-display text-[clamp(2.2rem,4.5vw,4rem)] leading-tight mb-8" style={{ color: '#fff' }}>
-                  {isEN ? <>No<br /><span style={G}>Micromanagement</span></> : <>ที่นี่ไม่มี<br /><span style={G}>Micromanagement</span></>}
+                  {isEN ? <>No<br /><span style={G}>Micromanagement</span></> : <>ที่นี่ไว้ใจกัน<br /><span style={G}>ไม่ตามจี้งาน</span></>}
                 </h2>
                 <p className="text-sm leading-relaxed mb-6" style={muted}>
-                  {isEN ? 'We believe the best people do their best work when trusted, given autonomy, and surrounded by others who are skilled and passionate.' : 'เราเชื่อว่าคนที่ดีที่สุดทำงานได้ดีที่สุดเมื่อได้รับความไว้วางใจ มี Autonomy และทำงานกับคนที่เก่งและ Passionate เหมือนกัน'}
+                  {isEN ? 'We believe the best people do their best work when trusted, given autonomy, and surrounded by others who are skilled and passionate.' : 'เราเชื่อว่าคนเก่งทำงานได้ดีที่สุดเมื่อมีคนไว้ใจและมีอิสระในการตัดสินใจ รวมถึงได้ทำงานกับเพื่อนร่วมทีมที่เก่งและรักในสิ่งที่ทำ'}
                 </p>
                 <p className="text-sm leading-relaxed" style={muted}>
-                  {isEN ? 'At Haliviq you will work on products with real impact, learn from top-tier teammates, and grow alongside a rapidly scaling company.' : 'ที่ Haliviq คุณจะได้ทำงานกับ Product ที่มี Impact จริง ได้เรียนรู้จากเพื่อนร่วมทีมที่ Top ในสายงาน และได้เติบโตไปพร้อมกับบริษัทที่ Scale อย่างรวดเร็ว'}
+                  {isEN ? 'At Haliviq you will work on products with real impact, learn from top-tier teammates, and grow alongside a rapidly scaling company.' : 'ที่ Haliviq คุณจะได้ทำงานที่มีผลจริง ได้เรียนรู้จากคนเก่งในสายงาน และเติบโตไปพร้อมกับบริษัทที่กำลังขยายตัว'}
                 </p>
               </div>
               <Tile className="aspect-[4/3]"><CultureArt /></Tile>
@@ -184,7 +184,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         <section className="py-24" style={{ background: '#0B0A14' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="mb-12">
-              <p className="t-label mb-4" style={{ color: 'rgba(255,255,255,0.6)' }}>{isEN ? 'Life at Haliviq' : 'ชีวิตใน Haliviq'}</p>
+              <p className="t-label mb-4" style={{ color: 'rgba(255,255,255,0.6)' }}>{isEN ? 'Life at Haliviq' : 'ชีวิตที่ Haliviq'}</p>
               <h2 className="t-display text-[clamp(2rem,4vw,3.5rem)]" style={{ color: '#fff' }}>
                 {isEN ? <>Great Work,<br /><span style={G}>Great Life</span></> : <>งานดี<br /><span style={G}>ชีวิตก็ดี</span></>}
               </h2>
@@ -205,7 +205,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <div className="text-center max-w-2xl mx-auto mb-16">
               <p className="t-label mb-5" style={{ color: 'rgba(255,255,255,0.6)' }}>{isEN ? 'Benefits' : 'สวัสดิการ'}</p>
               <h2 className="t-display text-[clamp(2rem,4.5vw,3.8rem)] leading-tight" style={{ color: '#fff' }}>
-                {isEN ? <>We care for our team<br /><span style={G}>like we care for clients</span></> : <>ดูแลทีมเหมือน<br /><span style={G}>ดูแลลูกค้า</span></>}
+                {isEN ? <>We care for our team<br /><span style={G}>like we care for clients</span></> : <>ดูแลทีม<br /><span style={G}>เหมือนดูแลลูกค้า</span></>}
               </h2>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -229,11 +229,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <div>
                 <p className="t-label mb-5" style={{ color: 'rgba(255,255,255,0.6)' }}>{isEN ? 'Open Roles' : 'ตำแหน่งงาน'}</p>
                 <h2 className="t-display text-[clamp(2rem,4.5vw,3.8rem)] leading-tight" style={{ color: '#fff' }}>
-                  {isEN ? <>12 open positions<br /><span style={G}>Starting now</span></> : <>เปิดรับ 12 ตำแหน่ง<br /><span style={G}>เริ่มได้เดี๋ยวนี้</span></>}
+                  {isEN ? <>12 open positions<br /><span style={G}>Starting now</span></> : <>เปิดรับ 12 ตำแหน่ง<br /><span style={G}>สมัครได้เลย</span></>}
                 </h2>
               </div>
               <p className="text-sm max-w-xs" style={muted}>
-                {isEN ? <>No role that fits? Send your CV to <a href="mailto:careers@haliviq.co" className="hover:underline" style={{ color: 'var(--purple-light)' }}>careers@haliviq.co</a></> : <>ไม่เจอตำแหน่งที่ใช่? ส่ง CV มาได้เลยที่ <a href="mailto:careers@haliviq.co" className="hover:underline" style={{ color: 'var(--purple-light)' }}>careers@haliviq.co</a></>}
+                {isEN ? <>No role that fits? Send your CV to <a href="mailto:careers@haliviq.co" className="hover:underline" style={{ color: 'var(--purple-light)' }}>careers@haliviq.co</a></> : <>ไม่เจอตำแหน่งที่ตรงกับคุณ? ส่ง CV มาได้ที่ <a href="mailto:careers@haliviq.co" className="hover:underline" style={{ color: 'var(--purple-light)' }}>careers@haliviq.co</a></>}
               </p>
             </div>
             <div className="space-y-8">
@@ -276,7 +276,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         <section className="py-24" style={{ background: '#08070F' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="mb-16 text-center">
-              <p className="t-label mb-5" style={{ color: 'rgba(255,255,255,0.6)' }}>{isEN ? 'Application Process' : 'กระบวนการสมัคร'}</p>
+              <p className="t-label mb-5" style={{ color: 'rgba(255,255,255,0.6)' }}>{isEN ? 'Application Process' : 'ขั้นตอนการสมัคร'}</p>
               <h2 className="t-display text-[clamp(2rem,4vw,3.5rem)]" style={{ color: '#fff' }}>
                 {isEN ? <>Straightforward<br /><span style={G}>No Time Wasted</span></> : <>ตรงไปตรงมา<br /><span style={G}>ไม่เสียเวลา</span></>}
               </h2>
@@ -306,10 +306,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <div className="relative max-w-4xl mx-auto px-6 lg:px-10 text-center">
             <p className="text-xs tracking-widest uppercase mb-6 font-mono" style={{ color: 'rgba(255,255,255,0.55)' }}>{isEN ? 'No role that fits?' : 'ยังไม่เจอตำแหน่งที่ใช่?'}</p>
             <h2 className="t-display text-[clamp(2.2rem,5vw,4.6rem)] mb-8 leading-tight" style={{ color: '#fff' }}>
-              {isEN ? <>Send your CV first.<br /><span style={G}>We will find a place for you.</span></> : <>ส่ง CV มาก่อน<br /><span style={G}>เราจะหาที่ให้</span></>}
+              {isEN ? <>Send your CV first.<br /><span style={G}>We will find a place for you.</span></> : <>ส่ง CV มาก่อน<br /><span style={G}>แล้วเราจะหาที่ให้</span></>}
             </h2>
             <p className="text-base mb-6 max-w-lg mx-auto" style={muted}>
-              {isEN ? 'If you are talented and passionate, we want to talk — whether or not we have that exact role open.' : 'ถ้าคุณเก่งและ Passionate เราอยากคุยกับคุณ ไม่ว่าจะเปิดรับตำแหน่งนั้นอยู่หรือเปล่า'}
+              {isEN ? 'If you are talented and passionate, we want to talk — whether or not we have that exact role open.' : 'ถ้าคุณเก่งและรักในงานที่ทำ เราอยากคุยกับคุณ ไม่ว่าตำแหน่งนั้นจะเปิดรับอยู่หรือไม่'}
             </p>
             <div className="flex flex-wrap justify-center gap-5 mb-12">
               {ctaTrust.map(txt => (

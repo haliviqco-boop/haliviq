@@ -16,7 +16,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge = isEN ? 'Industry / Transportation & Logistics' : 'อุตสาหกรรม / คมนาคมและโลจิสติกส์'
   const heroSubhead = isEN
     ? 'Optimize supply chains and transportation networks.'
-    : 'เพิ่มประสิทธิภาพห่วงโซ่อุปทานและเครือข่ายการขนส่ง'
+    : 'ระบบจัดการซัพพลายเชน การขนส่ง และคลังสินค้า'
 
   const challenges = isEN ? [
     { icon: 'ti-truck-delivery', title: 'Last-Mile Delivery Cost Pressure', desc: 'Last-mile delivery accounts for the largest share of total shipping cost, and rising fuel, labor, and customer expectations for free or cheap delivery squeeze margins on every order.' },
@@ -24,16 +24,16 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-building-warehouse', title: 'Warehouse Capacity & Labor Volatility', desc: 'Seasonal demand swings, labor shortages, and rising storage costs make it difficult to plan warehouse capacity and staffing without sophisticated forecasting and automation.' },
     { icon: 'ti-plug-connected', title: 'Fragmented Multi-Carrier Integrations', desc: 'Coordinating shipments across dozens of carriers, each with its own API, tracking format, and SLA, creates brittle integrations that are costly to maintain and slow to extend.' },
   ] : [
-    { icon: 'ti-truck-delivery', title: 'แรงกดดันด้านต้นทุน Last-Mile Delivery', desc: 'Last-Mile Delivery คิดเป็นสัดส่วนต้นทุนขนส่งที่สูงที่สุด และค่าน้ำมัน ค่าแรงที่เพิ่มขึ้น รวมถึงความคาดหวังของลูกค้าต่อการจัดส่งฟรีหรือราคาถูก บีบอัตรากำไรในทุกออเดอร์' },
-    { icon: 'ti-radar', title: 'ช่องว่างด้าน Real-Time Visibility', desc: 'ทั้งผู้ส่ง ผู้ขนส่ง และลูกค้า ต้องการมองเห็นตำแหน่งของสินค้าและเวลาที่จะถึงแบบ Real-time แต่ระบบติดตามที่กระจัดกระจายทำให้เกิดจุดบอดตลอดเส้นทางที่มีหลายช่วงต่อ' },
-    { icon: 'ti-building-warehouse', title: 'ความผันผวนของ Warehouse Capacity และแรงงาน', desc: 'ความต้องการที่ผันผวนตามฤดูกาล การขาดแคลนแรงงาน และต้นทุนการจัดเก็บที่สูงขึ้น ทำให้การวางแผน Capacity คลังสินค้าและอัตรากำลังคนทำได้ยากหากไม่มีระบบพยากรณ์และ Automation ที่ดี' },
-    { icon: 'ti-plug-connected', title: 'การเชื่อมต่อ Multi-Carrier ที่กระจัดกระจาย', desc: 'การประสานงานขนส่งกับผู้ให้บริการหลายสิบราย ซึ่งแต่ละรายมี API รูปแบบ Tracking และ SLA ของตัวเอง สร้างการเชื่อมต่อที่เปราะบาง ดูแลรักษายาก และขยายต่อได้ช้า' },
+    { icon: 'ti-truck-delivery', title: 'แรงกดดันด้านต้นทุนการส่งช่วงสุดท้าย', desc: 'การส่งช่วงสุดท้าย (Last-Mile) เป็นต้นทุนขนส่งที่สูงที่สุด ทั้งค่าน้ำมันและค่าแรงที่เพิ่มขึ้น ประกอบกับลูกค้าคาดหวังส่งฟรีหรือราคาถูก จึงบีบกำไรของทุกออเดอร์' },
+    { icon: 'ti-radar', title: 'มองไม่เห็นสถานะสินค้าแบบเรียลไทม์', desc: 'ทั้งผู้ส่ง ผู้ขนส่ง และลูกค้า อยากเห็นตำแหน่งสินค้าและเวลาถึงแบบเรียลไทม์ แต่ระบบติดตามที่กระจัดกระจายทำให้เกิดจุดบอดตลอดเส้นทางที่มีหลายช่วงต่อ' },
+    { icon: 'ti-building-warehouse', title: 'กำลังรับของในคลังและแรงงานไม่แน่นอน', desc: 'ความต้องการที่ขึ้นลงตามฤดูกาล แรงงานขาดแคลน และต้นทุนจัดเก็บที่สูงขึ้น ทำให้วางแผนพื้นที่คลังและกำลังคนได้ยาก ถ้าไม่มีระบบพยากรณ์และระบบอัตโนมัติที่ดี' },
+    { icon: 'ti-plug-connected', title: 'เชื่อมต่อผู้ขนส่งหลายรายที่กระจัดกระจาย', desc: 'การประสานงานกับผู้ให้บริการขนส่งหลายสิบราย ซึ่งแต่ละรายมี API รูปแบบการติดตามและ SLA ต่างกัน ทำให้การเชื่อมต่อเปราะบาง ดูแลยาก และขยายต่อได้ช้า' },
   ]
 
   const metrics = [
-    { value: '$47.9B', label: isEN ? 'Global Supply Chain Tech Market by 2032' : 'ตลาด Supply Chain Tech ทั่วโลกภายในปี 2032', source: 'Fortune Business Insights Supply Chain Management Software Report, 2024' },
-    { value: '25%', label: isEN ? 'Reduction in Last-Mile Delivery Costs Through Route Optimization' : 'ลดต้นทุน Last-Mile Delivery ด้วย Route Optimization', source: 'McKinsey Future of Logistics, 2024' },
-    { value: '20%', label: isEN ? 'Higher Fleet Utilization With Telematics-Driven Dispatch' : 'เพิ่ม Fleet Utilization ด้วยการจ่ายงานที่ขับเคลื่อนด้วย Telematics', source: 'Gartner Supply Chain Technology Survey, 2024' },
+    { value: '$47.9B', label: isEN ? 'Global Supply Chain Tech Market by 2032' : 'ตลาดเทคโนโลยีซัพพลายเชนทั่วโลกภายในปี 2032', source: 'Fortune Business Insights Supply Chain Management Software Report, 2024' },
+    { value: '25%', label: isEN ? 'Reduction in Last-Mile Delivery Costs Through Route Optimization' : 'ลดต้นทุนการส่งช่วงสุดท้ายด้วยการวางเส้นทางที่ดีขึ้น', source: 'McKinsey Future of Logistics, 2024' },
+    { value: '20%', label: isEN ? 'Higher Fleet Utilization With Telematics-Driven Dispatch' : 'ใช้รถได้เต็มที่ขึ้นด้วยการจ่ายงานโดยใช้ข้อมูล Telematics', source: 'Gartner Supply Chain Technology Survey, 2024' },
   ]
 
   const capabilities = isEN ? [
@@ -44,12 +44,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-plug-connected', title: 'Multi-Carrier Integration Platforms', desc: 'Unified integration layers that normalize rates, labels, and tracking events across dozens of carriers behind a single, consistent API.' },
     { icon: 'ti-trending-up', title: 'Demand & Capacity Forecasting', desc: 'Machine learning forecasting tools that predict shipment volumes and warehouse capacity needs to guide staffing, procurement, and network planning.' },
   ] : [
-    { icon: 'ti-map-pin', title: 'Real-Time Shipment Tracking', desc: 'แพลตฟอร์มติดตามแบบ Real-time ที่รวมข้อมูล GPS, ผู้ขนส่ง และ IoT Sensor เป็นมุมมองเดียวของทุกการจัดส่งตั้งแต่ต้นทางจนถึงปลายทาง' },
-    { icon: 'ti-route', title: 'Route Optimization Systems', desc: 'ระบบวางแผนเส้นทางด้วยอัลกอริทึมที่ลดระยะทาง เชื้อเพลิง และเวลาจัดส่ง โดยคำนึงถึง Time Window ความจุรถ และข้อจำกัดของคนขับ' },
-    { icon: 'ti-building-warehouse', title: 'Warehouse Management Systems', desc: 'แพลตฟอร์ม WMS แบบครบวงจร ครอบคลุมการรับสินค้าเข้า การจัดเก็บ การหยิบ การบรรจุ และการจ่ายออก ทั้งคลังเดียวและเครือข่ายหลายคลัง' },
-    { icon: 'ti-gauge', title: 'Fleet Telematics Dashboards', desc: 'Dashboard ติดตามยานพาหนะแบบ Real-time ที่แสดงตำแหน่งรถ พฤติกรรมคนขับ การใช้เชื้อเพลิง และการแจ้งเตือนซ่อมบำรุงจากอุปกรณ์ Telematics บนรถ' },
-    { icon: 'ti-plug-connected', title: 'Multi-Carrier Integration Platforms', desc: 'ชั้นการเชื่อมต่อแบบรวมศูนย์ที่ทำให้อัตราค่าขนส่ง ใบปะหน้า และ Tracking Event จากผู้ขนส่งหลายสิบรายเป็นมาตรฐานเดียวผ่าน API เดียว' },
-    { icon: 'ti-trending-up', title: 'Demand & Capacity Forecasting', desc: 'เครื่องมือพยากรณ์ด้วย Machine Learning ที่คาดการณ์ปริมาณการจัดส่งและความต้องการ Capacity คลังสินค้า เพื่อวางแผนกำลังคน การจัดซื้อ และเครือข่าย' },
+    { icon: 'ti-map-pin', title: 'Real-Time Shipment Tracking', desc: 'แพลตฟอร์มติดตามแบบเรียลไทม์ รวมข้อมูล GPS ผู้ขนส่ง และ IoT Sensor ไว้เป็นภาพเดียวของทุกการจัดส่งตั้งแต่ต้นทางถึงปลายทาง' },
+    { icon: 'ti-route', title: 'Route Optimization Systems', desc: 'ระบบวางแผนเส้นทางด้วยอัลกอริทึม ลดระยะทาง เชื้อเพลิง และเวลาส่ง โดยคำนึงถึงช่วงเวลารับของ ความจุรถ และข้อจำกัดของคนขับ' },
+    { icon: 'ti-building-warehouse', title: 'Warehouse Management Systems', desc: 'แพลตฟอร์ม WMS ครบทุกขั้นตอน ตั้งแต่รับสินค้าเข้า จัดเก็บ หยิบ บรรจุ ไปจนถึงจ่ายออก ทั้งคลังเดียวและหลายคลัง' },
+    { icon: 'ti-gauge', title: 'Fleet Telematics Dashboards', desc: 'Dashboard ติดตามรถแบบเรียลไทม์ แสดงตำแหน่งรถ พฤติกรรมคนขับ การใช้เชื้อเพลิง และการแจ้งเตือนซ่อมบำรุงจากอุปกรณ์ Telematics บนรถ' },
+    { icon: 'ti-plug-connected', title: 'Multi-Carrier Integration Platforms', desc: 'ชั้นเชื่อมต่อกลางที่ทำให้ค่าขนส่ง ใบปะหน้า และสถานะการติดตามจากผู้ขนส่งหลายสิบรายอยู่ในรูปแบบเดียว ผ่าน API เดียว' },
+    { icon: 'ti-trending-up', title: 'Demand & Capacity Forecasting', desc: 'เครื่องมือพยากรณ์ด้วย Machine Learning คาดการณ์ปริมาณการส่งและพื้นที่คลังที่ต้องใช้ เพื่อวางแผนกำลังคน การจัดซื้อ และเครือข่าย' },
   ]
 
   const techStack = ['React', 'Node.js', 'GPS/Telematics', 'Google Maps API', 'Kafka', 'PostgreSQL', 'Redis', 'Machine Learning', 'AWS', 'GraphQL', 'IoT', 'Elasticsearch', 'Docker']
@@ -59,9 +59,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '02', title: 'Route Optimization System', desc: 'Dynamic route planning engine that assigns stops to vehicles and sequences deliveries to minimize distance and fuel while meeting delivery time windows.' },
     { no: '03', title: 'Warehouse Management Platform', desc: 'Multi-site WMS that orchestrates receiving, put-away, picking, and dispatch, with real-time inventory accuracy and labor productivity analytics.' },
   ] : [
-    { no: '01', title: 'Real-Time Shipment Tracking Platform', desc: 'แอปพลิเคชันติดตามแบบรวมศูนย์ที่ดึงข้อมูล GPS, ผู้ขนส่ง และ IoT Sensor เพื่อให้ผู้ส่งและลูกค้าเห็น ETA แบบ Real-time ในทุกช่วงของการจัดส่ง' },
-    { no: '02', title: 'Route Optimization System', desc: 'ระบบวางแผนเส้นทางแบบ Dynamic ที่จัดสรรจุดส่งให้กับรถแต่ละคันและจัดลำดับการส่งเพื่อลดระยะทางและเชื้อเพลิง พร้อมตรง Time Window ที่กำหนด' },
-    { no: '03', title: 'Warehouse Management Platform', desc: 'ระบบ WMS สำหรับหลายคลังที่จัดการการรับสินค้า การจัดเก็บ การหยิบ และการจ่ายออก พร้อมความแม่นยำของสต๊อกแบบ Real-time และ Analytics ด้านผลิตภาพแรงงาน' },
+    { no: '01', title: 'Real-Time Shipment Tracking Platform', desc: 'แอปติดตามกลางที่ดึงข้อมูล GPS ผู้ขนส่ง และ IoT Sensor ให้ผู้ส่งและลูกค้าเห็นเวลาถึงโดยประมาณ (ETA) แบบเรียลไทม์ในทุกช่วงของการส่ง' },
+    { no: '02', title: 'Route Optimization System', desc: 'ระบบวางแผนเส้นทางที่ปรับตามสถานการณ์ จัดจุดส่งให้รถแต่ละคันและเรียงลำดับการส่งเพื่อลดระยะทางและเชื้อเพลิง โดยตรงตามช่วงเวลาที่กำหนด' },
+    { no: '03', title: 'Warehouse Management Platform', desc: 'ระบบ WMS สำหรับหลายคลัง จัดการรับสินค้า จัดเก็บ หยิบ และจ่ายออก พร้อมสต็อกที่แม่นยำแบบเรียลไทม์ และ Analytics ด้านผลิตภาพแรงงาน' },
   ]
 
   const heroVisual = (
@@ -170,7 +170,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
                   ? 'We help transportation and logistics companies build real-time tracking platforms, route optimization systems, warehouse management software, and fleet telematics dashboards that cut cost and improve service reliability. Our solutions integrate cleanly with existing carrier and ERP systems, scale across peak seasons, and turn fragmented operational data into decisions your team can act on immediately.'
-                  : 'เราช่วยบริษัทขนส่งและโลจิสติกส์สร้างแพลตฟอร์มติดตามแบบ Real-time, ระบบ Route Optimization, ซอฟต์แวร์ Warehouse Management และ Dashboard Fleet Telematics ที่ลดต้นทุนและเพิ่มความน่าเชื่อถือของบริการ โซลูชันของเราเชื่อมต่อกับระบบผู้ขนส่งและ ERP เดิมได้อย่างราบรื่น Scale ได้ในช่วงพีคของฤดูกาล และเปลี่ยนข้อมูลปฏิบัติการที่กระจัดกระจายให้กลายเป็นการตัดสินใจที่ทีมของคุณนำไปใช้ได้ทันที'}
+                  : 'เราช่วยบริษัทขนส่งและโลจิสติกส์สร้างแพลตฟอร์มติดตามแบบเรียลไทม์ ระบบวางแผนเส้นทาง ซอฟต์แวร์จัดการคลังสินค้า และ Dashboard Fleet Telematics เพื่อลดต้นทุนและเพิ่มความน่าเชื่อถือของบริการ ระบบของเราเชื่อมกับระบบของผู้ขนส่งและ ERP เดิมได้ราบรื่น รองรับช่วงฤดูกาลที่งานพุ่งสูง และเปลี่ยนข้อมูลที่กระจัดกระจายให้เป็นข้อมูลที่ทีมคุณนำไปตัดสินใจได้ทันที'}
               </p>
             </div>
           </div>
@@ -188,7 +188,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Understanding the critical obstacles that drive digital transformation in this industry.'
-                : 'ความเข้าใจอุปสรรคสำคัญที่ผลักดันการปรับสู่ดิจิทัลในอุตสาหกรรมนี้'}
+                : 'ปัญหาหลักที่ธุรกิจในอุตสาหกรรมนี้ต้องเจอ'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -238,7 +238,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'โซลูชันที่พิสูจน์แล้วซึ่งเราสร้างเพื่อตอบโจทย์ที่สำคัญที่สุดของอุตสาหกรรมคุณ'}
+              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -261,12 +261,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Tech Stack' : 'เทคโนโลยีที่ใช้'}
             </p>
             <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
-              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้งาน'}
+              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้'}
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Industry-proven tools and frameworks we leverage to build robust solutions.'
-                : 'เครื่องมือและ Framework ที่พิสูจน์แล้วในอุตสาหกรรม ที่เราใช้สร้างโซลูชันที่แข็งแรงและเชื่อถือได้'}
+                : 'เครื่องมือและ Framework ที่เราเลือกใช้ เพราะมั่นคงและเชื่อถือได้'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -292,7 +292,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างโปรเจกต์ที่เราส่งมอบจริงให้กับลูกค้าในอุตสาหกรรมนี้'}
+              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างงานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -332,7 +332,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link

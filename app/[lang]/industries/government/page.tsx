@@ -16,7 +16,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge = isEN ? 'Industry / Government & Public Sector' : 'อุตสาหกรรม / ภาครัฐและหน่วยงานสาธารณะ'
   const heroSubhead = isEN
     ? 'Digital services for government and public institutions.'
-    : 'บริการดิจิทัลสำหรับภาครัฐและหน่วยงานสาธารณะ'
+    : 'บริการออนไลน์สำหรับหน่วยงานรัฐและองค์กรสาธารณะ'
 
   const challenges = isEN ? [
     { icon: 'ti-server-cog', title: 'Legacy System Modernization at Scale', desc: 'Decades-old mainframe and monolithic systems run mission-critical services, making replacement risky, yet the cost and complexity of modernizing at government scale is enormous.' },
@@ -24,15 +24,15 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-accessible', title: 'Digital-Accessibility Requirements for All Citizens', desc: 'Public digital services must be usable by every citizen regardless of ability, device, or connectivity, requiring strict adherence to accessibility standards from day one.' },
     { icon: 'ti-topology-star-3', title: 'Cross-Agency Interoperability', desc: 'Delivering a single, coherent citizen experience requires data and workflows to flow seamlessly across agencies that were never designed to share information.' },
   ] : [
-    { icon: 'ti-server-cog', title: 'Legacy System Modernization ในระดับใหญ่', desc: 'ระบบ Mainframe และ Monolithic ที่มีอายุหลายสิบปียังคงรันบริการที่สำคัญต่อภารกิจ ทำให้การเปลี่ยนระบบมีความเสี่ยงสูง แต่ต้นทุนและความซับซ้อนของการทำ Modernization ในระดับภาครัฐก็มหาศาลเช่นกัน' },
-    { icon: 'ti-shield-lock', title: 'ข้อกำหนดด้าน Data-Privacy และ Security ที่เข้มงวด', desc: 'ข้อมูลประชาชนต้องการมาตรฐานความปลอดภัยและ Compliance สูงสุด ต้องมี Access Control, การเข้ารหัส และ Audit Trail ที่รัดกุมในทุกระบบ' },
-    { icon: 'ti-accessible', title: 'ข้อกำหนดด้าน Digital Accessibility สำหรับประชาชนทุกคน', desc: 'บริการดิจิทัลของภาครัฐต้องใช้งานได้กับประชาชนทุกคนไม่ว่าจะมีข้อจำกัดด้านร่างกาย อุปกรณ์ หรือการเชื่อมต่อแบบใด จึงต้องยึดตามมาตรฐาน Accessibility อย่างเคร่งครัดตั้งแต่ต้น' },
-    { icon: 'ti-topology-star-3', title: 'Cross-Agency Interoperability', desc: 'การมอบประสบการณ์ที่ราบรื่นให้ประชาชนต้องอาศัยข้อมูลและ Workflow ที่ไหลลื่นระหว่างหน่วยงานต่างๆ ซึ่งแต่เดิมไม่ได้ถูกออกแบบมาให้แชร์ข้อมูลกัน' },
+    { icon: 'ti-server-cog', title: 'ปรับปรุงระบบเก่าขนาดใหญ่', desc: 'ระบบ Mainframe และ Monolithic อายุหลายสิบปียังรันบริการสำคัญอยู่ การเปลี่ยนระบบจึงเสี่ยงสูง และต้นทุนกับความซับซ้อนของการปรับปรุงในระดับภาครัฐก็สูงมากเช่นกัน' },
+    { icon: 'ti-shield-lock', title: 'ข้อกำหนดด้านความเป็นส่วนตัวและความปลอดภัยของข้อมูลที่เข้มงวด', desc: 'ข้อมูลประชาชนต้องมีมาตรฐานความปลอดภัยและการทำตามกฎสูงสุด ทุกระบบต้องมีการควบคุมการเข้าถึง การเข้ารหัส และ Audit Trail ที่รัดกุม' },
+    { icon: 'ti-accessible', title: 'ทุกคนต้องเข้าถึงบริการดิจิทัลได้', desc: 'บริการดิจิทัลของรัฐต้องใช้ได้กับประชาชนทุกคน ไม่ว่าจะมีข้อจำกัดทางร่างกาย อุปกรณ์ หรือการเชื่อมต่ออย่างไร จึงต้องยึดมาตรฐาน Accessibility อย่างเคร่งครัดตั้งแต่ต้น' },
+    { icon: 'ti-topology-star-3', title: 'Cross-Agency Interoperability', desc: 'การให้ประชาชนใช้บริการได้ราบรื่น ต้องให้ข้อมูลและขั้นตอนงานไหลต่อกันได้ระหว่างหน่วยงาน ซึ่งเดิมไม่ได้ออกแบบมาให้แชร์ข้อมูลกัน' },
   ]
 
   const metrics = [
     { value: '$1.2T', label: isEN ? 'Global GovTech & E-Government Market by 2030' : 'มูลค่าตลาด GovTech และ E-Government ทั่วโลกภายในปี 2030', source: 'MarketsandMarkets GovTech Forecast, 2024' },
-    { value: '68%', label: isEN ? 'Citizen Adoption Rate of Digital Government Services' : 'อัตราการใช้บริการภาครัฐดิจิทัลของประชาชน', source: 'OECD Digital Government Index, 2024' },
+    { value: '68%', label: isEN ? 'Citizen Adoption Rate of Digital Government Services' : 'สัดส่วนประชาชนที่ใช้บริการภาครัฐดิจิทัล', source: 'OECD Digital Government Index, 2024' },
     { value: '40%', label: isEN ? 'Cost Savings from Digitized Public Services' : 'ต้นทุนที่ลดลงจากบริการภาครัฐที่ทำเป็นดิจิทัล', source: 'Deloitte Public Sector Digital Transformation, 2024' },
   ]
 
@@ -44,12 +44,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-affiliate', title: 'Cross-Agency Data-Integration Systems', desc: 'Interoperability layers and shared APIs that connect siloed agency systems so citizen data and workflows move seamlessly across departments.' },
     { icon: 'ti-layout-dashboard', title: 'Digital-Service Delivery Dashboards', desc: 'Real-time operational dashboards that give agency leaders visibility into service uptake, processing times, and citizen satisfaction.' },
   ] : [
-    { icon: 'ti-building-bank', title: 'E-Government Portals', desc: 'Portal สำหรับประชาชนแบบรวมศูนย์ ที่รวมบริการ แบบฟอร์ม และการชำระเงินจากหลายหน่วยงานไว้ในประตูดิจิทัลเดียวที่ใช้งานง่าย' },
-    { icon: 'ti-id-badge-2', title: 'Digital-ID และระบบใบอนุญาต', desc: 'แพลตฟอร์ม Digital Identity และการออกใบอนุญาตที่ปลอดภัย ให้ประชาชนยืนยันตัวตนและยื่นขอใบอนุญาตได้ทั้งหมดแบบออนไลน์' },
-    { icon: 'ti-accessible', title: 'เว็บไซต์ภาครัฐที่ได้มาตรฐาน Accessibility', desc: 'เว็บไซต์และแอปพลิเคชันภาครัฐที่ได้มาตรฐาน WCAG ออกแบบด้วยแนวคิด Inclusive Design เพื่อให้ประชาชนทุกคนเข้าถึงบริการได้อย่างสะดวก' },
-    { icon: 'ti-lock-square', title: 'แพลตฟอร์มข้อมูลประชาชนที่ปลอดภัย', desc: 'แพลตฟอร์มข้อมูลที่แข็งแรงด้วยสถาปัตยกรรม Zero Trust การเข้ารหัสทั้ง At-rest และ In-transit พร้อม Audit Logging ครบถ้วนเพื่อปกป้องข้อมูลประชาชนที่อ่อนไหว' },
-    { icon: 'ti-affiliate', title: 'ระบบเชื่อมต่อข้อมูลข้ามหน่วยงาน', desc: 'ชั้น Interoperability และ API ที่ใช้ร่วมกัน เชื่อมระบบของแต่ละหน่วยงานที่แยกกันอยู่ ให้ข้อมูลและ Workflow ของประชาชนไหลลื่นข้ามหน่วยงานได้' },
-    { icon: 'ti-layout-dashboard', title: 'Dashboard สำหรับการส่งมอบบริการดิจิทัล', desc: 'Dashboard ปฏิบัติการแบบ Real-time ที่ให้ผู้บริหารหน่วยงานเห็นภาพการใช้บริการ ระยะเวลาดำเนินการ และความพึงพอใจของประชาชน' },
+    { icon: 'ti-building-bank', title: 'E-Government Portals', desc: 'Portal กลางสำหรับประชาชน รวมบริการ แบบฟอร์ม และการชำระเงินของหลายหน่วยงานไว้ในช่องทางดิจิทัลเดียวที่ใช้ง่าย' },
+    { icon: 'ti-id-badge-2', title: 'Digital-ID และระบบใบอนุญาต', desc: 'แพลตฟอร์ม Digital Identity และออกใบอนุญาตที่ปลอดภัย ให้ประชาชนยืนยันตัวตนและยื่นขอใบอนุญาตออนไลน์ได้ครบ' },
+    { icon: 'ti-accessible', title: 'เว็บไซต์ภาครัฐที่ได้มาตรฐาน Accessibility', desc: 'เว็บไซต์และแอปภาครัฐที่ได้มาตรฐาน WCAG ออกแบบให้ทุกคนใช้ได้ เพื่อให้ประชาชนเข้าถึงบริการได้สะดวก' },
+    { icon: 'ti-lock-square', title: 'แพลตฟอร์มข้อมูลประชาชนที่ปลอดภัย', desc: 'แพลตฟอร์มข้อมูลบนสถาปัตยกรรม Zero Trust เข้ารหัสทั้งตอนเก็บและตอนส่ง พร้อม Audit Logging ครบ เพื่อปกป้องข้อมูลอ่อนไหวของประชาชน' },
+    { icon: 'ti-affiliate', title: 'ระบบเชื่อมข้อมูลข้ามหน่วยงาน', desc: 'ชั้นเชื่อมต่อและ API กลาง ที่เชื่อมระบบของแต่ละหน่วยงานที่แยกกันอยู่ ให้ข้อมูลและขั้นตอนงานของประชาชนไหลข้ามหน่วยงานได้' },
+    { icon: 'ti-layout-dashboard', title: 'Dashboard ติดตามการให้บริการดิจิทัล', desc: 'Dashboard แบบเรียลไทม์ให้ผู้บริหารหน่วยงานเห็นการใช้บริการ ระยะเวลาดำเนินการ และความพึงพอใจของประชาชน' },
   ]
 
   const techStack = ['React', 'Node.js', 'PostgreSQL', 'AWS GovCloud', 'OAuth 2.0', 'Zero Trust', 'GraphQL', 'Kubernetes', 'Digital ID', 'WCAG', 'Elasticsearch', 'Redis']
@@ -59,9 +59,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '02', title: 'Digital Permit & Licensing System', desc: 'An end-to-end online permitting platform with document upload, status tracking, and automated compliance checks that replaces paper-based approvals.' },
     { no: '03', title: 'Cross-Agency Data Platform', desc: 'A secure interoperability layer that lets multiple agencies share verified citizen data in real time while preserving strict access controls and audit trails.' },
   ] : [
-    { no: '01', title: 'Citizen Services Portal', desc: 'ประตูดิจิทัลแบบรวมศูนย์ที่ประชาชนสามารถขอเอกสาร ชำระค่าธรรมเนียม และติดตามคำขอจากหลายหน่วยงานได้ในบัญชีเดียว' },
-    { no: '02', title: 'ระบบขอใบอนุญาตดิจิทัล', desc: 'แพลตฟอร์มขอใบอนุญาตออนไลน์แบบครบวงจร พร้อมอัปโหลดเอกสาร ติดตามสถานะ และตรวจสอบ Compliance อัตโนมัติ แทนที่การอนุมัติแบบกระดาษ' },
-    { no: '03', title: 'Cross-Agency Data Platform', desc: 'ชั้น Interoperability ที่ปลอดภัย ให้หลายหน่วยงานแชร์ข้อมูลประชาชนที่ยืนยันแล้วแบบ Real-time พร้อมคงไว้ซึ่ง Access Control และ Audit Trail ที่เข้มงวด' },
+    { no: '01', title: 'Citizen Services Portal', desc: 'ช่องทางดิจิทัลกลางที่ประชาชนขอเอกสาร ชำระค่าธรรมเนียม และติดตามคำขอจากหลายหน่วยงานได้ในบัญชีเดียว' },
+    { no: '02', title: 'ระบบขอใบอนุญาตดิจิทัล', desc: 'แพลตฟอร์มขอใบอนุญาตออนไลน์ครบขั้นตอน อัปโหลดเอกสาร ติดตามสถานะ และตรวจสอบการทำตามกฎอัตโนมัติ แทนการอนุมัติด้วยกระดาษ' },
+    { no: '03', title: 'Cross-Agency Data Platform', desc: 'ชั้นเชื่อมต่อที่ปลอดภัย ให้หลายหน่วยงานแชร์ข้อมูลประชาชนที่ยืนยันแล้วแบบเรียลไทม์ โดยยังคุมสิทธิ์เข้าถึงและเก็บ Audit Trail อย่างเข้มงวด' },
   ]
 
   const heroVisual = (
@@ -174,7 +174,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
                   ? 'We help government agencies and public institutions build e-government portals, digital-ID and permit systems, and secure cross-agency data platforms that make public services faster, more accessible, and easier to trust. Our solutions meet the highest security and accessibility standards while modernizing legacy infrastructure without disrupting the services citizens rely on.'
-                  : 'เราช่วยหน่วยงานภาครัฐและองค์กรสาธารณะสร้าง E-Government Portal, ระบบ Digital-ID และใบอนุญาต และแพลตฟอร์มข้อมูลข้ามหน่วยงานที่ปลอดภัย เพื่อให้บริการสาธารณะเร็วขึ้น เข้าถึงง่ายขึ้น และน่าเชื่อถือมากขึ้น โซลูชันของเราตอบโจทย์มาตรฐานความปลอดภัยและ Accessibility ระดับสูงสุด พร้อมทำ Modernization ระบบเดิมโดยไม่กระทบบริการที่ประชาชนพึ่งพา'}
+                  : 'เราช่วยหน่วยงานภาครัฐและองค์กรสาธารณะสร้าง E-Government Portal ระบบ Digital-ID และใบอนุญาต และแพลตฟอร์มข้อมูลข้ามหน่วยงานที่ปลอดภัย เพื่อให้บริการประชาชนได้เร็วขึ้น เข้าถึงง่ายขึ้น และน่าเชื่อถือขึ้น ระบบของเราตรงตามมาตรฐานความปลอดภัยและ Accessibility ระดับสูงสุด และปรับปรุงระบบเดิมได้โดยไม่กระทบบริการที่ประชาชนใช้อยู่'}
               </p>
             </div>
           </div>
@@ -192,7 +192,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Understanding the critical obstacles that drive digital transformation in this industry.'
-                : 'ความเข้าใจอุปสรรคสำคัญที่ผลักดันการปรับสู่ดิจิทัลในอุตสาหกรรมนี้'}
+                : 'ปัญหาหลักที่ธุรกิจในอุตสาหกรรมนี้ต้องเจอ'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -242,7 +242,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'โซลูชันที่พิสูจน์แล้วซึ่งเราสร้างเพื่อตอบโจทย์ที่สำคัญที่สุดของอุตสาหกรรมคุณ'}
+              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -265,12 +265,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Tech Stack' : 'เทคโนโลยีที่ใช้'}
             </p>
             <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
-              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้งาน'}
+              {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้'}
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Industry-proven tools and frameworks we leverage to build robust solutions.'
-                : 'เครื่องมือและ Framework ที่พิสูจน์แล้วในอุตสาหกรรม ที่เราใช้สร้างโซลูชันที่แข็งแรงและเชื่อถือได้'}
+                : 'เครื่องมือและ Framework ที่เราเลือกใช้ เพราะมั่นคงและเชื่อถือได้'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -296,7 +296,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างโปรเจกต์ที่เราส่งมอบจริงให้กับลูกค้าในอุตสาหกรรมนี้'}
+              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างงานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -336,7 +336,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link

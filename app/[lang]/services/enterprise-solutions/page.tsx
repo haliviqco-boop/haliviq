@@ -29,14 +29,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge    = isEN ? 'Enterprise / ERP · CRM · POS'  : 'Enterprise / ERP · CRM · POS'
   const title    = isEN ? 'Enterprise Systems'  : 'ระบบ Enterprise'
   const subtitle = isEN ? 'That Fit How You Work'    : 'ที่เข้ากับวิธีทำงานจริง'
-  const heroDesc = isEN ? 'Implement, customize, and integrate ERP, CRM, and POS systems around how your business actually operates.'  : 'Implement, Customize และ Integrate ระบบ ERP, CRM และ POS ให้เข้ากับวิธีทำงานจริงของธุรกิจคุณ'
-  const whyTitle = isEN ? 'Why off-the-shelf software fails without the right fit'    : 'ทำไม Software สำเร็จรูปถึงล้มเหลวถ้าไม่ Fit จริง'
-  const whyDesc  = isEN ? 'Off-the-shelf enterprise software only succeeds when it is aligned with your actual workflows — forced adoption of a rigid system just creates workarounds and shadow spreadsheets.'  : 'Software Enterprise สำเร็จรูปจะสำเร็จได้ก็ต่อเมื่อสอดคล้องกับ Workflow จริงของธุรกิจ การบังคับใช้ระบบที่ตายตัวเกินไป มักจบด้วย Workaround และ Spreadsheet ลับๆ ที่พนักงานสร้างขึ้นมาเอง'
-  const ctaTitle = isEN ? 'Ready for systems that fit your business?'    : 'พร้อมให้ระบบที่เข้ากับธุรกิจคุณจริงๆ ไหม?'
-  const ctaDesc  = isEN ? 'Start with a free process mapping session. We will show you where systems and reality diverge.'   : 'เริ่มด้วยการทำ Process Mapping ฟรี เราจะชี้ให้เห็นว่าระบบกับความจริงต่างกันตรงไหน'
+  const heroDesc = isEN ? 'Implement, customize, and integrate ERP, CRM, and POS systems around how your business actually operates.'  : 'ติดตั้ง ปรับแต่ง และเชื่อมต่อระบบ ERP, CRM และ POS ให้เข้ากับวิธีทำงานจริงของธุรกิจคุณ'
+  const whyTitle = isEN ? 'Why off-the-shelf software fails without the right fit'    : 'ทำไมซอฟต์แวร์สำเร็จรูปถึงล้มเหลวถ้าไม่เหมาะกับงานจริง'
+  const whyDesc  = isEN ? 'Off-the-shelf enterprise software only succeeds when it is aligned with your actual workflows — forced adoption of a rigid system just creates workarounds and shadow spreadsheets.'  : 'ซอฟต์แวร์องค์กรสำเร็จรูปจะได้ผลก็ต่อเมื่อสอดคล้องกับขั้นตอนทำงานจริงของธุรกิจ การบังคับใช้ระบบที่ตายตัวเกินไปมักจบที่พนักงานหาทางเลี่ยง และทำ Spreadsheet ลับๆ ขึ้นมาใช้เอง'
+  const ctaTitle = isEN ? 'Ready for systems that fit your business?'    : 'พร้อมใช้ระบบที่เข้ากับธุรกิจคุณจริงๆ ไหม?'
+  const ctaDesc  = isEN ? 'Start with a free process mapping session. We will show you where systems and reality diverge.'   : 'เริ่มด้วยการร่างแผนผังขั้นตอนทำงาน (Process Mapping) ฟรี เราจะชี้ให้เห็นว่าระบบกับงานจริงต่างกันตรงไหน'
   const overviewText = isEN
     ? 'Off-the-shelf enterprise software succeeds when it is aligned with existing workflows, not the other way around. We implement and customize ERP, CRM, and POS platforms, integrating them with e-commerce, logistics, finance, and data systems while training your team for real adoption — and when standard packages hit genuine limitations, we build targeted extensions and APIs rather than forcing your business to bend around software that does not fit.'
-    : 'Software Enterprise สำเร็จรูปจะสำเร็จได้เมื่อสอดคล้องกับ Workflow ที่มีอยู่ ไม่ใช่ให้ธุรกิจต้องปรับตามระบบ เรา Implement และ Customize Platform ERP, CRM และ POS พร้อม Integrate เข้ากับ E-commerce, Logistics, Finance และระบบข้อมูล พร้อม Training ทีมให้ใช้งานได้จริง และเมื่อ Package มาตรฐานมีข้อจำกัดจริง เราจะสร้าง Extension และ API เฉพาะจุด แทนที่จะบังคับให้ธุรกิจต้องปรับตามระบบที่ไม่เหมาะสม'
+    : 'ซอฟต์แวร์องค์กรสำเร็จรูปจะใช้ได้ดีเมื่อสอดคล้องกับขั้นตอนทำงานที่มีอยู่ ไม่ใช่ให้ธุรกิจต้องปรับตามระบบ เราติดตั้งและปรับแต่งระบบ ERP, CRM และ POS พร้อมเชื่อมต่อกับ E-commerce, ระบบขนส่ง, การเงิน และระบบข้อมูล และอบรมทีมให้ใช้งานได้จริง ถ้าชุดมาตรฐานมีข้อจำกัดจริงๆ เราจะสร้างส่วนเสริมและ API เฉพาะจุด แทนที่จะบังคับให้ธุรกิจต้องปรับตามระบบที่ไม่เหมาะ'
 
   const heroBullets = isEN ? [
       'ERP implementation covering finance, supply chain, operations',
@@ -45,11 +45,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'Custom extensions when standard packages fall short',
       'Team training built into every rollout, not an afterthought',
     ] : [
-      'Implement ERP ครอบคลุม Finance, Supply Chain และ Operations',
-      'CRM Platform ที่เชื่อมกับช่องทางสื่อสารจริง',
-      'Integrate POS และ Commerce ทั้งหน้าร้านและออนไลน์',
-      'สร้าง Extension เฉพาะเมื่อ Package มาตรฐานไม่เพียงพอ',
-      'Training ทีมงานอยู่ในทุกขั้นตอน ไม่ใช่มาทีหลัง',
+      'ติดตั้ง ERP ครอบคลุมการเงิน ซัพพลายเชน และการปฏิบัติการ',
+      'ระบบ CRM ที่เชื่อมกับช่องทางสื่อสารจริง',
+      'เชื่อมระบบ POS และการขายทั้งหน้าร้านและออนไลน์',
+      'สร้างส่วนเสริมเฉพาะเมื่อชุดมาตรฐานไม่เพียงพอ',
+      'อบรมทีมในทุกขั้นตอน ไม่ใช่มาทำทีหลัง',
     ]
   const whyPoints   = isEN ? [
       'Manual data re-entry between disconnected systems is one of the largest hidden operational costs.',
@@ -58,11 +58,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'Custom extensions cost far less than forcing a business to redesign itself around rigid software.',
       'Training that happens during rollout, not after, is what actually drives adoption.',
     ] : [
-      'การคีย์ข้อมูลซ้ำระหว่างระบบที่ไม่เชื่อมกัน คือต้นทุนซ่อนเร้นด้าน Operation ที่ใหญ่ที่สุดอย่างหนึ่ง',
-      'CRM ที่ไม่เข้ากับกระบวนการขายจริง มักถูกทิ้งภายในไม่กี่เดือน',
-      'ข้อมูล POS และ Inventory ที่เชื่อมกัน ป้องกันปัญหาสินค้าหมดและขายเกิน Stock ที่ทำให้เสียรายได้จริง',
-      'Extension เฉพาะจุดมีต้นทุนต่ำกว่าการบังคับให้ธุรกิจปรับตัวตาม Software ที่ตายตัวมาก',
-      'Training ที่เกิดขึ้นระหว่าง Rollout ไม่ใช่หลังจากนั้น คือสิ่งที่ทำให้เกิดการใช้งานจริง',
+      'การคีย์ข้อมูลซ้ำระหว่างระบบที่ไม่เชื่อมกัน เป็นต้นทุนแอบแฝงที่ใหญ่ที่สุดอย่างหนึ่งของการทำงาน',
+      'CRM ที่ไม่เข้ากับขั้นตอนขายจริง มักถูกทิ้งภายในไม่กี่เดือน',
+      'ข้อมูล POS และสต็อกที่เชื่อมกัน ป้องกันปัญหาสินค้าหมดและขายเกินจำนวนที่ทำให้เสียรายได้จริง',
+      'ส่วนเสริมเฉพาะจุดมีต้นทุนต่ำกว่าการบังคับให้ธุรกิจปรับตามซอฟต์แวร์ที่ตายตัวมาก',
+      'การอบรมระหว่างเปิดใช้ระบบ ไม่ใช่หลังจากนั้น คือสิ่งที่ทำให้คนใช้งานจริง',
     ]
   const outcomes    = isEN ? [
       {stat: '60%', label: 'Less Manual Entry', desc: 'After system integration'},
@@ -70,10 +70,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {stat: '3x', label: 'Faster Reporting', desc: 'With connected data sources'},
       {stat: '90%+', label: 'Team Adoption Rate', desc: 'With rollout-embedded training'}
     ] : [
-      {stat: '60%', label: 'ลด Manual Entry', desc: 'หลังทำ System Integration'},
-      {stat: '100%', label: 'Data Visibility', desc: 'ครอบคลุม Sales, Inventory, Finance'},
-      {stat: '3x', label: 'Reporting เร็วขึ้น', desc: 'ด้วยแหล่งข้อมูลที่เชื่อมกัน'},
-      {stat: '90%+', label: 'อัตราการใช้งานจริง', desc: 'ด้วย Training ที่ฝังใน Rollout'}
+      {stat: '60%', label: 'ลดการคีย์ข้อมูลด้วยมือ', desc: 'หลังเชื่อมต่อระบบ'},
+      {stat: '100%', label: 'Data Visibility', desc: 'ครอบคลุมฝ่ายขาย สต็อก และการเงิน'},
+      {stat: '3x', label: 'ทำรายงานเร็วขึ้น', desc: 'ด้วยแหล่งข้อมูลที่เชื่อมกัน'},
+      {stat: '90%+', label: 'อัตราการใช้งานจริง', desc: 'ด้วยการอบรมที่ทำไปพร้อมการเปิดใช้'}
     ]
   const features    = isEN ? [
       {icon: 'ti-building-warehouse', title: 'ERP Implementation', desc: 'Configure and deploy ERP modules addressing finance, supply chain, and operations needs.'},
@@ -83,11 +83,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {icon: 'ti-transfer', title: 'System Integration', desc: 'Connect finance, operations, and sales channels into one coherent data flow.'},
       {icon: 'ti-school', title: 'Team Training', desc: 'Building capability for sustained adoption, not just a handover document.'}
     ] : [
-      {icon: 'ti-building-warehouse', title: 'ERP Implementation', desc: 'Configure และ Deploy โมดูล ERP ครอบคลุม Finance, Supply Chain และ Operations'},
-      {icon: 'ti-users-group', title: 'CRM Platforms', desc: 'ระบบ Sales, Service และ Marketing ที่เชื่อมกับช่องทางสื่อสารลูกค้าจริง'},
-      {icon: 'ti-shopping-cart', title: 'POS & Commerce Integration', desc: 'เชื่อมหน้าร้าน, Inventory, Payment และช่องทางออนไลน์เข้าเป็น Commerce Infrastructure เดียว'},
-      {icon: 'ti-puzzle', title: 'Customization & Extensions', desc: 'สร้าง Solution เฉพาะเพื่อเติมเต็มจุดที่ Package มาตรฐานไม่ครอบคลุม'},
-      {icon: 'ti-transfer', title: 'System Integration', desc: 'เชื่อม Finance, Operations และช่องทาง Sales เข้าเป็น Data Flow เดียวที่สอดคล้องกัน'},
+      {icon: 'ti-building-warehouse', title: 'ERP Implementation', desc: 'ตั้งค่าและติดตั้งโมดูล ERP ครอบคลุมการเงิน ซัพพลายเชน และการปฏิบัติการ'},
+      {icon: 'ti-users-group', title: 'CRM Platforms', desc: 'ระบบงานขาย งานบริการ และการตลาด ที่เชื่อมกับช่องทางสื่อสารลูกค้าจริง'},
+      {icon: 'ti-shopping-cart', title: 'POS & Commerce Integration', desc: 'เชื่อมหน้าร้าน สต็อก การชำระเงิน และช่องทางออนไลน์ให้เป็นระบบขายเดียว'},
+      {icon: 'ti-puzzle', title: 'Customization & Extensions', desc: 'สร้างโซลูชันเฉพาะเพื่อเติมส่วนที่ชุดมาตรฐานไม่ครอบคลุม'},
+      {icon: 'ti-transfer', title: 'System Integration', desc: 'เชื่อมการเงิน การปฏิบัติการ และช่องทางขาย ให้เป็นกระแสข้อมูลเดียวที่ตรงกัน'},
       {icon: 'ti-school', title: 'Team Training', desc: 'สร้างความสามารถให้ทีมใช้งานได้จริงต่อเนื่อง ไม่ใช่แค่เอกสารส่งมอบ'}
     ]
   const steps       = isEN ? [
@@ -98,11 +98,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {no: '05', title: 'Integrate', desc: 'Connecting finance, operations, and sales channels.'},
       {no: '06', title: 'Train', desc: 'Building team capability for sustained adoption.'}
     ] : [
-      {no: '01', title: 'Requirements', desc: 'ทำ Process Mapping และกำหนดเกณฑ์ความสำเร็จ'},
-      {no: '02', title: 'Selection', desc: 'ประเมิน Fit และเปรียบเทียบ Platform'},
-      {no: '03', title: 'Implement', desc: 'Configuration, Migration และ Deployment'},
-      {no: '04', title: 'Customize', desc: 'สร้าง Extension ตอบโจทย์ Workflow จริง'},
-      {no: '05', title: 'Integrate', desc: 'เชื่อม Finance, Operations และช่องทาง Sales'},
+      {no: '01', title: 'Requirements', desc: 'ร่างแผนผังขั้นตอนทำงาน และกำหนดเกณฑ์ความสำเร็จ'},
+      {no: '02', title: 'Selection', desc: 'ประเมินความเหมาะสม และเปรียบเทียบแพลตฟอร์ม'},
+      {no: '03', title: 'Implement', desc: 'ตั้งค่า ย้ายข้อมูล และติดตั้งระบบ'},
+      {no: '04', title: 'Customize', desc: 'สร้างส่วนเสริมให้ตรงกับขั้นตอนทำงานจริง'},
+      {no: '05', title: 'Integrate', desc: 'เชื่อมการเงิน การปฏิบัติการ และช่องทางขาย'},
       {no: '06', title: 'Train', desc: 'สร้างความสามารถให้ทีมใช้งานได้ต่อเนื่อง'}
     ]
   const caseStudies = isEN ? [
@@ -110,9 +110,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {tag: 'Retail · Nationwide', title: 'CRM + POS Unified for 200 Stores', desc: 'Real-time inventory and customer data across every location.', result: 'Stockouts down 45%'},
       {tag: 'Logistics · Bangkok', title: 'Custom ERP Extension for Fleet Ops', desc: 'Standard ERP extended with fleet-specific scheduling and tracking.', result: 'Dispatch time cut in half'}
     ] : [
-      {tag: 'Manufacturing · กรุงเทพฯ', title: 'Rollout SAP ครอบคลุม 4 โรงงาน', desc: 'รวมโมดูล Finance, Supply Chain และ Production เข้าเป็นระบบเดียว', result: 'Manual Entry ลดลง 60%'},
-      {tag: 'Retail · ทั่วประเทศ', title: 'รวม CRM + POS สำหรับ 200 สาขา', desc: 'ข้อมูล Inventory และลูกค้าแบบ Real-time ทุกสาขา', result: 'สินค้าหมด Stock ลดลง 45%'},
-      {tag: 'Logistics · กรุงเทพฯ', title: 'Extension ERP เฉพาะสำหรับ Fleet Ops', desc: 'ต่อยอด ERP มาตรฐานด้วย Scheduling และ Tracking เฉพาะ Fleet', result: 'เวลา Dispatch ลดลงครึ่งหนึ่ง'}
+      {tag: 'Manufacturing · กรุงเทพฯ', title: 'ติดตั้ง SAP ครอบคลุม 4 โรงงาน', desc: 'รวมโมดูลการเงิน ซัพพลายเชน และการผลิตเข้าเป็นระบบเดียว', result: 'การคีย์ข้อมูลด้วยมือลดลง 60%'},
+      {tag: 'Retail · ทั่วประเทศ', title: 'รวม CRM + POS สำหรับ 200 สาขา', desc: 'ข้อมูลสต็อกและลูกค้าแบบ Real-time ทุกสาขา', result: 'สินค้าหมดสต็อกลดลง 45%'},
+      {tag: 'Logistics · กรุงเทพฯ', title: 'ส่วนเสริม ERP เฉพาะสำหรับงานจัดการรถ', desc: 'ต่อยอด ERP มาตรฐานด้วยการจัดตารางและติดตามที่เฉพาะกับงานรถ', result: 'เวลาจัดส่งลดลงครึ่งหนึ่ง'}
     ]
   const faqs        = isEN ? [
       {q: 'Which ERP, CRM, and POS platforms do you work with?', a: 'SAP, Salesforce, Microsoft Dynamics, HubSpot, Odoo, and Oracle, plus custom integrations between them.'},
@@ -120,10 +120,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {q: 'Can you connect ERP or CRM to customer-facing products?', a: 'Yes. One team builds both enterprise systems and customer-facing software for integrated delivery.'},
       {q: 'Should we buy off-the-shelf or build custom?', a: 'Off-the-shelf for commodity workflows, custom where your process is genuinely a competitive advantage.'}
     ] : [
-      {q: 'รองรับ Platform ERP, CRM, POS ไหนบ้าง?', a: 'SAP, Salesforce, Microsoft Dynamics, HubSpot, Odoo และ Oracle พร้อม Custom Integration ระหว่างระบบเหล่านี้'},
-      {q: 'Customize Software สำเร็จรูปได้ไหม?', a: 'ได้ครับ เรา Customize Platform ให้เข้ากับการดำเนินงานจริง และสร้าง Integration เพื่อแลกเปลี่ยนข้อมูลอย่างสะอาด'},
-      {q: 'เชื่อม ERP หรือ CRM กับ Product ที่ลูกค้าใช้ได้ไหม?', a: 'ได้ครับ ทีมเดียวสร้างทั้งระบบ Enterprise และ Software สำหรับลูกค้า เพื่อการส่งมอบที่เชื่อมโยงกัน'},
-      {q: 'ควรซื้อสำเร็จรูปหรือสร้าง Custom?', a: 'สำเร็จรูปสำหรับ Workflow ทั่วไป และ Custom สำหรับส่วนที่เป็นความได้เปรียบทางธุรกิจจริงๆ'}
+      {q: 'รองรับระบบ ERP, CRM, POS ตัวไหนบ้าง?', a: 'SAP, Salesforce, Microsoft Dynamics, HubSpot, Odoo และ Oracle พร้อมเขียนการเชื่อมต่อระหว่างระบบเหล่านี้'},
+      {q: 'ปรับแต่งซอฟต์แวร์สำเร็จรูปได้ไหม?', a: 'ได้ครับ เราปรับแต่งระบบให้เข้ากับการทำงานจริง และสร้างการเชื่อมต่อให้แลกเปลี่ยนข้อมูลได้อย่างเป็นระเบียบ'},
+      {q: 'เชื่อม ERP หรือ CRM กับผลิตภัณฑ์ที่ลูกค้าใช้ได้ไหม?', a: 'ได้ครับ ทีมเดียวสร้างทั้งระบบองค์กรและซอฟต์แวร์สำหรับลูกค้า ทำให้งานที่ส่งมอบเชื่อมต่อกัน'},
+      {q: 'ควรซื้อสำเร็จรูปหรือสร้างเอง?', a: 'สำเร็จรูปสำหรับงานทั่วไป และสร้างเองสำหรับส่วนที่เป็นความได้เปรียบทางธุรกิจจริงๆ'}
     ]
   const related     = isEN ? [
       {label: 'E-Commerce Development', href: '/services/ecommerce'},
@@ -139,10 +139,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   const entLines = [
     { n: 1, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>sync --erp-crm --realtime</span></> },
-    { n: 2, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? '4 systems connected · 0 conflicts' : 'เชื่อม 4 ระบบ · ไม่มี Conflict'}</> },
+    { n: 2, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? '4 systems connected · 0 conflicts' : 'เชื่อม 4 ระบบ · ไม่มีข้อขัดแย้ง'}</> },
     { n: 3, jsx: <>&nbsp;</> },
     { n: 4, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>migrate --inventory --stores=200</span></> },
-    { n: 5, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Inventory synced across all stores' : 'Sync Inventory ครบทุกสาขา'}</> },
+    { n: 5, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Inventory synced across all stores' : 'ซิงก์สต็อกครบทุกสาขา'}</> },
     { n: 6, jsx: <>&nbsp;</> },
     { n: 7, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>{isEN ? 'training --rollout finance-team' : 'training --rollout finance-team'}</span></> },
     { n: 8, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? '92% adoption in week 1' : 'อัตราใช้งาน 92% สัปดาห์แรก'}</> },
@@ -172,7 +172,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         style={{ background: '#1B1A33', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 20px 50px -10px rgba(0,0,0,0.6)' }}
       >
         <div className="flex items-center justify-between mb-3">
-          <span className="text-[10px] tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.85)' }}>{isEN ? 'System Visibility' : 'ทัศนวิสัยของระบบ'}</span>
+          <span className="text-[10px] tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.85)' }}>{isEN ? 'System Visibility' : 'ภาพรวมของระบบ'}</span>
           <span className="w-2 h-2 rounded-full" style={{ background: 'var(--lime)' }} />
         </div>
         <div className="flex items-center gap-3 mb-3">
@@ -199,10 +199,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-shopping-cart', title: 'POS & Commerce Integration', desc: 'Link stores, inventory, payments, and online channels into unified commerce infrastructure.' },
     { icon: 'ti-puzzle', title: 'Customization & Extensions', desc: 'Custom solutions filling gaps where standard packages prove insufficient.' },
   ] : [
-    { icon: 'ti-building-warehouse', title: 'ERP Implementation', desc: 'Configure และ Deploy โมดูล ERP ครอบคลุม Finance, Supply Chain และ Operations' },
-    { icon: 'ti-users-group', title: 'CRM Platforms', desc: 'ระบบ Sales, Service และ Marketing ที่เชื่อมกับช่องทางสื่อสารลูกค้าจริง' },
-    { icon: 'ti-shopping-cart', title: 'POS & Commerce Integration', desc: 'เชื่อมหน้าร้าน, Inventory, Payment และช่องทางออนไลน์เข้าเป็น Commerce Infrastructure เดียว' },
-    { icon: 'ti-puzzle', title: 'Customization & Extensions', desc: 'สร้าง Solution เฉพาะเพื่อเติมเต็มจุดที่ Package มาตรฐานไม่ครอบคลุม' },
+    { icon: 'ti-building-warehouse', title: 'ERP Implementation', desc: 'ตั้งค่าและติดตั้งโมดูล ERP ครอบคลุมการเงิน ซัพพลายเชน และการปฏิบัติการ' },
+    { icon: 'ti-users-group', title: 'CRM Platforms', desc: 'ระบบงานขาย งานบริการ และการตลาด ที่เชื่อมกับช่องทางสื่อสารลูกค้าจริง' },
+    { icon: 'ti-shopping-cart', title: 'POS & Commerce Integration', desc: 'เชื่อมหน้าร้าน สต็อก การชำระเงิน และช่องทางออนไลน์ให้เป็นระบบขายเดียว' },
+    { icon: 'ti-puzzle', title: 'Customization & Extensions', desc: 'สร้างโซลูชันเฉพาะเพื่อเติมส่วนที่ชุดมาตรฐานไม่ครอบคลุม' },
   ]
 
   const techStack = [
@@ -222,12 +222,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '05', title: 'Integrate', desc: 'Finance, operations, sales channels' },
     { no: '06', title: 'Train', desc: 'Capability for sustained adoption' },
   ] : [
-    { no: '01', title: 'Requirements', desc: 'Process Mapping และเกณฑ์ความสำเร็จ' },
-    { no: '02', title: 'Selection', desc: 'ประเมิน Fit และเปรียบเทียบ Platform' },
+    { no: '01', title: 'Requirements', desc: 'ร่างแผนผังขั้นตอนทำงาน และเกณฑ์ความสำเร็จ' },
+    { no: '02', title: 'Selection', desc: 'ประเมินความเหมาะสม และเปรียบเทียบแพลตฟอร์ม' },
     { no: '03', title: 'Implement', desc: 'Configuration, Migration, Deployment' },
-    { no: '04', title: 'Customize', desc: 'Extension ตอบโจทย์ Workflow จริง' },
-    { no: '05', title: 'Integrate', desc: 'Finance, Operations, ช่องทาง Sales' },
-    { no: '06', title: 'Train', desc: 'สร้างความสามารถใช้งานต่อเนื่อง' },
+    { no: '04', title: 'Customize', desc: 'ส่วนเสริมที่ตรงกับขั้นตอนทำงานจริง' },
+    { no: '05', title: 'Integrate', desc: 'การเงิน การปฏิบัติการ ช่องทางขาย' },
+    { no: '06', title: 'Train', desc: 'สร้างความสามารถให้ใช้งานต่อเนื่อง' },
   ]
 
   const darkFaqs = isEN ? [
@@ -240,14 +240,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { q: 'What happens to our existing data during migration?', a: 'We map your existing data structures first, run migrations in a staging environment with validation against the source system, and keep the legacy system available in read-only mode until the new system is proven in production — so nothing gets lost in transition.' },
     { q: 'How do you make sure the team actually uses the new system?', a: 'Training is built into the rollout itself, not scheduled as a single session at the end. We train department by department as each module goes live, and we design the configuration around how people already work rather than forcing them to relearn their job to match generic software defaults.' },
   ] : [
-    { q: 'Haliviq รองรับ Platform ERP, CRM, POS ไหนบ้าง?', a: 'SAP, Salesforce, Microsoft Dynamics, HubSpot, Odoo และ Oracle พร้อม Custom Integration ระหว่างระบบเหล่านี้กับระบบอื่นของคุณ เราแนะนำ Platform ที่เหมาะกับการดำเนินงานและงบประมาณของคุณ ไม่ใช่ตัวที่มีชื่อใหญ่ที่สุด' },
-    { q: 'Haliviq Customize Software Enterprise สำเร็จรูปได้ไหม?', a: 'ได้ครับ เรา Customize Platform ให้เข้ากับวิธีดำเนินธุรกิจจริง และสร้าง Integration ที่แลกเปลี่ยนข้อมูลได้อย่างสะอาดกับระบบอื่นของคุณ แทนที่จะให้คุณต้องปรับ Process ตาม Package ที่ตายตัวและไม่ได้ปรับแต่ง' },
-    { q: 'เชื่อม ERP หรือ CRM กับ Product ที่ลูกค้าใช้ได้ไหม?', a: 'ได้ครับ เพราะทีมเดียวสร้างทั้งระบบ Enterprise และ Software ฝั่งลูกค้า การส่งมอบจึงเชื่อมโยงกันตั้งแต่ต้น แทนที่จะต้องประสานงานระหว่าง Vendor แยกที่ต่างฝ่ายต่างโทษกันเมื่อมีปัญหา' },
-    { q: 'ควรซื้อ Software สำเร็จรูปหรือสร้าง Custom?', a: 'สำเร็จรูปสำหรับ Workflow ทั่วไป เช่น บัญชี, HR มาตรฐาน, Sales Pipeline ทั่วไป ส่วน Custom สำหรับจุดที่ Process ของคุณเป็นความได้เปรียบทางธุรกิจจริงๆ ธุรกิจส่วนใหญ่ต้องการทั้งสองแบบผสมกัน ไม่ใช่การเลือกแบบขาวดำ' },
-    { q: 'Implement ERP หรือ CRM ทั่วไปใช้เวลานานแค่ไหน?', a: 'Rollout CRM แบบเจาะจงสำหรับหนึ่งแผนก มักใช้เวลา 6-10 สัปดาห์ ส่วน Implement ERP เต็มรูปแบบครอบคลุม Finance, Supply Chain และ Operations สำหรับธุรกิจขนาดกลาง มักใช้เวลา 4-8 เดือน แบ่งเป็น Phase ตามโมดูล เพื่อให้ธุรกิจเห็นคุณค่าก่อนที่ระบบทั้งหมดจะ Live' },
-    { q: 'Implement ระบบ Enterprise มีค่าใช้จ่ายเท่าไหร่?', a: 'ต้นทุนขึ้นอยู่กับค่า License ของ Platform เอง (ซึ่งเราไม่บวกราคาเพิ่ม), จำนวนโมดูลในขอบเขต และปริมาณ Customization กับ Data Migration ที่ต้องทำ บริการ Implementation มักเริ่มต้นที่หลักแสนต้นๆ (บาท) สำหรับ CRM แบบเจาะจง ส่วนโปรแกรม ERP เต็มรูปแบบจะเสนอราคาหลังขั้นตอน Requirements และ Process Mapping' },
-    { q: 'ข้อมูลเดิมของเราจะเป็นอย่างไรระหว่าง Migrate?', a: 'เราทำแผนที่โครงสร้างข้อมูลเดิมก่อน รัน Migration ใน Staging Environment พร้อมตรวจสอบเทียบกับระบบต้นทาง และเก็บระบบเดิมไว้แบบ Read-only จนกว่าระบบใหม่จะพิสูจน์ตัวเองบน Production เพื่อไม่ให้มีอะไรสูญหายระหว่างการเปลี่ยนผ่าน' },
-    { q: 'มั่นใจได้อย่างไรว่าทีมจะใช้ระบบใหม่จริง?', a: 'Training ถูกฝังอยู่ใน Rollout เอง ไม่ใช่การนัด Session เดียวตอนท้าย เรา Train ทีละแผนกตามที่แต่ละโมดูล Live และออกแบบการ Configure ตามวิธีทำงานจริงของคน แทนที่จะบังคับให้พวกเขาเรียนรู้งานใหม่เพื่อให้เข้ากับค่า Default ทั่วไปของ Software' },
+    { q: 'Haliviq รองรับระบบ ERP, CRM, POS ตัวไหนบ้าง?', a: 'SAP, Salesforce, Microsoft Dynamics, HubSpot, Odoo และ Oracle พร้อมเขียนการเชื่อมต่อระหว่างระบบเหล่านี้กับระบบอื่นของคุณ เราแนะนำแพลตฟอร์มที่เหมาะกับการทำงานและงบประมาณของคุณ ไม่ใช่ตัวที่ชื่อดังที่สุด' },
+    { q: 'Haliviq ปรับแต่งซอฟต์แวร์องค์กรสำเร็จรูปได้ไหม?', a: 'ได้ครับ เราปรับแต่งระบบให้เข้ากับวิธีทำธุรกิจจริง และสร้างการเชื่อมต่อให้แลกเปลี่ยนข้อมูลกับระบบอื่นของคุณได้อย่างเป็นระเบียบ แทนที่จะให้คุณต้องปรับขั้นตอนทำงานตามชุดสำเร็จรูปที่ตายตัวและไม่ได้ปรับแต่ง' },
+    { q: 'เชื่อม ERP หรือ CRM กับผลิตภัณฑ์ที่ลูกค้าใช้ได้ไหม?', a: 'ได้ครับ เพราะทีมเดียวสร้างทั้งระบบองค์กรและซอฟต์แวร์ฝั่งลูกค้า งานที่ส่งมอบจึงเชื่อมกันตั้งแต่ต้น ไม่ต้องประสานระหว่างผู้ให้บริการหลายเจ้าที่ต่างฝ่ายต่างโทษกันเมื่อมีปัญหา' },
+    { q: 'ควรซื้อซอฟต์แวร์สำเร็จรูปหรือสร้างเอง?', a: 'สำเร็จรูปสำหรับงานทั่วไป เช่น บัญชี งาน HR มาตรฐาน และขั้นตอนขายทั่วไป ส่วนสร้างเองสำหรับจุดที่ขั้นตอนของคุณเป็นความได้เปรียบทางธุรกิจจริงๆ ธุรกิจส่วนใหญ่ต้องใช้ทั้งสองแบบผสมกัน ไม่ใช่เลือกอย่างใดอย่างหนึ่ง' },
+    { q: 'ติดตั้ง ERP หรือ CRM ทั่วไปใช้เวลานานแค่ไหน?', a: 'การเปิดใช้ CRM ที่เจาะจงหนึ่งแผนก มักใช้เวลา 6-10 สัปดาห์ ส่วนการติดตั้ง ERP เต็มรูปแบบครอบคลุมการเงิน ซัพพลายเชน และการปฏิบัติการสำหรับธุรกิจขนาดกลาง มักใช้เวลา 4-8 เดือน แบ่งเป็นระยะตามโมดูล เพื่อให้ธุรกิจเห็นประโยชน์ก่อนที่ระบบทั้งหมดจะเปิดใช้' },
+    { q: 'ติดตั้งระบบองค์กรมีค่าใช้จ่ายเท่าไหร่?', a: 'ค่าใช้จ่ายขึ้นอยู่กับค่าลิขสิทธิ์ของแพลตฟอร์มเอง (ซึ่งเราไม่บวกราคาเพิ่ม) จำนวนโมดูลในขอบเขต และปริมาณงานปรับแต่งและย้ายข้อมูลที่ต้องทำ ค่าบริการติดตั้งมักเริ่มที่หลักแสนต้นๆ (บาท) สำหรับ CRM ที่เจาะจง ส่วนโปรแกรม ERP เต็มรูปแบบจะเสนอราคาหลังขั้นตอนกำหนดความต้องการและทำแผนผังขั้นตอนทำงาน' },
+    { q: 'ข้อมูลเดิมของเราจะเป็นอย่างไรระหว่างย้ายระบบ?', a: 'เราทำแผนที่โครงสร้างข้อมูลเดิมก่อน ย้ายข้อมูลในสภาพแวดล้อมทดสอบพร้อมตรวจเทียบกับระบบต้นทาง และเก็บระบบเดิมไว้แบบอ่านอย่างเดียวจนกว่าระบบใหม่จะพิสูจน์ตัวเองในการใช้งานจริง ข้อมูลจะได้ไม่สูญหายระหว่างการเปลี่ยนผ่าน' },
+    { q: 'มั่นใจได้อย่างไรว่าทีมจะใช้ระบบใหม่จริง?', a: 'การอบรมอยู่ในช่วงเปิดใช้ระบบเลย ไม่ใช่นัดครั้งเดียวตอนท้าย เราอบรมทีละแผนกตามที่แต่ละโมดูลเปิดใช้ และตั้งค่าระบบตามวิธีทำงานจริงของคน แทนที่จะให้พวกเขาต้องเรียนรู้งานใหม่เพื่อให้เข้ากับค่าเริ่มต้นทั่วไปของซอฟต์แวร์' },
   ]
 
   const postHeroSlot = (
@@ -268,7 +268,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           {isEN ? 'Key Capabilities' : 'ความสามารถหลัก'}
         </h2>
         <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400 }}>
-          {isEN ? 'Concrete capabilities we bring to this engagement — not buzzwords.' : 'ความสามารถที่จับต้องได้จริงที่เรานำมาใช้ในทุกโปรเจกต์ ไม่ใช่แค่คำสวยหรู'}
+          {isEN ? 'Concrete capabilities we bring to this engagement — not buzzwords.' : 'สิ่งที่เราทำได้จริงในทุกโปรเจกต์ ไม่ใช่แค่คำสวยหรู'}
         </p>
 
         <div className="grid sm:grid-cols-2 gap-5">
@@ -289,7 +289,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
         <div className="mt-16 lg:mt-24">
           <p className="mb-5 text-xs tracking-widest uppercase" style={{ color: 'var(--lime)', fontWeight: 600 }}>
-            {isEN ? 'Platforms We Use' : 'Platform ที่ใช้'}
+            {isEN ? 'Platforms We Use' : 'แพลตฟอร์มที่ใช้'}
           </p>
           <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
             {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้งาน'}
@@ -297,7 +297,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'Proven enterprise platforms we apply where they fit — chosen for your operations, not the biggest name.'
-              : 'Platform Enterprise ที่พิสูจน์แล้ว เลือกใช้ตามการดำเนินงานจริง ไม่ใช่ตามชื่อที่ใหญ่ที่สุด'}
+              : 'แพลตฟอร์มองค์กรที่ผ่านการใช้งานจริง เลือกใช้ตามการทำงานจริงของคุณ ไม่ใช่ตามชื่อที่ใหญ่ที่สุด'}
           </p>
 
           <div className="flex flex-wrap gap-3">
@@ -328,7 +328,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <p className="mb-16" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'A clear path from requirements to real adoption — adjusted per business, never one-size-fits-all.'
-              : 'เส้นทางที่ชัดเจนจาก Requirements สู่การใช้งานจริง ปรับตามแต่ละธุรกิจ ไม่ใช่สูตรสำเร็จตายตัว'}
+              : 'เส้นทางที่ชัดเจนจากการกำหนดความต้องการไปสู่การใช้งานจริง ปรับตามแต่ละธุรกิจ ไม่ใช่สูตรสำเร็จ'}
           </p>
 
           <div className="relative">
@@ -364,7 +364,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             {isEN ? 'Frequently Asked Questions' : 'คำถามที่พบบ่อย'}
           </h2>
           <p className="mb-4" style={{ color: 'var(--lime)', fontSize: '1.2rem', fontWeight: 600 }}>
-            {isEN ? 'Straight answers about how we build enterprise systems.' : 'คำตอบตรงไปตรงมาเกี่ยวกับวิธีที่เราสร้างระบบ Enterprise'}
+            {isEN ? 'Straight answers about how we build enterprise systems.' : 'คำตอบตรงๆ เรื่องวิธีที่เราสร้างระบบองค์กร'}
           </p>
 
           <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
@@ -406,7 +406,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-medium transition-opacity hover:opacity-90"
             style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}
           >
-            {isEN ? 'Start a Conversation' : 'เริ่มบทสนทนา'}
+            {isEN ? 'Start a Conversation' : 'เริ่มคุยกัน'}
             <i className="ti ti-arrow-right" style={{ fontSize: 17 }} aria-hidden="true" />
           </Link>
           <a href="mailto:wu@haliviq.com" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>

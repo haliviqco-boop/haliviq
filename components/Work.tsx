@@ -25,7 +25,7 @@ export default function Work({ lang, tr }: Props) {
             <span style={{fontWeight:400}}>{w.label}</span>
             {' '}
             <span style={{fontWeight:400, color:'#70708A', fontSize:'clamp(0.9rem,1.8vw,1.3rem)'}}>
-              — {isEN ? 'Our Work' : 'โฆษณาของเรา'}
+              — {isEN ? 'Our Work' : 'ผลงานของเรา'}
             </span>
           </h2>
           <Link href={`${prefix}/work`}

@@ -30,14 +30,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge    = isEN ? 'Commerce / LINE Mini Apps'  : 'Commerce / LINE Mini Apps'
   const title    = isEN ? 'Meet Customers'  : 'เจอลูกค้าตรงที่'
   const subtitle = isEN ? 'Where They Already Are: LINE'    : 'พวกเขาอยู่แล้ว: LINE'
-  const heroDesc = isEN ? 'LINE Mini App development, chat commerce, and payments inside LINE — built into the platform Thai customers already use every day.'  : 'พัฒนา LINE Mini App, Chat Commerce และ Payment ภายใน LINE สร้างเข้ากับ Platform ที่ลูกค้าคนไทยใช้อยู่ทุกวันแล้ว'
-  const whyTitle = isEN ? 'Why LINE is the platform, not just a channel'    : 'ทำไม LINE ถึงเป็น Platform ไม่ใช่แค่ช่องทาง'
-  const whyDesc  = isEN ? 'For most Thai consumers, LINE is where discovery, chat, and payment already happen. A Mini App meets them there instead of asking them to download something new.'  : 'สำหรับผู้บริโภคไทยส่วนใหญ่ LINE คือที่ที่การค้นหา แชท และชำระเงินเกิดขึ้นอยู่แล้ว Mini App ช่วยเจอลูกค้าตรงจุดนั้น แทนที่จะให้ดาวน์โหลดอะไรใหม่'
-  const ctaTitle = isEN ? 'Ready to launch inside LINE?'    : 'พร้อม Launch ภายใน LINE หรือยัง?'
-  const ctaDesc  = isEN ? 'Start with a LINE OA and Mini App strategy session tailored to your business.'   : 'เริ่มด้วย Session วางกลยุทธ์ LINE OA และ Mini App ที่ออกแบบเฉพาะธุรกิจของคุณ'
+  const heroDesc = isEN ? 'LINE Mini App development, chat commerce, and payments inside LINE — built into the platform Thai customers already use every day.'  : 'พัฒนา LINE Mini App, Chat Commerce และระบบชำระเงินใน LINE สร้างบนแพลตฟอร์มที่ลูกค้าคนไทยใช้กันทุกวันอยู่แล้ว'
+  const whyTitle = isEN ? 'Why LINE is the platform, not just a channel'    : 'ทำไม LINE ถึงเป็นแพลตฟอร์ม ไม่ใช่แค่ช่องทาง'
+  const whyDesc  = isEN ? 'For most Thai consumers, LINE is where discovery, chat, and payment already happen. A Mini App meets them there instead of asking them to download something new.'  : 'สำหรับผู้บริโภคไทยส่วนใหญ่ LINE คือที่ที่ค้นหา แชท และจ่ายเงินอยู่แล้ว Mini App ช่วยให้เจอลูกค้าตรงนั้น โดยไม่ต้องให้ดาวน์โหลดอะไรใหม่'
+  const ctaTitle = isEN ? 'Ready to launch inside LINE?'    : 'พร้อมเปิดตัวใน LINE หรือยัง?'
+  const ctaDesc  = isEN ? 'Start with a LINE OA and Mini App strategy session tailored to your business.'   : 'เริ่มด้วยการคุยวางกลยุทธ์ LINE OA และ Mini App ที่ออกแบบเฉพาะธุรกิจของคุณ'
   const overviewText = isEN
     ? 'We build LINE Mini Apps, chat commerce experiences, and Official Account integrations that let customers browse, chat, and pay without ever leaving LINE. That covers LIFF-based Mini App development, Flex Message-driven chat commerce, LINE Pay checkout, rich menus, and backend integration into your existing product and order systems — engineered for the platform Thai customers already trust.'
-    : 'เราสร้าง LINE Mini App, ประสบการณ์ Chat Commerce และการเชื่อมต่อ Official Account ที่ให้ลูกค้าเลือกดู แชท และชำระเงินได้โดยไม่ต้องออกจาก LINE ครอบคลุมตั้งแต่การพัฒนา Mini App ด้วย LIFF, Chat Commerce ผ่าน Flex Message, Checkout ด้วย LINE Pay, Rich Menu ไปจนถึงการเชื่อมต่อ Backend เข้ากับระบบ Product และ Order ที่คุณมีอยู่ ออกแบบมาเพื่อ Platform ที่ลูกค้าคนไทยไว้ใจอยู่แล้ว'
+    : 'เราสร้าง LINE Mini App ประสบการณ์ซื้อขายผ่านแชท และเชื่อมต่อ Official Account ให้ลูกค้าเลือกดู แชท และจ่ายเงินได้โดยไม่ต้องออกจาก LINE ตั้งแต่พัฒนา Mini App ด้วย LIFF, ขายผ่านแชทด้วย Flex Message, ชำระเงินด้วย LINE Pay, Rich Menu ไปจนถึงเชื่อม Backend เข้ากับระบบสินค้าและออเดอร์ที่คุณมีอยู่ ออกแบบบนแพลตฟอร์มที่ลูกค้าคนไทยไว้ใจอยู่แล้ว'
 
   const heroBullets = isEN ? [
       'LIFF-based Mini App development, fully native to LINE',
@@ -46,11 +46,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'Rich menus and integration into your product catalog',
       'Backend connections to your existing order and CRM systems',
     ] : [
-      'พัฒนา Mini App ด้วย LIFF แบบ Native เข้ากับ LINE เต็มรูปแบบ',
-      'Chat Commerce ผ่าน Flex Message และ Official Account',
-      'Checkout ด้วย LINE Pay โดยไม่ต้องออกจากบทสนทนา',
-      'Rich Menu และเชื่อมต่อเข้ากับ Catalog สินค้าของคุณ',
-      'เชื่อมต่อ Backend เข้ากับระบบ Order และ CRM ที่มีอยู่',
+      'พัฒนา Mini App ด้วย LIFF ให้ใช้งานเหมือนเป็นส่วนหนึ่งของ LINE',
+      'ขายผ่านแชทด้วย Flex Message และ Official Account',
+      'ชำระเงินด้วย LINE Pay โดยไม่ต้องออกจากแชท',
+      'Rich Menu และเชื่อมต่อกับแคตตาล็อกสินค้าของคุณ',
+      'เชื่อม Backend เข้ากับระบบออเดอร์และ CRM ที่มีอยู่',
     ]
   const whyPoints   = isEN ? [
       'LINE has near-universal reach among Thai consumers, far beyond any single app download.',
@@ -59,11 +59,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'Official Account broadcasts and chat commerce turn conversations directly into sales.',
       'Backend integration means the Mini App reflects real inventory and order status, not a separate silo.',
     ] : [
-      'LINE มีการเข้าถึงเกือบครอบคลุมผู้บริโภคไทย มากกว่าแอปเดี่ยวใดๆ ที่ต้องดาวน์โหลด',
-      'Mini App เปิดใช้งานได้ทันทีจากแชทหรือ Rich Menu ไม่มีขั้นตอนติดตั้งหรือแรงเสียดทานจาก App Store',
-      'Checkout ด้วย LINE Pay ทำให้ทั้ง Journey การซื้ออยู่ในช่องทางที่ลูกค้าไว้ใจอยู่แล้ว',
-      'การ Broadcast จาก Official Account และ Chat Commerce เปลี่ยนบทสนทนาให้เป็นยอดขายได้โดยตรง',
-      'การเชื่อมต่อ Backend ทำให้ Mini App สะท้อน Inventory และสถานะ Order จริง ไม่ใช่ระบบแยกต่างหาก',
+      'LINE เข้าถึงผู้บริโภคไทยเกือบทั้งหมด มากกว่าแอปเดี่ยวๆ ที่ต้องดาวน์โหลด',
+      'Mini App เปิดได้ทันทีจากแชทหรือ Rich Menu ไม่ต้องติดตั้ง ไม่ต้องผ่าน App Store',
+      'ชำระเงินด้วย LINE Pay ทำให้ขั้นตอนซื้อทั้งหมดอยู่ในช่องทางที่ลูกค้าไว้ใจอยู่แล้ว',
+      'การ Broadcast จาก Official Account และการขายผ่านแชท เปลี่ยนบทสนทนาเป็นยอดขายได้โดยตรง',
+      'เชื่อม Backend แล้ว Mini App จะแสดงสต็อกและสถานะออเดอร์จริง ไม่ใช่ระบบแยกต่างหาก',
     ]
   const outcomes    = isEN ? [
       {stat: '50M+', label: 'LINE Users in Thailand', desc: 'Reachable without a new app install'},
@@ -72,9 +72,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {stat: '<6wk', label: 'Typical Launch', desc: 'From kickoff to go-live'}
     ] : [
       {stat: '50M+', label: 'ผู้ใช้ LINE ในไทย', desc: 'เข้าถึงได้โดยไม่ต้องติดตั้งแอปใหม่'},
-      {stat: '0', label: 'แรงเสียดทานจาก App Store', desc: 'Mini App เปิดใช้งานได้ทันที'},
-      {stat: '40%', label: 'ยอดขายเพิ่มขึ้นเฉลี่ย', desc: 'จาก Chat Commerce Flow'},
-      {stat: '<6wk', label: 'ระยะเวลา Launch', desc: 'ตั้งแต่เริ่มจนถึง Go-live'}
+      {stat: '0', label: 'ไม่ต้องผ่าน App Store', desc: 'Mini App เปิดใช้ได้ทันที'},
+      {stat: '40%', label: 'ยอดขายเพิ่มขึ้นเฉลี่ย', desc: 'จากการขายผ่านแชท'},
+      {stat: '<6wk', label: 'ระยะเวลาเปิดตัว', desc: 'ตั้งแต่เริ่มจนถึงใช้งานจริง'}
     ]
   const features    = isEN ? [
       {icon: 'ti-apps', title: 'LINE Mini App Development', desc: 'Full LIFF-based Mini Apps that feel native inside LINE, from browsing to checkout.'},
@@ -84,12 +84,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {icon: 'ti-menu-2', title: 'Rich Menus & Navigation', desc: 'Custom rich menus that put your key actions one tap away from any chat.'},
       {icon: 'ti-chart-bar', title: 'Analytics & Growth', desc: 'Tracking on engagement, conversion, and repeat purchase to guide iteration.'}
     ] : [
-      {icon: 'ti-apps', title: 'LINE Mini App Development', desc: 'Mini App เต็มรูปแบบด้วย LIFF ที่รู้สึกเป็น Native ภายใน LINE ตั้งแต่เลือกดูจนถึง Checkout'},
-      {icon: 'ti-message-circle', title: 'Chat Commerce & Official Accounts', desc: 'Flow การช้อปปิ้งผ่าน Flex Message และ Broadcast จาก OA ที่เปลี่ยนบทสนทนาเป็นยอดขาย'},
-      {icon: 'ti-wallet', title: 'Payments Inside LINE', desc: 'Checkout ด้วย LINE Pay ฝังตรงในแชทและประสบการณ์ Mini App'},
-      {icon: 'ti-plug-connected', title: 'Platform & Backend Integration', desc: 'เชื่อมต่อแบบ Real-time เข้ากับ Catalog สินค้า, ระบบ Order และ CRM'},
-      {icon: 'ti-menu-2', title: 'Rich Menus & Navigation', desc: 'Rich Menu แบบ Custom ที่ทำให้ Action สำคัญอยู่แค่แตะเดียวจากทุกแชท'},
-      {icon: 'ti-chart-bar', title: 'Analytics & Growth', desc: 'ติดตาม Engagement, Conversion และการซื้อซ้ำ เพื่อปรับปรุงต่อเนื่อง'}
+      {icon: 'ti-apps', title: 'LINE Mini App Development', desc: 'Mini App เต็มรูปแบบด้วย LIFF ที่ใช้งานเหมือนอยู่ใน LINE ตั้งแต่เลือกดูจนถึงชำระเงิน'},
+      {icon: 'ti-message-circle', title: 'Chat Commerce & Official Accounts', desc: 'ขั้นตอนช้อปปิ้งผ่าน Flex Message และ Broadcast จาก OA ที่เปลี่ยนบทสนทนาเป็นยอดขาย'},
+      {icon: 'ti-wallet', title: 'Payments Inside LINE', desc: 'ชำระเงินด้วย LINE Pay ฝังในแชทและ Mini App'},
+      {icon: 'ti-plug-connected', title: 'Platform & Backend Integration', desc: 'เชื่อมแบบเรียลไทม์กับแคตตาล็อกสินค้า ระบบออเดอร์ และ CRM'},
+      {icon: 'ti-menu-2', title: 'Rich Menus & Navigation', desc: 'Rich Menu ที่ออกแบบเอง ให้ทำสิ่งสำคัญได้ในแตะเดียวจากทุกแชท'},
+      {icon: 'ti-chart-bar', title: 'Analytics & Growth', desc: 'ติดตามการมีส่วนร่วม Conversion และการซื้อซ้ำ เพื่อปรับปรุงต่อเนื่อง'}
     ]
   const steps       = isEN ? [
       {no: '01', title: 'Discovery', desc: 'Understand customer journey and OA setup.'},
@@ -99,21 +99,21 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {no: '05', title: 'Review & Launch', desc: 'LINE platform review and go-live.'},
       {no: '06', title: 'Growth', desc: 'Broadcast campaigns and conversion optimization.'}
     ] : [
-      {no: '01', title: 'Discovery', desc: 'ทำความเข้าใจ Customer Journey และ OA ที่มี'},
-      {no: '02', title: 'Design', desc: 'ออกแบบ Chat Flow, หน้าจอ Mini App และ Rich Menu'},
-      {no: '03', title: 'Development', desc: 'สร้าง Mini App ด้วย LIFF และ Chat Commerce Flow'},
-      {no: '04', title: 'Integration', desc: 'เชื่อมต่อ LINE Pay, Catalog และระบบ Order'},
-      {no: '05', title: 'Review & Launch', desc: 'ตรวจสอบตามเงื่อนไข LINE และ Go-live'},
-      {no: '06', title: 'Growth', desc: 'แคมเปญ Broadcast และปรับปรุง Conversion'}
+      {no: '01', title: 'Discovery', desc: 'ทำความเข้าใจเส้นทางของลูกค้าและ OA ที่มีอยู่'},
+      {no: '02', title: 'Design', desc: 'ออกแบบขั้นตอนในแชท หน้าจอ Mini App และ Rich Menu'},
+      {no: '03', title: 'Development', desc: 'สร้าง Mini App ด้วย LIFF และระบบขายผ่านแชท'},
+      {no: '04', title: 'Integration', desc: 'เชื่อมต่อ LINE Pay แคตตาล็อก และระบบออเดอร์'},
+      {no: '05', title: 'Review & Launch', desc: 'ตรวจตามเงื่อนไขของ LINE และเปิดใช้งานจริง'},
+      {no: '06', title: 'Growth', desc: 'ทำแคมเปญ Broadcast และปรับปรุง Conversion'}
     ]
   const caseStudies = isEN ? [
       {tag: 'Retail · Bangkok', title: 'Mini App Drives 40% of Mobile Sales', desc: 'Full LIFF Mini App with catalog, cart, and LINE Pay checkout.', result: '40% of mobile revenue via LINE'},
       {tag: 'F&B · Nationwide', title: 'Chat Commerce Launched in 5 Weeks', desc: 'Flex Message ordering flow integrated with the existing POS.', result: 'Zero new app download required'},
       {tag: 'Beauty · Bangkok', title: 'OA Broadcasts Lift Repeat Purchases 40%', desc: 'Segmented broadcast campaigns tied directly to the Mini App catalog.', result: '+40% repeat purchase rate'}
     ] : [
-      {tag: 'Retail · กรุงเทพฯ', title: 'Mini App สร้างยอดขาย Mobile 40%', desc: 'Mini App ด้วย LIFF เต็มรูปแบบ พร้อม Catalog, Cart และ Checkout ด้วย LINE Pay', result: '40% ของรายได้ Mobile มาจาก LINE'},
-      {tag: 'F&B · ทั่วประเทศ', title: 'Chat Commerce เปิดตัวใน 5 สัปดาห์', desc: 'Flow สั่งอาหารผ่าน Flex Message เชื่อมต่อกับ POS ที่มีอยู่', result: 'ไม่ต้องดาวน์โหลดแอปใหม่'},
-      {tag: 'Beauty · กรุงเทพฯ', title: 'Broadcast จาก OA เพิ่มการซื้อซ้ำ 40%', desc: 'แคมเปญ Broadcast แบบแบ่งกลุ่มเชื่อมตรงกับ Catalog ใน Mini App', result: 'อัตราซื้อซ้ำ +40%'}
+      {tag: 'Retail · กรุงเทพฯ', title: 'Mini App สร้างยอดขายบนมือถือ 40%', desc: 'Mini App ด้วย LIFF เต็มรูปแบบ พร้อมแคตตาล็อก ตะกร้า และชำระเงินด้วย LINE Pay', result: '40% ของรายได้บนมือถือมาจาก LINE'},
+      {tag: 'F&B · ทั่วประเทศ', title: 'เปิดตัวระบบขายผ่านแชทใน 5 สัปดาห์', desc: 'ระบบสั่งอาหารผ่าน Flex Message เชื่อมกับ POS ที่มีอยู่', result: 'ไม่ต้องดาวน์โหลดแอปใหม่'},
+      {tag: 'Beauty · กรุงเทพฯ', title: 'Broadcast จาก OA เพิ่มการซื้อซ้ำ 40%', desc: 'แคมเปญ Broadcast แบบแบ่งกลุ่ม เชื่อมตรงกับแคตตาล็อกใน Mini App', result: 'อัตราซื้อซ้ำ +40%'}
     ]
   const faqs        = isEN ? [
       {q: 'What is a LINE Mini App?', a: 'A web app built with LIFF that opens instantly inside LINE — no download, no app store — for browsing, ordering, and payment.'},
@@ -121,10 +121,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {q: 'Does it support LINE Pay?', a: 'Yes, checkout can be completed with LINE Pay directly inside the chat or Mini App experience.'},
       {q: 'Do we need an existing Official Account?', a: 'Not necessarily — we can set up and configure a new Official Account as part of the project, or work with your existing one.'}
     ] : [
-      {q: 'LINE Mini App คืออะไร?', a: 'Web App ที่สร้างด้วย LIFF เปิดใช้งานได้ทันทีภายใน LINE ไม่ต้องดาวน์โหลด ไม่ต้องผ่าน App Store สำหรับเลือกดู สั่งซื้อ และชำระเงิน'},
-      {q: 'เชื่อมต่อกับ E-Commerce หรือ POS ที่มีอยู่ได้ไหม?', a: 'ได้ครับ เราสร้างการเชื่อมต่อ Backend ให้ Mini App สะท้อน Inventory, ราคา และสถานะ Order จริง'},
-      {q: 'รองรับ LINE Pay ไหม?', a: 'รองรับครับ Checkout สามารถทำได้ด้วย LINE Pay โดยตรงภายในแชทหรือ Mini App'},
-      {q: 'ต้องมี Official Account อยู่แล้วไหม?', a: 'ไม่จำเป็นครับ เราสามารถตั้งค่า Official Account ใหม่เป็นส่วนหนึ่งของโปรเจกต์ หรือทำงานร่วมกับที่มีอยู่แล้วก็ได้'}
+      {q: 'LINE Mini App คืออะไร?', a: 'เว็บแอปที่สร้างด้วย LIFF เปิดใช้ได้ทันทีใน LINE ไม่ต้องดาวน์โหลด ไม่ต้องผ่าน App Store ใช้เลือกดู สั่งซื้อ และชำระเงิน'},
+      {q: 'เชื่อมกับ E-Commerce หรือ POS ที่มีอยู่ได้ไหม?', a: 'ได้ครับ เราสร้างการเชื่อมต่อ Backend ให้ Mini App แสดงสต็อก ราคา และสถานะออเดอร์จริง'},
+      {q: 'รองรับ LINE Pay ไหม?', a: 'รองรับครับ ชำระเงินด้วย LINE Pay ได้โดยตรงในแชทหรือ Mini App'},
+      {q: 'ต้องมี Official Account อยู่แล้วไหม?', a: 'ไม่จำเป็นครับ เราตั้ง Official Account ใหม่ให้เป็นส่วนหนึ่งของโปรเจกต์ หรือทำงานร่วมกับที่มีอยู่แล้วก็ได้'}
     ]
   const related     = isEN ? [
       {label: 'E-Commerce', href: '/services/ecommerce'},
@@ -188,7 +188,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </div>
         <div className="flex items-center gap-1.5 text-xs" style={{ color: 'var(--lime)' }}>
           <i className="ti ti-circle-check" style={{ fontSize: 13 }} aria-hidden="true" />
-          {isEN ? '40% of mobile sales via LINE' : '40% ของยอดขาย Mobile มาจาก LINE'}
+          {isEN ? '40% of mobile sales via LINE' : '40% ของยอดขายบนมือถือมาจาก LINE'}
         </div>
       </div>
     </div>
@@ -200,10 +200,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-wallet', title: 'Payments Inside LINE', desc: 'LINE Pay checkout embedded directly in the chat and Mini App experience.' },
     { icon: 'ti-plug-connected', title: 'Platform & Backend Integration', desc: 'Real-time connections into your product catalog, order system, and CRM.' },
   ] : [
-    { icon: 'ti-apps', title: 'LINE Mini App Development', desc: 'Mini App เต็มรูปแบบด้วย LIFF ที่รู้สึกเป็น Native ภายใน LINE ตั้งแต่เลือกดูจนถึง Checkout' },
-    { icon: 'ti-message-circle', title: 'Chat Commerce & Official Accounts', desc: 'Flow การช้อปปิ้งผ่าน Flex Message และ Broadcast จาก OA ที่เปลี่ยนบทสนทนาเป็นยอดขาย' },
-    { icon: 'ti-wallet', title: 'Payments Inside LINE', desc: 'Checkout ด้วย LINE Pay ฝังตรงในแชทและประสบการณ์ Mini App' },
-    { icon: 'ti-plug-connected', title: 'Platform & Backend Integration', desc: 'เชื่อมต่อแบบ Real-time เข้ากับ Catalog สินค้า, ระบบ Order และ CRM' },
+    { icon: 'ti-apps', title: 'LINE Mini App Development', desc: 'Mini App เต็มรูปแบบด้วย LIFF ที่ใช้งานเหมือนอยู่ใน LINE ตั้งแต่เลือกดูจนถึงชำระเงิน' },
+    { icon: 'ti-message-circle', title: 'Chat Commerce & Official Accounts', desc: 'ขั้นตอนช้อปปิ้งผ่าน Flex Message และ Broadcast จาก OA ที่เปลี่ยนบทสนทนาเป็นยอดขาย' },
+    { icon: 'ti-wallet', title: 'Payments Inside LINE', desc: 'ชำระเงินด้วย LINE Pay ฝังในแชทและ Mini App' },
+    { icon: 'ti-plug-connected', title: 'Platform & Backend Integration', desc: 'เชื่อมแบบเรียลไทม์กับแคตตาล็อกสินค้า ระบบออเดอร์ และ CRM' },
   ]
 
   const techStack = [
@@ -228,11 +228,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '05', title: 'Review & Launch', desc: 'Platform review and go-live' },
     { no: '06', title: 'Growth', desc: 'Broadcasts and conversion tuning' },
   ] : [
-    { no: '01', title: 'Discovery', desc: 'Customer Journey และ OA ที่มี' },
-    { no: '02', title: 'Design', desc: 'Chat Flow, หน้าจอ และ Rich Menu' },
-    { no: '03', title: 'Development', desc: 'สร้าง Mini App และ Chat Flow' },
-    { no: '04', title: 'Integration', desc: 'LINE Pay, Catalog และระบบ Order' },
-    { no: '05', title: 'Review & Launch', desc: 'ตรวจสอบตามเงื่อนไขและ Go-live' },
+    { no: '01', title: 'Discovery', desc: 'เส้นทางของลูกค้าและ OA ที่มีอยู่' },
+    { no: '02', title: 'Design', desc: 'ขั้นตอนในแชท หน้าจอ และ Rich Menu' },
+    { no: '03', title: 'Development', desc: 'สร้าง Mini App และขั้นตอนในแชท' },
+    { no: '04', title: 'Integration', desc: 'LINE Pay แคตตาล็อก และระบบออเดอร์' },
+    { no: '05', title: 'Review & Launch', desc: 'ตรวจตามเงื่อนไขและเปิดใช้งานจริง' },
     { no: '06', title: 'Growth', desc: 'Broadcast และปรับปรุง Conversion' },
   ]
 
@@ -246,14 +246,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { q: 'Do we own the Mini App code after launch?', a: 'Yes. You own the LIFF application code, the backend integration, and the Official Account configuration, and can extend or maintain it independently or with our ongoing support.' },
     { q: 'Can this reach customers who don’t already follow our Official Account?', a: 'Partially — a Mini App works best paired with OA growth (rich menu placement, QR codes, ad campaigns) since it launches from a LINE touchpoint. We help plan that acquisition strategy alongside the build.' },
   ] : [
-    { q: 'LINE Mini App คืออะไร ต่างจากแอปทั่วไปอย่างไร?', a: 'LINE Mini App คือ Web App ที่สร้างด้วย LIFF เปิดใช้งานได้ทันทีภายใน LINE ไม่ต้องดาวน์โหลด ไม่ต้องรอ App Store Review สำหรับเลือกดู สั่งซื้อ และชำระเงิน ทั้งหมดอยู่ในหน้าต่างแชทที่ลูกค้าเปิดอยู่แล้ว' },
-    { q: 'เชื่อมต่อกับ E-Commerce หรือ POS ที่มีอยู่ได้ไหม?', a: 'ได้ครับ เราสร้างการเชื่อมต่อ Backend ให้ Mini App สะท้อน Inventory, ราคา และสถานะ Order จากระบบที่มีอยู่ แทนที่จะต้องดูแล Catalog สินค้าแยกต่างหาก' },
-    { q: 'รองรับ LINE Pay สำหรับ Checkout ไหม?', a: 'รองรับครับ Checkout สามารถทำได้ด้วย LINE Pay โดยตรงภายในแชทหรือ Mini App ทำให้การซื้อทั้งหมดอยู่ใน Flow เดียว ไม่ต้อง Redirect ไปหน้าชำระเงินภายนอก' },
-    { q: 'ต้องมี Official Account อยู่แล้วก่อนเริ่มไหม?', a: 'ไม่จำเป็นครับ เราสามารถตั้งค่า Official Account ใหม่เป็นส่วนหนึ่งของโปรเจกต์ หรือต่อยอดจาก OA ที่คุณมีอยู่แล้ว รวมถึงการย้าย Rich Menu และ Automation เดิม' },
-    { q: 'โปรเจกต์ LINE Mini App ใช้เวลานานแค่ไหน?', a: 'Mini App แบบเจาะจงพร้อม Catalog และ Checkout มักเปิดตัวได้ใน 5-6 สัปดาห์ ส่วนโปรเจกต์ที่รวมการเชื่อมต่อ Backend เชิงลึก, Chat Commerce Flow แบบ Custom หรือหลาย Official Account มักใช้เวลา 8-10 สัปดาห์' },
-    { q: 'โปรเจกต์ LINE Mini App มีค่าใช้จ่ายเท่าไหร่?', a: 'ราคาขึ้นอยู่กับความซับซ้อนของ Catalog และความลึกของการเชื่อมต่อ Backend Mini App แบบเจาะจงมักเริ่มต้นที่หลักหมื่นปลายๆ (บาท) ส่วน Chat Commerce ที่กว้างขึ้นและเชื่อมต่อ CRM จะเสนอราคาหลัง Discovery' },
-    { q: 'เราเป็นเจ้าของ Code ของ Mini App หลัง Launch ไหม?', a: 'ใช่ครับ คุณเป็นเจ้าของ Code ของ LIFF Application, การเชื่อมต่อ Backend และการตั้งค่า Official Account สามารถต่อยอดหรือดูแลเองได้ หรือใช้บริการดูแลต่อเนื่องจากเรา' },
-    { q: 'ช่วยเข้าถึงลูกค้าที่ยังไม่ได้ Follow Official Account ของเราได้ไหม?', a: 'ได้บางส่วนครับ Mini App จะทำงานได้ดีที่สุดเมื่อควบคู่กับการเติบโตของ OA เช่น การวาง Rich Menu, QR Code และแคมเปญโฆษณา เนื่องจาก Mini App เปิดจาก Touchpoint ของ LINE เราช่วยวางกลยุทธ์การเข้าถึงลูกค้านี้ควบคู่ไปกับการสร้างด้วย' },
+    { q: 'LINE Mini App คืออะไร ต่างจากแอปทั่วไปอย่างไร?', a: 'LINE Mini App คือเว็บแอปที่สร้างด้วย LIFF เปิดใช้ได้ทันทีใน LINE ไม่ต้องดาวน์โหลด ไม่ต้องรอ App Store ตรวจ ใช้เลือกดู สั่งซื้อ และชำระเงิน ทั้งหมดอยู่ในหน้าต่างแชทที่ลูกค้าเปิดอยู่แล้ว' },
+    { q: 'เชื่อมกับ E-Commerce หรือ POS ที่มีอยู่ได้ไหม?', a: 'ได้ครับ เราสร้างการเชื่อมต่อ Backend ให้ Mini App แสดงสต็อก ราคา และสถานะออเดอร์จากระบบที่มีอยู่ ไม่ต้องดูแลแคตตาล็อกสินค้าแยกอีกชุด' },
+    { q: 'รองรับ LINE Pay สำหรับชำระเงินไหม?', a: 'รองรับครับ ชำระเงินด้วย LINE Pay ได้โดยตรงในแชทหรือ Mini App ทำให้การซื้อทั้งหมดจบในขั้นตอนเดียว ไม่ต้องเด้งไปหน้าชำระเงินภายนอก' },
+    { q: 'ต้องมี Official Account อยู่แล้วก่อนเริ่มไหม?', a: 'ไม่จำเป็นครับ เราตั้ง Official Account ใหม่ให้เป็นส่วนหนึ่งของโปรเจกต์ หรือต่อยอดจาก OA ที่คุณมีอยู่ รวมถึงย้าย Rich Menu และระบบอัตโนมัติเดิมมาด้วย' },
+    { q: 'โปรเจกต์ LINE Mini App ใช้เวลานานแค่ไหน?', a: 'Mini App แบบเจาะจงพร้อมแคตตาล็อกและชำระเงินมักเปิดตัวได้ใน 5-6 สัปดาห์ ส่วนโปรเจกต์ที่เชื่อม Backend เชิงลึก ทำขั้นตอนขายผ่านแชทแบบกำหนดเอง หรือมีหลาย Official Account มักใช้ 8-10 สัปดาห์' },
+    { q: 'โปรเจกต์ LINE Mini App มีค่าใช้จ่ายเท่าไหร่?', a: 'ราคาขึ้นกับความซับซ้อนของแคตตาล็อกและความลึกของการเชื่อม Backend Mini App แบบเจาะจงมักเริ่มที่หลักหมื่นปลายๆ (บาท) ส่วนระบบขายผ่านแชทที่กว้างขึ้นและเชื่อม CRM จะเสนอราคาหลังสำรวจความต้องการ' },
+    { q: 'เราเป็นเจ้าของโค้ดของ Mini App หลังเปิดตัวไหม?', a: 'ใช่ครับ คุณเป็นเจ้าของโค้ด LIFF Application การเชื่อมต่อ Backend และการตั้งค่า Official Account จะต่อยอดหรือดูแลเองก็ได้ หรือใช้บริการดูแลต่อเนื่องจากเรา' },
+    { q: 'ช่วยเข้าถึงลูกค้าที่ยังไม่ได้เพิ่มเพื่อน Official Account ของเราได้ไหม?', a: 'ได้บางส่วนครับ Mini App ทำงานได้ดีที่สุดเมื่อโต OA ไปพร้อมกัน เช่น วาง Rich Menu, QR Code และทำโฆษณา เพราะ Mini App เปิดจากจุดสัมผัสต่างๆ ใน LINE เราช่วยวางแผนการเข้าถึงลูกค้าควบคู่ไปกับการสร้าง' },
   ]
 
   const postHeroSlot = (
@@ -274,7 +274,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           {isEN ? 'Key Capabilities' : 'ความสามารถหลัก'}
         </h2>
         <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400 }}>
-          {isEN ? 'Concrete capabilities we bring to this engagement — not buzzwords.' : 'ความสามารถที่จับต้องได้จริงที่เรานำมาใช้ในทุกโปรเจกต์ ไม่ใช่แค่คำสวยหรู'}
+          {isEN ? 'Concrete capabilities we bring to this engagement — not buzzwords.' : 'สิ่งที่เราทำได้จริงในทุกโปรเจกต์ ไม่ใช่แค่คำสวยหรู'}
         </p>
 
         <div className="grid sm:grid-cols-2 gap-5">
@@ -298,12 +298,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             {isEN ? 'Tools We Use' : 'เครื่องมือที่ใช้'}
           </p>
           <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
-            {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้งาน'}
+            {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้'}
           </h2>
           <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'The LINE developer platform paired with a modern web stack for Mini Apps that feel fast and native.'
-              : 'LINE Developer Platform ควบคู่กับ Web Stack สมัยใหม่ สำหรับ Mini App ที่เร็วและรู้สึก Native'}
+              : 'LINE Developer Platform ร่วมกับเทคโนโลยีเว็บสมัยใหม่ ให้ Mini App เร็วและใช้งานเหมือนอยู่ใน LINE'}
           </p>
 
           <div className="flex flex-wrap gap-3">
@@ -334,7 +334,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <p className="mb-16" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'A clear path from discovery to a launched Mini App — adjusted per business, never one-size-fits-all.'
-              : 'เส้นทางที่ชัดเจนจาก Discovery สู่ Mini App ที่ Launch แล้ว ปรับตามแต่ละธุรกิจ ไม่ใช่สูตรสำเร็จตายตัว'}
+              : 'เส้นทางที่ชัดเจนตั้งแต่สำรวจความต้องการจนถึง Mini App ที่เปิดตัวแล้ว ปรับตามแต่ละธุรกิจ ไม่ใช่สูตรตายตัว'}
           </p>
 
           <div className="relative">
@@ -412,7 +412,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-medium transition-opacity hover:opacity-90"
             style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}
           >
-            {isEN ? 'Start a Conversation' : 'เริ่มบทสนทนา'}
+            {isEN ? 'Start a Conversation' : 'เริ่มคุยกัน'}
             <i className="ti ti-arrow-right" style={{ fontSize: 17 }} aria-hidden="true" />
           </Link>
           <a href="mailto:wu@haliviq.com" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>
@@ -430,7 +430,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       badge={badge} title={title} subtitle={subtitle}
       heroDesc={heroDesc} heroBullets={heroBullets}
       heroDark heroSlot={heroSlot} heroShowSecondaryCta={false}
-      heroCtaLabel={isEN ? 'Get Started' : 'เริ่มต้นเลย'}
+      heroCtaLabel={isEN ? 'Get Started' : 'เริ่มเลย'}
       postHeroSlot={postHeroSlot}
       whyTitle={whyTitle} whyDesc={whyDesc} whyPoints={whyPoints}
       outcomes={outcomes} ctaTitle={ctaTitle} ctaDesc={ctaDesc}

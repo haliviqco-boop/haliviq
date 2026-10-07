@@ -38,14 +38,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge    = isEN ? 'Engineering / Vibe-Coded Apps'  : 'Engineering / Vibe-Coded Apps'
   const title    = isEN ? 'You Built 90%'  : 'คุณสร้างมาแล้ว 90%'
   const subtitle = isEN ? 'We Handle the Last 10%'    : 'เราช่วยจบอีก 10% ที่เหลือ'
-  const heroDesc = isEN ? 'A codebase and architecture audit, security hardening, production infrastructure, and everything else "the last 10%" needs to actually go live.'  : 'ตรวจสอบ Codebase และ Architecture, Security Hardening, Production Infrastructure และทุกอย่างที่ "10% สุดท้าย" ต้องการ เพื่อให้พร้อมใช้งานจริง'
-  const whyTitle = isEN ? 'Why AI-generated apps stall before launch'    : 'ทำไม App ที่สร้างด้วย AI ถึงติดขัดก่อน Launch'
-  const whyDesc  = isEN ? 'Tools like Cursor, Lovable, and Bolt get you a working prototype fast. What they do not give you is production security, real infrastructure, and the edge cases that only show up under real traffic.'  : 'เครื่องมืออย่าง Cursor, Lovable และ Bolt ช่วยให้ได้ Prototype ที่ใช้งานได้เร็ว แต่สิ่งที่ไม่ได้ให้มาคือ Security ระดับ Production, Infrastructure จริง และ Edge Case ที่จะเจอเมื่อมี Traffic จริง'
+  const heroDesc = isEN ? 'A codebase and architecture audit, security hardening, production infrastructure, and everything else "the last 10%" needs to actually go live.'  : 'ตรวจ Codebase และสถาปัตยกรรม เสริมความปลอดภัย วางระบบสำหรับใช้งานจริง และทุกอย่างที่ "10% สุดท้าย" ต้องมี เพื่อให้แอปเปิดใช้งานได้จริง'
+  const whyTitle = isEN ? 'Why AI-generated apps stall before launch'    : 'ทำไมแอปที่สร้างด้วย AI ถึงติดขัดก่อนเปิดตัว'
+  const whyDesc  = isEN ? 'Tools like Cursor, Lovable, and Bolt get you a working prototype fast. What they do not give you is production security, real infrastructure, and the edge cases that only show up under real traffic.'  : 'เครื่องมืออย่าง Cursor, Lovable และ Bolt ช่วยให้ได้ Prototype ที่ใช้งานได้เร็ว แต่สิ่งที่ไม่ได้ให้มาคือความปลอดภัยระดับใช้งานจริง ระบบรองรับจริง และกรณีพิเศษที่จะเจอเมื่อมีคนใช้จริง'
   const ctaTitle = isEN ? 'Ready to ship what you’ve built?'    : 'พร้อมปล่อยสิ่งที่คุณสร้างมาแล้วหรือยัง?'
-  const ctaDesc  = isEN ? 'Start with a codebase audit — we’ll tell you exactly what stands between your prototype and production.'   : 'เริ่มด้วยการตรวจสอบ Codebase เราจะบอกชัดเจนว่าอะไรที่ยังขวางระหว่าง Prototype กับ Production'
+  const ctaDesc  = isEN ? 'Start with a codebase audit — we’ll tell you exactly what stands between your prototype and production.'   : 'เริ่มด้วยการตรวจ Codebase เราจะบอกชัดๆ ว่าอะไรที่ยังขวางระหว่าง Prototype กับการใช้งานจริง'
   const overviewText = isEN
     ? 'We take AI-assisted, "vibe-coded" applications built with tools like Cursor, Claude Code, Lovable, Bolt, v0, or Replit, and finish what production actually requires: a full codebase and architecture audit to understand what is really there, security hardening to close the gaps AI tools routinely leave open, real production infrastructure in place of a preview deployment, and hands-on work through the messy "last 10%" — auth edge cases, payment reliability, error handling, and the details that separate a demo from a product people can depend on.'
-    : 'เรารับช่วงต่อ Application ที่สร้างด้วย AI แบบ "Vibe Coding" จากเครื่องมืออย่าง Cursor, Claude Code, Lovable, Bolt, v0 หรือ Replit และช่วยจบสิ่งที่ Production ต้องการจริงๆ ตั้งแต่ตรวจสอบ Codebase และ Architecture เต็มรูปแบบเพื่อเข้าใจว่ามีอะไรอยู่จริง, Security Hardening เพื่อปิดช่องโหว่ที่เครื่องมือ AI มักเปิดทิ้งไว้, วาง Production Infrastructure จริงแทนที่ Preview Deployment ไปจนถึงลงมือแก้ "10% สุดท้าย" ที่ยุ่งยาก เช่น Edge Case ของ Auth, ความน่าเชื่อถือของ Payment, การจัดการ Error และรายละเอียดที่แยก Demo ออกจาก Product ที่คนใช้งานได้จริง'
+    : 'เรารับช่วงต่อแอปที่สร้างด้วย AI แบบ "Vibe Coding" จากเครื่องมืออย่าง Cursor, Claude Code, Lovable, Bolt, v0 หรือ Replit และทำส่วนที่การใช้งานจริงต้องมีให้ครบ เริ่มจากตรวจ Codebase และสถาปัตยกรรมทั้งหมดเพื่อดูว่ามีอะไรอยู่จริง เสริมความปลอดภัยเพื่อปิดช่องโหว่ที่เครื่องมือ AI มักเปิดทิ้งไว้ วางระบบจริงแทนการ Deploy แบบทดลอง ไปจนถึงลงมือแก้ "10% สุดท้าย" ที่ยุ่งยาก เช่น กรณีพิเศษของระบบล็อกอิน ความน่าเชื่อถือของการชำระเงิน การจัดการ Error และรายละเอียดที่แยกเดโมออกจากผลิตภัณฑ์ที่คนพึ่งพาได้'
 
   const heroBullets = isEN ? [
       'Full codebase and architecture audit before touching anything',
@@ -54,11 +54,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'Hands-on fixes for the edge cases AI-generated code misses',
       'Works with output from any major AI coding tool',
     ] : [
-      'ตรวจสอบ Codebase และ Architecture เต็มรูปแบบก่อนแตะอะไรทั้งนั้น',
-      'Security Hardening สำหรับ Auth, Secret และการเปิดเผยข้อมูล',
-      'วาง Production Infrastructure จริง ไม่ใช่แค่ Preview Deployment',
-      'ลงมือแก้ Edge Case ที่ Code จาก AI มักพลาด',
-      'ทำงานร่วมกับผลลัพธ์จากเครื่องมือ AI Coding ชั้นนำทุกตัว',
+      'ตรวจ Codebase และสถาปัตยกรรมทั้งหมดก่อนแตะอะไรทั้งนั้น',
+      'เสริมความปลอดภัยให้ระบบล็อกอิน Secret และข้อมูลที่อาจรั่ว',
+      'วางระบบสำหรับใช้งานจริง ไม่ใช่แค่ Deploy แบบทดลอง',
+      'ลงมือแก้กรณีพิเศษที่โค้ดจาก AI มักพลาด',
+      'ทำงานกับโค้ดจากเครื่องมือ AI Coding ชั้นนำได้ทุกตัว',
     ]
   const whyPoints   = isEN ? [
       'AI coding tools optimize for a working demo, not for what survives real traffic and real attackers.',
@@ -67,11 +67,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'Payment, auth, and data edge cases only surface once real users start using the product.',
       'Finishing the last 10% properly is far cheaper than a security incident or an outage after launch.',
     ] : [
-      'เครื่องมือ AI Coding ปรับให้ได้ Demo ที่ใช้งานได้ ไม่ใช่สิ่งที่รอดจาก Traffic จริงและผู้ไม่หวังดีจริง',
-      'ช่องโหว่ Security เช่น Key รั่ว, ขาด Auth Check, Endpoint เปิดโล่ง พบได้บ่อยมากใน Code ที่สร้างจาก AI',
-      'Preview Deployment ไม่ใช่ Production Infrastructure ไม่มี Backup, ไม่มี Monitoring, ไม่มีแผน Scale จริง',
-      'Edge Case ของ Payment, Auth และข้อมูล จะโผล่มาก็ต่อเมื่อผู้ใช้จริงเริ่มใช้ Product',
-      'การจบ 10% สุดท้ายให้ถูกต้อง ถูกกว่าการเจอ Incident ด้าน Security หรือระบบล่มหลัง Launch มาก',
+      'เครื่องมือ AI Coding ปรับมาให้ได้เดโมที่ใช้งานได้ ไม่ใช่สิ่งที่ทนต่อผู้ใช้จริงและผู้ไม่หวังดีจริง',
+      'ช่องโหว่ด้านความปลอดภัย เช่น Key รั่ว ขาดการเช็กสิทธิ์ Endpoint เปิดโล่ง พบได้บ่อยมากในโค้ดที่สร้างจาก AI',
+      'การ Deploy แบบทดลองไม่ใช่ระบบสำหรับใช้งานจริง ไม่มี Backup ไม่มี Monitoring และไม่มีแผนรองรับผู้ใช้ที่เพิ่มขึ้น',
+      'กรณีพิเศษของการชำระเงิน ระบบล็อกอิน และข้อมูล จะโผล่มาเมื่อผู้ใช้จริงเริ่มใช้งาน',
+      'จบ 10% สุดท้ายให้ถูกต้อง ถูกกว่าเจอปัญหาความปลอดภัยหรือระบบล่มหลังเปิดตัวมาก',
     ]
   const outcomes    = isEN ? [
       {stat: '15+', label: 'Security Issues Found', desc: 'Average per audited codebase'},
@@ -79,10 +79,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {stat: '100%', label: 'Codebases Ownable', desc: 'Full understanding, no black box'},
       {stat: '0', label: 'Rewrites Required', desc: 'We build on what exists'}
     ] : [
-      {stat: '15+', label: 'ปัญหา Security ที่พบ', desc: 'เฉลี่ยต่อ Codebase ที่ตรวจสอบ'},
-      {stat: '<3wk', label: 'เวลาถึง Launch', desc: 'ตั้งแต่ Audit จนพร้อม Production'},
-      {stat: '100%', label: 'Codebase ที่เข้าใจได้เต็มที่', desc: 'ไม่มีจุดที่เป็น Black Box'},
-      {stat: '0', label: 'ต้อง Rewrite ใหม่ทั้งหมด', desc: 'เราต่อยอดจากของเดิม'}
+      {stat: '15+', label: 'ปัญหาด้านความปลอดภัยที่พบ', desc: 'เฉลี่ยต่อ Codebase ที่ตรวจ'},
+      {stat: '<3wk', label: 'เวลาถึงวันเปิดตัว', desc: 'ตั้งแต่ตรวจจนพร้อมใช้งานจริง'},
+      {stat: '100%', label: 'เข้าใจ Codebase ได้เต็มที่', desc: 'ไม่มีส่วนไหนเป็นกล่องดำ'},
+      {stat: '0', label: 'ต้องเขียนใหม่ทั้งหมด', desc: 'เราต่อยอดจากของเดิม'}
     ]
   const features    = isEN ? [
       {icon: 'ti-search-code', title: 'Codebase & Architecture Audit', desc: 'A full review of what your AI tool actually built, its structure, and its risks.'},
@@ -92,12 +92,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {icon: 'ti-git-branch', title: 'Codebase Cleanup', desc: 'Removing dead code, fixing structure issues, and making the app maintainable long-term.'},
       {icon: 'ti-headset', title: 'Post-Launch Support', desc: 'Ongoing support so the app keeps running well after we hand it back to you.'}
     ] : [
-      {icon: 'ti-search-code', title: 'Codebase & Architecture Audit', desc: 'ตรวจสอบเต็มรูปแบบว่าเครื่องมือ AI สร้างอะไรไว้จริง โครงสร้างเป็นอย่างไร และความเสี่ยงคืออะไร'},
-      {icon: 'ti-shield-lock', title: 'Security Hardening', desc: 'ปิด Key ที่รั่ว, Auth Check ที่ขาดหาย และช่องโหว่อื่นๆ ที่เครื่องมือ AI มักเปิดทิ้งไว้'},
-      {icon: 'ti-server', title: 'Production Infrastructure', desc: 'วาง Hosting จริง, Backup, Monitoring และ Scaling แทนที่ Preview Deployment'},
-      {icon: 'ti-list-check', title: 'The Last 10%', desc: 'Edge Case ของ Auth, ความน่าเชื่อถือของ Payment, การจัดการ Error และรายละเอียดที่ขวาง Launch'},
-      {icon: 'ti-git-branch', title: 'Codebase Cleanup', desc: 'ลบ Code ที่ไม่ใช้, แก้ปัญหาโครงสร้าง และทำให้ App ดูแลต่อได้ในระยะยาว'},
-      {icon: 'ti-headset', title: 'Post-Launch Support', desc: 'สนับสนุนต่อเนื่องหลังส่งมอบ เพื่อให้ App ทำงานได้ดีต่อไป'}
+      {icon: 'ti-search-code', title: 'Codebase & Architecture Audit', desc: 'ตรวจให้ครบว่าเครื่องมือ AI สร้างอะไรไว้จริง โครงสร้างเป็นอย่างไร และมีความเสี่ยงอะไรบ้าง'},
+      {icon: 'ti-shield-lock', title: 'Security Hardening', desc: 'ปิด Key ที่รั่ว จุดที่ขาดการเช็กสิทธิ์ และช่องโหว่อื่นๆ ที่เครื่องมือ AI มักเปิดทิ้งไว้'},
+      {icon: 'ti-server', title: 'Production Infrastructure', desc: 'วาง Hosting จริง Backup Monitoring และการรองรับผู้ใช้ที่เพิ่มขึ้น แทนการ Deploy แบบทดลอง'},
+      {icon: 'ti-list-check', title: 'The Last 10%', desc: 'กรณีพิเศษของระบบล็อกอิน ความน่าเชื่อถือของการชำระเงิน การจัดการ Error และรายละเอียดที่ขวางการเปิดตัว'},
+      {icon: 'ti-git-branch', title: 'Codebase Cleanup', desc: 'ลบโค้ดที่ไม่ใช้ แก้ปัญหาโครงสร้าง และทำให้แอปดูแลต่อได้ในระยะยาว'},
+      {icon: 'ti-headset', title: 'Post-Launch Support', desc: 'ช่วยดูแลต่อเนื่องหลังส่งมอบ เพื่อให้แอปทำงานได้ดีต่อไป'}
     ]
   const steps       = isEN ? [
       {no: '01', title: 'Audit', desc: 'Full review of codebase, architecture, and risks.'},
@@ -107,21 +107,21 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {no: '05', title: 'Launch', desc: 'Move to real production infrastructure.'},
       {no: '06', title: 'Support', desc: 'Ongoing monitoring and post-launch fixes.'}
     ] : [
-      {no: '01', title: 'Audit', desc: 'ตรวจสอบ Codebase, Architecture และความเสี่ยงเต็มรูปแบบ'},
-      {no: '02', title: 'Triage', desc: 'จัดลำดับสิ่งที่ขวางตามความเสี่ยงและผลกระทบต่อ Launch'},
-      {no: '03', title: 'Harden', desc: 'ปิดช่องโหว่ Security และทำให้พื้นฐานมั่นคง'},
-      {no: '04', title: 'Complete', desc: 'แก้ Edge Case และจบ Flow ที่ยังไม่เสร็จ'},
-      {no: '05', title: 'Launch', desc: 'ย้ายไปสู่ Production Infrastructure จริง'},
-      {no: '06', title: 'Support', desc: 'Monitoring ต่อเนื่องและแก้ไขหลัง Launch'}
+      {no: '01', title: 'Audit', desc: 'ตรวจ Codebase สถาปัตยกรรม และความเสี่ยงทั้งหมด'},
+      {no: '02', title: 'Triage', desc: 'จัดลำดับสิ่งที่ขวางตามความเสี่ยงและผลต่อการเปิดตัว'},
+      {no: '03', title: 'Harden', desc: 'ปิดช่องโหว่ด้านความปลอดภัย และทำให้พื้นฐานมั่นคง'},
+      {no: '04', title: 'Complete', desc: 'แก้กรณีพิเศษ และทำขั้นตอนที่ยังไม่เสร็จให้จบ'},
+      {no: '05', title: 'Launch', desc: 'ย้ายไปใช้ระบบจริงสำหรับ Production'},
+      {no: '06', title: 'Support', desc: 'ติดตามต่อเนื่อง และแก้ไขปัญหาหลังเปิดตัว'}
     ]
   const caseStudies = isEN ? [
       {tag: 'SaaS Startup · Bangkok', title: 'Lovable Prototype Hardened & Launched', desc: 'Security audit, auth rebuild, and production infrastructure in 3 weeks.', result: '0 critical vulnerabilities at launch'},
       {tag: 'Marketplace · Bangkok', title: 'Bolt-Built App Made Payment-Ready', desc: 'Stripe integration hardened, edge cases fixed, real hosting deployed.', result: 'Zero failed transactions post-launch'},
       {tag: 'Internal Tool · Nationwide', title: 'Cursor-Generated Tool Scaled to 200 Users', desc: 'Architecture cleanup and infrastructure rebuild for company-wide rollout.', result: 'Scaled from prototype to 200 daily users'}
     ] : [
-      {tag: 'SaaS Startup · กรุงเทพฯ', title: 'Harden และ Launch Prototype จาก Lovable', desc: 'Security Audit, สร้าง Auth ใหม่ และวาง Production Infrastructure ใน 3 สัปดาห์', result: 'ไม่พบช่องโหว่ Critical ตอน Launch'},
-      {tag: 'Marketplace · กรุงเทพฯ', title: 'ทำให้ App จาก Bolt พร้อมรับ Payment', desc: 'Harden การเชื่อมต่อ Stripe, แก้ Edge Case และวาง Hosting จริง', result: 'ไม่มี Transaction ล้มเหลวหลัง Launch'},
-      {tag: 'Internal Tool · ทั่วประเทศ', title: 'ขยาย Tool จาก Cursor รองรับผู้ใช้ 200 คน', desc: 'ทำความสะอาด Architecture และสร้าง Infrastructure ใหม่สำหรับใช้ทั้งบริษัท', result: 'ขยายจาก Prototype สู่ผู้ใช้ 200 คน/วัน'}
+      {tag: 'SaaS Startup · กรุงเทพฯ', title: 'Harden และเปิดตัว Prototype จาก Lovable', desc: 'ตรวจความปลอดภัย สร้างระบบล็อกอินใหม่ และวางระบบสำหรับใช้งานจริงใน 3 สัปดาห์', result: 'ไม่พบช่องโหว่ร้ายแรงตอนเปิดตัว'},
+      {tag: 'Marketplace · กรุงเทพฯ', title: 'ทำให้แอปจาก Bolt พร้อมรับชำระเงิน', desc: 'เสริมความแข็งแรงให้การเชื่อมต่อ Stripe แก้กรณีพิเศษ และวาง Hosting จริง', result: 'ไม่มีธุรกรรมล้มเหลวหลังเปิดตัว'},
+      {tag: 'Internal Tool · ทั่วประเทศ', title: 'ขยายเครื่องมือจาก Cursor รองรับผู้ใช้ 200 คน', desc: 'จัดระเบียบสถาปัตยกรรมและสร้างระบบใหม่ เพื่อใช้ทั้งบริษัท', result: 'ขยายจาก Prototype สู่ผู้ใช้ 200 คนต่อวัน'}
     ]
   const faqs        = isEN ? [
       {q: 'What tools do you support finishing apps from?', a: 'Cursor, Claude Code, Lovable, Bolt, v0, Replit, and similar AI-assisted coding tools — we work with whatever code exists, regardless of how it was built.'},
@@ -129,10 +129,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {q: 'What kind of security issues do you typically find?', a: 'Exposed API keys, missing authentication checks on endpoints, unvalidated user input, and overly permissive database access are the most common.'},
       {q: 'Can you also add new features, not just fix issues?', a: 'Yes. Once the foundation is solid, we can continue building new features as an ongoing engagement.'}
     ] : [
-      {q: 'รองรับเครื่องมือแบบไหนบ้างในการช่วยจบ App?', a: 'Cursor, Claude Code, Lovable, Bolt, v0, Replit และเครื่องมือ AI Coding ที่คล้ายกัน เราทำงานกับ Code ที่มีอยู่ ไม่ว่าจะสร้างมาด้วยวิธีไหน'},
-      {q: 'ต้อง Rewrite ใหม่ทั้งหมดไหม?', a: 'ส่วนใหญ่ไม่ต้องครับ เราต่อยอดจาก Codebase ที่มีอยู่ แก้ปัญหาโครงสร้างและ Security แทนที่จะเริ่มใหม่ทั้งหมด'},
-      {q: 'ปัญหา Security ที่มักพบคืออะไรบ้าง?', a: 'API Key ที่รั่ว, Endpoint ที่ขาด Authentication Check, Input จากผู้ใช้ที่ไม่ได้ Validate และ Database ที่เปิดสิทธิ์กว้างเกินไป เป็นปัญหาที่พบบ่อยที่สุด'},
-      {q: 'เพิ่มฟีเจอร์ใหม่ได้ด้วยไหม ไม่ใช่แค่แก้ปัญหา?', a: 'ได้ครับ เมื่อพื้นฐานมั่นคงแล้ว เราสามารถพัฒนาฟีเจอร์ใหม่ต่อเนื่องแบบ Ongoing Engagement ได้'}
+      {q: 'รองรับเครื่องมือแบบไหนบ้างในการช่วยจบแอป?', a: 'Cursor, Claude Code, Lovable, Bolt, v0, Replit และเครื่องมือ AI Coding ที่คล้ายกัน เราทำงานกับโค้ดที่มีอยู่ ไม่ว่าจะสร้างมาด้วยวิธีไหน'},
+      {q: 'ต้องเขียนใหม่ทั้งหมดไหม?', a: 'ส่วนใหญ่ไม่ต้องครับ เราต่อยอดจาก Codebase ที่มีอยู่ แก้ปัญหาโครงสร้างและความปลอดภัย แทนที่จะเริ่มใหม่ทั้งหมด'},
+      {q: 'ปัญหาด้านความปลอดภัยที่มักพบคืออะไรบ้าง?', a: 'API Key ที่รั่ว Endpoint ที่ไม่เช็กการยืนยันตัวตน ข้อมูลจากผู้ใช้ที่ไม่ได้ตรวจสอบ และฐานข้อมูลที่เปิดสิทธิ์กว้างเกินไป เป็นปัญหาที่พบบ่อยที่สุด'},
+      {q: 'เพิ่มฟีเจอร์ใหม่ได้ด้วยไหม ไม่ใช่แค่แก้ปัญหา?', a: 'ได้ครับ เมื่อพื้นฐานมั่นคงแล้ว เราพัฒนาฟีเจอร์ใหม่ให้ต่อเนื่องได้'}
     ]
   const related     = isEN ? [
       {label: 'Cybersecurity', href: '/services/cybersecurity'},
@@ -148,13 +148,13 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   const auditLines = [
     { n: 1, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>audit --scope codebase,secrets,auth</span></> },
-    { n: 2, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? '15 issues found, 3 critical' : 'พบ 15 ปัญหา 3 รายการ Critical'}</> },
+    { n: 2, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? '15 issues found, 3 critical' : 'พบ 15 ปัญหา เป็นระดับร้ายแรง 3 รายการ'}</> },
     { n: 3, jsx: <>&nbsp;</> },
     { n: 4, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>deploy --target production</span></> },
-    { n: 5, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Live infra, backups, monitoring on' : 'Infra จริง, Backup และ Monitoring พร้อม'}</> },
+    { n: 5, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Live infra, backups, monitoring on' : 'ระบบจริง Backup และ Monitoring พร้อม'}</> },
     { n: 6, jsx: <>&nbsp;</> },
     { n: 7, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>test --edge-cases payment,auth</span></> },
-    { n: 8, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'All flows pass, ready to ship' : 'ผ่านทุก Flow พร้อม Launch'}</> },
+    { n: 8, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'All flows pass, ready to ship' : 'ผ่านทุกขั้นตอน พร้อมเปิดตัว'}</> },
   ]
 
   const heroSlot = (
@@ -196,7 +196,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </div>
         <div className="flex items-center gap-1.5 text-xs" style={{ color: 'var(--lime)' }}>
           <i className="ti ti-circle-check" style={{ fontSize: 13 }} aria-hidden="true" />
-          {isEN ? 'Production-ready in under 3 weeks' : 'พร้อม Production ในไม่ถึง 3 สัปดาห์'}
+          {isEN ? 'Production-ready in under 3 weeks' : 'พร้อมใช้งานจริงในไม่ถึง 3 สัปดาห์'}
         </div>
       </div>
     </div>
@@ -208,10 +208,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { icon: 'ti-server', title: 'Production Infrastructure', desc: 'Real hosting, backups, monitoring, and scaling in place of a preview deployment.' },
     { icon: 'ti-list-check', title: 'The Last 10%', desc: 'Auth edge cases, payment reliability, error handling, and launch-blocking details.' },
   ] : [
-    { icon: 'ti-search-code', title: 'Codebase & Architecture Audit', desc: 'ตรวจสอบเต็มรูปแบบว่าเครื่องมือ AI สร้างอะไรไว้จริง โครงสร้างเป็นอย่างไร และความเสี่ยงคืออะไร' },
-    { icon: 'ti-shield-lock', title: 'Security Hardening', desc: 'ปิด Key ที่รั่ว, Auth Check ที่ขาดหาย และช่องโหว่อื่นๆ ที่เครื่องมือ AI มักเปิดทิ้งไว้' },
-    { icon: 'ti-server', title: 'Production Infrastructure', desc: 'วาง Hosting จริง, Backup, Monitoring และ Scaling แทนที่ Preview Deployment' },
-    { icon: 'ti-list-check', title: 'The Last 10%', desc: 'Edge Case ของ Auth, ความน่าเชื่อถือของ Payment, การจัดการ Error และรายละเอียดที่ขวาง Launch' },
+    { icon: 'ti-search-code', title: 'Codebase & Architecture Audit', desc: 'ตรวจให้ครบว่าเครื่องมือ AI สร้างอะไรไว้จริง โครงสร้างเป็นอย่างไร และมีความเสี่ยงอะไรบ้าง' },
+    { icon: 'ti-shield-lock', title: 'Security Hardening', desc: 'ปิด Key ที่รั่ว จุดที่ขาดการเช็กสิทธิ์ และช่องโหว่อื่นๆ ที่เครื่องมือ AI มักเปิดทิ้งไว้' },
+    { icon: 'ti-server', title: 'Production Infrastructure', desc: 'วาง Hosting จริง Backup Monitoring และการรองรับผู้ใช้ที่เพิ่มขึ้น แทนการ Deploy แบบทดลอง' },
+    { icon: 'ti-list-check', title: 'The Last 10%', desc: 'กรณีพิเศษของระบบล็อกอิน ความน่าเชื่อถือของการชำระเงิน การจัดการ Error และรายละเอียดที่ขวางการเปิดตัว' },
   ]
 
   const techStack = [
@@ -239,12 +239,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { no: '05', title: 'Launch', desc: 'Move to real infrastructure' },
     { no: '06', title: 'Support', desc: 'Monitoring and post-launch fixes' },
   ] : [
-    { no: '01', title: 'Audit', desc: 'Codebase, Architecture และความเสี่ยง' },
+    { no: '01', title: 'Audit', desc: 'Codebase สถาปัตยกรรม และความเสี่ยง' },
     { no: '02', title: 'Triage', desc: 'จัดลำดับสิ่งที่ขวางตามผลกระทบ' },
-    { no: '03', title: 'Harden', desc: 'ปิดช่องโหว่ Security' },
-    { no: '04', title: 'Complete', desc: 'แก้ Edge Case และช่องว่าง' },
-    { no: '05', title: 'Launch', desc: 'ย้ายสู่ Infrastructure จริง' },
-    { no: '06', title: 'Support', desc: 'Monitoring และแก้ไขหลัง Launch' },
+    { no: '03', title: 'Harden', desc: 'ปิดช่องโหว่ด้านความปลอดภัย' },
+    { no: '04', title: 'Complete', desc: 'แก้กรณีพิเศษและช่องว่าง' },
+    { no: '05', title: 'Launch', desc: 'ย้ายสู่ระบบจริง' },
+    { no: '06', title: 'Support', desc: 'ติดตามและแก้ไขหลังเปิดตัว' },
   ]
 
   const darkFaqs = isEN ? [
@@ -257,14 +257,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     { q: 'Will I understand the codebase once you’re done, or will it still be a black box?', a: 'You will understand it fully. We document the architecture, clean up structure as we go, and can walk your team through the codebase so you are never dependent on us to make future changes.' },
     { q: 'What if the app has already launched and we’re seeing issues in production?', a: 'We handle that too. The audit approach is the same, but we prioritize live-issue triage first — stopping active problems — before moving into the broader hardening and completion work.' },
   ] : [
-    { q: 'รองรับเครื่องมือ AI Coding แบบไหนบ้างในการช่วยจบ App?', a: 'Cursor, Claude Code, Lovable, Bolt, v0, Replit และเครื่องมือ AI-Assisted Coding ที่คล้ายกัน เราทำงานกับ Code ที่มีอยู่ใน Repository ของคุณ ไม่ว่าจะสร้างมาด้วยวิธีไหนแต่แรก' },
-    { q: 'ต้อง Rewrite ใหม่ทั้งหมดไหม?', a: 'ส่วนใหญ่ไม่ต้องครับ เราต่อยอดจาก Codebase ที่มีอยู่ แก้ปัญหาโครงสร้างและ Security แทนที่จะเริ่มใหม่ทั้งหมด การ Rewrite เต็มรูปแบบมักไม่จำเป็นและไม่คุ้มค่า' },
-    { q: 'ปัญหา Security ที่มักพบใน Code จาก AI คืออะไรบ้าง?', a: 'API Key และ Secret ที่ถูก Commit เข้า Repository, Endpoint ที่ขาด Authentication Check, Input จากผู้ใช้ที่ไม่ได้ Validate และกฎ Database ที่เปิดสิทธิ์กว้างเกินไป เป็นปัญหาที่พบบ่อยที่สุด' },
-    { q: 'เพิ่มฟีเจอร์ใหม่ได้ด้วยไหม ไม่ใช่แค่แก้ปัญหา?', a: 'ได้ครับ เมื่อพื้นฐานมั่นคงและปลอดภัยแล้ว เราสามารถพัฒนาฟีเจอร์ใหม่ต่อเนื่องแบบ Ongoing Engagement โดยทำงานภายใน Codebase และ Convention ที่มีอยู่' },
-    { q: 'ใช้เวลานานแค่ไหนกว่าจะจาก Prototype ไปสู่พร้อม Production?', a: 'App แบบเจาะจงที่มีฟีเจอร์ระดับปานกลาง มักใช้เวลา 2-3 สัปดาห์ ตั้งแต่ Audit จนพร้อม Launch ส่วน Codebase ที่ใหญ่หรือซับซ้อนกว่า หรือมีช่องโหว่ Security มาก อาจใช้เวลา 4-6 สัปดาห์' },
-    { q: 'งานลักษณะนี้มีค่าใช้จ่ายเท่าไหร่?', a: 'ราคาขึ้นอยู่กับขนาด Codebase และจำนวนปัญหาที่พบระหว่าง Audit เราเริ่มด้วยการ Audit แบบราคาคงที่เสมอ เพื่อให้คุณรู้ Scope และค่าใช้จ่ายการแก้ไขก่อนตัดสินใจทำงานเต็มรูปแบบ' },
-    { q: 'หลังจบงานแล้ว เราจะเข้าใจ Codebase หรือยังเป็น Black Box อยู่?', a: 'คุณจะเข้าใจเต็มที่ครับ เราจัดทำเอกสาร Architecture, ทำความสะอาดโครงสร้างไปพร้อมกัน และสามารถอธิบาย Codebase ให้ทีมคุณฟังได้ เพื่อไม่ให้คุณต้องพึ่งเราตลอดไปสำหรับการเปลี่ยนแปลงในอนาคต' },
-    { q: 'ถ้า App Launch ไปแล้วและกำลังเจอปัญหาใน Production ล่ะ?', a: 'เราดูแลกรณีนี้ด้วยครับ วิธีการ Audit เหมือนกัน แต่เราจะจัดลำดับความสำคัญที่ปัญหาที่กำลังเกิดขึ้นจริงก่อน เพื่อหยุดปัญหาที่ Active อยู่ ก่อนเข้าสู่งาน Harden และ Complete ที่กว้างขึ้น' },
+    { q: 'รองรับเครื่องมือ AI Coding แบบไหนบ้างในการช่วยจบแอป?', a: 'Cursor, Claude Code, Lovable, Bolt, v0, Replit และเครื่องมือ AI-Assisted Coding ที่คล้ายกัน เราทำงานกับโค้ดที่มีอยู่ใน Repository ของคุณ ไม่ว่าจะสร้างมาด้วยวิธีไหนแต่แรก' },
+    { q: 'ต้องเขียนใหม่ทั้งหมดไหม?', a: 'ส่วนใหญ่ไม่ต้องครับ เราต่อยอดจาก Codebase ที่มีอยู่ แก้ปัญหาโครงสร้างและความปลอดภัย แทนที่จะเริ่มใหม่ทั้งหมด การเขียนใหม่ทั้งหมดมักไม่จำเป็นและไม่คุ้มค่า' },
+    { q: 'ปัญหาด้านความปลอดภัยที่มักพบในโค้ดจาก AI คืออะไรบ้าง?', a: 'API Key และ Secret ที่ถูก Commit เข้า Repository, Endpoint ที่ไม่เช็กการยืนยันตัวตน, ข้อมูลจากผู้ใช้ที่ไม่ได้ตรวจสอบ และกฎของฐานข้อมูลที่เปิดสิทธิ์กว้างเกินไป เป็นปัญหาที่พบบ่อยที่สุด' },
+    { q: 'เพิ่มฟีเจอร์ใหม่ได้ด้วยไหม ไม่ใช่แค่แก้ปัญหา?', a: 'ได้ครับ เมื่อพื้นฐานมั่นคงและปลอดภัยแล้ว เราพัฒนาฟีเจอร์ใหม่ต่อเนื่องได้ โดยทำงานภายใน Codebase และแบบแผนที่มีอยู่' },
+    { q: 'ใช้เวลานานแค่ไหนกว่าจะจาก Prototype ไปพร้อมใช้งานจริง?', a: 'แอปที่ขอบเขตชัดเจนและมีฟีเจอร์ระดับปานกลาง มักใช้เวลา 2-3 สัปดาห์ ตั้งแต่ตรวจจนพร้อมเปิดตัว ส่วน Codebase ที่ใหญ่หรือซับซ้อนกว่า หรือมีช่องโหว่ด้านความปลอดภัยมาก อาจใช้เวลา 4-6 สัปดาห์' },
+    { q: 'งานลักษณะนี้มีค่าใช้จ่ายเท่าไหร่?', a: 'ราคาขึ้นอยู่กับขนาด Codebase และจำนวนปัญหาที่พบระหว่างตรวจ เราเริ่มด้วยการตรวจแบบราคาคงที่เสมอ เพื่อให้คุณรู้ขอบเขตและค่าใช้จ่ายในการแก้ไขก่อนตัดสินใจทำงานเต็มรูปแบบ' },
+    { q: 'หลังจบงานแล้ว เราจะเข้าใจ Codebase หรือยังเป็นกล่องดำอยู่?', a: 'คุณจะเข้าใจเต็มที่ครับ เราทำเอกสารสถาปัตยกรรม จัดระเบียบโครงสร้างไปพร้อมกัน และอธิบาย Codebase ให้ทีมคุณฟังได้ คุณจะได้ไม่ต้องพึ่งเราตลอดไปเมื่อต้องแก้ไขในอนาคต' },
+    { q: 'ถ้าแอปเปิดตัวไปแล้วและกำลังเจอปัญหาตอนใช้งานจริงล่ะ?', a: 'เราดูแลกรณีนี้ด้วยครับ วิธีตรวจเหมือนกัน แต่เราจะจัดการปัญหาที่กำลังเกิดขึ้นจริงก่อน เพื่อหยุดปัญหาที่ยังเกิดอยู่ แล้วค่อยไปต่อที่งานเสริมความปลอดภัยและทำส่วนที่ขาดให้จบ' },
   ]
 
   const postHeroSlot = (
@@ -285,7 +285,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           {isEN ? 'Key Capabilities' : 'ความสามารถหลัก'}
         </h2>
         <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400 }}>
-          {isEN ? 'Concrete capabilities we bring to this engagement — not buzzwords.' : 'ความสามารถที่จับต้องได้จริงที่เรานำมาใช้ในทุกโปรเจกต์ ไม่ใช่แค่คำสวยหรู'}
+          {isEN ? 'Concrete capabilities we bring to this engagement — not buzzwords.' : 'สิ่งที่เราทำได้จริงในทุกโปรเจกต์ ไม่ใช่แค่คำสวยหรู'}
         </p>
 
         <div className="grid sm:grid-cols-2 gap-5">
@@ -314,7 +314,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'Whatever AI tool generated your app, and whatever stack it landed on, we can pick it up from there.'
-              : 'ไม่ว่า App ของคุณจะสร้างด้วยเครื่องมือ AI ตัวไหน หรือ Stack แบบไหน เราสามารถรับช่วงต่อได้'}
+              : 'ไม่ว่าแอปของคุณจะสร้างด้วยเครื่องมือ AI ตัวไหน หรือใช้เทคโนโลยีแบบไหน เราก็รับช่วงต่อได้'}
           </p>
 
           <div className="flex flex-wrap gap-3">
@@ -345,7 +345,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <p className="mb-16" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'A clear path from audit to a launched, production-grade app — adjusted per codebase, never one-size-fits-all.'
-              : 'เส้นทางที่ชัดเจนจาก Audit สู่ App ที่ Launch แล้วระดับ Production ปรับตามแต่ละ Codebase ไม่ใช่สูตรสำเร็จตายตัว'}
+              : 'เส้นทางที่ชัดเจนจากการตรวจไปจนถึงแอประดับใช้งานจริงที่เปิดตัวแล้ว ปรับตามแต่ละ Codebase ไม่ใช่สูตรสำเร็จ'}
           </p>
 
           <div className="relative">
@@ -381,7 +381,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             {isEN ? 'Frequently Asked Questions' : 'คำถามที่พบบ่อย'}
           </h2>
           <p className="mb-4" style={{ color: 'var(--lime)', fontSize: '1.2rem', fontWeight: 600 }}>
-            {isEN ? 'Straight answers about finishing what you’ve built.' : 'คำตอบตรงไปตรงมาเกี่ยวกับการจบสิ่งที่คุณสร้างมาแล้ว'}
+            {isEN ? 'Straight answers about finishing what you’ve built.' : 'คำตอบตรงๆ เรื่องการจบสิ่งที่คุณสร้างมาแล้ว'}
           </p>
 
           <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
@@ -423,7 +423,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-base font-medium transition-opacity hover:opacity-90"
             style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}
           >
-            {isEN ? 'Start a Conversation' : 'เริ่มบทสนทนา'}
+            {isEN ? 'Start a Conversation' : 'เริ่มคุยกัน'}
             <i className="ti ti-arrow-right" style={{ fontSize: 17 }} aria-hidden="true" />
           </Link>
           <a href="mailto:wu@haliviq.com" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>

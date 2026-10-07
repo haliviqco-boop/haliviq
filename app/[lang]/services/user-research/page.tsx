@@ -8,13 +8,13 @@ export async function generateStaticParams() {
 export default function Page({ params }: { params: { lang: Lang } }) {
   const isEN = params.lang === 'en'
   const badge    = isEN ? 'Strategy / User Research'  : 'กลยุทธ์ / User Research'
-  const title    = isEN ? 'Understand Your Users'  : 'เข้าใจผู้ใช้งาน'
-  const subtitle = isEN ? 'At a Deep Level'    : 'ในระดับลึก'
-  const heroDesc = isEN ? 'The best products are built by teams who deeply understand the people they serve. Haliviq conducts rigorous user research that replaces assumptions with evidence and opinions with insight.'  : 'Product ที่ดีที่สุดสร้างโดยทีมที่เข้าใจคนที่ตัวเองรับใช้อย่างลึกซึ้ง Haliviq ทำ User Research ที่เข้มงวดเพื่อแทนที่ Assumption ด้วย Evidence และแทนที่ Opinion ด้วย Insight'
-  const whyTitle = isEN ? 'Why assumptions are the most expensive thing in product'    : 'ทำไม Assumption ถึงเป็นสิ่งที่แพงที่สุดใน Product'
-  const whyDesc  = isEN ? 'Every product decision made without user evidence is a bet. Some bets pay off. Most do not. Organisations that win consistently make evidence a prerequisite for investment.'  : 'ทุกการตัดสินใจ Product ที่ไม่มีหลักฐานจาก User คือการ Bet บาง Bet ได้ผล ส่วนใหญ่ไม่ได้ผล องค์กรที่ชนะอย่างสม่ำเสมอคือที่ทำให้ Evidence เป็น Prerequisite ของการลงทุน'
-  const ctaTitle = isEN ? 'Ready to truly understand your users?'    : 'พร้อมเข้าใจผู้ใช้อย่างแท้จริงไหม?'
-  const ctaDesc  = isEN ? 'Start with a free Research Planning session. We will scope the right study for your questions.'   : 'เริ่มด้วย Research Planning Session ฟรี เราจะ Scope การศึกษาที่เหมาะกับคำถามของคุณ'
+  const title    = isEN ? 'Understand Your Users'  : 'เข้าใจผู้ใช้'
+  const subtitle = isEN ? 'At a Deep Level'    : 'อย่างลึกซึ้ง'
+  const heroDesc = isEN ? 'The best products are built by teams who deeply understand the people they serve. Haliviq conducts rigorous user research that replaces assumptions with evidence and opinions with insight.'  : 'ผลิตภัณฑ์ที่ดีที่สุดมาจากทีมที่เข้าใจคนที่ตัวเองให้บริการอย่างลึกซึ้ง Haliviq ทำ User Research อย่างจริงจัง เพื่อใช้หลักฐานแทนการเดา และใช้ข้อค้นพบแทนความเห็นส่วนตัว'
+  const whyTitle = isEN ? 'Why assumptions are the most expensive thing in product'    : 'ทำไมการเดาถึงแพงที่สุดในการทำผลิตภัณฑ์'
+  const whyDesc  = isEN ? 'Every product decision made without user evidence is a bet. Some bets pay off. Most do not. Organisations that win consistently make evidence a prerequisite for investment.'  : 'ทุกการตัดสินใจที่ไม่มีหลักฐานจากผู้ใช้คือการเดิมพัน บางครั้งก็ได้ผล แต่ส่วนใหญ่ไม่ องค์กรที่ชนะสม่ำเสมอคือองค์กรที่ถือว่าต้องมีหลักฐานก่อนลงทุน'
+  const ctaTitle = isEN ? 'Ready to truly understand your users?'    : 'พร้อมเข้าใจผู้ใช้อย่างแท้จริงหรือยัง?'
+  const ctaDesc  = isEN ? 'Start with a free Research Planning session. We will scope the right study for your questions.'   : 'เริ่มด้วยการคุยวางแผนวิจัยฟรี เราจะกำหนดขอบเขตการศึกษาให้ตรงกับคำถามของคุณ'
   const heroBullets = isEN ? [
       'Research planning, recruitment, and moderation',
       'Interviews, surveys, diary studies, and contextual inquiry',
@@ -22,11 +22,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'Synthesis, affinity mapping, and insight generation',
       'Personas, journey maps, and opportunity frameworks',
     ] : [
-      'วางแผน Research, Recruit ผู้เข้าร่วม และ Moderate Session',
-      'Interview, Survey, Diary Study และ Contextual Inquiry',
-      'Usability Testing: Moderated, Unmoderated และ Remote',
-      'Synthesis, Affinity Mapping และ Insight Generation',
-      'Persona, Journey Map และ Opportunity Framework',
+      'วางแผนวิจัย รับสมัครผู้เข้าร่วม และดำเนินการสัมภาษณ์',
+      'สัมภาษณ์ แบบสำรวจ บันทึกประจำวันของผู้ใช้ และสังเกตการใช้งานในสถานที่จริง',
+      'ทดสอบการใช้งาน ทั้งแบบมีผู้ดำเนินการ ไม่มีผู้ดำเนินการ และทางไกล',
+      'สรุปผล จัดกลุ่มข้อมูลแบบ Affinity Mapping และสกัดข้อค้นพบ',
+      'Persona, Journey Map และกรอบโอกาส',
     ]
   const whyPoints   = isEN ? [
       'Products built with user research have 2x the success rate of those built on assumptions',
@@ -35,11 +35,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       'Journey mapping exposes friction points invisible to internal stakeholders who are too close to the product',
       'Continuous discovery keeps teams aligned with evolving user needs',
     ] : [
-      'Product ที่สร้างจาก User Research มี Success Rate 2 เท่าเทียบกับที่สร้างจาก Assumption',
-      'Research ในช่วง Early Stage ใช้ต้นทุนน้อยกว่า 1% ของ Budget แต่ป้องกัน Mistake ที่แพงที่สุด',
-      'Qualitative Interview เผย WHY ของพฤติกรรมที่ Quantitative Data อธิบายไม่ได้',
-      'Journey Mapping เผย Friction Point ที่ Stakeholder ภายในมองไม่เห็นเพราะใกล้ชิด Product เกินไป',
-      'Continuous Discovery ทำให้ทีม Align กับ User Need ที่เปลี่ยนตลอดเวลา',
+      'ผลิตภัณฑ์ที่สร้างจาก User Research มีอัตราสำเร็จเป็น 2 เท่าของผลิตภัณฑ์ที่สร้างจากการเดา',
+      'การวิจัยตั้งแต่ต้นใช้งบน้อยกว่า 1% แต่ป้องกันความผิดพลาดที่แพงที่สุดได้',
+      'การสัมภาษณ์เชิงคุณภาพเผย "ทำไม" ของพฤติกรรม ซึ่งข้อมูลเชิงตัวเลขอธิบายไม่ได้',
+      'Journey Map เผยจุดติดขัดที่คนในองค์กรมองไม่เห็น เพราะใกล้ชิดผลิตภัณฑ์เกินไป',
+      'การทำ Discovery ต่อเนื่องช่วยให้ทีมตามความต้องการของผู้ใช้ที่เปลี่ยนไปตลอดเวลาได้ทัน',
     ]
   const outcomes    = isEN ? [
       {stat: '2x', label: 'Product Success Rate', desc: 'Research-led vs assumption-led'},
@@ -48,9 +48,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {stat: '100%', label: 'Evidence-Based Decisions', desc: 'After a research programme'}
     ] : [
       {stat: '2x', label: 'Product Success Rate', desc: 'Research-led vs Assumption-led'},
-      {stat: '<1%', label: 'ของ Total Budget', desc: 'ป้องกัน Mistake ที่แพงที่สุด'},
-      {stat: '5', label: 'Interview เพื่อหา Core Insight', desc: 'Efficient Qualitative Research'},
-      {stat: '100%', label: 'Evidence-based Decision', desc: 'หลังมี Research Programme'}
+      {stat: '<1%', label: 'ของงบทั้งหมด', desc: 'ป้องกันความผิดพลาดที่แพงที่สุด'},
+      {stat: '5', label: 'สัมภาษณ์เพื่อหาข้อค้นพบหลัก', desc: 'Efficient Qualitative Research'},
+      {stat: '100%', label: 'Evidence-based Decision', desc: 'หลังมีโปรแกรมวิจัย'}
     ]
   const features    = isEN ? [
       {icon: 'ti-messages', title: 'User Interviews', desc: 'In-depth interviews with real users to understand their goals, pain points, context, and mental models.'},
@@ -60,12 +60,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {icon: 'ti-map-pin', title: 'Contextual Inquiry', desc: 'Observe users in their real environment to see workarounds and context never mentioned in interviews.'},
       {icon: 'ti-layout-kanban', title: 'Synthesis & Insight', desc: 'Transform raw data into insights through affinity mapping, thematic analysis, and journey maps.'}
     ] : [
-      {icon: 'ti-messages', title: 'User Interviews', desc: 'สัมภาษณ์เชิงลึกกับผู้ใช้จริง เพื่อเข้าใจ Goal, Pain Point, Context และ Mental Model ของพวกเขา'},
-      {icon: 'ti-clipboard-list', title: 'Surveys & Quantitative Research', desc: 'เก็บข้อมูลจาก User จำนวนมากเพื่อ Validate Hypothesis และวัด Prevalence ของ Issue'},
-      {icon: 'ti-device-desktop-analytics', title: 'Usability Testing', desc: 'ดู User ใช้งาน Product จริง ระบุ Friction Point และ Confusion โดยตรง'},
-      {icon: 'ti-book', title: 'Diary Studies', desc: 'ให้ User บันทึกประสบการณ์ในชีวิตจริงตามเวลา เผย Behavior ที่ Interview อาจพลาด'},
-      {icon: 'ti-map-pin', title: 'Contextual Inquiry', desc: 'ไปสังเกต User ในสภาพแวดล้อมจริง เห็น Workaround และ Context ที่ไม่ได้พูดถึง'},
-      {icon: 'ti-layout-kanban', title: 'Synthesis & Insight', desc: 'แปลง Raw Data เป็น Insight ด้วย Affinity Mapping, Thematic Analysis และ Journey Map'}
+      {icon: 'ti-messages', title: 'User Interviews', desc: 'สัมภาษณ์เชิงลึกกับผู้ใช้จริง เพื่อเข้าใจเป้าหมาย ปัญหา บริบท และวิธีคิดของพวกเขา'},
+      {icon: 'ti-clipboard-list', title: 'Surveys & Quantitative Research', desc: 'เก็บข้อมูลจากผู้ใช้จำนวนมากเพื่อตรวจสมมติฐานและวัดว่าปัญหาเกิดบ่อยแค่ไหน'},
+      {icon: 'ti-device-desktop-analytics', title: 'Usability Testing', desc: 'ดูผู้ใช้ใช้ผลิตภัณฑ์จริง เพื่อหาจุดติดขัดและความสับสนโดยตรง'},
+      {icon: 'ti-book', title: 'Diary Studies', desc: 'ให้ผู้ใช้บันทึกประสบการณ์ในชีวิตจริงตามช่วงเวลา เผยพฤติกรรมที่การสัมภาษณ์อาจพลาด'},
+      {icon: 'ti-map-pin', title: 'Contextual Inquiry', desc: 'ไปสังเกตผู้ใช้ในสภาพแวดล้อมจริง เห็นวิธีแก้ขัดและบริบทที่ไม่มีใครพูดถึง'},
+      {icon: 'ti-layout-kanban', title: 'Synthesis & Insight', desc: 'เปลี่ยนข้อมูลดิบเป็นข้อค้นพบด้วย Affinity Mapping การวิเคราะห์ตามธีม และ Journey Map'}
     ]
   const steps       = isEN ? [
       {no: '01', title: 'Research Planning', desc: 'Define research questions, select appropriate methods, and plan recruitment.'},
@@ -74,20 +74,20 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {no: '04', title: 'Analysis & Synthesis', desc: 'Analyse data, find patterns, and synthesise into actionable insights.'},
       {no: '05', title: 'Share & Action', desc: 'Present insights to the team, make recommendations, and prioritise next steps.'}
     ] : [
-      {no: '01', title: 'Research Planning', desc: 'กำหนด Research Question, เลือก Method ที่เหมาะสม และวางแผน Recruitment'},
-      {no: '02', title: 'Participant Recruitment', desc: 'Recruit ผู้เข้าร่วมที่ตรงกับ Target User ด้วย Screener ที่ออกแบบมาอย่างดี'},
-      {no: '03', title: 'Data Collection', desc: 'ทำ Session ตาม Method ที่เลือก บันทึกทุกอย่างอย่างเป็นระบบ'},
-      {no: '04', title: 'Analysis & Synthesis', desc: 'วิเคราะห์ข้อมูล หา Pattern และ Synthesize เป็น Insight ที่ Actionable'},
-      {no: '05', title: 'Share & Action', desc: 'Present Insight ต่อทีม วาง Recommendation และ Prioritize Next Step'}
+      {no: '01', title: 'Research Planning', desc: 'กำหนดคำถามวิจัย เลือกวิธีที่เหมาะสม และวางแผนการหาผู้เข้าร่วม'},
+      {no: '02', title: 'Participant Recruitment', desc: 'หาผู้เข้าร่วมที่ตรงกลุ่มเป้าหมาย ด้วยแบบคัดกรองที่ออกแบบมาอย่างดี'},
+      {no: '03', title: 'Data Collection', desc: 'ดำเนินการตามวิธีที่เลือก และบันทึกทุกอย่างอย่างเป็นระบบ'},
+      {no: '04', title: 'Analysis & Synthesis', desc: 'วิเคราะห์ข้อมูล หารูปแบบ และสรุปเป็นข้อค้นพบที่นำไปทำต่อได้'},
+      {no: '05', title: 'Share & Action', desc: 'นำเสนอข้อค้นพบต่อทีม ให้คำแนะนำ และจัดลำดับขั้นตอนถัดไป'}
     ]
   const caseStudies = isEN ? [
       {tag: 'FinTech · Bangkok', title: 'Research Reveals Pain Point Cutting Conversion 40%', desc: '5 user interviews uncovered friction in the verification flow the team had never noticed.', result: 'Conversion up 40% after fix'},
       {tag: 'Healthcare · Bangkok', title: 'Diary Study Reveals Hidden Workarounds', desc: 'Users were using WhatsApp instead of the hospital app because it was faster. Insight led to an app redesign.', result: 'App Usage up 3x'},
       {tag: 'E-Commerce · Nationwide', title: 'Usability Test Cuts Cart Abandonment 45%', desc: 'Testing with 8 users revealed 3 immediately fixable points of confusion in checkout.', result: 'Cart Abandonment down 45%'}
     ] : [
-      {tag: 'FinTech · กรุงเทพฯ', title: 'Research เผย Pain Point ที่ลด Conversion 40%', desc: '5 User Interview เผย Friction ใน Verification Flow ที่ทีมไม่เคยรู้มาก่อน', result: 'Conversion เพิ่ม 40% หลังแก้ไข'},
-      {tag: 'Healthcare · กรุงเทพฯ', title: 'Diary Study เผย Workaround ที่ซ่อนอยู่', desc: 'User ใช้ WhatsApp แทน App ของโรงพยาบาล เพราะ Faster Insight นำไปสู่ App Redesign', result: 'App Usage เพิ่ม 3x'},
-      {tag: 'E-Commerce · ทั่วประเทศ', title: 'Usability Test ลด Cart Abandonment 45%', desc: 'Test กับ User 8 คน เผย Confusion ใน Checkout 3 จุด ที่แก้ได้ทันที', result: 'Cart Abandonment ลด 45%'}
+      {tag: 'FinTech · กรุงเทพฯ', title: 'งานวิจัยเผยปัญหาที่ทำให้ Conversion ตก 40%', desc: 'สัมภาษณ์ผู้ใช้ 5 คน พบจุดติดขัดในขั้นตอนยืนยันตัวตนที่ทีมไม่เคยรู้มาก่อน', result: 'Conversion เพิ่ม 40% หลังแก้ไข'},
+      {tag: 'Healthcare · กรุงเทพฯ', title: 'บันทึกประจำวันของผู้ใช้เผยวิธีแก้ขัดที่ซ่อนอยู่', desc: 'ผู้ใช้ใช้ WhatsApp แทนแอปของโรงพยาบาล เพราะเร็วกว่า ข้อค้นพบนี้นำไปสู่การออกแบบแอปใหม่', result: 'การใช้แอปเพิ่ม 3 เท่า'},
+      {tag: 'E-Commerce · ทั่วประเทศ', title: 'ทดสอบการใช้งานลดการทิ้งตะกร้า 45%', desc: 'ทดสอบกับผู้ใช้ 8 คน พบจุดสับสนในหน้า Checkout 3 จุด ที่แก้ได้ทันที', result: 'ทิ้งตะกร้าลด 45%'}
     ]
   const faqs        = isEN ? [
       {q: 'How many users do we need?', a: 'It depends on the method. Qualitative interviews need 5-8 for saturation. Usability tests need 5 to find 85% of issues. Surveys need hundreds or more.'},
@@ -95,10 +95,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {q: 'How do you recruit users?', a: 'We recruit through our panel, your customer database, or social recruitment based on agreed screening criteria.'},
       {q: 'What are the deliverables?', a: 'A research report with key insights, personas, journey maps, opportunity areas, and prioritised recommendations.'}
     ] : [
-      {q: 'ต้องใช้ User กี่คน?', a: 'ขึ้นอยู่กับ Method ครับ Qualitative Interview ใช้ 5-8 คนเพื่อ Saturation ส่วน Usability Test ใช้ 5 คนเพื่อเจอ 85% ของ Issue Survey ใช้หลักร้อยขึ้นไป'},
-      {q: 'Research ใช้เวลานานแค่ไหน?', a: 'Lean Research เช่น 5 Interview ใช้ 2-3 สัปดาห์ Full Research Programme รวม Synthesis อาจใช้ 6-8 สัปดาห์'},
-      {q: 'Recruit User ยังไง?', a: 'เราช่วย Recruit ผ่าน Panel ของเรา, Database ของลูกค้า หรือ Social Recruit ตาม Screening Criteria ที่กำหนด'},
-      {q: 'Output ได้อะไรบ้าง?', a: 'Research Report พร้อม Key Insight, Persona, Journey Map, Opportunity Area และ Recommendation ที่ลำดับความสำคัญแล้ว'}
+      {q: 'ต้องใช้ผู้ใช้กี่คน?', a: 'ขึ้นกับวิธีครับ สัมภาษณ์เชิงคุณภาพใช้ 5-8 คนจนได้คำตอบซ้ำๆ ส่วนทดสอบการใช้งานใช้ 5 คนก็เจอปัญหา 85% แบบสำรวจต้องใช้หลักร้อยขึ้นไป'},
+      {q: 'วิจัยใช้เวลานานแค่ไหน?', a: 'วิจัยแบบกระชับ เช่น สัมภาษณ์ 5 คน ใช้ 2-3 สัปดาห์ โปรแกรมวิจัยเต็มรูปแบบรวมการสรุปผลอาจใช้ 6-8 สัปดาห์'},
+      {q: 'หาผู้ใช้มาร่วมวิจัยอย่างไร?', a: 'เราช่วยหาผ่านกลุ่มผู้ร่วมวิจัยของเรา ฐานข้อมูลลูกค้า หรือโซเชียล ตามเกณฑ์คัดกรองที่กำหนด'},
+      {q: 'ได้อะไรบ้าง?', a: 'รายงานวิจัยพร้อมข้อค้นพบหลัก Persona, Journey Map, โอกาสที่พบ และข้อเสนอแนะที่จัดลำดับความสำคัญแล้ว'}
     ]
   const related     = isEN ? [
       {label: 'Product Discovery', href: '/services/product-discovery'},
