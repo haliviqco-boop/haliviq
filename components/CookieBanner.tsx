@@ -55,8 +55,8 @@ export default function CookieBanner({ lang }: { lang: Lang }) {
       </p>
       <p className="text-xs leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 400 }}>
         {isEN
-          ? 'We use essential cookies to run this site, and optional analytics cookies to understand how it is used. You can accept all or keep essential only. '
-          : 'เราใช้คุกกี้ที่จำเป็นเพื่อให้เว็บไซต์ทำงานได้ และคุกกี้วิเคราะห์ (ไม่บังคับ) เพื่อดูว่าผู้ใช้ใช้เว็บไซต์อย่างไร คุณจะยอมรับทั้งหมด หรือเลือกเฉพาะที่จำเป็นก็ได้ '}
+          ? 'We use essential cookies to keep this site working, and optional analytics cookies to see which pages people visit and how they use them. You can accept all of them or keep only the essential ones, and the choice is yours. '
+          : 'เราใช้คุกกี้ที่จำเป็นเพื่อให้เว็บไซต์ทำงานได้ และคุกกี้วิเคราะห์ (ไม่บังคับ) เพื่อดูว่ามีคนเข้าหน้าไหนและใช้เว็บไซต์กันอย่างไร จะกดยอมรับทั้งหมด หรือเลือกเฉพาะที่จำเป็นก็ได้ ตัดสินใจได้เลย '}
         <Link href={`/${lang}/cookies`} style={{ color: 'var(--lime)', textDecoration: 'underline' }}>
           {isEN ? 'Cookie Policy' : 'นโยบายคุกกี้'}
         </Link>

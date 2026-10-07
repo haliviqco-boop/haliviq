@@ -15,19 +15,19 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   const badge = isEN ? 'Industry / Media & Entertainment' : 'อุตสาหกรรม / สื่อและบันเทิง'
   const heroSubhead = isEN
-    ? 'Digital platforms for content creation and distribution.'
-    : 'แพลตฟอร์มสำหรับสร้างและเผยแพร่คอนเทนต์'
+    ? 'Streaming, content, and audience software for publishers, studios, and creators who want viewers to keep coming back and be willing to pay.'
+    : 'ซอฟต์แวร์สตรีมมิง จัดการคอนเทนต์ และวิเคราะห์ผู้ชม สำหรับสำนักข่าว สตูดิโอ และครีเอเตอร์ที่อยากให้คนดูกลับมาซ้ำและยอมจ่าย'
 
   const challenges = isEN ? [
-    { icon: 'ti-server-2', title: 'Streaming Infrastructure & Scaling Costs', desc: 'Delivering smooth, low-latency video to millions of concurrent viewers requires elastic transcoding, CDN, and storage infrastructure that can balloon in cost as audiences grow.' },
-    { icon: 'ti-users', title: 'Audience-Retention Pressure', desc: 'With countless platforms competing for the same attention, keeping viewers engaged and subscribed requires constant investment in content discovery and personalization.' },
-    { icon: 'ti-shield-lock', title: 'Content-Rights & DRM Complexity', desc: 'Licensing content across territories and devices while enforcing digital rights management and anti-piracy controls adds significant technical and legal overhead.' },
-    { icon: 'ti-coin', title: 'Monetization Beyond Subscriptions', desc: 'Subscription fatigue is pushing platforms toward ad-supported tiers, pay-per-view, and creator payouts, all of which demand new billing and analytics infrastructure.' },
+    { icon: 'ti-server-2', title: 'Streaming Infrastructure & Scaling Costs', desc: 'Video is expensive to deliver: bandwidth, encoding, and storage costs climb with every new viewer, and a live event can multiply traffic in minutes. Many Thai viewers watch on mobile data, so quality has to adapt to the connection or playback stalls and they leave. We design adaptive streaming, caching, and cost reports so you know what each hour of viewing costs and can plan for peaks such as a final, a concert, or a premiere.' },
+    { icon: 'ti-users', title: 'Audience-Retention Pressure', desc: 'A viewer can cancel a subscription in a few taps, and there is always another show one swipe away. Churn usually has causes you can find in the data: people who never finish onboarding, who watch once and drift, or who leave after a price change. We build the tracking and dashboards that show where viewers fall away, along with the reminders, recommendations, and win-back offers to try.' },
+    { icon: 'ti-shield-lock', title: 'Content-Rights & DRM Complexity', desc: 'Content comes with territories, licence windows, language versions, and takedown obligations, and tracking this in spreadsheets leads to expensive mistakes such as streaming something after its licence ends. We build rights and metadata tools that record where and when each title may be shown, apply the rules automatically, and protect streams with DRM where a licensor requires it.' },
+    { icon: 'ti-coin', title: 'Monetization Beyond Subscriptions', desc: 'Monthly fees alone rarely carry a media business. Revenue also comes from ads, one-off ticket and pay-per-view sales, memberships, merchandise, tips to creators, and sponsorships. Each of these needs its own flow, payment method, and reporting. We build these as parts of one platform, so a fan who buys a concert ticket can be offered a membership next, and you can see what each audience is worth.' },
   ] : [
-    { icon: 'ti-server-2', title: 'ระบบ Streaming และต้นทุนเมื่อผู้ชมเพิ่ม', desc: 'การส่งวิดีโอคุณภาพสูงแบบหน่วงน้อยให้ผู้ชมหลายล้านคนพร้อมกัน ต้องมีระบบ Transcoding, CDN และ Storage ที่ยืดหยุ่น และต้นทุนอาจพุ่งสูงเมื่อผู้ชมเพิ่มขึ้น' },
-    { icon: 'ti-users', title: 'แรงกดดันในการรักษาผู้ชม', desc: 'เมื่อมีแพลตฟอร์มมากมายแย่งความสนใจผู้ชม การทำให้ผู้ชมอยู่ต่อและสมัครสมาชิกต่อเนื่องต้องลงทุนกับระบบแนะนำคอนเทนต์และการปรับให้ตรงใจผู้ชมอยู่เสมอ' },
-    { icon: 'ti-shield-lock', title: 'ความซับซ้อนของลิขสิทธิ์คอนเทนต์และ DRM', desc: 'การขอลิขสิทธิ์คอนเทนต์หลายภูมิภาคและหลายอุปกรณ์ พร้อมบังคับใช้ DRM และมาตรการกันละเมิดลิขสิทธิ์ เป็นภาระทั้งด้านเทคนิคและกฎหมายอย่างมาก' },
-    { icon: 'ti-coin', title: 'หารายได้นอกเหนือจากค่าสมาชิก', desc: 'ผู้ใช้เริ่มเบื่อการจ่ายค่าสมาชิก แพลตฟอร์มจึงหันไปใช้แพ็กเกจที่มีโฆษณา Pay-per-view และการจ่ายเงินให้ Creator ซึ่งต้องมีระบบ Billing และ Analytics แบบใหม่' },
+    { icon: 'ti-server-2', title: 'ระบบ Streaming และต้นทุนเมื่อผู้ชมเพิ่ม', desc: 'การส่งวิดีโอมีต้นทุนสูง ทั้งแบนด์วิดท์ การเข้ารหัสวิดีโอ และพื้นที่เก็บ ที่เพิ่มตามจำนวนผู้ชมทุกคน และไลฟ์สดครั้งเดียวทำให้ทราฟฟิกพุ่งหลายเท่าได้ในไม่กี่นาที คนดูไทยหลายคนดูผ่านเน็ตมือถือ คุณภาพจึงต้องปรับตามสัญญาณ ไม่งั้นภาพจะค้างแล้วเขาก็เลิกดู เราออกแบบระบบสตรีมที่ปรับคุณภาพได้เอง การแคช และรายงานต้นทุน คุณจะรู้ว่าการดูหนึ่งชั่วโมงมีต้นทุนเท่าไร และเตรียมรับช่วงพีกอย่างนัดชิง คอนเสิร์ต หรือรอบฉายแรกได้' },
+    { icon: 'ti-users', title: 'แรงกดดันในการรักษาผู้ชม', desc: 'ผู้ชมยกเลิกสมาชิกได้ในไม่กี่แตะ และมีรายการอื่นให้ดูอีกแค่ปัดนิ้วเดียว สาเหตุที่คนเลิกมักหาเจอในข้อมูล เช่น คนที่ใช้งานครั้งแรกแล้วไม่ทำต่อ ดูครั้งเดียวแล้วหายไป หรือเลิกหลังปรับราคา เราสร้างระบบติดตามและแดชบอร์ดที่ชี้ว่าคนดูหลุดไปตรงไหน พร้อมข้อความเตือน ระบบแนะนำ และข้อเสนอดึงกลับมาให้ลองใช้' },
+    { icon: 'ti-shield-lock', title: 'ความซับซ้อนของลิขสิทธิ์คอนเทนต์และ DRM', desc: 'คอนเทนต์มีเงื่อนไขเรื่องพื้นที่เผยแพร่ ช่วงเวลาของลิขสิทธิ์ เวอร์ชันภาษา และหน้าที่ต้องถอดเมื่อถูกร้องเรียน ถ้าจดไว้ในสเปรดชีต มักพลาดแล้วเสียหายหนัก เช่น ยังฉายต่อหลังลิขสิทธิ์หมดอายุ เราทำเครื่องมือจัดการสิทธิ์และเมตะดาต้าที่บันทึกว่าแต่ละเรื่องฉายได้ที่ไหนและเมื่อไร ใช้กฎให้อัตโนมัติ และป้องกันสตรีมด้วย DRM เมื่อเจ้าของลิขสิทธิ์กำหนด' },
+    { icon: 'ti-coin', title: 'หารายได้นอกเหนือจากค่าสมาชิก', desc: 'ค่าสมาชิกรายเดือนอย่างเดียวมักไม่พอเลี้ยงธุรกิจสื่อ รายได้ยังมาจากโฆษณา การขายบัตรและ Pay-per-view สมาชิกแบบต่าง ๆ สินค้า ทิปให้ครีเอเตอร์ และสปอนเซอร์ แต่ละช่องทางต้องมีขั้นตอน วิธีจ่ายเงิน และรายงานของตัวเอง เราสร้างทั้งหมดเป็นส่วนหนึ่งของแพลตฟอร์มเดียว แฟนที่ซื้อบัตรคอนเสิร์ตจะได้รับข้อเสนอสมัครสมาชิกต่อ และคุณเห็นว่าผู้ชมแต่ละกลุ่มมีมูลค่าเท่าไร' },
   ]
 
   const metrics = [
@@ -37,31 +37,31 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   ]
 
   const capabilities = isEN ? [
-    { icon: 'ti-device-tv', title: 'Streaming & OTT Platforms', desc: 'Scalable video-on-demand and live-streaming platforms with adaptive bitrate playback, multi-device support, and resilient CDN delivery.' },
-    { icon: 'ti-folders', title: 'Content Management Systems', desc: 'Flexible CMS platforms for ingesting, tagging, and publishing video, audio, and editorial content across web, mobile, and connected-TV apps.' },
-    { icon: 'ti-chart-bar', title: 'Audience Analytics Dashboards', desc: 'Real-time viewership and engagement dashboards that surface watch-time, drop-off points, and cohort trends to guide content decisions.' },
-    { icon: 'ti-ticket', title: 'Ticketing & Event Platforms', desc: 'End-to-end ticketing systems for live events and virtual screenings, with seat mapping, dynamic pricing, and fraud-resistant checkout.' },
-    { icon: 'ti-coin', title: 'Creator-Monetization Tools', desc: 'Payout, tipping, and subscription infrastructure that lets creators earn directly from their audience with transparent revenue splits.' },
-    { icon: 'ti-sparkles', title: 'Recommendation Engines', desc: 'AI-driven content-recommendation systems that personalize discovery, increase watch-time, and reduce subscriber churn.' },
+    { icon: 'ti-device-tv', title: 'Streaming & OTT Platforms', desc: 'Apps for web, iOS, Android, and smart TV with a catalogue, search, player, watchlist, and subscription handling. Video is delivered in adaptive quality, with live and on-demand in the same app and DRM where rights holders require it. Thai and English interfaces and subtitles are supported from the start, and payments work with card, PromptPay, and e-wallets.' },
+    { icon: 'ti-folders', title: 'Content Management Systems', desc: 'Editorial back-office tools for uploading, tagging, scheduling, and publishing video, articles, and podcasts. Each title carries its rights window, territories, and language versions, so it appears and disappears on the right date. Editors work from a clean workflow with draft, review, and publish stages and a record of who changed what.' },
+    { icon: 'ti-chart-bar', title: 'Audience Analytics Dashboards', desc: 'Dashboards that show who is watching, what they finish, where they drop out, and what drives sign-ups and cancellations. Editors see which titles keep people watching; marketing sees which campaigns brought viewers who stayed. Viewer data is handled in line with PDPA, with consent recorded.' },
+    { icon: 'ti-ticket', title: 'Ticketing & Event Platforms', desc: 'Online ticket sales, seat maps or general admission, queue handling for high-demand drops, QR entry, and resale or transfer rules. Organisers see sales live and can offer presale, bundles, and add-ons. The booking flow is built for the surge that happens when a popular show goes on sale.' },
+    { icon: 'ti-coin', title: 'Creator-Monetization Tools', desc: 'Tools for creators to earn directly from fans: memberships, tips, paid posts, pay-per-view, and merchandise links, with payouts and clear statements. Creators get a simple dashboard for their audience and earnings, and your platform takes its share transparently. We design onboarding so a new creator can publish and receive a first payment quickly.' },
+    { icon: 'ti-sparkles', title: 'Recommendation Engines', desc: 'Recommendation models that suggest what to watch next based on viewing history, favourites, time of day, and content similarity, including Thai-language titles and metadata. Editors can pin or exclude titles so promotions and rights are respected. We measure it against a simple baseline so you can see if it increases watch time.' },
   ] : [
-    { icon: 'ti-device-tv', title: 'Streaming & OTT Platforms', desc: 'แพลตฟอร์ม Video-on-demand และ Live Streaming ที่ขยายได้ ปรับคุณภาพภาพตามความเร็วเน็ต รองรับหลายอุปกรณ์ และส่งข้อมูลผ่าน CDN ได้เสถียร' },
-    { icon: 'ti-folders', title: 'Content Management Systems', desc: 'ระบบ CMS ยืดหยุ่น สำหรับนำเข้า ติดแท็ก และเผยแพร่วิดีโอ เสียง และบทความ ทั้งบนเว็บ มือถือ และแอป Connected-TV' },
-    { icon: 'ti-chart-bar', title: 'Audience Analytics Dashboards', desc: 'Dashboard วิเคราะห์ผู้ชมแบบเรียลไทม์ แสดงเวลารับชม จุดที่ผู้ชมเลิกดู และแนวโน้มของกลุ่มผู้ชม เพื่อช่วยตัดสินใจเรื่องคอนเทนต์' },
-    { icon: 'ti-ticket', title: 'Ticketing & Event Platforms', desc: 'ระบบขายบัตรครบวงจรสำหรับอีเวนต์สดและการฉายออนไลน์ มีผังที่นั่ง ราคาปรับตามช่วง และ Checkout ที่ป้องกันการทุจริต' },
-    { icon: 'ti-coin', title: 'Creator-Monetization Tools', desc: 'ระบบจ่ายเงิน ทิป และสมาชิก ให้ Creator หารายได้จากผู้ชมโดยตรง พร้อมแบ่งรายได้อย่างโปร่งใส' },
-    { icon: 'ti-sparkles', title: 'Recommendation Engines', desc: 'ระบบแนะนำคอนเทนต์ด้วย AI ให้ผู้ชมเจอเนื้อหาที่ตรงใจ ดูนานขึ้น และลดการยกเลิกสมาชิก' },
+    { icon: 'ti-device-tv', title: 'Streaming & OTT Platforms', desc: 'แอปบนเว็บ iOS Android และสมาร์ททีวี ที่มีคลังคอนเทนต์ การค้นหา ตัวเล่นวิดีโอ รายการที่อยากดู และการจัดการสมาชิก ส่งวิดีโอแบบปรับคุณภาพตามสัญญาณ มีทั้งไลฟ์และวิดีโอตามสั่งในแอปเดียว และใช้ DRM เมื่อเจ้าของสิทธิ์กำหนด รองรับหน้าจอและซับไตเติลภาษาไทยและอังกฤษตั้งแต่เริ่ม และจ่ายเงินได้ทั้งบัตร PromptPay และอี-วอลเล็ต' },
+    { icon: 'ti-folders', title: 'Content Management Systems', desc: 'เครื่องมือหลังบ้านให้ทีมบรรณาธิการอัปโหลด ติดแท็ก ตั้งเวลา และเผยแพร่ทั้งวิดีโอ บทความ และพอดแคสต์ แต่ละรายการมีช่วงเวลาลิขสิทธิ์ พื้นที่ที่ฉายได้ และเวอร์ชันภาษาติดอยู่ ขึ้นและถอดถูกวันเอง ทีมทำงานตามขั้นตอนที่ชัดเจน ตั้งแต่ร่าง ตรวจ จนถึงเผยแพร่ และมีบันทึกว่าใครแก้อะไร' },
+    { icon: 'ti-chart-bar', title: 'Audience Analytics Dashboards', desc: 'แดชบอร์ดที่บอกว่าใครกำลังดู ดูอะไรจนจบ หลุดตรงไหน และอะไรทำให้คนสมัครหรือยกเลิก ทีมบรรณาธิการเห็นว่าเรื่องไหนทำให้คนดูต่อ ทีมการตลาดเห็นว่าแคมเปญไหนพาคนดูที่อยู่ต่อมาให้ ข้อมูลผู้ชมจัดการตาม PDPA และบันทึกความยินยอมไว้' },
+    { icon: 'ti-ticket', title: 'Ticketing & Event Platforms', desc: 'ระบบขายบัตรออนไลน์ ทั้งแบบเลือกที่นั่งและแบบไม่ระบุที่นั่ง ระบบจัดคิวเมื่อมีคนแย่งซื้อพร้อมกัน เข้างานด้วย QR และกติกาการขายต่อหรือโอนบัตร ผู้จัดงานเห็นยอดขายสด ตั้งพรีเซลล์ แพ็กเกจ และสินค้าเสริมได้ ขั้นตอนจองสร้างมาให้รับช่วงที่คนทะลักเข้ามาตอนเปิดขายรอบที่คนอยากได้' },
+    { icon: 'ti-coin', title: 'Creator-Monetization Tools', desc: 'เครื่องมือให้ครีเอเตอร์หารายได้จากแฟนโดยตรง ทั้งสมาชิก ทิป โพสต์เฉพาะสมาชิก Pay-per-view และลิงก์ขายสินค้า พร้อมการโอนเงินให้และใบสรุปรายได้ที่ชัดเจน ครีเอเตอร์ได้แดชบอร์ดง่าย ๆ ดูผู้ติดตามและรายได้ ส่วนแพลตฟอร์มของคุณหักส่วนแบ่งอย่างโปร่งใส เราออกแบบขั้นตอนสมัครให้ครีเอเตอร์ใหม่เผยแพร่งานและรับเงินก้อนแรกได้เร็ว' },
+    { icon: 'ti-sparkles', title: 'Recommendation Engines', desc: 'โมเดลแนะนำว่าควรดูอะไรต่อ จากประวัติการดู รายการโปรด ช่วงเวลา และความคล้ายของคอนเทนต์ รวมถึงชื่อเรื่องและข้อมูลภาษาไทย ทีมบรรณาธิการปักหมุดหรือยกเว้นบางเรื่องได้ เพื่อให้โปรโมชันและสิทธิ์ถูกต้อง เราวัดผลเทียบกับวิธีพื้นฐานง่าย ๆ คุณจะเห็นเองว่าช่วยให้คนดูนานขึ้นจริงหรือไม่' },
   ]
 
   const techStack = ['React', 'Next.js', 'Node.js', 'WebRTC', 'HLS/DASH', 'AWS Media Services', 'Redis', 'PostgreSQL', 'Machine Learning', 'GraphQL', 'Stripe', 'CDN', 'Elasticsearch']
 
   const useCases = isEN ? [
-    { no: '01', title: 'Streaming/OTT Platform', desc: 'Full video-on-demand and live-streaming service with adaptive bitrate delivery, multi-device apps, and subscription and ad-tier billing.' },
-    { no: '02', title: 'Creator-Monetization App', desc: 'Platform enabling creators to publish content, sell subscriptions, and receive tips and payouts directly from their audience.' },
-    { no: '03', title: 'Audience-Analytics Dashboard', desc: 'Real-time analytics suite tracking watch-time, engagement, and churn signals to help content and marketing teams make data-driven decisions.' },
+    { no: '01', title: 'Streaming/OTT Platform', desc: 'A full streaming service: apps for web, mobile, and TV, a subscription and payment flow, a catalogue with Thai-language search, and the admin tools to run it. Suitable for a broadcaster, publisher, or sports and music brand moving from social-media distribution to its own audience. We usually launch with a focused catalogue and one or two platforms, then add more devices as viewing data shows where your audience is.' },
+    { no: '02', title: 'Creator-Monetization App', desc: 'An app where creators publish, build a fan community, and earn from memberships, tips, and paid content. Fans pay with the methods they use daily, creators see earnings and audience data, and your team has moderation and payout tools. Fits a talent agency, a network of independent creators, or a media brand launching a membership programme.' },
+    { no: '03', title: 'Audience-Analytics Dashboard', desc: 'A dashboard for editors and marketing showing viewing time, completion rates, returning viewers, and churn by title, campaign, and channel. It joins data from your player, CRM, and ad platforms into one view, so a discussion about what to commission or promote starts from the same numbers. Handy for teams who have data in several tools and no single place to read it.' },
   ] : [
-    { no: '01', title: 'Streaming/OTT Platform', desc: 'บริการ Video-on-demand และ Live Streaming ครบชุด ปรับคุณภาพภาพตามความเร็วเน็ต มีแอปรองรับหลายอุปกรณ์ และ Billing ทั้งแบบสมาชิกและแบบมีโฆษณา' },
-    { no: '02', title: 'Creator-Monetization App', desc: 'แพลตฟอร์มให้ Creator เผยแพร่คอนเทนต์ ขายสมาชิก และรับทิป พร้อมรับเงินตรงจากผู้ชม' },
-    { no: '03', title: 'Audience-Analytics Dashboard', desc: 'ชุด Analytics แบบเรียลไทม์ ติดตามเวลารับชม การมีส่วนร่วม และสัญญาณที่ผู้ชมจะยกเลิก ช่วยทีมคอนเทนต์และการตลาดตัดสินใจจากข้อมูล' },
+    { no: '01', title: 'Streaming/OTT Platform', desc: 'บริการสตรีมมิงเต็มรูปแบบ ประกอบด้วยแอปบนเว็บ มือถือ และทีวี ขั้นตอนสมัครสมาชิกและจ่ายเงิน คลังคอนเทนต์ที่ค้นหาภาษาไทยได้ และเครื่องมือแอดมินสำหรับดูแลทั้งหมด เหมาะกับสถานี สำนักพิมพ์ หรือแบรนด์กีฬาและดนตรีที่อยากย้ายจากการกระจายผ่านโซเชียลมามีฐานผู้ชมของตัวเอง ส่วนใหญ่เราเปิดตัวด้วยคลังที่โฟกัสและหนึ่งถึงสองแพลตฟอร์มก่อน แล้วค่อยเพิ่มอุปกรณ์ตามข้อมูลการดูที่บอกว่าผู้ชมของคุณอยู่ที่ไหน' },
+    { no: '02', title: 'Creator-Monetization App', desc: 'แอปที่ครีเอเตอร์เผยแพร่งาน สร้างคอมมูนิตี้แฟน และหารายได้จากสมาชิก ทิป และคอนเทนต์แบบเสียเงิน แฟนจ่ายด้วยวิธีที่ใช้ทุกวัน ครีเอเตอร์เห็นรายได้และข้อมูลผู้ติดตาม และทีมคุณมีเครื่องมือดูแลคอนเทนต์และโอนเงินให้ เหมาะกับเอเจนซีศิลปิน เครือข่ายครีเอเตอร์อิสระ หรือแบรนด์สื่อที่จะเปิดโปรแกรมสมาชิก' },
+    { no: '03', title: 'Audience-Analytics Dashboard', desc: 'แดชบอร์ดสำหรับทีมบรรณาธิการและการตลาด แสดงเวลาที่ดู อัตราดูจนจบ ผู้ชมที่กลับมา และคนเลิกใช้ แยกตามเรื่อง แคมเปญ และช่องทาง รวมข้อมูลจากตัวเล่นวิดีโอ CRM และแพลตฟอร์มโฆษณาไว้ในมุมมองเดียว เวลาคุยกันว่าจะสร้างหรือโปรโมตอะไร ทุกคนจะเริ่มจากตัวเลขชุดเดียวกัน เหมาะกับทีมที่ข้อมูลกระจายอยู่หลายเครื่องมือและไม่มีที่ไหนให้ดูรวม' },
   ]
 
   const heroVisual = (
@@ -176,8 +176,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <div className="w-12 h-[3px] rounded-full mb-8" style={{ background: 'linear-gradient(90deg, var(--purple-light), var(--lime))' }} />
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
-                  ? 'We help media and entertainment companies build streaming and OTT platforms, content management systems, audience analytics dashboards, and creator-monetization tools that turn viewers into loyal, paying audiences. Our solutions scale reliably through viral spikes and live events, combining resilient streaming infrastructure with the personalization and analytics that keep audiences coming back.'
-                  : 'เราช่วยบริษัทสื่อและบันเทิงสร้างแพลตฟอร์ม Streaming และ OTT ระบบจัดการคอนเทนต์ Dashboard วิเคราะห์ผู้ชม และเครื่องมือหารายได้ให้ Creator เพื่อให้ผู้ชมกลายเป็นแฟนประจำที่ยอมจ่าย ระบบของเรารองรับได้เสถียรแม้ช่วงคอนเทนต์ไวรัลหรืออีเวนต์สด เราผสมโครงสร้าง Streaming ที่แข็งแรงกับระบบแนะนำและ Analytics ที่ทำให้ผู้ชมกลับมาดูซ้ำ'}
+                  ? 'We build the platforms that publish and monetise content: streaming and OTT apps, content management systems, audience analytics, ticketing, and tools for creators. A project starts with a plain question: what does a viewer do between discovering your content and paying for it, and where do they leave? From there we design the player, catalogue, sign-up, and payment flow, and the back-office tools your editors and rights team use every day. We build for Thai viewing habits, with mobile-first screens, Thai-language search and subtitles, payment by card, PromptPay, or e-wallet, and capacity planned for the spikes that come with a live event or a viral clip.'
+                  : 'เราสร้างแพลตฟอร์มสำหรับเผยแพร่และหารายได้จากคอนเทนต์ ทั้งแอป Streaming และ OTT ระบบจัดการคอนเทนต์ การวิเคราะห์ผู้ชม ระบบจำหน่ายบัตร และเครื่องมือสำหรับครีเอเตอร์ โปรเจกต์เริ่มจากคำถามตรง ๆ ว่าคนดูทำอะไรบ้างตั้งแต่เจอคอนเทนต์ของคุณจนถึงตอนจ่ายเงิน และเขาเลิกไปตรงไหน จากนั้นเราออกแบบทั้งตัวเล่นวิดีโอ หน้าคลังคอนเทนต์ การสมัคร และการจ่ายเงิน รวมถึงเครื่องมือหลังบ้านที่ทีมบรรณาธิการและฝ่ายลิขสิทธิ์ใช้ทุกวัน เราออกแบบให้ตรงกับพฤติกรรมการดูของคนไทย คือเน้นมือถือ ค้นหาและมีซับไตเติลเป็นภาษาไทย จ่ายผ่านบัตร PromptPay หรืออี-วอลเล็ตได้ และเผื่อกำลังรับสำหรับช่วงที่มีไลฟ์สดหรือคลิปที่กลายเป็นไวรัล'}
               </p>
             </div>
           </div>
@@ -194,8 +194,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
-                ? 'Understanding the critical obstacles that drive digital transformation in this industry.'
-                : 'ปัญหาหลักที่ธุรกิจในอุตสาหกรรมนี้ต้องเจอ'}
+                ? 'Four things that decide whether a media product makes money: delivery cost at scale, viewer loyalty, rights management, and income beyond the subscription.'
+                : 'สี่เรื่องที่ตัดสินว่าผลิตภัณฑ์สื่อจะทำเงินได้ไหม คือต้นทุนส่งวิดีโอเมื่อคนดูเยอะ ความภักดีของผู้ชม การจัดการลิขสิทธิ์ และรายได้นอกเหนือจากค่าสมาชิก'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -245,7 +245,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
+              {isEN ? 'What we build for publishers, broadcasters, and creators, and what each tool does for audiences and for your own team.' : 'ระบบที่เราสร้างให้สำนักพิมพ์ สถานี และครีเอเตอร์ และสิ่งที่แต่ละเครื่องมือทำให้ทั้งผู้ชมและทีมของคุณ'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -272,8 +272,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
-                ? 'Industry-proven tools and frameworks we leverage to build robust solutions.'
-                : 'เครื่องมือและ Framework ที่เราเลือกใช้ เพราะมั่นคงและเชื่อถือได้'}
+                ? 'Video delivery, real-time, and web tools we use so playback stays smooth and content reaches viewers on any device.'
+                : 'เครื่องมือด้านการส่งวิดีโอ เรียลไทม์ และเว็บที่เราใช้ เพื่อให้เล่นวิดีโอลื่นและคอนเทนต์ไปถึงคนดูได้ทุกอุปกรณ์'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -299,7 +299,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างงานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
+              {isEN ? 'Three typical projects, covering what is built, who uses it, and how it earns or saves money.' : 'ตัวอย่างโปรเจกต์ทั่วไปสามแบบ ว่าสร้างอะไร ใครใช้ และช่วยหาเงินหรือประหยัดเงินได้ยังไง'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -339,7 +339,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
+              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังหน่อยว่าคุณกำลังทำอะไรอยู่'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link

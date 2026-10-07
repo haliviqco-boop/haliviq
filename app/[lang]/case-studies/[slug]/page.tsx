@@ -5,6 +5,23 @@ import Footer from '@/components/Footer'
 import { t, type Lang } from '@/lib/i18n'
 import { caseStudies, getCaseStudy } from '@/lib/case-studies-data'
 
+// Keep meta descriptions near 155 characters: fill with whole sentences (EN) or cut at a word boundary (TH).
+function trimMeta(text: string, max = 158): string {
+  if (text.length <= max) return text
+  const sentences = text.match(/[^.!?]+[.!?]+(\s|$)/g)
+  if (sentences) {
+    let out = ''
+    for (const s of sentences) {
+      if ((out + s).trim().length > max) break
+      out += s
+    }
+    if (out.trim().length >= 100) return out.trim()
+  }
+  const cut = text.slice(0, max - 1)
+  const lastSpace = cut.lastIndexOf(' ')
+  return (lastSpace > 100 ? cut.slice(0, lastSpace) : cut).trim() + '…'
+}
+
 export async function generateStaticParams() {
   const langs: Lang[] = ['th', 'en']
   return langs.flatMap((lang) => caseStudies.map((c) => ({ lang, slug: c.slug })))
@@ -15,15 +32,16 @@ export async function generateMetadata({ params }: { params: { lang: Lang; slug:
   const study = getCaseStudy(params.slug)
   if (!study) return {}
   const c = study[lang]
-  const title = `${c.title} | Haliviq Case Studies`
+  const title = `${c.title} | Haliviq`
+  const metaDesc = trimMeta(c.desc)
   const siteUrl = `https://haliviq.com/${lang}/case-studies/${study.slug}`
   return {
     title,
-    description: c.desc,
+    description: metaDesc,
     alternates: { canonical: siteUrl },
     openGraph: {
       title,
-      description: c.desc,
+      description: metaDesc,
       images: [c.heroImage],
       url: siteUrl,
       type: 'article',
@@ -31,7 +49,7 @@ export async function generateMetadata({ params }: { params: { lang: Lang; slug:
     twitter: {
       card: 'summary_large_image',
       title,
-      description: c.desc,
+      description: metaDesc,
       images: [c.heroImage],
     },
   }

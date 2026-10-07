@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import ServiceLayout from '@/components/service/ServiceLayout'
 import { type Lang } from '@/lib/i18n'
@@ -27,6 +28,24 @@ export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
 }
 
+export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+  const isEN = params.lang === 'en'
+  const title = isEN
+    ? 'E-Commerce Development Company in Bangkok | Haliviq'
+    : 'รับสร้างเว็บ E-Commerce กรุงเทพฯ แบบ Headless | Haliviq'
+  const description = isEN
+    ? 'Custom e-commerce development in Thailand on Medusa.js: a storefront built for your brand, PromptPay and Stripe checkout, shipping and ERP integrations.'
+    : 'Haliviq รับสร้างร้านออนไลน์บน Medusa.js หน้าร้านออกแบบเฉพาะแบรนด์ รองรับ PromptPay และ Stripe เชื่อมระบบขนส่งและ ERP โค้ดเป็นของคุณ ไม่มีค่าธรรมเนียมต่อธุรกรรม'
+  const url = `https://haliviq.com/${params.lang}/services/ecommerce`
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url },
+    twitter: { card: 'summary_large_image', title, description },
+  }
+}
+
 export default function Page({ params }: { params: { lang: Lang } }) {
   const isEN = params.lang === 'en'
   const prefix = `/${params.lang}`
@@ -34,40 +53,42 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge    = isEN ? 'Commerce / E-Commerce'  : 'Commerce / E-Commerce'
   const title    = isEN ? 'Commerce Built'  : 'อีคอมเมิร์ซที่สร้าง'
   const subtitle = isEN ? 'For Your Brand, Not a Template'    : 'เพื่อแบรนด์คุณ ไม่ใช่ Template สำเร็จรูป'
-  const heroDesc = isEN ? 'Headless, API-first commerce on Medusa.js — a storefront built for your brand, with payments, fulfillment, and integrations wired in from day one.'  : 'ระบบอีคอมเมิร์ซแบบ Headless API-First บน Medusa.js หน้าร้านที่สร้างเพื่อแบรนด์คุณโดยเฉพาะ พร้อมระบบชำระเงิน การจัดส่ง และการเชื่อมต่อระบบอื่นตั้งแต่วันแรก'
+  const heroDesc = isEN ? 'We build online stores on Medusa.js, an open-source commerce engine, and pair it with a storefront designed around your brand instead of a purchased theme. Carts, orders, pricing, and stock run in the back; checkout, shipping, and the systems you already use are connected from the first sprint. It suits Thai brands that have outgrown a template shop, or that want to own their store, their data, and their checkout experience.'  : 'เราสร้างร้านออนไลน์บน Medusa.js ซึ่งเป็นระบบอีคอมเมิร์ซแบบ Open-source แล้วออกแบบหน้าร้านให้เข้ากับแบรนด์ของคุณโดยเฉพาะ ไม่ได้ซื้อ Theme มาแปะ ฝั่งหลังบ้านจัดการตะกร้า ออเดอร์ ราคา และสต็อก ส่วนระบบชำระเงิน การจัดส่ง และระบบที่คุณใช้อยู่แล้วเราเชื่อมให้ตั้งแต่สปรินต์แรก เหมาะกับแบรนด์ไทยที่โตเกินร้านแบบ Template แล้ว หรืออยากเป็นเจ้าของร้าน ข้อมูล และประสบการณ์ตอนจ่ายเงินเองทั้งหมด'
   const whyTitle = isEN ? 'Why off-the-shelf platforms hit a ceiling'    : 'ทำไมแพลตฟอร์มสำเร็จรูปถึงมีเพดานจำกัด'
-  const whyDesc  = isEN ? 'Template platforms are fast to launch but fight you the moment your business needs something they were not built for. Headless, API-first commerce removes that ceiling entirely.'  : 'แพลตฟอร์มแบบ Template เปิดร้านได้เร็ว แต่จะเริ่มติดขัดทันทีที่ธุรกิจต้องการสิ่งที่ระบบไม่ได้ออกแบบไว้ อีคอมเมิร์ซแบบ Headless API-First ช่วยปลดข้อจำกัดนี้ได้ทั้งหมด'
+  const whyDesc  = isEN ? 'A template shop is quick to open, and for the first year that is often all you need. The trouble starts when you want a bundle price that follows your own rules, stock that is shared between two warehouses, or a checkout that asks one question fewer. At that point you are paying for apps, working around theme limits, and handing a slice of every sale to the platform. Splitting the storefront from the commerce engine takes those limits away, because each side can change without breaking the other.'  : 'ร้านแบบ Template เปิดได้เร็ว และปีแรกหลายร้านก็ใช้แค่นี้พอ ปัญหาเริ่มตอนที่อยากได้ราคาชุดตามกติกาของเราเอง อยากให้สต็อกใช้ร่วมกันระหว่างสองคลัง หรืออยากตัดหน้าชำระเงินให้สั้นลงอีกหนึ่งคำถาม ตอนนั้นคุณต้องจ่ายค่าแอปเสริม เลี่ยงข้อจำกัดของ Theme และแบ่งยอดขายทุกออเดอร์ให้แพลตฟอร์มไปด้วย พอแยกหน้าร้านออกจากระบบขายหลังบ้าน ข้อจำกัดเหล่านี้ก็หายไป เพราะแต่ละฝั่งแก้ได้โดยไม่กระทบอีกฝั่ง'
   const ctaTitle = isEN ? 'Ready to build commerce without the ceiling?'    : 'พร้อมสร้างอีคอมเมิร์ซที่ไม่มีเพดานจำกัดหรือยัง?'
-  const ctaDesc  = isEN ? 'Start with an architecture review of your current setup, or a clean build from scratch.'   : 'เริ่มด้วยการตรวจสถาปัตยกรรมของระบบปัจจุบัน หรือสร้างใหม่ทั้งหมดตั้งแต่ต้น'
+  const ctaDesc  = isEN ? 'Start with an architecture review of the store you have today, or with a clean build from scratch. Tell us your catalog size, the channels you sell on, and the systems that must connect, and we will say what a sensible first release looks like.'   : 'เริ่มจากให้เราตรวจโครงสร้างร้านที่คุณใช้อยู่ตอนนี้ หรือจะสร้างใหม่ตั้งแต่ต้นก็ได้ บอกเราว่ามีสินค้ากี่รายการ ขายผ่านช่องทางไหนบ้าง และต้องเชื่อมกับระบบอะไร แล้วเราจะบอกว่าเวอร์ชันแรกที่เหมาะควรหน้าตาเป็นยังไง'
   const overviewText = isEN
-    ? 'We build commerce platforms on a headless, API-first architecture using Medusa.js modules for carts, orders, pricing, and inventory, paired with a storefront custom-built for your brand rather than skinned onto a template. That means real design freedom on the frontend, and full control over payments, fulfillment, and every third-party integration your business actually needs — not just the ones a SaaS platform decided to support.'
-    : 'เราสร้างแพลตฟอร์มอีคอมเมิร์ซบนสถาปัตยกรรมแบบ Headless API-First โดยใช้โมดูลของ Medusa.js สำหรับตะกร้า คำสั่งซื้อ ราคา และสต็อก ควบคู่กับหน้าร้านที่สร้างเพื่อแบรนด์คุณโดยเฉพาะ ไม่ใช่แค่เอา Template มาเปลี่ยนหน้าตา คุณจึงออกแบบฝั่งหน้าบ้านได้อิสระเต็มที่ และคุมการชำระเงิน การจัดส่ง และการเชื่อมต่อกับบริการภายนอกทุกตัวที่ธุรกิจต้องการจริง ไม่ใช่แค่ตัวที่แพลตฟอร์ม SaaS เลือกรองรับให้'
+    ? 'We build commerce platforms on a headless, API-first architecture. Medusa.js modules handle carts, orders, pricing, and inventory, while the storefront is designed and coded for your brand rather than skinned onto a template. On the front end that gives you real design freedom. At the back you control payments, fulfillment, and every third-party integration your business needs, not only the ones a SaaS platform chose to support. You also keep the code, the database, and the customer data.'
+    : 'เราสร้างแพลตฟอร์มอีคอมเมิร์ซแบบ Headless API-First ใช้โมดูลของ Medusa.js จัดการตะกร้า ออเดอร์ ราคา และสต็อก ส่วนหน้าร้านเราออกแบบและเขียนโค้ดให้แบรนด์คุณโดยเฉพาะ ไม่ใช่เอา Template มาเปลี่ยนหน้าตา ฝั่งหน้าบ้านคุณจึงออกแบบได้อิสระ ส่วนหลังบ้านคุณคุมได้เองทั้งระบบชำระเงิน การจัดส่ง และการเชื่อมกับบริการภายนอกทุกตัวที่ธุรกิจต้องใช้ ไม่ใช่แค่ตัวที่แพลตฟอร์ม SaaS เลือกรองรับ และโค้ด ฐานข้อมูล กับข้อมูลลูกค้าก็เป็นของคุณ'
 
   const heroBullets = isEN ? [
-      'Headless, API-first architecture with Medusa.js modules',
-      'Storefront designed and built for your brand, not a theme',
-      'Payments, fulfillment, and shipping integrations built in',
-      'Custom integrations to ERP, CRM, and marketplaces',
-      'Built to scale from first sale to high-volume traffic',
+      'Headless, API-first build on Medusa.js modules for carts, orders, pricing, and stock',
+      'A storefront designed and coded for your brand, in Thai and English, not a theme',
+      'Checkout with Stripe and PromptPay, plus shipping and fulfillment integrations',
+      'Custom links to ERP, accounting, CRM, and marketplaces, built to your workflow',
+      'Admin screens your staff can run daily without calling a developer',
+      'Load-tested so the store holds up from the first sale to a flash-sale night',
     ] : [
-      'สถาปัตยกรรมแบบ Headless API-First ด้วยโมดูลของ Medusa.js',
-      'หน้าร้านที่ออกแบบและสร้างเพื่อแบรนด์คุณโดยเฉพาะ ไม่ใช่ Theme สำเร็จรูป',
-      'เชื่อมต่อระบบชำระเงิน การจัดส่ง และขนส่งครบทุกส่วน',
-      'เชื่อมต่อกับ ERP, CRM และ Marketplace แบบเขียนเอง',
-      'ออกแบบให้ขยายได้ ตั้งแต่ยอดขายแรกจนถึงช่วงที่มีคนเข้าเว็บจำนวนมาก',
+      'สร้างแบบ Headless API-First บนโมดูล Medusa.js ทั้งตะกร้า ออเดอร์ ราคา และสต็อก',
+      'หน้าร้านที่ออกแบบและเขียนโค้ดให้แบรนด์คุณ รองรับไทยและอังกฤษ ไม่ใช่ Theme สำเร็จรูป',
+      'หน้าชำระเงินที่รองรับ Stripe และ PromptPay พร้อมเชื่อมระบบจัดส่งและขนส่ง',
+      'เชื่อม ERP ระบบบัญชี CRM และ Marketplace ตามวิธีทำงานของคุณ',
+      'หน้าจอหลังบ้านที่ทีมงานใช้เองได้ทุกวัน ไม่ต้องโทรตามนักพัฒนา',
+      'ทดสอบโหลดไว้ก่อน ให้ร้านรับได้ตั้งแต่ยอดขายแรกจนถึงคืน Flash Sale',
     ]
   const whyPoints   = isEN ? [
-      'Template platforms limit design to what the theme system allows.',
-      'Headless architecture separates the storefront from commerce logic, unlocking any frontend experience.',
-      'Open-source modules like Medusa.js avoid vendor lock-in and per-transaction platform fees.',
-      'Custom integrations connect commerce directly to ERP, CRM, and fulfillment without brittle workarounds.',
-      'A codebase you own scales and evolves with the business, not the platform vendor’s roadmap.',
+      'Template platforms stop at what the theme system allows, so any unusual layout or pricing rule becomes a paid add-on or a compromise.',
+      'Headless splits the storefront from the commerce logic, so we can redesign the front end without touching orders, stock, or payments.',
+      'An open-source core like Medusa.js avoids vendor lock-in and the per-transaction platform fees that grow as your sales grow.',
+      'Direct integrations link the store to your ERP, CRM, and shipping, so orders flow through without copy-pasting between systems.',
+      'You own the codebase, so the store evolves on your schedule rather than waiting for a platform vendor’s roadmap.',
     ] : [
-      'แพลตฟอร์มแบบ Template จำกัดการออกแบบไว้แค่ที่ระบบ Theme อนุญาต',
-      'Headless แยกหน้าร้านออกจากระบบหลังบ้าน ทำให้ออกแบบฝั่งหน้าบ้านได้อิสระ',
-      'โมดูล Open-source อย่าง Medusa.js ช่วยเลี่ยงการผูกติดผู้ให้บริการและค่าธรรมเนียมต่อธุรกรรม',
-      'การเชื่อมต่อแบบเขียนเองทำให้ระบบขายเชื่อมตรงกับ ERP, CRM และระบบจัดส่งได้ โดยไม่ต้องใช้ทางลัดที่เปราะบาง',
-      'Codebase ที่คุณเป็นเจ้าของจะเติบโตไปกับธุรกิจ ไม่ใช่ตามแผนของเจ้าของแพลตฟอร์ม',
+      'แพลตฟอร์มแบบ Template หยุดอยู่แค่ที่ระบบ Theme ให้ทำ เลย์เอาต์แปลกหรือกติการาคาพิเศษจึงกลายเป็นแอปเสริมที่ต้องจ่ายเพิ่ม หรือต้องยอมประนีประนอม',
+      'Headless แยกหน้าร้านออกจากตรรกะการขาย เราจึงรีดีไซน์หน้าบ้านได้โดยไม่ต้องแตะออเดอร์ สต็อก หรือการชำระเงิน',
+      'ระบบหลักแบบ Open-source อย่าง Medusa.js ช่วยเลี่ยงการผูกติดผู้ให้บริการ และค่าธรรมเนียมต่อธุรกรรมที่โตตามยอดขายของคุณ',
+      'การเชื่อมระบบแบบตรงช่วยให้ร้านเชื่อมกับ ERP CRM และระบบจัดส่ง ออเดอร์ไหลเข้าไปเองโดยไม่ต้องก๊อปปี้วางข้ามระบบ',
+      'คุณเป็นเจ้าของโค้ด ร้านจึงพัฒนาไปตามจังหวะของคุณ ไม่ต้องรอแผนงานของเจ้าของแพลตฟอร์ม',
     ]
   const outcomes    = isEN ? [
       {stat: '100%', label: 'Design Freedom', desc: 'No theme system constraints'},
@@ -81,54 +102,60 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {stat: '<8wk', label: 'ระยะเวลาเปิดร้าน', desc: 'ตั้งแต่เริ่มจนถึงเปิดใช้งานจริง'}
     ]
   const features    = isEN ? [
-      {icon: 'ti-api', title: 'Headless, API-First Architecture', desc: 'Commerce logic decoupled from the frontend, giving total freedom over the customer experience.'},
-      {icon: 'ti-puzzle', title: 'Medusa.js Modules', desc: 'Carts, orders, pricing, promotions, and inventory built on a proven open-source commerce engine.'},
-      {icon: 'ti-brush', title: 'Storefront Built for Your Brand', desc: 'A custom-designed storefront, not a re-skinned template, built to convert for your specific audience.'},
-      {icon: 'ti-credit-card', title: 'Payments & Fulfillment', desc: 'Stripe and local payment methods, shipping providers, and fulfillment workflows wired in.'},
-      {icon: 'ti-plug-connected', title: 'Custom Integrations', desc: 'Connections into ERP, CRM, marketplaces, and internal tools without brittle workarounds.'},
-      {icon: 'ti-trending-up', title: 'Built to Scale', desc: 'Architecture that handles traffic spikes and catalog growth without a re-platform.'}
+      {icon: 'ti-api', title: 'Headless, API-First Architecture', desc: 'The commerce engine and the storefront talk through APIs, so they can be changed independently. You can add a mobile app, a LINE storefront, or a second brand site later and reuse the same products, prices, and orders instead of starting over.'},
+      {icon: 'ti-puzzle', title: 'Medusa.js Modules', desc: 'Carts, orders, pricing, promotions, and inventory come from Medusa.js, an open-source engine used in production. We configure it for your catalog and add custom modules where your rules differ, such as bundle pricing or B2B price lists.'},
+      {icon: 'ti-brush', title: 'Storefront Built for Your Brand', desc: 'We design the product pages, search, cart, and checkout around how your customers shop, then build them in Next.js for speed. The result looks like your brand and not like a theme, and it works in Thai and English.'},
+      {icon: 'ti-credit-card', title: 'Payments & Fulfillment', desc: 'We connect Stripe for cards, PromptPay and local gateways for Thai customers, and the shipping providers you ship with. Order status, tracking numbers, and stock levels update on their own as parcels move.'},
+      {icon: 'ti-plug-connected', title: 'Custom Integrations', desc: 'We link the store to your ERP, accounting software, CRM, marketplaces, and internal tools. Each connection is built to your workflow and monitored, so a failed sync is flagged instead of discovered a week later.'},
+      {icon: 'ti-trending-up', title: 'Built to Scale', desc: 'We plan for catalog growth and traffic spikes from the start, and load-test the checkout before big sale dates. If you add products, warehouses, or markets later, you extend the same system rather than switching platforms.'}
     ] : [
-      {icon: 'ti-api', title: 'Headless, API-First Architecture', desc: 'แยกระบบหลังบ้านออกจากหน้าบ้าน ทำให้ออกแบบประสบการณ์ลูกค้าได้อย่างอิสระ'},
-      {icon: 'ti-puzzle', title: 'Medusa.js Modules', desc: 'ตะกร้า คำสั่งซื้อ ราคา โปรโมชัน และสต็อก บนระบบ Open-source ที่ผ่านการใช้งานจริง'},
-      {icon: 'ti-brush', title: 'Storefront Built for Your Brand', desc: 'หน้าร้านออกแบบเฉพาะ ไม่ใช่ Template ที่เปลี่ยนแค่หน้าตา สร้างมาเพื่อให้กลุ่มลูกค้าของคุณซื้อ'},
-      {icon: 'ti-credit-card', title: 'Payments & Fulfillment', desc: 'เชื่อมต่อ Stripe และช่องทางชำระเงินในไทย ผู้ให้บริการขนส่ง และขั้นตอนจัดส่งสินค้า'},
-      {icon: 'ti-plug-connected', title: 'Custom Integrations', desc: 'เชื่อมต่อ ERP, CRM, Marketplace และเครื่องมือภายใน โดยไม่ต้องใช้ทางลัดที่เปราะบาง'},
-      {icon: 'ti-trending-up', title: 'Built to Scale', desc: 'สถาปัตยกรรมที่รองรับช่วงคนเข้าเว็บพุ่งสูงและสินค้าที่เพิ่มขึ้น โดยไม่ต้องย้ายแพลตฟอร์มใหม่'}
+      {icon: 'ti-api', title: 'Headless, API-First Architecture', desc: 'ระบบขายหลังบ้านกับหน้าร้านคุยกันผ่าน API จึงแก้แยกกันได้ ถ้าวันหน้าอยากเพิ่มโมบายแอป หน้าร้านบน LINE หรือเว็บแบรนด์ที่สอง ก็ใช้สินค้า ราคา และออเดอร์ชุดเดิมต่อได้เลย ไม่ต้องเริ่มใหม่'},
+      {icon: 'ti-puzzle', title: 'Medusa.js Modules', desc: 'ตะกร้า ออเดอร์ ราคา โปรโมชัน และสต็อก มาจาก Medusa.js ซึ่งเป็นระบบ Open-source ที่ใช้งานจริงในโปรดักชัน เราตั้งค่าให้ตรงกับสินค้าของคุณ และเขียนโมดูลเพิ่มตรงที่กติกาของคุณต่างออกไป เช่น ราคาชุดสินค้าหรือราคาสำหรับลูกค้า B2B'},
+      {icon: 'ti-brush', title: 'Storefront Built for Your Brand', desc: 'เราออกแบบหน้าสินค้า การค้นหา ตะกร้า และหน้าชำระเงิน ตามวิธีที่ลูกค้าของคุณซื้อของ แล้วสร้างด้วย Next.js ให้โหลดเร็ว ผลที่ได้ดูเป็นแบรนด์คุณ ไม่ใช่ Theme และใช้ได้ทั้งภาษาไทยและอังกฤษ'},
+      {icon: 'ti-credit-card', title: 'Payments & Fulfillment', desc: 'เราเชื่อม Stripe สำหรับบัตร PromptPay และ Payment Gateway ในไทยสำหรับลูกค้าคนไทย รวมถึงขนส่งที่คุณใช้ส่งของ สถานะออเดอร์ เลขพัสดุ และจำนวนสต็อกจะอัปเดตเองตามที่พัสดุเคลื่อนที่'},
+      {icon: 'ti-plug-connected', title: 'Custom Integrations', desc: 'เราเชื่อมร้านเข้ากับ ERP โปรแกรมบัญชี CRM Marketplace และเครื่องมือภายในของคุณ แต่ละตัวเชื่อมสร้างตามวิธีทำงานของคุณและมีระบบเฝ้าดู ถ้าซิงก์พลาดจะมีแจ้งเตือน ไม่ต้องไปรู้ตอนผ่านไปแล้วหนึ่งสัปดาห์'},
+      {icon: 'ti-trending-up', title: 'Built to Scale', desc: 'เราคิดเรื่องสินค้าที่เพิ่มขึ้นและช่วงคนเข้าเว็บพุ่งสูงตั้งแต่ต้น และทดสอบโหลดหน้าชำระเงินก่อนวันลดราคาใหญ่ ถ้าวันหน้าเพิ่มสินค้า คลัง หรือตลาดใหม่ ก็ต่อยอดระบบเดิมได้ ไม่ต้องย้ายแพลตฟอร์ม'}
     ]
   const steps       = isEN ? [
-      {no: '01', title: 'Discovery', desc: 'Understand catalog, operations, and growth plans.'},
-      {no: '02', title: 'Architecture', desc: 'Design the Medusa.js data model and integrations.'},
-      {no: '03', title: 'Development', desc: 'Build the storefront and commerce backend.'},
-      {no: '04', title: 'Integration', desc: 'Connect payments, fulfillment, and third-party tools.'},
-      {no: '05', title: 'Launch', desc: 'Go-live support and performance validation.'},
-      {no: '06', title: 'Support & Growth', desc: 'Ongoing feature development and optimization.'}
+      {no: '01', title: 'Discovery', desc: 'We go through your catalog, how orders are picked and shipped, which systems must connect, and where you want sales to be in a year. You get a short scope note that lists what the first release includes and what waits for later.'},
+      {no: '02', title: 'Architecture', desc: 'We design the Medusa.js data model for your products, variants, and price rules, and map every integration, from payment gateways to your ERP. You see the plan on paper before any code is written.'},
+      {no: '03', title: 'Development', desc: 'We design and build the storefront and the commerce back end together, in short sprints. You can click through a working store every couple of weeks and tell us what to change while it is still cheap.'},
+      {no: '04', title: 'Integration', desc: 'We connect payments, shipping, accounting, and other tools, then test real scenarios such as a failed payment, a partial refund, and an order split across warehouses.'},
+      {no: '05', title: 'Launch', desc: 'We migrate products, customers, and open orders, run a final load test, and stay with you through go-live. Page speed and checkout are checked on real phones, not only on a laptop.'},
+      {no: '06', title: 'Support & Growth', desc: 'After launch we fix issues, add features, and tune speed and conversion. Support is a monthly arrangement if you want it, and your own developers can take over any time because you own the code.'}
     ] : [
-      {no: '01', title: 'Discovery', desc: 'ทำความเข้าใจรายการสินค้า การทำงานของธุรกิจ และแผนการเติบโต'},
-      {no: '02', title: 'Architecture', desc: 'ออกแบบ Data Model ของ Medusa.js และการเชื่อมต่อ'},
-      {no: '03', title: 'Development', desc: 'สร้างหน้าร้านและระบบหลังบ้าน'},
-      {no: '04', title: 'Integration', desc: 'เชื่อมต่อระบบชำระเงิน การจัดส่ง และเครื่องมือภายนอก'},
-      {no: '05', title: 'Launch', desc: 'ช่วยตอนเปิดใช้งานจริง และตรวจความเร็วของระบบ'},
-      {no: '06', title: 'Support & Growth', desc: 'พัฒนาฟีเจอร์และปรับปรุงต่อเนื่อง'}
+      {no: '01', title: 'Discovery', desc: 'เราไล่ดูรายการสินค้า วิธีหยิบและส่งของ ระบบที่ต้องเชื่อม และเป้ายอดขายปีหน้าของคุณ คุณจะได้โน้ตขอบเขตสั้นๆ ว่าเวอร์ชันแรกมีอะไรบ้าง และอะไรเก็บไว้ทำทีหลัง'},
+      {no: '02', title: 'Architecture', desc: 'เราออกแบบ Data Model ของ Medusa.js ให้เข้ากับสินค้า Variant และกติการาคาของคุณ และวางแผนการเชื่อมต่อทุกตัว ตั้งแต่ Payment Gateway ไปจนถึง ERP คุณจะเห็นแผนบนกระดาษก่อนเริ่มเขียนโค้ด'},
+      {no: '03', title: 'Development', desc: 'เราออกแบบและสร้างหน้าร้านกับระบบขายหลังบ้านไปด้วยกัน เป็นสปรินต์สั้นๆ ทุกสองสามสัปดาห์คุณจะได้กดเล่นร้านที่ใช้งานได้จริง แล้วบอกเราว่าจะแก้ตรงไหน ตอนที่ยังแก้ได้ถูก'},
+      {no: '04', title: 'Integration', desc: 'เราเชื่อมระบบชำระเงิน การจัดส่ง บัญชี และเครื่องมืออื่นๆ แล้วลองสถานการณ์จริง เช่น จ่ายเงินไม่ผ่าน คืนเงินบางส่วน และออเดอร์ที่ต้องแยกส่งจากหลายคลัง'},
+      {no: '05', title: 'Launch', desc: 'เราย้ายสินค้า ลูกค้า และออเดอร์ที่ค้างอยู่ ทดสอบโหลดรอบสุดท้าย และอยู่เป็นเพื่อนตอนเปิดใช้งานจริง ความเร็วหน้าเว็บกับหน้าชำระเงินตรวจบนมือถือจริง ไม่ใช่แค่บนโน้ตบุ๊ก'},
+      {no: '06', title: 'Support & Growth', desc: 'หลังเปิดร้าน เราแก้ปัญหา เพิ่มฟีเจอร์ และปรับความเร็วกับ Conversion ต่อ จะให้เราดูแลรายเดือนก็ได้ และนักพัฒนาของคุณรับช่วงต่อได้ทุกเมื่อ เพราะโค้ดเป็นของคุณ'}
     ]
   const caseStudies = isEN ? [
-      {tag: 'Fashion Retail · Bangkok', title: 'Headless Rebuild Cuts Load Time 3x', desc: 'Migrated from a legacy SaaS platform to a custom Medusa.js storefront.', result: '3x faster page loads'},
-      {tag: 'Consumer Goods · Nationwide', title: 'Multi-Warehouse Fulfillment Automated', desc: 'Custom inventory and fulfillment integration across 12 warehouses.', result: 'Zero manual order routing'},
-      {tag: 'Beauty · Bangkok', title: 'Launched in 6 Weeks, Zero Transaction Fees', desc: 'Full storefront and backend built on open-source Medusa.js.', result: '0% platform transaction fees'}
+      {tag: 'Fashion Retail · Bangkok', title: 'Headless Rebuild Cuts Load Time 3x', desc: 'A fashion retailer moved off a legacy SaaS platform onto a custom Medusa.js storefront. Product pages that used to crawl on mobile now open about three times faster.', result: '3x faster page loads'},
+      {tag: 'Consumer Goods · Nationwide', title: 'Multi-Warehouse Fulfillment Automated', desc: 'We built custom inventory and fulfillment links across 12 warehouses, so each order is routed to the right warehouse by rule instead of by a person.', result: 'Zero manual order routing'},
+      {tag: 'Beauty · Bangkok', title: 'Launched in 6 Weeks, Zero Transaction Fees', desc: 'A full storefront and back end built on open-source Medusa.js, live in six weeks, with no platform fee taken from each sale.', result: '0% platform transaction fees'}
     ] : [
-      {tag: 'Fashion Retail · กรุงเทพฯ', title: 'สร้างใหม่แบบ Headless ลดเวลาโหลด 3 เท่า', desc: 'ย้ายจากแพลตฟอร์ม SaaS เดิมมาเป็นหน้าร้าน Medusa.js ที่สร้างเอง', result: 'โหลดหน้าเว็บเร็วขึ้น 3 เท่า'},
-      {tag: 'Consumer Goods · ทั่วประเทศ', title: 'จัดส่งจากหลายคลังสินค้าแบบอัตโนมัติ', desc: 'เชื่อมระบบสต็อกและจัดส่งที่สร้างเอง ครอบคลุม 12 คลัง', result: 'ไม่ต้องจัดเส้นทางคำสั่งซื้อด้วยมือ'},
-      {tag: 'Beauty · กรุงเทพฯ', title: 'เปิดร้านใน 6 สัปดาห์ ไม่มีค่าธรรมเนียมต่อธุรกรรม', desc: 'สร้างหน้าร้านและระบบหลังบ้านเต็มรูปแบบบน Medusa.js แบบ Open-source', result: 'ไม่มีค่าธรรมเนียมแพลตฟอร์ม'}
+      {tag: 'Fashion Retail · กรุงเทพฯ', title: 'สร้างใหม่แบบ Headless ลดเวลาโหลด 3 เท่า', desc: 'ร้านแฟชั่นย้ายจากแพลตฟอร์ม SaaS เดิมมาเป็นหน้าร้าน Medusa.js ที่สร้างเอง หน้าสินค้าที่เคยโหลดช้าบนมือถือ ตอนนี้เปิดเร็วขึ้นราวสามเท่า', result: 'โหลดหน้าเว็บเร็วขึ้น 3 เท่า'},
+      {tag: 'Consumer Goods · ทั่วประเทศ', title: 'จัดส่งจากหลายคลังสินค้าแบบอัตโนมัติ', desc: 'เราสร้างตัวเชื่อมสต็อกและการจัดส่งครอบคลุม 12 คลัง ออเดอร์แต่ละใบถูกส่งไปคลังที่เหมาะตามกติกาที่ตั้งไว้ ไม่ต้องให้คนมาเลือก', result: 'ไม่ต้องจัดเส้นทางคำสั่งซื้อด้วยมือ'},
+      {tag: 'Beauty · กรุงเทพฯ', title: 'เปิดร้านใน 6 สัปดาห์ ไม่มีค่าธรรมเนียมต่อธุรกรรม', desc: 'สร้างหน้าร้านและระบบหลังบ้านเต็มรูปแบบบน Medusa.js แบบ Open-source เปิดใช้งานได้ใน 6 สัปดาห์ และไม่มีค่าธรรมเนียมแพลตฟอร์มหักจากทุกยอดขาย', result: 'ไม่มีค่าธรรมเนียมแพลตฟอร์ม'}
     ]
   const faqs        = isEN ? [
-      {q: 'Why build on Medusa.js instead of Shopify or a similar SaaS platform?', a: 'Medusa.js gives full ownership of the codebase, no per-transaction platform fees, and no ceiling on customization — you are not limited to what a SaaS vendor decides to support.'},
-      {q: 'Can you migrate our existing store?', a: 'Yes. We handle product, customer, and order data migration with minimal downtime and a clear cutover plan.'},
-      {q: 'What payment methods can be supported?', a: 'Stripe, plus Thai payment methods like PromptPay and popular local payment gateways, integrated directly into checkout.'},
-      {q: 'Do you handle fulfillment and shipping integration?', a: 'Yes, including multi-warehouse routing, shipping provider integrations, and real-time inventory sync.'}
+      {q: 'Why build on Medusa.js instead of Shopify or a similar SaaS platform?', a: 'Medusa.js gives you the whole codebase, no per-transaction platform fees, and no ceiling on customization. Shopify is a good fit for many shops. We suggest Medusa.js when your pricing, stock, or checkout rules need to go beyond what a hosted platform allows.'},
+      {q: 'Can you migrate our existing store?', a: 'Yes. We move products, customers, and order history, keep URLs redirected so search rankings are not lost, and agree a cutover plan so the switch happens with as little downtime as possible.'},
+      {q: 'What payment methods can be supported?', a: 'Stripe for international cards, plus Thai options such as PromptPay and popular local payment gateways, all built into the checkout itself.'},
+      {q: 'Do you handle fulfillment and shipping integration?', a: 'Yes. That includes multi-warehouse routing, shipping provider integrations, tracking numbers sent back to the order, and real-time stock sync.'},
+      {q: 'Will the store work in Thai and English?', a: 'Yes. We design for both languages from the start, including product data, emails, and checkout wording, and test Thai text and fonts on real phones.'},
+      {q: 'Can my team manage products and orders without a developer?', a: 'Yes. We set up admin screens for products, prices, promotions, and orders, and train your staff. Developers are only needed for new features, not for daily work.'},
+      {q: 'What do you need from us to scope the project?', a: 'A rough catalog size, the channels you sell on, the systems that must connect, and a link to your current store if you have one. That is enough for us to propose a first release and a timeline.'}
     ] : [
-      {q: 'ทำไมต้องสร้างบน Medusa.js แทน Shopify หรือ SaaS อื่น?', a: 'Medusa.js ให้คุณเป็นเจ้าของ Codebase เต็มรูปแบบ ไม่มีค่าธรรมเนียมต่อธุรกรรม และไม่มีเพดานจำกัดการปรับแต่ง คุณไม่ต้องติดอยู่กับสิ่งที่ผู้ให้บริการ SaaS เลือกรองรับ'},
-      {q: 'ย้ายร้านค้าเดิมมาได้ไหม?', a: 'ได้ครับ เราดูแลการย้ายข้อมูลสินค้า ลูกค้า และคำสั่งซื้อ โดยให้ระบบหยุดชะงักน้อยที่สุด พร้อมแผนสลับระบบที่ชัดเจน'},
-      {q: 'รองรับช่องทางชำระเงินแบบไหนบ้าง?', a: 'Stripe รวมถึงช่องทางชำระเงินในไทยอย่าง PromptPay และ Payment Gateway ในประเทศยอดนิยม เชื่อมตรงเข้าหน้าชำระเงิน'},
-      {q: 'ดูแลเรื่องการจัดส่งและขนส่งไหม?', a: 'ดูแลครับ รวมถึงการจัดเส้นทางจากหลายคลังสินค้า เชื่อมผู้ให้บริการขนส่ง และซิงก์สต็อกแบบ Real-time'}
+      {q: 'ทำไมต้องสร้างบน Medusa.js แทน Shopify หรือ SaaS อื่น?', a: 'Medusa.js ให้คุณได้ Codebase ทั้งชุด ไม่มีค่าธรรมเนียมต่อธุรกรรม และไม่มีเพดานจำกัดการปรับแต่ง Shopify เหมาะกับร้านจำนวนมากอยู่แล้ว เราแนะนำ Medusa.js ตอนที่กติการาคา สต็อก หรือหน้าชำระเงินของคุณต้องการมากกว่าที่แพลตฟอร์มสำเร็จรูปรองรับ'},
+      {q: 'ย้ายร้านค้าเดิมมาได้ไหม?', a: 'ได้ เราย้ายสินค้า ลูกค้า และประวัติออเดอร์ ตั้ง Redirect ของ URL เก่าให้ไม่เสียอันดับบน Google และตกลงแผนสลับระบบร่วมกัน เพื่อให้ช่วงเปลี่ยนมีเว็บล่มน้อยที่สุด'},
+      {q: 'รองรับช่องทางชำระเงินแบบไหนบ้าง?', a: 'Stripe สำหรับบัตรต่างประเทศ และช่องทางในไทยอย่าง PromptPay กับ Payment Gateway ในประเทศยอดนิยม สร้างเข้าไปในหน้าชำระเงินเลย'},
+      {q: 'ดูแลเรื่องการจัดส่งและขนส่งไหม?', a: 'ดูแล รวมถึงการจัดเส้นทางจากหลายคลัง เชื่อมผู้ให้บริการขนส่ง ส่งเลขพัสดุกลับเข้าออเดอร์ และซิงก์สต็อกแบบ Real-time'},
+      {q: 'ร้านรองรับทั้งภาษาไทยและอังกฤษไหม?', a: 'รองรับ เราออกแบบสองภาษาตั้งแต่แรก ทั้งข้อมูลสินค้า อีเมล และข้อความในหน้าชำระเงิน และทดสอบข้อความไทยกับ Font บนมือถือจริง'},
+      {q: 'ทีมเราจัดการสินค้าและออเดอร์เองได้ไหม ไม่ต้องพึ่งนักพัฒนา?', a: 'ได้ เราทำหน้าจอหลังบ้านสำหรับจัดการสินค้า ราคา โปรโมชัน และออเดอร์ แล้วอบรมทีมคุณ ต้องใช้นักพัฒนาเฉพาะตอนเพิ่มฟีเจอร์ใหม่ ไม่ใช่งานประจำวัน'},
+      {q: 'ต้องเตรียมอะไรให้เราบ้าง เพื่อประเมินโปรเจกต์?', a: 'จำนวนสินค้าคร่าวๆ ช่องทางที่ขายอยู่ ระบบที่ต้องเชื่อม และลิงก์ร้านปัจจุบันถ้ามี แค่นี้เราก็เสนอเวอร์ชันแรกและไทม์ไลน์ให้ได้'}
     ]
   const related     = isEN ? [
       {label: 'LINE Mini Apps', href: '/services/line-mini-apps'},
@@ -199,15 +226,19 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   )
 
   const capabilities = isEN ? [
-    { icon: 'ti-api', title: 'Headless, API-First Architecture', desc: 'Commerce logic decoupled from the frontend, giving total freedom over the customer experience.' },
-    { icon: 'ti-puzzle', title: 'Medusa.js Modules', desc: 'Carts, orders, pricing, promotions, and inventory built on a proven open-source commerce engine.' },
-    { icon: 'ti-brush', title: 'Storefront Built for Your Brand', desc: 'A custom-designed storefront, not a re-skinned template, built to convert for your specific audience.' },
-    { icon: 'ti-credit-card', title: 'Payments, Fulfillment & Integrations', desc: 'Stripe, local payment methods, shipping providers, and custom system integrations wired in.' },
+    { icon: 'ti-api', title: 'Headless, API-First Architecture', desc: 'Storefront and commerce engine are separate, so you can redesign the front end, add an app, or open a second store without rebuilding orders and stock. This suits brands planning more than one sales channel.' },
+    { icon: 'ti-puzzle', title: 'Medusa.js Modules', desc: 'Carts, orders, pricing, promotions, and inventory on an open-source engine that is proven in production. We add custom modules for bundle pricing, B2B price lists, or any rule a standard setup does not cover.' },
+    { icon: 'ti-brush', title: 'Storefront Built for Your Brand', desc: 'Product pages, search, cart, and checkout designed around how your customers shop and coded in Next.js for speed. It looks like your brand, reads well in Thai and English, and opens fast on a mid-range phone.' },
+    { icon: 'ti-credit-card', title: 'Payments, Fulfillment & Integrations', desc: 'Stripe, PromptPay, local gateways, and your shipping providers, plus links to ERP, accounting, CRM, and marketplaces. Status, tracking, and stock update automatically as orders move.' },
+    { icon: 'ti-device-desktop-analytics', title: 'Admin Your Team Can Run', desc: 'Back-office screens for products, prices, promotions, orders, and refunds that your own staff use every day. We train the team, so routine work never waits for a developer.' },
+    { icon: 'ti-trending-up', title: 'Built to Scale', desc: 'Designed for growing catalogs and sale-night traffic, with checkout load-tested beforehand. When you add warehouses or markets, you extend the same system instead of re-platforming.' },
   ] : [
-    { icon: 'ti-api', title: 'Headless, API-First Architecture', desc: 'แยกระบบหลังบ้านออกจากหน้าบ้าน ทำให้ออกแบบประสบการณ์ลูกค้าได้อย่างอิสระ' },
-    { icon: 'ti-puzzle', title: 'Medusa.js Modules', desc: 'ตะกร้า คำสั่งซื้อ ราคา โปรโมชัน และสต็อก บนระบบ Open-source ที่ผ่านการใช้งานจริง' },
-    { icon: 'ti-brush', title: 'Storefront Built for Your Brand', desc: 'หน้าร้านออกแบบเฉพาะ ไม่ใช่ Template ที่เปลี่ยนแค่หน้าตา สร้างมาเพื่อให้กลุ่มลูกค้าของคุณซื้อ' },
-    { icon: 'ti-credit-card', title: 'Payments, Fulfillment & Integrations', desc: 'เชื่อมต่อ Stripe ช่องทางชำระเงินในไทย ผู้ให้บริการขนส่ง และระบบที่เขียนเองตามต้องการ' },
+    { icon: 'ti-api', title: 'Headless, API-First Architecture', desc: 'หน้าร้านกับระบบขายแยกกัน จึงรีดีไซน์หน้าบ้าน เพิ่มแอป หรือเปิดร้านที่สองได้โดยไม่ต้องสร้างออเดอร์และสต็อกใหม่ เหมาะกับแบรนด์ที่วางแผนขายหลายช่องทาง' },
+    { icon: 'ti-puzzle', title: 'Medusa.js Modules', desc: 'ตะกร้า ออเดอร์ ราคา โปรโมชัน และสต็อก บนระบบ Open-source ที่ผ่านการใช้งานจริง เราเขียนโมดูลเพิ่มสำหรับราคาชุดสินค้า ราคา B2B หรือกติกาอื่นที่ระบบมาตรฐานไม่มีให้' },
+    { icon: 'ti-brush', title: 'Storefront Built for Your Brand', desc: 'หน้าสินค้า การค้นหา ตะกร้า และหน้าชำระเงิน ออกแบบตามวิธีที่ลูกค้าคุณซื้อของ เขียนด้วย Next.js ให้เร็ว ดูเป็นแบรนด์คุณ อ่านง่ายทั้งไทยและอังกฤษ และเปิดเร็วบนมือถือรุ่นกลางๆ' },
+    { icon: 'ti-credit-card', title: 'Payments, Fulfillment & Integrations', desc: 'Stripe PromptPay Payment Gateway ในไทย และขนส่งที่คุณใช้ พร้อมเชื่อม ERP ระบบบัญชี CRM และ Marketplace สถานะ เลขพัสดุ และสต็อกอัปเดตเองตามที่ออเดอร์เดินทาง' },
+    { icon: 'ti-device-desktop-analytics', title: 'Admin Your Team Can Run', desc: 'หน้าจอหลังบ้านสำหรับจัดการสินค้า ราคา โปรโมชัน ออเดอร์ และการคืนเงิน ที่ทีมของคุณใช้เองทุกวัน เราอบรมทีมให้ งานประจำจึงไม่ต้องรอนักพัฒนา' },
+    { icon: 'ti-trending-up', title: 'Built to Scale', desc: 'ออกแบบให้รับสินค้าที่เพิ่มขึ้นและคนเข้าเว็บช่วงลดราคาได้ โดยทดสอบโหลดหน้าชำระเงินไว้ก่อน เมื่อเพิ่มคลังหรือตลาดใหม่ก็ต่อยอดระบบเดิม ไม่ต้องย้ายแพลตฟอร์ม' },
   ]
 
   const techStack = [
@@ -222,39 +253,43 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   ] as { label: string; icon?: string; svg?: string }[]
 
   const approachSteps = isEN ? [
-    { no: '01', title: 'Discovery', desc: 'Catalog, operations, growth plans' },
-    { no: '02', title: 'Architecture', desc: 'Data model and integration design' },
-    { no: '03', title: 'Development', desc: 'Storefront and commerce backend' },
-    { no: '04', title: 'Integration', desc: 'Payments, fulfillment, third-party tools' },
-    { no: '05', title: 'Launch', desc: 'Go-live support and validation' },
-    { no: '06', title: 'Support & Growth', desc: 'Ongoing development and optimization' },
+    { no: '01', title: 'Discovery', desc: 'Catalog, order handling, systems to connect, and growth plans' },
+    { no: '02', title: 'Architecture', desc: 'Data model, price rules, and integration map' },
+    { no: '03', title: 'Development', desc: 'Storefront and commerce back end in short sprints' },
+    { no: '04', title: 'Integration', desc: 'Payments, shipping, accounting, and other tools tested on real scenarios' },
+    { no: '05', title: 'Launch', desc: 'Data migration, load test, and go-live support' },
+    { no: '06', title: 'Support & Growth', desc: 'Fixes, new features, and speed and conversion tuning' },
   ] : [
-    { no: '01', title: 'Discovery', desc: 'รายการสินค้า การทำงานของธุรกิจ และแผนการเติบโต' },
-    { no: '02', title: 'Architecture', desc: 'ออกแบบ Data Model และการเชื่อมต่อ' },
-    { no: '03', title: 'Development', desc: 'หน้าร้านและระบบหลังบ้าน' },
-    { no: '04', title: 'Integration', desc: 'ระบบชำระเงิน การจัดส่ง และเครื่องมือภายนอก' },
-    { no: '05', title: 'Launch', desc: 'ช่วยตอนเปิดใช้งานจริง และตรวจความเร็ว' },
-    { no: '06', title: 'Support & Growth', desc: 'พัฒนาและปรับปรุงต่อเนื่อง' },
+    { no: '01', title: 'Discovery', desc: 'สินค้า วิธีจัดการออเดอร์ ระบบที่ต้องเชื่อม และแผนการเติบโต' },
+    { no: '02', title: 'Architecture', desc: 'Data Model กติการาคา และแผนผังการเชื่อมต่อ' },
+    { no: '03', title: 'Development', desc: 'หน้าร้านและระบบขายหลังบ้าน เป็นสปรินต์สั้นๆ' },
+    { no: '04', title: 'Integration', desc: 'ระบบชำระเงิน จัดส่ง บัญชี และเครื่องมืออื่น ทดสอบด้วยสถานการณ์จริง' },
+    { no: '05', title: 'Launch', desc: 'ย้ายข้อมูล ทดสอบโหลด และช่วยตอนเปิดใช้งาน' },
+    { no: '06', title: 'Support & Growth', desc: 'แก้ปัญหา เพิ่มฟีเจอร์ และปรับความเร็วกับ Conversion' },
   ]
 
   const darkFaqs = isEN ? [
-    { q: 'Why build on Medusa.js instead of Shopify or a similar SaaS platform?', a: 'Medusa.js gives full ownership of the codebase, no per-transaction platform fees, and no ceiling on customization. You are never limited to what a SaaS vendor decided to support — the frontend, checkout flow, and backend logic are all yours to shape.' },
-    { q: 'Can you migrate our existing store to this architecture?', a: 'Yes. We handle product, customer, and order data migration with minimal downtime and a clear cutover plan, so the storefront switches over without disrupting live sales.' },
-    { q: 'What payment methods can be supported?', a: 'Stripe for international cards, plus Thai payment methods like PromptPay and popular local payment gateways, all integrated directly into a custom checkout flow rather than a bolted-on plugin.' },
-    { q: 'Do you handle fulfillment and shipping integration?', a: 'Yes, including multi-warehouse order routing, integrations with shipping providers, and real-time inventory synchronization across sales channels.' },
-    { q: 'How long does a typical e-commerce build take?', a: 'A focused storefront on a single sales channel typically launches in 6-8 weeks. More complex builds with multi-warehouse fulfillment, ERP integration, or a full platform migration usually run 10-16 weeks.' },
-    { q: 'How much does an e-commerce project cost?', a: 'Pricing depends on catalog complexity, number of integrations, and whether it is a migration or a new build. A focused storefront project typically starts in the mid five figures (THB); larger multi-integration builds are scoped after discovery.' },
-    { q: 'Do we own the code and infrastructure after launch?', a: 'Yes, entirely. There is no platform lock-in — you own the Medusa.js instance, the storefront code, and all customer and order data, and can host it wherever you choose.' },
-    { q: 'Can the platform handle high-traffic events like flash sales?', a: 'Yes. The architecture is built to handle traffic spikes and catalog growth without a re-platform, and we load-test flows like checkout ahead of major sales events.' },
+    { q: 'Why build on Medusa.js instead of Shopify or a similar SaaS platform?', a: 'Medusa.js gives you full ownership of the codebase, no per-transaction platform fees, and no ceiling on customization. The front end, the checkout flow, and the back-end rules are all yours to shape. Shopify works well for many shops, and we will say so if your needs fit a hosted platform better.' },
+    { q: 'Can you migrate our existing store to this architecture?', a: 'Yes. We move product, customer, and order data, redirect old URLs so search rankings are kept, and agree a cutover plan so the storefront switches over without disrupting live sales.' },
+    { q: 'What payment methods can be supported?', a: 'Stripe for international cards, plus Thai methods such as PromptPay and popular local payment gateways. They are built into a custom checkout flow, not bolted on as a plugin, so the experience stays consistent and you can adjust it later.' },
+    { q: 'Do you handle fulfillment and shipping integration?', a: 'Yes. That covers multi-warehouse order routing, shipping provider integrations, tracking numbers written back to the order, and real-time inventory sync across sales channels.' },
+    { q: 'How long does a typical e-commerce build take?', a: 'A focused storefront on a single sales channel typically launches in 6-8 weeks. More complex builds with multi-warehouse fulfillment, ERP integration, or a full platform migration usually run 10-16 weeks. We confirm a timeline after discovery.' },
+    { q: 'How much does an e-commerce project cost?', a: 'Pricing depends on catalog complexity, the number of integrations, and whether it is a migration or a new build. A focused storefront project typically starts in the mid five figures (THB). Larger multi-integration builds are scoped after discovery, with a written estimate.' },
+    { q: 'Do we own the code and infrastructure after launch?', a: 'Yes, entirely. There is no platform lock-in. You own the Medusa.js instance, the storefront code, and all customer and order data, and you can host it wherever you choose, including with a Thai provider.' },
+    { q: 'Can the platform handle high-traffic events like flash sales?', a: 'Yes. The architecture is built for traffic spikes and catalog growth without a re-platform, and we load-test flows such as checkout ahead of major sale events.' },
+    { q: 'Will the store work in Thai and English?', a: 'Yes. Product data, emails, and checkout wording are set up in both languages from the start, and we test Thai text, fonts, and address forms on real phones before launch.' },
+    { q: 'Who runs the store day to day after launch?', a: 'Your team. We build admin screens for products, prices, promotions, and orders, and train your staff to use them. You can ask us for monthly support, or hand the code to your own developers.' },
   ] : [
-    { q: 'ทำไมต้องสร้างบน Medusa.js แทน Shopify หรือ SaaS อื่น?', a: 'Medusa.js ให้คุณเป็นเจ้าของ Codebase เต็มรูปแบบ ไม่มีค่าธรรมเนียมต่อธุรกรรม และไม่มีเพดานจำกัดการปรับแต่ง คุณไม่ต้องติดอยู่กับสิ่งที่ผู้ให้บริการ SaaS เลือกรองรับ ทั้งหน้าร้าน ขั้นตอนชำระเงิน และระบบหลังบ้านเป็นของคุณทั้งหมด' },
-    { q: 'ย้ายร้านค้าเดิมมาสู่สถาปัตยกรรมนี้ได้ไหม?', a: 'ได้ครับ เราดูแลการย้ายข้อมูลสินค้า ลูกค้า และคำสั่งซื้อ โดยให้ระบบหยุดชะงักน้อยที่สุด พร้อมแผนสลับระบบที่ชัดเจน ทำให้เปลี่ยนหน้าร้านได้โดยไม่กระทบยอดขายที่กำลังเดินอยู่' },
-    { q: 'รองรับช่องทางชำระเงินแบบไหนบ้าง?', a: 'Stripe สำหรับบัตรต่างประเทศ รวมถึงช่องทางชำระเงินในไทยอย่าง PromptPay และ Payment Gateway ในประเทศยอดนิยม เชื่อมตรงเข้าขั้นตอนชำระเงินที่สร้างเอง ไม่ใช่ Plugin ที่แปะเพิ่ม' },
-    { q: 'ดูแลเรื่องการจัดส่งและขนส่งไหม?', a: 'ดูแลครับ รวมถึงการจัดเส้นทางคำสั่งซื้อจากหลายคลังสินค้า เชื่อมผู้ให้บริการขนส่ง และซิงก์สต็อกแบบ Real-time ทุกช่องทางขาย' },
-    { q: 'โปรเจกต์ E-Commerce ทั่วไปใช้เวลานานแค่ไหน?', a: 'หน้าร้านที่เน้นช่องทางขายเดียว มักเปิดตัวได้ใน 6-8 สัปดาห์ ส่วนโปรเจกต์ที่ซับซ้อนกว่า เช่น จัดส่งจากหลายคลัง เชื่อมต่อ ERP หรือย้ายแพลตฟอร์มเต็มรูปแบบ มักใช้เวลา 10-16 สัปดาห์' },
-    { q: 'โปรเจกต์ E-Commerce มีค่าใช้จ่ายเท่าไหร่?', a: 'ราคาขึ้นอยู่กับความซับซ้อนของรายการสินค้า จำนวนระบบที่ต้องเชื่อมต่อ และว่าเป็นการย้ายระบบหรือสร้างใหม่ หน้าร้านที่เน้นช่องทางขายเดียวมักเริ่มที่หลักแสนกลางๆ (บาท) ส่วนโปรเจกต์ที่เชื่อมหลายระบบจะเสนอราคาหลังจากทำความเข้าใจโจทย์' },
-    { q: 'เราเป็นเจ้าของโค้ดและระบบหลังบ้านหลังเปิดใช้งานไหม?', a: 'ใช่ครับ เป็นเจ้าของเต็มรูปแบบ ไม่ผูกติดแพลตฟอร์มใด คุณเป็นเจ้าของ Medusa.js Instance โค้ดหน้าร้าน และข้อมูลลูกค้า/คำสั่งซื้อทั้งหมด และโฮสต์ที่ไหนก็ได้ตามต้องการ' },
-    { q: 'แพลตฟอร์มรองรับคนเข้าเว็บจำนวนมาก เช่นช่วง Flash Sale ได้ไหม?', a: 'ได้ครับ สถาปัตยกรรมออกแบบมารองรับช่วงคนเข้าเว็บพุ่งสูงและสินค้าที่เพิ่มขึ้นโดยไม่ต้องย้ายแพลตฟอร์มใหม่ และเราทดสอบโหลดขั้นตอนอย่างหน้าชำระเงินก่อนงานลดราคาสำคัญเสมอ' },
+    { q: 'ทำไมต้องสร้างบน Medusa.js แทน Shopify หรือ SaaS อื่น?', a: 'Medusa.js ให้คุณเป็นเจ้าของ Codebase เต็มรูปแบบ ไม่มีค่าธรรมเนียมต่อธุรกรรม และไม่มีเพดานจำกัดการปรับแต่ง ทั้งหน้าร้าน ขั้นตอนชำระเงิน และกติกาหลังบ้านเป็นของคุณทั้งหมด Shopify เหมาะกับร้านจำนวนมาก ถ้าความต้องการของคุณเข้ากับแพลตฟอร์มสำเร็จรูปมากกว่า เราก็จะบอกตรงๆ' },
+    { q: 'ย้ายร้านค้าเดิมมาสู่สถาปัตยกรรมนี้ได้ไหม?', a: 'ได้ เราย้ายข้อมูลสินค้า ลูกค้า และออเดอร์ ตั้ง Redirect ให้ URL เก่าเพื่อไม่ให้เสียอันดับค้นหา และตกลงแผนสลับระบบร่วมกัน ให้เปลี่ยนหน้าร้านได้โดยไม่กระทบยอดขายที่กำลังเดินอยู่' },
+    { q: 'รองรับช่องทางชำระเงินแบบไหนบ้าง?', a: 'Stripe สำหรับบัตรต่างประเทศ และช่องทางในไทยอย่าง PromptPay กับ Payment Gateway ในประเทศยอดนิยม สร้างเข้าไปในหน้าชำระเงินที่ทำเอง ไม่ได้แปะเป็น Plugin ประสบการณ์จึงเป็นแบบเดียวกันทั้งหมด และปรับต่อทีหลังได้' },
+    { q: 'ดูแลเรื่องการจัดส่งและขนส่งไหม?', a: 'ดูแล ทั้งการจัดเส้นทางออเดอร์จากหลายคลัง การเชื่อมผู้ให้บริการขนส่ง การส่งเลขพัสดุกลับเข้าออเดอร์ และการซิงก์สต็อกแบบ Real-time ทุกช่องทางขาย' },
+    { q: 'โปรเจกต์ E-Commerce ทั่วไปใช้เวลานานแค่ไหน?', a: 'หน้าร้านที่เน้นช่องทางขายเดียว มักเปิดตัวได้ใน 6-8 สัปดาห์ ส่วนโปรเจกต์ที่ซับซ้อนกว่า เช่น จัดส่งจากหลายคลัง เชื่อมต่อ ERP หรือย้ายแพลตฟอร์มเต็มรูปแบบ มักใช้เวลา 10-16 สัปดาห์ เราจะยืนยันไทม์ไลน์หลังจบ Discovery' },
+    { q: 'โปรเจกต์ E-Commerce มีค่าใช้จ่ายเท่าไหร่?', a: 'ราคาขึ้นอยู่กับความซับซ้อนของรายการสินค้า จำนวนระบบที่ต้องเชื่อมต่อ และว่าเป็นการย้ายระบบหรือสร้างใหม่ หน้าร้านที่เน้นช่องทางขายเดียวมักเริ่มที่หลักแสนกลางๆ (บาท) ส่วนโปรเจกต์ที่เชื่อมหลายระบบจะเสนอราคาหลัง Discovery พร้อมใบประเมินเป็นเอกสาร' },
+    { q: 'เราเป็นเจ้าของโค้ดและระบบหลังบ้านหลังเปิดใช้งานไหม?', a: 'ใช่ เป็นเจ้าของเต็มรูปแบบ ไม่ผูกติดแพลตฟอร์มใด คุณเป็นเจ้าของ Medusa.js Instance โค้ดหน้าร้าน และข้อมูลลูกค้ากับออเดอร์ทั้งหมด และโฮสต์ที่ไหนก็ได้ตามต้องการ รวมถึงผู้ให้บริการในไทย' },
+    { q: 'แพลตฟอร์มรองรับคนเข้าเว็บจำนวนมาก เช่นช่วง Flash Sale ได้ไหม?', a: 'ได้ สถาปัตยกรรมออกแบบมารองรับช่วงคนเข้าเว็บพุ่งสูงและสินค้าที่เพิ่มขึ้นโดยไม่ต้องย้ายแพลตฟอร์มใหม่ และเราทดสอบโหลดขั้นตอนอย่างหน้าชำระเงินก่อนงานลดราคาสำคัญเสมอ' },
+    { q: 'ร้านรองรับทั้งภาษาไทยและอังกฤษไหม?', a: 'รองรับ ข้อมูลสินค้า อีเมล และข้อความในหน้าชำระเงินตั้งเป็นสองภาษาตั้งแต่แรก และเราทดสอบข้อความไทย Font และฟอร์มที่อยู่บนมือถือจริงก่อนเปิดร้าน' },
+    { q: 'หลังเปิดร้านแล้ว ใครดูแลร้านประจำวัน?', a: 'ทีมของคุณเอง เราทำหน้าจอหลังบ้านสำหรับจัดการสินค้า ราคา โปรโมชัน และออเดอร์ แล้วอบรมทีมให้ใช้ ถ้าอยากได้คนช่วยรายเดือนก็ให้เราดูแลต่อได้ หรือจะส่งโค้ดให้นักพัฒนาของคุณก็ได้'},
   ]
 
   const postHeroSlot = (
@@ -275,7 +310,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           {isEN ? 'Key Capabilities' : 'ความสามารถหลัก'}
         </h2>
         <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400 }}>
-          {isEN ? 'Concrete capabilities we bring to this engagement — not buzzwords.' : 'สิ่งที่เราทำได้จริงในทุกโปรเจกต์ ไม่ใช่แค่คำสวยหรู'}
+          {isEN ? 'Concrete capabilities we bring to this engagement — not buzzwords.' : 'สิ่งที่เราทำได้จริงในโปรเจกต์อีคอมเมิร์ซ ไม่ใช่แค่คำสวยหรู'}
         </p>
 
         <div className="grid sm:grid-cols-2 gap-5">
@@ -405,7 +440,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
         </h2>
         <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-          {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+          {isEN ? 'Tell us about the store you have in mind, or the one you want to replace.' : 'เล่าให้เราฟังได้เลยว่าอยากทำร้านแบบไหน หรืออยากเปลี่ยนจากร้านเดิมที่ใช้อยู่'}
         </p>
         <div className="flex flex-wrap items-center gap-6">
           <Link

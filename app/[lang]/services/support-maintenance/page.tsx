@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import ServiceLayout from '@/components/service/ServiceLayout'
 import { type Lang } from '@/lib/i18n'
@@ -26,6 +27,24 @@ export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
 }
 
+export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+  const isEN = params.lang === 'en'
+  const title = isEN
+    ? "Managed Services & Production Monitoring, Bangkok | Haliviq"
+    : "บริการ Managed Services เฝ้าระบบและ On-call | Haliviq"
+  const description = isEN
+    ? "Haliviq runs production for you in Bangkok: monitoring, on-call incident response, patching and SLAs sized to how critical your system is, 24/7 if needed."
+    : "Haliviq ดูแลระบบจริงให้คุณที่กรุงเทพฯ ทั้งเฝ้าระบบ วิศวกรเวรรับเหตุขัดข้อง อัปเดตและอุดช่องโหว่ พร้อม SLA ตามความสำคัญของระบบ ถึง 24/7 ถ้าต้องการ"
+  const url = `https://haliviq.com/${params.lang}/services/support-maintenance`
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url },
+    twitter: { card: 'summary_large_image', title, description },
+  }
+}
+
 export default function Page({ params }: { params: { lang: Lang } }) {
   const isEN = params.lang === 'en'
   const prefix = `/${params.lang}`
@@ -33,40 +52,44 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge    = isEN ? 'Operations / Managed Services'  : 'ปฏิบัติการ / Managed Services'
   const title    = isEN ? 'Production That'  : 'ระบบจริงที่'
   const subtitle = isEN ? 'Stays Healthy'    : 'แข็งแรงตลอดเวลา'
-  const heroDesc = isEN ? 'Proactive monitoring, incident response, and continuous improvement so production stays healthy after launch.'  : 'เฝ้าระบบล่วงหน้า รับมือเหตุขัดข้อง และปรับปรุงต่อเนื่อง ให้ระบบจริงแข็งแรงหลังเปิดตัว'
+  const heroDesc = isEN ? 'Once a system is live and customers depend on it, somebody has to watch it, patch it and answer the alert at 2 a.m. Haliviq takes that on as a managed service. We put monitoring and alerts around your production stack, keep the runbooks and on-call rota, apply updates on a schedule, and work down a backlog of reliability, speed and cost improvements. You get an agreed SLA and a monthly report, and your own engineers get their evenings back.'  : 'พอระบบขึ้นใช้งานจริงและลูกค้าพึ่งพาแล้ว ต้องมีคนคอยเฝ้า คอยอัปเดต และตื่นมาตอบ alert ตอนตีสอง Haliviq รับงานนี้เป็น Managed Service เราติดตั้งระบบเฝ้าดูและแจ้งเตือนรอบ production ของคุณ ดูแลคู่มือรับมือและตารางเวร อัปเดตตามกำหนด และไล่ทำรายการปรับปรุงด้านความเสถียร ความเร็ว และต้นทุน คุณจะได้ SLA ที่ตกลงกันไว้และรายงานประจำเดือน ส่วนวิศวกรของคุณได้เวลาตอนเย็นกลับคืนมา'
   const whyTitle = isEN ? 'Why launch is the beginning, not the finish line'    : 'ทำไมวันเปิดตัวคือจุดเริ่มต้น ไม่ใช่เส้นชัย'
-  const whyDesc  = isEN ? 'Systems degrade quietly — dependencies drift out of date, traffic patterns shift, and small issues compound until they become outages nobody saw coming.'  : 'ระบบเสื่อมลงอย่างเงียบๆ Dependency ล้าสมัยไปเรื่อยๆ ปริมาณผู้ใช้เปลี่ยน และปัญหาเล็กๆ ทบกันจนกลายเป็นระบบล่มที่ไม่มีใครเห็นล่วงหน้า'
+  const whyDesc  = isEN ? 'Systems rarely fail with a bang. A certificate runs close to expiry, a disk fills a little each day, a library falls behind on security fixes, traffic grows past what the database was sized for. Each one is small until the day they meet a campaign or a holiday weekend. Managed operations is about spotting those slow problems early, and about having a named engineer and a written runbook ready for the ones you could not predict.'  : 'ระบบน้อยครั้งที่พังแบบดังตูม ใบรับรองใกล้หมดอายุ ดิสก์เต็มขึ้นทีละนิดทุกวัน ไลบรารีตกรุ่นจากแพตช์ความปลอดภัย ผู้ใช้โตเกินที่ฐานข้อมูลถูกออกแบบไว้ แต่ละอย่างเล็กนิดเดียว จนวันที่มันมาเจอแคมเปญหรือวันหยุดยาว งานดูแลระบบจึงคือการจับปัญหาที่ค่อยๆ โตเหล่านี้ให้เร็ว และมีวิศวกรที่รู้ชื่อกับคู่มือที่เขียนไว้พร้อมสำหรับเหตุที่คาดไม่ได้'
   const ctaTitle = isEN ? 'Ready for production that just works?'    : 'พร้อมให้ระบบจริงทำงานได้อย่างมั่นใจหรือยัง?'
-  const ctaDesc  = isEN ? 'Start with a free observability audit. We will show you the blind spots in your current setup.'   : 'เริ่มด้วยการตรวจ Observability ฟรี เราจะชี้จุดบอดในระบบปัจจุบันของคุณ'
+  const ctaDesc  = isEN ? 'Start with a free observability audit. We look at what you monitor today, how you find out when something breaks and who gets the call, then show you the blind spots and what an SLA for your system would look like.'   : 'เริ่มด้วยการตรวจ Observability ฟรี เราจะดูว่าตอนนี้คุณเฝ้าอะไรอยู่ รู้ได้ยังไงว่ามีอะไรพัง และใครต้องรับสาย แล้วชี้จุดบอดให้เห็น พร้อมภาพว่า SLA สำหรับระบบของคุณควรหน้าตาเป็นแบบไหน'
   const overviewText = isEN
-    ? 'We offer post-launch support with defined service level agreements covering observability, on-call response, dependency updates, performance tuning, and improvement backlogs. You keep full product ownership and decision-making authority while our team maintains platform reliability, documentation, and readiness for whatever release comes next — so production stays healthy long after the initial excitement of launch day fades.'
-    : 'เราดูแลหลังเปิดตัวพร้อม SLA ที่ชัดเจน ครอบคลุม Observability, เวรรับมือเหตุขัดข้อง, อัปเดต Dependency, ปรับประสิทธิภาพ และรายการงานปรับปรุง คุณยังเป็นเจ้าของผลิตภัณฑ์และตัดสินใจเองทั้งหมด ส่วนทีมเราดูแลความน่าเชื่อถือของแพลตฟอร์ม เอกสาร และความพร้อมสำหรับเวอร์ชันถัดไป เพื่อให้ระบบแข็งแรงต่อไปนานหลังความตื่นเต้นวันเปิดตัวผ่านไป'
+    ? 'This is the operations side of the work: keeping a live system healthy. We offer post-launch support under a defined service level agreement that covers observability, on-call response, dependency and OS updates, performance tuning and an improvement backlog. We start by learning how your system is built and where it has failed before, then add the metrics, logs, traces and alerts that are missing and write runbooks for the incidents we expect. You keep ownership of the product and the decisions. We keep the platform reliable, documented and reported on, whether we built it or another team did.'
+    : 'นี่คืองานฝั่งปฏิบัติการ คือดูแลระบบที่ใช้งานอยู่ให้แข็งแรง เราดูแลหลังเปิดตัวภายใต้ SLA ที่ตกลงกัน ครอบคลุม Observability วิศวกรเวรรับเหตุขัดข้อง การอัปเดต dependency และ OS การปรับประสิทธิภาพ และรายการงานปรับปรุง เริ่มจากทำความเข้าใจว่าระบบของคุณสร้างอย่างไรและเคยพังตรงไหน แล้วเพิ่ม metrics, logs, traces และ alert ที่ยังขาด พร้อมเขียนคู่มือรับมือเหตุที่คาดไว้ คุณยังเป็นเจ้าของผลิตภัณฑ์และเป็นคนตัดสินใจ ส่วนเราดูแลให้แพลตฟอร์มเสถียร มีเอกสาร และมีรายงาน ไม่ว่าเราหรือทีมอื่นเป็นคนสร้างระบบนั้น'
 
   const heroBullets = isEN ? [
-      'Metrics, logs, traces, and alerts before customers complain',
-      'Capacity planning and fix-before-fail proactive work',
-      'Scheduled patching with tested, low-risk release paths',
-      'Performance, cost, and reliability improvement backlogs',
-      'SLAs sized to how critical your system actually is',
+      'Metrics, logs, traces and alerts that tell you about a problem before customers do',
+      'On-call engineers and written runbooks, with escalation paths for each severity',
+      'Scheduled patching of frameworks, OS images and dependencies through tested release steps',
+      'Capacity planning and fix-before-fail work, not only firefighting',
+      'An improvement backlog for reliability, speed and cloud cost, driven by production data',
+      'SLAs and a monthly report sized to how critical your system actually is',
     ] : [
-      'Metrics, Logs, Traces และการแจ้งเตือน ก่อนที่ลูกค้าจะร้องเรียน',
-      'วางแผนรองรับผู้ใช้และลงมือแก้ล่วงหน้าก่อนระบบพัง',
-      'อุดช่องโหว่ตามกำหนด พร้อมขั้นตอนปล่อยเวอร์ชันที่ทดสอบแล้วและเสี่ยงต่ำ',
-      'รายการปรับปรุงด้านประสิทธิภาพ ต้นทุน และความน่าเชื่อถือ',
-      'SLA ที่กำหนดตามความสำคัญของระบบจริง',
+      'Metrics, logs, traces และ alert ที่บอกคุณว่ามีปัญหาก่อนที่ลูกค้าจะรู้',
+      'วิศวกรเวรและคู่มือรับมือที่เขียนไว้ พร้อมลำดับส่งต่อปัญหาตามความรุนแรง',
+      'อัปเดต framework, OS image และ dependency ตามกำหนด ผ่านขั้นตอนปล่อยเวอร์ชันที่ทดสอบแล้ว',
+      'วางแผนรองรับผู้ใช้และแก้ล่วงหน้าก่อนระบบพัง ไม่ใช่แค่ตามดับไฟ',
+      'รายการปรับปรุงด้านความเสถียร ความเร็ว และต้นทุน cloud โดยดูจากข้อมูล production จริง',
+      'SLA และรายงานประจำเดือนที่กำหนดตามความสำคัญของระบบจริง',
     ]
   const whyPoints   = isEN ? [
-      'Most outages are preceded by warning signs that go unnoticed without proper observability.',
-      'Proactive dependency updates prevent the security and stability issues that pile up silently.',
-      'A well-defined SLA turns "someone should fix this" into a clear, accountable response time.',
-      'Freeing internal teams from on-call rotation lets them focus on building the product.',
-      'Predictable support costs beat unpredictable emergency-fix bills every time.',
+      'Most outages are preceded by warning signs, such as rising error rates or a slowly filling disk, that go unnoticed without proper observability.',
+      'Proactive dependency updates prevent the security and stability problems that pile up silently when nobody owns them.',
+      'A well-defined SLA turns "someone should fix this" into a response time with a name and a deadline attached.',
+      'Taking the on-call rota off your product engineers lets them stay on the roadmap, and stops the late-night alerts that cause burnout.',
+      'Predictable monthly support costs beat unpredictable emergency-fix bills every time, and they are easier to put in a budget.',
+      'Runbooks and post-incident reviews turn each incident into something the system learns from, so the same failure does not return.',
     ] : [
-      'ระบบล่มส่วนใหญ่มีสัญญาณเตือนล่วงหน้า แต่ถูกมองข้ามเพราะ Observability ไม่ดีพอ',
-      'การอัปเดต Dependency ล่วงหน้า ป้องกันปัญหาด้านความปลอดภัยและความเสถียรที่สะสมอย่างเงียบๆ',
-      'SLA ที่ชัดเจน เปลี่ยน "ใครสักคนควรแก้เรื่องนี้" ให้เป็นเวลาตอบสนองที่ชัดเจนและมีคนรับผิดชอบ',
-      'เมื่อทีมภายในไม่ต้องเข้าเวรรับเหตุขัดข้อง ก็โฟกัสกับการสร้างผลิตภัณฑ์ได้เต็มที่',
-      'ค่าดูแลที่คาดการณ์ได้ ดีกว่าบิลแก้ปัญหาฉุกเฉินที่เดาไม่ได้เสมอ',
+      'ระบบล่มส่วนใหญ่มีสัญญาณเตือนล่วงหน้า เช่น error ที่ค่อยๆ เพิ่มหรือดิสก์ที่ค่อยๆ เต็ม แต่ถูกมองข้ามเพราะ Observability ไม่ดีพอ',
+      'การอัปเดต dependency ล่วงหน้า ป้องกันปัญหาด้านความปลอดภัยและความเสถียรที่สะสมอย่างเงียบๆ เมื่อไม่มีใครรับผิดชอบ',
+      'SLA ที่ชัดเจนเปลี่ยน "ใครสักคนควรแก้เรื่องนี้" ให้เป็นเวลาตอบสนองที่มีชื่อคนและเส้นตายกำกับ',
+      'เมื่อวิศวกรผลิตภัณฑ์ไม่ต้องเข้าเวรรับเหตุ ก็อยู่กับโรดแมปได้เต็มที่ และไม่ต้องโดน alert กลางดึกจนหมดไฟ',
+      'ค่าดูแลรายเดือนที่คาดการณ์ได้ ดีกว่าบิลแก้ปัญหาฉุกเฉินที่เดาไม่ได้เสมอ และตั้งงบประมาณง่ายกว่า',
+      'คู่มือรับมือและการทบทวนหลังเหตุการณ์ ทำให้ทุกเหตุขัดข้องกลายเป็นบทเรียนของระบบ ปัญหาเดิมจึงไม่วนกลับมา',
     ]
   const outcomes    = isEN ? [
       {stat: '99.99%', label: 'Uptime', desc: 'Across managed production systems'},
@@ -80,34 +103,34 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {stat: '<15min', label: 'เวลาตอบสนองต่อการแจ้งเตือน', desc: 'สำหรับเหตุร้ายแรง'}
     ]
   const features    = isEN ? [
-      {icon: 'ti-chart-dots', title: 'Observability & Alerts', desc: 'Metrics, logs, traces, and actionable alerts so issues surface before customers complain.'},
-      {icon: 'ti-shield-check', title: 'Proactive Support', desc: 'Capacity planning, dependency updates, and fix-before-fail work — not only firefighting.'},
-      {icon: 'ti-tool', title: 'Maintenance & Patching', desc: 'Scheduled updates for frameworks, OS images, and services with tested release paths.'},
-      {icon: 'ti-trending-up', title: 'Continuous Improvement', desc: 'Performance, cost, and reliability workstreams driven by production data.'},
-      {icon: 'ti-phone-call', title: 'On-Call Response', desc: 'Defined SLAs with escalation paths sized to how critical each system is.'},
-      {icon: 'ti-report-analytics', title: 'Clear Reporting', desc: 'Transparent status updates and recommendations, not black-box operations.'}
+      {icon: 'ti-chart-dots', title: 'Observability & Alerts', desc: 'We instrument your services with metrics, logs and traces and set alerts that point to a real problem, not noise. Dashboards show health in one view. You hear about trouble from us, not from a customer.'},
+      {icon: 'ti-shield-check', title: 'Proactive Support', desc: 'We review capacity, certificates, backups and dependency health on a schedule, and fix what is drifting before it fails. It is the routine work that stops most weekend incidents from happening.'},
+      {icon: 'ti-tool', title: 'Maintenance & Patching', desc: 'Updates for frameworks, OS images and services are applied on a calendar, tested in staging first and released through a path that can be rolled back.'},
+      {icon: 'ti-trending-up', title: 'Continuous Improvement', desc: 'We keep a backlog of reliability, performance and cloud-cost work, ranked by what production data shows, and clear a few items every month.'},
+      {icon: 'ti-phone-call', title: 'On-Call Response', desc: 'A named rota of engineers, defined response times and escalation paths per severity. A critical alert reaches a person who has the runbook for your system open.'},
+      {icon: 'ti-report-analytics', title: 'Clear Reporting', desc: 'A monthly report covering uptime, incidents, changes made and recommendations, in plain language, so you always know what is happening with your system.'}
     ] : [
-      {icon: 'ti-chart-dots', title: 'Observability & Alerts', desc: 'Metrics, Logs, Traces และการแจ้งเตือนที่ใช้งานได้จริง เพื่อจับปัญหาก่อนลูกค้าร้องเรียน'},
-      {icon: 'ti-shield-check', title: 'Proactive Support', desc: 'วางแผนรองรับผู้ใช้ อัปเดต Dependency และแก้ล่วงหน้าก่อนระบบพัง ไม่ใช่แค่ตามดับไฟ'},
-      {icon: 'ti-tool', title: 'Maintenance & Patching', desc: 'อัปเดต Framework, OS Image และบริการตามกำหนด พร้อมขั้นตอนปล่อยเวอร์ชันที่ทดสอบแล้ว'},
-      {icon: 'ti-trending-up', title: 'Continuous Improvement', desc: 'ปรับปรุงประสิทธิภาพ ต้นทุน และความน่าเชื่อถือ โดยดูจากข้อมูลระบบจริง'},
-      {icon: 'ti-phone-call', title: 'On-Call Response', desc: 'SLA ที่ชัดเจน พร้อมลำดับการส่งต่อปัญหาตามความสำคัญของแต่ละระบบ'},
-      {icon: 'ti-report-analytics', title: 'Clear Reporting', desc: 'รายงานสถานะและข้อเสนอแนะที่โปร่งใส ไม่ใช่การทำงานแบบปิดบัง'}
+      {icon: 'ti-chart-dots', title: 'Observability & Alerts', desc: 'เราติดตั้ง metrics, logs และ traces ในบริการของคุณ แล้วตั้ง alert ให้ชี้ไปที่ปัญหาจริง ไม่ใช่สัญญาณรบกวน dashboard ดูสุขภาพระบบได้ในหน้าเดียว คุณรู้เรื่องปัญหาจากเรา ไม่ใช่จากลูกค้า'},
+      {icon: 'ti-shield-check', title: 'Proactive Support', desc: 'เราตรวจเรื่องกำลังรองรับ ใบรับรอง backup และสุขภาพ dependency ตามรอบ แล้วแก้สิ่งที่เริ่มเพี้ยนก่อนมันพัง เป็นงานประจำที่ช่วยกันเหตุขัดข้องช่วงสุดสัปดาห์ส่วนใหญ่ไม่ให้เกิด'},
+      {icon: 'ti-tool', title: 'Maintenance & Patching', desc: 'การอัปเดต framework, OS image และบริการทำตามปฏิทิน ทดสอบบน staging ก่อน และปล่อยผ่านขั้นตอนที่ย้อนกลับได้'},
+      {icon: 'ti-trending-up', title: 'Continuous Improvement', desc: 'เราเก็บรายการงานปรับปรุงด้านความเสถียร ประสิทธิภาพ และต้นทุน cloud เรียงตามที่ข้อมูล production บอก แล้วเคลียร์ไปทีละไม่กี่ข้อทุกเดือน'},
+      {icon: 'ti-phone-call', title: 'On-Call Response', desc: 'ตารางเวรวิศวกรที่มีชื่อชัดเจน เวลาตอบสนองและลำดับส่งต่อปัญหาตามความรุนแรง alert ร้ายแรงจะถึงคนที่เปิดคู่มือของระบบคุณรออยู่แล้ว'},
+      {icon: 'ti-report-analytics', title: 'Clear Reporting', desc: 'รายงานประจำเดือนที่สรุป uptime เหตุขัดข้อง การเปลี่ยนแปลงที่ทำ และข้อเสนอแนะ เป็นภาษาที่อ่านง่าย คุณจึงรู้ตลอดว่าระบบของคุณเป็นอย่างไร'}
     ]
   const steps       = isEN ? [
-      {no: '01', title: 'Onboard', desc: 'Knowledge transfer and access setup.'},
-      {no: '02', title: 'Instrument', desc: 'Monitoring, alerts, and runbooks.'},
-      {no: '03', title: 'Monitor', desc: 'Health and SLO tracking.'},
-      {no: '04', title: 'Maintain', desc: 'Patches, upgrades, and fixes.'},
-      {no: '05', title: 'Improve', desc: 'Reliability and performance work.'},
-      {no: '06', title: 'Report', desc: 'Clear status and recommendations.'}
+      {no: '01', title: 'Onboard', desc: 'We take a walkthrough of the architecture, hosting, deployment process and past incidents, and set up secure access for the support team.'},
+      {no: '02', title: 'Instrument', desc: 'We add the monitoring, alerts and runbooks that are missing, and agree what counts as an incident and how severe each type is.'},
+      {no: '03', title: 'Monitor', desc: 'We watch system health and service level objectives around the clock or in business hours, as the SLA says.'},
+      {no: '04', title: 'Maintain', desc: 'We apply patches, upgrades and fixes on a calendar, with testing first and a way back if something goes wrong.'},
+      {no: '05', title: 'Improve', desc: 'We work through the backlog of reliability, performance and cost improvements, a few items every month.'},
+      {no: '06', title: 'Report', desc: 'You receive a plain monthly report with uptime, incidents, changes and our recommendations for the next month.'}
     ] : [
-      {no: '01', title: 'Onboard', desc: 'ถ่ายทอดความรู้และตั้งค่าสิทธิ์เข้าถึง'},
-      {no: '02', title: 'Instrument', desc: 'ตั้งระบบเฝ้าดู การแจ้งเตือน และคู่มือรับมือ'},
-      {no: '03', title: 'Monitor', desc: 'ติดตามสุขภาพระบบและ SLO'},
-      {no: '04', title: 'Maintain', desc: 'อุดช่องโหว่ อัปเกรด และแก้ปัญหา'},
-      {no: '05', title: 'Improve', desc: 'ปรับปรุงความน่าเชื่อถือและประสิทธิภาพ'},
-      {no: '06', title: 'Report', desc: 'รายงานสถานะและข้อเสนอแนะที่ชัดเจน'}
+      {no: '01', title: 'Onboard', desc: 'เราให้ทีมพาเดินดูสถาปัตยกรรม hosting ขั้นตอน deploy และเหตุขัดข้องที่ผ่านมา แล้วตั้งค่าสิทธิ์เข้าถึงที่ปลอดภัยสำหรับทีมดูแล'},
+      {no: '02', title: 'Instrument', desc: 'เราเพิ่มระบบเฝ้าดู alert และคู่มือรับมือที่ยังขาด และตกลงกันว่าอะไรนับเป็นเหตุขัดข้อง และแต่ละแบบรุนแรงแค่ไหน'},
+      {no: '03', title: 'Monitor', desc: 'เราเฝ้าสุขภาพระบบและ SLO ตลอด 24 ชั่วโมงหรือในเวลาทำการ ตามที่ SLA ระบุ'},
+      {no: '04', title: 'Maintain', desc: 'เราอัปเดต อัปเกรด และแก้ปัญหาตามปฏิทิน โดยทดสอบก่อนและมีทางย้อนกลับถ้ามีอะไรผิดพลาด'},
+      {no: '05', title: 'Improve', desc: 'เราไล่ทำรายการปรับปรุงด้านความเสถียร ประสิทธิภาพ และต้นทุน ทีละไม่กี่ข้อทุกเดือน'},
+      {no: '06', title: 'Report', desc: 'คุณได้รับรายงานประจำเดือนที่อ่านง่าย มี uptime เหตุขัดข้อง การเปลี่ยนแปลง และข้อเสนอของเราสำหรับเดือนถัดไป'}
     ]
   const caseStudies = isEN ? [
       {tag: 'FinTech · Bangkok', title: '99.99% Uptime Across 18 Months', desc: 'Full observability stack with proactive capacity planning.', result: 'Zero critical outages'},
@@ -119,15 +142,15 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {tag: 'Healthcare · กรุงเทพฯ', title: 'ลดเวลารับมือเหตุขัดข้องเหลือ 12 นาที', desc: 'ใช้ PagerDuty ส่งต่อปัญหาและมีคู่มือรับมือ แทนการดับไฟเฉพาะหน้า', result: 'MTTR ลดจาก 3 ชั่วโมง'}
     ]
   const faqs        = isEN ? [
-      {q: 'What does managed support cover?', a: 'Proactive monitoring, incident response, dependency and security updates, performance tuning, and continuous improvement.'},
-      {q: 'Which monitoring tools do you use?', a: 'Prometheus, Grafana, Datadog, New Relic, Sentry, and OpenTelemetry for observability, with PagerDuty for alerting.'},
-      {q: 'Do you support systems you did not build?', a: 'Yes. We onboard external systems with an audit, add observability, and take over operations once we understand failure modes.'},
-      {q: 'Do you offer SLAs?', a: 'Yes. Support engagements come with defined response times sized to how critical the system is.'}
+      {q: 'What does managed support cover?', a: 'Proactive monitoring, incident response, dependency and security updates, performance tuning and continuous improvement, for the production systems we agree to take on.'},
+      {q: 'Which monitoring tools do you use?', a: 'Prometheus, Grafana, Datadog, New Relic, Sentry and OpenTelemetry for observability, with PagerDuty for alerting. We work with the tools you already have where they do the job.'},
+      {q: 'Do you support systems you did not build?', a: 'Yes. We audit the system first, add observability where it is missing, and take over operations once we understand how it can fail.'},
+      {q: 'Do you offer SLAs?', a: 'Yes. Every engagement has defined response times and escalation paths, sized to how critical the system is.'}
     ] : [
-      {q: 'บริการดูแลระบบ (Managed Support) ครอบคลุมอะไรบ้าง?', a: 'เฝ้าระบบล่วงหน้า รับมือเหตุขัดข้อง อัปเดต Dependency และความปลอดภัย ปรับประสิทธิภาพ และปรับปรุงต่อเนื่อง'},
-      {q: 'ใช้เครื่องมือเฝ้าระบบอะไรบ้าง?', a: 'Prometheus, Grafana, Datadog, New Relic, Sentry และ OpenTelemetry สำหรับ Observability พร้อม PagerDuty สำหรับแจ้งเตือน'},
-      {q: 'ดูแลระบบที่ไม่ได้พัฒนาเองได้ไหม?', a: 'ได้ครับ เรารับระบบภายนอกด้วยการตรวจสอบก่อน เพิ่ม Observability แล้วรับดูแลเมื่อเข้าใจว่าระบบพังได้แบบไหน'},
-      {q: 'มี SLA ไหม?', a: 'มีครับ งานดูแลมาพร้อมเวลาตอบสนองที่ชัดเจน ตามความสำคัญของระบบ'}
+      {q: 'บริการดูแลระบบ (Managed Support) ครอบคลุมอะไรบ้าง?', a: 'เฝ้าระบบล่วงหน้า รับมือเหตุขัดข้อง อัปเดต dependency และความปลอดภัย ปรับประสิทธิภาพ และปรับปรุงต่อเนื่อง สำหรับระบบ production ที่ตกลงรับดูแล'},
+      {q: 'ใช้เครื่องมือเฝ้าระบบอะไรบ้าง?', a: 'Prometheus, Grafana, Datadog, New Relic, Sentry และ OpenTelemetry สำหรับ Observability พร้อม PagerDuty สำหรับแจ้งเตือน ถ้าเครื่องมือที่คุณมีอยู่ทำงานได้ดี เราก็ใช้ต่อ'},
+      {q: 'ดูแลระบบที่ไม่ได้พัฒนาเองได้ไหม?', a: 'ได้ เราตรวจระบบก่อน เพิ่ม Observability ในจุดที่ยังขาด แล้วรับดูแลเมื่อเข้าใจว่าระบบพังได้แบบไหน'},
+      {q: 'มี SLA ไหม?', a: 'มี ทุกงานมีเวลาตอบสนองและลำดับส่งต่อปัญหาที่ชัดเจน ตามความสำคัญของระบบ'}
     ]
   const related     = isEN ? [
       {label: 'Cloud Services & Migration', href: '/services/cloud-services-migration'},
@@ -198,15 +221,19 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   )
 
   const capabilities = isEN ? [
-    { icon: 'ti-chart-dots', title: 'Observability & Alerts', desc: 'Metrics, logs, traces, and actionable alerts so issues surface before customers complain.' },
-    { icon: 'ti-shield-check', title: 'Proactive Support', desc: 'Capacity planning, dependency updates, and fix-before-fail work — not only ticket firefighting.' },
-    { icon: 'ti-tool', title: 'Maintenance & Patching', desc: 'Scheduled updates for frameworks, OS images, and services with tested release paths.' },
-    { icon: 'ti-trending-up', title: 'Continuous Improvement', desc: 'Performance, cost, and reliability workstreams driven by production data and product goals.' },
+    { icon: 'ti-chart-dots', title: 'Observability & Alerts', desc: 'Metrics, logs and traces across your services, with alerts tuned to point at real problems, not noise. One dashboard shows health, and you hear about trouble from us before a customer reports it.' },
+    { icon: 'ti-shield-check', title: 'Proactive Support', desc: 'Scheduled checks on capacity, certificates, backups and dependency health, with fixes made before anything fails. This routine work is what prevents most weekend incidents.' },
+    { icon: 'ti-tool', title: 'Maintenance & Patching', desc: 'Updates for frameworks, OS images and services on a calendar, tested in staging first and released through a path that can be rolled back.' },
+    { icon: 'ti-trending-up', title: 'Continuous Improvement', desc: 'A ranked backlog of reliability, performance and cloud-cost work, driven by production data and your product goals, with a few items cleared every month.' },
+    { icon: 'ti-phone-call', title: 'On-Call Response', desc: 'A named rota of engineers with defined response times and escalation per severity. A critical alert reaches someone who already has your runbook open.' },
+    { icon: 'ti-report-analytics', title: 'Clear Reporting', desc: 'A monthly report on uptime, incidents, changes and recommendations in plain language, so there are no black boxes in how your system is run.' },
   ] : [
-    { icon: 'ti-chart-dots', title: 'Observability & Alerts', desc: 'Metrics, Logs, Traces และการแจ้งเตือนที่ใช้งานได้จริง เพื่อจับปัญหาก่อนลูกค้าร้องเรียน' },
-    { icon: 'ti-shield-check', title: 'Proactive Support', desc: 'วางแผนรองรับผู้ใช้ อัปเดต Dependency และแก้ล่วงหน้าก่อนระบบพัง ไม่ใช่แค่ปิดงานตาม Ticket' },
-    { icon: 'ti-tool', title: 'Maintenance & Patching', desc: 'อัปเดต Framework, OS Image และบริการตามกำหนด พร้อมขั้นตอนปล่อยเวอร์ชันที่ทดสอบแล้ว' },
-    { icon: 'ti-trending-up', title: 'Continuous Improvement', desc: 'ปรับปรุงประสิทธิภาพ ต้นทุน และความน่าเชื่อถือ โดยดูจากข้อมูลระบบจริงและเป้าหมายของผลิตภัณฑ์' },
+    { icon: 'ti-chart-dots', title: 'Observability & Alerts', desc: 'Metrics, logs และ traces ครอบคลุมบริการของคุณ พร้อม alert ที่ปรับให้ชี้ไปที่ปัญหาจริง ไม่ใช่สัญญาณรบกวน dashboard เดียวดูสุขภาพระบบได้ และคุณรู้เรื่องปัญหาจากเราก่อนลูกค้าแจ้ง' },
+    { icon: 'ti-shield-check', title: 'Proactive Support', desc: 'ตรวจกำลังรองรับ ใบรับรอง backup และสุขภาพ dependency ตามรอบ แล้วแก้ก่อนมีอะไรพัง งานประจำนี้ช่วยกันเหตุขัดข้องช่วงสุดสัปดาห์ส่วนใหญ่' },
+    { icon: 'ti-tool', title: 'Maintenance & Patching', desc: 'อัปเดต framework, OS image และบริการตามปฏิทิน ทดสอบบน staging ก่อน และปล่อยผ่านขั้นตอนที่ย้อนกลับได้' },
+    { icon: 'ti-trending-up', title: 'Continuous Improvement', desc: 'รายการงานปรับปรุงด้านความเสถียร ประสิทธิภาพ และต้นทุน cloud ที่เรียงลำดับแล้ว ตามข้อมูล production และเป้าหมายผลิตภัณฑ์ เคลียร์ไปทีละไม่กี่ข้อทุกเดือน' },
+    { icon: 'ti-phone-call', title: 'On-Call Response', desc: 'ตารางเวรวิศวกรที่มีชื่อชัดเจน พร้อมเวลาตอบสนองและการส่งต่อตามความรุนแรง alert ร้ายแรงจะถึงคนที่เปิดคู่มือของระบบคุณรออยู่แล้ว' },
+    { icon: 'ti-report-analytics', title: 'Clear Reporting', desc: 'รายงานประจำเดือนเรื่อง uptime เหตุขัดข้อง การเปลี่ยนแปลง และข้อเสนอแนะ เป็นภาษาที่อ่านง่าย ไม่มีกล่องดำในวิธีที่ระบบของคุณถูกดูแล' },
   ]
 
   const techStack = [
@@ -220,39 +247,41 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   ] as { label: string; icon?: string; svg?: string }[]
 
   const approachSteps = isEN ? [
-    { no: '01', title: 'Onboard', desc: 'Knowledge transfer and access' },
-    { no: '02', title: 'Instrument', desc: 'Monitoring, alerts, runbooks' },
-    { no: '03', title: 'Monitor', desc: 'Health and SLO tracking' },
-    { no: '04', title: 'Maintain', desc: 'Patches, upgrades, fixes' },
-    { no: '05', title: 'Improve', desc: 'Reliability and performance' },
-    { no: '06', title: 'Report', desc: 'Clear status and recommendations' },
+    { no: '01', title: 'Onboard', desc: 'Architecture walkthrough, past incidents and secure access' },
+    { no: '02', title: 'Instrument', desc: 'Missing monitoring, alerts and runbooks added' },
+    { no: '03', title: 'Monitor', desc: 'Health and SLO tracking, as the SLA says' },
+    { no: '04', title: 'Maintain', desc: 'Patches and upgrades on a calendar, tested first' },
+    { no: '05', title: 'Improve', desc: 'Reliability, speed and cost backlog, monthly' },
+    { no: '06', title: 'Report', desc: 'Plain monthly report and next steps' },
   ] : [
-    { no: '01', title: 'Onboard', desc: 'ถ่ายทอดความรู้และตั้งค่าสิทธิ์เข้าถึง' },
-    { no: '02', title: 'Instrument', desc: 'ระบบเฝ้าดู การแจ้งเตือน และคู่มือรับมือ' },
-    { no: '03', title: 'Monitor', desc: 'ติดตามสุขภาพระบบและ SLO' },
-    { no: '04', title: 'Maintain', desc: 'อุดช่องโหว่ อัปเกรด และแก้ปัญหา' },
-    { no: '05', title: 'Improve', desc: 'ปรับปรุงความน่าเชื่อถือและประสิทธิภาพ' },
-    { no: '06', title: 'Report', desc: 'รายงานสถานะและข้อเสนอแนะ' },
+    { no: '01', title: 'Onboard', desc: 'พาเดินดูสถาปัตยกรรม เหตุที่ผ่านมา และตั้งสิทธิ์เข้าถึงที่ปลอดภัย' },
+    { no: '02', title: 'Instrument', desc: 'เพิ่มระบบเฝ้าดู alert และคู่มือรับมือที่ยังขาด' },
+    { no: '03', title: 'Monitor', desc: 'ติดตามสุขภาพระบบและ SLO ตามที่ SLA ระบุ' },
+    { no: '04', title: 'Maintain', desc: 'อัปเดตและอัปเกรดตามปฏิทิน ทดสอบก่อนเสมอ' },
+    { no: '05', title: 'Improve', desc: 'ไล่ทำงานปรับปรุงเรื่องความเสถียร ความเร็ว ต้นทุน ทุกเดือน' },
+    { no: '06', title: 'Report', desc: 'รายงานประจำเดือนที่อ่านง่าย พร้อมก้าวต่อไป' },
   ]
 
   const darkFaqs = isEN ? [
-    { q: 'What does Haliviq\'s managed support cover?', a: 'Proactive monitoring, incident response, dependency and security updates, performance tuning, and continuous improvement, so production stays healthy long after launch. It is not a ticket queue — it is ongoing engineering attention on your system.' },
-    { q: 'Which monitoring tools do you use?', a: 'Prometheus, Grafana, Datadog, New Relic, Sentry, and OpenTelemetry for observability, with PagerDuty for alerting and on-call escalation. We adapt to tools you already have in place rather than ripping out a working setup.' },
-    { q: 'Do you support systems Haliviq did not build?', a: 'Yes. We onboard external systems with an audit first — mapping architecture, dependencies, and known failure modes — add observability where it is missing, and take over operations once we understand how the system actually behaves under load.' },
-    { q: 'Do you offer SLAs, and how are they structured?', a: 'Yes. Support engagements come with defined response times and escalation paths sized to how critical the system is, from business-hours coverage for internal tools to around-the-clock response for customer-facing production systems.' },
-    { q: 'How much does managed support cost?', a: 'Pricing is a monthly retainer sized to system criticality, on-call coverage hours, and the number of systems under management. A single production application with business-hours coverage typically starts in the low five figures (THB) per month; 24/7 coverage for multiple critical systems is quoted after the onboarding audit.' },
-    { q: 'What happens during an actual incident?', a: 'Alerts route through PagerDuty to the on-call engineer, who follows a pre-written runbook specific to your system rather than improvising. You get status updates at defined intervals during the incident, not silence until it is resolved, and a post-incident review afterward covering root cause and prevention.' },
-    { q: 'Can we cancel or scale support up and down?', a: 'Yes. Support engagements run month-to-month after an initial onboarding period, and coverage level can scale with a notice period rather than being locked into a long fixed contract. Many clients start with business-hours coverage and expand to 24/7 as the system becomes more critical.' },
-    { q: 'Do you just monitor, or do you actually fix things?', a: 'Both. Monitoring without action is just a dashboard nobody looks at. Our engineers investigate root causes, apply fixes, and run the improvement backlog — proactive work like right-sizing infrastructure and patching dependencies — not only reactive firefighting when something breaks.' },
+    { q: 'What does Haliviq\'s managed support cover?', a: 'Proactive monitoring, incident response, dependency and security updates, performance tuning and continuous improvement, so production stays healthy long after launch. It is not a ticket queue. It is ongoing engineering attention on your system.' },
+    { q: 'Which monitoring tools do you use?', a: 'Prometheus, Grafana, Datadog, New Relic, Sentry and OpenTelemetry for observability, with PagerDuty for alerting and on-call escalation. We adapt to the tools you already have rather than ripping out a setup that works.' },
+    { q: 'Do you support systems Haliviq did not build?', a: 'Yes. We start with an audit that maps the architecture, the dependencies and the known failure modes, add observability where it is missing, and take over operations once we understand how the system behaves under load.' },
+    { q: 'Do you offer SLAs, and how are they structured?', a: 'Yes. Support comes with defined response times and escalation paths sized to how critical the system is, from business-hours cover for internal tools to around-the-clock response for customer-facing production systems.' },
+    { q: 'How much does managed support cost?', a: 'It is a monthly retainer sized to system criticality, the hours of on-call cover and the number of systems. A single production application with business-hours cover typically starts in the low five figures (THB) per month. 24/7 cover for several critical systems is quoted after the onboarding audit.' },
+    { q: 'What happens during an actual incident?', a: 'The alert goes through PagerDuty to the on-call engineer, who follows a runbook written for your system instead of improvising. You get status updates at agreed intervals while it is happening, not silence until it is fixed, and a post-incident review afterwards covering root cause and prevention.' },
+    { q: 'Can we cancel or scale support up and down?', a: 'Yes. After an initial onboarding period, support runs month to month, and the coverage level can change with a notice period instead of being locked into a long fixed contract. Many clients start with business-hours cover and move to 24/7 as the system becomes more critical.' },
+    { q: 'Do you just monitor, or do you actually fix things?', a: 'Both. Monitoring without action is a dashboard nobody looks at. Our engineers investigate root causes, apply fixes and work the improvement backlog, such as right-sizing infrastructure and patching dependencies, instead of only reacting when something breaks.' },
+    { q: 'How is this different from your general website and app support?', a: 'This service is about running production like an operations team: observability, on-call rota, SLOs and infrastructure upkeep for systems where downtime is costly. If you mainly need a dependable team to fix bugs, make small changes and keep a website or app up to date, our support service is the lighter fit.' },
   ] : [
-    { q: 'บริการดูแลระบบ (Managed Support) ของ Haliviq ครอบคลุมอะไรบ้าง?', a: 'เฝ้าระบบล่วงหน้า รับมือเหตุขัดข้อง อัปเดต Dependency และความปลอดภัย ปรับประสิทธิภาพ และปรับปรุงต่อเนื่อง ให้ระบบแข็งแรงต่อไปนานหลังเปิดตัว ไม่ใช่แค่คิวรับ Ticket แต่เป็นการดูแลระบบของคุณด้วยความใส่ใจแบบวิศวกรอย่างต่อเนื่อง' },
+    { q: 'บริการดูแลระบบ (Managed Support) ของ Haliviq ครอบคลุมอะไรบ้าง?', a: 'เฝ้าระบบล่วงหน้า รับมือเหตุขัดข้อง อัปเดต dependency และความปลอดภัย ปรับประสิทธิภาพ และปรับปรุงต่อเนื่อง ให้ระบบแข็งแรงต่อไปนานหลังเปิดตัว ไม่ใช่แค่คิวรับ ticket แต่เป็นความใส่ใจแบบวิศวกรที่อยู่กับระบบของคุณต่อเนื่อง' },
     { q: 'ใช้เครื่องมือเฝ้าระบบอะไรบ้าง?', a: 'Prometheus, Grafana, Datadog, New Relic, Sentry และ OpenTelemetry สำหรับ Observability พร้อม PagerDuty สำหรับแจ้งเตือนและส่งต่อวิศวกรเวร เราปรับให้เข้ากับเครื่องมือที่คุณมีอยู่ ไม่รื้อสิ่งที่ใช้ได้ดีอยู่แล้วทิ้ง' },
-    { q: 'ดูแลระบบที่ Haliviq ไม่ได้พัฒนาเองได้ไหม?', a: 'ได้ครับ เรารับระบบภายนอกด้วยการตรวจสอบก่อน โดยทำแผนที่สถาปัตยกรรม Dependency และจุดที่เคยพังที่รู้อยู่แล้ว เพิ่ม Observability ในจุดที่ยังขาด และรับดูแลเมื่อเข้าใจว่าระบบทำงานจริงอย่างไรเมื่อมีผู้ใช้มาก' },
-    { q: 'มี SLA ไหม และมีโครงสร้างอย่างไร?', a: 'มีครับ งานดูแลมาพร้อมเวลาตอบสนองและลำดับการส่งต่อปัญหาที่ชัดเจน ตามความสำคัญของระบบ ตั้งแต่ดูแลในเวลาทำการสำหรับเครื่องมือภายใน ไปจนถึงตอบสนองตลอด 24 ชั่วโมงสำหรับระบบจริงที่ลูกค้าใช้งาน' },
-    { q: 'ค่าดูแลระบบเท่าไหร่?', a: 'ราคาเป็นแบบรายเดือน ขึ้นกับความสำคัญของระบบ ชั่วโมงที่มีเวรดูแล และจำนวนระบบที่ดูแล ระบบจริงหนึ่งระบบพร้อมดูแลในเวลาทำการ มักเริ่มที่หลักหมื่นปลายๆ (บาท) ต่อเดือน ส่วนการดูแล 24/7 สำหรับหลายระบบสำคัญจะเสนอราคาหลังตรวจสอบตอนรับระบบ' },
-    { q: 'เกิดอะไรขึ้นจริงเมื่อมีเหตุขัดข้อง?', a: 'ระบบแจ้งเตือนผ่าน PagerDuty ไปยังวิศวกรเวร ซึ่งทำตามคู่มือที่เขียนไว้ล่วงหน้าเฉพาะระบบคุณ ไม่ใช่ด้นสด คุณจะได้รับการอัปเดตสถานะตามช่วงเวลาที่กำหนดระหว่างเกิดเหตุ ไม่ใช่เงียบไปจนกว่าจะแก้เสร็จ และมีการทบทวนหลังเหตุการณ์ที่ครอบคลุมสาเหตุราก และวิธีป้องกัน' },
-    { q: 'ยกเลิกหรือปรับระดับการดูแลขึ้นลงได้ไหม?', a: 'ได้ครับ งานดูแลเป็นรายเดือนหลังช่วงเริ่มต้น และปรับระดับได้ตามระยะเวลาแจ้งล่วงหน้า ไม่ได้ล็อกไว้ในสัญญาระยะยาว ลูกค้าหลายรายเริ่มจากดูแลในเวลาทำการ แล้วขยายเป็น 24/7 เมื่อระบบสำคัญขึ้น' },
-    { q: 'เฝ้าดูอย่างเดียว หรือลงมือแก้ไขจริงด้วย?', a: 'ทำทั้งสองอย่างครับ การเฝ้าดูโดยไม่ลงมือก็เป็นแค่ Dashboard ที่ไม่มีใครมอง วิศวกรของเราตรวจหาสาเหตุราก แก้ไขจริง และดูแลรายการงานปรับปรุง เช่น ปรับโครงสร้างพื้นฐานให้เหมาะสมและอุดช่องโหว่ใน Dependency ไม่ใช่แค่ดับไฟเมื่อมีอะไรพัง' },
+    { q: 'ดูแลระบบที่ Haliviq ไม่ได้พัฒนาเองได้ไหม?', a: 'ได้ เราเริ่มจากตรวจระบบ ทำแผนที่สถาปัตยกรรม dependency และจุดที่เคยพัง เพิ่ม Observability ในจุดที่ยังขาด แล้วรับดูแลเมื่อเข้าใจว่าระบบทำงานอย่างไรเมื่อมีผู้ใช้มาก' },
+    { q: 'มี SLA ไหม และมีโครงสร้างอย่างไร?', a: 'มี งานดูแลมาพร้อมเวลาตอบสนองและลำดับส่งต่อปัญหาที่ชัดเจน ตามความสำคัญของระบบ ตั้งแต่ดูแลในเวลาทำการสำหรับเครื่องมือภายใน ไปจนถึงตอบสนองตลอด 24 ชั่วโมงสำหรับระบบจริงที่ลูกค้าใช้งาน' },
+    { q: 'ค่าดูแลระบบเท่าไหร่?', a: 'เป็นรายเดือน ขึ้นกับความสำคัญของระบบ ชั่วโมงที่มีเวรดูแล และจำนวนระบบ ระบบ production หนึ่งระบบพร้อมดูแลในเวลาทำการ มักเริ่มที่หลักหมื่นต้นๆ (บาท) ต่อเดือน ส่วนการดูแล 24/7 สำหรับหลายระบบสำคัญจะเสนอราคาหลังตรวจสอบตอนรับระบบ' },
+    { q: 'เกิดอะไรขึ้นจริงเมื่อมีเหตุขัดข้อง?', a: 'alert ส่งผ่าน PagerDuty ไปยังวิศวกรเวร ซึ่งทำตามคู่มือที่เขียนไว้เฉพาะระบบคุณ ไม่ใช่ด้นสด ระหว่างเกิดเหตุคุณจะได้รับการอัปเดตสถานะตามช่วงเวลาที่ตกลงกัน ไม่ใช่เงียบไปจนกว่าจะแก้เสร็จ และหลังจบมีการทบทวนเรื่องสาเหตุรากและวิธีป้องกัน' },
+    { q: 'ยกเลิกหรือปรับระดับการดูแลขึ้นลงได้ไหม?', a: 'ได้ หลังช่วงเริ่มต้นแล้ว งานดูแลเป็นรายเดือน และปรับระดับได้ตามระยะเวลาแจ้งล่วงหน้า ไม่ได้ล็อกไว้ในสัญญาระยะยาว ลูกค้าหลายรายเริ่มจากดูแลในเวลาทำการ แล้วขยายเป็น 24/7 เมื่อระบบสำคัญขึ้น' },
+    { q: 'เฝ้าดูอย่างเดียว หรือลงมือแก้ไขจริงด้วย?', a: 'ทำทั้งสองอย่าง การเฝ้าดูโดยไม่ลงมือก็เป็นแค่ dashboard ที่ไม่มีใครมอง วิศวกรของเราหาสาเหตุราก แก้ไขจริง และไล่ทำรายการปรับปรุง เช่น ปรับขนาดโครงสร้างพื้นฐานให้เหมาะสมและอัปเดต dependency ไม่ใช่แค่ตั้งรับตอนมีอะไรพัง' },
+    { q: 'บริการนี้ต่างจากบริการดูแลเว็บไซต์และแอปทั่วไปของคุณยังไง?', a: 'บริการนี้คือการดูแล production แบบทีมปฏิบัติการ มี observability ตารางเวร SLO และการดูแลโครงสร้างพื้นฐาน สำหรับระบบที่หยุดแล้วเสียหายมาก ถ้าคุณต้องการทีมที่พึ่งพาได้ไว้แก้บั๊ก แก้ไขเล็กๆ น้อยๆ และอัปเดตเว็บไซต์หรือแอปให้ทันสมัย บริการ Support ของเราเบากว่าและเหมาะกว่า' },
   ]
 
   const postHeroSlot = (
@@ -403,7 +432,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
         </h2>
         <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-          {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+          {isEN ? "We'd love to hear what you're building." : 'เรายินดีฟังว่าคุณกำลังสร้างอะไรอยู่'}
         </p>
         <div className="flex flex-wrap items-center gap-6">
           <Link

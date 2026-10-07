@@ -81,32 +81,32 @@ const servicesMenuEn = {
 }
 
 const flagshipServicesTh = [
-  { icon:'ti-code', title:'พัฒนาเว็บไซต์', href:'/services/web-development', desc:'เว็บแอปที่พร้อมใช้งานจริง มั่นคง ปลอดภัย และดูแลต่อได้ง่าย' },
-  { icon:'ti-robot', title:'AI Agent & Generative AI', href:'/services/ai', desc:'AI Agent และระบบ RAG ที่ใช้งานได้จริง ไม่ใช่แค่ Demo บนสไลด์' },
-  { icon:'ti-device-mobile', title:'พัฒนาแอปมือถือ', href:'/services/mobile-apps', desc:'แอป Native และ Cross-platform ที่ลื่นไหล ใช้งานง่าย และขยายต่อได้' },
-  { icon:'ti-chart-dots-3', title:'Data Analytics & Engineering', href:'/services/data-analytics', desc:'Pipeline และ Dashboard ที่เปลี่ยนข้อมูลให้ช่วยตัดสินใจและวัดผลได้' },
-  { icon:'ti-palette', title:'UI/UX & Product Design', href:'/services/ux-ui-design', desc:'วิจัยผู้ใช้และ Design System ที่ทำให้ผลิตภัณฑ์ซับซ้อนใช้งานง่ายขึ้น' },
+  { icon:'ti-code', title:'พัฒนาเว็บไซต์', href:'/services/web-development', desc:'เว็บไซต์และเว็บแอปที่ใช้งานจริงได้ โหลดเร็ว มั่นคง ปลอดภัย และทีมของคุณดูแลต่อได้ง่าย' },
+  { icon:'ti-robot', title:'AI Agent & Generative AI', href:'/services/ai', desc:'AI Agent และระบบ RAG ที่ทำงานแทนคนได้จริงในงานประจำ ไม่ใช่แค่ Demo บนสไลด์' },
+  { icon:'ti-device-mobile', title:'พัฒนาแอปมือถือ', href:'/services/mobile-apps', desc:'แอป Native และ Cross-platform บน iOS และ Android ที่ใช้ลื่น ใช้งานง่าย และขยายต่อได้' },
+  { icon:'ti-chart-dots-3', title:'Data Analytics & Engineering', href:'/services/data-analytics', desc:'Pipeline คลังข้อมูล และ Dashboard ที่ช่วยให้ตัดสินใจจากตัวเลขจริงและวัดผลได้' },
+  { icon:'ti-palette', title:'UI/UX & Product Design', href:'/services/ux-ui-design', desc:'วิจัยผู้ใช้ ออกแบบ UX/UI และ Design System ให้ผลิตภัณฑ์ที่ซับซ้อนใช้งานง่ายขึ้น' },
   { icon:'ti-replace', title:'Digital Transformation', href:'/services/digital-transformation', desc:'แผนปรับองค์กรสู่ดิจิทัลที่ทำได้จริง เชื่อมเทคโนโลยี ขั้นตอนทำงาน และทีมเข้าด้วยกัน' },
-  { icon:'ti-bulb', title:'AI Workshops', href:'/services/automation', desc:'Workshop ลงมือทำจริง ช่วยให้ทีมของคุณใช้ AI ในงานประจำวันได้' },
+  { icon:'ti-bulb', title:'AI Workshops', href:'/services/automation', desc:'Workshop ที่ลงมือทำจริง ช่วยให้ทีมของคุณเอา AI ไปใช้ในงานประจำวันได้ตั้งแต่วันที่อบรมเสร็จ' },
 ]
 
 const flagshipServicesEn = [
-  { icon:'ti-code', title:'Web Development', href:'/services/web-development', desc:'Production-grade web apps and platforms built for performance, security, and long-term maintainability.' },
-  { icon:'ti-robot', title:'AI Agents & Generative AI', href:'/services/ai', desc:'AI agents, RAG systems, and LLM products that automate real work — not demos that never leave the slide deck.' },
-  { icon:'ti-device-mobile', title:'Mobile App Development', href:'/services/mobile-apps', desc:'Native and cross-platform mobile apps with the polish users expect and the architecture teams can scale.' },
-  { icon:'ti-chart-dots-3', title:'Data Analytics & Engineering', href:'/services/data-analytics', desc:'Reliable pipelines, warehouses, and analytics that turn operational data into decisions you can act on.' },
-  { icon:'ti-palette', title:'UI/UX & Product Design', href:'/services/ux-ui-design', desc:'User research, product UX, interface design, and design systems that make complex products feel simple.' },
-  { icon:'ti-replace', title:'Digital Transformation', href:'/services/digital-transformation', desc:'Practical modernization programs that align technology, process, and teams around outcomes that matter.' },
-  { icon:'ti-bulb', title:'AI Workshops', href:'/services/automation', desc:"Hands-on workshops to bring AI into your team's daily work." },
+  { icon:'ti-code', title:'Web Development', href:'/services/web-development', desc:'Websites and web apps that load fast, stay secure, and are easy for your own team to maintain after launch.' },
+  { icon:'ti-robot', title:'AI Agents & Generative AI', href:'/services/ai', desc:'AI agents and RAG systems that take over real routine work, not demos that never leave the slide deck.' },
+  { icon:'ti-device-mobile', title:'Mobile App Development', href:'/services/mobile-apps', desc:'Native and cross-platform iOS and Android apps that feel smooth to use and are structured so they can keep growing.' },
+  { icon:'ti-chart-dots-3', title:'Data Analytics & Engineering', href:'/services/data-analytics', desc:'Pipelines, warehouses and dashboards that turn the data you already collect into decisions you can measure.' },
+  { icon:'ti-palette', title:'UI/UX & Product Design', href:'/services/ux-ui-design', desc:'User research, UX, interface design and design systems that make complicated products simple to use.' },
+  { icon:'ti-replace', title:'Digital Transformation', href:'/services/digital-transformation', desc:'Practical modernization plans that line up your technology, processes and people around goals you can check.' },
+  { icon:'ti-bulb', title:'AI Workshops', href:'/services/automation', desc:"Hands-on workshops that help your team start using AI in daily work, with exercises built around your own tasks." },
 ]
 
 const flagshipIndustriesTh = [
-  { icon: 'ti-building-bank', title: 'FinTech & ธนาคาร', href: '/industries/fintech', desc: 'Digital Banking และระบบชำระเงินที่ปลอดภัยและเป็นไปตามกฎระเบียบ' },
-  { icon: 'ti-heartbeat', title: 'สุขภาพ', href: '/industries/healthcare', desc: 'เทคโนโลยีที่ช่วยดูแลผู้ป่วยและสนับสนุนงานวิจัยทางการแพทย์' },
-  { icon: 'ti-shopping-cart', title: 'ค้าปลีก & อีคอมเมิร์ซ', href: '/industries/retail', desc: 'สร้างประสบการณ์ช้อปปิ้งที่น่าใช้ และช่วยให้ลูกค้าซื้อมากขึ้น' },
-  { icon: 'ti-building-skyscraper', title: 'อสังหาริมทรัพย์', href: '/industries/real-estate', desc: 'แพลตฟอร์มดิจิทัลสำหรับค้นหา จัดการ และขายอสังหาฯ' },
-  { icon: 'ti-school', title: 'การศึกษา', href: '/industries/education', desc: 'ใช้เทคโนโลยีการศึกษาสมัยใหม่ช่วยให้เรียนรู้ได้ดีขึ้น' },
-  { icon: 'ti-truck-delivery', title: 'โลจิสติกส์', href: '/industries/logistics', desc: 'ระบบซัพพลายเชน ขนส่ง และคลังสินค้าที่ทำงานฉลาดขึ้น' },
+  { icon: 'ti-building-bank', title: 'FinTech & ธนาคาร', href: '/industries/fintech', desc: 'Digital Banking และระบบชำระเงินที่ปลอดภัย และเป็นไปตามกฎระเบียบที่เกี่ยวข้อง' },
+  { icon: 'ti-heartbeat', title: 'สุขภาพ', href: '/industries/healthcare', desc: 'เทคโนโลยีที่ช่วยดูแลผู้ป่วยให้สะดวกขึ้น และสนับสนุนงานวิจัยทางการแพทย์' },
+  { icon: 'ti-shopping-cart', title: 'ค้าปลีก & อีคอมเมิร์ซ', href: '/industries/retail', desc: 'สร้างประสบการณ์ช้อปปิ้งที่น่าใช้ ตั้งแต่เลือกสินค้าจนถึงจ่ายเงิน และช่วยให้ลูกค้าซื้อมากขึ้น' },
+  { icon: 'ti-building-skyscraper', title: 'อสังหาริมทรัพย์', href: '/industries/real-estate', desc: 'แพลตฟอร์มดิจิทัลสำหรับค้นหา จัดการ และขายอสังหาฯ ให้ทั้งทีมขายและลูกค้าใช้ง่าย' },
+  { icon: 'ti-school', title: 'การศึกษา', href: '/industries/education', desc: 'ใช้เทคโนโลยีการศึกษาสมัยใหม่ช่วยให้ผู้เรียนเรียนรู้ได้ดีขึ้น และช่วยให้ผู้สอนทำงานสะดวกขึ้น' },
+  { icon: 'ti-truck-delivery', title: 'โลจิสติกส์', href: '/industries/logistics', desc: 'ระบบซัพพลายเชน ขนส่ง และคลังสินค้าที่ทำงานฉลาดขึ้น เห็นสถานะของแต่ละขั้นตอนชัดเจน' },
 ]
 
 const workMenuTh = [
@@ -117,31 +117,31 @@ const workMenuTh = [
 ]
 
 const workMenuEn = [
-  { title: 'Digital Banking Super App', href: '/work', client: 'Leading Bank', desc: 'Redesigned mobile banking for 4 million users.' },
-  { title: 'Patient Digital Ecosystem', href: '/work', client: 'Hospital Group', desc: 'End-to-end digital health system from finding a doctor to booking a visit.' },
-  { title: 'Omnichannel Retail Platform', href: '/work', client: 'Retail Group', desc: 'Unified commerce connecting 2,000+ branches.' },
-  { title: 'AI Document Intelligence', href: '/work', client: 'Insurance Company', desc: 'AI document processing that cut manual work by 80%.' },
+  { title: 'Digital Banking Super App', href: '/work', client: 'Leading Bank', desc: 'A redesigned mobile banking app serving 4 million users.' },
+  { title: 'Patient Digital Ecosystem', href: '/work', client: 'Hospital Group', desc: 'A digital health system covering everything from finding a doctor to booking a visit.' },
+  { title: 'Omnichannel Retail Platform', href: '/work', client: 'Retail Group', desc: 'Unified commerce connecting 2,000+ branches on one platform.' },
+  { title: 'AI Document Intelligence', href: '/work', client: 'Insurance Company', desc: 'AI that reads documents automatically and cut manual work by 80%.' },
 ]
 
 const insightsMenuTh = [
-  { title: 'บทความ', href: '/blog', desc: 'บทความ มุมมอง และความรู้เชิงลึกจากทีมของเรา' },
-  { title: 'Case Studies', href: '/case-studies', desc: 'ตัวอย่างจริงที่เราช่วยลูกค้าแก้ปัญหาซับซ้อน' },
-  { title: 'Today I Learned', href: '/today-i-learned', desc: 'บันทึกสั้นๆ จากการทำงานจริงของวิศวกรและดีไซเนอร์ในทีม' },
+  { title: 'บทความ', href: '/blog', desc: 'บทความ มุมมอง และความรู้เชิงลึกจากทีมของเรา เรื่องผลิตภัณฑ์ ดีไซน์ วิศวกรรม และ AI' },
+  { title: 'Case Studies', href: '/case-studies', desc: 'ตัวอย่างจริงที่เราช่วยลูกค้าแก้ปัญหาซับซ้อน ว่าเริ่มจากโจทย์อะไรและทำอย่างไร' },
+  { title: 'Today I Learned', href: '/today-i-learned', desc: 'บันทึกสั้นๆ จากการทำงานจริงของวิศวกรและดีไซเนอร์ในทีม อ่านจบเร็ว เอาไปใช้ต่อได้' },
 ]
 
 const insightsMenuEn = [
-  { title: 'Blog', href: '/blog', desc: 'Insights, perspectives, and thought leadership from our team of experts.' },
-  { title: 'Case Studies', href: '/case-studies', desc: "Real-world examples of how we've helped clients solve complex challenges." },
-  { title: 'Today I Learned', href: '/today-i-learned', desc: 'Quick, practical notes from our engineers and designers' },
+  { title: 'Blog', href: '/blog', desc: 'Articles and opinions from our team on product, design, engineering and AI.' },
+  { title: 'Case Studies', href: '/case-studies', desc: "Real projects where we helped clients with hard problems: what the brief was and how we tackled it." },
+  { title: 'Today I Learned', href: '/today-i-learned', desc: 'Short, practical notes from our engineers and designers, quick to read and easy to reuse.' },
 ]
 
 const flagshipIndustriesEn = [
-  { icon: 'ti-building-bank', title: 'FinTech & Banking', href: '/industries/fintech', desc: 'Secure, compliant digital banking and payment products.' },
-  { icon: 'ti-heartbeat', title: 'Healthcare', href: '/industries/healthcare', desc: 'Technology solutions that improve patient care and medical research.' },
-  { icon: 'ti-shopping-cart', title: 'Retail & E-Commerce', href: '/industries/retail', desc: 'Build engaging shopping experiences that drive conversions.' },
-  { icon: 'ti-building-skyscraper', title: 'Real Estate', href: '/industries/real-estate', desc: 'Digital platforms for property search, management, and sales.' },
-  { icon: 'ti-school', title: 'Education', href: '/industries/education', desc: 'Transform learning with modern educational technology.' },
-  { icon: 'ti-truck-delivery', title: 'Logistics', href: '/industries/logistics', desc: 'Smarter supply chain, fleet, and warehouse operations.' },
+  { icon: 'ti-building-bank', title: 'FinTech & Banking', href: '/industries/fintech', desc: 'Digital banking and payment products that are secure and meet the regulations that apply to them.' },
+  { icon: 'ti-heartbeat', title: 'Healthcare', href: '/industries/healthcare', desc: 'Technology that makes patient care more convenient and supports medical research.' },
+  { icon: 'ti-shopping-cart', title: 'Retail & E-Commerce', href: '/industries/retail', desc: 'Shopping experiences that are pleasant from browsing to checkout, and help more visitors buy.' },
+  { icon: 'ti-building-skyscraper', title: 'Real Estate', href: '/industries/real-estate', desc: 'Digital platforms for searching, managing and selling property, easy for both sales teams and buyers.' },
+  { icon: 'ti-school', title: 'Education', href: '/industries/education', desc: 'Education technology that helps learners study better and makes teachers\' work easier.' },
+  { icon: 'ti-truck-delivery', title: 'Logistics', href: '/industries/logistics', desc: 'Smarter supply chain, fleet and warehouse operations, with a clear view of every stage.' },
 ]
 
 const segmentsTh = [
@@ -150,8 +150,8 @@ const segmentsTh = [
 ]
 
 const segmentsEn = [
-  { icon:'ti-building-skyscraper', title:'Enterprise', desc:'Full delivery teams for complex platforms, with the security, compliance, and process rigor large organizations expect.' },
-  { icon:'ti-rocket', title:'Small Business & Startups', desc:'Lean, focused builds that get the essentials right. We help you trim scope, not quality, so a modest budget still ships a solid product.' },
+  { icon:'ti-building-skyscraper', title:'Enterprise', desc:'Full delivery teams for complex platforms, working to the security standards and approval processes large organizations expect.' },
+  { icon:'ti-rocket', title:'Small Business & Startups', desc:'Lean, focused builds that get the essentials right. We trim scope, never quality, so a modest budget still ships a solid product.' },
 ]
 
 const mobileNavTh = [

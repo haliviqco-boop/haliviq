@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import ServiceLayout from '@/components/service/ServiceLayout'
 import { type Lang } from '@/lib/i18n'
@@ -22,6 +23,24 @@ export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
 }
 
+export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+  const isEN = params.lang === 'en'
+  const title = isEN
+    ? 'ERP, CRM & POS Implementation in Thailand | Haliviq'
+    : 'รับติดตั้ง ERP CRM POS สำหรับองค์กรไทย | Haliviq'
+  const description = isEN
+    ? 'Haliviq implements and customizes ERP, CRM and POS systems in Thailand, connects them to your store, warehouse and finance, and trains your team to use them.'
+    : 'Haliviq รับติดตั้งและปรับแต่ง ERP, CRM และ POS ให้เข้ากับวิธีทำงานจริง เชื่อมกับร้านออนไลน์ คลังสินค้า และระบบบัญชี พร้อมอบรมทีมให้ใช้งานได้คล่อง'
+  const url = `https://haliviq.com/${params.lang}/services/enterprise-solutions`
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url },
+    twitter: { card: 'summary_large_image', title, description },
+  }
+}
+
 export default function Page({ params }: { params: { lang: Lang } }) {
   const isEN = params.lang === 'en'
   const prefix = `/${params.lang}`
@@ -29,40 +48,42 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge    = isEN ? 'Enterprise / ERP · CRM · POS'  : 'Enterprise / ERP · CRM · POS'
   const title    = isEN ? 'Enterprise Systems'  : 'ระบบ Enterprise'
   const subtitle = isEN ? 'That Fit How You Work'    : 'ที่เข้ากับวิธีทำงานจริง'
-  const heroDesc = isEN ? 'Implement, customize, and integrate ERP, CRM, and POS systems around how your business actually operates.'  : 'ติดตั้ง ปรับแต่ง และเชื่อมต่อระบบ ERP, CRM และ POS ให้เข้ากับวิธีทำงานจริงของธุรกิจคุณ'
+  const heroDesc = isEN ? 'Most companies do not need a new way of working, they need software that follows the one they already have. We implement ERP, CRM, and POS platforms, tune them to your own steps, and join them to your online store, warehouse, and accounting. Where a standard package cannot do something your business depends on, we write a small extension for that gap instead of asking you to change the process.'  : 'หลายบริษัทไม่ได้ต้องการวิธีทำงานใหม่ แต่ต้องการซอฟต์แวร์ที่ทำตามวิธีที่ใช้อยู่แล้ว เราติดตั้ง ERP, CRM และ POS ปรับให้ตรงกับขั้นตอนของคุณ แล้วเชื่อมเข้ากับร้านออนไลน์ คลังสินค้า และระบบบัญชี ถ้าชุดมาตรฐานทำบางอย่างที่ธุรกิจคุณต้องพึ่งไม่ได้ เราเขียนส่วนเสริมเล็กๆ มาเติมตรงนั้น แทนที่จะขอให้คุณเปลี่ยนวิธีทำงาน'
   const whyTitle = isEN ? 'Why off-the-shelf software fails without the right fit'    : 'ทำไมซอฟต์แวร์สำเร็จรูปถึงล้มเหลวถ้าไม่เหมาะกับงานจริง'
-  const whyDesc  = isEN ? 'Off-the-shelf enterprise software only succeeds when it is aligned with your actual workflows — forced adoption of a rigid system just creates workarounds and shadow spreadsheets.'  : 'ซอฟต์แวร์องค์กรสำเร็จรูปจะได้ผลก็ต่อเมื่อสอดคล้องกับขั้นตอนทำงานจริงของธุรกิจ การบังคับใช้ระบบที่ตายตัวเกินไปมักจบที่พนักงานหาทางเลี่ยง และทำ Spreadsheet ลับๆ ขึ้นมาใช้เอง'
+  const whyDesc  = isEN ? 'A new system usually fails quietly. Nobody refuses to use it; people just keep a private spreadsheet for the step the software handles badly, then another, until the real process lives outside the system. Reports stop matching, stock counts drift between the shop and the warehouse, and the purchase turns into an expensive login screen. Fitting the system to the work before rollout is far cheaper than chasing those workarounds afterwards.'  : 'ระบบใหม่มักล้มเหลวแบบเงียบๆ ไม่มีใครปฏิเสธที่จะใช้ แต่ทุกคนแอบเก็บ Spreadsheet ส่วนตัวไว้สำหรับขั้นตอนที่ซอฟต์แวร์ทำได้ไม่ดี แล้วก็เพิ่มไฟล์ที่สอง ที่สาม จนงานจริงๆ ไปอยู่นอกระบบ รายงานเริ่มไม่ตรงกัน จำนวนสต็อกหน้าร้านกับคลังเริ่มเพี้ยน และระบบที่ซื้อมากลายเป็นแค่หน้าล็อกอินราคาแพง การปรับระบบให้เข้ากับงานก่อนเปิดใช้ถูกกว่าการตามแก้ทางเลี่ยงเหล่านั้นทีหลังมาก'
   const ctaTitle = isEN ? 'Ready for systems that fit your business?'    : 'พร้อมใช้ระบบที่เข้ากับธุรกิจคุณจริงๆ ไหม?'
-  const ctaDesc  = isEN ? 'Start with a free process mapping session. We will show you where systems and reality diverge.'   : 'เริ่มด้วยการร่างแผนผังขั้นตอนทำงาน (Process Mapping) ฟรี เราจะชี้ให้เห็นว่าระบบกับงานจริงต่างกันตรงไหน'
+  const ctaDesc  = isEN ? 'Start with a free process mapping session. We sit with the people who do the work, draw how an order or a customer really moves through your company, and show you where your current systems and reality part ways.'   : 'เริ่มด้วยการร่างแผนผังขั้นตอนทำงาน (Process Mapping) ฟรี เรานั่งคุยกับคนที่ทำงานจริง วาดให้ดูว่าออเดอร์หรือลูกค้าหนึ่งคนเดินทางผ่านบริษัทคุณยังไง แล้วชี้ว่าระบบที่ใช้อยู่กับงานจริงต่างกันตรงไหน'
   const overviewText = isEN
-    ? 'Off-the-shelf enterprise software succeeds when it is aligned with existing workflows, not the other way around. We implement and customize ERP, CRM, and POS platforms, integrating them with e-commerce, logistics, finance, and data systems while training your team for real adoption — and when standard packages hit genuine limitations, we build targeted extensions and APIs rather than forcing your business to bend around software that does not fit.'
-    : 'ซอฟต์แวร์องค์กรสำเร็จรูปจะใช้ได้ดีเมื่อสอดคล้องกับขั้นตอนทำงานที่มีอยู่ ไม่ใช่ให้ธุรกิจต้องปรับตามระบบ เราติดตั้งและปรับแต่งระบบ ERP, CRM และ POS พร้อมเชื่อมต่อกับ E-commerce, ระบบขนส่ง, การเงิน และระบบข้อมูล และอบรมทีมให้ใช้งานได้จริง ถ้าชุดมาตรฐานมีข้อจำกัดจริงๆ เราจะสร้างส่วนเสริมและ API เฉพาะจุด แทนที่จะบังคับให้ธุรกิจต้องปรับตามระบบที่ไม่เหมาะ'
+    ? 'Off-the-shelf enterprise software works when it is shaped around the way you already operate, not the other way round. We implement and customize ERP, CRM, and POS platforms, join them to e-commerce, logistics, finance, and reporting, and train your team as each part goes live. When a standard package hits a real limit, we build a targeted extension or API for that one gap. The same team also builds customer-facing apps and websites, so your internal systems and your public products can share data without a third vendor in between.'
+    : 'ซอฟต์แวร์องค์กรสำเร็จรูปจะใช้ได้ดีเมื่อถูกปรับให้เข้ากับวิธีทำงานที่มีอยู่ ไม่ใช่ให้คุณปรับตามซอฟต์แวร์ เราติดตั้งและปรับแต่ง ERP, CRM และ POS เชื่อมเข้ากับ E-commerce ระบบขนส่ง การเงิน และรายงาน และอบรมทีมทุกครั้งที่แต่ละส่วนเปิดใช้ ถ้าชุดมาตรฐานติดข้อจำกัดจริง เราสร้างส่วนเสริมหรือ API เฉพาะจุดนั้น ทีมเดียวกันยังสร้างแอปและเว็บไซต์ฝั่งลูกค้าด้วย ระบบภายในกับผลิตภัณฑ์ที่ลูกค้าใช้จึงแชร์ข้อมูลกันได้ โดยไม่ต้องมีผู้ให้บริการรายที่สามมาคั่นกลาง'
 
   const heroBullets = isEN ? [
-      'ERP implementation covering finance, supply chain, operations',
-      'CRM platforms connected to real communication channels',
-      'POS and commerce integration across stores and online',
-      'Custom extensions when standard packages fall short',
-      'Team training built into every rollout, not an afterthought',
+      'ERP implementation across finance, purchasing, stock, and day-to-day operations',
+      'CRM connected to the channels customers really use, including email and LINE',
+      'POS tied to inventory and your online store, so every shop sells from the same stock',
+      'Custom extensions and APIs for the steps a standard package cannot do',
+      'Fit-gap review before you buy, so you know what needs changing and what does not',
+      'Training by role in every rollout, with support in the first weeks of live use',
     ] : [
-      'ติดตั้ง ERP ครอบคลุมการเงิน ซัพพลายเชน และการปฏิบัติการ',
-      'ระบบ CRM ที่เชื่อมกับช่องทางสื่อสารจริง',
-      'เชื่อมระบบ POS และการขายทั้งหน้าร้านและออนไลน์',
-      'สร้างส่วนเสริมเฉพาะเมื่อชุดมาตรฐานไม่เพียงพอ',
-      'อบรมทีมในทุกขั้นตอน ไม่ใช่มาทำทีหลัง',
+      'ติดตั้ง ERP ครอบคลุมการเงิน จัดซื้อ สต็อก และงานปฏิบัติการประจำวัน',
+      'CRM ที่เชื่อมกับช่องทางที่ลูกค้าใช้จริง รวมถึงอีเมลและ LINE',
+      'POS ที่ผูกกับสต็อกและร้านออนไลน์ ทุกสาขาขายจากสต็อกชุดเดียวกัน',
+      'ส่วนเสริมและ API เฉพาะ สำหรับขั้นตอนที่ชุดมาตรฐานทำไม่ได้',
+      'ตรวจช่องว่างระหว่างระบบกับงานจริงก่อนซื้อ ให้รู้ว่าอะไรต้องปรับ อะไรไม่ต้อง',
+      'อบรมตามบทบาททุกครั้งที่เปิดใช้ และดูแลต่อในช่วงสัปดาห์แรกๆ ที่ใช้งานจริง',
     ]
   const whyPoints   = isEN ? [
-      'Manual data re-entry between disconnected systems is one of the largest hidden operational costs.',
-      'A CRM that does not match your sales process gets abandoned within months.',
-      'Connected POS and inventory data prevents the stockouts and overselling that cost real revenue.',
-      'Custom extensions cost far less than forcing a business to redesign itself around rigid software.',
-      'Training that happens during rollout, not after, is what actually drives adoption.',
+      'Typing the same data into two disconnected systems is one of the biggest hidden costs in a company, and nobody ever sees it on an invoice.',
+      'A CRM that does not follow your real sales steps is usually abandoned within a few months, however good the software is.',
+      'POS and inventory that share one set of numbers stop the stock-outs and overselling that cost you real sales.',
+      'A small custom extension costs far less than redesigning how a whole department works to suit rigid software.',
+      'Training given during rollout, department by department, does more for adoption than a single session at the end.',
     ] : [
-      'การคีย์ข้อมูลซ้ำระหว่างระบบที่ไม่เชื่อมกัน เป็นต้นทุนแอบแฝงที่ใหญ่ที่สุดอย่างหนึ่งของการทำงาน',
-      'CRM ที่ไม่เข้ากับขั้นตอนขายจริง มักถูกทิ้งภายในไม่กี่เดือน',
-      'ข้อมูล POS และสต็อกที่เชื่อมกัน ป้องกันปัญหาสินค้าหมดและขายเกินจำนวนที่ทำให้เสียรายได้จริง',
-      'ส่วนเสริมเฉพาะจุดมีต้นทุนต่ำกว่าการบังคับให้ธุรกิจปรับตามซอฟต์แวร์ที่ตายตัวมาก',
-      'การอบรมระหว่างเปิดใช้ระบบ ไม่ใช่หลังจากนั้น คือสิ่งที่ทำให้คนใช้งานจริง',
+      'การคีย์ข้อมูลเดียวกันลงสองระบบที่ไม่เชื่อมกัน เป็นต้นทุนแอบแฝงที่ใหญ่มากอย่างหนึ่งของบริษัท และไม่เคยโผล่ในใบแจ้งหนี้ใบไหน',
+      'CRM ที่ไม่ตามขั้นตอนขายจริง มักถูกทิ้งภายในไม่กี่เดือน ต่อให้ซอฟต์แวร์ดีแค่ไหนก็ตาม',
+      'POS กับสต็อกที่ใช้ตัวเลขชุดเดียวกัน ช่วยตัดปัญหาสินค้าหมดและขายเกินจำนวนที่ทำให้เสียยอดขายจริง',
+      'ส่วนเสริมเล็กๆ เฉพาะจุดถูกกว่าการออกแบบวิธีทำงานของทั้งแผนกใหม่เพื่อให้เข้ากับซอฟต์แวร์ที่ตายตัวมาก',
+      'การอบรมระหว่างเปิดใช้ ทีละแผนก ช่วยให้คนใช้งานจริงได้มากกว่าการอบรมรอบเดียวตอนท้าย',
     ]
   const outcomes    = isEN ? [
       {stat: '60%', label: 'Less Manual Entry', desc: 'After system integration'},
@@ -76,54 +97,60 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {stat: '90%+', label: 'อัตราการใช้งานจริง', desc: 'ด้วยการอบรมที่ทำไปพร้อมการเปิดใช้'}
     ]
   const features    = isEN ? [
-      {icon: 'ti-building-warehouse', title: 'ERP Implementation', desc: 'Configure and deploy ERP modules addressing finance, supply chain, and operations needs.'},
-      {icon: 'ti-users-group', title: 'CRM Platforms', desc: 'Sales, service, and marketing systems connected to customer communication channels.'},
-      {icon: 'ti-shopping-cart', title: 'POS & Commerce Integration', desc: 'Link stores, inventory, payments, and online channels into unified commerce infrastructure.'},
-      {icon: 'ti-puzzle', title: 'Customization & Extensions', desc: 'Custom solutions filling gaps where standard packages prove insufficient.'},
-      {icon: 'ti-transfer', title: 'System Integration', desc: 'Connect finance, operations, and sales channels into one coherent data flow.'},
-      {icon: 'ti-school', title: 'Team Training', desc: 'Building capability for sustained adoption, not just a handover document.'}
+      {icon: 'ti-building-warehouse', title: 'ERP Implementation', desc: 'We configure and deploy the ERP modules you need, such as general ledger, purchasing, inventory, and production planning. Master data, approval rules, and document numbering are set up around your current paperwork, so finance and operations recognise their own process on day one.'},
+      {icon: 'ti-users-group', title: 'CRM Platforms', desc: 'Sales, service, and marketing tools set up with your real pipeline stages and customer fields. Enquiries from email, web forms, and LINE land in one customer record, so the next person to talk to a client sees what was already said.'},
+      {icon: 'ti-shopping-cart', title: 'POS & Commerce Integration', desc: 'We join shop tills, stock, payments, and the online store so every channel sells from one set of numbers. Useful for retailers with several branches, where a sale in one shop must show up in stock everywhere within moments.'},
+      {icon: 'ti-puzzle', title: 'Customization & Extensions', desc: 'When a package cannot handle a step your business relies on, such as an unusual pricing rule or a delivery schedule, we build an extension or API for just that gap. It is documented, upgrade-safe, and kept small, so the core system stays standard.'},
+      {icon: 'ti-transfer', title: 'System Integration', desc: 'We connect finance, operations, logistics, and sales channels so a figure is entered once and reused everywhere. Each link is monitored and logged, so when a sync fails someone is told, instead of the numbers quietly drifting apart.'},
+      {icon: 'ti-school', title: 'Team Training', desc: 'We train by role as each module goes live, write short guides in plain language, and stay available in the first weeks. The aim is a team that can run the system on its own, not a thick handover document that nobody reads.'}
     ] : [
-      {icon: 'ti-building-warehouse', title: 'ERP Implementation', desc: 'ตั้งค่าและติดตั้งโมดูล ERP ครอบคลุมการเงิน ซัพพลายเชน และการปฏิบัติการ'},
-      {icon: 'ti-users-group', title: 'CRM Platforms', desc: 'ระบบงานขาย งานบริการ และการตลาด ที่เชื่อมกับช่องทางสื่อสารลูกค้าจริง'},
-      {icon: 'ti-shopping-cart', title: 'POS & Commerce Integration', desc: 'เชื่อมหน้าร้าน สต็อก การชำระเงิน และช่องทางออนไลน์ให้เป็นระบบขายเดียว'},
-      {icon: 'ti-puzzle', title: 'Customization & Extensions', desc: 'สร้างโซลูชันเฉพาะเพื่อเติมส่วนที่ชุดมาตรฐานไม่ครอบคลุม'},
-      {icon: 'ti-transfer', title: 'System Integration', desc: 'เชื่อมการเงิน การปฏิบัติการ และช่องทางขาย ให้เป็นกระแสข้อมูลเดียวที่ตรงกัน'},
-      {icon: 'ti-school', title: 'Team Training', desc: 'สร้างความสามารถให้ทีมใช้งานได้จริงต่อเนื่อง ไม่ใช่แค่เอกสารส่งมอบ'}
+      {icon: 'ti-building-warehouse', title: 'ERP Implementation', desc: 'เราตั้งค่าและติดตั้งโมดูล ERP ที่คุณต้องใช้ เช่น บัญชีแยกประเภท จัดซื้อ สต็อก และวางแผนการผลิต ข้อมูลหลัก กฎการอนุมัติ และเลขที่เอกสาร ตั้งตามเอกสารที่คุณใช้อยู่ ฝ่ายบัญชีและฝ่ายปฏิบัติการจะเห็นขั้นตอนของตัวเองตั้งแต่วันแรก'},
+      {icon: 'ti-users-group', title: 'CRM Platforms', desc: 'เครื่องมืองานขาย งานบริการ และการตลาด ตั้งตามขั้นตอนใน Pipeline และฟิลด์ลูกค้าจริงของคุณ คำถามจากอีเมล ฟอร์มบนเว็บ และ LINE เข้ามารวมในเรคคอร์ดลูกค้าเดียว คนต่อไปที่คุยกับลูกค้าจะเห็นว่าก่อนหน้านี้คุยอะไรไปแล้ว'},
+      {icon: 'ti-shopping-cart', title: 'POS & Commerce Integration', desc: 'เราเชื่อมเครื่อง POS หน้าร้าน สต็อก การชำระเงิน และร้านออนไลน์ ให้ทุกช่องทางขายจากตัวเลขชุดเดียวกัน มีประโยชน์กับธุรกิจค้าปลีกที่มีหลายสาขา เพราะขายที่สาขาหนึ่งแล้ว สต็อกทุกที่ต้องเห็นภายในไม่กี่วินาที'},
+      {icon: 'ti-puzzle', title: 'Customization & Extensions', desc: 'ถ้าชุดสำเร็จรูปทำขั้นตอนที่ธุรกิจพึ่งไม่ได้ เช่น กติการาคาแปลกๆ หรือตารางจัดส่ง เราสร้างส่วนเสริมหรือ API เฉพาะช่องว่างนั้น มีเอกสาร อัปเกรดระบบได้ไม่พัง และทำให้เล็กไว้ ตัวระบบหลักจะได้ยังเป็นแบบมาตรฐาน'},
+      {icon: 'ti-transfer', title: 'System Integration', desc: 'เราเชื่อมการเงิน งานปฏิบัติการ โลจิสติกส์ และช่องทางขาย ให้ตัวเลขกรอกครั้งเดียวแล้วใช้ซ้ำได้ทุกที่ ทุกตัวเชื่อมมีการเฝ้าดูและเก็บ Log ถ้าซิงก์พลาดจะมีคนได้รับแจ้ง ไม่ปล่อยให้ตัวเลขเพี้ยนห่างกันไปเงียบๆ'},
+      {icon: 'ti-school', title: 'Team Training', desc: 'เราอบรมตามบทบาทเมื่อแต่ละโมดูลเปิดใช้ เขียนคู่มือสั้นๆ ด้วยภาษาที่อ่านง่าย และอยู่ช่วยในช่วงสัปดาห์แรกๆ เป้าหมายคือให้ทีมใช้ระบบได้เอง ไม่ใช่เอกสารส่งมอบหนาๆ ที่ไม่มีใครเปิดอ่าน'}
     ]
   const steps       = isEN ? [
-      {no: '01', title: 'Requirements', desc: 'Process mapping and success criteria definition.'},
-      {no: '02', title: 'Selection', desc: 'Fit assessment and platform evaluation.'},
-      {no: '03', title: 'Implement', desc: 'Configuration, migration, and deployment.'},
-      {no: '04', title: 'Customize', desc: 'Extensions addressing actual workflows.'},
-      {no: '05', title: 'Integrate', desc: 'Connecting finance, operations, and sales channels.'},
-      {no: '06', title: 'Train', desc: 'Building team capability for sustained adoption.'}
+      {no: '01', title: 'Requirements', desc: 'We map your processes with the people who do them, from quote to cash or from purchase to stock, and agree what success looks like in numbers you already track. This becomes the checklist every later decision is tested against.'},
+      {no: '02', title: 'Selection', desc: 'We run a fit-gap review of the platforms on your shortlist, or help you build one, scoring each against your mapped processes. You get a plain comparison and a recommendation, including cases where a cheaper option is enough.'},
+      {no: '03', title: 'Implement', desc: 'We configure the system, migrate master data and open balances, and deploy in phases. Each phase is tested with your staff using their own real documents before it goes live.'},
+      {no: '04', title: 'Customize', desc: 'Where the fit-gap showed a genuine gap, we build the extension, report, or screen needed. Each one is small, documented, and kept apart from the core so upgrades stay safe.'},
+      {no: '05', title: 'Integrate', desc: 'We connect finance, operations, shops, and online channels, then test the hand-offs between them: a sale, a return, a stock transfer, and a month-end close.'},
+      {no: '06', title: 'Train', desc: 'We train each department as its module goes live and support users in the first weeks. We also leave behind admin know-how, so your team can add users and change settings without calling us.'}
     ] : [
-      {no: '01', title: 'Requirements', desc: 'ร่างแผนผังขั้นตอนทำงาน และกำหนดเกณฑ์ความสำเร็จ'},
-      {no: '02', title: 'Selection', desc: 'ประเมินความเหมาะสม และเปรียบเทียบแพลตฟอร์ม'},
-      {no: '03', title: 'Implement', desc: 'ตั้งค่า ย้ายข้อมูล และติดตั้งระบบ'},
-      {no: '04', title: 'Customize', desc: 'สร้างส่วนเสริมให้ตรงกับขั้นตอนทำงานจริง'},
-      {no: '05', title: 'Integrate', desc: 'เชื่อมการเงิน การปฏิบัติการ และช่องทางขาย'},
-      {no: '06', title: 'Train', desc: 'สร้างความสามารถให้ทีมใช้งานได้ต่อเนื่อง'}
+      {no: '01', title: 'Requirements', desc: 'เราร่างแผนผังขั้นตอนทำงานร่วมกับคนที่ทำงานจริง ตั้งแต่ใบเสนอราคาจนถึงรับเงิน หรือตั้งแต่สั่งซื้อจนถึงสต็อก และตกลงกันว่าความสำเร็จวัดด้วยตัวเลขอะไรที่คุณติดตามอยู่แล้ว ตรงนี้จะเป็นเช็กลิสต์ที่ทุกการตัดสินใจหลังจากนั้นต้องผ่านการเทียบ'},
+      {no: '02', title: 'Selection', desc: 'เราทำ Fit-gap Review ของแพลตฟอร์มในรายชื่อที่คุณสนใจ หรือช่วยคัดรายชื่อให้ แล้วให้คะแนนเทียบกับขั้นตอนที่ร่างไว้ คุณจะได้ตารางเทียบที่อ่านง่ายพร้อมคำแนะนำ รวมถึงกรณีที่ตัวถูกกว่าก็เพียงพอ'},
+      {no: '03', title: 'Implement', desc: 'เราตั้งค่าระบบ ย้ายข้อมูลหลักและยอดคงเหลือ แล้วเปิดใช้ทีละระยะ แต่ละระยะทดสอบกับทีมของคุณด้วยเอกสารจริงของพวกเขาเองก่อนขึ้นระบบ'},
+      {no: '04', title: 'Customize', desc: 'ตรงที่ Fit-gap เจอช่องว่างจริง เราสร้างส่วนเสริม รายงาน หรือหน้าจอที่ต้องใช้ แต่ละอันเล็ก มีเอกสาร และแยกจากระบบหลัก การอัปเกรดจึงปลอดภัย'},
+      {no: '05', title: 'Integrate', desc: 'เราเชื่อมการเงิน งานปฏิบัติการ หน้าร้าน และช่องทางออนไลน์ แล้วทดสอบจุดส่งต่อระหว่างกัน ทั้งการขาย การคืนสินค้า การโอนสต็อก และการปิดงวดสิ้นเดือน'},
+      {no: '06', title: 'Train', desc: 'เราอบรมแต่ละแผนกเมื่อโมดูลของเขาเปิดใช้ และช่วยผู้ใช้ในสัปดาห์แรกๆ รวมถึงส่งต่อความรู้ด้านการดูแลระบบ ทีมคุณจะเพิ่มผู้ใช้หรือเปลี่ยนค่าตั้งต้นได้เองโดยไม่ต้องโทรหาเรา'}
     ]
   const caseStudies = isEN ? [
-      {tag: 'Manufacturing · Bangkok', title: 'SAP Rollout Across 4 Plants', desc: 'Finance, supply chain, and production modules unified into one system.', result: 'Manual entry down 60%'},
-      {tag: 'Retail · Nationwide', title: 'CRM + POS Unified for 200 Stores', desc: 'Real-time inventory and customer data across every location.', result: 'Stockouts down 45%'},
-      {tag: 'Logistics · Bangkok', title: 'Custom ERP Extension for Fleet Ops', desc: 'Standard ERP extended with fleet-specific scheduling and tracking.', result: 'Dispatch time cut in half'}
+      {tag: 'Manufacturing · Bangkok', title: 'SAP Rollout Across 4 Plants', desc: 'Finance, supply chain, and production modules were unified into one system, so four plants book, buy, and report on the same set of master data.', result: 'Manual entry down 60%'},
+      {tag: 'Retail · Nationwide', title: 'CRM + POS Unified for 200 Stores', desc: 'Real-time inventory and customer data now flow across every location, so head office and each branch work from the same figures.', result: 'Stockouts down 45%'},
+      {tag: 'Logistics · Bangkok', title: 'Custom ERP Extension for Fleet Ops', desc: 'A standard ERP was extended with fleet-specific scheduling and tracking, so dispatchers plan inside the ERP rather than in side spreadsheets.', result: 'Dispatch time cut in half'}
     ] : [
-      {tag: 'Manufacturing · กรุงเทพฯ', title: 'ติดตั้ง SAP ครอบคลุม 4 โรงงาน', desc: 'รวมโมดูลการเงิน ซัพพลายเชน และการผลิตเข้าเป็นระบบเดียว', result: 'การคีย์ข้อมูลด้วยมือลดลง 60%'},
-      {tag: 'Retail · ทั่วประเทศ', title: 'รวม CRM + POS สำหรับ 200 สาขา', desc: 'ข้อมูลสต็อกและลูกค้าแบบ Real-time ทุกสาขา', result: 'สินค้าหมดสต็อกลดลง 45%'},
-      {tag: 'Logistics · กรุงเทพฯ', title: 'ส่วนเสริม ERP เฉพาะสำหรับงานจัดการรถ', desc: 'ต่อยอด ERP มาตรฐานด้วยการจัดตารางและติดตามที่เฉพาะกับงานรถ', result: 'เวลาจัดส่งลดลงครึ่งหนึ่ง'}
+      {tag: 'Manufacturing · กรุงเทพฯ', title: 'ติดตั้ง SAP ครอบคลุม 4 โรงงาน', desc: 'รวมโมดูลการเงิน ซัพพลายเชน และการผลิตเข้าเป็นระบบเดียว ทั้งสี่โรงงานลงบัญชี สั่งซื้อ และทำรายงานจากข้อมูลหลักชุดเดียวกัน', result: 'การคีย์ข้อมูลด้วยมือลดลง 60%'},
+      {tag: 'Retail · ทั่วประเทศ', title: 'รวม CRM + POS สำหรับ 200 สาขา', desc: 'ข้อมูลสต็อกและลูกค้าแบบ Real-time ไหลถึงกันทุกสาขา สำนักงานใหญ่และแต่ละสาขาทำงานจากตัวเลขชุดเดียวกัน', result: 'สินค้าหมดสต็อกลดลง 45%'},
+      {tag: 'Logistics · กรุงเทพฯ', title: 'ส่วนเสริม ERP เฉพาะสำหรับงานจัดการรถ', desc: 'ต่อยอด ERP มาตรฐานด้วยการจัดตารางและติดตามที่เฉพาะกับงานรถ ฝ่ายจัดส่งวางแผนในตัว ERP เลย ไม่ต้องใช้ Spreadsheet แยก', result: 'เวลาจัดส่งลดลงครึ่งหนึ่ง'}
     ]
   const faqs        = isEN ? [
-      {q: 'Which ERP, CRM, and POS platforms do you work with?', a: 'SAP, Salesforce, Microsoft Dynamics, HubSpot, Odoo, and Oracle, plus custom integrations between them.'},
-      {q: 'Do you customize off-the-shelf software?', a: 'Yes. We customize platforms to match actual business operations and build integrations for clean data exchange.'},
-      {q: 'Can you connect ERP or CRM to customer-facing products?', a: 'Yes. One team builds both enterprise systems and customer-facing software for integrated delivery.'},
-      {q: 'Should we buy off-the-shelf or build custom?', a: 'Off-the-shelf for commodity workflows, custom where your process is genuinely a competitive advantage.'}
+      {q: 'Which ERP, CRM, and POS platforms do you work with?', a: 'SAP, Salesforce, Microsoft Dynamics, HubSpot, Odoo, and Oracle, plus custom integrations between them and your other systems. We recommend whichever fits your operations and budget.'},
+      {q: 'Do you customize off-the-shelf software?', a: 'Yes. We tailor platforms to how your business really operates and build integrations for clean data exchange. Customization stays small and documented, so upgrades do not break it.'},
+      {q: 'Can you connect ERP or CRM to customer-facing products?', a: 'Yes. One team builds both enterprise systems and customer-facing apps and websites, so orders, accounts, and stock can flow between them without a third vendor.'},
+      {q: 'Should we buy off-the-shelf or build custom?', a: 'Buy off-the-shelf for standard workflows such as accounting and HR. Build custom only where your process is a real competitive advantage. Most companies end up with a mix of both.'},
+      {q: 'How long does a rollout take?', a: 'A CRM for one department usually takes 6-10 weeks, and a full ERP for a mid-size business 4-8 months, phased by module. We give a firmer timeline after process mapping.'},
+      {q: 'What happens to our existing data?', a: 'We map your current data, rehearse the migration in a test environment, check totals against the source, and keep the old system read-only until the new one is proven.'},
+      {q: 'Can you support multi-branch retail with POS?', a: 'Yes. We connect POS terminals, branch stock, and the online store so every branch sells from shared inventory, and we plan for what happens when a branch loses its internet connection.'}
     ] : [
-      {q: 'รองรับระบบ ERP, CRM, POS ตัวไหนบ้าง?', a: 'SAP, Salesforce, Microsoft Dynamics, HubSpot, Odoo และ Oracle พร้อมเขียนการเชื่อมต่อระหว่างระบบเหล่านี้'},
-      {q: 'ปรับแต่งซอฟต์แวร์สำเร็จรูปได้ไหม?', a: 'ได้ครับ เราปรับแต่งระบบให้เข้ากับการทำงานจริง และสร้างการเชื่อมต่อให้แลกเปลี่ยนข้อมูลได้อย่างเป็นระเบียบ'},
-      {q: 'เชื่อม ERP หรือ CRM กับผลิตภัณฑ์ที่ลูกค้าใช้ได้ไหม?', a: 'ได้ครับ ทีมเดียวสร้างทั้งระบบองค์กรและซอฟต์แวร์สำหรับลูกค้า ทำให้งานที่ส่งมอบเชื่อมต่อกัน'},
-      {q: 'ควรซื้อสำเร็จรูปหรือสร้างเอง?', a: 'สำเร็จรูปสำหรับงานทั่วไป และสร้างเองสำหรับส่วนที่เป็นความได้เปรียบทางธุรกิจจริงๆ'}
+      {q: 'รองรับระบบ ERP, CRM, POS ตัวไหนบ้าง?', a: 'SAP, Salesforce, Microsoft Dynamics, HubSpot, Odoo และ Oracle พร้อมเขียนตัวเชื่อมระหว่างระบบเหล่านี้กับระบบอื่นของคุณ เราแนะนำตัวที่เหมาะกับการทำงานและงบของคุณ'},
+      {q: 'ปรับแต่งซอฟต์แวร์สำเร็จรูปได้ไหม?', a: 'ได้ เราปรับแพลตฟอร์มให้เข้ากับวิธีทำงานจริงของธุรกิจ และสร้างตัวเชื่อมให้แลกเปลี่ยนข้อมูลได้เป็นระเบียบ งานปรับแต่งจะเล็กและมีเอกสาร อัปเกรดระบบแล้วไม่พัง'},
+      {q: 'เชื่อม ERP หรือ CRM กับผลิตภัณฑ์ที่ลูกค้าใช้ได้ไหม?', a: 'ได้ ทีมเดียวสร้างทั้งระบบองค์กรและแอปกับเว็บไซต์ฝั่งลูกค้า ออเดอร์ บัญชีผู้ใช้ และสต็อกจึงไหลถึงกันได้ โดยไม่ต้องมีผู้ให้บริการรายที่สาม'},
+      {q: 'ควรซื้อสำเร็จรูปหรือสร้างเอง?', a: 'ซื้อสำเร็จรูปสำหรับงานมาตรฐานอย่างบัญชีและ HR และสร้างเองเฉพาะจุดที่ขั้นตอนของคุณเป็นความได้เปรียบจริงๆ ส่วนใหญ่ลงเอยที่การใช้ผสมกัน'},
+      {q: 'ใช้เวลาเปิดใช้ระบบนานแค่ไหน?', a: 'CRM สำหรับหนึ่งแผนกมักใช้ 6-10 สัปดาห์ ส่วน ERP เต็มรูปแบบสำหรับธุรกิจขนาดกลางใช้ 4-8 เดือน แบ่งเป็นระยะตามโมดูล เรายืนยันไทม์ไลน์ที่แน่นอนกว่านี้ได้หลังร่างแผนผังขั้นตอนทำงาน'},
+      {q: 'ข้อมูลเดิมของเราจะเป็นยังไง?', a: 'เราจับคู่ข้อมูลเดิมกับโครงสร้างใหม่ ซ้อมย้ายในสภาพแวดล้อมทดสอบ ตรวจยอดรวมเทียบกับต้นทาง และเก็บระบบเดิมไว้แบบอ่านอย่างเดียวจนกว่าระบบใหม่จะผ่านการใช้งานจริง'},
+      {q: 'รองรับธุรกิจค้าปลีกหลายสาขาที่ใช้ POS ไหม?', a: 'ได้ เราเชื่อมเครื่อง POS สต็อกของแต่ละสาขา และร้านออนไลน์ ให้ทุกสาขาขายจากสต็อกร่วมกัน และวางแผนไว้ด้วยว่าถ้าสาขาไหนอินเทอร์เน็ตหลุดจะทำงานต่อยังไง'}
     ]
   const related     = isEN ? [
       {label: 'E-Commerce Development', href: '/services/ecommerce'},
@@ -194,15 +221,19 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   )
 
   const capabilities = isEN ? [
-    { icon: 'ti-building-warehouse', title: 'ERP Implementation', desc: 'Configure and deploy ERP modules addressing finance, supply chain, and operations needs.' },
-    { icon: 'ti-users-group', title: 'CRM Platforms', desc: 'Sales, service, and marketing systems connected to customer communication channels.' },
-    { icon: 'ti-shopping-cart', title: 'POS & Commerce Integration', desc: 'Link stores, inventory, payments, and online channels into unified commerce infrastructure.' },
-    { icon: 'ti-puzzle', title: 'Customization & Extensions', desc: 'Custom solutions filling gaps where standard packages prove insufficient.' },
+    { icon: 'ti-building-warehouse', title: 'ERP Implementation', desc: 'Finance, purchasing, inventory, and production modules configured around your current paperwork and approval rules, with master data cleaned before it is loaded.' },
+    { icon: 'ti-users-group', title: 'CRM Platforms', desc: 'A pipeline that mirrors your real sales steps, with email, web form, and LINE enquiries landing in one customer record that the whole team can see.' },
+    { icon: 'ti-shopping-cart', title: 'POS & Commerce Integration', desc: 'Shop tills, branch stock, payments, and the online store tied to one set of numbers, built for retailers running several branches.' },
+    { icon: 'ti-puzzle', title: 'Customization & Extensions', desc: 'Small, documented extensions and APIs for the steps a standard package cannot do, kept apart from the core so upgrades stay safe.' },
+    { icon: 'ti-transfer', title: 'System Integration', desc: 'Finance, operations, logistics, and sales channels joined so data is entered once, with monitoring that flags a failed sync early.' },
+    { icon: 'ti-school', title: 'Team Training', desc: 'Role-based training as each module goes live, plain-language guides, and admin know-how handed over so your team runs the system itself.' },
   ] : [
-    { icon: 'ti-building-warehouse', title: 'ERP Implementation', desc: 'ตั้งค่าและติดตั้งโมดูล ERP ครอบคลุมการเงิน ซัพพลายเชน และการปฏิบัติการ' },
-    { icon: 'ti-users-group', title: 'CRM Platforms', desc: 'ระบบงานขาย งานบริการ และการตลาด ที่เชื่อมกับช่องทางสื่อสารลูกค้าจริง' },
-    { icon: 'ti-shopping-cart', title: 'POS & Commerce Integration', desc: 'เชื่อมหน้าร้าน สต็อก การชำระเงิน และช่องทางออนไลน์ให้เป็นระบบขายเดียว' },
-    { icon: 'ti-puzzle', title: 'Customization & Extensions', desc: 'สร้างโซลูชันเฉพาะเพื่อเติมส่วนที่ชุดมาตรฐานไม่ครอบคลุม' },
+    { icon: 'ti-building-warehouse', title: 'ERP Implementation', desc: 'โมดูลการเงิน จัดซื้อ สต็อก และการผลิต ตั้งตามเอกสารและกฎอนุมัติที่คุณใช้อยู่ พร้อมทำความสะอาดข้อมูลหลักก่อนโหลดเข้าระบบ' },
+    { icon: 'ti-users-group', title: 'CRM Platforms', desc: 'Pipeline ที่ตรงกับขั้นตอนขายจริง คำถามจากอีเมล ฟอร์มเว็บ และ LINE เข้ามารวมในเรคคอร์ดลูกค้าเดียวที่ทั้งทีมเห็นพร้อมกัน' },
+    { icon: 'ti-shopping-cart', title: 'POS & Commerce Integration', desc: 'เครื่อง POS หน้าร้าน สต็อกแต่ละสาขา การชำระเงิน และร้านออนไลน์ ผูกกับตัวเลขชุดเดียวกัน สร้างมาเพื่อธุรกิจค้าปลีกที่มีหลายสาขา' },
+    { icon: 'ti-puzzle', title: 'Customization & Extensions', desc: 'ส่วนเสริมและ API เล็กๆ ที่มีเอกสาร สำหรับขั้นตอนที่ชุดมาตรฐานทำไม่ได้ แยกจากระบบหลักเพื่อให้อัปเกรดได้อย่างปลอดภัย' },
+    { icon: 'ti-transfer', title: 'System Integration', desc: 'เชื่อมการเงิน งานปฏิบัติการ โลจิสติกส์ และช่องทางขาย ให้กรอกข้อมูลครั้งเดียว พร้อมระบบเฝ้าดูที่แจ้งเร็วเมื่อซิงก์พลาด' },
+    { icon: 'ti-school', title: 'Team Training', desc: 'อบรมตามบทบาทเมื่อแต่ละโมดูลเปิดใช้ มีคู่มือภาษาง่ายๆ และส่งต่อความรู้ด้านการดูแลระบบ ให้ทีมคุณใช้และดูแลเองได้' },
   ]
 
   const techStack = [
@@ -215,39 +246,43 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   ] as { label: string; icon?: string; svg?: string }[]
 
   const approachSteps = isEN ? [
-    { no: '01', title: 'Requirements', desc: 'Process mapping, success criteria' },
-    { no: '02', title: 'Selection', desc: 'Fit assessment, platform evaluation' },
-    { no: '03', title: 'Implement', desc: 'Configuration, migration, deployment' },
-    { no: '04', title: 'Customize', desc: 'Extensions for real workflows' },
-    { no: '05', title: 'Integrate', desc: 'Finance, operations, sales channels' },
-    { no: '06', title: 'Train', desc: 'Capability for sustained adoption' },
+    { no: '01', title: 'Requirements', desc: 'Process mapping and success measures' },
+    { no: '02', title: 'Selection', desc: 'Fit-gap review and platform recommendation' },
+    { no: '03', title: 'Implement', desc: 'Configuration, data migration, phased go-live' },
+    { no: '04', title: 'Customize', desc: 'Small extensions for genuine gaps' },
+    { no: '05', title: 'Integrate', desc: 'Finance, operations, shops, online channels' },
+    { no: '06', title: 'Train', desc: 'By role, with support in the first weeks' },
   ] : [
-    { no: '01', title: 'Requirements', desc: 'ร่างแผนผังขั้นตอนทำงาน และเกณฑ์ความสำเร็จ' },
-    { no: '02', title: 'Selection', desc: 'ประเมินความเหมาะสม และเปรียบเทียบแพลตฟอร์ม' },
-    { no: '03', title: 'Implement', desc: 'Configuration, Migration, Deployment' },
-    { no: '04', title: 'Customize', desc: 'ส่วนเสริมที่ตรงกับขั้นตอนทำงานจริง' },
-    { no: '05', title: 'Integrate', desc: 'การเงิน การปฏิบัติการ ช่องทางขาย' },
-    { no: '06', title: 'Train', desc: 'สร้างความสามารถให้ใช้งานต่อเนื่อง' },
+    { no: '01', title: 'Requirements', desc: 'ร่างแผนผังขั้นตอนทำงาน และตัวชี้วัดความสำเร็จ' },
+    { no: '02', title: 'Selection', desc: 'ทำ Fit-gap Review และแนะนำแพลตฟอร์ม' },
+    { no: '03', title: 'Implement', desc: 'ตั้งค่า ย้ายข้อมูล และเปิดใช้ทีละระยะ' },
+    { no: '04', title: 'Customize', desc: 'ส่วนเสริมเล็กๆ ตรงช่องว่างที่เกิดขึ้นจริง' },
+    { no: '05', title: 'Integrate', desc: 'การเงิน งานปฏิบัติการ หน้าร้าน ช่องทางออนไลน์' },
+    { no: '06', title: 'Train', desc: 'อบรมตามบทบาท และดูแลต่อในสัปดาห์แรกๆ' },
   ]
 
   const darkFaqs = isEN ? [
-    { q: 'Which ERP, CRM, and POS platforms does Haliviq work with?', a: 'SAP, Salesforce, Microsoft Dynamics, HubSpot, Odoo, and Oracle, plus custom integrations between them and the rest of your systems. We recommend the platform that fits your operations and budget, not the one with the biggest name.' },
-    { q: 'Does Haliviq customize off-the-shelf enterprise software?', a: 'Yes. We customize platforms to match how your business actually operates and build integrations that enable clean data exchange with your other systems — rather than making you redesign your processes around a rigid, unmodified package.' },
-    { q: 'Can you connect our ERP or CRM to customer-facing products?', a: 'Yes. Because one team builds both enterprise systems and customer-facing software, delivery is integrated from the start rather than requiring coordination between separate vendors who each blame the other when something breaks.' },
-    { q: 'Should we buy off-the-shelf software or build something custom?', a: 'Off-the-shelf for commodity workflows — accounting, standard HR processes, generic sales pipelines. Custom where your process is genuinely a competitive advantage. Most businesses need a mix, not an all-or-nothing decision.' },
+    { q: 'Which ERP, CRM, and POS platforms does Haliviq work with?', a: 'SAP, Salesforce, Microsoft Dynamics, HubSpot, Odoo, and Oracle, plus custom integrations between them and the rest of your systems. We recommend the platform that fits your operations and budget, not the one with the biggest name, and we do not mark up licences.' },
+    { q: 'Does Haliviq customize off-the-shelf enterprise software?', a: 'Yes. We tailor platforms to how your business actually operates and build integrations for clean data exchange with your other systems, rather than making you redesign your processes around an unmodified package. We keep each customization small and documented so future upgrades do not break it.' },
+    { q: 'Can you connect our ERP or CRM to customer-facing products?', a: 'Yes. Because one team builds both enterprise systems and customer-facing apps and websites, orders, accounts, and stock can be shared between them from the start. You deal with one team instead of two vendors who each point at the other when something breaks.' },
+    { q: 'Should we buy off-the-shelf software or build something custom?', a: 'Buy off-the-shelf for commodity workflows such as accounting, standard HR, and generic sales pipelines. Build custom where your process is a real competitive advantage. Most businesses need a mix, and the fit-gap review shows which parts belong in which group.' },
     { q: 'How long does a typical ERP or CRM implementation take?', a: 'A focused CRM rollout for one department typically takes 6-10 weeks. A full ERP implementation across finance, supply chain, and operations for a mid-size business usually runs 4-8 months, phased by module so the business sees value before the whole system goes live.' },
-    { q: 'How much does an enterprise system implementation cost?', a: 'Cost depends heavily on the platform license itself (which we do not mark up), the number of modules in scope, and how much customization and data migration is needed. Implementation services typically start in the mid five figures (THB) for a focused CRM rollout, with full ERP programs quoted after a requirements and process-mapping phase.' },
-    { q: 'What happens to our existing data during migration?', a: 'We map your existing data structures first, run migrations in a staging environment with validation against the source system, and keep the legacy system available in read-only mode until the new system is proven in production — so nothing gets lost in transition.' },
-    { q: 'How do you make sure the team actually uses the new system?', a: 'Training is built into the rollout itself, not scheduled as a single session at the end. We train department by department as each module goes live, and we design the configuration around how people already work rather than forcing them to relearn their job to match generic software defaults.' },
+    { q: 'How much does an enterprise system implementation cost?', a: 'Cost depends on the platform licence itself (which we do not mark up), the number of modules in scope, and how much customization and data migration is needed. Implementation services typically start in the mid five figures (THB) for a focused CRM rollout, with full ERP programmes quoted after the requirements and process-mapping phase.' },
+    { q: 'What happens to our existing data during migration?', a: 'We map your existing data structures first, rehearse the migration in a staging environment, and validate the results against the source system. The legacy system stays available in read-only mode until the new one is proven in production, so nothing is lost in the changeover.' },
+    { q: 'How do you make sure the team actually uses the new system?', a: 'Training is part of the rollout, not a single session at the end. We train department by department as each module goes live, and we configure the system around how people already work, so they are not asked to relearn their job to match generic software defaults.' },
+    { q: 'Can you support retail with many branches and POS?', a: 'Yes. We connect POS terminals, branch stock, promotions, and the online store so every branch sells from shared inventory. We also plan for branches with a weak or interrupted internet connection, so a sale is never lost and syncs once the line is back.' },
+    { q: 'What do we need to prepare before the process mapping session?', a: 'Bring the people who do the work, a few real documents such as a recent order, invoice, and stock report, and a list of the systems and spreadsheets you use now. You do not need to prepare a specification. Writing it down is what the session is for.' },
   ] : [
-    { q: 'Haliviq รองรับระบบ ERP, CRM, POS ตัวไหนบ้าง?', a: 'SAP, Salesforce, Microsoft Dynamics, HubSpot, Odoo และ Oracle พร้อมเขียนการเชื่อมต่อระหว่างระบบเหล่านี้กับระบบอื่นของคุณ เราแนะนำแพลตฟอร์มที่เหมาะกับการทำงานและงบประมาณของคุณ ไม่ใช่ตัวที่ชื่อดังที่สุด' },
-    { q: 'Haliviq ปรับแต่งซอฟต์แวร์องค์กรสำเร็จรูปได้ไหม?', a: 'ได้ครับ เราปรับแต่งระบบให้เข้ากับวิธีทำธุรกิจจริง และสร้างการเชื่อมต่อให้แลกเปลี่ยนข้อมูลกับระบบอื่นของคุณได้อย่างเป็นระเบียบ แทนที่จะให้คุณต้องปรับขั้นตอนทำงานตามชุดสำเร็จรูปที่ตายตัวและไม่ได้ปรับแต่ง' },
-    { q: 'เชื่อม ERP หรือ CRM กับผลิตภัณฑ์ที่ลูกค้าใช้ได้ไหม?', a: 'ได้ครับ เพราะทีมเดียวสร้างทั้งระบบองค์กรและซอฟต์แวร์ฝั่งลูกค้า งานที่ส่งมอบจึงเชื่อมกันตั้งแต่ต้น ไม่ต้องประสานระหว่างผู้ให้บริการหลายเจ้าที่ต่างฝ่ายต่างโทษกันเมื่อมีปัญหา' },
-    { q: 'ควรซื้อซอฟต์แวร์สำเร็จรูปหรือสร้างเอง?', a: 'สำเร็จรูปสำหรับงานทั่วไป เช่น บัญชี งาน HR มาตรฐาน และขั้นตอนขายทั่วไป ส่วนสร้างเองสำหรับจุดที่ขั้นตอนของคุณเป็นความได้เปรียบทางธุรกิจจริงๆ ธุรกิจส่วนใหญ่ต้องใช้ทั้งสองแบบผสมกัน ไม่ใช่เลือกอย่างใดอย่างหนึ่ง' },
-    { q: 'ติดตั้ง ERP หรือ CRM ทั่วไปใช้เวลานานแค่ไหน?', a: 'การเปิดใช้ CRM ที่เจาะจงหนึ่งแผนก มักใช้เวลา 6-10 สัปดาห์ ส่วนการติดตั้ง ERP เต็มรูปแบบครอบคลุมการเงิน ซัพพลายเชน และการปฏิบัติการสำหรับธุรกิจขนาดกลาง มักใช้เวลา 4-8 เดือน แบ่งเป็นระยะตามโมดูล เพื่อให้ธุรกิจเห็นประโยชน์ก่อนที่ระบบทั้งหมดจะเปิดใช้' },
-    { q: 'ติดตั้งระบบองค์กรมีค่าใช้จ่ายเท่าไหร่?', a: 'ค่าใช้จ่ายขึ้นอยู่กับค่าลิขสิทธิ์ของแพลตฟอร์มเอง (ซึ่งเราไม่บวกราคาเพิ่ม) จำนวนโมดูลในขอบเขต และปริมาณงานปรับแต่งและย้ายข้อมูลที่ต้องทำ ค่าบริการติดตั้งมักเริ่มที่หลักแสนต้นๆ (บาท) สำหรับ CRM ที่เจาะจง ส่วนโปรแกรม ERP เต็มรูปแบบจะเสนอราคาหลังขั้นตอนกำหนดความต้องการและทำแผนผังขั้นตอนทำงาน' },
-    { q: 'ข้อมูลเดิมของเราจะเป็นอย่างไรระหว่างย้ายระบบ?', a: 'เราทำแผนที่โครงสร้างข้อมูลเดิมก่อน ย้ายข้อมูลในสภาพแวดล้อมทดสอบพร้อมตรวจเทียบกับระบบต้นทาง และเก็บระบบเดิมไว้แบบอ่านอย่างเดียวจนกว่าระบบใหม่จะพิสูจน์ตัวเองในการใช้งานจริง ข้อมูลจะได้ไม่สูญหายระหว่างการเปลี่ยนผ่าน' },
-    { q: 'มั่นใจได้อย่างไรว่าทีมจะใช้ระบบใหม่จริง?', a: 'การอบรมอยู่ในช่วงเปิดใช้ระบบเลย ไม่ใช่นัดครั้งเดียวตอนท้าย เราอบรมทีละแผนกตามที่แต่ละโมดูลเปิดใช้ และตั้งค่าระบบตามวิธีทำงานจริงของคน แทนที่จะให้พวกเขาต้องเรียนรู้งานใหม่เพื่อให้เข้ากับค่าเริ่มต้นทั่วไปของซอฟต์แวร์' },
+    { q: 'Haliviq รองรับระบบ ERP, CRM, POS ตัวไหนบ้าง?', a: 'SAP, Salesforce, Microsoft Dynamics, HubSpot, Odoo และ Oracle พร้อมเขียนตัวเชื่อมระหว่างระบบเหล่านี้กับระบบอื่นของคุณ เราแนะนำแพลตฟอร์มที่เหมาะกับการทำงานและงบประมาณ ไม่ใช่ตัวที่ชื่อดังที่สุด และเราไม่บวกราคาค่าลิขสิทธิ์เพิ่ม' },
+    { q: 'Haliviq ปรับแต่งซอฟต์แวร์องค์กรสำเร็จรูปได้ไหม?', a: 'ได้ เราปรับแพลตฟอร์มให้เข้ากับวิธีทำธุรกิจจริง และสร้างตัวเชื่อมให้แลกเปลี่ยนข้อมูลกับระบบอื่นของคุณได้เป็นระเบียบ แทนที่จะให้คุณต้องปรับขั้นตอนทำงานตามชุดที่ไม่ได้ปรับแต่ง เราทำงานปรับแต่งแต่ละอย่างให้เล็กและมีเอกสาร การอัปเกรดในอนาคตจะไม่ทำให้พัง' },
+    { q: 'เชื่อม ERP หรือ CRM กับผลิตภัณฑ์ที่ลูกค้าใช้ได้ไหม?', a: 'ได้ เพราะทีมเดียวสร้างทั้งระบบองค์กรและแอปกับเว็บไซต์ฝั่งลูกค้า ออเดอร์ บัญชีผู้ใช้ และสต็อกจึงแชร์ถึงกันได้ตั้งแต่ต้น คุณคุยกับทีมเดียว ไม่ใช่ผู้ให้บริการสองเจ้าที่ต่างฝ่ายต่างชี้ไปที่อีกฝ่ายเมื่อมีปัญหา' },
+    { q: 'ควรซื้อซอฟต์แวร์สำเร็จรูปหรือสร้างเอง?', a: 'ซื้อสำเร็จรูปสำหรับงานทั่วไป เช่น บัญชี งาน HR มาตรฐาน และขั้นตอนขายทั่วไป ส่วนสร้างเองสำหรับจุดที่ขั้นตอนของคุณเป็นความได้เปรียบทางธุรกิจจริงๆ ธุรกิจส่วนใหญ่ต้องใช้ผสมกัน และ Fit-gap Review จะบอกว่าส่วนไหนควรอยู่กลุ่มไหน' },
+    { q: 'ติดตั้ง ERP หรือ CRM ทั่วไปใช้เวลานานแค่ไหน?', a: 'การเปิดใช้ CRM ที่เจาะจงหนึ่งแผนก มักใช้ 6-10 สัปดาห์ ส่วนการติดตั้ง ERP เต็มรูปแบบครอบคลุมการเงิน ซัพพลายเชน และงานปฏิบัติการสำหรับธุรกิจขนาดกลาง มักใช้ 4-8 เดือน แบ่งเป็นระยะตามโมดูล ธุรกิจจะเห็นประโยชน์ก่อนที่ระบบทั้งหมดจะเปิดใช้' },
+    { q: 'ติดตั้งระบบองค์กรมีค่าใช้จ่ายเท่าไหร่?', a: 'ขึ้นอยู่กับค่าลิขสิทธิ์ของแพลตฟอร์มเอง (ซึ่งเราไม่บวกราคาเพิ่ม) จำนวนโมดูลในขอบเขต และปริมาณงานปรับแต่งกับย้ายข้อมูล ค่าบริการติดตั้งมักเริ่มที่หลักแสนต้นๆ (บาท) สำหรับ CRM ที่เจาะจง ส่วนโปรแกรม ERP เต็มรูปแบบจะเสนอราคาหลังขั้นตอนกำหนดความต้องการและร่างแผนผังขั้นตอนทำงาน' },
+    { q: 'ข้อมูลเดิมของเราจะเป็นอย่างไรระหว่างย้ายระบบ?', a: 'เราจับคู่โครงสร้างข้อมูลเดิมก่อน ซ้อมย้ายในสภาพแวดล้อมทดสอบ และตรวจผลเทียบกับระบบต้นทาง ระบบเดิมจะเปิดไว้แบบอ่านอย่างเดียวจนกว่าระบบใหม่จะผ่านการใช้งานจริง ข้อมูลจึงไม่หายระหว่างเปลี่ยนระบบ' },
+    { q: 'มั่นใจได้ยังไงว่าทีมจะใช้ระบบใหม่จริง?', a: 'การอบรมเป็นส่วนหนึ่งของการเปิดใช้ ไม่ใช่นัดรอบเดียวตอนท้าย เราอบรมทีละแผนกเมื่อแต่ละโมดูลเปิดใช้ และตั้งค่าระบบตามวิธีที่คนทำงานอยู่แล้ว เขาจะได้ไม่ต้องเรียนรู้งานใหม่เพื่อให้เข้ากับค่าเริ่มต้นทั่วไปของซอฟต์แวร์' },
+    { q: 'รองรับธุรกิจค้าปลีกหลายสาขาที่ใช้ POS ไหม?', a: 'ได้ เราเชื่อมเครื่อง POS สต็อกแต่ละสาขา โปรโมชัน และร้านออนไลน์ ให้ทุกสาขาขายจากสต็อกร่วมกัน และวางแผนสำหรับสาขาที่อินเทอร์เน็ตไม่เสถียรหรือหลุดด้วย ยอดขายจะไม่หาย และซิงก์ให้เองเมื่อสัญญาณกลับมา' },
+    { q: 'ต้องเตรียมอะไรก่อนมาร่างแผนผังขั้นตอนทำงาน?', a: 'พาคนที่ทำงานจริงมาด้วย เอกสารจริงสักสองสามใบ เช่น ออเดอร์ ใบแจ้งหนี้ และรายงานสต็อกล่าสุด และรายการระบบกับ Spreadsheet ที่ใช้อยู่ ไม่ต้องเตรียมสเปกมาก่อน การเขียนมันออกมาคือสิ่งที่เราทำกันในการคุยครั้งนั้น' },
   ]
 
   const postHeroSlot = (
@@ -398,7 +433,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
         </h2>
         <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-          {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+          {isEN ? 'Tell us which systems you run today and where they let you down.' : 'เล่าให้เราฟังได้เลยว่าตอนนี้ใช้ระบบอะไรอยู่ และติดขัดตรงไหน'}
         </p>
         <div className="flex flex-wrap items-center gap-6">
           <Link

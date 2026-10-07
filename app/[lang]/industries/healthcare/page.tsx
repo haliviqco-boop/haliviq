@@ -15,19 +15,19 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   const badge = isEN ? 'Industry / Healthcare & Life Sciences' : 'อุตสาหกรรม / สุขภาพและวิทยาศาสตร์ชีวภาพ'
   const heroSubhead = isEN
-    ? 'Technology solutions that improve patient care and medical research.'
-    : 'เทคโนโลยีที่ช่วยดูแลผู้ป่วยและงานวิจัยทางการแพทย์'
+    ? 'Telemedicine, patient apps, hospital and clinic back-office systems and clinical data tools for Thai healthcare providers, built to handle health records carefully under PDPA and to talk to the systems you already run.'
+    : 'Telemedicine แอปสำหรับผู้ป่วย ระบบหลังบ้านของโรงพยาบาลและคลินิก และเครื่องมือจัดการข้อมูลทางคลินิก สำหรับผู้ให้บริการสุขภาพในไทย ดูแลเวชระเบียนอย่างระมัดระวังตาม PDPA และเชื่อมกับระบบที่คุณใช้อยู่ได้'
 
   const challenges = isEN ? [
-    { icon: 'ti-affiliate', title: 'Data Interoperability', desc: 'Healthcare data is trapped in siloed systems using incompatible standards, preventing the seamless information exchange needed for coordinated care and clinical decision-making.' },
-    { icon: 'ti-scale', title: 'Regulatory Compliance', desc: 'HIPAA, PDPA, and other health data regulations impose strict requirements on how patient information is stored, transmitted, and accessed, adding complexity to every technical decision.' },
-    { icon: 'ti-heart-handshake', title: 'Patient Engagement', desc: 'Patients expect convenient, transparent digital experiences from their healthcare providers, yet most health systems struggle to deliver consumer-grade portals and communication tools.' },
-    { icon: 'ti-shield-lock', title: 'Healthcare Cybersecurity', desc: 'Medical records are among the most valuable targets for cybercriminals, and a breach can compromise patient safety, not just privacy, demanding robust security at every layer.' },
+    { icon: 'ti-affiliate', title: 'Data Interoperability', desc: 'A patient in Thailand may have a record in a hospital information system, another in a lab system, another in a clinic chain and a fourth in an insurer portal, each using its own codes and formats. Doctors end up re-asking questions or re-ordering tests because they cannot see the full picture. We map the data first, then connect systems through HL7 FHIR or plain APIs so the right fields reach the right screen.' },
+    { icon: 'ti-scale', title: 'Health-Data Regulation', desc: 'Under PDPA, health information is sensitive personal data, which means explicit consent, tight access control and a clear reason for every use. Hospitals and clinics also have their own rules on medical-record retention and on who may open a chart. We build role-based access, consent records and access logs into the product, and we help you document them for your data-protection officer.' },
+    { icon: 'ti-heart-handshake', title: 'Patient Experience', desc: 'Patients want to book a slot, see a lab result and ask a nurse a question without waiting on a phone line, and many already do their banking and shopping in LINE or an app. Most hospital portals feel far behind that. We design in Thai with large text and plain wording, because the users include elderly patients and relatives managing care for them.' },
+    { icon: 'ti-shield-lock', title: 'Cybersecurity for Health Systems', desc: 'Medical records are valuable to attackers, and ransomware that takes a hospital system offline can delay surgery and medication, not just leak data. Many clinical systems also run old software that is hard to patch. We separate networks, encrypt data at rest and in transit, keep tested backups and agree a downtime procedure with clinical staff before launch.' },
   ] : [
-    { icon: 'ti-affiliate', title: 'Data Interoperability', desc: 'ข้อมูลสุขภาพอยู่แยกกันในระบบที่ใช้มาตรฐานไม่เข้ากัน แลกเปลี่ยนข้อมูลกันไม่ราบรื่น ทั้งที่จำเป็นต่อการดูแลผู้ป่วยร่วมกันหลายฝ่ายและการตัดสินใจทางการแพทย์' },
-    { icon: 'ti-scale', title: 'Regulatory Compliance', desc: 'HIPAA, PDPA และกฎระเบียบข้อมูลสุขภาพอื่นๆ กำหนดข้อบังคับเข้มงวดเรื่องการเก็บ ส่ง และเข้าถึงข้อมูลผู้ป่วย ทำให้ทุกการตัดสินใจด้านเทคนิคซับซ้อนขึ้น' },
-    { icon: 'ti-heart-handshake', title: 'Patient Engagement', desc: 'ผู้ป่วยคาดหวังประสบการณ์ดิจิทัลที่สะดวกและโปร่งใสจากผู้ให้บริการสุขภาพ แต่ระบบสุขภาพส่วนใหญ่ยังทำ Portal และเครื่องมือสื่อสารที่ใช้ง่ายแบบแอปทั่วไปไม่ได้' },
-    { icon: 'ti-shield-lock', title: 'Healthcare Cybersecurity', desc: 'เวชระเบียนเป็นเป้าหมายที่มีมูลค่าสูงที่สุดของอาชญากรไซเบอร์ และข้อมูลรั่วไหลอาจกระทบความปลอดภัยของผู้ป่วยโดยตรง ไม่ใช่แค่ความเป็นส่วนตัว จึงต้องป้องกันให้แน่นหนาทุกชั้น' },
+    { icon: 'ti-affiliate', title: 'ข้อมูลผู้ป่วยกระจายอยู่หลายระบบ', desc: 'ผู้ป่วยคนหนึ่งอาจมีประวัติอยู่ในระบบ HIS ของโรงพยาบาล ระบบแล็บ เครือคลินิก และพอร์ทัลของบริษัทประกัน แต่ละที่ใช้รหัสและรูปแบบข้อมูลของตัวเอง หมอจึงต้องถามซ้ำหรือสั่งตรวจซ้ำเพราะมองไม่เห็นภาพรวม เราเริ่มจากทำแผนผังข้อมูลก่อน แล้วเชื่อมระบบผ่าน HL7 FHIR หรือ API ธรรมดา เพื่อให้ข้อมูลที่ถูกต้องไปถึงหน้าจอที่ต้องใช้' },
+    { icon: 'ti-scale', title: 'กฎหมายข้อมูลสุขภาพ', desc: 'ภายใต้ PDPA ข้อมูลสุขภาพถือเป็นข้อมูลส่วนบุคคลที่อ่อนไหว ต้องขอความยินยอมอย่างชัดเจน คุมสิทธิ์เข้าถึงให้รัดกุม และบอกได้ว่าใช้เพื่ออะไร โรงพยาบาลและคลินิกยังมีระเบียบเรื่องการเก็บเวชระเบียนและใครเปิดแฟ้มได้อีกชั้นหนึ่ง เราใส่การกำหนดสิทธิ์ตามบทบาท บันทึกความยินยอม และ Log การเข้าถึงไว้ในตัวระบบ และช่วยทำเอกสารให้เจ้าหน้าที่คุ้มครองข้อมูลของคุณใช้ต่อได้' },
+    { icon: 'ti-heart-handshake', title: 'ประสบการณ์ของผู้ป่วย', desc: 'คนไข้อยากนัดหมอ ดูผลแล็บ และถามพยาบาลโดยไม่ต้องรอสายโทรศัพท์ และหลายคนก็จ่ายเงินช้อปปิ้งผ่าน LINE หรือแอปกันเป็นปกติอยู่แล้ว แต่พอร์ทัลของโรงพยาบาลส่วนใหญ่ยังห่างจากระดับนั้นมาก เราออกแบบเป็นภาษาไทย ตัวอักษรใหญ่ ใช้คำเข้าใจง่าย เพราะผู้ใช้มีทั้งผู้สูงอายุและญาติที่ช่วยดูแลแทน' },
+    { icon: 'ti-shield-lock', title: 'ความปลอดภัยของระบบสุขภาพ', desc: 'เวชระเบียนมีค่ากับคนร้าย และ Ransomware ที่ทำให้ระบบโรงพยาบาลใช้ไม่ได้อาจทำให้ผ่าตัดหรือจ่ายยาล่าช้า ไม่ใช่แค่ข้อมูลรั่ว ระบบคลินิกหลายตัวยังใช้ซอฟต์แวร์เก่าที่อัปเดตยาก เราแยกเครือข่าย เข้ารหัสข้อมูลทั้งตอนเก็บและตอนส่ง ทำ Backup ที่ทดสอบกู้คืนจริง และตกลงขั้นตอนตอนระบบล่มกับบุคลากรทางการแพทย์ก่อนเปิดใช้' },
   ]
 
   const metrics = [
@@ -37,29 +37,31 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   ]
 
   const capabilities = isEN ? [
-    { icon: 'ti-stethoscope', title: 'Telemedicine Platforms', desc: 'HIPAA-compliant virtual care platforms with video consultations, prescription management, appointment scheduling, and clinical documentation.' },
-    { icon: 'ti-clipboard-plus', title: 'EHR Integration Solutions', desc: 'HL7 FHIR-based integration layers that connect disparate electronic health record systems for seamless clinical data exchange.' },
-    { icon: 'ti-heartbeat', title: 'Clinical Analytics Platforms', desc: 'AI-powered analytics dashboards that surface clinical insights, identify at-risk patients, and support evidence-based treatment decisions.' },
-    { icon: 'ti-user', title: 'Patient Engagement Portals', desc: 'Consumer-grade patient portals for appointment booking, lab results access, medication management, and secure provider communication.' },
-    { icon: 'ti-activity', title: 'Remote Patient Monitoring', desc: 'IoT-enabled platforms that collect and analyze patient vitals data from wearable devices for continuous remote health monitoring.' },
+    { icon: 'ti-stethoscope', title: 'Telemedicine Platforms', desc: 'Video consultation, appointment booking, e-prescription and visit notes in one flow, for clinics and hospitals that want follow-up visits to happen from home. Patients join from a phone with no app install, and doctors see the chart beside the video. We connect payment and insurance steps so the front desk does not re-key anything.' },
+    { icon: 'ti-clipboard-plus', title: 'EHR Integration Solutions', desc: 'An integration layer built on HL7 FHIR and standard APIs that lets a hospital information system, lab, imaging and pharmacy exchange data. It suits hospital groups and health-tech teams that run several systems from different vendors. You get documented interfaces, data mapping and monitoring that tells you when a message fails.' },
+    { icon: 'ti-heartbeat', title: 'Clinical Analytics Platforms', desc: 'Dashboards that show patient flow, readmissions, lab turnaround or the patients most likely to need follow-up, and models that point to them. Clinicians and quality teams use them to spot patterns they would never find by scrolling through charts. We agree with your doctors how each number is defined, and every prediction shows the data behind it.' },
+    { icon: 'ti-user', title: 'Patient Engagement Portals', desc: 'A patient app or LINE-connected portal for booking, reminders, lab results, medication lists and secure messages to the care team. It reduces phone calls to the front desk and missed appointments. We test it with older users and non-technical staff before it goes live.' },
+    { icon: 'ti-activity', title: 'Remote Patient Monitoring', desc: 'A platform that collects readings such as blood pressure, glucose or heart rate from home devices and wearables and alerts a nurse when a value crosses an agreed limit. It is useful for chronic-disease programmes and post-discharge follow-up. Thresholds are set by your clinicians, and we design for missing or noisy readings.' },
+    { icon: 'ti-file-invoice', title: 'Billing & Insurance Workflows', desc: 'Tools that prepare claims, check coverage and track payment status across self-pay, insurer and government-scheme patients. Billing teams spend less time re-keying and chasing rejections. We model your actual rejection reasons so the system can catch them before submission.' },
   ] : [
-    { icon: 'ti-stethoscope', title: 'Telemedicine Platforms', desc: 'แพลตฟอร์ม Virtual Care ที่เป็นไปตาม HIPAA มี Video Consultation จัดการใบสั่งยา นัดหมาย และบันทึกเวชระเบียน' },
-    { icon: 'ti-clipboard-plus', title: 'EHR Integration Solutions', desc: 'ชั้นเชื่อมต่อด้วย HL7 FHIR ที่ทำให้ระบบเวชระเบียนอิเล็กทรอนิกส์ต่างระบบแลกเปลี่ยนข้อมูลทางคลินิกกันได้ราบรื่น' },
-    { icon: 'ti-heartbeat', title: 'Clinical Analytics Platforms', desc: 'Dashboard วิเคราะห์ด้วย AI แสดงข้อมูลเชิงลึกทางคลินิก ระบุผู้ป่วยกลุ่มเสี่ยง และช่วยตัดสินใจรักษาตามหลักฐานทางการแพทย์' },
-    { icon: 'ti-user', title: 'Patient Engagement Portals', desc: 'Portal สำหรับผู้ป่วยที่ใช้ง่ายแบบแอปทั่วไป ใช้นัดหมาย ดูผลตรวจ จัดการยา และคุยกับแพทย์ได้อย่างปลอดภัย' },
-    { icon: 'ti-activity', title: 'Remote Patient Monitoring', desc: 'แพลตฟอร์มเชื่อมต่อ IoT เก็บและวิเคราะห์สัญญาณชีพจากอุปกรณ์ Wearable เพื่อติดตามสุขภาพจากระยะไกลอย่างต่อเนื่อง' },
+    { icon: 'ti-stethoscope', title: 'Telemedicine Platforms', desc: 'ปรึกษาแพทย์ผ่านวิดีโอ นัดหมาย สั่งยาอิเล็กทรอนิกส์ และบันทึกการตรวจ รวมอยู่ในขั้นตอนเดียว สำหรับคลินิกและโรงพยาบาลที่อยากให้การติดตามอาการทำได้จากที่บ้าน คนไข้เข้าร่วมจากมือถือได้โดยไม่ต้องติดตั้งแอป และหมอเห็นแฟ้มข้างวิดีโอ เราเชื่อมขั้นตอนการจ่ายเงินและประกัน เพื่อให้เจ้าหน้าที่ไม่ต้องคีย์ข้อมูลซ้ำ' },
+    { icon: 'ti-clipboard-plus', title: 'EHR Integration Solutions', desc: 'ชั้นเชื่อมต่อที่สร้างบน HL7 FHIR และ API มาตรฐาน ให้ระบบ HIS แล็บ ภาพถ่ายทางการแพทย์ และเภสัชกรรม แลกเปลี่ยนข้อมูลกันได้ เหมาะกับกลุ่มโรงพยาบาลและทีม Health-tech ที่ใช้หลายระบบจากหลายผู้ผลิต คุณจะได้อินเทอร์เฟซที่มีเอกสาร การแมปข้อมูล และระบบเฝ้าดูที่บอกเมื่อข้อความส่งไม่สำเร็จ' },
+    { icon: 'ti-heartbeat', title: 'Clinical Analytics Platforms', desc: 'Dashboard ที่แสดงการไหลของผู้ป่วย การกลับมานอนซ้ำ เวลารอผลแล็บ หรือผู้ป่วยที่มีแนวโน้มต้องติดตามต่อ พร้อมโมเดลที่ช่วยชี้เป้า แพทย์และทีมคุณภาพใช้เห็นรูปแบบที่ไล่เปิดแฟ้มเองไม่มีทางเจอ เราตกลงกับแพทย์ของคุณก่อนว่าตัวเลขแต่ละตัวนิยามอย่างไร และทุกคำทำนายแสดงข้อมูลที่ใช้อ้างอิงเสมอ' },
+    { icon: 'ti-user', title: 'Patient Engagement Portals', desc: 'แอปหรือพอร์ทัลที่เชื่อมกับ LINE สำหรับนัดหมาย แจ้งเตือน ดูผลแล็บ รายการยา และส่งข้อความถึงทีมดูแลอย่างปลอดภัย ช่วยลดสายโทรเข้าที่เคาน์เตอร์และการผิดนัด เราทดสอบกับผู้ใช้สูงอายุและเจ้าหน้าที่ที่ไม่ถนัดเทคโนโลยีก่อนเปิดใช้จริง' },
+    { icon: 'ti-activity', title: 'Remote Patient Monitoring', desc: 'แพลตฟอร์มที่เก็บค่าอย่างความดัน น้ำตาล หรืออัตราการเต้นของหัวใจ จากอุปกรณ์ที่บ้านและ Wearable แล้วแจ้งพยาบาลเมื่อค่าเกินเกณฑ์ที่ตกลงกัน มีประโยชน์กับโครงการดูแลโรคเรื้อรังและการติดตามหลังออกจากโรงพยาบาล เกณฑ์ตั้งโดยแพทย์ของคุณ และเราออกแบบให้รับมือกับค่าที่ขาดหรือมีสัญญาณรบกวนได้' },
+    { icon: 'ti-file-invoice', title: 'ระบบเบิกจ่ายและประกัน', desc: 'เครื่องมือเตรียมเอกสารเคลม ตรวจความคุ้มครอง และติดตามสถานะการจ่ายเงิน ทั้งผู้ป่วยจ่ายเอง ผู้ป่วยประกัน และผู้ป่วยตามสิทธิ์ของรัฐ ทีมการเงินใช้เวลาคีย์ซ้ำและตามเคลมที่ถูกตีกลับน้อยลง เราเอาเหตุผลที่ถูกตีกลับจริงของคุณมาสร้างเป็นกฎ เพื่อให้ระบบจับได้ก่อนส่งเบิก' },
   ]
 
   const techStack = ['React', 'React Native', 'FHIR', 'HL7', 'AWS HealthLake', 'HIPAA', 'Python', 'TensorFlow', 'IoT', 'WebRTC', 'PostgreSQL', 'Redis']
 
   const useCases = isEN ? [
-    { no: '01', title: 'Telemedicine Platform', desc: 'HIPAA-compliant virtual care application with video consultations, e-prescriptions, appointment scheduling, clinical notes, and insurance verification integration.' },
-    { no: '02', title: 'Clinical Decision Support Tool', desc: 'AI-assisted diagnostic support platform that analyzes patient data, lab results, and medical literature to provide evidence-based treatment recommendations to clinicians.' },
-    { no: '03', title: 'Remote Patient Monitoring', desc: 'IoT-enabled platform collecting continuous vital signs from wearable devices with automated alerts, trend analysis, and clinician notification workflows.' },
+    { no: '01', title: 'Telemedicine Platform', desc: 'A virtual care service for a clinic or hospital, covering booking, video visits, e-prescriptions, visit notes and payment. We deliver the patient app or web page, a clinician workspace and the connection to your records system. The first release is usually limited to one specialty so staff can adjust before wider rollout.' },
+    { no: '02', title: 'Clinical Decision Support Tool', desc: 'A tool that gathers a patient\'s history, labs and current medication in one view and raises prompts for the doctor to consider, such as a possible drug interaction. It supports the clinician and never replaces their decision. Every prompt shows its source, and your medical team reviews the rules before they go live.' },
+    { no: '03', title: 'Remote Patient Monitoring', desc: 'A monitoring programme for patients with long-term conditions, using home devices and a patient app. Nurses get a prioritised list of who needs attention today, and patients get simple reminders in Thai. We set it up for one condition first, such as hypertension, then add others.' },
   ] : [
-    { no: '01', title: 'Telemedicine Platform', desc: 'แอป Virtual Care ที่เป็นไปตาม HIPAA มี Video Consultation ใบสั่งยาอิเล็กทรอนิกส์ นัดหมาย บันทึกทางคลินิก และเชื่อมตรวจสอบสิทธิ์ประกัน' },
-    { no: '02', title: 'Clinical Decision Support Tool', desc: 'แพลตฟอร์มช่วยวินิจฉัยด้วย AI วิเคราะห์ข้อมูลผู้ป่วย ผลตรวจ และงานวิจัยทางการแพทย์ เพื่อแนะนำแนวทางรักษาตามหลักฐานให้แพทย์' },
-    { no: '03', title: 'Remote Patient Monitoring', desc: 'แพลตฟอร์มเชื่อมต่อ IoT เก็บสัญญาณชีพต่อเนื่องจากอุปกรณ์ Wearable แจ้งเตือนอัตโนมัติ วิเคราะห์แนวโน้ม และแจ้งแพทย์' },
+    { no: '01', title: 'แพลตฟอร์ม Telemedicine', desc: 'บริการ Virtual Care สำหรับคลินิกหรือโรงพยาบาล ตั้งแต่นัดหมาย พบแพทย์ผ่านวิดีโอ สั่งยาอิเล็กทรอนิกส์ บันทึกการตรวจ ไปจนถึงชำระเงิน เราส่งมอบแอปหรือหน้าเว็บสำหรับคนไข้ พื้นที่ทำงานของแพทย์ และการเชื่อมกับระบบเวชระเบียนของคุณ รุ่นแรกมักจำกัดไว้ที่แผนกเดียว เพื่อให้เจ้าหน้าที่ปรับตัวก่อนขยาย' },
+    { no: '02', title: 'เครื่องมือช่วยการตัดสินใจทางคลินิก', desc: 'เครื่องมือที่รวมประวัติ ผลแล็บ และยาที่ใช้อยู่ของผู้ป่วยไว้ในหน้าเดียว แล้วเตือนให้แพทย์พิจารณา เช่น ยาที่อาจตีกัน เป็นตัวช่วยของแพทย์ ไม่ได้มาแทนการตัดสินใจ ทุกคำเตือนระบุแหล่งที่มา และทีมแพทย์ของคุณตรวจกฎก่อนเปิดใช้จริง' },
+    { no: '03', title: 'ติดตามผู้ป่วยทางไกล', desc: 'โครงการติดตามผู้ป่วยโรคเรื้อรังด้วยอุปกรณ์ที่บ้านและแอปสำหรับคนไข้ พยาบาลจะได้รายชื่อที่จัดลำดับว่าวันนี้ใครต้องดูเป็นพิเศษ ส่วนคนไข้ได้รับการเตือนง่ายๆ เป็นภาษาไทย เราเริ่มจากโรคเดียวก่อน เช่น ความดันโลหิตสูง แล้วค่อยเพิ่มโรคอื่น' },
   ]
 
   const heroVisual = (
@@ -176,8 +178,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <div className="w-12 h-[3px] rounded-full mb-8" style={{ background: 'linear-gradient(90deg, var(--purple-light), var(--lime))' }} />
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
-                  ? 'We partner with hospitals, clinics, healthtech startups, and pharmaceutical companies to build telemedicine platforms, EHR integrations, remote monitoring systems, and clinical analytics dashboards. Our teams understand HL7/FHIR standards and regulatory requirements like HIPAA and PDPA, building compliance in from day one so you can innovate confidently.'
-                  : 'เราร่วมงานกับโรงพยาบาล คลินิก สตาร์ทอัพ Healthtech และบริษัทยา เพื่อสร้างแพลตฟอร์ม Telemedicine การเชื่อมต่อ EHR ระบบติดตามผู้ป่วยทางไกล และ Dashboard วิเคราะห์ทางคลินิก ทีมเราเข้าใจมาตรฐาน HL7/FHIR และข้อกำหนดอย่าง HIPAA และ PDPA โดยใส่เรื่อง Compliance ไว้ตั้งแต่วันแรก เพื่อให้คุณสร้างสิ่งใหม่ได้อย่างมั่นใจ'}
+                  ? 'We work with hospitals, clinics, health-tech start-ups and pharmaceutical teams on telemedicine, system integration, patient apps and monitoring tools. Every project begins with a walk through the clinical workflow with the people who use it, because a screen that is correct on paper can still slow down a ward. Health data is sensitive under PDPA, so consent, access control and audit logs are designed in from the first sprint, and we speak HL7 FHIR when your systems need to exchange records.'
+                  : 'เราทำงานกับโรงพยาบาล คลินิก สตาร์ทอัพ Health-tech และทีมบริษัทยา ในงาน Telemedicine การเชื่อมระบบ แอปสำหรับผู้ป่วย และเครื่องมือติดตามอาการ ทุกโปรเจกต์เริ่มจากเดินดูขั้นตอนการทำงานทางคลินิกกับคนที่ใช้งานจริง เพราะหน้าจอที่ถูกต้องบนกระดาษก็ยังทำให้งานบนวอร์ดช้าลงได้ ข้อมูลสุขภาพเป็นข้อมูลอ่อนไหวตาม PDPA เราจึงออกแบบเรื่องความยินยอม การคุมสิทธิ์ และ Audit Log ตั้งแต่สปรินต์แรก และใช้ HL7 FHIR เมื่อระบบของคุณต้องแลกเปลี่ยนเวชระเบียนกัน'}
               </p>
             </div>
           </div>
@@ -194,8 +196,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
-                ? 'Understanding the critical obstacles that drive digital transformation in this industry.'
-                : 'ปัญหาหลักที่ธุรกิจในอุตสาหกรรมนี้ต้องเจอ'}
+                ? 'The problems teams in this industry bring to us most often, and the ones we plan each project around.'
+                : 'นี่คือปัญหาที่ทีมในอุตสาหกรรมนี้เล่าให้เราฟังบ่อยที่สุด และเป็นสิ่งที่เราใช้วางแผนแต่ละโปรเจกต์'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -245,7 +247,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
+              {isEN ? 'The kinds of systems we build for this industry, what each one does, and who it is for.' : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -272,8 +274,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
-                ? 'Industry-proven tools and frameworks we leverage to build robust solutions.'
-                : 'เครื่องมือและ Framework ที่เราเลือกใช้ เพราะมั่นคงและเชื่อถือได้'}
+                ? 'The tools and frameworks we reach for most often, chosen because they are stable, well documented and easy to find people to maintain.'
+                : 'เครื่องมือและ Framework ที่เราเลือกใช้บ่อย เพราะเสถียร เอกสารครบ และหาคนมาดูแลต่อได้ง่าย'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -299,7 +301,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างงานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
+              {isEN ? 'Typical projects we take on in this industry, and what each one delivers.' : 'ตัวอย่างโปรเจกต์ที่เรารับทำในอุตสาหกรรมนี้ พร้อมสิ่งที่ลูกค้าจะได้รับ'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -339,7 +341,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
+              {isEN ? 'Tell us what you are building, and we will suggest where to start.' : 'เล่าให้เราฟังหน่อยว่าคุณกำลังทำอะไรอยู่ แล้วเราจะช่วยดูว่าควรเริ่มจากตรงไหน'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link

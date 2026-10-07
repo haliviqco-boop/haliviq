@@ -28,7 +28,7 @@ export default function Footer({ lang, tr }: Props) {
             {lang === 'en' ? 'Our Global Offices' : 'สำนักงานของเรา'}
           </h2>
           <p className="mb-10" style={{ color: 'rgba(255,255,255,0.65)', fontSize: '1.05rem', fontWeight: 400 }}>
-            {lang === 'en' ? "With offices in Thailand and the USA, we're ready to help you wherever you are." : 'เรามีสำนักงานในไทยและสหรัฐอเมริกา พร้อมช่วยคุณไม่ว่าจะอยู่ที่ไหน'}
+            {lang === 'en' ? 'Our main studio is in Bangkok, with an office address in the USA as well. Call us, message us on LINE or WhatsApp, or send an email, and we will get back to you within 24 hours.' : 'สำนักงานหลักของเราอยู่ที่กรุงเทพฯ และมีที่อยู่สำนักงานในสหรัฐอเมริกาด้วย โทรหาเรา ทักผ่าน LINE หรือ WhatsApp หรือส่งอีเมลมาก็ได้ เราตอบกลับภายใน 24 ชั่วโมง'}
           </p>
           <div className="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
             {[

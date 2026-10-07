@@ -33,7 +33,7 @@ const IP = ({ label, height=400, color='var(--purple)', bg='var(--purple-bg)' }:
       <i className="ti ti-photo" style={{fontSize:26, color}} aria-hidden="true"/>
     </div>
     <p className="text-sm" style={{color, opacity:0.5, fontWeight:400}}>{label}</p>
-    <p className="text-xs" style={{color, opacity:0.3, fontWeight:400}}>แนะนำ 1440 × 640px</p>
+    <p className="text-xs" style={{color, opacity:0.3, fontWeight:400}}>ขนาดที่แนะนำ 1440 × 640px</p>
   </div>
 )
 
@@ -45,8 +45,8 @@ export default function ServiceLayout({
   heroSlot, heroDark=false, heroCtaLabel, heroShowSecondaryCta=true, postHeroSlot,
   whyTitle, whyDesc, whyPoints,
   features, steps, outcomes, caseStudies, faqs, related,
-  ctaTitle='พร้อมเริ่มโปรเจกต์กับเราหรือยัง?',
-  ctaDesc='ปรึกษาครั้งแรกฟรี ตอบกลับภายใน 24 ชั่วโมง และลงนาม NDA ได้ทันที',
+  ctaTitle='อยากเริ่มโปรเจกต์กับเราไหม?',
+  ctaDesc='คุยกับเราครั้งแรกฟรี เราตอบกลับภายใน 24 ชั่วโมง และถ้าต้องการ เราลงนาม NDA ให้ได้เลย',
 }: Props) {
   const lang = langProp ?? 'th'
   const tr = t[lang] as any

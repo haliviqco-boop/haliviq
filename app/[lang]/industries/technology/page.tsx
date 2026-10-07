@@ -15,19 +15,19 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   const badge = isEN ? 'Industry / Technology & Hi-Tech' : 'อุตสาหกรรม / เทคโนโลยีและไฮเทค'
   const heroSubhead = isEN
-    ? 'Solutions for technology companies and startups.'
-    : 'ระบบสำหรับบริษัทเทคโนโลยีและสตาร์ทอัพ'
+    ? 'Engineering help for startups and tech companies: MVPs, SaaS platforms, APIs, cloud setup, and code reviews that get you ready for investors.'
+    : 'งานวิศวกรรมสำหรับสตาร์ทอัพและบริษัทเทคโนโลยี ตั้งแต่ MVP แพลตฟอร์ม SaaS API การตั้งค่า Cloud ไปจนถึงตรวจโค้ดให้พร้อมรับนักลงทุน'
 
   const challenges = isEN ? [
-    { icon: 'ti-rocket', title: 'Speed-to-Market Pressure', desc: 'Startups need to validate ideas and ship MVPs fast to secure funding and beat competitors, but rushing engineering without the right foundation often creates costly rework later.' },
-    { icon: 'ti-users-group', title: 'Scaling Engineering Teams', desc: 'Growing from a founding team to a full engineering organization introduces technical debt, inconsistent code quality, and knowledge silos that slow product velocity if not managed deliberately.' },
-    { icon: 'ti-cloud-computing', title: 'Infrastructure Cost & Complexity', desc: 'As usage grows, cloud infrastructure and architecture decisions made early on become expensive or brittle, requiring re-platforming that most lean teams are not staffed to handle.' },
-    { icon: 'ti-clipboard-check', title: 'Technical Due-Diligence Readiness', desc: 'Fundraising and M&A events demand a codebase, architecture, and documentation that can withstand investor and acquirer scrutiny, yet most fast-moving teams are not audit-ready.' },
+    { icon: 'ti-rocket', title: 'Speed-to-Market Pressure', desc: 'A founder with a demo date, a pilot customer waiting, or a funding round to close has a few months to prove that people want the product. The risk is not shipping slowly, it is shipping something that has to be thrown away right after the first customers arrive. We help you decide the smallest version worth testing, pick a stack your next hires already know, and keep the parts that will survive, such as authentication, data model, and deployment, built properly from week one.' },
+    { icon: 'ti-users-group', title: 'Scaling Engineering Teams', desc: 'Hiring good engineers in Bangkok takes months, and the first five or six people often write code in five different styles. Shortcuts taken when the team was two people turn into a codebase that only the founders understand. We help set up code review habits, coding conventions, test coverage where it matters, and written documentation, so a new developer can ship something useful in their first week instead of their first quarter.' },
+    { icon: 'ti-cloud-computing', title: 'Infrastructure Cost & Complexity', desc: 'Early infrastructure choices are made in an afternoon and paid for for years. A cloud bill that was a few thousand baht at launch can grow faster than revenue, and a setup that nobody has documented becomes a risk the day the one person who built it leaves. We review what you run today, show where money goes, and propose changes in small, reversible steps, including where data should be hosted when Thai customers or PDPA are a factor.' },
+    { icon: 'ti-clipboard-check', title: 'Technical Due-Diligence Readiness', desc: 'Before a funding round or an acquisition, investors and buyers send engineers to ask how the product is built, who owns the code, where the customer data lives, and what happens when something breaks. Teams that have been busy shipping often cannot answer quickly. We run the same questions ahead of time, in a friendly way, and give you a short list of gaps ordered by how much they matter, so you can fix the important ones before the call.' },
   ] : [
-    { icon: 'ti-rocket', title: 'แรงกดดันให้ออกสู่ตลาดให้เร็ว', desc: 'สตาร์ทอัพต้องพิสูจน์ไอเดียและปล่อย MVP ให้เร็วเพื่อระดมทุนและแซงคู่แข่ง แต่การเร่งทำโดยไม่มีพื้นฐานที่ดีมักต้องแก้งานใหม่ในภายหลังด้วยต้นทุนสูง' },
-    { icon: 'ti-users-group', title: 'การขยายทีมวิศวกรรม', desc: 'เมื่อโตจากทีมผู้ก่อตั้งเป็นองค์กรวิศวกรรมเต็มรูปแบบ จะเกิด Technical Debt คุณภาพโค้ดไม่สม่ำเสมอ และความรู้ที่กระจุกอยู่กับบางคน ทำให้พัฒนาผลิตภัณฑ์ช้าลงถ้าไม่จัดการให้ดี' },
-    { icon: 'ti-cloud-computing', title: 'ต้นทุนและความซับซ้อนของโครงสร้างพื้นฐาน', desc: 'เมื่อมีผู้ใช้มากขึ้น การเลือก Cloud และสถาปัตยกรรมตั้งแต่แรกอาจแพงหรือเปราะบาง ต้องย้ายแพลตฟอร์มใหม่ ซึ่งทีมส่วนใหญ่ไม่มีคนพอจะทำ' },
-    { icon: 'ti-clipboard-check', title: 'ความพร้อมรับการตรวจสอบทางเทคนิค', desc: 'การระดมทุนและดีลควบรวมกิจการ (M&A) ต้องมี Codebase สถาปัตยกรรม และเอกสารที่ผ่านการตรวจสอบของนักลงทุนและผู้ซื้อได้ แต่ทีมที่ทำงานเร็วส่วนใหญ่ยังไม่พร้อมให้ตรวจสอบ' },
+    { icon: 'ti-rocket', title: 'แรงกดดันให้ออกสู่ตลาดให้เร็ว', desc: 'ผู้ก่อตั้งที่มีวันเดโม ลูกค้าทดลองใช้ที่รออยู่ หรือรอบระดมทุนที่ต้องปิด มีเวลาไม่กี่เดือนในการพิสูจน์ว่าคนอยากใช้ผลิตภัณฑ์จริง ความเสี่ยงไม่ได้อยู่ที่ช้า แต่อยู่ที่ปล่อยของที่ต้องทิ้งทันทีพอลูกค้ากลุ่มแรกเข้ามา เราช่วยตัดสินใจว่าเวอร์ชันเล็กที่สุดที่ควรทดสอบคืออะไร เลือกเทคโนโลยีที่คนที่คุณจะจ้างต่อรู้จักอยู่แล้ว และทำส่วนที่ต้องอยู่ยาว เช่น ระบบล็อกอิน โครงสร้างข้อมูล และการ deploy ให้ถูกต้องตั้งแต่สัปดาห์แรก' },
+    { icon: 'ti-users-group', title: 'การขยายทีมวิศวกรรม', desc: 'การหาวิศวกรเก่ง ๆ ในกรุงเทพฯ ใช้เวลาเป็นเดือน และคนห้าหกคนแรกมักเขียนโค้ดกันคนละสไตล์ ทางลัดที่ทำตอนทีมมีแค่สองคนกลายเป็นโค้ดที่มีแต่ผู้ก่อตั้งที่เข้าใจ เราช่วยวางวัฒนธรรมรีวิวโค้ด มาตรฐานการเขียน เทสต์ในจุดที่สำคัญ และเอกสารที่เขียนไว้ให้ครบ คนใหม่จะส่งงานที่ใช้ได้จริงภายในสัปดาห์แรก ไม่ต้องรอไตรมาสแรก' },
+    { icon: 'ti-cloud-computing', title: 'ต้นทุนและความซับซ้อนของโครงสร้างพื้นฐาน', desc: 'โครงสร้างพื้นฐานช่วงแรกมักเลือกกันในบ่ายเดียว แต่จ่ายค่าใช้จ่ายกันเป็นปี ค่า Cloud ที่ตอนเปิดตัวแค่ไม่กี่พันบาทโตเร็วกว่ารายได้ได้ และระบบที่ไม่มีใครจดเอกสารไว้คือความเสี่ยง วันที่คนเดียวที่ตั้งมันขึ้นมาลาออก เราช่วยดูว่าตอนนี้คุณรันอะไรอยู่ เงินหมดไปกับอะไร แล้วเสนอการปรับเป็นก้าวเล็ก ๆ ที่ย้อนกลับได้ รวมถึงเรื่องที่เก็บข้อมูลควรอยู่ที่ไหนเมื่อมีลูกค้าไทยหรือเรื่อง PDPA เข้ามาเกี่ยว' },
+    { icon: 'ti-clipboard-check', title: 'ความพร้อมรับการตรวจสอบทางเทคนิค', desc: 'ก่อนระดมทุนหรือถูกซื้อกิจการ นักลงทุนและผู้ซื้อจะส่งวิศวกรมาถามว่าผลิตภัณฑ์สร้างยังไง ใครเป็นเจ้าของโค้ด ข้อมูลลูกค้าอยู่ที่ไหน และถ้าระบบพังจะเกิดอะไรขึ้น ทีมที่มัวแต่ส่งงานมักตอบไม่ทัน เราซ้อมถามคำถามเดียวกันให้ล่วงหน้าแบบเป็นกันเอง แล้วสรุปช่องว่างเป็นรายการสั้น ๆ เรียงตามความสำคัญ คุณจะได้แก้เรื่องใหญ่ก่อนวันที่นักลงทุนโทรมา' },
   ]
 
   const metrics = [
@@ -37,31 +37,31 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   ]
 
   const capabilities = isEN ? [
-    { icon: 'ti-code', title: 'MVP Development', desc: 'Rapid, well-architected MVP builds that validate your product hypothesis with real users while laying a foundation that scales past the pilot stage.' },
-    { icon: 'ti-users', title: 'Forward-Deployed Engineering Teams', desc: 'Embedded engineers who work as an extension of your team, moving fast on your roadmap without the overhead of a traditional hiring cycle.' },
-    { icon: 'ti-cloud', title: 'SaaS Platform Builds', desc: 'Multi-tenant SaaS architectures with subscription billing, role-based access, and usage analytics designed to support your growth trajectory.' },
-    { icon: 'ti-plug', title: 'API & Infrastructure Design', desc: 'Scalable API layers and cloud infrastructure built with security, observability, and cost-efficiency in mind from day one.' },
-    { icon: 'ti-search', title: 'Technical Due-Diligence Audits', desc: 'Independent code, architecture, and security reviews that prepare your company for investor scrutiny or acquisition readiness.' },
-    { icon: 'ti-adjustments-alt', title: 'DevOps & Scaling Support', desc: 'CI/CD pipelines, infrastructure-as-code, and monitoring setups that let your team ship confidently as traffic and headcount grow.' },
+    { icon: 'ti-code', title: 'MVP Development', desc: 'A first working version of your product built in a few focused sprints, with real users in mind. We start with a short workshop to cut the idea down to the one journey that proves the value, then design, build, and launch it with analytics so you can see what people do. You own the code from day one, and it is structured so that the second version builds on the first instead of replacing it.' },
+    { icon: 'ti-users', title: 'Forward-Deployed Engineering Teams', desc: 'Engineers and a designer who join your team\'s stand-ups, work in your repository and your ticket board, and ship against your roadmap. Good when you need extra hands for three to six months without a hiring cycle, or when you need a specific skill such as mobile, data, or DevOps. We agree on a working rhythm up front and write down what we build so your own team can take it over.' },
+    { icon: 'ti-cloud', title: 'SaaS Platform Builds', desc: 'The parts every SaaS product needs and nobody enjoys building twice: multi-tenant data separation, sign-up and role-based access, subscription billing, usage tracking, an admin console, and email notifications. We build them so you can add billing in baht or US dollars, invoicing with Thai tax details where needed, and later single sign-on for larger customers.' },
+    { icon: 'ti-plug', title: 'API & Infrastructure Design', desc: 'Clear, versioned APIs, a sensible service layout, and cloud infrastructure described in code with Terraform, so environments can be rebuilt and reviewed. We include logging, alerts, backups, and a cost view from the start. It suits teams opening an API to partners, splitting a growing app into services, or tidying infrastructure that grew by accident.' },
+    { icon: 'ti-search', title: 'Technical Due-Diligence Audits', desc: 'An independent review of your code, architecture, security practices, and team processes, written for the people who will read it: founders, investors, or an acquirer\'s engineers. You get a plain-language report with findings sorted by severity, what each would cost to fix, and a suggested order. We review and report; we do not offer to certify a result to any third party.' },
+    { icon: 'ti-adjustments-alt', title: 'DevOps & Scaling Support', desc: 'Automated builds and deployments with CI/CD, infrastructure as code, monitoring, on-call basics, and load testing before a big launch. We set it up with your team and write a short runbook for the incidents you are most likely to see, so a failed deploy at 11 pm is a ten-minute fix, not a crisis. Works with AWS and other major clouds.' },
   ] : [
-    { icon: 'ti-code', title: 'MVP Development', desc: 'พัฒนา MVP ที่เร็วและวางสถาปัตยกรรมดี เพื่อพิสูจน์สมมติฐานของผลิตภัณฑ์กับผู้ใช้จริง และวางรากฐานให้ขยายต่อได้หลังช่วงทดลอง' },
-    { icon: 'ti-users', title: 'Forward-Deployed Engineering Teams', desc: 'ทีมวิศวกรที่เข้าไปทำงานเป็นส่วนหนึ่งของทีมคุณ ทำตาม Roadmap ได้เร็วโดยไม่ต้องผ่านขั้นตอนจ้างงานแบบเดิม' },
-    { icon: 'ti-cloud', title: 'SaaS Platform Builds', desc: 'สถาปัตยกรรม SaaS แบบ Multi-tenant พร้อมระบบเก็บค่าสมาชิก กำหนดสิทธิ์ตามบทบาท และ Usage Analytics ที่ออกแบบมารองรับการเติบโต' },
-    { icon: 'ti-plug', title: 'API & Infrastructure Design', desc: 'API Layer และ Cloud Infrastructure ที่ขยายได้ ออกแบบโดยคำนึงถึงความปลอดภัย การติดตามระบบ และต้นทุนที่คุ้มค่าตั้งแต่วันแรก' },
-    { icon: 'ti-search', title: 'Technical Due-Diligence Audits', desc: 'ตรวจสอบโค้ด สถาปัตยกรรม และความปลอดภัยโดยผู้ตรวจอิสระ เพื่อเตรียมบริษัทให้พร้อมรับการตรวจสอบจากนักลงทุนหรือการควบรวมกิจการ' },
-    { icon: 'ti-adjustments-alt', title: 'DevOps & Scaling Support', desc: 'CI/CD Pipeline, Infrastructure-as-Code และระบบ Monitoring ช่วยให้ทีมคุณปล่อยงานได้อย่างมั่นใจ เมื่อผู้ใช้และจำนวนพนักงานเพิ่มขึ้น' },
+    { icon: 'ti-code', title: 'MVP Development', desc: 'ผลิตภัณฑ์เวอร์ชันแรกที่ใช้งานได้จริง สร้างในไม่กี่ Sprint โดยคิดถึงผู้ใช้จริงตั้งแต่ต้น เราเริ่มจากเวิร์กช็อปสั้น ๆ ตัดไอเดียให้เหลือเส้นทางเดียวที่พิสูจน์คุณค่าได้ แล้วออกแบบ สร้าง และปล่อยพร้อมระบบวัดผล คุณจะเห็นว่าคนใช้ยังไง โค้ดเป็นของคุณตั้งแต่วันแรก และจัดโครงสร้างให้เวอร์ชันสองต่อยอดจากเวอร์ชันแรกได้ ไม่ต้องทิ้งแล้วทำใหม่' },
+    { icon: 'ti-users', title: 'Forward-Deployed Engineering Teams', desc: 'วิศวกรและดีไซเนอร์ที่เข้าไปนั่งเป็นส่วนหนึ่งของทีมคุณ เข้าประชุมประจำวัน ทำงานใน repository และบอร์ดงานเดียวกัน และส่งงานตาม Roadmap ของคุณ เหมาะเมื่อต้องการกำลังเพิ่มสามถึงหกเดือนโดยไม่ต้องรอรอบจ้างงาน หรือต้องการทักษะเฉพาะ เช่น มือถือ ข้อมูล หรือ DevOps เราตกลงจังหวะการทำงานกันก่อน และจดสิ่งที่สร้างไว้เพื่อให้ทีมคุณรับช่วงต่อได้' },
+    { icon: 'ti-cloud', title: 'SaaS Platform Builds', desc: 'ส่วนที่ผลิตภัณฑ์ SaaS ทุกตัวต้องมีและไม่มีใครอยากทำสองรอบ ทั้งการแยกข้อมูลลูกค้าแต่ละราย ระบบสมัครและกำหนดสิทธิ์ตามบทบาท การเก็บค่าสมาชิก การวัดการใช้งาน หน้าแอดมิน และอีเมลแจ้งเตือน เราสร้างให้รองรับการเก็บเงินเป็นบาทหรือดอลลาร์ ใบกำกับภาษีที่มีรายละเอียดตามที่ไทยกำหนดเมื่อจำเป็น และเพิ่ม single sign-on ให้ลูกค้ารายใหญ่ได้ภายหลัง' },
+    { icon: 'ti-plug', title: 'API & Infrastructure Design', desc: 'API ที่ชัดเจนและมีเวอร์ชัน การแบ่งบริการอย่างเหมาะสม และโครงสร้าง Cloud ที่เขียนเป็นโค้ดด้วย Terraform ทำให้สร้างสภาพแวดล้อมใหม่และรีวิวได้ เรามีระบบ log การแจ้งเตือน การสำรองข้อมูล และหน้าดูค่าใช้จ่ายให้ตั้งแต่เริ่ม เหมาะกับทีมที่กำลังเปิด API ให้พาร์ตเนอร์ แยกแอปที่โตขึ้นเป็นหลายบริการ หรือจัดระเบียบระบบที่โตมาแบบไม่ได้วางแผน' },
+    { icon: 'ti-search', title: 'Technical Due-Diligence Audits', desc: 'การตรวจโค้ด สถาปัตยกรรม แนวปฏิบัติด้านความปลอดภัย และกระบวนการทำงานของทีมโดยผู้ตรวจอิสระ เขียนรายงานให้คนที่ต้องอ่านจริง ทั้งผู้ก่อตั้ง นักลงทุน หรือวิศวกรฝั่งผู้ซื้อ คุณจะได้รายงานภาษาอ่านง่าย แยกข้อพบตามระดับความรุนแรง บอกว่าแก้แต่ละข้อใช้แรงประมาณเท่าไหร่ และเสนอลำดับการแก้ เราตรวจและรายงานเท่านั้น ไม่รับรองผลให้บุคคลที่สาม' },
+    { icon: 'ti-adjustments-alt', title: 'DevOps & Scaling Support', desc: 'ระบบ build และ deploy อัตโนมัติด้วย CI/CD โครงสร้างพื้นฐานที่เขียนเป็นโค้ด ระบบติดตาม พื้นฐานการเข้าเวรรับเหตุ และการทดสอบโหลดก่อนเปิดตัวใหญ่ เราตั้งค่าร่วมกับทีมคุณ และเขียนคู่มือสั้น ๆ สำหรับเหตุที่น่าจะเจอบ่อยที่สุด deploy พังตอนสี่ทุ่มจะเป็นงานสิบนาที ไม่ใช่วิกฤต ใช้ได้กับ AWS และ Cloud รายใหญ่อื่น ๆ' },
   ]
 
   const techStack = ['React', 'Next.js', 'Node.js', 'TypeScript', 'PostgreSQL', 'Kubernetes', 'AWS', 'GraphQL', 'Redis', 'Terraform', 'CI/CD', 'Microservices', 'Docker']
 
   const useCases = isEN ? [
-    { no: '01', title: 'Funded Startup MVP Build', desc: 'End-to-end MVP development for a seed-to-Series-A startup, from technical architecture and cloud setup through a production-ready launch in under 12 weeks.' },
-    { no: '02', title: 'SaaS Platform Re-Architecture', desc: 'Migration of a monolithic SaaS product to a scalable microservices architecture, cutting infrastructure costs while improving reliability and deploy frequency.' },
-    { no: '03', title: 'Technical Due-Diligence Engagement', desc: 'Independent codebase, security, and architecture audit ahead of a Series B raise, producing a remediation roadmap that satisfied investor requirements.' },
+    { no: '01', title: 'Funded Startup MVP Build', desc: 'A seed-to-Series-A startup needs a production-ready product to show customers and investors. We handle technical architecture, cloud setup, and the build itself, working in short sprints with demos every week or two, and reach a production-ready launch in under 12 weeks. The founders end the project with a codebase, documentation, and a deployment they can hand to their first hires.' },
+    { no: '02', title: 'SaaS Platform Re-Architecture', desc: 'A monolithic SaaS product that has become slow to change is migrated, piece by piece, to a scalable microservices architecture while customers keep using it. We pick the parts that hurt most first, run old and new side by side, and measure the result. The project cuts infrastructure cost while improving reliability and how often the team can deploy.' },
+    { no: '03', title: 'Technical Due-Diligence Engagement', desc: 'An independent codebase, security, and architecture audit ahead of a Series B raise. We interview the engineers, read the code, and check how the system is hosted and backed up, then deliver a remediation roadmap that satisfied investor requirements. Founders can walk into the investor technical session knowing the answers.' },
   ] : [
-    { no: '01', title: 'Funded Startup MVP Build', desc: 'พัฒนา MVP ครบทุกส่วนให้สตาร์ทอัพระดับ Seed ถึง Series A ตั้งแต่สถาปัตยกรรมและการตั้งค่า Cloud ไปจนถึงปล่อยใช้งานจริงภายในไม่ถึง 12 สัปดาห์' },
-    { no: '02', title: 'SaaS Platform Re-Architecture', desc: 'ย้ายผลิตภัณฑ์ SaaS แบบ Monolithic ไปเป็นสถาปัตยกรรม Microservices ที่ขยายได้ ลดต้นทุนโครงสร้างพื้นฐาน พร้อมเพิ่มความน่าเชื่อถือและปล่อยงานได้ถี่ขึ้น' },
-    { no: '03', title: 'Technical Due-Diligence Engagement', desc: 'ตรวจ Codebase ความปลอดภัย และสถาปัตยกรรมโดยผู้ตรวจอิสระ ก่อนระดมทุนรอบ Series B พร้อมแผนแก้ไขที่ตรงกับสิ่งที่นักลงทุนต้องการ' },
+    { no: '01', title: 'Funded Startup MVP Build', desc: 'สตาร์ทอัพระดับ Seed ถึง Series A ที่ต้องการผลิตภัณฑ์พร้อมใช้งานจริงไว้โชว์ลูกค้าและนักลงทุน เราดูแลตั้งแต่สถาปัตยกรรม การตั้งค่า Cloud ไปจนถึงตัวงาน ทำเป็น Sprint สั้น ๆ มีเดโมทุกหนึ่งถึงสองสัปดาห์ และปล่อยใช้งานจริงได้ภายในไม่ถึง 12 สัปดาห์ จบโปรเจกต์ผู้ก่อตั้งจะได้โค้ด เอกสาร และระบบ deploy ที่ส่งต่อให้พนักงานคนแรก ๆ ได้เลย' },
+    { no: '02', title: 'SaaS Platform Re-Architecture', desc: 'ผลิตภัณฑ์ SaaS แบบ Monolithic ที่แก้ทีไรก็ช้า ย้ายไปเป็นสถาปัตยกรรม Microservices ที่ขยายได้ทีละส่วน ระหว่างที่ลูกค้ายังใช้งานอยู่ เราเลือกส่วนที่เป็นปัญหาที่สุดก่อน รันของเก่าคู่กับของใหม่ และวัดผลทุกขั้น โปรเจกต์นี้ลดต้นทุนโครงสร้างพื้นฐาน พร้อมทำให้ระบบเสถียรขึ้นและทีม deploy ได้บ่อยขึ้น' },
+    { no: '03', title: 'Technical Due-Diligence Engagement', desc: 'การตรวจ Codebase ความปลอดภัย และสถาปัตยกรรมโดยผู้ตรวจอิสระ ก่อนระดมทุนรอบ Series B เราสัมภาษณ์วิศวกร อ่านโค้ด และตรวจว่าระบบโฮสต์และสำรองข้อมูลยังไง แล้วส่งแผนแก้ไขที่ตรงกับข้อกำหนดของนักลงทุน ผู้ก่อตั้งเดินเข้าห้องคุยเทคนิคกับนักลงทุนโดยรู้คำตอบอยู่แล้ว' },
   ]
 
   const heroVisual = (
@@ -189,8 +189,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <div className="w-12 h-[3px] rounded-full mb-8" style={{ background: 'linear-gradient(90deg, var(--purple-light), var(--lime))' }} />
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
-                  ? 'We help technology companies and startups build MVPs, SaaS platforms, and scalable infrastructure that move fast without accumulating technical debt. Our forward-deployed engineering teams embed alongside yours, bringing production-grade discipline to every sprint so you can raise, scale, and exit with confidence.'
-                  : 'เราช่วยบริษัทเทคโนโลยีและสตาร์ทอัพสร้าง MVP แพลตฟอร์ม SaaS และโครงสร้างพื้นฐานที่ขยายได้ ทำงานได้เร็วโดยไม่สะสม Technical Debt ทีมวิศวกรของเราเข้าไปทำงานร่วมกับทีมคุณ และรักษามาตรฐานระดับใช้งานจริงในทุก Sprint เพื่อให้คุณระดมทุน ขยายธุรกิจ และ Exit ได้อย่างมั่นใจ'}
+                  ? 'We work with startups and technology companies that need to build quickly without creating a mess for later. That can mean a first MVP, a SaaS platform that needs billing and multi-tenant access, an API opened to partners, or a code and architecture review before a funding round. Our engineers join your team in your repository and sprint rhythm, and we leave behind documentation and handover notes so you are never dependent on us. We keep Thai-market details in mind where they matter, such as PDPA, baht billing, tax invoices, and where customer data is hosted.'
+                : 'เราทำงานกับสตาร์ทอัพและบริษัทเทคโนโลยีที่ต้องการสร้างให้เร็วโดยไม่ทิ้งความยุ่งเหยิงไว้ข้างหลัง อาจเป็น MVP ชิ้นแรก แพลตฟอร์ม SaaS ที่ต้องมีระบบเก็บเงินและแยกข้อมูลลูกค้า API ที่เปิดให้พาร์ตเนอร์ หรือการตรวจโค้ดและสถาปัตยกรรมก่อนระดมทุน วิศวกรของเราเข้าไปทำงานใน repository และจังหวะ Sprint เดียวกับทีมคุณ และทิ้งเอกสารกับโน้ตส่งมอบไว้ให้ คุณจะไม่ต้องพึ่งเราตลอดไป เรื่องเฉพาะของตลาดไทยที่สำคัญ เช่น PDPA การเก็บเงินเป็นบาท ใบกำกับภาษี และที่เก็บข้อมูลลูกค้า เราดูให้ด้วย'}
               </p>
             </div>
           </div>
@@ -207,8 +207,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
-                ? 'Understanding the critical obstacles that drive digital transformation in this industry.'
-                : 'ปัญหาหลักที่ธุรกิจในอุตสาหกรรมนี้ต้องเจอ'}
+                ? 'Four pressures founders and engineering leads describe to us most often, and what usually sits behind them.'
+                : 'สี่แรงกดดันที่ผู้ก่อตั้งและหัวหน้าทีมวิศวกรรมเล่าให้เราฟังบ่อยที่สุด และสิ่งที่มักอยู่เบื้องหลัง'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -258,7 +258,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
+              {isEN ? 'The engineering work we take on for tech teams, and what you hold at the end of each one.' : 'งานวิศวกรรมที่เรารับทำให้ทีมเทคโนโลยี พร้อมบอกว่าจบแต่ละงานคุณจะได้อะไรไว้ในมือ'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -285,8 +285,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
-                ? 'Industry-proven tools and frameworks we leverage to build robust solutions.'
-                : 'เครื่องมือและ Framework ที่เราเลือกใช้ เพราะมั่นคงและเชื่อถือได้'}
+                ? 'Tools we reach for because they are widely used, well documented, and easy to hire for in Thailand.'
+                : 'เครื่องมือที่เราหยิบใช้บ่อย เพราะคนใช้กันแพร่หลาย มีเอกสารครบ และหาคนทำงานด้วยได้ง่ายในไทย'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -312,7 +312,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างงานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
+              {isEN ? 'Three typical engagements, described by what we do, how long it takes, and what the team has afterwards.' : 'ตัวอย่างงานทั่วไปสามแบบ เล่าให้ฟังว่าเราทำอะไร ใช้เวลาแค่ไหน และจบแล้วทีมจะได้อะไรไว้'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -352,7 +352,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
+              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้เลยว่าคุณกำลังทำอะไรอยู่'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link

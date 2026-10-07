@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import ServiceLayout from '@/components/service/ServiceLayout'
 import { type Lang } from '@/lib/i18n'
@@ -39,6 +40,24 @@ export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
 }
 
+export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+  const isEN = params.lang === 'en'
+  const title = isEN
+    ? "Web Development Company in Bangkok, Thailand | Haliviq"
+    : "รับทำเว็บไซต์และเว็บแอป กรุงเทพฯ | Haliviq"
+  const description = isEN
+    ? "Haliviq is a web development company in Bangkok. We build fast Next.js websites, e-commerce and web apps with SEO, CMS and local hosting, then support them."
+    : "Haliviq รับทำเว็บไซต์ เว็บ E-Commerce และเว็บแอปที่กรุงเทพฯ ด้วย Next.js โหลดเร็ว ทำ SEO เชื่อม CMS พร้อมดูแลต่อหลังเปิดตัว"
+  const url = `https://haliviq.com/${params.lang}/services/web-development`
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url },
+    twitter: { card: 'summary_large_image', title, description },
+  }
+}
+
 export default function Page({ params }: { params: { lang: Lang } }) {
   const isEN = params.lang === 'en'
   const prefix = `/${params.lang}`
@@ -46,40 +65,44 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge    = isEN ? 'Engineering / Web Development'  : 'Engineering / Web Development'
   const title    = isEN ? 'Web Development'  : 'พัฒนาเว็บไซต์'
   const subtitle = ''
-  const heroDesc = isEN ? 'Production-grade web apps and platforms built for performance, security, and long-term maintainability.'  : 'เว็บแอปพลิเคชันสำหรับใช้งานจริง ที่มั่นคง ปลอดภัย และดูแลรักษาง่ายในระยะยาว'
+  const heroDesc = isEN ? 'We build websites and web apps for companies in Bangkok and across Thailand, from a marketing site that has to rank on Google to a customer portal with logins, payments and dashboards. Each one is made with Next.js and TypeScript, tuned to load quickly on a mid-range phone, and connected to a CMS so your own team can edit content. You get clean code you own, a staging site to review before launch, and a team that stays around to fix and improve things afterwards.'  : 'เรารับทำเว็บไซต์และเว็บแอปให้บริษัทในกรุงเทพฯ และทั่วไทย ตั้งแต่เว็บการตลาดที่ต้องติดอันดับ Google ไปจนถึงพอร์ทัลลูกค้าที่มีระบบล็อกอิน ชำระเงิน และ dashboard ทุกงานสร้างด้วย Next.js และ TypeScript ปรับให้โหลดเร็วแม้บนมือถือระดับกลาง และต่อกับ CMS ให้ทีมของคุณแก้เนื้อหาเองได้ คุณจะได้โค้ดที่เป็นของคุณ เว็บ staging ให้ดูก่อนเปิดตัว และทีมที่อยู่ช่วยแก้และปรับปรุงต่อหลังจากนั้น'
   const whyTitle = isEN ? 'Why a slow website is a business liability'    : 'ทำไมเว็บที่ช้าถึงเป็นภาระของธุรกิจ'
-  const whyDesc  = isEN ? 'A one-second delay in page load reduces conversions by 7%. Google penalises slow sites in search rankings. And first impressions form in 50 milliseconds — before a user reads a word.'  : 'หน้าเว็บที่ช้าลง 1 วินาที ทำให้ Conversion ลด 7% Google ลดอันดับเว็บที่ช้า และความประทับใจแรกเกิดขึ้นภายใน 50 มิลลิวินาที ก่อนผู้ใช้จะอ่านคำใดเลย'
+  const whyDesc  = isEN ? 'A one-second delay in page load reduces conversions by 7%. Google also ranks slow sites lower, and first impressions form within 50 milliseconds, before a visitor has read a word. For a Thai audience that mostly browses on a phone, often on mobile data, speed is not a nice extra. It decides whether the page opens, whether the form is filled in and whether the customer comes back, which is why we treat performance as part of the design from the first week.'  : 'หน้าเว็บที่ช้าลง 1 วินาที ทำให้ Conversion ลด 7% Google ยังจัดอันดับเว็บที่ช้าให้ต่ำลง และความประทับใจแรกเกิดภายใน 50 มิลลิวินาที ก่อนที่ผู้เข้าชมจะอ่านอะไรเลย สำหรับผู้ใช้ชาวไทยที่ส่วนใหญ่เข้าเว็บผ่านมือถือ และมักใช้เน็ตมือถือ ความเร็วไม่ใช่ของแถม มันตัดสินว่าหน้าเว็บเปิดขึ้นไหม ฟอร์มถูกกรอกจนจบไหม และลูกค้าจะกลับมาอีกไหม เราจึงถือว่าประสิทธิภาพเป็นส่วนหนึ่งของงานออกแบบตั้งแต่สัปดาห์แรก'
   const ctaTitle = isEN ? 'Ready to build a website that works?'    : 'พร้อมสร้างเว็บที่ได้ผลหรือยัง?'
-  const ctaDesc  = isEN ? 'Get a free technical audit of your current site. We will show you exactly what to fix and what to build.'   : 'ขอตรวจเว็บปัจจุบันด้านเทคนิคฟรี เราจะบอกว่าต้องแก้อะไรและสร้างอะไรเพิ่ม'
+  const ctaDesc  = isEN ? 'Get a free technical audit of your current site. We check speed, SEO basics, mobile layout and security, then tell you plainly what to fix and what is worth rebuilding.'   : 'ขอตรวจเว็บปัจจุบันด้านเทคนิคฟรี เราเช็กความเร็ว พื้นฐาน SEO หน้าตาบนมือถือ และความปลอดภัย แล้วบอกตรงๆ ว่าอะไรควรแก้ และอะไรคุ้มที่จะทำใหม่'
   const overviewText = isEN
-    ? 'We design and build full-stack web applications — customer-facing products, internal tools, and multi-tenant platforms — with React, Next.js, TypeScript, and solid backend APIs. Every engagement covers architecture, accessibility, SEO, observability, and CI/CD so what ships on day one is ready to grow. We optimize for Core Web Vitals, clean domain models, and codebases your team can own.'
-    : 'เราออกแบบและพัฒนาเว็บแอปพลิเคชันตั้งแต่ต้นจนจบ ทั้งผลิตภัณฑ์ที่ลูกค้าใช้โดยตรง เครื่องมือภายในองค์กร และแพลตฟอร์มแบบ Multi-tenant ด้วย React, Next.js, TypeScript และ Backend API ที่แข็งแรง ทุกโปรเจกต์ครอบคลุมสถาปัตยกรรม การเข้าถึงสำหรับทุกคน SEO การเฝ้าระบบ และ CI/CD เพื่อให้สิ่งที่เปิดตัววันแรกโตต่อได้ เราให้ความสำคัญกับ Core Web Vitals โครงสร้างข้อมูลที่สะอาด และโค้ดที่ทีมของคุณเป็นเจ้าของได้เอง'
+    ? 'We design and build full-stack web applications: customer-facing products, internal tools and multi-tenant platforms, using React, Next.js, TypeScript and solid backend APIs. Every engagement covers architecture, accessibility, SEO, monitoring and CI/CD, so what goes live on day one is ready to grow. We work towards good Core Web Vitals, clear domain models and a codebase your own developers can pick up, with every pull request deployed to a preview link that you can open and comment on while we build.'
+    : 'เราออกแบบและพัฒนาเว็บแอปพลิเคชันตั้งแต่ต้นจนจบ ทั้งผลิตภัณฑ์ที่ลูกค้าใช้โดยตรง เครื่องมือภายในองค์กร และแพลตฟอร์มแบบ Multi-tenant ด้วย React, Next.js, TypeScript และ Backend API ที่แข็งแรง ทุกโปรเจกต์ครอบคลุมสถาปัตยกรรม การเข้าถึงสำหรับทุกคน SEO การเฝ้าระบบ และ CI/CD เพื่อให้สิ่งที่ขึ้นระบบวันแรกโตต่อได้ เราทำให้ Core Web Vitals ดี โครงสร้างข้อมูลชัด และโค้ดที่นักพัฒนาของคุณรับช่วงต่อได้ โดยทุก pull request จะถูก deploy เป็นลิงก์ตัวอย่างให้คุณเปิดดูและคอมเมนต์ได้ระหว่างที่เราสร้าง'
 
   const heroBullets = isEN ? [
-      'React, Next.js, and modern JAMstack architecture',
-      'Core Web Vitals optimisation for top Google rankings',
-      'Responsive design across all devices',
-      'CMS integration so your team can update content independently',
-      'Security hardening, performance monitoring, and ongoing support',
+      'React, Next.js and TypeScript, using server rendering or static pages depending on what each page needs',
+      'Core Web Vitals tuning and technical SEO, so pages load fast and can be found on Google',
+      'Responsive layouts tested on real phones, including mid-range Android devices',
+      'A headless CMS so your marketing team can publish and edit without a developer',
+      'Login, payments, dashboards and third-party integrations when you need an application and not just pages',
+      'Security hardening, monitoring and a post-launch warranty, with monthly support as an option',
     ] : [
-      'React, Next.js และสถาปัตยกรรม JAMstack ยุคใหม่',
-      'ปรับ Core Web Vitals เพื่ออันดับบน Google',
-      'รองรับทุกขนาดหน้าจอ',
-      'เชื่อมต่อ CMS ให้ทีมอัปเดตเนื้อหาเองได้',
-      'เสริมความปลอดภัย เฝ้าดูประสิทธิภาพ และดูแลระบบ',
+      'React, Next.js และ TypeScript เลือกใช้ server rendering หรือหน้า static ตามที่แต่ละหน้าต้องการ',
+      'ปรับ Core Web Vitals และ Technical SEO ให้หน้าเว็บโหลดเร็วและค้นเจอบน Google',
+      'เลย์เอาต์ที่ปรับตามหน้าจอ ทดสอบบนมือถือจริง รวมถึง Android ระดับกลาง',
+      'Headless CMS ให้ทีมการตลาดเผยแพร่และแก้เนื้อหาเองได้โดยไม่ต้องรอนักพัฒนา',
+      'ระบบล็อกอิน ชำระเงิน dashboard และการเชื่อมระบบภายนอก เมื่อคุณต้องการแอปพลิเคชัน ไม่ใช่แค่หน้าเว็บ',
+      'เสริมความปลอดภัย เฝ้าระบบ และรับประกันหลังเปิดตัว มีแพ็กเกจดูแลรายเดือนให้เลือก',
     ]
   const whyPoints   = isEN ? [
-      'Core Web Vitals are now a direct Google ranking factor — technical performance is SEO',
-      'A/B tested landing pages on solid foundations convert 2-4x better than generic templates',
-      'Headless CMS lets your marketing team publish without developer bottlenecks',
-      'Progressive Web App features bring app-like experiences to the browser',
-      'Accessibility compliance expands your audience and reduces legal risk',
+      'Core Web Vitals are a Google ranking signal, so technical performance and SEO are the same job.',
+      'A/B tested landing pages built on solid foundations convert 2-4x better than generic templates.',
+      'A headless CMS lets your marketing team publish without waiting in a developer queue.',
+      'Progressive Web App features give a browser-based product app-like behaviour, such as quick loading and offline fallbacks.',
+      'Accessible design widens your audience, including older users, and reduces legal risk.',
+      'Clean architecture and documentation mean your next developer, or your in-house team, can take over without a rewrite.',
     ] : [
-      'Core Web Vitals เป็นปัจจัยจัดอันดับของ Google โดยตรง ประสิทธิภาพเว็บจึงเป็นเรื่องเดียวกับ SEO',
-      'Landing Page ที่ผ่านการทำ A/B Test แล้ว ได้ Conversion สูงกว่าเทมเพลตทั่วไป 2-4 เท่า',
-      'Headless CMS ช่วยให้ทีมการตลาดเผยแพร่เนื้อหาได้โดยไม่ต้องรอนักพัฒนา',
-      'ฟีเจอร์ Progressive Web App ทำให้เว็บใช้งานได้เหมือนแอป',
-      'เว็บที่ผู้ใช้ทุกคนเข้าถึงได้ ขยายกลุ่มผู้ใช้และลดความเสี่ยงทางกฎหมาย',
+      'Core Web Vitals เป็นสัญญาณที่ Google ใช้จัดอันดับ ประสิทธิภาพเว็บกับ SEO จึงเป็นงานเดียวกัน',
+      'Landing Page ที่ผ่านการทำ A/B Test บนพื้นฐานที่แข็งแรง ได้ Conversion สูงกว่าเทมเพลตทั่วไป 2-4 เท่า',
+      'Headless CMS ช่วยให้ทีมการตลาดเผยแพร่ได้ โดยไม่ต้องต่อคิวรอนักพัฒนา',
+      'ฟีเจอร์ Progressive Web App ทำให้ผลิตภัณฑ์บนเบราว์เซอร์ใช้งานได้เหมือนแอป เช่น เปิดเร็วและมีทางสำรองตอนออฟไลน์',
+      'การออกแบบให้ทุกคนเข้าถึงได้ ขยายกลุ่มผู้ใช้ รวมถึงผู้สูงวัย และลดความเสี่ยงทางกฎหมาย',
+      'สถาปัตยกรรมที่สะอาดและมีเอกสาร ทำให้นักพัฒนาคนถัดไปหรือทีมของคุณรับช่วงต่อได้โดยไม่ต้องเขียนใหม่',
     ]
   const outcomes    = isEN ? [
       {stat: '<1s', label: 'Page Load Time', desc: 'Lighthouse score 90+'},
@@ -93,32 +116,32 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {stat: '99.9%', label: 'Uptime SLA', desc: 'ด้วยการเฝ้าระบบล่วงหน้า'}
     ]
   const features    = isEN ? [
-      {icon: 'ti-brand-nextjs', title: 'Next.js & React', desc: 'The fastest web framework supporting SSR, SSG, and ISR based on your use case.'},
-      {icon: 'ti-search', title: 'SEO & Core Web Vitals', desc: 'Optimise every technical SEO element from schema and sitemaps to page speed.'},
-      {icon: 'ti-device-tablet', title: 'Responsive Design', desc: 'Beautiful and functional on every device from mobile to 4K display.'},
-      {icon: 'ti-edit', title: 'CMS Integration', desc: 'Headless CMS like Sanity, Contentful, or Strapi so your team owns content.'},
-      {icon: 'ti-shield', title: 'Security & Performance', desc: 'HTTPS, CSP, rate limiting, image optimisation, and the right caching strategy.'},
-      {icon: 'ti-refresh', title: 'CI/CD & Deployment', desc: 'Automated deployment via Vercel, Netlify, or AWS with preview branches on every PR.'}
+      {icon: 'ti-brand-nextjs', title: 'Next.js & React', desc: 'We pick server rendering, static generation or incremental regeneration page by page, so a product catalogue stays fresh while a brochure page is served instantly. It suits marketing sites, e-commerce and web apps that need both speed and search visibility.'},
+      {icon: 'ti-search', title: 'SEO & Core Web Vitals', desc: 'Clean URLs, semantic HTML, schema markup, sitemaps, canonical tags and page-speed tuning, all built in rather than patched on. We measure with Lighthouse and real-user data, and report the numbers.'},
+      {icon: 'ti-device-tablet', title: 'Responsive Design', desc: 'Layouts that work from a small phone to a wide monitor, tested on real devices including mid-range Android phones that many Thai users carry, with Thai text checked for line breaks and spacing.'},
+      {icon: 'ti-edit', title: 'CMS Integration', desc: 'A headless CMS such as Sanity, Contentful or Strapi, chosen for your content and your editors. Your team can add pages, swap images and publish posts, and we give a walkthrough and written guide.'},
+      {icon: 'ti-shield', title: 'Security & Performance', desc: 'HTTPS, content security policy, rate limiting, image optimisation and a caching strategy that fits your traffic. We also handle input validation, secrets and dependency updates.'},
+      {icon: 'ti-refresh', title: 'CI/CD & Deployment', desc: 'Automated builds and tests, with a preview link for every pull request on Vercel, Netlify or AWS. You see changes as they happen and releases go out without a late-night manual deploy.'}
     ] : [
-      {icon: 'ti-brand-nextjs', title: 'Next.js & React', desc: 'Framework ที่เร็วที่สุดสำหรับเว็บ ทั้ง SSR, SSG และ ISR ตามลักษณะงาน'},
-      {icon: 'ti-search', title: 'SEO & Core Web Vitals', desc: 'ปรับ Technical SEO ครบทุกด้าน ตั้งแต่ Schema, Sitemap ไปจนถึงความเร็วหน้าเว็บ'},
-      {icon: 'ti-device-tablet', title: 'Responsive Design', desc: 'สวยและใช้งานได้บนทุกอุปกรณ์ ตั้งแต่มือถือถึงจอ 4K'},
-      {icon: 'ti-edit', title: 'CMS Integration', desc: 'ใช้ Headless CMS เช่น Sanity, Contentful หรือ Strapi ให้ทีมอัปเดตเนื้อหาเองได้'},
-      {icon: 'ti-shield', title: 'Security & Performance', desc: 'HTTPS, CSP, จำกัดอัตราการเรียกใช้ ปรับรูปภาพ และวางกลยุทธ์ Cache ที่เหมาะสม'},
-      {icon: 'ti-refresh', title: 'CI/CD & Deployment', desc: 'ปล่อยเวอร์ชันอัตโนมัติผ่าน Vercel, Netlify หรือ AWS พร้อมเวอร์ชันตัวอย่างให้ดูทุก PR'}
+      {icon: 'ti-brand-nextjs', title: 'Next.js & React', desc: 'เราเลือก server rendering, static generation หรือ incremental regeneration ทีละหน้า แคตตาล็อกสินค้าจึงสดใหม่อยู่เสมอ ขณะที่หน้าแนะนำบริษัทเปิดได้ทันที เหมาะกับเว็บการตลาด E-Commerce และเว็บแอปที่ต้องการทั้งความเร็วและการค้นเจอ'},
+      {icon: 'ti-search', title: 'SEO & Core Web Vitals', desc: 'URL ที่สะอาด semantic HTML, schema markup, sitemap, canonical tag และการปรับความเร็วหน้าเว็บ ทำฝังไว้ตั้งแต่แรก ไม่ใช่มาแปะทีหลัง เราวัดด้วย Lighthouse และข้อมูลผู้ใช้จริง แล้วรายงานเป็นตัวเลข'},
+      {icon: 'ti-device-tablet', title: 'Responsive Design', desc: 'เลย์เอาต์ที่ใช้ได้ตั้งแต่มือถือจอเล็กถึงจอมอนิเตอร์กว้าง ทดสอบบนอุปกรณ์จริง รวมถึงมือถือ Android ระดับกลางที่ผู้ใช้ชาวไทยจำนวนมากใช้ และเช็กการตัดบรรทัดกับระยะห่างของข้อความภาษาไทยด้วย'},
+      {icon: 'ti-edit', title: 'CMS Integration', desc: 'Headless CMS อย่าง Sanity, Contentful หรือ Strapi ที่เลือกตามเนื้อหาและคนที่จะแก้ ทีมของคุณเพิ่มหน้า เปลี่ยนรูป และเผยแพร่บทความได้เอง เรามีสอนการใช้งานและคู่มือเป็นลายลักษณ์อักษรให้'},
+      {icon: 'ti-shield', title: 'Security & Performance', desc: 'HTTPS, content security policy, จำกัดอัตราการเรียกใช้ ปรับรูปภาพ และวางกลยุทธ์ cache ให้เหมาะกับปริมาณผู้เข้าชม เรายังดูเรื่องการตรวจข้อมูลนำเข้า การเก็บความลับ และการอัปเดต dependency'},
+      {icon: 'ti-refresh', title: 'CI/CD & Deployment', desc: 'Build และทดสอบอัตโนมัติ พร้อมลิงก์ตัวอย่างทุก pull request บน Vercel, Netlify หรือ AWS คุณเห็นการเปลี่ยนแปลงได้ทันที และการปล่อยเวอร์ชันไม่ต้องรอ deploy มือกลางดึก'}
     ]
   const steps       = isEN ? [
-      {no: '01', title: 'Discovery & Planning', desc: 'Understand goals, audience, and technical requirements before designing.'},
-      {no: '02', title: 'Design & Prototype', desc: 'Design UI and build an interactive prototype for approval before building.'},
-      {no: '03', title: 'Development', desc: 'Build with Next.js, TypeScript, and all best practices.'},
-      {no: '04', title: 'Testing & Optimization', desc: 'Test performance, SEO, accessibility, and cross-browser compatibility.'},
-      {no: '05', title: 'Launch & Monitor', desc: 'Deploy, set up analytics, and monitor continuously after launch.'}
+      {no: '01', title: 'Discovery & Planning', desc: 'We learn your goals, your audience and the technical constraints, including existing systems to connect to, before designing anything. You receive a scope, a sitemap and a phased plan with dates.'},
+      {no: '02', title: 'Design & Prototype', desc: 'We design the interface and build an interactive prototype for you to approve, with Thai and English content in place, so layout problems show up before development.'},
+      {no: '03', title: 'Development', desc: 'We build with Next.js and TypeScript in short iterations. Every change goes to a preview link, so you can review progress during the build, not at the end.'},
+      {no: '04', title: 'Testing & Optimization', desc: 'We test performance, SEO, accessibility and cross-browser behaviour on real devices, then fix what we find before launch.'},
+      {no: '05', title: 'Launch & Monitor', desc: 'We deploy, set up analytics and uptime monitoring, and watch the first weeks closely. The warranty period covers any bug from the build.'}
     ] : [
-      {no: '01', title: 'Discovery & Planning', desc: 'ทำความเข้าใจเป้าหมาย กลุ่มผู้ใช้ และความต้องการด้านเทคนิคก่อนออกแบบ'},
-      {no: '02', title: 'Design & Prototype', desc: 'ออกแบบ UI และสร้างต้นแบบที่กดใช้ได้ ให้อนุมัติก่อนเริ่มสร้าง'},
-      {no: '03', title: 'Development', desc: 'พัฒนาด้วย Next.js, TypeScript และแนวปฏิบัติที่ดีที่สุด'},
-      {no: '04', title: 'Testing & Optimization', desc: 'ทดสอบประสิทธิภาพ SEO การเข้าถึง และการใช้งานข้ามเบราว์เซอร์'},
-      {no: '05', title: 'Launch & Monitor', desc: 'ปล่อยระบบ ตั้งค่า Analytics และเฝ้าดูต่อเนื่องหลังเปิดตัว'}
+      {no: '01', title: 'Discovery & Planning', desc: 'เราทำความเข้าใจเป้าหมาย กลุ่มผู้ใช้ และข้อจำกัดด้านเทคนิค รวมถึงระบบเดิมที่ต้องเชื่อมต่อ ก่อนออกแบบอะไร คุณจะได้ขอบเขต sitemap และแผนเป็นช่วงๆ พร้อมวันที่'},
+      {no: '02', title: 'Design & Prototype', desc: 'เราออกแบบหน้าจอและสร้างต้นแบบที่กดใช้ได้ให้คุณอนุมัติ ใส่เนื้อหาไทยและอังกฤษจริง เพื่อให้ปัญหาเรื่องเลย์เอาต์โผล่ก่อนเริ่มพัฒนา'},
+      {no: '03', title: 'Development', desc: 'เราพัฒนาด้วย Next.js และ TypeScript เป็นรอบสั้นๆ ทุกการเปลี่ยนแปลงขึ้นลิงก์ตัวอย่าง คุณเปิดดูความคืบหน้าระหว่างสร้างได้ ไม่ต้องรอดูตอนจบ'},
+      {no: '04', title: 'Testing & Optimization', desc: 'เราทดสอบประสิทธิภาพ SEO การเข้าถึง และการใช้งานข้ามเบราว์เซอร์บนอุปกรณ์จริง แล้วแก้สิ่งที่เจอก่อนเปิดตัว'},
+      {no: '05', title: 'Launch & Monitor', desc: 'เรา deploy ตั้งค่า analytics กับการเฝ้า uptime และจับตาสัปดาห์แรกๆ อย่างใกล้ชิด ช่วงรับประกันครอบคลุมบั๊กทุกตัวจากงานที่เราสร้าง'}
     ]
   const caseStudies = isEN ? [
       {tag: 'E-Commerce · Bangkok', title: 'Page 1 Google Rankings for Every Target Keyword', desc: 'Next.js + headless commerce that loads in <1s with complete SEO.', result: 'Organic Traffic up 3x'},
@@ -130,23 +153,25 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {tag: 'SaaS · กรุงเทพฯ', title: 'เว็บการตลาดแปลงผู้ใช้ทดลองได้ 8%', desc: 'Landing Page ที่ผ่านการทำ A/B Test พร้อม CMS ที่ทีมอัปเดตเองได้', result: 'ผู้สมัครทดลองใช้เพิ่ม 8%'}
     ]
   const faqs        = isEN ? [
-      {q: 'How long does it take?', a: 'Timelines depend on scope and integrations, but as a rough guide: a corporate or marketing website takes about 4-8 weeks from discovery to launch, an e-commerce platform with payments, inventory, and CMS typically runs 8-16 weeks, and a custom web application with user accounts, dashboards, or third-party integrations usually needs 3-6 months. We break every project into phases with clear milestones, so you always know what is shipping next and when — and we flag scope changes immediately instead of letting them quietly push the deadline.'},
-      {q: 'Which CMS do you use?', a: 'We pick the CMS based on your content structure and who will be editing it, not a fixed default. Sanity is our go-to for teams that need flexible, structured content and a fast editing experience across web and app. Contentful fits well when content needs to power multiple channels — web, mobile, and marketing tools — from one source. For large content-heavy sites like blogs or media properties, WordPress (as a headless backend) still holds up well. Whichever we choose, your team gets an editor interface, documentation, and a short training session so publishing never depends on us.'},
-      {q: 'How far does your SEO work go?', a: 'We handle everything on the technical side: clean URL structure, semantic HTML, schema markup, an accurate sitemap and robots.txt, canonical tags, Core Web Vitals tuning, image optimisation, and internal linking that reflects your site\'s real information architecture. This is the foundation every page needs to be indexable and rankable. Content SEO — keyword research, on-page copywriting, and building topical authority over time — is a separate, ongoing discipline; we can scope that in as an add-on or point you to a partner if it\'s not part of this engagement.'},
-      {q: 'Where do you host the website?', a: 'For most Next.js projects we deploy to Vercel, which gives you automatic preview deployments on every pull request, global edge caching, and near-zero-downtime releases. For larger or more custom infrastructure needs, we use AWS (CloudFront, ECS, or Lambda depending on the workload) or Google Cloud. If your organisation requires on-premise or a specific cloud vendor for compliance reasons, we design the deployment pipeline around that constraint from day one rather than retrofitting it later.'},
-      {q: 'Do you provide support after launch?', a: 'Yes — every project ships with a warranty period (typically 30 days) during which we fix any bugs introduced during development at no extra cost. Beyond that, most clients move to a monthly retainer that covers uptime monitoring, security patching, dependency updates, performance checks, and a bank of hours for small feature requests or content changes, so the site keeps improving instead of slowly falling behind.'},
-      {q: 'Can our own team update content ourselves after launch?', a: 'Yes, that is the point of the headless CMS setup. Once we hand the project over, we run a walkthrough session (recorded, plus written documentation) so your marketing or content team can add pages, swap images, update copy, and publish new blog posts without ever touching code or filing a ticket with a developer. Anything that needs actual engineering — new page types, new integrations — is a separate, well-scoped request rather than a bottleneck for everyday edits.'},
-      {q: 'Who owns the code and the design once the project is done?', a: 'You do, fully. On final payment, all source code, design files, and any custom assets we produced transfer to you — there is no vendor lock-in, licensing fee, or dependency on us to keep the site running. We are also happy to sign an NDA before any work begins, and can work inside your own GitHub organisation from day one if you prefer to have visibility into every commit as we build.'},
-      {q: 'How does pricing and payment work?', a: 'After a discovery phase where we scope requirements together, we quote a fixed price broken into phases, so you are never billed hourly with an open-ended total. Payment is milestone-based — typically 30% to begin, with the remainder tied to agreed deliverables like design approval, a staging build, and final launch. For ongoing work after launch, we offer monthly retainers instead of one-off invoices, which keeps budgeting predictable on both sides.'},
+      {q: 'How long does it take?', a: 'Timelines depend on scope and integrations, but as a rough guide: a corporate or marketing website takes about 4-8 weeks from discovery to launch, an e-commerce platform with payments, inventory and a CMS typically runs 8-16 weeks, and a custom web application with user accounts, dashboards or third-party integrations usually needs 3-6 months. We break every project into phases with clear milestones, so you always know what ships next and when, and we flag scope changes immediately instead of letting them quietly push the deadline.'},
+      {q: 'Which CMS do you use?', a: 'We pick the CMS based on your content structure and who will edit it, not a fixed default. Sanity is our usual choice for teams that need flexible, structured content and a quick editing experience across web and app. Contentful fits when the same content has to feed several channels, such as web, mobile and marketing tools. For large content-heavy sites like blogs or media properties, WordPress as a headless backend still holds up well. Whichever we choose, your team gets an editor interface, documentation and a short training session, so publishing never depends on us.'},
+      {q: 'How far does your SEO work go?', a: 'We handle the technical side: clean URL structure, semantic HTML, schema markup, an accurate sitemap and robots.txt, canonical tags, Core Web Vitals tuning, image optimisation and internal linking that follows your real information architecture. That is the foundation every page needs to be indexed and ranked. Content SEO, meaning keyword research, on-page copywriting and building topical authority over time, is a separate ongoing discipline. We can scope it as an add-on or point you to a partner if it is not part of this engagement.'},
+      {q: 'Where do you host the website?', a: 'For most Next.js projects we deploy to Vercel, which gives you automatic preview deployments on every pull request, global edge caching and releases with almost no downtime. For larger or more custom infrastructure we use AWS (CloudFront, ECS or Lambda depending on the workload) or Google Cloud. If your organisation requires on-premise hosting or a specific cloud vendor for compliance reasons, we design the deployment pipeline around that constraint from day one instead of retrofitting it later.'},
+      {q: 'Do you provide support after launch?', a: 'Yes. Every project ships with a warranty period, typically 30 days, during which we fix any bug introduced during development at no extra cost. After that, most clients move to a monthly retainer that covers uptime monitoring, security patching, dependency updates, performance checks and a bank of hours for small feature requests or content changes, so the site keeps improving instead of slowly falling behind.'},
+      {q: 'Can our own team update content after launch?', a: 'Yes, that is the point of the headless CMS setup. After handover we run a walkthrough session, recorded and backed by written documentation, so your marketing or content team can add pages, swap images, update copy and publish new posts without touching code or filing a ticket. Anything that needs real engineering, such as a new page type or a new integration, becomes a separate, well-scoped request and not a bottleneck for everyday edits.'},
+      {q: 'Who owns the code and the design once the project is done?', a: 'You do, fully. On final payment, all source code, design files and any custom assets we produced transfer to you. There is no vendor lock-in, licensing fee or dependency on us to keep the site running. We are happy to sign an NDA before any work begins, and we can work inside your own GitHub organisation from day one if you want to see every commit as we build.'},
+      {q: 'How does pricing and payment work?', a: 'After a discovery phase where we scope the requirements together, we quote a fixed price broken into phases, so you are never billed hourly with an open-ended total. Payment is milestone-based, typically 30% to begin, with the rest tied to agreed deliverables such as design approval, a staging build and final launch. For ongoing work after launch we offer monthly retainers instead of one-off invoices, which keeps budgeting predictable on both sides.'},
+      {q: 'Can you build for Thai users, with Thai fonts, LINE login and Thai payment methods?', a: 'Yes. We set up Thai typography so line breaks and spacing read properly, build Thai and English versions side by side, and integrate the services Thai customers expect, for example LINE login and payment gateways that support PromptPay and local cards. We confirm the exact integrations you need during discovery, and we can host in Thailand if your policy requires it.'},
     ] : [
-      {q: 'ใช้เวลานานแค่ไหน?', a: 'ระยะเวลาขึ้นกับขอบเขตงานและระบบที่ต้องเชื่อมต่อ โดยเฉลี่ยเว็บไซต์องค์กรหรือเว็บการตลาดใช้ประมาณ 4-8 สัปดาห์ ตั้งแต่เริ่มสำรวจจนถึงเปิดตัว เว็บ E-Commerce ที่มีระบบชำระเงิน สต๊อกสินค้า และ CMS มักใช้ 8-16 สัปดาห์ ส่วนเว็บแอปพลิเคชันที่มีระบบสมาชิก Dashboard หรือเชื่อมระบบภายนอกมักใช้ 3-6 เดือน เราแบ่งทุกโปรเจกต์เป็นช่วงๆ พร้อมหมุดหมายที่ชัดเจน คุณจะรู้เสมอว่าขั้นถัดไปคืออะไรและเสร็จเมื่อไหร่ ถ้าขอบเขตงานเปลี่ยนระหว่างทาง เราจะแจ้งผลกระทบต่อกำหนดการทันที ไม่ปล่อยให้เส้นตายเลื่อนไปเงียบๆ'},
-      {q: 'ใช้ CMS อะไร?', a: 'เราเลือก CMS ตามโครงสร้างเนื้อหาและทีมที่จะดูแล ไม่ได้ใช้ตัวเดียวตายตัว Sanity เป็นตัวเลือกหลักสำหรับทีมที่ต้องการเนื้อหาแบบมีโครงสร้างที่ยืดหยุ่นและแก้ไขได้เร็วทั้งบนเว็บและแอป Contentful เหมาะเมื่อต้องใช้เนื้อหาชุดเดียวกันหลายช่องทางพร้อมกัน ทั้งเว็บ มือถือ และเครื่องมือการตลาด ส่วน WordPress (แบบ Headless) ยังเหมาะกับเว็บที่มีเนื้อหาจำนวนมากอย่างบล็อกหรือสื่อ ไม่ว่าเลือกตัวไหน ทีมของคุณจะได้หน้าแก้ไขเนื้อหา เอกสารประกอบ และอบรมสั้นๆ เพื่อเผยแพร่เนื้อหาได้เองโดยไม่ต้องพึ่งเรา'},
-      {q: 'ทำ SEO ได้แค่ไหน?', a: 'เราดูแล Technical SEO ครบทุกด้าน ตั้งแต่ URL ที่สะอาด, Semantic HTML, Schema Markup, Sitemap และ Robots.txt ที่ถูกต้อง, Canonical Tag, การปรับ Core Web Vitals, การปรับรูปภาพ และ Internal Linking ที่ตรงกับโครงสร้างข้อมูลจริงของเว็บ นี่คือพื้นฐานที่ทุกหน้าต้องมี เพื่อให้ Search Engine เข้าถึงและจัดอันดับได้ ส่วน Content SEO เช่น หาคีย์เวิร์ด เขียนข้อความบนหน้าเว็บ และสร้างความน่าเชื่อถือในหัวข้อนั้นระยะยาว เป็นงานต่อเนื่องแยกต่างหาก เราเสนอเป็นบริการเสริมได้ หรือแนะนำพาร์ตเนอร์ให้ ถ้าไม่ได้อยู่ในขอบเขตงานนี้'},
-      {q: 'โฮสต์ที่ไหนดี?', a: 'สำหรับโปรเจกต์ Next.js ส่วนใหญ่เราปล่อยบน Vercel ซึ่งมีเวอร์ชันตัวอย่างอัตโนมัติทุก Pull Request, Edge Caching ทั่วโลก และปล่อยเวอร์ชันได้โดยแทบไม่มีระบบหยุดทำงาน สำหรับโครงสร้างพื้นฐานที่ใหญ่หรือกำหนดเองมากขึ้น เราใช้ AWS (CloudFront, ECS หรือ Lambda ขึ้นกับงาน) หรือ Google Cloud ถ้าองค์กรของคุณต้องใช้ On-premise หรือ Cloud ของเจ้าใดเจ้าหนึ่งด้วยเหตุผลด้านข้อกำหนด เราจะออกแบบขั้นตอนปล่อยระบบให้รองรับตั้งแต่วันแรก ไม่ใช่มาแก้ทีหลัง'},
-      {q: 'มีดูแลหลังเปิดตัวไหม?', a: 'มีครับ ทุกโปรเจกต์มีช่วงรับประกัน (โดยทั่วไป 30 วัน) ที่เราแก้บั๊กจากขั้นตอนพัฒนาให้ฟรี ไม่คิดค่าใช้จ่ายเพิ่ม หลังจากนั้นลูกค้าส่วนใหญ่เปลี่ยนมาใช้แพ็กเกจรายเดือนที่ครอบคลุมการเฝ้าดู Uptime, อุดช่องโหว่, อัปเดต Dependency, ตรวจประสิทธิภาพ และชั่วโมงงานสำหรับฟีเจอร์เล็กๆ หรือแก้เนื้อหาเพิ่มเติม เพื่อให้เว็บพัฒนาต่อเนื่อง ไม่ล้าหลังไปเรื่อยๆ'},
-      {q: 'ทีมเราอัปเดตเนื้อหาเองหลังเปิดตัวได้ไหม?', a: 'ได้ครับ นั่นคือจุดประสงค์ของการตั้งค่า Headless CMS หลังส่งมอบโปรเจกต์ เราจะจัดสอนการใช้งาน (บันทึกวิดีโอไว้ พร้อมเอกสารประกอบ) ให้ทีมการตลาดหรือทีมคอนเทนต์ของคุณ เพิ่มหน้าใหม่ เปลี่ยนรูปภาพ แก้ข้อความ และเผยแพร่บทความใหม่ได้เองโดยไม่ต้องแตะโค้ดหรือรอนักพัฒนา ส่วนงานที่ต้องใช้วิศวกรจริงๆ เช่น หน้าประเภทใหม่หรือการเชื่อมระบบใหม่ จะเป็นงานแยกที่มีขอบเขตชัดเจน ไม่ทำให้การแก้ไขทั่วไปติดขัด'},
-      {q: 'โค้ดและดีไซน์เป็นของใครหลังจบโปรเจกต์?', a: 'เป็นของคุณทั้งหมดครับ เมื่อชำระเงินงวดสุดท้าย ซอร์สโค้ด ไฟล์ดีไซน์ และไฟล์ที่ทำขึ้นเฉพาะงานทั้งหมดจะโอนเป็นของคุณ ไม่มีการผูกติดกับผู้ให้บริการ ไม่มีค่าลิขสิทธิ์ และไม่ต้องพึ่งเราเพื่อให้เว็บทำงานต่อ เรายินดีเซ็น NDA ก่อนเริ่มงาน และทำงานบน GitHub Organization ของคุณเองตั้งแต่วันแรกได้ ถ้าคุณอยากเห็นทุก Commit ระหว่างที่เราพัฒนา'},
-      {q: 'ค่าใช้จ่ายและการชำระเงินเป็นอย่างไร?', a: 'หลังขั้นตอนสำรวจที่เรากำหนดขอบเขตงานร่วมกัน เราจะเสนอราคาคงที่แบ่งตามช่วงงาน คุณจะไม่ถูกคิดเป็นรายชั่วโมงแบบไม่มีเพดาน การชำระเงินอิงตามหมุดหมาย โดยทั่วไปมัดจำ 30% เพื่อเริ่มงาน ส่วนที่เหลือผูกกับงานที่ส่งมอบตามที่ตกลง เช่น อนุมัติดีไซน์ เวอร์ชันทดสอบบน Staging และเปิดตัวจริง สำหรับงานต่อเนื่องหลังเปิดตัว เรามีแพ็กเกจรายเดือนแทนการออกใบแจ้งหนี้ครั้งเดียว ทำให้ทั้งสองฝ่ายวางงบได้ล่วงหน้า'},
+      {q: 'ใช้เวลานานแค่ไหน?', a: 'ระยะเวลาขึ้นกับขอบเขตงานและระบบที่ต้องเชื่อมต่อ ประมาณคร่าวๆ คือ เว็บไซต์องค์กรหรือเว็บการตลาดใช้ราว 4-8 สัปดาห์ ตั้งแต่เริ่มสำรวจจนเปิดตัว เว็บ E-Commerce ที่มีระบบชำระเงิน สต๊อกสินค้า และ CMS มักใช้ 8-16 สัปดาห์ ส่วนเว็บแอปพลิเคชันที่มีระบบสมาชิก dashboard หรือเชื่อมระบบภายนอก มักใช้ 3-6 เดือน เราแบ่งทุกโปรเจกต์เป็นช่วงๆ พร้อมหมุดหมายที่ชัดเจน คุณจะรู้เสมอว่าขั้นต่อไปคืออะไรและเสร็จเมื่อไหร่ และถ้าขอบเขตงานเปลี่ยนระหว่างทาง เราจะบอกผลกระทบต่อกำหนดการทันที ไม่ปล่อยให้เส้นตายเลื่อนไปเงียบๆ'},
+      {q: 'ใช้ CMS อะไร?', a: 'เราเลือก CMS ตามโครงสร้างเนื้อหาและคนที่จะเป็นคนแก้ ไม่ได้ใช้ตัวเดียวตายตัว ปกติเราใช้ Sanity กับทีมที่ต้องการเนื้อหาแบบมีโครงสร้างที่ยืดหยุ่นและแก้ได้เร็ว ทั้งบนเว็บและแอป Contentful เหมาะเมื่อเนื้อหาชุดเดียวต้องส่งไปหลายช่องทาง ทั้งเว็บ มือถือ และเครื่องมือการตลาด ส่วนเว็บที่มีเนื้อหาเยอะๆ อย่างบล็อกหรือสื่อ WordPress แบบ headless ก็ยังเหมาะอยู่ ไม่ว่าเลือกตัวไหน ทีมของคุณจะได้หน้าแก้ไขเนื้อหา เอกสาร และอบรมสั้นๆ เพื่อเผยแพร่ได้เองโดยไม่ต้องพึ่งเรา'},
+      {q: 'ทำ SEO ได้แค่ไหน?', a: 'เราดูแล Technical SEO ครบ ตั้งแต่ URL ที่สะอาด semantic HTML, schema markup, sitemap กับ robots.txt ที่ถูกต้อง, canonical tag, การปรับ Core Web Vitals, การปรับรูปภาพ และ internal linking ที่ตรงกับโครงสร้างข้อมูลจริงของเว็บ นี่คือพื้นฐานที่ทุกหน้าต้องมี เพื่อให้ search engine เข้าถึงและจัดอันดับได้ ส่วน Content SEO เช่น หาคีย์เวิร์ด เขียนข้อความบนหน้าเว็บ และสร้างความน่าเชื่อถือในหัวข้อนั้นระยะยาว เป็นงานต่อเนื่องที่แยกออกมา เราเสนอเป็นบริการเสริมได้ หรือแนะนำพาร์ตเนอร์ให้ ถ้าไม่ได้อยู่ในขอบเขตงานนี้'},
+      {q: 'โฮสต์ที่ไหนดี?', a: 'โปรเจกต์ Next.js ส่วนใหญ่เรา deploy บน Vercel ซึ่งมีเวอร์ชันตัวอย่างอัตโนมัติทุก pull request, edge cache ทั่วโลก และปล่อยเวอร์ชันได้โดยแทบไม่มีช่วงที่ระบบหยุด ถ้าต้องการโครงสร้างพื้นฐานที่ใหญ่หรือกำหนดเองมากขึ้น เราใช้ AWS (CloudFront, ECS หรือ Lambda ตามลักษณะงาน) หรือ Google Cloud ถ้าองค์กรของคุณต้องใช้ on-premise หรือ cloud เจ้าใดเจ้าหนึ่งตามข้อกำหนด เราจะออกแบบขั้นตอนปล่อยระบบให้รองรับตั้งแต่วันแรก ไม่ใช่มาแก้ทีหลัง'},
+      {q: 'มีดูแลหลังเปิดตัวไหม?', a: 'มี ทุกโปรเจกต์มีช่วงรับประกัน (โดยทั่วไป 30 วัน) ที่เราแก้บั๊กจากขั้นตอนพัฒนาให้ฟรี หลังจากนั้นลูกค้าส่วนใหญ่ใช้แพ็กเกจรายเดือน ซึ่งครอบคลุมการเฝ้า uptime อุดช่องโหว่ อัปเดต dependency ตรวจประสิทธิภาพ และมีชั่วโมงงานไว้สำหรับฟีเจอร์เล็กๆ หรือแก้เนื้อหาเพิ่ม เว็บจะได้พัฒนาต่อเนื่อง ไม่ตกรุ่นไปเรื่อยๆ'},
+      {q: 'ทีมเราอัปเดตเนื้อหาเองหลังเปิดตัวได้ไหม?', a: 'ได้ นั่นแหละคือเหตุผลที่เราใช้ headless CMS หลังส่งมอบ เราจัดสอนการใช้งาน (อัดวิดีโอไว้ พร้อมเอกสารประกอบ) ให้ทีมการตลาดหรือทีมคอนเทนต์ของคุณ เพิ่มหน้าใหม่ เปลี่ยนรูป แก้ข้อความ และเผยแพร่บทความได้เอง ไม่ต้องแตะโค้ดหรือรอนักพัฒนา ส่วนงานที่ต้องใช้วิศวกรจริงๆ เช่น หน้าประเภทใหม่หรือการเชื่อมระบบใหม่ จะเป็นงานแยกที่ขอบเขตชัดเจน ไม่ทำให้การแก้ไขประจำวันติดขัด'},
+      {q: 'โค้ดและดีไซน์เป็นของใครหลังจบโปรเจกต์?', a: 'เป็นของคุณทั้งหมด เมื่อชำระเงินงวดสุดท้าย ซอร์สโค้ด ไฟล์ดีไซน์ และไฟล์ที่ทำขึ้นเฉพาะงานทั้งหมดจะโอนเป็นของคุณ ไม่มีการผูกติดกับผู้ให้บริการ ไม่มีค่าลิขสิทธิ์ และไม่ต้องพึ่งเราเพื่อให้เว็บทำงานต่อ เรายินดีเซ็น NDA ก่อนเริ่มงาน และทำงานบน GitHub Organization ของคุณตั้งแต่วันแรกได้ ถ้าคุณอยากเห็นทุก commit ระหว่างที่เราพัฒนา'},
+      {q: 'ค่าใช้จ่ายและการชำระเงินเป็นอย่างไร?', a: 'หลังขั้นตอนสำรวจที่เรากำหนดขอบเขตงานร่วมกัน เราจะเสนอราคาคงที่แบ่งตามช่วงงาน คุณจะไม่ถูกคิดเป็นรายชั่วโมงแบบไม่มีเพดาน การชำระเงินอิงตามหมุดหมาย โดยทั่วไปมัดจำ 30% เพื่อเริ่มงาน ส่วนที่เหลือผูกกับงานที่ส่งมอบตามที่ตกลง เช่น อนุมัติดีไซน์ เวอร์ชันทดสอบบน staging และเปิดตัวจริง สำหรับงานต่อเนื่องหลังเปิดตัว เรามีแพ็กเกจรายเดือนแทนการออกใบแจ้งหนี้ครั้งเดียว ทั้งสองฝ่ายจะวางงบล่วงหน้าได้ง่ายขึ้น'},
+      {q: 'ทำเว็บสำหรับผู้ใช้ไทยได้ไหม เช่น ฟอนต์ไทย LINE Login และวิธีชำระเงินแบบไทย?', a: 'ได้ เราตั้งค่าตัวอักษรไทยให้การตัดบรรทัดและระยะห่างอ่านสบาย ทำเวอร์ชันไทยและอังกฤษคู่กันไป และเชื่อมบริการที่ลูกค้าคนไทยคุ้นเคย เช่น LINE Login และ payment gateway ที่รองรับ PromptPay กับบัตรในประเทศ เราจะยืนยันว่าต้องเชื่อมอะไรบ้างในช่วงสำรวจ และโฮสต์ในไทยให้ได้ ถ้านโยบายของคุณกำหนดไว้'},
     ]
   const related     = isEN ? [
       {label: 'UX & UI Design', href: '/services/ux-ui-design'},
@@ -219,15 +244,19 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   )
 
   const capabilities = isEN ? [
-    { icon: 'ti-device-mobile', title: 'Responsive & Accessible UI', desc: 'Interfaces that work across devices and meet accessibility standards without sacrificing design quality.' },
-    { icon: 'ti-gauge', title: 'Performance Engineering', desc: 'Fast first paint, efficient data fetching, caching, and Core Web Vitals tuned for real users.' },
-    { icon: 'ti-search', title: 'SEO & Discoverability', desc: 'Semantic markup, metadata, structured data, and rendering strategies that search engines can rank.' },
-    { icon: 'ti-shield-check', title: 'Secure by Default', desc: 'Auth, authorization, input validation, secrets management, and dependency hygiene built into the stack.' },
+    { icon: 'ti-device-mobile', title: 'Responsive & Accessible UI', desc: 'Interfaces that work from a phone to a wide monitor and meet accessibility basics, without sacrificing the design. Tested on real devices, with Thai text checked for line breaks and spacing.' },
+    { icon: 'ti-gauge', title: 'Performance Engineering', desc: 'Fast first paint, efficient data fetching, caching and Core Web Vitals tuned for real users on real networks, measured with Lighthouse and field data and reported to you in numbers.' },
+    { icon: 'ti-search', title: 'SEO & Discoverability', desc: 'Semantic markup, metadata, structured data, sitemaps and rendering choices that let search engines read and rank each page, built in during development rather than added at the end.' },
+    { icon: 'ti-shield-check', title: 'Secure by Default', desc: 'Authentication, authorization, input validation, secrets management and dependency updates built into the stack, so security is part of the architecture and not a final checklist.' },
+    { icon: 'ti-edit', title: 'Content You Control', desc: 'A headless CMS fitted to how your editors work, with a recorded walkthrough and a written guide, so marketing can publish pages and posts without opening a ticket.' },
+    { icon: 'ti-refresh', title: 'Delivery & Support', desc: 'CI/CD with a preview link for every change, a warranty period after launch, and monthly support for monitoring, patching and small improvements if you want it.' },
   ] : [
-    { icon: 'ti-device-mobile', title: 'UI ที่ปรับตามหน้าจอและเข้าถึงได้ทุกคน', desc: 'หน้าจอที่ใช้ได้ทุกอุปกรณ์และผ่านมาตรฐานการเข้าถึง โดยไม่ลดคุณภาพงานดีไซน์' },
-    { icon: 'ti-gauge', title: 'Performance Engineering', desc: 'แสดงผลครั้งแรกเร็ว ดึงข้อมูลและ Cache อย่างมีประสิทธิภาพ พร้อม Core Web Vitals ที่ปรับให้เหมาะกับผู้ใช้จริง' },
-    { icon: 'ti-search', title: 'SEO และการค้นพบได้ง่าย', desc: 'Semantic Markup, Metadata, Structured Data และวิธีแสดงผลที่ Search Engine จัดอันดับได้' },
-    { icon: 'ti-shield-check', title: 'ปลอดภัยตั้งแต่เริ่มต้น', desc: 'การยืนยันตัวตน การกำหนดสิทธิ์ การตรวจข้อมูลนำเข้า การจัดการความลับ และดูแล Dependency ฝังอยู่ในสถาปัตยกรรม' },
+    { icon: 'ti-device-mobile', title: 'UI ที่ปรับตามหน้าจอและเข้าถึงได้ทุกคน', desc: 'หน้าจอที่ใช้ได้ตั้งแต่มือถือถึงจอกว้างและผ่านพื้นฐานการเข้าถึง โดยไม่ลดคุณภาพงานดีไซน์ ทดสอบบนอุปกรณ์จริง และเช็กการตัดบรรทัดกับระยะห่างของข้อความภาษาไทย' },
+    { icon: 'ti-gauge', title: 'Performance Engineering', desc: 'แสดงผลครั้งแรกเร็ว ดึงข้อมูลและ cache อย่างมีประสิทธิภาพ และปรับ Core Web Vitals ให้เหมาะกับผู้ใช้จริงบนเครือข่ายจริง วัดด้วย Lighthouse และข้อมูลผู้ใช้จริง แล้วรายงานให้คุณเป็นตัวเลข' },
+    { icon: 'ti-search', title: 'SEO และการค้นพบได้ง่าย', desc: 'Semantic markup, metadata, structured data, sitemap และวิธีแสดงผลที่ให้ search engine อ่านและจัดอันดับได้ทุกหน้า ทำฝังไว้ระหว่างพัฒนา ไม่ใช่เพิ่มตอนท้าย' },
+    { icon: 'ti-shield-check', title: 'ปลอดภัยตั้งแต่เริ่มต้น', desc: 'การยืนยันตัวตน การกำหนดสิทธิ์ การตรวจข้อมูลนำเข้า การจัดการความลับ และการอัปเดต dependency ฝังอยู่ในสถาปัตยกรรม ความปลอดภัยจึงเป็นส่วนหนึ่งของระบบ ไม่ใช่เช็กลิสต์ตอนท้าย' },
+    { icon: 'ti-edit', title: 'เนื้อหาที่คุณคุมเอง', desc: 'Headless CMS ที่ปรับให้เข้ากับวิธีทำงานของคนแก้เนื้อหา พร้อมวิดีโอสอนและคู่มือเป็นลายลักษณ์อักษร ทีมการตลาดเผยแพร่หน้าและบทความได้เองโดยไม่ต้องเปิด ticket' },
+    { icon: 'ti-refresh', title: 'การส่งมอบและการดูแล', desc: 'CI/CD พร้อมลิงก์ตัวอย่างทุกการเปลี่ยนแปลง ช่วงรับประกันหลังเปิดตัว และแพ็กเกจดูแลรายเดือนสำหรับเฝ้าระบบ อัปเดต และปรับปรุงเล็กๆ น้อยๆ ถ้าคุณต้องการ' },
   ]
 
   const techStack = [
@@ -255,19 +284,19 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   ] as { label: string; icon?: string; svg?: string }[]
 
   const approachSteps = isEN ? [
-    { no: '01', title: 'Discovery', desc: 'Goals, users, constraints, and success metrics' },
-    { no: '02', title: 'Design', desc: 'UX flows, UI, and technical architecture' },
-    { no: '03', title: 'Development', desc: 'Iterative full-stack delivery with CI/CD' },
-    { no: '04', title: 'Testing', desc: 'Automated and exploratory quality gates' },
-    { no: '05', title: 'Deployment', desc: 'Safe production release and observability' },
-    { no: '06', title: 'Support', desc: 'Post-launch fixes, tuning, and growth work' },
+    { no: '01', title: 'Discovery', desc: 'Goals, users, constraints and success metrics, written down' },
+    { no: '02', title: 'Design', desc: 'UX flows, UI and the technical architecture' },
+    { no: '03', title: 'Development', desc: 'Short iterations with CI/CD and a preview link for each change' },
+    { no: '04', title: 'Testing', desc: 'Automated and exploratory checks on real devices' },
+    { no: '05', title: 'Deployment', desc: 'Safe production release with monitoring in place' },
+    { no: '06', title: 'Support', desc: 'Warranty fixes, tuning and ongoing improvements' },
   ] : [
-    { no: '01', title: 'Discovery', desc: 'เป้าหมาย ผู้ใช้ ข้อจำกัด และตัวชี้วัดความสำเร็จ' },
+    { no: '01', title: 'Discovery', desc: 'เป้าหมาย ผู้ใช้ ข้อจำกัด และตัวชี้วัดความสำเร็จ เขียนไว้ชัดเจน' },
     { no: '02', title: 'Design', desc: 'ลำดับการใช้งาน UI และสถาปัตยกรรมทางเทคนิค' },
-    { no: '03', title: 'Development', desc: 'พัฒนา Full-stack ทีละรอบ พร้อม CI/CD' },
-    { no: '04', title: 'Testing', desc: 'ด่านตรวจคุณภาพทั้งแบบอัตโนมัติและแบบสำรวจ' },
-    { no: '05', title: 'Deployment', desc: 'ปล่อยขึ้นระบบจริงอย่างปลอดภัย พร้อม Observability' },
-    { no: '06', title: 'Support', desc: 'แก้ไข ปรับจูน และพัฒนาต่อยอดหลังเปิดตัว' },
+    { no: '03', title: 'Development', desc: 'พัฒนาเป็นรอบสั้นๆ พร้อม CI/CD และลิงก์ตัวอย่างทุกการเปลี่ยนแปลง' },
+    { no: '04', title: 'Testing', desc: 'ตรวจอัตโนมัติและแบบสำรวจบนอุปกรณ์จริง' },
+    { no: '05', title: 'Deployment', desc: 'ปล่อยขึ้นระบบจริงอย่างปลอดภัย พร้อมระบบเฝ้าดู' },
+    { no: '06', title: 'Support', desc: 'แก้ตามประกัน ปรับจูน และปรับปรุงต่อเนื่อง' },
   ]
 
   const postHeroSlot = (
@@ -418,7 +447,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
         </h2>
         <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-          {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+          {isEN ? "We'd love to hear what you're building." : 'เรายินดีฟังว่าคุณกำลังสร้างอะไรอยู่'}
         </p>
         <div className="flex flex-wrap items-center gap-6">
           <Link

@@ -7,31 +7,31 @@ import Footer from '@/components/Footer'
 import { getCaseStudy } from '@/lib/case-studies-data'
 
 const featureCardsEN = [
-  { icon: 'ti-code', title: 'Scalability', desc: 'Built and designed to scale cleanly as new features get added over time.' },
-  { icon: 'ti-search', title: 'Find a Doctor', desc: 'Search and filter doctors across every specialty and clinic location.' },
-  { icon: 'ti-users-group', title: 'Connect with Patients', desc: 'Multiple pathways for patients to reach the hospital — app, forms, call center.' },
-  { icon: 'ti-affiliate', title: 'Seamless Integration', desc: 'Integrates cleanly with the existing website to preserve brand identity.' },
-  { icon: 'ti-calendar-check', title: 'Easy Bookings', desc: 'Book appointments based on the criteria patients actually care about.' },
-  { icon: 'ti-language', title: 'Language Support', desc: 'Built-in support for the languages an international patient base needs.' },
+  { icon: 'ti-code', title: 'Scalability', desc: 'Structured so new features can be added later without reworking what is already in place.' },
+  { icon: 'ti-search', title: 'Find a Doctor', desc: 'Search and filter doctors by specialty and by clinic location.' },
+  { icon: 'ti-users-group', title: 'Connect with Patients', desc: 'Several ways for patients to reach the hospital: through the app, online forms or the call center.' },
+  { icon: 'ti-affiliate', title: 'Seamless Integration', desc: 'Works alongside the existing website, so the brand looks the same in both.' },
+  { icon: 'ti-calendar-check', title: 'Easy Bookings', desc: 'Book appointments using the criteria patients actually care about, such as doctor, time and place.' },
+  { icon: 'ti-language', title: 'Language Support', desc: 'Support for the languages that international patients use.' },
 ]
 const featureCardsTH = [
-  { icon: 'ti-code', title: 'Scalability', desc: 'ออกแบบให้เพิ่มฟีเจอร์ใหม่ได้ในอนาคต' },
-  { icon: 'ti-search', title: 'Find a Doctor', desc: 'ค้นหาและกรองแพทย์ได้ทุกสาขาและความเชี่ยวชาญ' },
-  { icon: 'ti-users-group', title: 'Connect with Patients', desc: 'ผู้ป่วยติดต่อโรงพยาบาลได้หลายช่องทาง ทั้งแอป ฟอร์ม และ Call Center' },
-  { icon: 'ti-affiliate', title: 'Seamless Integration', desc: 'เชื่อมกับเว็บไซต์เดิมได้ลื่นไหล และคงเอกลักษณ์แบรนด์ไว้ครบ' },
-  { icon: 'ti-calendar-check', title: 'Easy Bookings', desc: 'จองนัดตามเงื่อนไขที่ผู้ป่วยต้องการจริง ๆ' },
+  { icon: 'ti-code', title: 'Scalability', desc: 'วางโครงสร้างไว้ให้เพิ่มฟีเจอร์ใหม่ภายหลังได้ โดยไม่ต้องรื้อของเดิม' },
+  { icon: 'ti-search', title: 'Find a Doctor', desc: 'ค้นหาและกรองแพทย์ได้ตามสาขา ความเชี่ยวชาญ และสถานที่ตั้งของคลินิก' },
+  { icon: 'ti-users-group', title: 'Connect with Patients', desc: 'ผู้ป่วยติดต่อโรงพยาบาลได้หลายทาง ทั้งผ่านแอป ฟอร์มออนไลน์ และ Call Center' },
+  { icon: 'ti-affiliate', title: 'Seamless Integration', desc: 'ใช้ร่วมกับเว็บไซต์เดิมได้ลื่น และหน้าตาแบรนด์เป็นแบบเดียวกันทั้งสองที่' },
+  { icon: 'ti-calendar-check', title: 'Easy Bookings', desc: 'จองนัดตามเงื่อนไขที่ผู้ป่วยใช้เลือกจริง ๆ เช่น แพทย์ เวลา และสถานที่' },
   { icon: 'ti-language', title: 'Language Support', desc: 'รองรับหลายภาษา สำหรับผู้ป่วยต่างชาติ' },
 ]
 
 const featuredEN = {
   badge: 'Healthcare & Life Sciences', client: 'Sukhumvit Health Network',
   title: 'Patient Digital Ecosystem Mobile App',
-  desc: 'Building a comprehensive healthcare mobile app, enabling patients to find doctors, book appointments, and access medical services across multiple languages.',
+  desc: 'A healthcare mobile app that lets patients search for a doctor, book an appointment and reach hospital services in the language they are most comfortable with. It sits alongside the hospital network\'s existing website, so the brand stays the same wherever a patient starts.',
 }
 const featuredTH = {
   badge: 'Healthcare & Life Sciences', client: 'เครือโรงพยาบาลสุขุมวิท',
   title: 'แอปมือถือระบบสุขภาพดิจิทัล',
-  desc: 'แอปมือถือด้านสุขภาพ ให้ผู้ป่วยค้นหาแพทย์ จองนัด และใช้บริการทางการแพทย์ได้หลายภาษา',
+  desc: 'แอปมือถือด้านสุขภาพ ให้ผู้ป่วยค้นหาแพทย์ จองนัด และใช้บริการของโรงพยาบาลได้หลายภาษา ใช้ร่วมกับเว็บไซต์เดิมของเครือโรงพยาบาลได้ลื่น แบรนด์จึงเป็นแบบเดียวกันไม่ว่าผู้ป่วยจะเริ่มจากช่องทางไหน',
 }
 
 const groupsEN = [
@@ -68,35 +68,35 @@ const casesEN = [
   { id:10, tags:['Healthcare'], client:'Health Platform', title:'Telemedicine & Mental Health', desc:'Video consultation + mood tracking.', result:'92% Completion' },
   { id:11, tags:['FinTech'], client:'Insurance Group', title:'InsurTech Claims Platform', desc:'AI claims processing, 73% time reduction.', result:'73% Faster' },
   { id:12, tags:['E-Commerce'], client:'Fashion Retailer', title:'Personalization Engine', desc:'AI product recommendation increased AOV by 45%.', result:'+45% AOV' },
-  { id:13, tags:['F&B'], client:'Savelberg Restaurant', title:'Michelin-Starred Restaurant Website', desc:'New bilingual website and content direction for a Michelin-starred French restaurant.', result:'New Website', slug:'savelberg' },
-  { id:14, tags:['F&B'], client:'OVO', title:'Ice Cream Brand Website', desc:'New website for an ice cream and dessert brand, with online ordering and marketing content direction.', result:'New Website', slug:'ovo' },
-  { id:15, tags:['Fitness & Wellness'], client:'BASE', title:'Fitness Studio Website', desc:'New website for a fitness studio with online class booking and trainer profiles.', result:'New Website', slug:'base' },
-  { id:16, tags:['Apparel & Uniforms'], client:'Blue Bear', title:'Medical Uniform Manufacturer Website', desc:'New website with a product catalog and B2B order-inquiry flow for hospital and clinic customers.', result:'New Website', slug:'blue-bear' },
-  { id:17, tags:['Manufacturing'], client:'Thai Metal Aluminium', title:'Precision Manufacturing Website', desc:'New corporate website presenting manufacturing capabilities and quality standards to industrial customers.', result:'New Website', slug:'thai-metal-aluminium' },
-  { id:18, tags:['E-Commerce'], client:'VERA', title:'Bag Brand E-Commerce Website', desc:'New e-commerce website for a self-manufactured bag brand, with cart and checkout for nationwide sales.', result:'New Website', slug:'vera' },
-  { id:19, tags:['Government & Public Sector'], client:'NFI – National Food Institute', title:'National Food Institute Website', desc:'New website organizing lab services and research for a public food-research institute.', result:'New Website', slug:'nfi' },
-  { id:20, tags:['Retail & Shopping Mall'], client:'MBK Center', title:'MBK Center Mobile App', desc:'New mobile app letting shoppers find stores, promotions, and member perks in one place.', result:'New App', slug:'mbk' },
-  { id:21, tags:['Government & Public Sector'], client:'DITP', title:'DITP Export Promotion Mobile App', desc:'New version of an export-promotion app, built on an earlier version we developed, for Thai exporters.', result:'New App', slug:'ditp' },
-  { id:22, tags:['F&B'], client:'Sra Bua by Kiin Kiin', title:'Fine-Dining Restaurant Website', desc:'New bilingual website with online reservations for a modern Thai fine-dining restaurant.', result:'New Website', slug:'sra-bua' },
-  { id:23, tags:['Travel & Tourism'], client:'World Surprise Travel', title:'Website, Branding & AI CRM', desc:'New brand identity, website, and AI CRM for a tour company managing travel packages and customers.', result:'New Website', slug:'world-surprise-travel' },
-  { id:24, tags:['Construction & Real Estate'], client:'Awii House', title:'Home Builder Website with CRM', desc:'New website and CRM for a home-building company, tracking customers from consultation to contract.', result:'New Website', slug:'awii-house' },
-  { id:25, tags:['Real Estate'], client:'Canapaya Residences', title:'Website, Brand CI & Real Estate CRM', desc:'New brand identity, website, and a dedicated CRM for a luxury riverside residential project.', result:'New Website', slug:'canapaya-residences' },
-  { id:26, tags:['Telecommunications'], client:'RFS', title:'Website with AI CRM', desc:'New website and AI CRM for a Singapore-based telecom infrastructure and smart-city solutions provider.', result:'New Website', slug:'rfs' },
-  { id:27, tags:['Government & Public Sector'], client:'Excise Department', title:'Tax Inspection App', desc:'New mobile app for field officers to verify excise tax payments, integrated with data from related agencies.', result:'New App', slug:'excise-department' },
-  { id:28, tags:['Government & Public Sector'], client:'ITAGC', title:'Government Contractor Integrity & Transparency Website', desc:'UX/UI design followed by a new website for a body assessing the integrity and transparency of government contractors.', result:'New Website', slug:'itagc' },
-  { id:29, tags:['Government & Public Sector'], client:'Department of Water Resources', title:'Mobile App, Rebuilt with AI', desc:'New AI capabilities built into an app we developed for the department four years earlier, for water resource management.', result:'New App', slug:'department-of-water-resources' },
-  { id:30, tags:['Government & Public Sector'], client:'Royal Thai Police Immigration Bureau', title:'AI-Powered Immigration Inspection App', desc:'New mobile app with an AI module for document and facial verification at entry and exit points.', result:'New App', slug:'immigration-bureau' },
-  { id:31, tags:['Government & Public Sector'], client:'Ministry of Culture', title:"Culture & Heritage Mobile App", desc:"New mobile app bringing the ministry's existing website content to a wider audience.", result:'New App', slug:'ministry-of-culture' },
-  { id:32, tags:['F&B'], client:'BBK Menu', title:'Restaurant Discovery Website', desc:"UX/UI design followed by a new website for discovering Bangkok's best restaurants and must-try dishes.", result:'New Website', slug:'bbk-menu' },
-  { id:33, tags:['Real Estate'], client:"Sena Development", title:"CRM & AI System for a Real-Estate Developer", desc:"New CRM and AI system for a real-estate developer to manage customers and sales data.", result:"New System", slug:"sena-development" },
-  { id:34, tags:['E-Commerce'], client:"PAÑPURI", title:"Wellness & Skincare E-Commerce on Shopify", desc:"UX/UI design followed by a new Shopify e-commerce website for a Thai wellness and skincare brand.", result:"New Website", slug:"panpuri" },
-  { id:35, tags:['Hospitality & Travel'], client:"Shanghai Mansion Bangkok", title:"Boutique Hotel Website with Online Booking", desc:"New hotel website with an online room-booking system for a boutique hotel.", result:"New Website", slug:"shanghai-mansion-bangkok" },
-  { id:36, tags:['Retail & Shopping Mall'], client:"Jampha Shopping Mall", title:"E-Commerce Website with AI for Operations", desc:"New e-commerce website and AI system supporting operations and customers for a community shopping mall.", result:"New Website", slug:"jampha-shopping-mall" },
-  { id:38, tags:['Logistics & Marine'], client:"Prima Marine", title:"Corporate Website for a Marine Logistics Company", desc:"A corporate website presenting the fleet, services and credibility of a publicly listed marine logistics company.", result:"New Website", slug:"prima-marine" },
-  { id:39, tags:['F&B'], client:"Baan Khanitha Thai Cuisine", title:"Website for a Renowned Thai Restaurant", desc:"UX/UI design and a website that carries the warmth and heritage of a well-known Thai fine-dining restaurant.", result:"New Website", slug:"baan-khanitha" },
-  { id:40, tags:['Beauty & Aesthetics'], client:"DSK", title:"Website, UX/UI and AI-Assisted CRM for an Aesthetic Clinic", desc:"Business consulting, website design and UX/UI, plus AI-assisted CRM for an aesthetic surgery business.", result:"Website + CRM", slug:"dsk" },
-  { id:41, tags:['Construction & Real Estate'], client:"Admire", title:"Website, UX/UI and AI-Assisted CRM for a Home Builder", desc:"UX/UI design and a new website for a custom home builder, with AI-assisted CRM to manage leads.", result:"Website + CRM", slug:"admire" },
-  { id:42, tags:['Beauty & Aesthetics'], client:"MEKO International Hospital", title:"Brand, Website and Graphics for an Aesthetic Hospital", desc:"Website design and UX/UI, graphic design and brand CI for a renowned aesthetic surgery hospital.", result:"Brand + Website", slug:"meko-international-hospital" },
+  { id:13, tags:['F&B'], client:'Savelberg Restaurant', title:'Michelin-Starred Restaurant Website', desc:"A new bilingual website for a Michelin-starred French restaurant in Yan Nawa, with content direction and an AI chatbot to answer menu and booking questions.", result:'New Website', slug:'savelberg' },
+  { id:14, tags:['F&B'], client:'OVO', title:'Ice Cream Brand Website', desc:"A warm, photo-first website for an ice cream and dessert brand, where customers browse the menu, order online and see the brand's friendly side.", result:'New Website', slug:'ovo' },
+  { id:15, tags:['Fitness & Wellness'], client:'BASE', title:'Fitness Studio Website', desc:"A modern website for a fitness studio, with trainer profiles and a class schedule that lets newcomers book a trial class in a few taps.", result:'New Website', slug:'base' },
+  { id:16, tags:['Apparel & Uniforms'], client:'Blue Bear', title:'Medical Uniform Manufacturer Website', desc:"A catalogue website for a medical uniform manufacturer, built for hospital and clinic buyers who compare fabrics and sizes and then ask for a quote.", result:'New Website', slug:'blue-bear' },
+  { id:17, tags:['Manufacturing'], client:'Thai Metal Aluminium', title:'Precision Manufacturing Website', desc:"A corporate website for a precision metal and aluminium parts maker, showing machinery, process and quality standards to industrial buyers.", result:'New Website', slug:'thai-metal-aluminium' },
+  { id:18, tags:['E-Commerce'], client:'VERA', title:'Bag Brand E-Commerce Website', desc:"An own-brand online store for a bag maker, with multi-angle product photography, a one-page checkout and order tracking, so sales do not depend on marketplaces.", result:'New Website', slug:'vera' },
+  { id:19, tags:['Government & Public Sector'], client:'NFI – National Food Institute', title:'National Food Institute Website', desc:"A new website that sorts a public food-research institute's lab services and research into clear categories, with search that businesses can use on their own.", result:'New Website', slug:'nfi' },
+  { id:20, tags:['Retail & Shopping Mall'], client:'MBK Center', title:'MBK Center Mobile App', desc:"A mobile app for MBK Center that gathers stores, promotions, the mall directory and member points so shoppers can plan a visit before arriving.", result:'New App', slug:'mbk' },
+  { id:21, tags:['Government & Public Sector'], client:'DITP', title:'DITP Export Promotion Mobile App', desc:"A new version of the export-promotion app, built on the earlier one we developed, so Thai exporters can read market data and spot trade events more easily.", result:'New App', slug:'ditp' },
+  { id:22, tags:['F&B'], client:'Sra Bua by Kiin Kiin', title:'Fine-Dining Restaurant Website', desc:"A bilingual website with online reservations for a modern Thai fine-dining restaurant, designed to let the food and the room speak first.", result:'New Website', slug:'sra-bua' },
+  { id:23, tags:['Travel & Tourism'], client:'World Surprise Travel', title:'Website, Branding & AI CRM', desc:"A new brand identity, website and AI CRM for a tour company, so travellers can compare packages and the sales team can follow every lead.", result:'New Website', slug:'world-surprise-travel' },
+  { id:24, tags:['Construction & Real Estate'], client:'Awii House', title:'Home Builder Website with CRM', desc:"A website and CRM for a home builder: house designs on show for visitors, and a pipeline that follows each customer from first consultation to signed contract.", result:'New Website', slug:'awii-house' },
+  { id:25, tags:['Real Estate'], client:'Canapaya Residences', title:'Website, Brand CI & Real Estate CRM', desc:"Brand identity, website and a property-sales CRM for a riverside residential project, from first viewing appointment to ownership transfer.", result:'New Website', slug:'canapaya-residences' },
+  { id:26, tags:['Telecommunications'], client:'RFS', title:'Website with AI CRM', desc:"A new website and AI CRM for a Singapore-based telecom infrastructure and smart-city provider, built for long B2B buying cycles.", result:'New Website', slug:'rfs' },
+  { id:27, tags:['Government & Public Sector'], client:'Excise Department', title:'Tax Inspection App', desc:"A mobile app that lets Excise Department officers verify tax payments on-site, with data from related agencies shown together in one place.", result:'New App', slug:'excise-department' },
+  { id:28, tags:['Government & Public Sector'], client:'ITAGC', title:'Government Contractor Integrity & Transparency Website', desc:"UX/UI first, then a website that explains how ITAGC assesses the integrity and transparency of government contractors in clear, credible steps.", result:'New Website', slug:'itagc' },
+  { id:29, tags:['Government & Public Sector'], client:'Department of Water Resources', title:'Mobile App, Rebuilt with AI', desc:"An AI module added to the app we built for the Department of Water Resources four years ago, to forecast water conditions and flag anything unusual.", result:'New App', slug:'department-of-water-resources' },
+  { id:30, tags:['Government & Public Sector'], client:'Royal Thai Police Immigration Bureau', title:'AI-Powered Immigration Inspection App', desc:"A mobile app with an AI module for document and face verification, helping officers confirm travellers' identity at entry and exit points.", result:'New App', slug:'immigration-bureau' },
+  { id:31, tags:['Government & Public Sector'], client:'Ministry of Culture', title:"Culture & Heritage Mobile App", desc:"A mobile app that takes the ministry's existing website content to a wider audience, kept in step with the site automatically.", result:'New App', slug:'ministry-of-culture' },
+  { id:32, tags:['F&B'], client:'BBK Menu', title:'Restaurant Discovery Website', desc:"UX/UI design followed by a website for discovering Bangkok's restaurants and must-try dishes, searchable by cuisine and occasion.", result:'New Website', slug:'bbk-menu' },
+  { id:33, tags:['Real Estate'], client:"Sena Development", title:"CRM & AI System for a Real-Estate Developer", desc:"A CRM and AI system that gives a real-estate developer's sales team and management one shared view of customers and sales data.", result:"New System", slug:"sena-development" },
+  { id:34, tags:['E-Commerce'], client:"PAÑPURI", title:"Wellness & Skincare E-Commerce on Shopify", desc:"UX/UI design followed by a Shopify store for a Thai wellness and skincare brand, with a premium look and simple checkout.", result:"New Website", slug:"panpuri" },
+  { id:35, tags:['Hospitality & Travel'], client:"Shanghai Mansion Bangkok", title:"Boutique Hotel Website with Online Booking", desc:"A website and online room-booking system for a boutique hotel in Bangkok, so guests can browse rooms and send a booking request themselves.", result:"New Website", slug:"shanghai-mansion-bangkok" },
+  { id:36, tags:['Retail & Shopping Mall'], client:"Jampha Shopping Mall", title:"E-Commerce Website with AI for Operations", desc:"An e-commerce website and AI assistant for a community shopping mall, opening an online channel while easing the back-office load.", result:"New Website", slug:"jampha-shopping-mall" },
+  { id:38, tags:['Logistics & Marine'], client:"Prima Marine", title:"Corporate Website for a Marine Logistics Company", desc:"A corporate website for a listed marine logistics company, laying out the fleet, services and company information for customers, partners and investors.", result:"New Website", slug:"prima-marine" },
+  { id:39, tags:['F&B'], client:"Baan Khanitha Thai Cuisine", title:"Website for a Renowned Thai Restaurant", desc:"A warm, easy-to-browse website for a well-known Thai restaurant, with menu, branches and booking close at hand and basic local SEO.", result:"New Website", slug:"baan-khanitha" },
+  { id:40, tags:['Beauty & Aesthetics'], client:"DSK", title:"Website, UX/UI and AI-Assisted CRM for an Aesthetic Clinic", desc:"Business consulting, a website and an AI-assisted CRM for an aesthetic surgery business, built to earn trust and keep enquiries from going cold.", result:"Website + CRM", slug:"dsk" },
+  { id:41, tags:['Construction & Real Estate'], client:"Admire", title:"Website, UX/UI and AI-Assisted CRM for a Home Builder", desc:"UX/UI design and a new website for a custom home builder, with an AI-assisted CRM that makes sure every enquiry gets followed up.", result:"Website + CRM", slug:"admire" },
+  { id:42, tags:['Beauty & Aesthetics'], client:"MEKO International Hospital", title:"Brand, Website and Graphics for an Aesthetic Hospital", desc:"Brand identity, website and graphics for an aesthetic surgery hospital, giving patients one polished look across web, social and print.", result:"Brand + Website", slug:"meko-international-hospital" },
 ]
 
 const groupsTH = groupsEN
@@ -113,35 +113,35 @@ const casesTH = [
   { id:10, tags:['Healthcare'], client:'Health Platform', title:'Telemedicine & Mental Health', desc:'Video Consultation + Mood Tracking', result:'92% Completion' },
   { id:11, tags:['FinTech'], client:'Insurance Group', title:'InsurTech Claims Platform', desc:'AI ช่วยประมวลผลเคลม ลดเวลา 73%', result:'73% Faster' },
   { id:12, tags:['E-Commerce'], client:'Fashion Retailer', title:'Personalization Engine', desc:'AI แนะนำสินค้า เพิ่มยอดต่อออเดอร์ 45%', result:'+45% AOV' },
-  { id:13, tags:['F&B'], client:'Savelberg Restaurant', title:'เว็บไซต์ร้านอาหารมิชลินสตาร์', desc:'เว็บไซต์สองภาษาและแนวทางทำคอนเทนต์ สำหรับร้านอาหารฝรั่งเศสระดับมิชลินสตาร์', result:'เว็บไซต์ใหม่', slug:'savelberg' },
-  { id:14, tags:['F&B'], client:'OVO', title:'เว็บไซต์แบรนด์ไอศกรีม', desc:'เว็บไซต์ใหม่ของแบรนด์ไอศกรีมและของหวาน มีระบบสั่งซื้อออนไลน์ และแนวทางทำคอนเทนต์การตลาด', result:'เว็บไซต์ใหม่', slug:'ovo' },
-  { id:15, tags:['Fitness & Wellness'], client:'BASE', title:'เว็บไซต์สตูดิโอฟิตเนส', desc:'เว็บไซต์ใหม่ของสตูดิโอฟิตเนส มีระบบจองคลาสออนไลน์และข้อมูลเทรนเนอร์', result:'เว็บไซต์ใหม่', slug:'base' },
-  { id:16, tags:['Apparel & Uniforms'], client:'Blue Bear', title:'เว็บไซต์ผู้ผลิตชุดยูนิฟอร์มทางการแพทย์', desc:'เว็บไซต์ใหม่ มีแคตตาล็อกสินค้าและช่องทางติดต่อสั่งซื้อสำหรับลูกค้าองค์กร เช่น โรงพยาบาลและคลินิก', result:'เว็บไซต์ใหม่', slug:'blue-bear' },
-  { id:17, tags:['Manufacturing'], client:'Thai Metal Aluminium', title:'เว็บไซต์โรงงานผลิตชิ้นส่วนอะลูมิเนียม', desc:'เว็บไซต์องค์กรใหม่ แสดงความสามารถด้านการผลิตและมาตรฐานคุณภาพให้ลูกค้าอุตสาหกรรม', result:'เว็บไซต์ใหม่', slug:'thai-metal-aluminium' },
-  { id:18, tags:['E-Commerce'], client:'VERA', title:'เว็บไซต์อีคอมเมิร์ซแบรนด์กระเป๋า', desc:'เว็บไซต์อีคอมเมิร์ซใหม่ของแบรนด์กระเป๋าที่ผลิตและขายออนไลน์ มีตะกร้าสินค้าและระบบชำระเงิน', result:'เว็บไซต์ใหม่', slug:'vera' },
-  { id:19, tags:['Government & Public Sector'], client:'NFI สถาบันอาหาร', title:'เว็บไซต์สถาบันอาหาร', desc:'เว็บไซต์ใหม่ที่จัดบริการห้องปฏิบัติการและงานวิจัยของสถาบันวิจัยอาหารภาครัฐให้เป็นระเบียบ', result:'เว็บไซต์ใหม่', slug:'nfi' },
-  { id:20, tags:['Retail & Shopping Mall'], client:'MBK Center', title:'แอปมือถือศูนย์การค้า MBK', desc:'แอปมือถือใหม่ ให้ลูกค้าค้นหาร้านค้า โปรโมชัน และสิทธิพิเศษได้ในที่เดียว', result:'แอปใหม่', slug:'mbk' },
-  { id:21, tags:['Government & Public Sector'], client:'DITP', title:'แอปมือถือส่งเสริมผู้ประกอบการส่งออก DITP', desc:'แอปเวอร์ชันใหม่ ต่อยอดจากแอปที่เราเคยทำให้ เพื่อช่วยผู้ประกอบการส่งออกไทย', result:'แอปใหม่', slug:'ditp' },
-  { id:22, tags:['F&B'], client:'Sra Bua by Kiin Kiin', title:'เว็บไซต์ร้านอาหารไฟน์ไดนิ่ง', desc:'เว็บไซต์สองภาษา มีระบบจองโต๊ะออนไลน์ สำหรับร้านอาหารไทยโมเดิร์นระดับไฟน์ไดนิ่ง', result:'เว็บไซต์ใหม่', slug:'sra-bua' },
-  { id:23, tags:['Travel & Tourism'], client:'World Surprise Travel', title:'เว็บไซต์ แบรนด์ และ AI CRM', desc:'ทำแบรนด์ใหม่ เว็บไซต์ และ AI CRM ให้บริษัททัวร์ ใช้จัดการแพ็กเกจทัวร์และลูกค้า', result:'เว็บไซต์ใหม่', slug:'world-surprise-travel' },
-  { id:24, tags:['Construction & Real Estate'], client:'Awii House', title:'เว็บไซต์และ CRM สำหรับบริษัทรับสร้างบ้าน', desc:'เว็บไซต์และ CRM ใหม่ของบริษัทรับสร้างบ้าน ติดตามลูกค้าตั้งแต่ปรึกษาจนถึงเซ็นสัญญา', result:'เว็บไซต์ใหม่', slug:'awii-house' },
-  { id:25, tags:['Real Estate'], client:'Canapaya Residences', title:'เว็บไซต์ แบรนด์ CI และ CRM อสังหาริมทรัพย์', desc:'ทำแบรนด์ เว็บไซต์ และ CRM เฉพาะทางให้โครงการที่พักอาศัยหรูริมแม่น้ำ', result:'เว็บไซต์ใหม่', slug:'canapaya-residences' },
-  { id:26, tags:['Telecommunications'], client:'RFS', title:'เว็บไซต์และ AI CRM', desc:'เว็บไซต์และ AI CRM ใหม่ของผู้ให้บริการโครงสร้างพื้นฐานโทรคมนาคมและสมาร์ทซิตี้จากสิงคโปร์', result:'เว็บไซต์ใหม่', slug:'rfs' },
-  { id:27, tags:['Government & Public Sector'], client:'กรมสรรพสามิต', title:'แอปตรวจสอบภาษี', desc:'แอปมือถือใหม่ให้เจ้าหน้าที่ใช้ตรวจสอบภาษีสรรพสามิต และเชื่อมข้อมูลกับหน่วยงานที่เกี่ยวข้อง', result:'แอปใหม่', slug:'excise-department' },
-  { id:28, tags:['Government & Public Sector'], client:'ITAGC', title:'เว็บไซต์ตรวจสอบความโปร่งใสของผู้รับเหมาภาครัฐ', desc:'ออกแบบ UX/UI แล้วพัฒนาเว็บไซต์ใหม่ ให้หน่วยงานใช้ประเมินความซื่อตรงและความโปร่งใสของผู้รับเหมาภาครัฐ', result:'เว็บไซต์ใหม่', slug:'itagc' },
-  { id:29, tags:['Government & Public Sector'], client:'กรมทรัพยากรน้ำ', title:'แอปมือถือต่อยอดด้วย AI', desc:'ต่อยอดแอปที่เราเคยทำให้เมื่อ 4 ปีก่อน โดยเพิ่ม AI สำหรับบริหารจัดการทรัพยากรน้ำ', result:'แอปใหม่', slug:'department-of-water-resources' },
-  { id:30, tags:['Government & Public Sector'], client:'สำนักงานตรวจคนเข้าเมือง', title:'แอปตรวจคนเข้าเมืองที่ใช้ AI', desc:'แอปมือถือใหม่ มี AI ช่วยตรวจเอกสารและใบหน้าที่จุดตรวจคนเข้าเมือง', result:'แอปใหม่', slug:'immigration-bureau' },
-  { id:31, tags:['Government & Public Sector'], client:'กระทรวงวัฒนธรรม', title:'แอปงานด้านวัฒนธรรม', desc:'แอปมือถือใหม่ นำเนื้อหาจากเว็บไซต์เดิมของกระทรวงไปถึงประชาชนได้มากขึ้น', result:'แอปใหม่', slug:'ministry-of-culture' },
-  { id:32, tags:['F&B'], client:'BBK Menu', title:'เว็บไซต์แนะนำร้านอาหาร', desc:'ออกแบบ UX/UI แล้วพัฒนาเว็บไซต์ใหม่ สำหรับค้นหาร้านอาหารและเมนูเด็ดในกรุงเทพฯ', result:'เว็บไซต์ใหม่', slug:'bbk-menu' },
-  { id:33, tags:['Real Estate'], client:"Sena Development", title:"ระบบ CRM และ AI สำหรับผู้พัฒนาอสังหาริมทรัพย์", desc:"ระบบ CRM และ AI ใหม่ ให้ผู้พัฒนาอสังหาริมทรัพย์ใช้จัดการลูกค้าและข้อมูลการขาย", result:"ระบบใหม่", slug:"sena-development" },
-  { id:34, tags:['E-Commerce'], client:"PAÑPURI", title:"เว็บไซต์อีคอมเมิร์ซบน Shopify แบรนด์เวลเนสและสกินแคร์", desc:"ออกแบบ UX/UI แล้วพัฒนาเว็บไซต์อีคอมเมิร์ซบน Shopify ให้แบรนด์เวลเนสและสกินแคร์ไทย", result:"เว็บไซต์ใหม่", slug:"panpuri" },
-  { id:35, tags:['Hospitality & Travel'], client:"Shanghai Mansion Bangkok", title:"เว็บไซต์โรงแรมบูติก มีระบบจองห้องพัก", desc:"เว็บไซต์ใหม่ของโรงแรมบูติก มีระบบจองห้องพักออนไลน์", result:"เว็บไซต์ใหม่", slug:"shanghai-mansion-bangkok" },
-  { id:36, tags:['Retail & Shopping Mall'], client:"Jampha Shopping Mall", title:"เว็บไซต์อีคอมเมิร์ซพร้อม AI ช่วยงานหลังบ้าน", desc:"เว็บไซต์อีคอมเมิร์ซและระบบ AI ใหม่ ช่วยงานหลังบ้านและดูแลลูกค้าของศูนย์การค้าชุมชน", result:"เว็บไซต์ใหม่", slug:"jampha-shopping-mall" },
-  { id:38, tags:['Logistics & Marine'], client:"Prima Marine", title:"เว็บไซต์องค์กรสำหรับธุรกิจขนส่งทางทะเล", desc:"เว็บไซต์องค์กรที่แสดงกองเรือ บริการ และความน่าเชื่อถือของบริษัทมหาชนด้านขนส่งทางทะเล", result:"เว็บไซต์ใหม่", slug:"prima-marine" },
-  { id:39, tags:['F&B'], client:"Baan Khanitha Thai Cuisine", title:"เว็บไซต์ร้านอาหารไทยชื่อดัง", desc:"ออกแบบ UX/UI และพัฒนาเว็บไซต์ที่สื่อถึงความอบอุ่นและเอกลักษณ์ของร้านอาหารไทยชั้นนำ", result:"เว็บไซต์ใหม่", slug:"baan-khanitha" },
-  { id:40, tags:['Beauty & Aesthetics'], client:"DSK", title:"เว็บไซต์ UX/UI และ AI CRM สำหรับคลินิกศัลยกรรมความงาม", desc:"ให้คำปรึกษาธุรกิจ ออกแบบเว็บไซต์และ UX/UI พร้อม CRM ที่มี AI ช่วย สำหรับธุรกิจศัลยกรรมความงาม", result:"เว็บไซต์ + CRM", slug:"dsk" },
-  { id:41, tags:['Construction & Real Estate'], client:"Admire", title:"เว็บไซต์ UX/UI และ AI CRM สำหรับธุรกิจรับสร้างบ้าน", desc:"ออกแบบ UX/UI และพัฒนาเว็บไซต์ใหม่สำหรับธุรกิจรับสร้างบ้าน พร้อม CRM ที่มี AI ช่วยจัดการลูกค้าที่สนใจ", result:"เว็บไซต์ + CRM", slug:"admire" },
-  { id:42, tags:['Beauty & Aesthetics'], client:"MEKO International Hospital", title:"แบรนด์ เว็บไซต์ และกราฟิกสำหรับโรงพยาบาลศัลยกรรมความงาม", desc:"ออกแบบเว็บไซต์ UX/UI กราฟิก และ Brand CI สำหรับโรงพยาบาลศัลยกรรมความงามชื่อดัง", result:"แบรนด์ + เว็บไซต์", slug:"meko-international-hospital" },
+  { id:13, tags:['F&B'], client:'Savelberg Restaurant', title:'เว็บไซต์ร้านอาหารมิชลินสตาร์', desc:"เว็บไซต์สองภาษาใหม่ของร้านอาหารฝรั่งเศสระดับมิชลินสตาร์ย่านยานนาวา พร้อมแนวทางคอนเทนต์และแชทบอท AI ที่ช่วยตอบเรื่องเมนูและการจองโต๊ะ", result:'เว็บไซต์ใหม่', slug:'savelberg' },
+  { id:14, tags:['F&B'], client:'OVO', title:'เว็บไซต์แบรนด์ไอศกรีม', desc:"เว็บไซต์โทนอบอุ่นของแบรนด์ไอศกรีมและของหวาน ให้ลูกค้าดูเมนู สั่งซื้อออนไลน์ และเห็นความเป็นกันเองของแบรนด์ตั้งแต่เข้าเว็บ", result:'เว็บไซต์ใหม่', slug:'ovo' },
+  { id:15, tags:['Fitness & Wellness'], client:'BASE', title:'เว็บไซต์สตูดิโอฟิตเนส', desc:"เว็บไซต์ทันสมัยของสตูดิโอฟิตเนส มีโปรไฟล์เทรนเนอร์และตารางคลาส ให้คนที่สนใจจองคลาสทดลองได้ในไม่กี่แตะ", result:'เว็บไซต์ใหม่', slug:'base' },
+  { id:16, tags:['Apparel & Uniforms'], client:'Blue Bear', title:'เว็บไซต์ผู้ผลิตชุดยูนิฟอร์มทางการแพทย์', desc:"เว็บไซต์แคตตาล็อกของผู้ผลิตชุดยูนิฟอร์มทางการแพทย์ สำหรับฝ่ายจัดซื้อของโรงพยาบาลและคลินิกที่ต้องเทียบผ้า เทียบขนาด แล้วขอใบเสนอราคา", result:'เว็บไซต์ใหม่', slug:'blue-bear' },
+  { id:17, tags:['Manufacturing'], client:'Thai Metal Aluminium', title:'เว็บไซต์โรงงานผลิตชิ้นส่วนอะลูมิเนียม', desc:"เว็บไซต์องค์กรของโรงงานผลิตชิ้นส่วนโลหะและอะลูมิเนียมความแม่นยำสูง โชว์เครื่องจักร ขั้นตอนผลิต และมาตรฐานคุณภาพให้ลูกค้าอุตสาหกรรมเห็นภาพ", result:'เว็บไซต์ใหม่', slug:'thai-metal-aluminium' },
+  { id:18, tags:['E-Commerce'], client:'VERA', title:'เว็บไซต์อีคอมเมิร์ซแบรนด์กระเป๋า', desc:"ร้านออนไลน์ของแบรนด์กระเป๋า มีภาพสินค้าหลายมุม เช็คเอาต์ในหน้าเดียว และติดตามสถานะคำสั่งซื้อ เพื่อขายเองได้โดยไม่ต้องพึ่งมาร์เก็ตเพลสอย่างเดียว", result:'เว็บไซต์ใหม่', slug:'vera' },
+  { id:19, tags:['Government & Public Sector'], client:'NFI สถาบันอาหาร', title:'เว็บไซต์สถาบันอาหาร', desc:"เว็บไซต์ใหม่ที่จัดบริการห้องปฏิบัติการและงานวิจัยของสถาบันวิจัยอาหารภาครัฐเป็นหมวดหมู่ พร้อมระบบค้นหาที่ผู้ประกอบการใช้เองได้", result:'เว็บไซต์ใหม่', slug:'nfi' },
+  { id:20, tags:['Retail & Shopping Mall'], client:'MBK Center', title:'แอปมือถือศูนย์การค้า MBK', desc:"แอปมือถือของ MBK Center ที่รวมร้านค้า โปรโมชัน ผังศูนย์ และแต้มสมาชิกไว้ในที่เดียว ให้ลูกค้าวางแผนก่อนมาเดินได้", result:'แอปใหม่', slug:'mbk' },
+  { id:21, tags:['Government & Public Sector'], client:'DITP', title:'แอปมือถือส่งเสริมผู้ประกอบการส่งออก DITP', desc:"แอปส่งเสริมการส่งออกเวอร์ชันใหม่ ต่อยอดจากแอปที่เราเคยทำให้ ช่วยให้ผู้ส่งออกไทยดูข้อมูลตลาดและงานแสดงสินค้าได้ง่ายขึ้น", result:'แอปใหม่', slug:'ditp' },
+  { id:22, tags:['F&B'], client:'Sra Bua by Kiin Kiin', title:'เว็บไซต์ร้านอาหารไฟน์ไดนิ่ง', desc:"เว็บไซต์สองภาษาพร้อมระบบจองโต๊ะออนไลน์ของร้านอาหารไทยโมเดิร์นระดับไฟน์ไดนิ่ง ที่ให้ภาพอาหารและบรรยากาศเป็นตัวเล่าเรื่อง", result:'เว็บไซต์ใหม่', slug:'sra-bua' },
+  { id:23, tags:['Travel & Tourism'], client:'World Surprise Travel', title:'เว็บไซต์ แบรนด์ และ AI CRM', desc:"แบรนด์ใหม่ เว็บไซต์ และ AI CRM ของบริษัททัวร์ ให้ลูกค้าเทียบแพ็กเกจได้ง่าย และให้ทีมขายตามลูกค้าได้ทุกราย", result:'เว็บไซต์ใหม่', slug:'world-surprise-travel' },
+  { id:24, tags:['Construction & Real Estate'], client:'Awii House', title:'เว็บไซต์และ CRM สำหรับบริษัทรับสร้างบ้าน', desc:"เว็บไซต์และ CRM ของบริษัทรับสร้างบ้าน โชว์แบบบ้านให้คนเข้าชม และติดตามลูกค้าแต่ละรายตั้งแต่ขอคำปรึกษาจนถึงเซ็นสัญญา", result:'เว็บไซต์ใหม่', slug:'awii-house' },
+  { id:25, tags:['Real Estate'], client:'Canapaya Residences', title:'เว็บไซต์ แบรนด์ CI และ CRM อสังหาริมทรัพย์', desc:"แบรนด์ เว็บไซต์ และ CRM งานขายอสังหาริมทรัพย์ของโครงการที่พักอาศัยริมแม่น้ำ ตั้งแต่นัดดูห้องจนถึงโอนกรรมสิทธิ์", result:'เว็บไซต์ใหม่', slug:'canapaya-residences' },
+  { id:26, tags:['Telecommunications'], client:'RFS', title:'เว็บไซต์และ AI CRM', desc:"เว็บไซต์และ AI CRM ใหม่ของผู้ให้บริการโครงสร้างพื้นฐานโทรคมนาคมและสมาร์ทซิตี้จากสิงคโปร์ ออกแบบมาให้เหมาะกับการขาย B2B ที่ใช้เวลาตัดสินใจนาน", result:'เว็บไซต์ใหม่', slug:'rfs' },
+  { id:27, tags:['Government & Public Sector'], client:'กรมสรรพสามิต', title:'แอปตรวจสอบภาษี', desc:"แอปมือถือที่ให้เจ้าหน้าที่กรมสรรพสามิตตรวจสอบการชำระภาษีจากหน้างาน โดยรวมข้อมูลจากหน่วยงานที่เกี่ยวข้องมาแสดงในที่เดียว", result:'แอปใหม่', slug:'excise-department' },
+  { id:28, tags:['Government & Public Sector'], client:'ITAGC', title:'เว็บไซต์ตรวจสอบความโปร่งใสของผู้รับเหมาภาครัฐ', desc:"ออกแบบ UX/UI ก่อน แล้วพัฒนาเว็บไซต์ที่อธิบายขั้นตอนที่ ITAGC ใช้ประเมินความซื่อตรงและความโปร่งใสของผู้รับเหมาภาครัฐ ให้ชัดและน่าเชื่อถือ", result:'เว็บไซต์ใหม่', slug:'itagc' },
+  { id:29, tags:['Government & Public Sector'], client:'กรมทรัพยากรน้ำ', title:'แอปมือถือต่อยอดด้วย AI', desc:"โมดูล AI ที่เพิ่มเข้าไปในแอปที่เราเคยทำให้กรมทรัพยากรน้ำเมื่อ 4 ปีก่อน เพื่อคาดการณ์สถานการณ์น้ำและแจ้งเตือนเมื่อมีสิ่งผิดปกติ", result:'แอปใหม่', slug:'department-of-water-resources' },
+  { id:30, tags:['Government & Public Sector'], client:'สำนักงานตรวจคนเข้าเมือง', title:'แอปตรวจคนเข้าเมืองที่ใช้ AI', desc:"แอปมือถือพร้อมโมดูล AI ตรวจเอกสารและใบหน้า ช่วยเจ้าหน้าที่ยืนยันตัวตนผู้เดินทางที่จุดตรวจเข้า-ออกประเทศ", result:'แอปใหม่', slug:'immigration-bureau' },
+  { id:31, tags:['Government & Public Sector'], client:'กระทรวงวัฒนธรรม', title:'แอปงานด้านวัฒนธรรม', desc:"แอปมือถือที่นำเนื้อหาจากเว็บไซต์เดิมของกระทรวงไปถึงประชาชนได้มากขึ้น และอัปเดตให้ตรงกับเว็บไซต์โดยอัตโนมัติ", result:'แอปใหม่', slug:'ministry-of-culture' },
+  { id:32, tags:['F&B'], client:'BBK Menu', title:'เว็บไซต์แนะนำร้านอาหาร', desc:"ออกแบบ UX/UI แล้วพัฒนาเว็บไซต์สำหรับค้นหาร้านอาหารและเมนูเด็ดในกรุงเทพฯ ค้นหาได้ตามสไตล์อาหารและโอกาสพิเศษ", result:'เว็บไซต์ใหม่', slug:'bbk-menu' },
+  { id:33, tags:['Real Estate'], client:"Sena Development", title:"ระบบ CRM และ AI สำหรับผู้พัฒนาอสังหาริมทรัพย์", desc:"ระบบ CRM และ AI ที่ให้ทีมขายและผู้บริหารของผู้พัฒนาอสังหาริมทรัพย์เห็นข้อมูลลูกค้าและการขายชุดเดียวกัน", result:"ระบบใหม่", slug:"sena-development" },
+  { id:34, tags:['E-Commerce'], client:"PAÑPURI", title:"เว็บไซต์อีคอมเมิร์ซบน Shopify แบรนด์เวลเนสและสกินแคร์", desc:"ออกแบบ UX/UI แล้วพัฒนาร้านบน Shopify ให้แบรนด์เวลเนสและสกินแคร์ไทย ภาพลักษณ์พรีเมียมและเช็คเอาต์ที่ใช้ง่าย", result:"เว็บไซต์ใหม่", slug:"panpuri" },
+  { id:35, tags:['Hospitality & Travel'], client:"Shanghai Mansion Bangkok", title:"เว็บไซต์โรงแรมบูติก มีระบบจองห้องพัก", desc:"เว็บไซต์และระบบจองห้องพักออนไลน์ของโรงแรมบูติกในกรุงเทพฯ ให้แขกดูห้องและส่งคำขอจองเองได้", result:"เว็บไซต์ใหม่", slug:"shanghai-mansion-bangkok" },
+  { id:36, tags:['Retail & Shopping Mall'], client:"Jampha Shopping Mall", title:"เว็บไซต์อีคอมเมิร์ซพร้อม AI ช่วยงานหลังบ้าน", desc:"เว็บไซต์อีคอมเมิร์ซและระบบ AI ผู้ช่วยของศูนย์การค้าชุมชน เปิดช่องทางขายออนไลน์ พร้อมช่วยลดงานหลังบ้าน", result:"เว็บไซต์ใหม่", slug:"jampha-shopping-mall" },
+  { id:38, tags:['Logistics & Marine'], client:"Prima Marine", title:"เว็บไซต์องค์กรสำหรับธุรกิจขนส่งทางทะเล", desc:"เว็บไซต์องค์กรของบริษัทมหาชนด้านขนส่งทางทะเล จัดกองเรือ บริการ และข้อมูลบริษัท ให้ลูกค้า พันธมิตร และนักลงทุนอ่านได้ง่าย", result:"เว็บไซต์ใหม่", slug:"prima-marine" },
+  { id:39, tags:['F&B'], client:"Baan Khanitha Thai Cuisine", title:"เว็บไซต์ร้านอาหารไทยชื่อดัง", desc:"เว็บไซต์อบอุ่นอ่านง่ายของร้านอาหารไทยชื่อดัง มีเมนู สาขา และการจองอยู่ใกล้มือ พร้อม SEO พื้นฐานสำหรับการค้นหาในพื้นที่", result:"เว็บไซต์ใหม่", slug:"baan-khanitha" },
+  { id:40, tags:['Beauty & Aesthetics'], client:"DSK", title:"เว็บไซต์ UX/UI และ AI CRM สำหรับคลินิกศัลยกรรมความงาม", desc:"คำปรึกษาธุรกิจ เว็บไซต์ และ CRM ที่มี AI ช่วย สำหรับธุรกิจศัลยกรรมความงาม สร้างความไว้ใจและไม่ปล่อยให้คำถามของลูกค้าเงียบหาย", result:"เว็บไซต์ + CRM", slug:"dsk" },
+  { id:41, tags:['Construction & Real Estate'], client:"Admire", title:"เว็บไซต์ UX/UI และ AI CRM สำหรับธุรกิจรับสร้างบ้าน", desc:"ออกแบบ UX/UI และพัฒนาเว็บไซต์ใหม่ให้ธุรกิจรับสร้างบ้าน พร้อม CRM ที่มี AI ช่วย ให้ทุกคำถามของลูกค้าได้รับการติดตาม", result:"เว็บไซต์ + CRM", slug:"admire" },
+  { id:42, tags:['Beauty & Aesthetics'], client:"MEKO International Hospital", title:"แบรนด์ เว็บไซต์ และกราฟิกสำหรับโรงพยาบาลศัลยกรรมความงาม", desc:"อัตลักษณ์แบรนด์ เว็บไซต์ และกราฟิกของโรงพยาบาลศัลยกรรมความงาม ให้คนไข้เห็นหน้าตาที่ประณีตเป็นแบบเดียวกันทั้งบนเว็บ โซเชียล และสื่อพิมพ์", result:"แบรนด์ + เว็บไซต์", slug:"meko-international-hospital" },
 ]
 
 const gradients = [
@@ -226,8 +226,8 @@ export default function CaseStudiesPageClient({ params }: { params: { lang: Lang
               <h1 className="t-display text-[clamp(3rem,7vw,6.5rem)] leading-relaxed mb-6" style={{ color: '#fff' }}>
                 {isEN ? <>Real work,<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Real results</span></> : <>ผลงานจริง<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>ผลลัพธ์ที่วัดได้</span></>}
               </h1>
-              <p className="text-sm max-w-lg" style={{ color: 'rgba(255,255,255,0.75)', fontWeight: 400 }}>
-                {isEN ? "How we've helped clients across industries solve complex challenges with technology." : 'ตัวอย่างงานที่เราช่วยลูกค้าหลายอุตสาหกรรมแก้ปัญหายาก ๆ ด้วยเทคโนโลยี'}
+              <p className="text-sm max-w-2xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)', fontWeight: 400 }}>
+                {isEN ? "A closer look at the websites, mobile apps and CRM systems we have built for restaurants, public agencies, property developers, retailers and clinics. Each case study explains what the client needed, how we went about it and what ended up in the finished product." : 'รวมงานที่เราทำให้ร้านอาหาร หน่วยงานรัฐ ผู้พัฒนาอสังหาริมทรัพย์ ธุรกิจค้าปลีก และคลินิก ทั้งเว็บไซต์ แอปมือถือ และระบบ CRM แต่ละเรื่องจะเล่าให้ฟังว่าลูกค้าต้องการอะไร เราวางแนวทางอย่างไร และได้อะไรออกมาในงานจริง'}
               </p>
             </div>
 
@@ -295,7 +295,7 @@ export default function CaseStudiesPageClient({ params }: { params: { lang: Lang
                     <div>
                       <h2 className="t-display text-[clamp(1.8rem,3vw,2.6rem)] leading-none mb-2" style={{ color: '#fff' }}>{g.label}</h2>
                       <p className="text-sm" style={{ color: 'var(--lime)', fontWeight: 400 }}>
-                        {isEN ? 'Case studies from this industry.' : 'ผลงานในอุตสาหกรรมนี้'}
+                        {isEN ? 'Projects we have delivered for clients in this industry.' : 'งานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
                       </p>
                     </div>
                     <div className="hidden sm:flex items-center gap-2 shrink-0">
@@ -342,7 +342,7 @@ export default function CaseStudiesPageClient({ params }: { params: { lang: Lang
                         </div>
                         <p className="text-xs mb-1.5" style={{ color: 'rgba(255,255,255,0.45)', fontWeight: 400 }}>{c.client}</p>
                         <h3 className="text-white leading-snug mb-2 group-hover:text-[var(--purple-light)] transition-colors" style={{ fontWeight: 500, fontSize: '0.98rem' }}>{c.title}</h3>
-                        <p style={{ color: 'rgba(255,255,255,0.55)', fontWeight: 400, fontSize: '0.8rem', lineHeight: 1.5 }} className="mb-4 line-clamp-2">{c.desc}</p>
+                        <p style={{ color: 'rgba(255,255,255,0.55)', fontWeight: 400, fontSize: '0.8rem', lineHeight: 1.5 }} className="mb-4 line-clamp-5">{c.desc}</p>
                         <span className="text-sm flex items-center gap-1.5 group-hover:gap-2.5 transition-all" style={{ color: 'var(--purple-light)', fontWeight: 400 }}>
                           {isEN ? 'View Case Study' : 'ดูรายละเอียด'} <i className="ti ti-arrow-up-right" style={{ fontSize: 13 }} aria-hidden="true" />
                         </span>

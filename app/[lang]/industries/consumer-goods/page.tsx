@@ -15,19 +15,19 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   const badge = isEN ? 'Industry / Consumer Goods' : 'อุตสาหกรรม / สินค้าอุปโภคบริโภค'
   const heroSubhead = isEN
-    ? 'Digital transformation for consumer product companies.'
-    : 'ช่วยบริษัทสินค้าอุปโภคบริโภคทำงานบนระบบดิจิทัล'
+    ? 'Software for consumer product brands: direct-to-consumer stores, loyalty apps, sell-in and sell-out dashboards, demand forecasting and product data management across marketplaces, retailers and your own channels.'
+    : 'ซอฟต์แวร์สำหรับแบรนด์สินค้าอุปโภคบริโภค ตั้งแต่ร้านค้าออนไลน์ของแบรนด์เอง แอปสะสมแต้ม แดชบอร์ดยอดขาย การพยากรณ์ความต้องการซื้อ ไปจนถึงระบบจัดการข้อมูลสินค้า ที่ครอบคลุมทั้งมาร์เก็ตเพลส ร้านค้าปลีก และช่องทางของคุณเอง'
 
   const challenges = isEN ? [
-    { icon: 'ti-network', title: 'Fragmented DTC & Distribution Data', desc: 'Direct-to-consumer sales, retail partners, and distributors each generate siloed data on customers, orders, and inventory, making it nearly impossible to get a single view of demand across channels.' },
-    { icon: 'ti-chart-line', title: 'Demand-Forecasting Volatility', desc: 'Seasonal spikes, viral trends, and shifting consumer preferences make demand notoriously hard to predict, leading to costly overstock, stockouts, and reactive supply-chain decisions.' },
-    { icon: 'ti-currency-dollar', title: 'Rising Customer-Acquisition Costs', desc: 'As paid media costs climb and privacy changes limit targeting, brands need smarter retention, loyalty, and first-party data strategies to keep acquisition economics sustainable.' },
-    { icon: 'ti-barcode', title: 'Product-Information Management at Scale', desc: 'Keeping product data, imagery, pricing, and compliance details consistent across thousands of SKUs and dozens of marketplaces and retail channels overwhelms manual, spreadsheet-driven processes.' },
+    { icon: 'ti-network', title: 'Fragmented DTC & Distribution Data', desc: 'Direct-to-consumer sales, retail partners and distributors each produce their own data on customers, orders and stock, in different formats and on different schedules. Marketing, sales and supply teams then argue over whose numbers are right. We build one shared model of products, channels and customers so everyone starts from the same figures.' },
+    { icon: 'ti-chart-line', title: 'Demand-Forecasting Volatility', desc: 'Seasonal peaks, viral trends, promotions and changing tastes make demand hard to predict, and the cost of getting it wrong is either empty shelves or stock that has to be discounted. Spreadsheet forecasts struggle to keep up with SKU-by-channel detail. We bring in sales history, promotion calendars and external signals to forecast at the level your planners actually work.' },
+    { icon: 'ti-currency-dollar', title: 'Rising Customer-Acquisition Costs', desc: 'Advertising costs keep climbing while privacy changes and consent rules limit how precisely you can target, so brands need customers who come back. That means knowing who your repeat buyers are and giving them a reason to return. We build first-party data capture, with clear PDPA consent, and loyalty and CRM flows that run on LINE and email.' },
+    { icon: 'ti-barcode', title: 'Product-Information Management at Scale', desc: 'Keeping names, descriptions, images, prices, barcodes and compliance details consistent across thousands of SKUs and a dozen sales channels is slow and error-prone. Each marketplace and retailer also wants the data in its own template. We centralise the data so you edit once and publish to every channel.' },
   ] : [
-    { icon: 'ti-network', title: 'ข้อมูลช่องทางขายตรงและตัวแทนจำหน่ายกระจัดกระจาย', desc: 'ยอดขายตรงถึงผู้บริโภค (DTC) พันธมิตรค้าปลีก และผู้จัดจำหน่าย ต่างสร้างข้อมูลลูกค้า คำสั่งซื้อ และสต็อกแยกกัน จึงแทบเป็นไปไม่ได้ที่จะเห็นภาพความต้องการซื้อรวมของทุกช่องทาง' },
-    { icon: 'ti-chart-line', title: 'พยากรณ์ความต้องการซื้อได้ยาก', desc: 'ยอดขายที่พุ่งตามฤดูกาล กระแสไวรัล และความชอบของผู้บริโภคที่เปลี่ยนเร็ว ทำให้คาดการณ์ยาก สินค้าจึงล้นสต็อกหรือขาดสต็อก และต้องตัดสินใจเรื่องซัพพลายเชนแบบเฉพาะหน้าซึ่งเสียต้นทุนสูง' },
-    { icon: 'ti-currency-dollar', title: 'ต้นทุนหาลูกค้าใหม่สูงขึ้น', desc: 'เมื่อค่าโฆษณาแพงขึ้นและนโยบายความเป็นส่วนตัวจำกัดการยิงโฆษณาตรงกลุ่ม แบรนด์ต้องรักษาลูกค้าเดิม สร้างความภักดี และใช้ First-party Data ให้ฉลาดขึ้น เพื่อให้การหาลูกค้ายังคุ้ม' },
-    { icon: 'ti-barcode', title: 'จัดการข้อมูลสินค้าจำนวนมาก', desc: 'การทำให้ข้อมูลสินค้า รูปภาพ ราคา และรายละเอียดตามข้อกำหนดตรงกันทุกที่ ทั้งหลายพันรายการ SKU และหลายสิบช่องทาง Marketplace และค้าปลีก เกินกว่าที่ Spreadsheet จะรับไหว' },
+    { icon: 'ti-network', title: 'ข้อมูล DTC และการกระจายสินค้าแยกส่วน', desc: 'ยอดขายออนไลน์ของแบรนด์ ร้านค้าปลีกที่เป็นพาร์ทเนอร์ และตัวแทนจำหน่าย ต่างสร้างข้อมูลลูกค้า ออเดอร์ และสต็อกของตัวเอง คนละรูปแบบและคนละรอบเวลา ทีมการตลาด ทีมขาย และทีมซัพพลายจึงมักเถียงกันว่าตัวเลขของใครถูก เราสร้างโมเดลข้อมูลกลางของสินค้า ช่องทางขาย และลูกค้า เพื่อให้ทุกคนเริ่มจากตัวเลขชุดเดียวกัน' },
+    { icon: 'ti-chart-line', title: 'ความต้องการซื้อที่คาดเดายาก', desc: 'ช่วงเทศกาล กระแสไวรัล โปรโมชัน และรสนิยมที่เปลี่ยนไป ทำให้ทำนายความต้องการซื้อได้ยาก และถ้าพลาดก็เสียทั้งของขาดชั้นหรือของค้างที่ต้องลดราคา การพยากรณ์ด้วยสเปรดชีตตามรายละเอียดระดับ SKU แยกตามช่องทางไม่ทัน เรารวมประวัติยอดขาย ปฏิทินโปรโมชัน และสัญญาณจากภายนอก เพื่อพยากรณ์ในระดับที่ทีมวางแผนของคุณใช้งานจริง' },
+    { icon: 'ti-currency-dollar', title: 'ต้นทุนหาลูกค้าใหม่ที่สูงขึ้น', desc: 'ค่าโฆษณาสูงขึ้นเรื่อยๆ ขณะที่กฎความเป็นส่วนตัวและเรื่องความยินยอมทำให้ยิงโฆษณาแม่นๆ ได้ยากขึ้น แบรนด์จึงต้องมีลูกค้าที่กลับมาซื้อซ้ำ ซึ่งหมายถึงต้องรู้ว่าใครคือลูกค้าประจำ และมีเหตุผลให้เขากลับมา เราช่วยสร้างการเก็บข้อมูลลูกค้าของแบรนด์เอง พร้อมการขอความยินยอมตาม PDPA ที่ชัดเจน และระบบสะสมแต้มกับ CRM ที่ทำงานผ่าน LINE และอีเมล' },
+    { icon: 'ti-barcode', title: 'จัดการข้อมูลสินค้าจำนวนมาก', desc: 'การทำให้ชื่อ รายละเอียด รูปภาพ ราคา บาร์โค้ด และข้อมูลตามข้อกำหนดตรงกันทั้งหมด ข้ามสินค้าหลายพัน SKU และช่องทางขายหลายสิบช่องทาง ทำได้ช้าและพลาดง่าย แต่ละมาร์เก็ตเพลสและร้านค้าปลีกก็ต้องการข้อมูลตามเทมเพลตของตัวเอง เรารวมข้อมูลไว้ที่เดียว คุณแก้ครั้งเดียวแล้วส่งไปทุกช่องทางได้' },
   ]
 
   const metrics = [
@@ -37,31 +37,31 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   ]
 
   const capabilities = isEN ? [
-    { icon: 'ti-shopping-cart', title: 'DTC E-commerce Platforms', desc: 'Fast, conversion-optimized direct-to-consumer storefronts with flexible checkout, subscriptions, and bundling built for modern consumer brands.' },
-    { icon: 'ti-gift', title: 'Loyalty & Membership Apps', desc: 'Points-based loyalty and membership platforms with tiered rewards, referral programs, and personalized offers that deepen customer relationships.' },
-    { icon: 'ti-report-analytics', title: 'Retail-Distribution Dashboards', desc: 'Unified reporting dashboards that combine sell-in and sell-out data from retail partners and distributors into a single source of truth.' },
-    { icon: 'ti-chart-line', title: 'AI Demand-Forecasting Systems', desc: 'Machine learning models that forecast demand across SKUs and channels, factoring in seasonality, promotions, and market signals to reduce waste.' },
-    { icon: 'ti-database', title: 'Product Information Management (PIM)', desc: 'Centralized PIM systems that keep product data, imagery, and specifications consistent and compliant across every sales channel and marketplace.' },
-    { icon: 'ti-tag', title: 'Trade-Promotion & Pricing Optimization', desc: 'Pricing and promotion-planning tools that model margin impact and recommend optimal discounts and trade-spend allocation.' },
+    { icon: 'ti-shopping-cart', title: 'DTC E-commerce Platforms', desc: 'Fast storefronts for selling directly to your customers, with flexible checkout, subscriptions, bundles and promotions. Checkout supports PromptPay QR, cards and cash on delivery, and order data flows to your warehouse or fulfilment partner. The site is built for mobile shoppers and for search, so product pages can rank on their own.' },
+    { icon: 'ti-gift', title: 'Loyalty & Membership Apps', desc: 'Points, tiers, referrals and member-only offers in an app or LINE mini-experience, linked to your sales data. Customers collect points from online orders and in-store purchases, and the team sends offers based on what each person actually buys. Rules and campaigns can be changed by the marketing team without a developer.' },
+    { icon: 'ti-report-analytics', title: 'Retail-Distribution Dashboards', desc: 'Reporting that combines sell-in and sell-out figures from retail partners and distributors with your own e-commerce sales. Sales managers see which stores and regions are moving stock and which are sitting on it. Data arrives by file upload, partner portals or APIs, and we clean it so it is comparable.' },
+    { icon: 'ti-chart-line', title: 'AI Demand-Forecasting Systems', desc: 'Machine learning models that forecast demand by SKU and channel, taking account of seasons, promotions, pricing and past stock-outs. Planners get a forecast with a confidence range and can adjust it with their own market knowledge. We measure accuracy against your history first, so the value is clear before it drives purchasing.' },
+    { icon: 'ti-database', title: 'Product Information Management (PIM)', desc: 'A central product information system holding names in Thai and English, descriptions, images, specifications, barcodes, pricing and regulatory details. Approval steps make sure nothing goes live without a review, and exports match each marketplace and retailer template. New launches take less time because the data is already structured.' },
+    { icon: 'ti-tag', title: 'Trade-Promotion & Pricing Optimization', desc: 'Planning tools that model how a discount or trade promotion affects volume and margin before you commit. Teams compare scenarios, see post-promotion results against the plan and learn which offers pay back. It is meant for category and revenue managers who currently do this in spreadsheets.' },
   ] : [
-    { icon: 'ti-shopping-cart', title: 'DTC E-commerce Platforms', desc: 'หน้าร้านขายตรงถึงผู้บริโภคที่เร็วและปรับให้ขายได้ดี พร้อมระบบ Checkout ยืดหยุ่น การสมัครสมาชิกรายเดือน และการขายเป็นชุด สำหรับแบรนด์ยุคใหม่' },
-    { icon: 'ti-gift', title: 'Loyalty & Membership Apps', desc: 'แพลตฟอร์มสะสมคะแนนและสมาชิก มีรางวัลตามระดับ โปรแกรมชวนเพื่อน และข้อเสนอเฉพาะบุคคลที่ทำให้ลูกค้าอยู่กับแบรนด์นานขึ้น' },
-    { icon: 'ti-report-analytics', title: 'Retail-Distribution Dashboards', desc: 'Dashboard รายงานกลางที่รวมข้อมูล Sell-in และ Sell-out จากพันธมิตรค้าปลีกและผู้จัดจำหน่าย ให้เป็นข้อมูลชุดเดียวที่เชื่อถือได้' },
-    { icon: 'ti-chart-line', title: 'AI Demand-Forecasting Systems', desc: 'โมเดล Machine Learning ที่พยากรณ์ความต้องการซื้อของทุก SKU และทุกช่องทาง โดยดูฤดูกาล โปรโมชัน และสัญญาณตลาด เพื่อลดของเหลือและของขาด' },
-    { icon: 'ti-database', title: 'Product Information Management (PIM)', desc: 'ระบบ PIM กลางที่ทำให้ข้อมูลสินค้า รูปภาพ และสเปกตรงกันและเป็นไปตามข้อกำหนดในทุกช่องทางขายและ Marketplace' },
-    { icon: 'ti-tag', title: 'Trade-Promotion & Pricing Optimization', desc: 'เครื่องมือวางแผนราคาและโปรโมชัน จำลองผลต่อกำไรขั้นต้น และแนะนำส่วนลดและการจัดสรรงบ Trade Spend ที่เหมาะสมที่สุด' },
+    { icon: 'ti-shopping-cart', title: 'แพลตฟอร์ม DTC E-commerce', desc: 'หน้าร้านที่โหลดเร็วสำหรับขายตรงถึงลูกค้า มีระบบชำระเงินที่ยืดหยุ่น การสั่งซื้อแบบสมัครสมาชิกรายเดือน ชุดสินค้า และโปรโมชัน รองรับ PromptPay QR บัตร และเก็บเงินปลายทาง ข้อมูลออเดอร์ส่งต่อถึงคลังสินค้าหรือผู้ให้บริการจัดส่งได้ เว็บออกแบบมาสำหรับคนซื้อบนมือถือและการค้นหา เพื่อให้หน้าสินค้าติดอันดับได้เอง' },
+    { icon: 'ti-gift', title: 'แอปสะสมแต้มและสมาชิก', desc: 'ระบบแต้ม ระดับสมาชิก การชวนเพื่อน และข้อเสนอเฉพาะสมาชิก ผ่านแอปหรือบน LINE เชื่อมกับข้อมูลยอดขายของคุณ ลูกค้าสะสมแต้มได้ทั้งจากออเดอร์ออนไลน์และการซื้อหน้าร้าน และทีมส่งข้อเสนอตามสิ่งที่ลูกค้าแต่ละคนซื้อจริง ทีมการตลาดแก้กฎและแคมเปญเองได้โดยไม่ต้องรอนักพัฒนา' },
+    { icon: 'ti-report-analytics', title: 'แดชบอร์ดการขายปลีกและการกระจายสินค้า', desc: 'รายงานที่รวมตัวเลข Sell-in และ Sell-out จากร้านค้าปลีกและตัวแทนจำหน่าย เข้ากับยอดขายออนไลน์ของคุณ ผู้จัดการฝ่ายขายเห็นว่าร้านและภูมิภาคไหนขายออก ที่ไหนสต็อกค้าง ข้อมูลเข้ามาได้ทั้งแบบอัปโหลดไฟล์ พอร์ทัลของพาร์ทเนอร์ หรือ API และเรามีขั้นตอนทำความสะอาดข้อมูลให้เทียบกันได้' },
+    { icon: 'ti-chart-line', title: 'ระบบ AI พยากรณ์ความต้องการซื้อ', desc: 'โมเดล Machine Learning ที่พยากรณ์ความต้องการซื้อรายสินค้าและรายช่องทาง โดยคำนึงถึงฤดูกาล โปรโมชัน ราคา และช่วงที่ของเคยขาด ทีมวางแผนได้ตัวเลขพร้อมช่วงความมั่นใจ และปรับด้วยความรู้เรื่องตลาดของตัวเองได้ เราวัดความแม่นเทียบกับข้อมูลย้อนหลังของคุณก่อน เพื่อให้เห็นคุณค่าชัดเจนก่อนนำไปใช้สั่งของจริง' },
+    { icon: 'ti-database', title: 'ระบบจัดการข้อมูลสินค้า (PIM)', desc: 'ระบบข้อมูลสินค้ากลางที่เก็บชื่อภาษาไทยและอังกฤษ รายละเอียด รูปภาพ สเปก บาร์โค้ด ราคา และข้อมูลตามข้อกำหนด มีขั้นตอนอนุมัติเพื่อไม่ให้อะไรขึ้นระบบโดยไม่ผ่านการตรวจ และส่งออกตามเทมเพลตของแต่ละมาร์เก็ตเพลสและร้านค้าปลีก เปิดตัวสินค้าใหม่ได้เร็วขึ้นเพราะข้อมูลถูกจัดเป็นระเบียบไว้แล้ว' },
+    { icon: 'ti-tag', title: 'เครื่องมือจัดโปรโมชันและราคา', desc: 'เครื่องมือวางแผนที่จำลองว่าส่วนลดหรือโปรโมชันกับร้านค้าจะกระทบยอดขายและกำไรอย่างไร ก่อนตัดสินใจจริง ทีมเทียบหลายสถานการณ์ ดูผลหลังจบโปรโมชันเทียบกับแผน และเรียนรู้ว่าข้อเสนอแบบไหนคุ้ม เหมาะกับผู้จัดการหมวดสินค้าและฝ่ายรายได้ที่ตอนนี้ทำเรื่องนี้ในสเปรดชีต' },
   ]
 
   const techStack = ['React', 'Next.js', 'Node.js', 'Shopify APIs', 'Algolia', 'Machine Learning', 'PostgreSQL', 'Redis', 'AWS', 'GraphQL', 'Stripe', 'Elasticsearch']
 
   const useCases = isEN ? [
-    { no: '01', title: 'DTC Storefront Platform', desc: 'A high-conversion direct-to-consumer storefront with subscriptions, bundling, and loyalty integration, built to scale across seasonal demand spikes.' },
-    { no: '02', title: 'Loyalty & Rewards App', desc: 'A tiered loyalty and membership app with points, referrals, and personalized offers that increases repeat purchase rate and customer lifetime value.' },
-    { no: '03', title: 'Demand-Forecasting System', desc: 'An AI-driven forecasting platform that predicts SKU-level demand across DTC, retail, and distribution channels to minimize stockouts and overstock.' },
+    { no: '01', title: 'DTC Storefront Platform', desc: 'A DTC storefront built to convert, with subscriptions, bundles and loyalty built in. Orders sync to inventory, and customers can check out with PromptPay or a card in a few taps. Deliverables include design, the storefront, payment and shipping integrations, and analytics set up for your marketing team.' },
+    { no: '02', title: 'Loyalty & Rewards App', desc: 'A tiered membership app with points, referrals and offers tailored to each member. It connects to your point-of-sale and online orders so points appear no matter where the purchase happened. The team sees redemption and repeat-purchase reports to judge which rewards work.' },
+    { no: '03', title: 'Demand-Forecasting System', desc: 'A forecasting platform that predicts demand by SKU across DTC, retail and distributor channels. It feeds production and purchasing plans, highlights items at risk of running out or overstocking, and records how each forecast compares with reality. We usually pilot on your top-selling products before widening the range.' },
   ] : [
-    { no: '01', title: 'DTC Storefront Platform', desc: 'หน้าร้านขายตรงถึงผู้บริโภคที่ขายได้ดี มีระบบสมัครสมาชิกรายเดือน การขายเป็นชุด และเชื่อมโปรแกรมสะสมแต้ม ขยายรองรับช่วงที่ยอดสั่งซื้อพุ่งตามฤดูกาลได้' },
-    { no: '02', title: 'Loyalty & Rewards App', desc: 'แอปสะสมคะแนนและสมาชิกแบบแบ่งระดับ มีโปรแกรมชวนเพื่อน และข้อเสนอเฉพาะบุคคล ช่วยให้ลูกค้ากลับมาซื้อซ้ำและเพิ่ม Customer Lifetime Value' },
-    { no: '03', title: 'Demand-Forecasting System', desc: 'แพลตฟอร์มพยากรณ์ด้วย AI ที่คาดการณ์ความต้องการซื้อระดับ SKU ในทุกช่องทาง ทั้ง DTC ค้าปลีก และผู้จัดจำหน่าย เพื่อลดของขาดและของเหลือ' },
+    { no: '01', title: 'แพลตฟอร์มหน้าร้านออนไลน์ของแบรนด์', desc: 'หน้าร้านออนไลน์ของแบรนด์ที่ออกแบบให้ปิดการขายได้ดี มีระบบสมัครสั่งซื้อประจำ ชุดสินค้า และสะสมแต้มในตัว ออเดอร์ซิงก์เข้าสต็อก และลูกค้าจ่ายด้วย PromptPay หรือบัตรได้ในไม่กี่แตะ งานที่ส่งมอบรวมงานออกแบบ ตัวหน้าร้าน การเชื่อมระบบชำระเงินและขนส่ง และการตั้งค่า Analytics ให้ทีมการตลาด' },
+    { no: '02', title: 'แอปสะสมแต้มและรางวัล', desc: 'แอปสมาชิกแบบแบ่งระดับที่มีแต้ม การชวนเพื่อน และข้อเสนอที่ปรับให้เหมาะกับสมาชิกแต่ละคน เชื่อมกับระบบ POS และออเดอร์ออนไลน์ แต้มจึงเข้าไม่ว่าจะซื้อที่ไหน ทีมดูรายงานการแลกรางวัลและการซื้อซ้ำเพื่อประเมินว่ารางวัลแบบไหนได้ผล' },
+    { no: '03', title: 'ระบบพยากรณ์ความต้องการซื้อ', desc: 'แพลตฟอร์มพยากรณ์ที่ทำนายความต้องการซื้อรายสินค้าข้ามช่องทาง DTC ร้านค้าปลีก และตัวแทนจำหน่าย ส่งข้อมูลเข้าแผนผลิตและจัดซื้อ ชี้สินค้าที่เสี่ยงขาดหรือล้นสต็อก และบันทึกว่าแต่ละครั้งที่พยากรณ์ผลต่างจากความจริงเท่าไหร่ เรามักเริ่มทดลองกับสินค้าขายดีก่อนแล้วค่อยขยาย' },
   ]
 
   const heroVisual = (
@@ -171,8 +171,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <div className="w-12 h-[3px] rounded-full mb-8" style={{ background: 'linear-gradient(90deg, var(--purple-light), var(--lime))' }} />
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
-                  ? 'We help consumer goods companies build DTC e-commerce platforms, loyalty and membership apps, AI-driven demand-forecasting systems, and product information management platforms that unify data across every channel. Our solutions bridge the gap between direct-to-consumer growth and traditional retail distribution, turning fragmented data into a single source of truth that drives sharper decisions.'
-                  : 'เราช่วยบริษัทสินค้าอุปโภคบริโภคสร้างแพลตฟอร์ม DTC E-commerce แอปสะสมคะแนนและสมาชิก ระบบพยากรณ์ความต้องการซื้อด้วย AI และแพลตฟอร์มจัดการข้อมูลสินค้า (PIM) ที่รวมข้อมูลจากทุกช่องทางไว้ที่เดียว ระบบของเราเชื่อมการเติบโตของการขายตรงถึงผู้บริโภคเข้ากับการจัดจำหน่ายค้าปลีกแบบเดิม และรวมข้อมูลที่กระจัดกระจายให้เป็นแหล่งเดียวสำหรับตัดสินใจให้แม่นยำขึ้น'}
+                  ? 'A consumer brand rarely sells through one door. The same product moves through your own website, marketplaces, convenience and hypermarket chains, and distributors, and each channel reports its own numbers in its own format. We build DTC e-commerce platforms, loyalty and membership apps, retail and distribution dashboards, AI demand-forecasting systems, product information management and pricing tools that pull those pieces together. In Thailand that usually means working with LINE Official Account, PromptPay and cash-on-delivery habits, marketplace feeds, PDPA-compliant consent for marketing, and a mix of modern and traditional trade. We begin with the decisions your team makes every week and build the data flow backwards from there.'
+                  : 'แบรนด์สินค้าอุปโภคบริโภคแทบไม่เคยขายผ่านช่องทางเดียว สินค้าตัวเดียวกันไปได้ทั้งเว็บไซต์ของแบรนด์เอง มาร์เก็ตเพลส ร้านสะดวกซื้อและไฮเปอร์มาร์เก็ต และตัวแทนจำหน่าย แต่ละช่องทางก็รายงานตัวเลขในรูปแบบของตัวเอง เรารับสร้างแพลตฟอร์ม DTC E-commerce แอปสะสมแต้มและสมาชิก แดชบอร์ดการขายปลีกและการกระจายสินค้า ระบบ AI พยากรณ์ความต้องการซื้อ ระบบจัดการข้อมูลสินค้า (PIM) และเครื่องมือจัดการราคา ที่ดึงทุกอย่างมารวมกัน ในไทยงานแบบนี้มักต้องทำงานกับ LINE Official Account การจ่ายด้วย PromptPay และการเก็บเงินปลายทาง ฟีดสินค้าจากมาร์เก็ตเพลส การขอความยินยอมทางการตลาดตาม PDPA และช่องทางขายทั้งแบบโมเดิร์นเทรดและเทรดดิชันนัล เราเริ่มจากการตัดสินใจที่ทีมของคุณทำทุกสัปดาห์ แล้วไล่ออกแบบการไหลของข้อมูลย้อนกลับไปจากตรงนั้น'}
               </p>
             </div>
           </div>
@@ -189,8 +189,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
-                ? 'Understanding the critical obstacles that drive digital transformation in this industry.'
-                : 'ปัญหาหลักที่ธุรกิจในอุตสาหกรรมนี้ต้องเจอ'}
+                ? 'The problems teams in this industry bring to us most often, and the ones we plan each project around.'
+                : 'นี่คือปัญหาที่ทีมในอุตสาหกรรมนี้เล่าให้เราฟังบ่อยที่สุด และเป็นสิ่งที่เราใช้วางแผนแต่ละโปรเจกต์'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -240,7 +240,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
+              {isEN ? 'The kinds of systems we build for this industry, what each one does, and who it is for.' : 'ระบบที่เรารับทำให้อุตสาหกรรมนี้ ว่าแต่ละอย่างทำอะไรได้ และเหมาะกับใครบ้าง'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -267,8 +267,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
-                ? 'Industry-proven tools and frameworks we leverage to build robust solutions.'
-                : 'เครื่องมือและ Framework ที่เราเลือกใช้ เพราะมั่นคงและเชื่อถือได้'}
+                ? 'The tools and frameworks we reach for most often, chosen because they are stable, well documented and easy to find people to maintain.'
+                : 'เครื่องมือและ Framework ที่เราเลือกใช้บ่อย เพราะเสถียร เอกสารครบ และหาคนมาดูแลต่อได้ง่าย'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -294,7 +294,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างงานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
+              {isEN ? 'Typical projects we take on in this industry, and what each one delivers.' : 'ตัวอย่างโปรเจกต์ที่เรารับทำในอุตสาหกรรมนี้ พร้อมสิ่งที่ลูกค้าจะได้รับ'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -334,7 +334,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
+              {isEN ? 'Tell us what you are building, and we will suggest where to start.' : 'เล่าให้เราฟังหน่อยว่าคุณกำลังทำอะไรอยู่ แล้วเราจะช่วยดูว่าควรเริ่มจากตรงไหน'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link

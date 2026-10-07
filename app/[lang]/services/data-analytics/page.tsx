@@ -32,40 +32,40 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge    = isEN ? 'Strategy / Data & Analytics'  : 'กลยุทธ์ / ข้อมูลและ Analytics'
   const title    = isEN ? 'Make Decisions with'  : 'ตัดสินใจด้วย'
   const subtitle = isEN ? 'Data, Not Gut Feel'    : 'ข้อมูล ไม่ใช่สัญชาตญาณ'
-  const heroDesc = isEN ? 'Reliable pipelines, warehouses, and analytics that turn operational data into decisions you can act on.'  : 'Pipeline, Data Warehouse และ Analytics ที่เชื่อถือได้ ช่วยเปลี่ยนข้อมูลในการทำงานให้เป็นการตัดสินใจที่ใช้ได้จริง'
+  const heroDesc = isEN ? 'Your sales, stock, marketing and customer data probably sit in five different tools, and each report tells a slightly different story. Haliviq connects those sources, cleans the data, stores it in a warehouse your team can trust, and builds the dashboards people open every morning. We start with the decisions you want to make, then work backwards to the data that supports them, so you get answers rather than a pile of charts.'  : 'ข้อมูลยอดขาย สต็อก การตลาด และลูกค้าของคุณน่าจะกระจายอยู่ในเครื่องมือห้าตัว และรายงานแต่ละที่เล่าเรื่องไม่ตรงกันเท่าไหร่ Haliviq เชื่อมแหล่งข้อมูลเหล่านั้น ทำความสะอาด เก็บไว้ใน Warehouse ที่ทีมเชื่อถือได้ และสร้าง Dashboard ที่คนเปิดดูทุกเช้า เราเริ่มจากการตัดสินใจที่คุณอยากทำ แล้วย้อนกลับไปหาข้อมูลที่ต้องใช้ คุณจะได้คำตอบ ไม่ใช่กองกราฟ'
   const whyTitle = isEN ? 'Why most companies are data-rich but insight-poor'    : 'ทำไมหลายบริษัทมีข้อมูลเยอะ แต่ได้ข้อมูลเชิงลึกน้อย'
-  const whyDesc  = isEN ? 'Most organisations collect enormous amounts of data but lack the infrastructure to turn it into action. Spreadsheets break at scale, reports arrive too late.'  : 'หลายองค์กรเก็บข้อมูลไว้มหาศาล แต่ไม่มีระบบรองรับที่จะเอาไปใช้ได้จริง Spreadsheet เริ่มรับไม่ไหวเมื่อข้อมูลโตขึ้น และรายงานก็มาช้าเกินไป'
+  const whyDesc  = isEN ? 'Most organisations collect a huge amount of data, yet the people who need answers still wait days for an analyst to export a spreadsheet. Files break once they pass a few hundred thousand rows, definitions of "customer" or "revenue" differ between teams, and by the time a report is ready the moment to act has passed. The gap is rarely the data itself. It is the plumbing between the data and the decision.'  : 'หลายองค์กรเก็บข้อมูลไว้มหาศาล แต่คนที่ต้องการคำตอบยังต้องรอเป็นวันให้นักวิเคราะห์ส่งออกสเปรดชีตให้ ไฟล์เริ่มพังเมื่อแถวเกินหลักแสน ความหมายของคำว่า "ลูกค้า" หรือ "รายได้" ไม่ตรงกันระหว่างทีม และกว่ารายงานจะเสร็จ ช่วงเวลาที่ควรลงมือก็ผ่านไปแล้ว ปัญหามักไม่ใช่ตัวข้อมูล แต่เป็นท่อที่เชื่อมระหว่างข้อมูลกับการตัดสินใจ'
   const ctaTitle = isEN ? 'Ready to become data-driven?'    : 'พร้อมใช้ข้อมูลตัดสินใจหรือยัง?'
-  const ctaDesc  = isEN ? 'Start with a free Data Audit. We will show you exactly where your biggest opportunities lie.'   : 'เริ่มด้วยการตรวจข้อมูล (Data Audit) ฟรี เราจะบอกชัดๆ ว่าโอกาสที่ใหญ่ที่สุดของคุณอยู่ตรงไหน'
+  const ctaDesc  = isEN ? 'Start with a free Data Audit. We look at where your data lives, how trustworthy it is, and which two or three decisions it could improve the most, and we tell you plainly where the biggest opportunity is.'   : 'เริ่มจากให้เราตรวจข้อมูล (Data Audit) ให้ฟรี เราจะดูว่าข้อมูลของคุณอยู่ที่ไหน เชื่อถือได้แค่ไหน และการตัดสินใจสองสามเรื่องไหนที่ข้อมูลช่วยได้มากที่สุด แล้วบอกตรงๆ ว่าโอกาสใหญ่สุดอยู่ตรงไหน'
   const overviewText = isEN
-    ? 'We build data infrastructure for modern products — event collection, batch and streaming pipelines, warehouse and lakehouse implementation, semantic modelling, and business intelligence. Our approach emphasises data quality, lineage, and governance from the start, working with platforms like Snowflake, Databricks, Kafka, Airflow, and dbt so the numbers your team reports from are numbers they can trust.'
-    : 'เราสร้างระบบข้อมูลให้ผลิตภัณฑ์ยุคใหม่ ตั้งแต่การเก็บ Event, Pipeline ทั้งแบบ Batch และ Streaming, Data Warehouse และ Lakehouse, Semantic Modeling ไปจนถึง Business Intelligence เราให้ความสำคัญกับคุณภาพข้อมูล Lineage และ Governance ตั้งแต่ต้น ทำงานกับ Snowflake, Databricks, Kafka, Airflow และ dbt เพื่อให้ตัวเลขที่ทีมใช้ทำรายงานเชื่อถือได้จริง'
+    ? 'We build data infrastructure for modern products: event collection, batch and streaming pipelines, warehouse and lakehouse implementation, semantic modelling and business intelligence. Data quality, lineage and governance are planned from the start, using platforms such as Snowflake, Databricks, Kafka, Airflow and dbt, so the figures your team reports from are figures they can defend in a meeting. Our clients usually come to us with data spread across a CRM, an ERP, a website and several spreadsheets, and a leadership team that wants one version of the truth.'
+    : 'เราสร้างระบบข้อมูลให้ผลิตภัณฑ์ยุคใหม่ ตั้งแต่การเก็บ Event, Pipeline ทั้งแบบ Batch และ Streaming, Data Warehouse และ Lakehouse, Semantic Modeling ไปจนถึง Business Intelligence เราวางคุณภาพข้อมูล Lineage และ Governance ไว้ตั้งแต่ต้น ทำงานกับ Snowflake, Databricks, Kafka, Airflow และ dbt เพื่อให้ตัวเลขที่ทีมใช้ทำรายงานเป็นตัวเลขที่เอาไปยืนยันในที่ประชุมได้ ลูกค้าส่วนใหญ่มาหาเราพร้อมข้อมูลที่กระจายอยู่ใน CRM, ERP, เว็บไซต์ และสเปรดชีตหลายไฟล์ และผู้บริหารที่อยากได้ตัวเลขชุดเดียวที่ทุกคนเห็นตรงกัน'
 
   const heroBullets = isEN ? [
-      'Audit your current data sources and quality',
-      'Design a modern Data Architecture that scales',
-      'Build dashboards your team actually uses every day',
-      'Set up automated reporting and KPI tracking',
-      'Train your team to become data-driven decision makers',
+      'Audit of your current data sources, quality and gaps',
+      'A data architecture sized for where you are now and where you are heading',
+      'Dashboards your team actually opens every day',
+      'Automated reporting and KPI tracking with agreed definitions',
+      'Hands-on training so your team can answer its own questions',
     ] : [
-      'ตรวจแหล่งข้อมูลและคุณภาพข้อมูลที่มีอยู่',
-      'ออกแบบ Data Architecture ที่รองรับการเติบโต',
-      'สร้าง Dashboard ที่ทีมใช้ได้จริงทุกวัน',
-      'ตั้งรายงานอัตโนมัติและติดตาม KPI',
-      'ฝึกทีมให้ใช้ข้อมูลตัดสินใจเป็นประจำ',
+      'ตรวจแหล่งข้อมูล คุณภาพข้อมูล และช่องว่างที่มีอยู่',
+      'ออกแบบ Data Architecture ให้พอดีกับตอนนี้และรองรับที่คุณกำลังจะไปต่อ',
+      'สร้าง Dashboard ที่ทีมเปิดดูจริงทุกวัน',
+      'ตั้งรายงานอัตโนมัติและติดตาม KPI ตามนิยามที่ตกลงกันไว้',
+      'สอนทีมให้หาคำตอบจากข้อมูลได้เอง',
     ]
   const whyPoints   = isEN ? [
-      'Real-time analytics reduces decision latency by 5x — advantage measured in hours, not weeks.',
-      'Poor data quality costs businesses 15-25% of revenue. A solid data foundation pays for itself.',
-      'Self-serve analytics empowers every department to answer their own questions instantly.',
-      'Predictive models built on clean historical data forecast demand, churn, and revenue accurately.',
-      'A single source of truth eliminates reporting conflicts and wasted reconciliation time.',
+      'Real-time analytics shortens decision time by about 5x, so an advantage is measured in hours rather than weeks',
+      'Poor data quality costs businesses an estimated 15-25% of revenue, which means a solid data foundation tends to pay for itself',
+      'Self-serve analytics lets sales, marketing and operations answer their own questions without queuing for an analyst',
+      'Predictive models built on clean historical data can forecast demand, churn and revenue with useful accuracy',
+      'A single source of truth ends the argument over whose number is right, and the hours spent reconciling reports',
     ] : [
-      'องค์กรที่ใช้ Real-time Analytics ตัดสินใจเร็วขึ้น 5 เท่า ได้เปรียบกันเป็นชั่วโมง ไม่ใช่เป็นสัปดาห์',
-      'ข้อมูลคุณภาพต่ำทำให้ธุรกิจเสียรายได้ 15-25% ฐานข้อมูลที่ดีจึงคืนทุนได้เร็ว',
-      'Self-serve Analytics ช่วยให้ทุกทีมหาคำตอบเองได้ทันที',
-      'Predictive Model ที่สร้างจากข้อมูลย้อนหลัง พยากรณ์ความต้องการซื้อ ลูกค้าที่จะเลิกใช้ และรายได้ได้แม่นยำ',
-      'แหล่งข้อมูลเดียวที่ทุกคนเชื่อถือ ทำให้ตัวเลขในรายงานไม่ขัดกันอีก',
+      'Real-time Analytics ช่วยให้ตัดสินใจเร็วขึ้นราว 5 เท่า ความได้เปรียบจึงวัดกันเป็นชั่วโมง ไม่ใช่สัปดาห์',
+      'ข้อมูลคุณภาพต่ำทำให้ธุรกิจเสียรายได้ประมาณ 15-25% ฐานข้อมูลที่ดีจึงมักคืนทุนได้เอง',
+      'Self-serve Analytics ให้ฝ่ายขาย การตลาด และปฏิบัติการหาคำตอบเองได้ ไม่ต้องต่อคิวรอนักวิเคราะห์',
+      'Predictive Model ที่สร้างจากข้อมูลย้อนหลังที่สะอาด พยากรณ์ความต้องการซื้อ ลูกค้าที่จะเลิกใช้ และรายได้ได้แม่นพอที่จะเอาไปใช้',
+      'แหล่งข้อมูลเดียวที่ทุกคนเชื่อถือ จบปัญหาเถียงกันว่าตัวเลขใครถูก และไม่ต้องเสียหลายชั่วโมงไปกระทบยอดรายงาน',
     ]
   const outcomes    = isEN ? [
       {stat: '5x', label: 'Faster Decision Making', desc: 'With real-time dashboards'},
@@ -76,53 +76,59 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {stat: '5x', label: 'ตัดสินใจเร็วขึ้น', desc: 'ด้วย Real-time Dashboard'},
       {stat: '40%', label: 'ลดเวลาทำรายงาน', desc: 'ด้วยระบบอัตโนมัติ'},
       {stat: '25%', label: 'ผลต่อรายได้', desc: 'จากการใช้ข้อมูลตัดสินใจ'},
-      {stat: '90%', label: 'ความแม่นยำข้อมูล', desc: 'หลังทำความสะอาดข้อมูล'}
+      {stat: '90%', label: 'ความแม่นยำของข้อมูล', desc: 'หลังทำความสะอาดและวาง Governance'}
     ]
   const features    = isEN ? [
-      {icon: 'ti-layout-dashboard', title: 'Analytics Dashboard', desc: 'Real-time dashboards every team can understand — Sales, Marketing, and Operations.'},
-      {icon: 'ti-database', title: 'Data Pipeline', desc: 'Pipelines that collect, clean, and store data from every source systematically.'},
-      {icon: 'ti-report-analytics', title: 'Business Intelligence', desc: 'BI solutions that let non-technical teams explore data and build their own reports.'},
-      {icon: 'ti-trending-up', title: 'Predictive Analytics', desc: 'Statistical models that forecast sales, churn, and demand before they happen.'},
-      {icon: 'ti-target', title: 'Customer Analytics', desc: 'Analyse customer behaviour, segment audiences, and personalise to increase LTV.'},
-      {icon: 'ti-shield-check', title: 'Data Governance', desc: 'Policies for accurate, secure, PDPA-compliant data management.'}
+      {icon: 'ti-layout-dashboard', title: 'Analytics Dashboard', desc: 'Live dashboards for sales, marketing and operations, each built around the questions that team asks every week. Clear numbers, plain labels and drill-downs, with no need to understand the data model.'},
+      {icon: 'ti-database', title: 'Data Pipeline', desc: 'Pipelines that pull from your CRM, ERP, website, ad platforms and databases, clean and standardise the data, and load it into a warehouse on a schedule. Failures raise an alert instead of silently producing wrong numbers.'},
+      {icon: 'ti-report-analytics', title: 'Business Intelligence', desc: 'BI tools set up so non-technical colleagues can explore data, filter it and build their own reports, using a shared set of definitions that the data team maintains.'},
+      {icon: 'ti-trending-up', title: 'Predictive Analytics', desc: 'Statistical models that forecast sales, customer churn and demand a few weeks or months ahead. We explain what drives each forecast and how wrong it tends to be, so you can plan around it.'},
+      {icon: 'ti-target', title: 'Customer Analytics', desc: 'Behaviour analysis, audience segments and personalised offers that raise customer lifetime value (LTV). We start from what customers actually did, such as what they bought, when they stopped and what brought them back.'},
+      {icon: 'ti-shield-check', title: 'Data Governance', desc: 'Clear ownership, data definitions, access rules, retention and consent handling that comply with PDPA, so people can find the data they need and cannot see what they should not.'}
     ] : [
-      {icon: 'ti-layout-dashboard', title: 'Analytics Dashboard', desc: 'Dashboard Real-time ที่ทุกทีมเข้าใจง่าย ทั้งฝ่ายขาย การตลาด และปฏิบัติการ'},
-      {icon: 'ti-database', title: 'Data Pipeline', desc: 'วางระบบรวมข้อมูลจากทุกแหล่ง ทำความสะอาด และเก็บใน Data Warehouse อย่างเป็นระเบียบ'},
-      {icon: 'ti-report-analytics', title: 'Business Intelligence', desc: 'BI ที่ช่วยให้ทีมที่ไม่ใช่สายเทคนิคสำรวจข้อมูลและทำรายงานเองได้'},
-      {icon: 'ti-trending-up', title: 'Predictive Analytics', desc: 'ใช้โมเดลทางสถิติพยากรณ์แนวโน้มล่วงหน้า เช่น ยอดขาย ลูกค้าที่จะเลิกใช้ หรือความต้องการซื้อ'},
-      {icon: 'ti-target', title: 'Customer Analytics', desc: 'วิเคราะห์พฤติกรรมลูกค้า แบ่งกลุ่ม และปรับประสบการณ์ให้เหมาะกับแต่ละคน เพื่อเพิ่มมูลค่าตลอดอายุลูกค้า (LTV)'},
-      {icon: 'ti-shield-check', title: 'Data Governance', desc: 'วางนโยบายจัดการข้อมูลให้ถูกต้อง ปลอดภัย และเป็นไปตาม PDPA'}
+      {icon: 'ti-layout-dashboard', title: 'Analytics Dashboard', desc: 'Dashboard สดสำหรับฝ่ายขาย การตลาด และปฏิบัติการ แต่ละชุดสร้างจากคำถามที่ทีมนั้นถามทุกสัปดาห์ ตัวเลขชัด ป้ายชื่ออ่านง่าย เจาะรายละเอียดได้ โดยไม่ต้องเข้าใจโครงสร้างข้อมูล'},
+      {icon: 'ti-database', title: 'Data Pipeline', desc: 'Pipeline ที่ดึงข้อมูลจาก CRM, ERP, เว็บไซต์, แพลตฟอร์มโฆษณา และฐานข้อมูล ทำความสะอาดและปรับให้เป็นมาตรฐานเดียวกัน แล้วโหลดเข้า Warehouse ตามเวลาที่ตั้ง ถ้าพังจะแจ้งเตือน ไม่ใช่ปล่อยตัวเลขผิดออกมาเงียบๆ'},
+      {icon: 'ti-report-analytics', title: 'Business Intelligence', desc: 'ตั้งเครื่องมือ BI ให้เพื่อนร่วมงานที่ไม่ใช่สายเทคนิคสำรวจข้อมูล กรอง และทำรายงานเองได้ โดยใช้นิยามชุดเดียวกันที่ทีมข้อมูลดูแลอยู่'},
+      {icon: 'ti-trending-up', title: 'Predictive Analytics', desc: 'โมเดลทางสถิติที่พยากรณ์ยอดขาย ลูกค้าที่จะเลิกใช้ และความต้องการซื้อล่วงหน้าไม่กี่สัปดาห์ถึงไม่กี่เดือน เราอธิบายว่าอะไรผลักดันค่าพยากรณ์ และพลาดได้ประมาณไหน คุณจะวางแผนรอบมันได้'},
+      {icon: 'ti-target', title: 'Customer Analytics', desc: 'วิเคราะห์พฤติกรรม แบ่งกลุ่มลูกค้า และปรับข้อเสนอเฉพาะกลุ่มเพื่อเพิ่มมูลค่าตลอดอายุลูกค้า (LTV) เราเริ่มจากสิ่งที่ลูกค้าทำจริง เช่น ซื้ออะไร หยุดซื้อเมื่อไหร่ และอะไรทำให้กลับมา'},
+      {icon: 'ti-shield-check', title: 'Data Governance', desc: 'กำหนดเจ้าของข้อมูล นิยามข้อมูล กฎการเข้าถึง การเก็บรักษา และการจัดการความยินยอมให้เป็นไปตาม PDPA ทุกคนหาข้อมูลที่ต้องใช้เจอ และไม่เห็นข้อมูลที่ไม่ควรเห็น'}
     ]
   const steps       = isEN ? [
-      {no: '01', title: 'Data Audit', desc: 'Assess existing data, sources, quality, and gaps that need addressing.'},
-      {no: '02', title: 'Architecture Design', desc: 'Design a data architecture suited to your organisation size and needs.'},
-      {no: '03', title: 'Build & Integrate', desc: 'Develop pipelines, dashboards, and reports that work in the real world.'},
-      {no: '04', title: 'Train & Enable', desc: 'Train your team and build a sustainable data-driven culture.'}
+      {no: '01', title: 'Data Audit', desc: 'We list your data sources, test their quality, find the gaps, and agree with you which decisions the data should support first.'},
+      {no: '02', title: 'Architecture Design', desc: 'We design a data architecture that fits your size, budget and team skills, and say what we would deliberately leave out for now.'},
+      {no: '03', title: 'Build & Integrate', desc: 'We build the pipelines, dashboards and reports, and ship a first usable version in the first few weeks so you can react to something real.'},
+      {no: '04', title: 'Train & Enable', desc: 'We train your team, hand over documentation, and set up routines that keep the data trustworthy once we step back.'}
     ] : [
-      {no: '01', title: 'Data Audit', desc: 'ดูข้อมูลที่มี แหล่งที่มา คุณภาพ และช่องว่างที่ต้องแก้'},
-      {no: '02', title: 'Architecture Design', desc: 'ออกแบบ Data Architecture ให้เหมาะกับขนาดและความต้องการขององค์กร'},
-      {no: '03', title: 'Build & Integrate', desc: 'สร้าง Pipeline, Dashboard และรายงานที่ใช้ได้จริง'},
-      {no: '04', title: 'Train & Enable', desc: 'อบรมทีมให้ใช้เครื่องมือข้อมูลเป็น และสร้างวัฒนธรรมใช้ข้อมูลในระยะยาว'}
+      {no: '01', title: 'Data Audit', desc: 'เราลิสต์แหล่งข้อมูลของคุณ ทดสอบคุณภาพ หาช่องว่าง และตกลงกับคุณว่าข้อมูลควรช่วยตัดสินใจเรื่องไหนก่อน'},
+      {no: '02', title: 'Architecture Design', desc: 'ออกแบบ Data Architecture ให้เหมาะกับขนาด งบ และทักษะของทีม และบอกด้วยว่าอะไรที่เราตั้งใจยังไม่ทำตอนนี้'},
+      {no: '03', title: 'Build & Integrate', desc: 'สร้าง Pipeline, Dashboard และรายงาน และส่งเวอร์ชันแรกที่ใช้ได้ภายในไม่กี่สัปดาห์ คุณจะได้ตอบสนองกับของจริง'},
+      {no: '04', title: 'Train & Enable', desc: 'อบรมทีม ส่งมอบเอกสาร และตั้งกิจวัตรที่ทำให้ข้อมูลน่าเชื่อถือต่อไปหลังเราถอยออกมา'}
     ]
   const caseStudies = isEN ? [
-      {tag: 'FinTech · Bangkok', title: 'Real-time Dashboard for 50 branches', desc: 'Consolidated data from 8 systems into one dashboard for real-time performance visibility.', result: 'Report time reduced 85%'},
-      {tag: 'Retail · Nationwide', title: 'Customer Segmentation & Personalisation', desc: '12 segments with personalised offers driving higher conversion.', result: 'Revenue up 32%'},
-      {tag: 'Healthcare · Regional', title: 'Predictive Demand Planning', desc: '3-month forward forecast eliminating medicine stock-outs.', result: 'Stock-outs down 67%'}
+      {tag: 'FinTech · Bangkok', title: 'Real-time Dashboard for 50 branches', desc: 'Data from 8 systems consolidated into one dashboard, so head office sees how each of the 50 branches is performing as it happens rather than at month-end.', result: 'Report time reduced 85%'},
+      {tag: 'Retail · Nationwide', title: 'Customer Segmentation & Personalisation', desc: 'Customers were grouped into 12 segments from purchase behaviour, and each segment received offers matched to what it actually buys.', result: 'Revenue up 32%'},
+      {tag: 'Healthcare · Regional', title: 'Predictive Demand Planning', desc: 'A forecast looking 3 months ahead told purchasing what to order and when, which removed medicine stock-outs.', result: 'Stock-outs down 67%'}
     ] : [
-      {tag: 'FinTech · กรุงเทพฯ', title: 'Dashboard Real-time สำหรับ 50 สาขา', desc: 'รวมข้อมูลจาก 8 ระบบไว้ใน Dashboard เดียว ผู้บริหารดูผลงานแบบ Real-time ได้', result: 'ลดเวลาทำรายงาน 85%'},
-      {tag: 'Retail · ทั่วประเทศ', title: 'Customer Segmentation & Personalization', desc: 'แบ่งลูกค้า 12 กลุ่ม ส่งข้อเสนอเฉพาะกลุ่มเพื่อเพิ่ม Conversion', result: 'รายได้เพิ่ม 32%'},
-      {tag: 'Healthcare · ภูมิภาค', title: 'Predictive Demand Planning', desc: 'พยากรณ์ความต้องการยาล่วงหน้า 3 เดือน ลดปัญหายาขาดสต็อก', result: 'ยาขาดสต็อกลด 67%'}
+      {tag: 'FinTech · กรุงเทพฯ', title: 'Dashboard Real-time สำหรับ 50 สาขา', desc: 'รวมข้อมูลจาก 8 ระบบไว้ใน Dashboard เดียว สำนักงานใหญ่เห็นผลงานของทั้ง 50 สาขาตามที่เกิดขึ้นจริง ไม่ต้องรอสิ้นเดือน', result: 'ลดเวลาทำรายงาน 85%'},
+      {tag: 'Retail · ทั่วประเทศ', title: 'Customer Segmentation & Personalization', desc: 'แบ่งลูกค้าเป็น 12 กลุ่มจากพฤติกรรมการซื้อ และส่งข้อเสนอที่ตรงกับสิ่งที่แต่ละกลุ่มซื้อจริง', result: 'รายได้เพิ่ม 32%'},
+      {tag: 'Healthcare · ภูมิภาค', title: 'Predictive Demand Planning', desc: 'พยากรณ์ล่วงหน้า 3 เดือน บอกฝ่ายจัดซื้อว่าต้องสั่งอะไรและเมื่อไหร่ ทำให้ยาไม่ขาดสต็อก', result: 'ยาขาดสต็อกลด 67%'}
     ]
   const faqs        = isEN ? [
-      {q: 'What tools do you use?', a: 'We choose based on your stack and budget — Looker Studio, Power BI, or Metabase with BigQuery or Redshift.'},
-      {q: 'Can you consolidate data from multiple sources?', a: 'Yes. We design ETL pipelines from CRM, ERP, web analytics, and internal databases.'},
-      {q: 'Do we need a Data Engineer?', a: 'Not necessarily. We handle everything with full knowledge transfer included.'},
-      {q: 'How does PDPA affect analytics?', a: 'We design PDPA-compliant systems from day one — anonymisation, consent, and access control.'}
+      {q: 'What tools do you use?', a: 'We choose to fit your stack and budget: Looker Studio, Power BI or Metabase for dashboards, on top of BigQuery or Redshift. If you already pay for a tool that does the job, we use it.'},
+      {q: 'Can you consolidate data from multiple sources?', a: 'Yes. We build ETL pipelines from your CRM, ERP, web analytics, ad platforms and internal databases into one place, and agree a single definition for terms like revenue and active customer.'},
+      {q: 'Do we need a Data Engineer?', a: 'Not necessarily. We handle the build and include a proper knowledge transfer, so your own team, or a maintenance retainer with us, can keep it running.'},
+      {q: 'How does PDPA affect analytics?', a: 'We design for PDPA from day one: anonymisation where possible, consent tracking, access control by role, and retention rules, so analysis does not create a compliance problem later.'},
+      {q: 'How clean does our data need to be before we start?', a: 'It does not need to be clean, and it almost never is. Cleaning is part of the work. The audit tells you how bad it is, which fields matter for the decisions you care about, and what to fix at the source.'},
+      {q: 'How quickly will we see something useful?', a: 'We aim for a first working dashboard or pipeline within the first few weeks, then expand based on what proves valuable, instead of spending months on design documents.'},
+      {q: 'Can you work with spreadsheets and Thai-language data?', a: 'Yes. Spreadsheets are very often the starting point, and we handle Thai text, Thai date formats and mixed Thai-English fields when cleaning and modelling.'}
     ] : [
-      {q: 'ใช้เครื่องมืออะไรบ้าง?', a: 'เลือกตามระบบที่คุณมีและงบประมาณครับ เช่น Looker Studio, Power BI, Metabase ร่วมกับ BigQuery หรือ Redshift'},
-      {q: 'ข้อมูลอยู่หลายที่รวมได้ไหม?', a: 'ได้ครับ เราออกแบบ ETL Pipeline ดึงข้อมูลจาก CRM, ERP, Web Analytics และฐานข้อมูลภายในมารวมกัน'},
-      {q: 'ต้องมี Data Engineer ไหม?', a: 'ไม่จำเป็นครับ เราทำให้ได้ทั้งหมด พร้อมถ่ายทอดความรู้ให้ทีมคุณ'},
-      {q: 'PDPA กระทบ Analytics ยังไง?', a: 'เราออกแบบให้เป็นไปตาม PDPA ตั้งแต่ต้น ทั้งการทำข้อมูลให้ไม่ระบุตัวตน (Anonymization) และการควบคุมสิทธิ์เข้าถึง'}
+      {q: 'ใช้เครื่องมืออะไรบ้าง?', a: 'เลือกให้พอดีกับระบบและงบของคุณ เช่น Looker Studio, Power BI หรือ Metabase สำหรับ Dashboard บน BigQuery หรือ Redshift ถ้าคุณจ่ายเครื่องมือที่ทำงานนั้นได้อยู่แล้ว เราก็ใช้ตัวนั้น'},
+      {q: 'ข้อมูลอยู่หลายที่รวมได้ไหม?', a: 'ได้ เราสร้าง ETL Pipeline ดึงข้อมูลจาก CRM, ERP, Web Analytics, แพลตฟอร์มโฆษณา และฐานข้อมูลภายในมารวมไว้ที่เดียว และตกลงนิยามชุดเดียวสำหรับคำอย่างรายได้และลูกค้าที่ยังใช้งานอยู่'},
+      {q: 'ต้องมี Data Engineer ไหม?', a: 'ไม่จำเป็น เราสร้างให้ทั้งหมดและถ่ายทอดความรู้ให้ครบ ทีมของคุณเองหรือบริการดูแลรายเดือนของเราก็ดูแลต่อได้'},
+      {q: 'PDPA กระทบ Analytics ยังไง?', a: 'เราออกแบบให้ตรง PDPA ตั้งแต่ต้น ทั้งการทำข้อมูลให้ไม่ระบุตัวตนเมื่อทำได้ การบันทึกความยินยอม การคุมสิทธิ์ตามบทบาท และกฎการเก็บรักษา การวิเคราะห์ข้อมูลจะได้ไม่กลายเป็นปัญหา Compliance ทีหลัง'},
+      {q: 'ข้อมูลต้องสะอาดแค่ไหนก่อนเริ่ม?', a: 'ไม่ต้องสะอาดมาก่อน และแทบไม่เคยสะอาดอยู่แล้ว การทำความสะอาดเป็นส่วนหนึ่งของงาน การตรวจข้อมูลจะบอกว่าแย่แค่ไหน ฟิลด์ไหนสำคัญกับการตัดสินใจที่คุณสนใจ และอะไรควรแก้ที่ต้นทาง'},
+      {q: 'จะเห็นอะไรที่ใช้ได้เร็วแค่ไหน?', a: 'เราตั้งเป้าส่ง Dashboard หรือ Pipeline ชุดแรกที่ใช้ได้ภายในไม่กี่สัปดาห์แรก แล้วขยายตามสิ่งที่เห็นว่าได้ผล แทนการใช้เวลาหลายเดือนไปกับเอกสารออกแบบ'},
+      {q: 'ทำงานกับสเปรดชีตและข้อมูลภาษาไทยได้ไหม?', a: 'ได้ สเปรดชีตมักเป็นจุดเริ่มต้นอยู่แล้ว และเราจัดการข้อความภาษาไทย รูปแบบวันที่แบบไทย และฟิลด์ที่ผสมไทยกับอังกฤษ ทั้งตอนทำความสะอาดและทำโมเดลข้อมูล'}
     ]
   const related     = isEN ? [
       {label: 'Growth Strategy', href: '/services/growth-strategy'},
@@ -193,15 +199,19 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   )
 
   const capabilities = isEN ? [
-    { icon: 'ti-server-2', title: 'Warehouses & Lakehouses', desc: 'Scalable analytical storage with clear models, ownership, and performance for BI and AI workloads.' },
-    { icon: 'ti-report-analytics', title: 'Business Intelligence', desc: 'Dashboards and semantic layers that answer real operational questions, not vanity metrics.' },
-    { icon: 'ti-bolt', title: 'Streaming & Real-Time', desc: 'Event pipelines and low-latency analytics for products that need answers in seconds, not overnight.' },
-    { icon: 'ti-shield-check', title: 'Quality & Governance', desc: 'Contracts, lineage, access control, and quality checks so teams can trust the numbers.' },
+    { icon: 'ti-server-2', title: 'Warehouses & Lakehouses', desc: 'Analytical storage with clear models and named owners, fast enough for both dashboards and AI workloads, and able to grow with your data.' },
+    { icon: 'ti-report-analytics', title: 'Business Intelligence', desc: 'Dashboards and a shared semantic layer that answer real operating questions, such as which branch is behind target, rather than vanity metrics.' },
+    { icon: 'ti-bolt', title: 'Streaming & Real-Time', desc: 'Event pipelines and low-latency analytics for products that need an answer in seconds, such as fraud flags or live stock, not overnight.' },
+    { icon: 'ti-shield-check', title: 'Quality & Governance', desc: 'Data contracts, lineage, access control and automated quality checks, so every team can trust the figures and see where they came from.' },
+    { icon: 'ti-trending-up', title: 'Predictive Analytics', desc: 'Forecasts for sales, churn and demand built on clean history, with plain explanations of the drivers and the expected error.' },
+    { icon: 'ti-target', title: 'Customer Analytics', desc: 'Behaviour analysis and segmentation that show who buys, who leaves and what brings them back, as a base for personalised offers.' },
   ] : [
-    { icon: 'ti-server-2', title: 'Warehouses & Lakehouses', desc: 'ที่เก็บข้อมูลเพื่อการวิเคราะห์ที่รองรับการเติบโต มีโมเดลข้อมูลชัดเจน ระบุเจ้าของข้อมูล และเร็วพอสำหรับทั้ง BI และ AI' },
-    { icon: 'ti-report-analytics', title: 'Business Intelligence', desc: 'Dashboard และ Semantic Layer ที่ตอบคำถามการทำงานจริง ไม่ใช่แค่ตัวเลขสวยๆ' },
-    { icon: 'ti-bolt', title: 'Streaming & Real-Time', desc: 'Event Pipeline และ Analytics ที่ตอบสนองเร็ว สำหรับผลิตภัณฑ์ที่ต้องการคำตอบภายในไม่กี่วินาที ไม่ใช่ข้ามคืน' },
-    { icon: 'ti-shield-check', title: 'Quality & Governance', desc: 'Data Contract, Lineage, การควบคุมสิทธิ์ และการตรวจคุณภาพ เพื่อให้ทุกทีมเชื่อถือตัวเลข' },
+    { icon: 'ti-server-2', title: 'Warehouses & Lakehouses', desc: 'ที่เก็บข้อมูลเพื่อการวิเคราะห์ที่มีโมเดลชัดเจนและระบุเจ้าของ เร็วพอสำหรับทั้ง Dashboard และงาน AI และโตตามข้อมูลของคุณได้' },
+    { icon: 'ti-report-analytics', title: 'Business Intelligence', desc: 'Dashboard และ Semantic Layer ร่วมที่ตอบคำถามการทำงานจริง เช่น สาขาไหนตามเป้า ไม่ใช่ตัวเลขสวยๆ ที่ไม่ได้ช่วยตัดสินใจ' },
+    { icon: 'ti-bolt', title: 'Streaming & Real-Time', desc: 'Event Pipeline และ Analytics ที่ตอบเร็ว สำหรับผลิตภัณฑ์ที่ต้องการคำตอบในไม่กี่วินาที เช่น แจ้งธุรกรรมน่าสงสัยหรือสต็อกสด ไม่ใช่ข้ามคืน' },
+    { icon: 'ti-shield-check', title: 'Quality & Governance', desc: 'Data Contract, Lineage, การคุมสิทธิ์ และการตรวจคุณภาพอัตโนมัติ ทุกทีมจะเชื่อถือตัวเลขได้ และเห็นว่าตัวเลขมาจากไหน' },
+    { icon: 'ti-trending-up', title: 'Predictive Analytics', desc: 'พยากรณ์ยอดขาย ลูกค้าที่จะเลิกใช้ และความต้องการซื้อจากข้อมูลย้อนหลังที่สะอาด พร้อมอธิบายปัจจัยและความคลาดเคลื่อนที่คาดไว้ด้วยภาษาง่ายๆ' },
+    { icon: 'ti-target', title: 'Customer Analytics', desc: 'วิเคราะห์พฤติกรรมและแบ่งกลุ่ม ให้เห็นว่าใครซื้อ ใครหายไป และอะไรทำให้กลับมา เป็นฐานของข้อเสนอเฉพาะกลุ่ม' },
   ]
 
   const techStack = [
@@ -217,19 +227,19 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   ] as { label: string; icon?: string; svg?: string }[]
 
   const approachSteps = isEN ? [
-    { no: '01', title: 'Assessment', desc: 'Sources, consumers, and data gaps' },
-    { no: '02', title: 'Architecture', desc: 'Pipeline, warehouse, and access design' },
-    { no: '03', title: 'Implementation', desc: 'Ingestion, transforms, and models' },
-    { no: '04', title: 'Integration', desc: 'BI, apps, and AI consumers wired in' },
-    { no: '05', title: 'Optimization', desc: 'Cost, performance, and quality tuning' },
-    { no: '06', title: 'Support', desc: 'Ongoing ops and model evolution' },
+    { no: '01', title: 'Assessment', desc: 'Sources, consumers and data gaps' },
+    { no: '02', title: 'Architecture', desc: 'Pipeline, warehouse and access design' },
+    { no: '03', title: 'Implementation', desc: 'Ingestion, transforms and models' },
+    { no: '04', title: 'Integration', desc: 'BI, apps and AI wired to the data' },
+    { no: '05', title: 'Optimization', desc: 'Cost, speed and quality tuning' },
+    { no: '06', title: 'Support', desc: 'Ongoing operations and model changes' },
   ] : [
-    { no: '01', title: 'Assessment', desc: 'แหล่งข้อมูล ผู้ใช้ และช่องว่างที่ต้องแก้' },
+    { no: '01', title: 'Assessment', desc: 'แหล่งข้อมูล ผู้ใช้ข้อมูล และช่องว่างที่ต้องแก้' },
     { no: '02', title: 'Architecture', desc: 'ออกแบบ Pipeline, Warehouse และสิทธิ์การเข้าถึง' },
     { no: '03', title: 'Implementation', desc: 'พัฒนาส่วนนำเข้าข้อมูล (Ingestion), Transform และ Model' },
-    { no: '04', title: 'Integration', desc: 'เชื่อมต่อ BI, แอป และ AI เข้ากับข้อมูล' },
+    { no: '04', title: 'Integration', desc: 'เชื่อม BI แอป และ AI เข้ากับข้อมูล' },
     { no: '05', title: 'Optimization', desc: 'ปรับค่าใช้จ่าย ความเร็ว และคุณภาพข้อมูล' },
-    { no: '06', title: 'Support', desc: 'ดูแลระบบต่อเนื่องและพัฒนา Model เพิ่ม' },
+    { no: '06', title: 'Support', desc: 'ดูแลระบบต่อเนื่องและปรับ Model เพิ่มเมื่อต้องใช้' },
   ]
 
   const darkFaqs = isEN ? [
@@ -244,12 +254,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   ] : [
     { q: 'Haliviq ให้บริการด้าน Data อะไรบ้าง?', a: 'Data Pipeline, Data Warehouse, Real-time Analytics และ Business Intelligence Dashboard พร้อม Governance ที่ทำให้ข้อมูลเชื่อถือได้ เป้าหมายของเราคือเปลี่ยนข้อมูลจากการทำงานจริงให้เป็นการตัดสินใจที่ใช้ได้ ไม่ใช่แค่ Spreadsheet ที่สวยขึ้น โปรเจกต์ทั่วไปเริ่มจากการดูแหล่งข้อมูลและการตัดสินใจที่คุณอยากให้ข้อมูลช่วย ต่อด้วยการออกแบบและพัฒนา แล้วเชื่อมต่อ ปรับปรุง และดูแลต่อเนื่องหลังเปิดใช้งาน' },
     { q: 'ใช้เครื่องมืออะไรบ้างสำหรับงานข้อมูล?', a: 'Snowflake, Databricks, BigQuery, Apache Spark, Kafka และ Airflow สำหรับงานวิศวกรรมข้อมูล, dbt สำหรับ Transformation และ Modeling และ Tableau หรือ Power BI สำหรับวิเคราะห์และทำรายงาน เราเลือกชุดที่เหมาะกับระบบที่คุณมี ทักษะของทีม และงบประมาณ ไม่ยึดติดกับผู้ให้บริการรายใดรายหนึ่ง' },
-    { q: 'ข้อมูลกระจายอยู่หลายระบบ รวมให้ได้ไหม?', a: 'ได้ครับ และนี่คือจุดเริ่มต้นที่พบบ่อยที่สุด เราสร้าง Pipeline ที่ดึงระบบการทำงานของคุณ (CRM, ERP, ฐานข้อมูลของผลิตภัณฑ์, Event Tracking) มารวมไว้ใน Warehouse เดียว พร้อมโมเดลข้อมูลที่มีเอกสารอธิบายชัดเจน ทุกทีมจะได้ใช้ตัวเลขชุดเดียวกัน ไม่ต้องมี "Revenue" สามเวอร์ชันที่ต่างกันเล็กน้อย แล้วแต่ว่าใครเป็นคนดึงรายงาน' },
+    { q: 'ข้อมูลกระจายอยู่หลายระบบ รวมให้ได้ไหม?', a: 'ได้ และนี่คือจุดเริ่มต้นที่พบบ่อยที่สุด เราสร้าง Pipeline ที่ดึงระบบการทำงานของคุณ (CRM, ERP, ฐานข้อมูลของผลิตภัณฑ์, Event Tracking) มารวมไว้ใน Warehouse เดียว พร้อมโมเดลข้อมูลที่มีเอกสารอธิบายชัดเจน ทุกทีมจะได้ใช้ตัวเลขชุดเดียวกัน ไม่ต้องมี "Revenue" สามเวอร์ชันที่ต่างกันเล็กน้อย แล้วแต่ว่าใครเป็นคนดึงรายงาน' },
     { q: 'เริ่มโปรเจกต์ข้อมูลกับ Haliviq ได้อย่างไร?', a: 'เราเริ่มจากการตรวจข้อมูลที่คุณมีสั้นๆ และดูว่าคุณอยากใช้ข้อมูลตัดสินใจเรื่องอะไร จากนั้นส่งมอบ Pipeline หรือ Dashboard ชุดแรกที่ใช้ได้จริงอย่างรวดเร็ว ปกติภายในไม่กี่สัปดาห์แรก ไม่ใช่เอกสารออกแบบ 6 เดือนที่ยังใช้อะไรไม่ได้ หลังจากนั้นค่อยๆ ขยายขอบเขตตามสิ่งที่เห็นว่าได้ผลจริง' },
     { q: 'โปรเจกต์ Data Engineering ใช้เวลานานแค่ไหน?', a: 'Pipeline หรือ Dashboard ที่เน้นด้านธุรกิจด้านเดียว ปกติส่งมอบได้ใน 4-8 สัปดาห์หลังเริ่มงาน ส่วนการย้าย Warehouse เต็มรูปแบบ หรือการรวมหลายแหล่งข้อมูลพร้อม Governance และ BI มักใช้ 3-6 เดือน ขึ้นอยู่กับจำนวนระบบต้นทางและปริมาณข้อมูลย้อนหลังที่ต้องโหลดเข้ามา เราตั้งใจส่งของที่ใช้ได้จริงตั้งแต่ Sprint แรก ไม่ให้คุณรอจนจบโปรเจกต์' },
     { q: 'โปรเจกต์ข้อมูลมีค่าใช้จ่ายเท่าไหร่?', a: 'ค่าใช้จ่ายขึ้นอยู่กับจำนวนระบบต้นทาง ปริมาณข้อมูล และว่าต้องใช้ Real-time Streaming หรือไม่เป็นหลัก Dashboard หรือ Pipeline เดียวที่ขอบเขตชัดเจน ปกติเริ่มที่ประมาณหลักแสนต้นๆ (บาท) ส่วน Warehouse เต็มรูปแบบที่เชื่อมหลายระบบ พร้อม Governance และ BI ครบทุกแผนก มักสูงกว่านั้นหลายเท่า เราเสนอราคาคงที่แยกตามช่วงงานหลังประเมินเบื้องต้น และแยกประมาณค่า Platform ที่ต้องจ่ายต่อเนื่อง (Compute ของ Snowflake/Databricks, Storage) ให้ชัดเจน จะได้ไม่มีค่าใช้จ่ายที่ไม่คาดคิด' },
     { q: 'PDPA และความเป็นส่วนตัวของข้อมูลส่งผลต่อระบบ Analytics อย่างไร?', a: 'เราออกแบบให้เป็นไปตาม PDPA ตั้งแต่วันแรก ไม่รอมาแก้ทีหลัง ครอบคลุมการทำข้อมูลให้ไม่ระบุตัวตน (Anonymization หรือ Pseudonymization) ตามความเหมาะสม การบันทึกความยินยอมที่มีเอกสารรองรับ การคุมสิทธิ์ตามบทบาท ละเอียดถึงระดับคอลัมน์เมื่อจำเป็น และนโยบายเก็บรักษาข้อมูลที่ชัดเจน สำหรับอุตสาหกรรมที่มีข้อกำหนดเฉพาะ เรากำหนดเรื่องที่ตั้งของข้อมูล (Data Residency) ไว้ในการออกแบบตั้งแต่ต้นได้ด้วย' },
-    { q: 'ต้องจ้าง Data Engineer มาดูแลต่อหลังเปิดใช้งานไหม?', a: 'ไม่จำเป็นครับ เราส่งมอบเอกสารครบ มีการสอนวิธีใช้งานให้ และถ้าคุณมีทีมเทคนิคอยู่แล้ว เราจะอบรมให้ดูแลและต่อยอด Pipeline เองได้ ถ้ายังไม่มีทีมข้อมูล เรามีบริการดูแลรายเดือนที่รวมการเฝ้าระวัง การแก้ปัญหาเมื่อระบบมีเหตุ และการปรับ Model ทีละนิด ระบบจะได้ไม่พังเงียบๆ โดยไม่มีใครรู้' },
+    { q: 'ต้องจ้าง Data Engineer มาดูแลต่อหลังเปิดใช้งานไหม?', a: 'ไม่จำเป็น เราส่งมอบเอกสารครบ มีการสอนวิธีใช้งานให้ และถ้าคุณมีทีมเทคนิคอยู่แล้ว เราจะอบรมให้ดูแลและต่อยอด Pipeline เองได้ ถ้ายังไม่มีทีมข้อมูล เรามีบริการดูแลรายเดือนที่รวมการเฝ้าระวัง การแก้ปัญหาเมื่อระบบมีเหตุ และการปรับ Model ทีละนิด ระบบจะได้ไม่พังเงียบๆ โดยไม่มีใครรู้' },
   ]
 
   const postHeroSlot = (
@@ -400,7 +410,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
         </h2>
         <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-          {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+          {isEN ? "We'd love to hear what you're building." : 'เรายินดีฟังว่าคุณกำลังสร้างอะไรอยู่'}
         </p>
         <div className="flex flex-wrap items-center gap-6">
           <Link

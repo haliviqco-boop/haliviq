@@ -29,101 +29,109 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge    = isEN ? 'AI / Voice Agents'  : 'AI / Voice Agents'
   const title    = isEN ? 'AI That Talks'  : 'AI ที่พูดคุยได้จริง'
   const subtitle = isEN ? 'Like a Human, Not a Menu'    : 'เหมือนคุยกับคนจริง ไม่ใช่กดเมนู'
-  const heroDesc = isEN ? 'Natural, low-latency voice agents that handle real phone calls — full telephony integration, 25+ languages including Thai, and deep integration into your existing systems.'  : 'Voice Agent ที่คุยเป็นธรรมชาติ ตอบไว รับสายโทรศัพท์จริงได้ และเชื่อมกับระบบโทรศัพท์ได้เต็มรูปแบบ รองรับกว่า 25 ภาษารวมถึงภาษาไทย และเชื่อมลึกเข้ากับระบบที่คุณมีอยู่'
-  const whyTitle = isEN ? 'Why voice is the interface customers still prefer'    : 'ทำไมลูกค้ายังชอบคุยด้วยเสียงมากที่สุด'
-  const whyDesc  = isEN ? 'Phone calls remain the fastest way for customers to get answers and the hardest channel to scale with humans alone. AI voice agents close that gap without making callers feel like they are talking to a machine.'  : 'โทรศัพท์ยังเป็นช่องทางที่ลูกค้าได้คำตอบเร็วที่สุด แต่ก็เป็นช่องทางที่ขยายด้วยคนอย่างเดียวได้ยากที่สุด AI Voice Agent ช่วยแก้ตรงนี้ โดยที่ผู้โทรไม่รู้สึกว่ากำลังคุยกับเครื่อง'
+  const heroDesc = isEN ? 'Haliviq builds AI voice agents that pick up real phone calls, work out what the caller needs, and finish the job: checking a booking, looking up an order, updating a record. They do not just read a script and pass the call along. The agent connects to your phone lines over SIP and PSTN, speaks Thai plus 25+ other languages, and answers quickly enough that the conversation keeps its natural rhythm. Because it plugs into the CRM, booking tools, and APIs you already run, the answer a caller hears is the same one your own team would give.'  : 'Haliviq สร้าง Voice Agent ที่รับสายโทรศัพท์จริงให้คุณ ฟังว่าผู้โทรต้องการอะไร แล้วจัดการให้จบ ไม่ว่าจะเช็คการจอง ดูสถานะออเดอร์ หรืออัปเดตข้อมูลลูกค้า ไม่ใช่แค่อ่านสคริปต์แล้วโอนสายต่อ ระบบเชื่อมกับสายโทรศัพท์ของคุณผ่าน SIP และ PSTN คุยได้ทั้งภาษาไทยและอีกกว่า 25 ภาษา และตอบไวพอที่จังหวะการคุยยังเป็นธรรมชาติ ที่สำคัญคือเชื่อมกับ CRM ระบบจอง และ API ที่คุณใช้อยู่แล้ว คำตอบที่ลูกค้าได้ยินจึงเป็นคำตอบเดียวกับที่ทีมของคุณจะตอบเอง'
+  const whyTitle = isEN ? 'Why customers still pick up the phone first'    : 'ทำไมลูกค้ายังเลือกโทรหาเราก่อนเสมอ'
+  const whyDesc  = isEN ? 'When something goes wrong, a booking changes, or a parcel is late, many people would rather call than type. That makes the phone the fastest route to an answer and also the hardest channel to staff, because every extra call needs another person on the line. A voice agent takes that pressure off your team without making the caller feel they have been handed to a machine.'  : 'พอมีเรื่องด่วน อยากเลื่อนนัด หรือพัสดุมาช้า หลายคนเลือกโทรมากกว่าพิมพ์ โทรศัพท์จึงเป็นช่องทางที่ได้คำตอบเร็วที่สุด แต่ก็เป็นช่องทางที่หาคนมารับยากที่สุดเหมือนกัน เพราะสายที่เพิ่มขึ้นทุกสายต้องมีคนรับเพิ่ม Voice Agent ช่วยแบ่งภาระตรงนี้ให้ทีมคุณ โดยที่คนโทรไม่รู้สึกว่ากำลังถูกโยนให้เครื่อง'
   const ctaTitle = isEN ? 'Ready to let AI answer the phone?'    : 'พร้อมให้ AI รับสายแทนคุณหรือยัง?'
-  const ctaDesc  = isEN ? 'Start with a working prototype on your real call flows, not a generic demo script.'   : 'เริ่มด้วยต้นแบบที่ใช้งานได้จริงบนขั้นตอนการรับสายของคุณ ไม่ใช่สคริปต์สาธิตทั่วไป'
+  const ctaDesc  = isEN ? 'Start with a working prototype built on your own call flows, not a generic demo script. Tell us which calls eat most of your team’s day and we will show you what an agent can take off their hands.'   : 'เริ่มจากต้นแบบที่ใช้งานได้จริงบนขั้นตอนการรับสายของคุณเอง ไม่ใช่สคริปต์สาธิตทั่วไป บอกเราว่าสายแบบไหนกินเวลาทีมมากที่สุด แล้วเราจะให้ดูว่า Agent ช่วยรับแทนได้แค่ไหน'
   const overviewText = isEN
-    ? 'We build production-grade AI voice agents that handle real phone calls end to end: full telephony integration over SIP and PSTN, natural low-latency conversation that does not feel like a bot, support for 25+ languages including Thai, and deep integration into the systems that power the actual answer — CRM, booking, order status, and internal APIs. The result is a voice agent that resolves calls, not one that reads a script and transfers everything hard to a human.'
-    : 'เราสร้าง AI Voice Agent ที่รับสายโทรศัพท์จริงได้ครบ ตั้งแต่เชื่อมระบบโทรศัพท์ผ่าน SIP และ PSTN, คุยเป็นธรรมชาติและตอบไว ไม่รู้สึกเหมือนคุยกับบอต, รองรับกว่า 25 ภาษารวมถึงภาษาไทย และเชื่อมลึกกับระบบที่ให้คำตอบจริง เช่น CRM ระบบจอง สถานะออเดอร์ และ API ภายใน ผลที่ได้คือ Voice Agent ที่ปิดเรื่องได้จริง ไม่ใช่แค่อ่านสคริปต์แล้วโอนสายทุกครั้งที่เจอเรื่องยาก'
+    ? 'We build voice agents for businesses whose phones never stop ringing: clinics taking appointments, retailers answering order questions, logistics teams giving status updates, and service desks sorting out the same ten requests all day. Each agent is wired to your phone system over SIP and PSTN, so it answers on your existing numbers. It listens in natural speech, lets the caller interrupt, replies in under half a second, and works in Thai and 25+ other languages. What makes it useful is the plumbing behind the voice. We connect it to your CRM, booking tool, order system, and internal APIs, so it can look things up, make changes, and confirm them back to the caller. When a request is outside what it should handle, it passes the call to a person together with the full conversation so far, and the caller never has to start over. We design the call flows with your team, test them against real caller behaviour, and keep reading transcripts after launch to raise the share of calls the agent can close on its own.'
+    : 'เราสร้าง Voice Agent ให้ธุรกิจที่โทรศัพท์ดังไม่หยุด เช่น คลินิกที่รับนัดหมาย ร้านค้าที่ต้องตอบเรื่องออเดอร์ ทีมโลจิสติกส์ที่ต้องแจ้งสถานะพัสดุ หรือฝ่ายบริการที่ต้องตอบคำถามเดิมๆ ทั้งวัน Agent ทุกตัวเชื่อมกับระบบโทรศัพท์ของคุณผ่าน SIP และ PSTN จึงรับสายที่เบอร์เดิมได้เลย ฟังคำพูดธรรมชาติ ให้ผู้โทรพูดแทรกได้ ตอบกลับไม่ถึงครึ่งวินาที และคุยได้ทั้งภาษาไทยและอีกกว่า 25 ภาษา แต่สิ่งที่ทำให้ใช้งานได้จริงคือระบบเบื้องหลังเสียง เราเชื่อม Agent เข้ากับ CRM ระบบจอง ระบบออเดอร์ และ API ภายในของคุณ ให้ค้นข้อมูล แก้ไขรายการ แล้วยืนยันกลับกับผู้โทรได้เลย ถ้าเรื่องไหนไม่ควรให้ Agent จัดการเอง ก็โอนสายให้คนพร้อมส่งบทสนทนาทั้งหมดไปด้วย ผู้โทรไม่ต้องเล่าใหม่ เราออกแบบขั้นตอนการรับสายร่วมกับทีมของคุณ ทดสอบกับพฤติกรรมผู้โทรจริง และอ่านบันทึกการโทรต่อหลังเปิดใช้งาน เพื่อเพิ่มสัดส่วนสายที่ Agent ปิดเรื่องได้เอง'
 
   const heroBullets = isEN ? [
-      'Full telephony integration over SIP and PSTN, ready for real call volume',
-      'Natural, low-latency conversation with barge-in and interruption handling',
-      '25+ languages including native-quality Thai',
-      'Deep integration into CRM, booking, and internal systems for real answers',
-      'Built to scale from pilot to full call-center volume',
+      'Connects to your phone lines over SIP and PSTN, so it answers on the numbers you already use',
+      'Natural, low-latency conversation that lets callers interrupt, like they would with a person',
+      'Thai plus 25+ other languages, with natural pronunciation rather than machine-translated replies',
+      'Reads and updates your CRM, booking, and internal systems so the answer is the real one',
+      'Hands difficult calls to a human with the full conversation attached',
+      'Grows from a single-flow pilot to full call-center volume',
     ] : [
-      'เชื่อมระบบโทรศัพท์เต็มรูปแบบผ่าน SIP และ PSTN รองรับจำนวนสายจริง',
-      'คุยเป็นธรรมชาติ ตอบไว รองรับการพูดแทรกและตัดบท',
-      'รองรับกว่า 25 ภาษา รวมถึงภาษาไทยในระดับเจ้าของภาษา',
-      'เชื่อมลึกกับ CRM ระบบจอง และระบบภายใน เพื่อให้ตอบถูกต้องจริง',
-      'ขยายได้ตั้งแต่ทดลองใช้ไปจนถึงปริมาณสายระดับคอลเซ็นเตอร์',
+      'เชื่อมสายโทรศัพท์ผ่าน SIP และ PSTN รับสายที่เบอร์เดิมที่คุณใช้อยู่ได้เลย',
+      'คุยเป็นธรรมชาติ ตอบไว ให้ผู้โทรพูดแทรกได้เหมือนคุยกับคนจริง',
+      'คุยได้ทั้งภาษาไทยและอีกกว่า 25 ภาษา ออกเสียงเป็นธรรมชาติ ไม่ใช่คำแปลจากเครื่อง',
+      'ดึงและอัปเดตข้อมูลใน CRM ระบบจอง และระบบภายในได้ คำตอบจึงตรงกับของจริง',
+      'ถ้าเรื่องยากเกินไป โอนสายให้คนพร้อมส่งบทสนทนาทั้งหมดไปด้วย',
+      'เริ่มจากขั้นตอนเดียวแบบทดลองใช้ แล้วขยายถึงปริมาณสายระดับคอลเซ็นเตอร์ได้',
     ]
   const whyPoints   = isEN ? [
-      'Voice remains the channel customers reach for when something goes wrong and they want it fixed fast.',
-      'Low-latency, natural-sounding agents keep callers engaged instead of hanging up in frustration.',
-      'Multilingual support means one system serves every customer, not just English speakers.',
-      'Deep system integration lets the agent actually resolve issues, not just collect information.',
-      'A well-built voice agent absorbs volume spikes without hiring and training more staff.',
+      'People call when something has gone wrong and they want it fixed now, so the first thirty seconds decide whether they stay patient.',
+      'A quick, natural-sounding agent keeps callers talking instead of hanging up halfway through a menu.',
+      'One system can answer in Thai, English, and 25+ other languages, so tourists, expats, and regional customers are covered.',
+      'When the agent can read and change records in your systems, it solves the problem instead of only taking a message.',
+      'Calls spike after a promotion or an outage. An agent can take them all at once without extra hiring or training.',
     ] : [
-      'ลูกค้ายังเลือกโทรเมื่อมีปัญหาและอยากได้คำตอบเร็วที่สุด',
-      'Agent ที่ตอบไวและฟังเป็นธรรมชาติ ช่วยให้ลูกค้าไม่วางสายด้วยความหงุดหงิด',
-      'รองรับหลายภาษา ระบบเดียวจึงดูแลลูกค้าได้ทุกคน ไม่ใช่แค่คนพูดอังกฤษ',
-      'เชื่อมระบบลึก ทำให้ Agent แก้ปัญหาได้จริง ไม่ใช่แค่จดข้อมูลแล้วส่งต่อ',
-      'Voice Agent ที่สร้างมาดีรับสายที่เข้ามาพุ่งสูงได้ โดยไม่ต้องจ้างและอบรมคนเพิ่ม',
+      'คนโทรมาตอนมีเรื่องด่วนและอยากให้แก้เลย สามสิบวินาทีแรกจึงเป็นตัวตัดสินว่าเขายังใจเย็นอยู่หรือเปล่า',
+      'Agent ที่ตอบไวและฟังเป็นธรรมชาติ ช่วยให้ลูกค้าอยู่คุยต่อ ไม่วางสายกลางเมนู',
+      'ระบบเดียวตอบได้ทั้งไทย อังกฤษ และอีกกว่า 25 ภาษา ครอบคลุมทั้งนักท่องเที่ยว ชาวต่างชาติ และลูกค้าในภูมิภาค',
+      'ถ้า Agent อ่านและแก้ข้อมูลในระบบของคุณได้ ก็แก้ปัญหาให้เลย ไม่ใช่แค่รับเรื่องไว้',
+      'หลังจัดโปรโมชันหรือเวลาระบบมีปัญหา สายจะเข้ามาพร้อมกันเยอะ Agent รับได้หมดโดยไม่ต้องจ้างหรืออบรมคนเพิ่ม',
     ]
   const outcomes    = isEN ? [
-      {stat: '25+', label: 'Languages Supported', desc: 'Including native-quality Thai'},
-      {stat: '<500ms', label: 'Response Latency', desc: 'Natural conversational pace'},
-      {stat: '70%', label: 'Calls Fully Resolved', desc: 'Without human transfer'},
+      {stat: '25+', label: 'Languages Supported', desc: 'Thai included'},
+      {stat: '<500ms', label: 'Response Latency', desc: 'Keeps the pace of a real conversation'},
+      {stat: '70%', label: 'Calls Fully Resolved', desc: 'Without a transfer to a person'},
       {stat: '24/7', label: 'Availability', desc: 'No queue, no hold music'}
     ] : [
-      {stat: '25+', label: 'ภาษาที่รองรับ', desc: 'รวมถึงภาษาไทยคุณภาพสูง'},
-      {stat: '<500ms', label: 'Response Latency', desc: 'จังหวะการคุยที่เป็นธรรมชาติ'},
+      {stat: '25+', label: 'ภาษาที่รองรับ', desc: 'รวมภาษาไทย'},
+      {stat: '<500ms', label: 'ตอบกลับภายใน', desc: 'จังหวะการคุยเหมือนคุยกับคนจริง'},
       {stat: '70%', label: 'สายที่ปิดจบได้เอง', desc: 'ไม่ต้องโอนสายหาคน'},
       {stat: '24/7', label: 'พร้อมรับสายตลอดเวลา', desc: 'ไม่มีคิว ไม่มีเพลงรอสาย'}
     ]
   const features    = isEN ? [
-      {icon: 'ti-phone-calling', title: 'Full Telephony Integration', desc: 'Native SIP and PSTN integration so the agent answers real phone lines, not just a web widget.'},
-      {icon: 'ti-language', title: '25+ Languages Including Thai', desc: 'Natural, native-quality conversation across languages, not machine-translated responses.'},
-      {icon: 'ti-message-2', title: 'Natural Low-Latency Conversation', desc: 'Sub-second response times with barge-in support so calls feel like talking to a person.'},
-      {icon: 'ti-plug-connected', title: 'Deep System Integration', desc: 'Live connections into CRM, booking, and internal APIs so the agent gives real answers.'},
-      {icon: 'ti-adjustments', title: 'Conversation Design', desc: 'Call flows engineered around your actual use cases, escalation paths, and edge cases.'},
-      {icon: 'ti-chart-line', title: 'Monitoring & Improvement', desc: 'Call transcripts, analytics, and ongoing tuning to keep resolution rates climbing.'}
+      {icon: 'ti-phone-calling', title: 'Phone Line Integration', desc: 'The agent connects to your carrier or PBX over SIP and PSTN and answers real phone lines, on the numbers customers already know. It is not a chat widget with a microphone bolted on.'},
+      {icon: 'ti-language', title: 'Thai and 25+ Languages', desc: 'Callers speak the way they normally do and the agent understands and replies in the same language, with natural pronunciation and tone instead of translated text read aloud.'},
+      {icon: 'ti-message-2', title: 'Fast, Natural Conversation', desc: 'Replies come back quickly and the caller can talk over the agent at any time, the way they would with a person. That keeps the call moving and stops people hanging up.'},
+      {icon: 'ti-plug-connected', title: 'Connected to Your Systems', desc: 'The agent talks to your CRM, booking tool, order system, and internal APIs in real time, so it can check a status, change an appointment, or log a request and then confirm it.'},
+      {icon: 'ti-adjustments', title: 'Call Flow Design', desc: 'We write the call flows with your team around the requests you really get: what the agent says, what it asks, when it hands over, and what it does with the odd calls that do not fit.'},
+      {icon: 'ti-chart-line', title: 'Transcripts and Tuning', desc: 'You get call transcripts and simple analytics, and we review the calls that failed to find out why. Each round of tuning lets the agent close more calls by itself.'}
     ] : [
-      {icon: 'ti-phone-calling', title: 'Full Telephony Integration', desc: 'เชื่อม SIP และ PSTN โดยตรง Agent รับสายโทรศัพท์จริง ไม่ใช่แค่วิดเจ็ตบนเว็บ'},
-      {icon: 'ti-language', title: '25+ ภาษารวมถึงภาษาไทย', desc: 'คุยเป็นธรรมชาติระดับเจ้าของภาษา ไม่ใช่คำตอบที่แปลด้วยเครื่อง'},
-      {icon: 'ti-message-2', title: 'Natural Low-Latency Conversation', desc: 'ตอบกลับภายในไม่ถึง 1 วินาที รองรับการพูดแทรก ให้ความรู้สึกเหมือนคุยกับคนจริง'},
-      {icon: 'ti-plug-connected', title: 'Deep System Integration', desc: 'เชื่อมสดกับ CRM ระบบจอง และ API ภายใน เพื่อให้ Agent ตอบคำถามได้ถูกต้อง'},
-      {icon: 'ti-adjustments', title: 'Conversation Design', desc: 'ออกแบบขั้นตอนการรับสายตามงานจริง เส้นทางการโอนสาย และกรณีพิเศษ'},
-      {icon: 'ti-chart-line', title: 'Monitoring & Improvement', desc: 'บันทึกคำพูดการโทร วิเคราะห์ผล และปรับปรุงต่อเนื่องเพื่อให้ปิดเรื่องได้มากขึ้น'}
+      {icon: 'ti-phone-calling', title: 'เชื่อมสายโทรศัพท์', desc: 'Agent ต่อกับผู้ให้บริการหรือ PBX ของคุณผ่าน SIP และ PSTN รับสายจริงที่เบอร์เดิมที่ลูกค้าคุ้นเคย ไม่ใช่แค่แชตบนเว็บที่ใส่ไมค์เพิ่มเข้าไป'},
+      {icon: 'ti-language', title: 'ภาษาไทยและอีกกว่า 25 ภาษา', desc: 'ลูกค้าพูดแบบที่พูดอยู่ทุกวันได้เลย Agent เข้าใจและตอบกลับด้วยภาษาเดียวกัน ออกเสียงและใช้น้ำเสียงเป็นธรรมชาติ ไม่ใช่ข้อความแปลที่อ่านออกเสียง'},
+      {icon: 'ti-message-2', title: 'ตอบไว คุยเป็นธรรมชาติ', desc: 'ตอบกลับเร็ว และผู้โทรพูดแทรกได้ทุกเมื่อเหมือนคุยกับคน สายจึงเดินต่อไปได้ ไม่มีคนวางสายกลางคัน'},
+      {icon: 'ti-plug-connected', title: 'เชื่อมกับระบบของคุณ', desc: 'Agent คุยกับ CRM ระบบจอง ระบบออเดอร์ และ API ภายในแบบเรียลไทม์ จึงเช็คสถานะ เลื่อนนัด หรือบันทึกคำขอแล้วยืนยันกลับกับผู้โทรได้เลย'},
+      {icon: 'ti-adjustments', title: 'ออกแบบขั้นตอนการรับสาย', desc: 'เราเขียนขั้นตอนการรับสายร่วมกับทีมของคุณตามเรื่องที่ลูกค้าโทรมาจริง ว่า Agent พูดอะไร ถามอะไร โอนเมื่อไหร่ และจัดการสายแปลกๆ ที่ไม่เข้าแบบอย่างไร'},
+      {icon: 'ti-chart-line', title: 'บันทึกการโทรและปรับปรุง', desc: 'คุณได้บันทึกการโทรและรายงานที่อ่านง่าย เราช่วยไล่ดูสายที่ Agent ทำไม่สำเร็จเพื่อหาสาเหตุ ปรับทุกรอบแล้ว Agent ก็ปิดเรื่องเองได้มากขึ้น'}
     ]
   const steps       = isEN ? [
-      {no: '01', title: 'Discovery', desc: 'Understand call volume, intents, and existing systems.'},
-      {no: '02', title: 'Conversation Design', desc: 'Map call flows, tone, and escalation paths.'},
-      {no: '03', title: 'Development', desc: 'Build the agent with your voice, data, and integrations.'},
-      {no: '04', title: 'Telephony Integration', desc: 'Connect SIP/PSTN lines for real call handling.'},
-      {no: '05', title: 'Testing', desc: 'Stress-test edge cases and real caller scenarios.'},
-      {no: '06', title: 'Monitoring', desc: 'Live analytics and continuous tuning post-launch.'}
+      {no: '01', title: 'Discovery', desc: 'We look at how many calls you get, what people ask for, which systems hold the answers, and which calls should always go to a person.'},
+      {no: '02', title: 'Conversation Design', desc: 'We draft the call flows, the tone of voice, and the handover rules together with the people who answer your phones today.'},
+      {no: '03', title: 'Development', desc: 'We build the agent, connect it to your data and systems, and set up the voice and language it will use.'},
+      {no: '04', title: 'Phone Line Integration', desc: 'We connect the SIP or PSTN lines so the agent can take real calls on your numbers.'},
+      {no: '05', title: 'Testing', desc: 'We try odd accents, background noise, interruptions, and awkward requests before any customer hears it.'},
+      {no: '06', title: 'Monitoring', desc: 'After launch we watch live analytics, read the transcripts, and tune the agent as real calls show us what to fix.'}
     ] : [
-      {no: '01', title: 'Discovery', desc: 'ทำความเข้าใจจำนวนสาย เป้าหมายของผู้โทร และระบบที่มีอยู่'},
-      {no: '02', title: 'Conversation Design', desc: 'ออกแบบขั้นตอนการรับสาย น้ำเสียง และเส้นทางการโอนสาย'},
-      {no: '03', title: 'Development', desc: 'สร้าง Agent จากเสียง ข้อมูล และระบบของคุณ'},
-      {no: '04', title: 'Telephony Integration', desc: 'เชื่อมสาย SIP/PSTN เพื่อรับสายจริง'},
-      {no: '05', title: 'Testing', desc: 'ทดสอบกรณีพิเศษและสถานการณ์ผู้โทรจริง'},
-      {no: '06', title: 'Monitoring', desc: 'ดูผลแบบสดและปรับปรุงต่อเนื่องหลังเปิดใช้งาน'}
+      {no: '01', title: 'Discovery', desc: 'ดูว่ามีสายเข้าวันละเท่าไหร่ คนโทรมาถามเรื่องอะไร คำตอบอยู่ในระบบไหน และสายแบบไหนควรโอนให้คนเสมอ'},
+      {no: '02', title: 'Conversation Design', desc: 'ร่างขั้นตอนการรับสาย น้ำเสียง และกติกาการโอนสาย ร่วมกับคนที่รับสายอยู่ทุกวันตอนนี้'},
+      {no: '03', title: 'Development', desc: 'สร้าง Agent เชื่อมกับข้อมูลและระบบของคุณ แล้วตั้งค่าเสียงและภาษาที่จะใช้'},
+      {no: '04', title: 'เชื่อมสายโทรศัพท์', desc: 'ต่อสาย SIP หรือ PSTN ให้ Agent รับสายจริงที่เบอร์ของคุณได้'},
+      {no: '05', title: 'Testing', desc: 'ลองทั้งสำเนียงแปลกๆ เสียงรบกวน การพูดแทรก และคำขอที่ตอบยาก ก่อนที่ลูกค้าจริงจะได้ยิน'},
+      {no: '06', title: 'Monitoring', desc: 'หลังเปิดใช้งาน เราดูรายงานสด อ่านบันทึกการโทร และปรับ Agent ตามสิ่งที่สายจริงบอกเราว่าต้องแก้'}
     ]
   const caseStudies = isEN ? [
-      {tag: 'Retail · Bangkok', title: 'AI Agent Handles 70% of Support Calls', desc: 'Full telephony integration deployed across a national customer service line.', result: '70% resolved without transfer'},
-      {tag: 'Healthcare · Bangkok', title: 'Bilingual Booking Line Built in 6 Weeks', desc: 'Thai and English voice agent connected directly to the clinic booking system.', result: 'Zero missed appointments from voicemail'},
-      {tag: 'Logistics · Nationwide', title: 'Order Status Line Handles 24/7 Volume', desc: 'Voice agent integrated with live tracking API for instant status updates.', result: '24/7 coverage, zero hold time'}
+      {tag: 'Retail · Bangkok', title: 'AI Agent Handles 70% of Support Calls', desc: 'We connected the agent to a national customer service line. It now answers routine questions such as delivery status and return policy, and closes most of them without a person, so human agents keep the calls that need judgement.', result: '70% resolved without transfer'},
+      {tag: 'Healthcare · Bangkok', title: 'Bilingual Booking Line Built in 6 Weeks', desc: 'A Thai and English voice agent wired straight into the clinic booking system, so callers book, move or cancel appointments during the call itself instead of leaving a voicemail for someone to return.', result: 'Zero missed appointments from voicemail'},
+      {tag: 'Logistics · Nationwide', title: 'Order Status Line Handles 24/7 Volume', desc: 'The voice agent reads a live tracking API and tells callers where their parcel is, at any hour, which removed the hold queue that used to build up every morning.', result: '24/7 coverage, zero hold time'}
     ] : [
-      {tag: 'Retail · กรุงเทพฯ', title: 'AI Agent ปิดเรื่อง Support ได้ 70%', desc: 'เชื่อมระบบโทรศัพท์เต็มรูปแบบสำหรับสายลูกค้าสัมพันธ์ทั่วประเทศ', result: 'ปิดเรื่องได้ 70% โดยไม่ต้องโอนสาย'},
-      {tag: 'Healthcare · กรุงเทพฯ', title: 'สายจองคิวสองภาษา สร้างเสร็จใน 6 สัปดาห์', desc: 'Voice Agent ไทย-อังกฤษ เชื่อมตรงกับระบบจองคิวของคลินิก', result: 'ไม่มีนัดหมายตกหล่นไปอยู่ใน Voicemail'},
-      {tag: 'Logistics · ทั่วประเทศ', title: 'สายเช็คสถานะออเดอร์ รองรับ 24 ชั่วโมง', desc: 'Voice Agent เชื่อมกับ API ติดตามพัสดุแบบสด เพื่อแจ้งสถานะทันที', result: 'รับสาย 24/7 ไม่ต้องรอสาย'}
+      {tag: 'Retail · กรุงเทพฯ', title: 'AI Agent ปิดเรื่อง Support ได้ 70%', desc: 'เราเชื่อม Agent เข้ากับสายลูกค้าสัมพันธ์ทั่วประเทศ ตอนนี้รับคำถามประจำอย่างสถานะการจัดส่งและนโยบายคืนสินค้า และปิดเรื่องส่วนใหญ่ได้โดยไม่ต้องใช้คน เจ้าหน้าที่จึงได้รับสายที่ต้องใช้วิจารณญาณ', result: 'ปิดเรื่องได้ 70% โดยไม่ต้องโอนสาย'},
+      {tag: 'Healthcare · กรุงเทพฯ', title: 'สายจองคิวสองภาษา สร้างเสร็จใน 6 สัปดาห์', desc: 'Voice Agent ไทย-อังกฤษที่เชื่อมตรงกับระบบจองคิวของคลินิก ผู้โทรจอง เลื่อน หรือยกเลิกนัดได้ในสายเลย ไม่ต้องฝากข้อความไว้ให้ใครโทรกลับ', result: 'ไม่มีนัดหมายตกหล่นไปอยู่ใน Voicemail'},
+      {tag: 'Logistics · ทั่วประเทศ', title: 'สายเช็คสถานะออเดอร์ รองรับ 24 ชั่วโมง', desc: 'Voice Agent ดึงข้อมูลจาก API ติดตามพัสดุแบบสด บอกผู้โทรได้ทุกเวลาว่าพัสดุอยู่ที่ไหน คิวรอสายที่เคยสะสมทุกเช้าจึงหายไป', result: 'รับสาย 24/7 ไม่ต้องรอสาย'}
     ]
   const faqs        = isEN ? [
-      {q: 'What can your AI voice agents actually do?', a: 'Answer real phone calls end to end: understand natural speech, hold a conversation, and resolve requests by connecting into your CRM, booking, or internal systems.'},
-      {q: 'Does it support Thai?', a: 'Yes. Thai is a first-class language in our voice stack, alongside 25+ other languages, with native-quality pronunciation and understanding.'},
-      {q: 'Can it integrate with our existing phone system?', a: 'Yes. We integrate over SIP and PSTN with most existing telephony providers and PBX systems.'},
-      {q: 'What happens when the agent cannot help?', a: 'It escalates cleanly to a human agent with full context passed along, so the caller never has to repeat themselves.'}
+      {q: 'What can your AI voice agents actually do?', a: 'They answer real phone calls from start to finish. The agent understands natural speech, holds a conversation, and resolves the request by working with your CRM, booking tool, or internal systems, for example checking an order or moving an appointment.'},
+      {q: 'Does it support Thai?', a: 'Yes. Thai is a first-class language in our voice setup, alongside 25+ others, with natural pronunciation and understanding rather than a machine-translated feel.'},
+      {q: 'Can it work with our existing phone system?', a: 'Yes. We connect over SIP and PSTN to most carriers and PBX systems, so you keep your current numbers and the agent takes over the conversation layer.'},
+      {q: 'What happens when the agent cannot help?', a: 'It passes the call to a person along with the full conversation and any details it has collected, so the caller does not have to repeat anything.'},
+      {q: 'Will callers know they are talking to an AI?', a: 'We recommend telling them at the start of the call in a short, friendly line. Callers generally accept it when the agent is quick and actually solves the problem, and you can set the greeting wording yourself.'},
+      {q: 'Which kinds of calls are a good first target?', a: 'Repetitive, rule-based calls with answers in a system: appointment booking, order or delivery status, opening hours, and simple account questions. We choose one flow, launch it as a pilot, and add others once it works.'},
+      {q: 'Can we hear it before we commit?', a: 'Yes. We build a working prototype on one of your own call flows, so you can ring it, interrupt it and try awkward requests before deciding on a wider rollout.'}
     ] : [
-      {q: 'AI Voice Agent ของ Haliviq ทำอะไรได้บ้าง?', a: 'รับสายโทรศัพท์จริงได้ครบ เข้าใจคำพูดธรรมชาติ คุยโต้ตอบได้ และปิดคำขอได้โดยเชื่อมกับ CRM ระบบจอง หรือระบบภายในของคุณ'},
-      {q: 'รองรับภาษาไทยไหม?', a: 'รองรับ ภาษาไทยเป็นภาษาหลักของระบบเสียงของเรา ควบคู่กับอีกกว่า 25 ภาษา ทั้งการออกเสียงและความเข้าใจในระดับเจ้าของภาษา'},
-      {q: 'เชื่อมกับระบบโทรศัพท์ที่มีอยู่ได้ไหม?', a: 'ได้ เราเชื่อมผ่าน SIP และ PSTN กับผู้ให้บริการโทรศัพท์และระบบ PBX ส่วนใหญ่'},
-      {q: 'ถ้า Agent ช่วยไม่ได้จะเกิดอะไรขึ้น?', a: 'โอนสายไปหาเจ้าหน้าที่อย่างราบรื่น พร้อมส่งบริบททั้งหมดไปด้วย ผู้โทรไม่ต้องพูดซ้ำ'}
+      {q: 'AI Voice Agent ของ Haliviq ทำอะไรได้บ้าง?', a: 'รับสายโทรศัพท์จริงได้ตั้งแต่ต้นจนจบ เข้าใจคำพูดธรรมชาติ คุยโต้ตอบได้ และปิดคำขอได้โดยทำงานร่วมกับ CRM ระบบจอง หรือระบบภายในของคุณ เช่น เช็คออเดอร์หรือเลื่อนนัด'},
+      {q: 'รองรับภาษาไทยไหม?', a: 'รองรับ ภาษาไทยเป็นภาษาหลักของระบบเสียงเรา ควบคู่กับอีกกว่า 25 ภาษา ทั้งการออกเสียงและความเข้าใจ ฟังเป็นธรรมชาติ ไม่ใช่สำเนียงแปลด้วยเครื่อง'},
+      {q: 'ใช้กับระบบโทรศัพท์ที่มีอยู่ได้ไหม?', a: 'ได้ เราเชื่อมผ่าน SIP และ PSTN กับผู้ให้บริการและระบบ PBX ส่วนใหญ่ คุณยังใช้เบอร์เดิมได้ ส่วน Agent จะรับหน้าที่คุยกับผู้โทรแทน'},
+      {q: 'ถ้า Agent ช่วยไม่ได้จะเกิดอะไรขึ้น?', a: 'Agent จะโอนสายให้เจ้าหน้าที่ พร้อมส่งบทสนทนาและข้อมูลที่เก็บมาแล้วทั้งหมดไปด้วย ผู้โทรไม่ต้องเล่าซ้ำ'},
+      {q: 'ผู้โทรจะรู้ไหมว่ากำลังคุยกับ AI?', a: 'เราแนะนำให้บอกตั้งแต่ต้นสายด้วยประโยคสั้นๆ เป็นกันเอง ผู้โทรส่วนใหญ่ยอมรับได้เมื่อ Agent ตอบไวและแก้ปัญหาได้จริง และคุณกำหนดคำทักทายเองได้'},
+      {q: 'สายแบบไหนเหมาะเป็นงานแรก?', a: 'สายที่ซ้ำๆ มีกฎชัด และคำตอบอยู่ในระบบ เช่น จองคิว เช็คสถานะออเดอร์หรือการจัดส่ง เวลาทำการ และคำถามบัญชีง่ายๆ เราเลือกมาหนึ่งขั้นตอน เปิดแบบทดลองใช้ แล้วค่อยเพิ่มเมื่อใช้ได้ดี'},
+      {q: 'ขอลองฟังก่อนตัดสินใจได้ไหม?', a: 'ได้ เราสร้างต้นแบบที่ใช้งานได้จริงบนขั้นตอนการรับสายของคุณหนึ่งเรื่อง คุณโทรเข้าไปลอง พูดแทรก และลองขอเรื่องยากๆ ได้ก่อนตัดสินใจขยาย'}
     ]
   const related     = isEN ? [
       {label: 'Enterprise Solutions', href: '/services/enterprise-solutions'},
@@ -194,15 +202,19 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   )
 
   const capabilities = isEN ? [
-    { icon: 'ti-phone-calling', title: 'Full Telephony Integration', desc: 'Native SIP and PSTN integration so the agent answers real phone lines, not just a web widget.' },
-    { icon: 'ti-language', title: '25+ Languages Including Thai', desc: 'Natural, native-quality conversation across languages, not machine-translated responses.' },
-    { icon: 'ti-message-2', title: 'Natural Low-Latency Conversation', desc: 'Sub-second response times with barge-in support so calls feel like talking to a person.' },
-    { icon: 'ti-plug-connected', title: 'Deep System Integration', desc: 'Live connections into CRM, booking, and internal APIs so the agent gives real answers.' },
+    { icon: 'ti-phone-calling', title: 'Phone Line Integration', desc: 'The agent connects to your carrier or PBX over SIP and PSTN and answers real phone lines on the numbers customers already call. It is a proper telephony setup, not a web widget with a microphone added.' },
+    { icon: 'ti-language', title: 'Thai and 25+ Languages', desc: 'Callers speak normally and the agent replies in the same language, with natural pronunciation and tone. We test with Thai speakers so the result sounds like a person on the line, not translated text read aloud.' },
+    { icon: 'ti-message-2', title: 'Fast, Natural Conversation', desc: 'Replies arrive in well under a second, and callers can talk over the agent whenever they like. That keeps the exchange moving and helps people stay on the line instead of hanging up.' },
+    { icon: 'ti-plug-connected', title: 'Connected to Your Systems', desc: 'Live links into your CRM, booking tool, order system, and internal APIs let the agent check a status, change an appointment, or log a request, then tell the caller it is done.' },
+    { icon: 'ti-adjustments', title: 'Call Flow Design', desc: 'We write the call flows with your team around the requests you really get, including what the agent says, what it asks, when it hands over, and how it treats the odd calls that do not fit.' },
+    { icon: 'ti-chart-line', title: 'Transcripts and Tuning', desc: 'Call transcripts and simple analytics show what callers ask for. We review the calls that failed and tune the flows, so the share of calls the agent closes on its own keeps growing.' },
   ] : [
-    { icon: 'ti-phone-calling', title: 'Full Telephony Integration', desc: 'เชื่อม SIP และ PSTN โดยตรง Agent รับสายโทรศัพท์จริง ไม่ใช่แค่วิดเจ็ตบนเว็บ' },
-    { icon: 'ti-language', title: '25+ ภาษารวมถึงภาษาไทย', desc: 'คุยเป็นธรรมชาติระดับเจ้าของภาษา ไม่ใช่คำตอบที่แปลด้วยเครื่อง' },
-    { icon: 'ti-message-2', title: 'Natural Low-Latency Conversation', desc: 'ตอบกลับภายในไม่ถึง 1 วินาที รองรับการพูดแทรก ให้ความรู้สึกเหมือนคุยกับคนจริง' },
-    { icon: 'ti-plug-connected', title: 'Deep System Integration', desc: 'เชื่อมสดกับ CRM ระบบจอง และ API ภายใน เพื่อให้ Agent ตอบคำถามได้ถูกต้อง' },
+    { icon: 'ti-phone-calling', title: 'เชื่อมสายโทรศัพท์', desc: 'Agent ต่อกับผู้ให้บริการหรือ PBX ของคุณผ่าน SIP และ PSTN รับสายจริงที่เบอร์ที่ลูกค้าโทรอยู่แล้ว เป็นระบบโทรศัพท์จริงจัง ไม่ใช่วิดเจ็ตบนเว็บที่เติมไมค์เข้าไป' },
+    { icon: 'ti-language', title: 'ภาษาไทยและอีกกว่า 25 ภาษา', desc: 'ผู้โทรพูดตามปกติ Agent ตอบกลับด้วยภาษาเดียวกัน ออกเสียงและใช้น้ำเสียงเป็นธรรมชาติ เราทดสอบกับคนไทยจริง เพื่อให้ฟังเหมือนมีคนรับสาย ไม่ใช่ข้อความแปลที่อ่านออกเสียง' },
+    { icon: 'ti-message-2', title: 'ตอบไว คุยเป็นธรรมชาติ', desc: 'ตอบกลับภายในไม่ถึงวินาที และผู้โทรพูดแทรกได้ทุกเมื่อ บทสนทนาจึงเดินต่อไปได้ และลูกค้าอยู่คุยต่อ ไม่วางสายไปก่อน' },
+    { icon: 'ti-plug-connected', title: 'เชื่อมกับระบบของคุณ', desc: 'เชื่อมสดกับ CRM ระบบจอง ระบบออเดอร์ และ API ภายใน ให้ Agent เช็คสถานะ เลื่อนนัด หรือบันทึกคำขอได้ แล้วบอกผู้โทรได้ทันทีว่าเรียบร้อยแล้ว' },
+    { icon: 'ti-adjustments', title: 'ออกแบบขั้นตอนการรับสาย', desc: 'เราเขียนขั้นตอนการรับสายร่วมกับทีมของคุณตามเรื่องที่ลูกค้าโทรมาจริง ทั้งสิ่งที่ Agent พูด สิ่งที่ถาม จังหวะที่โอนต่อ และวิธีรับมือสายแปลกๆ ที่ไม่เข้าแบบ' },
+    { icon: 'ti-chart-line', title: 'บันทึกการโทรและปรับปรุง', desc: 'บันทึกการโทรและรายงานง่ายๆ ให้เห็นว่าลูกค้าถามเรื่องอะไร เราไล่ดูสายที่ทำไม่สำเร็จแล้วปรับขั้นตอน สัดส่วนสายที่ Agent ปิดเรื่องได้เองจะเพิ่มขึ้นเรื่อยๆ' },
   ]
 
   const techStack = [
@@ -219,39 +231,39 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   ] as { label: string; icon?: string; svg?: string }[]
 
   const approachSteps = isEN ? [
-    { no: '01', title: 'Discovery', desc: 'Call volume, intents, existing systems' },
-    { no: '02', title: 'Conversation Design', desc: 'Call flows, tone, escalation paths' },
-    { no: '03', title: 'Development', desc: 'Build the agent with your data' },
-    { no: '04', title: 'Telephony Integration', desc: 'Connect SIP/PSTN for real calls' },
-    { no: '05', title: 'Testing', desc: 'Stress-test edge cases and scenarios' },
-    { no: '06', title: 'Monitoring', desc: 'Live analytics and continuous tuning' },
+    { no: '01', title: 'Discovery', desc: 'We study your call volume, what people ask for, which systems hold the answers, and which calls should always reach a person.' },
+    { no: '02', title: 'Conversation Design', desc: 'Call flows, tone of voice, and handover rules, drafted with the people who answer your phones today.' },
+    { no: '03', title: 'Development', desc: 'We build the agent and connect it to your data, systems, and the voice and language it will use.' },
+    { no: '04', title: 'Phone Line Integration', desc: 'SIP or PSTN lines are connected so the agent can take real calls on your numbers.' },
+    { no: '05', title: 'Testing', desc: 'Accents, background noise, interruptions, and awkward requests are tried before any customer calls in.' },
+    { no: '06', title: 'Monitoring', desc: 'Live analytics and transcript reviews after launch, with tuning rounds based on what real calls show.' },
   ] : [
-    { no: '01', title: 'Discovery', desc: 'จำนวนสาย เป้าหมายของผู้โทร และระบบที่มีอยู่' },
-    { no: '02', title: 'Conversation Design', desc: 'ขั้นตอนการรับสาย น้ำเสียง และการโอนสาย' },
-    { no: '03', title: 'Development', desc: 'สร้าง Agent จากข้อมูลของคุณ' },
-    { no: '04', title: 'Telephony Integration', desc: 'เชื่อม SIP/PSTN เพื่อรับสายจริง' },
-    { no: '05', title: 'Testing', desc: 'ทดสอบกรณีพิเศษและสถานการณ์จริง' },
-    { no: '06', title: 'Monitoring', desc: 'ดูผลแบบสดและปรับปรุงต่อเนื่อง' },
+    { no: '01', title: 'Discovery', desc: 'ดูจำนวนสาย เรื่องที่คนโทรมาถาม ระบบที่เก็บคำตอบ และสายแบบไหนที่ควรถึงมือคนเสมอ' },
+    { no: '02', title: 'Conversation Design', desc: 'ร่างขั้นตอนการรับสาย น้ำเสียง และกติกาการโอนสาย ร่วมกับคนที่รับสายอยู่ทุกวันตอนนี้' },
+    { no: '03', title: 'Development', desc: 'สร้าง Agent แล้วเชื่อมกับข้อมูล ระบบ และเสียงกับภาษาที่จะใช้คุยกับลูกค้า' },
+    { no: '04', title: 'เชื่อมสายโทรศัพท์', desc: 'ต่อสาย SIP หรือ PSTN ให้ Agent รับสายจริงที่เบอร์ของคุณได้' },
+    { no: '05', title: 'Testing', desc: 'ลองกับสำเนียงต่างๆ เสียงรบกวน การพูดแทรก และคำขอที่ตอบยาก ก่อนที่ลูกค้าจริงจะโทรเข้ามา' },
+    { no: '06', title: 'Monitoring', desc: 'ดูรายงานสดและอ่านบันทึกการโทรหลังเปิดใช้งาน แล้วปรับเป็นรอบตามสิ่งที่สายจริงบอกเรา' },
   ]
 
   const darkFaqs = isEN ? [
-    { q: 'What can Haliviq’s AI voice agents actually do?', a: 'They answer real phone calls end to end: understand natural speech, hold a genuine conversation with barge-in support, and resolve requests by connecting live into your CRM, booking system, or internal APIs — not just collect information and transfer.' },
-    { q: 'Does it support Thai?', a: 'Yes. Thai is a first-class language in our voice stack alongside 25+ other languages, with native-quality pronunciation, tone, and understanding rather than a machine-translated experience.' },
-    { q: 'Can it integrate with our existing phone system?', a: 'Yes. We integrate over SIP and PSTN with most existing telephony providers and PBX systems, so you keep your existing phone numbers and infrastructure while the agent handles the conversation layer.' },
-    { q: 'What happens when the agent cannot help?', a: 'It escalates cleanly to a human agent with the full conversation context and any data gathered passed along, so the caller never has to repeat themselves from the start.' },
-    { q: 'How long does it take to launch a voice agent?', a: 'A focused pilot on one call flow — such as booking or order status — typically launches in 4-6 weeks. Broader deployment across multiple call types and full production hardening usually takes 8-12 weeks depending on integration complexity.' },
-    { q: 'How much does an AI voice agent project cost?', a: 'Pricing depends on call volume, number of languages, and depth of system integration required. A single-flow pilot typically starts in the low hundred-thousands (THB); full multi-flow production deployments are scoped after a discovery call.' },
-    { q: 'Do we own the voice agent and its data after the project?', a: 'Yes. You own the conversation designs, integration code, and all call data and transcripts. We can host and operate the agent for you or hand over full deployment access, whichever fits your team.' },
-    { q: 'Can the agent handle high call volume, like during a promotion or outage?', a: 'Yes, this is one of the core reasons to use a voice agent. It scales to handle simultaneous calls without hiring or training additional staff, and without hold queues or busy signals.' },
+    { q: 'What can Haliviq’s AI voice agents actually do?', a: 'They answer real phone calls from start to finish. The agent understands natural speech, holds a proper conversation, lets the caller interrupt, and resolves the request by connecting live to your CRM, booking system, or internal APIs. A typical call might be checking an order, moving an appointment, or answering a billing question. It does not simply collect a name and transfer the call.' },
+    { q: 'Does it support Thai?', a: 'Yes. Thai is a first-class language in our voice setup, alongside 25+ others. We aim for natural pronunciation, tone, and understanding, and we test with native Thai speakers, so callers do not get a stiff, machine-translated experience.' },
+    { q: 'Can it integrate with our existing phone system?', a: 'Yes. We connect over SIP and PSTN to most carriers and PBX systems, so you keep your existing phone numbers and infrastructure while the agent handles the conversation. During discovery we check what your telephony provider supports, how calls are routed today, and where the handover to your staff should happen.' },
+    { q: 'What happens when the agent cannot help?', a: 'It hands the call to a person together with the full conversation and anything it has already collected, such as the customer’s name, order number, and the reason for calling. The caller does not have to start again. We agree the handover rules with you up front, for example angry callers, payment disputes, or anything the agent is not allowed to decide.' },
+    { q: 'How long does it take to launch a voice agent?', a: 'A focused pilot on one call flow, such as booking or order status, typically launches in 4-6 weeks. Broader deployment across several call types, with full production hardening, usually takes 8-12 weeks depending on how many systems it has to connect to. The biggest factor is usually how quickly we get access to your phone provider and internal APIs.' },
+    { q: 'How much does an AI voice agent project cost?', a: 'Pricing depends on call volume, the number of languages, and how deeply the agent connects into your systems. A single-flow pilot typically starts in the low hundred-thousands (THB). Full multi-flow production deployments are scoped after a discovery call, and we include the running costs of speech and phone minutes in the estimate so you can see them before you commit.' },
+    { q: 'Do we own the voice agent and its data after the project?', a: 'Yes. You own the conversation designs, the integration code, and all call data and transcripts. We can host and operate the agent for you, or hand over full deployment access so your own team runs it, whichever suits you better.' },
+    { q: 'Can the agent handle high call volume, like during a promotion or outage?', a: 'Yes, and this is one of the main reasons to use a voice agent. It takes many simultaneous calls without extra hiring or training, and callers do not get hold queues or busy signals. Where a particular system behind it has limits, such as a booking API, we plan for that during testing.' },
   ] : [
-    { q: 'AI Voice Agent ของ Haliviq ทำอะไรได้บ้าง?', a: 'รับสายโทรศัพท์จริงได้ครบ เข้าใจคำพูดธรรมชาติ คุยโต้ตอบและรองรับการพูดแทรกได้จริง และปิดคำขอได้โดยเชื่อมสดกับ CRM ระบบจอง หรือ API ภายใน ไม่ใช่แค่จดข้อมูลแล้วโอนสาย' },
-    { q: 'รองรับภาษาไทยไหม?', a: 'รองรับ ภาษาไทยเป็นภาษาหลักของระบบเสียงของเรา ควบคู่กับอีกกว่า 25 ภาษา ทั้งการออกเสียง น้ำเสียง และความเข้าใจในระดับเจ้าของภาษา ไม่ใช่แค่การแปลด้วยเครื่อง' },
-    { q: 'เชื่อมกับระบบโทรศัพท์ที่มีอยู่ได้ไหม?', a: 'ได้ เราเชื่อมผ่าน SIP และ PSTN กับผู้ให้บริการโทรศัพท์และระบบ PBX ส่วนใหญ่ คุณยังใช้เบอร์และระบบเดิมได้ ส่วน Agent จะดูแลเรื่องการสนทนา' },
-    { q: 'ถ้า Agent ช่วยไม่ได้จะเกิดอะไรขึ้น?', a: 'โอนสายไปหาเจ้าหน้าที่อย่างราบรื่น พร้อมส่งบริบทการสนทนาและข้อมูลที่เก็บได้ทั้งหมดไปด้วย ผู้โทรไม่ต้องเริ่มพูดใหม่ตั้งแต่ต้น' },
-    { q: 'ใช้เวลานานแค่ไหนกว่าจะเปิดใช้ Voice Agent?', a: 'ทดลองใช้แบบเจาะจงหนึ่งขั้นตอนการรับสาย เช่น จองคิวหรือเช็คสถานะออเดอร์ มักใช้เวลา 4-6 สัปดาห์ ส่วนการขยายไปหลายประเภทสายและเตรียมให้พร้อมใช้งานจริงเต็มรูปแบบ มักใช้ 8-12 สัปดาห์ ขึ้นอยู่กับความซับซ้อนของการเชื่อมระบบ' },
-    { q: 'โปรเจกต์ AI Voice Agent มีค่าใช้จ่ายเท่าไหร่?', a: 'ราคาขึ้นอยู่กับจำนวนสาย จำนวนภาษา และความลึกของการเชื่อมระบบ การทดลองใช้แบบขั้นตอนเดียวมักเริ่มที่หลักแสนต้นๆ (บาท) ส่วนการใช้งานจริงแบบหลายขั้นตอนจะเสนอราคาหลังคุยทำความเข้าใจโจทย์' },
-    { q: 'เราเป็นเจ้าของ Voice Agent และข้อมูลหลังโปรเจกต์จบไหม?', a: 'ใช่ คุณเป็นเจ้าของการออกแบบบทสนทนา โค้ดที่เชื่อมระบบ และข้อมูลกับบันทึกการโทรทั้งหมด เราจะโฮสต์และดูแลระบบให้ หรือส่งมอบสิทธิ์การติดตั้งให้เต็มรูปแบบก็ได้ แล้วแต่ทีมคุณสะดวก' },
-    { q: 'Agent รองรับสายจำนวนมากช่วงโปรโมชันหรือระบบล่มได้ไหม?', a: 'ได้ นี่คือเหตุผลหลักที่ควรใช้ Voice Agent ระบบรับสายพร้อมกันจำนวนมากได้โดยไม่ต้องจ้างหรืออบรมคนเพิ่ม และไม่มีคิวรอสายหรือสายไม่ว่าง' },
+    { q: 'AI Voice Agent ของ Haliviq ทำอะไรได้บ้าง?', a: 'รับสายโทรศัพท์จริงได้ตั้งแต่ต้นจนจบ เข้าใจคำพูดธรรมชาติ คุยโต้ตอบ ให้ผู้โทรพูดแทรกได้ และปิดคำขอได้โดยเชื่อมสดกับ CRM ระบบจอง หรือ API ภายในของคุณ สายทั่วไปอาจเป็นการเช็คออเดอร์ เลื่อนนัด หรือตอบเรื่องบิล ไม่ใช่แค่จดชื่อแล้วโอนสายต่อ' },
+    { q: 'รองรับภาษาไทยไหม?', a: 'รองรับ ภาษาไทยเป็นภาษาหลักของระบบเสียงเรา ควบคู่กับอีกกว่า 25 ภาษา เราเน้นให้ออกเสียง น้ำเสียง และความเข้าใจเป็นธรรมชาติ และทดสอบกับคนไทยจริง ผู้โทรจึงไม่เจอสำเนียงแข็งๆ แบบแปลด้วยเครื่อง' },
+    { q: 'ใช้กับระบบโทรศัพท์ที่มีอยู่ได้ไหม?', a: 'ได้ เราเชื่อมผ่าน SIP และ PSTN กับผู้ให้บริการและระบบ PBX ส่วนใหญ่ คุณยังใช้เบอร์และระบบเดิมได้ ส่วน Agent รับหน้าที่คุยกับผู้โทร ตอนทำ Discovery เราจะเช็คว่าผู้ให้บริการของคุณรองรับอะไร ตอนนี้สายถูกส่งต่อกันอย่างไร และควรโอนให้ทีมคุณตรงจุดไหน' },
+    { q: 'ถ้า Agent ช่วยไม่ได้จะเกิดอะไรขึ้น?', a: 'Agent จะโอนสายให้เจ้าหน้าที่ พร้อมส่งบทสนทนาทั้งหมดและข้อมูลที่เก็บไว้แล้ว เช่น ชื่อลูกค้า เลขออเดอร์ และเหตุผลที่โทรมา ผู้โทรไม่ต้องเริ่มเล่าใหม่ เรากำหนดกติกาการโอนสายกับคุณตั้งแต่แรก เช่น ผู้โทรที่กำลังโมโห เรื่องข้อพิพาทการชำระเงิน หรือเรื่องที่ Agent ไม่มีสิทธิ์ตัดสินใจ' },
+    { q: 'ใช้เวลานานแค่ไหนกว่าจะเปิดใช้ Voice Agent?', a: 'งานทดลองหนึ่งขั้นตอนการรับสาย เช่น จองคิวหรือเช็คสถานะออเดอร์ มักใช้เวลา 4-6 สัปดาห์ ส่วนการขยายไปหลายประเภทสายและเตรียมระบบให้พร้อมใช้งานจริง มักใช้ 8-12 สัปดาห์ ขึ้นอยู่กับว่าต้องเชื่อมกี่ระบบ ปัจจัยที่กระทบเวลามากที่สุดมักเป็นความเร็วในการให้สิทธิ์เข้าถึงระบบโทรศัพท์และ API ภายในของคุณ' },
+    { q: 'โปรเจกต์ AI Voice Agent มีค่าใช้จ่ายเท่าไหร่?', a: 'ราคาขึ้นอยู่กับจำนวนสาย จำนวนภาษา และความลึกของการเชื่อมระบบ งานทดลองแบบขั้นตอนเดียวมักเริ่มที่หลักแสนต้นๆ (บาท) ส่วนการใช้งานจริงหลายขั้นตอนเราจะเสนอราคาหลังคุยทำความเข้าใจโจทย์ โดยใส่ค่าใช้จ่ายต่อเนื่องอย่างค่าประมวลผลเสียงและค่านาทีโทรศัพท์ไว้ในประมาณการด้วย คุณจะเห็นก่อนตัดสินใจ' },
+    { q: 'เราเป็นเจ้าของ Voice Agent และข้อมูลหลังโปรเจกต์จบไหม?', a: 'ใช่ คุณเป็นเจ้าของการออกแบบบทสนทนา โค้ดที่เชื่อมระบบ รวมถึงข้อมูลและบันทึกการโทรทั้งหมด เราจะโฮสต์และดูแลให้ก็ได้ หรือส่งมอบสิทธิ์ติดตั้งทั้งหมดให้ทีมของคุณดูแลเองก็ได้ แล้วแต่แบบไหนสะดวกกว่า' },
+    { q: 'Agent รับสายจำนวนมากช่วงโปรโมชันหรือระบบล่มได้ไหม?', a: 'ได้ และนี่คือเหตุผลหลักข้อหนึ่งที่ควรใช้ Voice Agent ระบบรับหลายสายพร้อมกันได้โดยไม่ต้องจ้างหรืออบรมคนเพิ่ม ผู้โทรไม่ต้องรอคิวหรือเจอสายไม่ว่าง ถ้าระบบเบื้องหลังมีข้อจำกัด เช่น API จองคิว เราจะวางแผนรับมือไว้ตั้งแต่ตอนทดสอบ' },
   ]
 
   const postHeroSlot = (

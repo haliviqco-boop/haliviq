@@ -15,19 +15,19 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   const badge = isEN ? 'Industry / Transportation & Logistics' : 'อุตสาหกรรม / คมนาคมและโลจิสติกส์'
   const heroSubhead = isEN
-    ? 'Optimize supply chains and transportation networks.'
-    : 'ระบบจัดการซัพพลายเชน การขนส่ง และคลังสินค้า'
+    ? 'Tracking, routing, and warehouse software for carriers, 3PLs, and shippers who are tired of chasing shipment status by phone and spreadsheet.'
+    : 'ซอฟต์แวร์ติดตามพัสดุ วางเส้นทาง และจัดการคลังสินค้า สำหรับบริษัทขนส่ง 3PL และผู้ส่งสินค้าที่เบื่อการนั่งตามสถานะของด้วยโทรศัพท์และสเปรดชีต'
 
   const challenges = isEN ? [
-    { icon: 'ti-truck-delivery', title: 'Last-Mile Delivery Cost Pressure', desc: 'Last-mile delivery accounts for the largest share of total shipping cost, and rising fuel, labor, and customer expectations for free or cheap delivery squeeze margins on every order.' },
-    { icon: 'ti-radar', title: 'Real-Time Visibility Gaps', desc: 'Shippers, carriers, and customers all need live visibility into where a shipment is and when it will arrive, but fragmented tracking systems leave blind spots across multi-leg journeys.' },
-    { icon: 'ti-building-warehouse', title: 'Warehouse Capacity & Labor Volatility', desc: 'Seasonal demand swings, labor shortages, and rising storage costs make it difficult to plan warehouse capacity and staffing without sophisticated forecasting and automation.' },
-    { icon: 'ti-plug-connected', title: 'Fragmented Multi-Carrier Integrations', desc: 'Coordinating shipments across dozens of carriers, each with its own API, tracking format, and SLA, creates brittle integrations that are costly to maintain and slow to extend.' },
+    { icon: 'ti-truck-delivery', title: 'Last-Mile Delivery Cost Pressure', desc: 'Delivery to the customer\'s door is usually the most expensive leg of the trip, and costs go up with fuel, driver wages, and the online shopper\'s habit of expecting free or same-day shipping. Dense cities like Bangkok add traffic, narrow sois, and failed first attempts that mean a second run. Better stop sequencing, delivery time windows customers can trust, and a way to reschedule from a LINE message all cut cost per parcel without touching service quality.' },
+    { icon: 'ti-radar', title: 'Real-Time Visibility Gaps', desc: 'Shippers, carriers, and customers each want to know where a shipment is right now, but tracking data is often spread across a GPS provider, a carrier\'s website, and a driver\'s phone call. Multi-leg journeys, such as truck to hub to last-mile rider, leave blind spots in between. We pull these sources into one status view with clear milestones, so customer service answers in seconds and exceptions are flagged before the customer notices.' },
+    { icon: 'ti-building-warehouse', title: 'Warehouse Capacity & Labor Volatility', desc: 'Volume swings with campaigns like 11.11 and 12.12, month-end billing cycles, and harvest or holiday peaks. At the same time, warehouse labour is hard to find and storage space is costly. Planning shifts, dock slots, and floor space without a forecast means either paying for idle people or running behind on orders. We build planning views based on your own order history, plus WMS flows that make a new temporary picker productive on day one.' },
+    { icon: 'ti-plug-connected', title: 'Fragmented Multi-Carrier Integrations', desc: 'A shipper in Thailand may work with a dozen carriers, each with a different API, tracking format, label size, and service promise. Custom connections to each one break when the carrier changes something, and adding the next carrier takes weeks. We build one integration layer that translates all of them into a single format, so your team adds or swaps a carrier without touching the rest of the system.' },
   ] : [
-    { icon: 'ti-truck-delivery', title: 'แรงกดดันด้านต้นทุนการส่งช่วงสุดท้าย', desc: 'การส่งช่วงสุดท้าย (Last-Mile) เป็นต้นทุนขนส่งที่สูงที่สุด ทั้งค่าน้ำมันและค่าแรงที่เพิ่มขึ้น ประกอบกับลูกค้าคาดหวังส่งฟรีหรือราคาถูก จึงบีบกำไรของทุกออเดอร์' },
-    { icon: 'ti-radar', title: 'มองไม่เห็นสถานะสินค้าแบบเรียลไทม์', desc: 'ทั้งผู้ส่ง ผู้ขนส่ง และลูกค้า อยากเห็นตำแหน่งสินค้าและเวลาถึงแบบเรียลไทม์ แต่ระบบติดตามที่กระจัดกระจายทำให้เกิดจุดบอดตลอดเส้นทางที่มีหลายช่วงต่อ' },
-    { icon: 'ti-building-warehouse', title: 'กำลังรับของในคลังและแรงงานไม่แน่นอน', desc: 'ความต้องการที่ขึ้นลงตามฤดูกาล แรงงานขาดแคลน และต้นทุนจัดเก็บที่สูงขึ้น ทำให้วางแผนพื้นที่คลังและกำลังคนได้ยาก ถ้าไม่มีระบบพยากรณ์และระบบอัตโนมัติที่ดี' },
-    { icon: 'ti-plug-connected', title: 'เชื่อมต่อผู้ขนส่งหลายรายที่กระจัดกระจาย', desc: 'การประสานงานกับผู้ให้บริการขนส่งหลายสิบราย ซึ่งแต่ละรายมี API รูปแบบการติดตามและ SLA ต่างกัน ทำให้การเชื่อมต่อเปราะบาง ดูแลยาก และขยายต่อได้ช้า' },
+    { icon: 'ti-truck-delivery', title: 'แรงกดดันด้านต้นทุนการส่งช่วงสุดท้าย', desc: 'การส่งถึงหน้าบ้านลูกค้ามักเป็นช่วงที่แพงที่สุดของทั้งเส้นทาง และยิ่งแพงขึ้นตามราคาน้ำมัน ค่าแรงคนขับ และนิสัยคนซื้อออนไลน์ที่คาดหวังส่งฟรีหรือส่งวันเดียวถึง เมืองหนาแน่นอย่างกรุงเทพฯ เพิ่มทั้งรถติด ซอยแคบ และการส่งครั้งแรกไม่สำเร็จจนต้องออกรอบสอง ถ้าเรียงลำดับจุดส่งให้ดีขึ้น ให้ช่วงเวลาส่งที่ลูกค้าเชื่อถือได้ และให้ลูกค้านัดส่งใหม่ผ่านข้อความ LINE ต้นทุนต่อชิ้นก็ลดลงโดยที่บริการไม่แย่ลง' },
+    { icon: 'ti-radar', title: 'มองไม่เห็นสถานะสินค้าแบบเรียลไทม์', desc: 'ทั้งผู้ส่ง ผู้ขนส่ง และลูกค้า อยากรู้ว่าของอยู่ตรงไหนตอนนี้ แต่ข้อมูลติดตามมักกระจายอยู่ที่ผู้ให้บริการ GPS เว็บไซต์ของผู้ขนส่ง และโทรศัพท์ที่คุยกับคนขับ เส้นทางที่ต่อหลายช่วง เช่น รถบรรทุกไปศูนย์กระจาย แล้วต่อไรเดอร์ส่งช่วงสุดท้าย จะมีจุดบอดระหว่างทาง เราดึงข้อมูลเหล่านี้มารวมเป็นหน้าสถานะเดียวที่มีหมุดเวลาชัดเจน ฝ่ายบริการลูกค้าตอบได้ในไม่กี่วินาที และเห็นงานที่มีปัญหาก่อนลูกค้าจะรู้' },
+    { icon: 'ti-building-warehouse', title: 'กำลังรับของในคลังและแรงงานไม่แน่นอน', desc: 'ปริมาณงานขึ้นลงตามแคมเปญอย่าง 11.11 และ 12.12 รอบวางบิลสิ้นเดือน และช่วงเก็บเกี่ยวหรือเทศกาล ขณะเดียวกันแรงงานคลังก็หายาก และค่าพื้นที่เก็บของก็สูงขึ้น ถ้าวางแผนกะ คิวจอดรถที่ท่า และพื้นที่คลังโดยไม่มีตัวพยากรณ์ ก็จะจ่ายค่าแรงให้คนว่าง หรือไม่ก็ทำออเดอร์ไม่ทัน เราทำหน้าจอวางแผนจากประวัติออเดอร์ของคุณเอง และขั้นตอนใน WMS ที่ทำให้พนักงานหยิบของชั่วคราวคนใหม่ทำงานได้ตั้งแต่วันแรก' },
+    { icon: 'ti-plug-connected', title: 'เชื่อมต่อผู้ขนส่งหลายรายที่กระจัดกระจาย', desc: 'ผู้ส่งในไทยอาจทำงานกับผู้ขนส่งเป็นสิบราย แต่ละรายมี API รูปแบบสถานะ ขนาดใบปะหน้า และคำสัญญาด้านบริการไม่เหมือนกัน ถ้าต่อแบบเขียนเฉพาะรายทีละราย พอผู้ขนส่งเปลี่ยนอะไรสักอย่างก็พัง และการเพิ่มเจ้าถัดไปใช้เวลาเป็นสัปดาห์ เราทำชั้นเชื่อมต่อกลางที่แปลงทุกเจ้าให้เป็นรูปแบบเดียว ทีมคุณเพิ่มหรือเปลี่ยนผู้ขนส่งได้โดยไม่ต้องไปแตะส่วนอื่นของระบบ' },
   ]
 
   const metrics = [
@@ -37,31 +37,31 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   ]
 
   const capabilities = isEN ? [
-    { icon: 'ti-map-pin', title: 'Real-Time Shipment Tracking', desc: 'Live tracking platforms that unify GPS, carrier, and IoT sensor data into a single view of every shipment from origin to final delivery.' },
-    { icon: 'ti-route', title: 'Route Optimization Systems', desc: 'Algorithmic route planning engines that minimize distance, fuel, and delivery time while respecting time windows, vehicle capacity, and driver constraints.' },
-    { icon: 'ti-building-warehouse', title: 'Warehouse Management Systems', desc: 'End-to-end WMS platforms covering inbound receiving, put-away, picking, packing, and outbound dispatch across single or multi-site warehouse networks.' },
-    { icon: 'ti-gauge', title: 'Fleet Telematics Dashboards', desc: 'Real-time fleet monitoring dashboards that surface vehicle location, driver behavior, fuel consumption, and maintenance alerts from onboard telematics devices.' },
-    { icon: 'ti-plug-connected', title: 'Multi-Carrier Integration Platforms', desc: 'Unified integration layers that normalize rates, labels, and tracking events across dozens of carriers behind a single, consistent API.' },
-    { icon: 'ti-trending-up', title: 'Demand & Capacity Forecasting', desc: 'Machine learning forecasting tools that predict shipment volumes and warehouse capacity needs to guide staffing, procurement, and network planning.' },
+    { icon: 'ti-map-pin', title: 'Real-Time Shipment Tracking', desc: 'A tracking platform that gathers GPS pings, carrier scans, driver app updates, and sensor readings into one timeline per shipment. Customers get a tracking link or LINE notification, and your support team sees the same timeline and a list of late or stuck shipments. We define milestones with you, such as picked up, at hub, out for delivery, and delivered, so the data means the same thing to everyone.' },
+    { icon: 'ti-route', title: 'Route Optimization Systems', desc: 'Planning tools that group stops into routes and sequence them to cut distance and time, while respecting delivery windows, vehicle capacity, driver hours, and no-go areas. Dispatchers can drag stops between vehicles and see the effect on the day\'s plan before they commit. Re-planning when a van breaks down or an order is added takes minutes, not an hour of phone calls.' },
+    { icon: 'ti-building-warehouse', title: 'Warehouse Management Systems', desc: 'A WMS for receiving, put-away, picking, packing, cycle counting, and dispatch, for one warehouse or a network of them. Pickers work from a handheld or phone with scan confirmation, and supervisors see stock accuracy and pick rates per person and per shift. We connect it to your ERP or online store so stock levels match what is actually on the shelf.' },
+    { icon: 'ti-gauge', title: 'Fleet Telematics Dashboards', desc: 'Dashboards that show where each vehicle is, how drivers are driving, how much fuel is used, and when maintenance is due, based on the telematics devices already on your trucks. Fleet managers get alerts for idling, harsh braking, or route deviations, and a monthly view of cost per kilometre. We work with the devices you own rather than requiring new hardware.' },
+    { icon: 'ti-plug-connected', title: 'Multi-Carrier Integration Platforms', desc: 'One integration layer that normalises rates, labels, pickup requests, and tracking events from all your carriers behind a single API. Your sales site or ERP talks to one interface, and rules decide which carrier to use by price, speed, or service area. Adding a new carrier becomes a configuration task instead of a development project.' },
+    { icon: 'ti-trending-up', title: 'Demand & Capacity Forecasting', desc: 'Forecasting tools trained on your order and shipment history, with seasonality, campaigns, and holidays included, to estimate parcel volumes and warehouse space a few weeks ahead. Planners use them to set staffing, book extra vehicles, and decide how much stock to pre-position. We show the forecast beside what actually happened, so you can see how far to trust it.' },
   ] : [
-    { icon: 'ti-map-pin', title: 'Real-Time Shipment Tracking', desc: 'แพลตฟอร์มติดตามแบบเรียลไทม์ รวมข้อมูล GPS ผู้ขนส่ง และ IoT Sensor ไว้เป็นภาพเดียวของทุกการจัดส่งตั้งแต่ต้นทางถึงปลายทาง' },
-    { icon: 'ti-route', title: 'Route Optimization Systems', desc: 'ระบบวางแผนเส้นทางด้วยอัลกอริทึม ลดระยะทาง เชื้อเพลิง และเวลาส่ง โดยคำนึงถึงช่วงเวลารับของ ความจุรถ และข้อจำกัดของคนขับ' },
-    { icon: 'ti-building-warehouse', title: 'Warehouse Management Systems', desc: 'แพลตฟอร์ม WMS ครบทุกขั้นตอน ตั้งแต่รับสินค้าเข้า จัดเก็บ หยิบ บรรจุ ไปจนถึงจ่ายออก ทั้งคลังเดียวและหลายคลัง' },
-    { icon: 'ti-gauge', title: 'Fleet Telematics Dashboards', desc: 'Dashboard ติดตามรถแบบเรียลไทม์ แสดงตำแหน่งรถ พฤติกรรมคนขับ การใช้เชื้อเพลิง และการแจ้งเตือนซ่อมบำรุงจากอุปกรณ์ Telematics บนรถ' },
-    { icon: 'ti-plug-connected', title: 'Multi-Carrier Integration Platforms', desc: 'ชั้นเชื่อมต่อกลางที่ทำให้ค่าขนส่ง ใบปะหน้า และสถานะการติดตามจากผู้ขนส่งหลายสิบรายอยู่ในรูปแบบเดียว ผ่าน API เดียว' },
-    { icon: 'ti-trending-up', title: 'Demand & Capacity Forecasting', desc: 'เครื่องมือพยากรณ์ด้วย Machine Learning คาดการณ์ปริมาณการส่งและพื้นที่คลังที่ต้องใช้ เพื่อวางแผนกำลังคน การจัดซื้อ และเครือข่าย' },
+    { icon: 'ti-map-pin', title: 'Real-Time Shipment Tracking', desc: 'แพลตฟอร์มติดตามที่รวมตำแหน่งจาก GPS การสแกนของผู้ขนส่ง การอัปเดตจากแอปคนขับ และค่าจากเซนเซอร์ ให้เป็นไทม์ไลน์เดียวต่อพัสดุหนึ่งชิ้น ลูกค้าได้ลิงก์ติดตามหรือการแจ้งเตือนผ่าน LINE ส่วนทีมซัพพอร์ตเห็นไทม์ไลน์เดียวกัน พร้อมรายการพัสดุที่ล่าช้าหรือค้าง เราตกลงกับคุณก่อนว่าแต่ละสถานะหมายถึงอะไร เช่น รับของแล้ว ถึงศูนย์กระจาย ออกส่ง และส่งสำเร็จ ข้อมูลจะได้มีความหมายเดียวกันสำหรับทุกคน' },
+    { icon: 'ti-route', title: 'Route Optimization Systems', desc: 'เครื่องมือวางแผนที่จัดกลุ่มจุดส่งเป็นเส้นทางและเรียงลำดับเพื่อลดระยะทางและเวลา โดยคำนึงถึงช่วงเวลาส่ง ความจุรถ ชั่วโมงทำงานของคนขับ และพื้นที่ห้ามเข้า คนจัดคิวรถลากจุดส่งย้ายระหว่างรถ แล้วดูผลต่อแผนทั้งวันก่อนยืนยันได้ พอรถเสียหรือมีออเดอร์แทรก การจัดแผนใหม่ใช้เวลาไม่กี่นาที ไม่ต้องโทรประสานกันเป็นชั่วโมง' },
+    { icon: 'ti-building-warehouse', title: 'Warehouse Management Systems', desc: 'WMS ที่ดูแลการรับของเข้า จัดเก็บ หยิบ บรรจุ นับสต็อก และจ่ายออก ทั้งคลังเดียวและหลายคลัง พนักงานหยิบของทำงานจากเครื่องมือถือหรือมือถือพร้อมสแกนยืนยัน ส่วนหัวหน้าเห็นความแม่นยำของสต็อกและความเร็วในการหยิบรายคนรายกะ เราเชื่อมกับ ERP หรือร้านค้าออนไลน์ของคุณ เพื่อให้จำนวนสต็อกตรงกับของที่อยู่บนชั้นจริง' },
+    { icon: 'ti-gauge', title: 'Fleet Telematics Dashboards', desc: 'แดชบอร์ดที่แสดงว่ารถแต่ละคันอยู่ไหน คนขับขับยังไง ใช้น้ำมันเท่าไร และถึงรอบซ่อมบำรุงเมื่อไร โดยใช้อุปกรณ์ Telematics ที่ติดอยู่บนรถของคุณอยู่แล้ว ผู้จัดการฝูงรถได้รับการแจ้งเตือนเมื่อรถจอดติดเครื่อง เบรกกะทันหัน หรือออกนอกเส้นทาง และดูต้นทุนต่อกิโลเมตรรายเดือนได้ เราทำงานกับอุปกรณ์ที่คุณมีอยู่ ไม่จำเป็นต้องซื้อฮาร์ดแวร์ใหม่' },
+    { icon: 'ti-plug-connected', title: 'Multi-Carrier Integration Platforms', desc: 'ชั้นเชื่อมต่อกลางที่ทำให้ค่าขนส่ง ใบปะหน้า การเรียกรถเข้ารับ และสถานะติดตามจากผู้ขนส่งทุกเจ้าอยู่ในรูปแบบเดียว ผ่าน API เดียว เว็บขายของหรือ ERP ของคุณคุยกับอินเทอร์เฟซเดียว แล้วกฎที่ตั้งไว้จะเลือกผู้ขนส่งให้ตามราคา ความเร็ว หรือพื้นที่ให้บริการ การเพิ่มผู้ขนส่งรายใหม่จึงเป็นแค่การตั้งค่า ไม่ต้องเปิดโปรเจกต์พัฒนาใหม่' },
+    { icon: 'ti-trending-up', title: 'Demand & Capacity Forecasting', desc: 'เครื่องมือพยากรณ์ที่เรียนรู้จากประวัติออเดอร์และการส่งของคุณ โดยนับฤดูกาล แคมเปญ และวันหยุดเข้าไปด้วย เพื่อประเมินปริมาณพัสดุและพื้นที่คลังล่วงหน้าสองสามสัปดาห์ ฝ่ายวางแผนใช้ตั้งกำลังคน จองรถเพิ่ม และตัดสินใจว่าจะเตรียมสต็อกไว้ใกล้ลูกค้าแค่ไหน เราแสดงตัวเลขที่พยากรณ์เทียบกับที่เกิดขึ้นจริงให้ดูควบคู่กัน คุณจะเห็นเองว่าควรเชื่อมันได้แค่ไหน' },
   ]
 
   const techStack = ['React', 'Node.js', 'GPS/Telematics', 'Google Maps API', 'Kafka', 'PostgreSQL', 'Redis', 'Machine Learning', 'AWS', 'GraphQL', 'IoT', 'Elasticsearch', 'Docker']
 
   const useCases = isEN ? [
-    { no: '01', title: 'Real-Time Shipment Tracking Platform', desc: 'Unified tracking application that ingests GPS, carrier, and IoT sensor feeds to give shippers and customers live ETAs across every leg of a shipment.' },
-    { no: '02', title: 'Route Optimization System', desc: 'Dynamic route planning engine that assigns stops to vehicles and sequences deliveries to minimize distance and fuel while meeting delivery time windows.' },
-    { no: '03', title: 'Warehouse Management Platform', desc: 'Multi-site WMS that orchestrates receiving, put-away, picking, and dispatch, with real-time inventory accuracy and labor productivity analytics.' },
+    { no: '01', title: 'Real-Time Shipment Tracking Platform', desc: 'One tracking application for shippers, carriers, and end customers. It ingests GPS, hub scans, and driver app events, shows the ETA at each stage, and sends updates through LINE or SMS. Support agents search by order or phone number and see the full timeline in one place. A good fit for a 3PL or an e-commerce shipper that currently answers where-is-my-parcel questions by phone.' },
+    { no: '02', title: 'Route Optimization System', desc: 'A planning system that takes tomorrow\'s orders and produces routes for each vehicle, checking delivery windows, load limits, and driver hours. Dispatchers adjust before the trucks leave, and drivers receive the sequence on their phone with navigation and proof-of-delivery capture. After a few weeks of data, the system compares planned and actual times so you can tune the assumptions.' },
+    { no: '03', title: 'Warehouse Management Platform', desc: 'A multi-site WMS that handles inbound, put-away, picking, packing, and dispatch with barcode scanning, plus live stock accuracy and labour productivity reports. Supervisors see which orders are late and which zones are congested. It can start with one warehouse as a pilot and roll out to others once the process settles.' },
   ] : [
-    { no: '01', title: 'Real-Time Shipment Tracking Platform', desc: 'แอปติดตามกลางที่ดึงข้อมูล GPS ผู้ขนส่ง และ IoT Sensor ให้ผู้ส่งและลูกค้าเห็นเวลาถึงโดยประมาณ (ETA) แบบเรียลไทม์ในทุกช่วงของการส่ง' },
-    { no: '02', title: 'Route Optimization System', desc: 'ระบบวางแผนเส้นทางที่ปรับตามสถานการณ์ จัดจุดส่งให้รถแต่ละคันและเรียงลำดับการส่งเพื่อลดระยะทางและเชื้อเพลิง โดยตรงตามช่วงเวลาที่กำหนด' },
-    { no: '03', title: 'Warehouse Management Platform', desc: 'ระบบ WMS สำหรับหลายคลัง จัดการรับสินค้า จัดเก็บ หยิบ และจ่ายออก พร้อมสต็อกที่แม่นยำแบบเรียลไทม์ และ Analytics ด้านผลิตภาพแรงงาน' },
+    { no: '01', title: 'Real-Time Shipment Tracking Platform', desc: 'แอปติดตามกลางสำหรับผู้ส่ง ผู้ขนส่ง และลูกค้าปลายทาง รับข้อมูลจาก GPS การสแกนที่ศูนย์กระจาย และแอปคนขับ แสดงเวลาถึงโดยประมาณในแต่ละช่วง และส่งการอัปเดตทาง LINE หรือ SMS เจ้าหน้าที่ซัพพอร์ตค้นด้วยเลขออเดอร์หรือเบอร์โทรแล้วเห็นไทม์ไลน์ครบในที่เดียว เหมาะกับ 3PL หรือผู้ส่งฝั่งอีคอมเมิร์ซที่ตอนนี้ยังตอบคำถามว่าของอยู่ไหนด้วยโทรศัพท์' },
+    { no: '02', title: 'Route Optimization System', desc: 'ระบบวางแผนที่รับออเดอร์ของพรุ่งนี้แล้วจัดเส้นทางให้รถแต่ละคัน โดยเช็กช่วงเวลาส่ง น้ำหนักบรรทุก และชั่วโมงทำงานของคนขับ คนจัดคิวรถปรับแผนได้ก่อนรถออก ส่วนคนขับได้ลำดับจุดส่งบนมือถือพร้อมระบบนำทางและถ่ายหลักฐานการส่งมอบ พอมีข้อมูลสักหลายสัปดาห์ ระบบจะเทียบเวลาที่วางแผนกับเวลาที่ใช้จริง ให้คุณปรับสมมติฐานให้แม่นขึ้น' },
+    { no: '03', title: 'Warehouse Management Platform', desc: 'WMS สำหรับหลายคลัง ดูแลรับของเข้า จัดเก็บ หยิบ บรรจุ และจ่ายออกด้วยการสแกนบาร์โค้ด พร้อมรายงานความแม่นยำของสต็อกและผลิตภาพแรงงานแบบสด หัวหน้าเห็นว่าออเดอร์ไหนล่าช้าและโซนไหนแออัด เริ่มจากคลังเดียวเป็นโครงการนำร่อง แล้วขยายไปคลังอื่นเมื่อขั้นตอนนิ่งแล้วก็ได้' },
   ]
 
   const heroVisual = (
@@ -169,8 +169,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <div className="w-12 h-[3px] rounded-full mb-8" style={{ background: 'linear-gradient(90deg, var(--purple-light), var(--lime))' }} />
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
-                  ? 'We help transportation and logistics companies build real-time tracking platforms, route optimization systems, warehouse management software, and fleet telematics dashboards that cut cost and improve service reliability. Our solutions integrate cleanly with existing carrier and ERP systems, scale across peak seasons, and turn fragmented operational data into decisions your team can act on immediately.'
-                  : 'เราช่วยบริษัทขนส่งและโลจิสติกส์สร้างแพลตฟอร์มติดตามแบบเรียลไทม์ ระบบวางแผนเส้นทาง ซอฟต์แวร์จัดการคลังสินค้า และ Dashboard Fleet Telematics เพื่อลดต้นทุนและเพิ่มความน่าเชื่อถือของบริการ ระบบของเราเชื่อมกับระบบของผู้ขนส่งและ ERP เดิมได้ราบรื่น รองรับช่วงฤดูกาลที่งานพุ่งสูง และเปลี่ยนข้อมูลที่กระจัดกระจายให้เป็นข้อมูลที่ทีมคุณนำไปตัดสินใจได้ทันที'}
+                  ? 'We build the operational software that moves goods: shipment tracking platforms, route planning tools, warehouse management systems (WMS), and fleet dashboards. Most logistics teams in Thailand already have pieces of this, such as a GPS vendor, an ERP, a carrier portal, and a few spreadsheets, so our first job is to see where the data stops flowing and connect it. We work with dispatchers, warehouse supervisors, and drivers to learn how a day really runs, from morning loading to proof of delivery. The aim is simple: your team knows where every parcel is, and customers stop calling to ask.'
+                  : 'เราสร้างซอฟต์แวร์หน้างานที่ช่วยให้ของเดินทางไปถึงที่หมาย ทั้งแพลตฟอร์มติดตามพัสดุ เครื่องมือวางเส้นทาง ระบบจัดการคลังสินค้า (WMS) และแดชบอร์ดดูรถ ทีมโลจิสติกส์ในไทยส่วนใหญ่มีบางส่วนอยู่แล้ว เช่น ผู้ให้บริการ GPS ระบบ ERP พอร์ทัลของผู้ขนส่ง และสเปรดชีตอีกหลายไฟล์ งานแรกของเราคือดูว่าข้อมูลหยุดไหลตรงไหนแล้วต่อมันเข้าด้วยกัน เรานั่งคุยกับคนจัดคิวรถ หัวหน้าคลัง และคนขับ เพื่อเข้าใจว่าหนึ่งวันทำงานจริงเป็นยังไง ตั้งแต่ขึ้นของตอนเช้าจนถึงหลักฐานการส่งมอบ เป้าหมายง่าย ๆ คือทีมคุณรู้ว่าพัสดุทุกชิ้นอยู่ไหน และลูกค้าไม่ต้องโทรมาถามอีก'}
               </p>
             </div>
           </div>
@@ -187,8 +187,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
-                ? 'Understanding the critical obstacles that drive digital transformation in this industry.'
-                : 'ปัญหาหลักที่ธุรกิจในอุตสาหกรรมนี้ต้องเจอ'}
+                ? 'Where logistics operations lose money and time, and the gaps that keep customers calling to ask where their goods are.'
+                : 'จุดที่งานโลจิสติกส์เสียเงินและเสียเวลา และช่องว่างที่ทำให้ลูกค้าต้องโทรมาถามว่าของอยู่ไหน'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -238,7 +238,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
+              {isEN ? 'What we build for carriers, 3PLs, and shippers, and how each piece fits into the daily work of dispatch, warehouse, and customer service.' : 'ระบบที่เราสร้างให้ผู้ขนส่ง 3PL และผู้ส่งสินค้า พร้อมอธิบายว่าแต่ละส่วนเข้ากับงานประจำวันของฝ่ายจัดรถ คลัง และบริการลูกค้ายังไง'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -265,8 +265,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
-                ? 'Industry-proven tools and frameworks we leverage to build robust solutions.'
-                : 'เครื่องมือและ Framework ที่เราเลือกใช้ เพราะมั่นคงและเชื่อถือได้'}
+                ? 'Tools we use for live location data, event streams, and route calculation, picked for reliability under heavy daily volume.'
+                : 'เครื่องมือที่เราใช้กับข้อมูลตำแหน่งแบบสด สตรีมเหตุการณ์ และการคำนวณเส้นทาง เลือกเพราะทนปริมาณงานหนักในแต่ละวันได้'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -292,7 +292,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างงานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
+              {isEN ? 'Three typical projects, covering what we build, who uses it each day, and what gets easier.' : 'ตัวอย่างโปรเจกต์ทั่วไปสามแบบ ว่าเราสร้างอะไร ใครใช้ทุกวัน และอะไรที่ทำง่ายขึ้น'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -332,7 +332,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
+              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังหน่อยว่าคุณกำลังทำอะไรอยู่'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link

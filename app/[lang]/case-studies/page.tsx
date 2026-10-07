@@ -5,11 +5,11 @@ import CaseStudiesPageClient from './CaseStudiesPageClient'
 export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
   const isEN = params.lang === 'en'
   const title = isEN
-    ? 'Case Studies — Real Client Results | Haliviq'
-    : 'Case Studies — ผลงานจริงของลูกค้า | Haliviq'
+    ? 'Web & App Case Studies in Thailand | Haliviq'
+    : 'Case Study เว็บไซต์และแอปมือถือ | Haliviq'
   const description = isEN
-    ? 'In-depth case studies on how Haliviq helped clients across F&B, government, real estate, retail, and more solve real challenges with design and engineering.'
-    : 'เจาะลึก Case Study การทำงานของ Haliviq ที่ช่วยลูกค้าในธุรกิจอาหาร ภาครัฐ อสังหาริมทรัพย์ ค้าปลีก และอื่นๆ แก้โจทย์จริงด้วยการออกแบบและวิศวกรรม'
+    ? 'Case studies from Haliviq, a Bangkok digital studio: websites, mobile apps and CRM systems built for restaurants, government bodies, developers and retailers.'
+    : 'รวม Case Study ของ Haliviq สตูดิโอดิจิทัลในกรุงเทพฯ ทั้งเว็บไซต์ แอปมือถือ และระบบ CRM ที่ทำให้ร้านอาหาร หน่วยงานรัฐ ผู้พัฒนาอสังหาฯ และธุรกิจค้าปลีก'
   const siteUrl = `https://haliviq.com/${params.lang}/case-studies`
   return {
     title,

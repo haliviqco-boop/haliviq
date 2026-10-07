@@ -11,11 +11,11 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
   const isEN = params.lang === 'en'
   const title = isEN
-    ? 'About Us — Our Team & Story | Haliviq'
-    : 'เกี่ยวกับเรา — ทีมงานและเรื่องราวของเรา | Haliviq'
+    ? 'About Haliviq | Digital Product Studio in Bangkok'
+    : 'เกี่ยวกับ Haliviq | สตูดิโอดิจิทัลในกรุงเทพฯ'
   const description = isEN
-    ? 'Meet the team behind Haliviq — a Bangkok-based digital product studio building software and AI solutions for ambitious businesses.'
-    : 'รู้จักทีมงานเบื้องหลัง Haliviq สตูดิโอพัฒนาผลิตภัณฑ์ดิจิทัลในกรุงเทพฯ ที่สร้างซอฟต์แวร์และระบบ AI ให้ธุรกิจที่อยากเติบโต'
+    ? 'Meet the Bangkok team behind Haliviq: a small studio that plans, designs and builds websites, apps and AI tools for Thai and Southeast Asian businesses.'
+    : 'รู้จักทีม Haliviq สตูดิโอในกรุงเทพฯ ที่ช่วยวางแผน ออกแบบ และพัฒนา website แอป และระบบ AI ให้ธุรกิจในไทยและเอเชียตะวันออกเฉียงใต้ ทีมเล็กที่ดูแลงานใกล้ชิด'
   const siteUrl = `https://haliviq.com/${params.lang}/about`
   return {
     title,
@@ -159,14 +159,16 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <div className="space-y-6 mb-16">
               {(isEN
                 ? [
-                    'Haliviq believes AI can help businesses run with far more agility — from finding information, summarizing documents, and supporting customers, to helping teams analyze data for better decisions. That\'s why we combine AI with our strategy, design, and engineering capabilities to build tools that fit the way each organization actually works.',
-                    'This approach grew out of our own experience working closely with businesses. We kept seeing how much time teams lost to gathering information, reading through documents, and repeating the same manual steps. That led us to look for ways AI could lift this burden, freeing people up for work that genuinely needs thought, experience, and care for others.',
-                    'For Haliviq, "Human Ideas. Intelligent Future." means a future where people can take their ideas further, backed by tools that help them find, understand, and act with real efficiency.',
+                    'Haliviq believes AI can help a business run with less friction: finding the right information faster, summarizing long documents, answering customer questions, and giving teams a clearer read on their own data before they make a decision. We pair AI with our strategy, design and engineering work, so the tool we build fits the way your people already work instead of asking them to change everything.',
+                    'This view comes from years of sitting next to clients. Again and again we watched teams lose hours to copying information between systems, digging through old files, and repeating the same manual steps every week. So we started looking for places where AI could take that load off, leaving people more time for the work that needs judgment, experience and a human touch.',
+                    'We are also careful about where AI does not belong. Before we suggest a feature we ask what problem it solves, what data it would touch, and who checks its answers. In Thailand that includes thinking about PDPA, Thai-language quality, and whether sensitive data should stay on local infrastructure. If a simple form or a better-designed page does the job, we will say so.',
+                    'For Haliviq, "Human Ideas. Intelligent Future." means a future where people can take their ideas further, backed by tools that help them find, understand and act without the busywork.',
                   ]
                 : [
-                    'HALIVIQ เชื่อว่า AI ช่วยให้ธุรกิจทำงานคล่องตัวขึ้น ตั้งแต่ค้นหาข้อมูล สรุปเอกสาร ดูแลลูกค้า ไปจนถึงช่วยทีมวิเคราะห์ข้อมูลเพื่อตัดสินใจ เราจึงนำ AI มาใช้ร่วมกับงานกลยุทธ์ การออกแบบ และการพัฒนาระบบ เพื่อสร้างเครื่องมือที่เหมาะกับวิธีทำงานของแต่ละองค์กร',
-                    'แนวคิดนี้มาจากการทำงานใกล้ชิดกับธุรกิจ เราเห็นว่างานหลายอย่างเสียเวลาไปกับการรวบรวมข้อมูล อ่านเอกสาร และทำขั้นตอนเดิมซ้ำ ๆ เราจึงหาทางใช้ AI ช่วยลดภาระเหล่านี้ เพื่อให้ทีมมีเวลาให้กับงานที่ต้องใช้ความคิด ประสบการณ์ และการดูแลคนมากขึ้น',
-                    'สำหรับ HALIVIQ ประโยค "Human Ideas. Intelligent Future." หมายถึงอนาคตที่คนนำความคิดของตัวเองไปได้ไกลขึ้น ด้วยเครื่องมือที่ช่วยค้นหา ทำความเข้าใจ และลงมือทำได้เร็วขึ้น',
+                    'HALIVIQ เชื่อว่า AI ช่วยให้ธุรกิจทำงานคล่องตัวขึ้นได้จริง ไม่ว่าจะเป็นการหาข้อมูลให้เร็วขึ้น สรุปเอกสารยาว ๆ ตอบคำถามลูกค้า หรือช่วยทีมดูข้อมูลของตัวเองให้ชัดก่อนตัดสินใจ เรานำ AI มาทำงานร่วมกับงานกลยุทธ์ งานออกแบบ และงานพัฒนาระบบ เพื่อให้เครื่องมือที่ได้เข้ากับวิธีทำงานของทีมคุณ ไม่ต้องให้ทุกคนมาปรับตัวใหม่หมด',
+                    'แนวคิดนี้มาจากการที่เราได้ทำงานใกล้ชิดกับลูกค้ามาตลอด เราเห็นบ่อย ๆ ว่าหลายทีมเสียเวลาเป็นชั่วโมงไปกับการคัดลอกข้อมูลข้ามระบบ ไล่หาไฟล์เก่า และทำขั้นตอนเดิมซ้ำทุกสัปดาห์ เราเลยเริ่มมองหาจุดที่ AI ช่วยแบ่งเบางานเหล่านี้ได้ เพื่อให้คนในทีมมีเวลาไปทำงานที่ต้องใช้วิจารณญาณ ประสบการณ์ และความใส่ใจมากขึ้น',
+                    'ในทางกลับกัน เราก็บอกตรง ๆ ว่างานไหนไม่ควรใช้ AI ก่อนจะเสนอฟีเจอร์ใด เราจะถามก่อนว่ามันแก้ปัญหาอะไร ต้องแตะข้อมูลอะไรบ้าง และใครเป็นคนตรวจคำตอบ สำหรับงานในไทย เรายังดูเรื่อง PDPA คุณภาพของภาษาไทย และดูว่าข้อมูลสำคัญควรอยู่บนเซิร์ฟเวอร์ในประเทศหรือไม่ ถ้าฟอร์มธรรมดาหรือหน้าเว็บที่ออกแบบดีขึ้นก็แก้ปัญหาได้ เราก็จะแนะนำแบบนั้น',
+                    'สำหรับ HALIVIQ ประโยค "Human Ideas. Intelligent Future." หมายถึงอนาคตที่คนนำความคิดของตัวเองไปได้ไกลขึ้น โดยมีเครื่องมือช่วยค้นหา ทำความเข้าใจ และลงมือทำ โดยไม่ต้องเสียเวลากับงานจุกจิก',
                   ]
               ).map((para, i) => (
                 <p key={i} className="text-lg leading-relaxed max-w-3xl mx-auto text-center" style={{ color: 'rgba(255,255,255,0.75)', fontWeight: 400 }}>
@@ -181,8 +183,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               </p>
               <p className="text-lg max-w-2xl mx-auto mb-10" style={{ color: 'rgba(255,255,255,0.75)', fontWeight: 400 }}>
                 {isEN
-                  ? 'Our core strength is UX/UI design — extending end-to-end into websites, applications, and AI design.'
-                  : 'จุดแข็งหลักของเราคือการออกแบบ UX/UI และต่อยอดไปถึงการพัฒนาเว็บไซต์ แอปพลิเคชัน และการออกแบบ AI'}
+                  ? 'Our core strength is UX/UI design. We start there because most digital products succeed or fail on how clear they are to use, and then we carry the same thinking through to website development, application development and AI design, so the design is still intact when the product ships.'
+                  : 'จุดแข็งหลักของเราคือการออกแบบ UX/UI เพราะผลิตภัณฑ์ดิจิทัลส่วนใหญ่ได้หรือเสียกันที่ว่าคนใช้แล้วเข้าใจง่ายแค่ไหน จากนั้นเราก็ต่อยอดแนวคิดเดียวกันไปถึงการพัฒนา website การพัฒนาแอป และการออกแบบ AI เพื่อให้งานที่ออกแบบไว้ถูกทำออกมาตรงตามที่วางไว้'}
               </p>
             </div>
 
@@ -213,8 +215,22 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                   icon: 'ti-message-chatbot',
                   titleEN: 'AI Assistants & Knowledge Search',
                   titleTH: 'AI Assistants & Knowledge Search',
-                  descEN: 'Assistants that search and answer accurately from your own documents.',
-                  descTH: 'ทำผู้ช่วยที่ค้นหาและตอบคำถามจากเอกสาร',
+                  descEN: 'Assistants that search your own documents and answer from them, showing which file each answer came from so your team can check it.',
+                  descTH: 'ทำผู้ช่วยที่ค้นหาและตอบคำถามจากเอกสารของคุณเอง ตอบพร้อมบอกว่าอ้างอิงจากไฟล์ไหน ให้ทีมตรวจสอบย้อนกลับได้',
+                },
+                {
+                  icon: 'ti-microphone',
+                  titleEN: 'AI Voice Agents',
+                  titleTH: 'AI Voice Agents',
+                  descEN: 'Voice assistants that answer calls, handle routine questions in Thai or English, and pass the harder ones to a person.',
+                  descTH: 'ผู้ช่วยด้วยเสียงที่รับสายและตอบคำถามทั่วไปเป็นภาษาไทยหรืออังกฤษ ส่วนเรื่องที่ซับซ้อนก็ส่งต่อให้เจ้าหน้าที่',
+                },
+                {
+                  icon: 'ti-settings-automation',
+                  titleEN: 'Workflow Automation',
+                  titleTH: 'ระบบ Automation',
+                  descEN: 'Automations that move data between your tools, draft routine documents and flag exceptions, so repeat tasks stop eating your team\'s week.',
+                  descTH: 'ระบบที่ย้ายข้อมูลระหว่างเครื่องมือต่าง ๆ ร่างเอกสารที่ทำซ้ำ และแจ้งเตือนเมื่อมีเคสผิดปกติ ทีมจะได้ไม่ต้องเสียเวลากับงานซ้ำ ๆ',
                 },
               ].map((s, i) => (
                 <div key={i} className="rounded-2xl p-6" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
@@ -263,8 +279,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               </h2>
               <p className="text-base max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 400 }}>
                 {isEN
-                  ? 'A small, senior team that stays close to every project — from strategy to delivery.'
-                  : 'ทีมเล็กที่มีประสบการณ์ ดูแลใกล้ชิดทุกโปรเจกต์ ตั้งแต่วางกลยุทธ์จนถึงส่งมอบงาน'}
+                  ? 'We keep the team small on purpose. The people you meet at the start are the ones who stay close to your project through planning, design, build and handover, so nothing gets lost between departments.'
+                  : 'เราตั้งใจให้ทีมเล็ก คนที่คุยกับคุณตั้งแต่วันแรกจะเป็นคนที่ดูแลโปรเจกต์ต่อไปตลอด ทั้งตอนวางแผน ออกแบบ พัฒนา และส่งมอบ งานเลยไม่หลุดระหว่างแผนก'}
               </p>
             </div>
 
@@ -320,7 +336,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? "Let's Build Something Together" : 'มาสร้างสิ่งดี ๆ ด้วยกัน'}
             </h2>
             <p className="text-base mb-10 max-w-lg mx-auto" style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 400 }}>
-              {isEN ? 'Tell us about your business and we will show you how we can help.' : 'เล่าเรื่องธุรกิจของคุณให้เราฟัง แล้วเราจะบอกว่าช่วยอะไรได้บ้าง'}
+              {isEN ? 'Tell us what you are working on, even if it is only a rough idea. We will reply with an honest view of where we can help and what a sensible first step looks like.' : 'เล่าให้ฟังว่าตอนนี้คุณกำลังทำอะไรอยู่ แม้จะเป็นแค่ไอเดียคร่าว ๆ ก็ได้ เราจะตอบกลับตรง ๆ ว่าช่วยตรงไหนได้บ้าง และก้าวแรกที่เหมาะควรเป็นอะไร'}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href={`${prefix}/contact`} className="inline-flex items-center gap-2 px-10 py-4 rounded-full text-sm transition-opacity hover:opacity-90" style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}>

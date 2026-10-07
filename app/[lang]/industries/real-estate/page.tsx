@@ -15,19 +15,19 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   const badge = isEN ? 'Industry / Real Estate' : 'อุตสาหกรรม / อสังหาริมทรัพย์'
   const heroSubhead = isEN
-    ? 'Property technology solutions for the modern real estate industry.'
-    : 'ระบบ Proptech สำหรับธุรกิจอสังหาริมทรัพย์ยุคใหม่'
+    ? 'Listing sites, virtual tours, rental management, and digital deal paperwork for developers, brokerages, and landlords who want fewer spreadsheets and faster closings.'
+    : 'เว็บประกาศขายและเช่า ทัวร์เสมือนจริง ระบบดูแลห้องเช่า และเอกสารดีลแบบดิจิทัล สำหรับผู้พัฒนาโครงการ นายหน้า และเจ้าของที่ปล่อยเช่า ที่อยากมีสเปรดชีตน้อยลงและปิดดีลได้เร็วขึ้น'
 
   const challenges = isEN ? [
-    { icon: 'ti-building-skyscraper', title: 'Fragmented Listing Data', desc: 'Property information scattered across multiple portals, agents, and internal systems makes it difficult to maintain accurate, up-to-date listings and creates inconsistent experiences for buyers and renters.' },
-    { icon: 'ti-file-invoice', title: 'Paper-Heavy Transactions', desc: 'Property transactions still rely heavily on manual paperwork, in-person signings, and disconnected document workflows, slowing down deals that should close in days rather than weeks.' },
-    { icon: 'ti-building-community', title: 'Property Management Complexity', desc: 'Managing maintenance requests, rent collection, and occupancy across dozens or hundreds of units requires operational systems most property managers have outgrown or never had.' },
-    { icon: 'ti-shield-check', title: 'Trust & Transparency Expectations', desc: 'Buyers and tenants increasingly expect transparent pricing, verified listings, and clear communication throughout the process, putting pressure on operators to modernize how they build trust.' },
+    { icon: 'ti-building-skyscraper', title: 'Fragmented Listing Data', desc: 'One unit often lives in a developer\'s price list, a sales agent\'s LINE group, three listing portals, and a spreadsheet at the sales gallery, and each shows a slightly different price or availability. Buyers notice when a condo they saw as available turns out to be reserved. We set up a single source of truth for units, prices, floor plans, and status, then publish from it to your website and partner portals, so a change made once shows up everywhere.' },
+    { icon: 'ti-file-invoice', title: 'Paper-Heavy Transactions', desc: 'A sale involves a reservation form, ID copies, a sale-and-purchase agreement, payment slips, and later a transfer at the Land Department, which still has to be done in person. The steps before that, such as reservations, document collection, and contract signing, are where paper and back-and-forth slow things down. We move those steps online with e-signature (Thailand\'s Electronic Transactions Act recognises it), a checklist for each buyer, and secure storage for ID copies in line with PDPA.' },
+    { icon: 'ti-building-community', title: 'Property Management Complexity', desc: 'Once you manage dozens of rooms or a few condo buildings, rent reminders, repair requests, meter readings, common-area fees, and move-in and move-out inspections stop fitting into a notebook and a chat group. Tenants send photos of a leaking tap at midnight and nobody knows who picked it up. We build a management system where every request becomes a ticket with an owner and a status, and rent and utility bills go out and get matched to payments automatically.' },
+    { icon: 'ti-shield-check', title: 'Trust & Transparency Expectations', desc: 'Buying a home is likely the biggest payment most people make, so buyers and tenants look hard for signs of trust: real photos, prices that match the contract, clear fees, and honest availability. Fake or outdated listings are a common complaint on Thai portals. We help you show verified details, construction or handover progress for off-plan projects, and a clear record of who said what, so your brand earns confidence before the first site visit.' },
   ] : [
-    { icon: 'ti-building-skyscraper', title: 'ข้อมูลประกาศขายและเช่ากระจัดกระจาย', desc: 'ข้อมูลอสังหาริมทรัพย์กระจายอยู่ในหลายเว็บ ตัวแทน และระบบภายใน ทำให้รักษาความถูกต้องและความทันสมัยของประกาศได้ยาก และผู้ซื้อกับผู้เช่าได้ประสบการณ์ไม่เหมือนกัน' },
-    { icon: 'ti-file-invoice', title: 'ขั้นตอนทำธุรกรรมที่ยังใช้กระดาษ', desc: 'ธุรกรรมอสังหาริมทรัพย์ยังพึ่งพาเอกสารที่ทำด้วยมือ การเซ็นสัญญาต่อหน้า และเอกสารที่แยกกัน ทำให้ดีลที่ควรปิดได้ในไม่กี่วันกลับใช้เวลาหลายสัปดาห์' },
-    { icon: 'ti-building-community', title: 'ความซับซ้อนของการบริหารอสังหาฯ', desc: 'การจัดการคำขอซ่อม การเก็บค่าเช่า และอัตราการเข้าพักของหลายสิบถึงหลายร้อยยูนิต ต้องมีระบบที่ผู้จัดการอสังหาฯ ส่วนใหญ่ยังไม่มี หรือที่ใหญ่เกินกว่าระบบเดิมจะรับไหว' },
-    { icon: 'ti-shield-check', title: 'ความคาดหวังเรื่องความน่าไว้ใจและความโปร่งใส', desc: 'ผู้ซื้อและผู้เช่าคาดหวังราคาที่โปร่งใส ประกาศที่ตรวจสอบได้ และการสื่อสารที่ชัดเจนตลอดทาง ผู้ประกอบการจึงต้องปรับตัวสู่ดิจิทัลเพื่อสร้างความไว้วางใจ' },
+    { icon: 'ti-building-skyscraper', title: 'ข้อมูลประกาศขายและเช่ากระจัดกระจาย', desc: 'ห้องหนึ่งห้องอาจอยู่ในไพรซ์ลิสต์ของโครงการ กลุ่ม LINE ของเซลส์ เว็บประกาศสามเจ้า และสเปรดชีตที่ออฟฟิศขาย แล้วแต่ละที่ก็ราคาหรือสถานะไม่ตรงกันนิดหน่อย ลูกค้าเห็นว่าห้องว่างแต่พอติดต่อไปกลับโดนจองแล้ว ซึ่งเสียความรู้สึกมาก เราช่วยทำแหล่งข้อมูลกลางเก็บยูนิต ราคา แปลน และสถานะ แล้วส่งไปเว็บไซต์กับพอร์ทัลพาร์ตเนอร์จากที่เดียว แก้ครั้งเดียวก็ขึ้นตรงกันทุกที่' },
+    { icon: 'ti-file-invoice', title: 'ขั้นตอนทำธุรกรรมที่ยังใช้กระดาษ', desc: 'การซื้อขายหนึ่งดีลมีใบจอง สำเนาบัตร สัญญาจะซื้อจะขาย สลิปโอนเงิน และสุดท้ายต้องไปโอนกรรมสิทธิ์ที่กรมที่ดินด้วยตัวเอง ช่วงก่อนวันโอนนี่แหละที่กระดาษกับการส่งเอกสารกลับไปกลับมาทำให้ช้า เราย้ายขั้นตอนเหล่านั้นขึ้นออนไลน์ ทั้งจอง เก็บเอกสาร และเซ็นสัญญา ด้วยลายเซ็นอิเล็กทรอนิกส์ที่กฎหมายไทยรับรอง มีเช็กลิสต์ให้ลูกค้าแต่ละคนว่าขาดอะไร และเก็บสำเนาบัตรอย่างปลอดภัยตาม PDPA' },
+    { icon: 'ti-building-community', title: 'ความซับซ้อนของการบริหารอสังหาฯ', desc: 'พอดูแลห้องเป็นหลักสิบ หรืออาคารชุดหลายตึก การทวงค่าเช่า แจ้งซ่อม จดมิเตอร์ ค่าส่วนกลาง และตรวจห้องตอนย้ายเข้า-ออก ก็ไม่ไหวจะจดสมุดกับตามในกลุ่มแชต ผู้เช่าส่งรูปก๊อกน้ำรั่วมาตอนเที่ยงคืนแล้วไม่มีใครรู้ว่าใครรับเรื่อง เราสร้างระบบที่ทุกคำขอเป็นตั๋วงาน มีคนรับผิดชอบและสถานะชัดเจน ส่วนบิลค่าเช่าค่าน้ำค่าไฟก็ออกและจับคู่กับยอดโอนให้อัตโนมัติ' },
+    { icon: 'ti-shield-check', title: 'ความคาดหวังเรื่องความน่าไว้ใจและความโปร่งใส', desc: 'การซื้อบ้านเป็นก้อนเงินใหญ่ที่สุดของคนส่วนใหญ่ ผู้ซื้อและผู้เช่าเลยดูหาสัญญาณความน่าเชื่อถืออย่างละเอียด ทั้งรูปจริง ราคาที่ตรงกับสัญญา ค่าธรรมเนียมที่ชัด และสถานะห้องที่จริงใจ ประกาศปลอมหรือหมดอายุคือเรื่องที่คนบ่นบ่อยในเว็บประกาศไทย เราช่วยแสดงข้อมูลที่ตรวจสอบแล้ว ความคืบหน้าก่อสร้างหรือกำหนดส่งมอบสำหรับโครงการที่ยังไม่เสร็จ และบันทึกว่าใครตกลงอะไรไว้ แบรนด์คุณจะได้ความเชื่อใจตั้งแต่ก่อนลูกค้ามาดูโครงการ' },
   ]
 
   const metrics = [
@@ -37,31 +37,31 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   ]
 
   const capabilities = isEN ? [
-    { icon: 'ti-home-search', title: 'Property Listing & Search Platforms', desc: 'Consumer-facing marketplaces with powerful search, filtering, and map-based discovery that connect buyers and renters with the right properties faster.' },
-    { icon: 'ti-view-360', title: 'Virtual Tour & 3D Visualization Tools', desc: 'Immersive walkthrough experiences and 3D property visualizations that let buyers explore properties remotely and reduce unnecessary in-person visits.' },
-    { icon: 'ti-building-community', title: 'Property Management Systems', desc: 'End-to-end platforms for managing maintenance requests, lease renewals, rent collection, and occupancy across residential and commercial portfolios.' },
-    { icon: 'ti-signature', title: 'Digital Transaction & E-Signature Workflows', desc: 'Streamlined document workflows with e-signatures, automated compliance checks, and secure storage that turn weeks-long closings into days.' },
-    { icon: 'ti-users-group', title: 'Tenant & Landlord Portals', desc: 'Self-service portals that give tenants and landlords real-time visibility into payments, maintenance status, lease terms, and communication history.' },
-    { icon: 'ti-chart-bar', title: 'Market Analytics Dashboards', desc: 'Data-driven dashboards that surface pricing trends, comparable sales, and portfolio performance to support smarter investment and leasing decisions.' },
+    { icon: 'ti-home-search', title: 'Property Listing & Search Platforms', desc: 'A listing website or marketplace with search that fits how Thais look for property: by BTS or MRT station, project name, school zone, price range, and bedrooms, with a map view and saved searches. Agents and owners manage their own listings, photos, and enquiries. We also handle Thai and English content, Thai address formats, and fast loading on mobile, where most searching happens.' },
+    { icon: 'ti-view-360', title: 'Virtual Tour & 3D Visualization Tools', desc: '360-degree tours, 3D floor plans, and virtual staging so a buyer can walk through a unit before it is built, or from another country. Useful for off-plan condos, overseas buyers, and busy people who want to shortlist before spending a Saturday on site visits. We embed tours into your listing pages and track which rooms people linger on, so your sales team knows what to talk about.' },
+    { icon: 'ti-building-community', title: 'Property Management Systems', desc: 'A back office for landlords, condo juristic persons, and managers of rental portfolios. It covers unit and lease records, rent and common-fee billing, repair tickets, meter readings, and inspection checklists. Each building manager sees their own units, while the owner sees occupancy and income across the whole portfolio. We can build it new or connect to the accounting software you already use.' },
+    { icon: 'ti-signature', title: 'Digital Transaction & E-Signature Workflows', desc: 'A guided flow for reservation, document upload, contract preparation, and e-signature, with a clear status for each buyer or tenant and reminders for whatever is missing. Payment of reservation money can be matched to the deal through PromptPay QR. Documents are stored with access logs. Note that the final ownership transfer is still done at the Land Department, so we design the flow to get everyone fully ready by that day.' },
+    { icon: 'ti-users-group', title: 'Tenant & Landlord Portals', desc: 'A web portal, or a LINE-based page if your tenants prefer chat, where tenants see their bill, pay by QR, report a repair with a photo, and read their lease. Owners get their own view of rent received, upcoming expiries, and the status of repairs on their units. It cuts the daily "is it paid yet?" and "who is fixing it?" messages for your staff.' },
+    { icon: 'ti-chart-bar', title: 'Market Analytics Dashboards', desc: 'Dashboards that bring together your own sales and leasing data with market prices, so you can see price per square metre by area, how long units take to sell or rent, and which projects or unit types move fastest. Useful for developers setting launch prices and for investors comparing yields. We are clear about where each number comes from, and we do not present estimates as facts.' },
   ] : [
-    { icon: 'ti-home-search', title: 'Property Listing & Search Platforms', desc: 'Marketplace สำหรับผู้บริโภค มีระบบค้นหาที่ทรงพลัง ตัวกรอง และการค้นหาบนแผนที่ ช่วยให้ผู้ซื้อและผู้เช่าเจอทรัพย์ที่ใช่ได้เร็วขึ้น' },
-    { icon: 'ti-view-360', title: 'Virtual Tour & 3D Visualization Tools', desc: 'ทัวร์เสมือนจริงและภาพ 3D ของทรัพย์ ให้ผู้ซื้อดูได้จากที่ไกล และลดการไปดูของจริงที่ไม่จำเป็น' },
-    { icon: 'ti-building-community', title: 'Property Management Systems', desc: 'แพลตฟอร์มครบชุดสำหรับจัดการคำขอซ่อม การต่อสัญญาเช่า การเก็บค่าเช่า และอัตราการเข้าพักของทั้งที่พักอาศัยและอาคารพาณิชย์' },
-    { icon: 'ti-signature', title: 'Digital Transaction & E-Signature Workflows', desc: 'ขั้นตอนเอกสารที่คล่องตัว พร้อมเซ็นชื่ออิเล็กทรอนิกส์ ตรวจสอบการทำตามกฎอัตโนมัติ และจัดเก็บอย่างปลอดภัย เปลี่ยนดีลที่ใช้เวลาหลายสัปดาห์ให้เหลือไม่กี่วัน' },
-    { icon: 'ti-users-group', title: 'Tenant & Landlord Portals', desc: 'Portal ให้ผู้เช่าและเจ้าของบ้านดูสถานะการชำระเงิน สถานะซ่อมบำรุง เงื่อนไขสัญญา และประวัติการติดต่อได้เองแบบเรียลไทม์' },
-    { icon: 'ti-chart-bar', title: 'Market Analytics Dashboards', desc: 'Dashboard ที่ใช้ข้อมูลแสดงแนวโน้มราคา เปรียบเทียบยอดขาย และผลงานของพอร์ต เพื่อช่วยตัดสินใจลงทุนและปล่อยเช่าให้ดีขึ้น' },
+    { icon: 'ti-home-search', title: 'Property Listing & Search Platforms', desc: 'เว็บประกาศหรือ Marketplace ที่ค้นหาตรงกับวิธีที่คนไทยหาที่อยู่ ทั้งค้นตามสถานี BTS หรือ MRT ชื่อโครงการ ย่านโรงเรียน ช่วงราคา และจำนวนห้องนอน มีมุมมองแผนที่และบันทึกการค้นหาไว้ได้ นายหน้าและเจ้าของจัดการประกาศ รูป และข้อความสอบถามเองได้ เรารองรับเนื้อหาไทย-อังกฤษ รูปแบบที่อยู่ไทย และโหลดเร็วบนมือถือที่คนส่วนใหญ่ใช้ค้นหา' },
+    { icon: 'ti-view-360', title: 'Virtual Tour & 3D Visualization Tools', desc: 'ทัวร์ 360 องศา แปลน 3 มิติ และการจัดห้องเสมือน ให้ผู้ซื้อเดินดูห้องได้ก่อนสร้างเสร็จ หรือดูจากต่างประเทศก็ได้ เหมาะกับคอนโดที่ยังไม่สร้างเสร็จ ลูกค้าต่างชาติ และคนที่ไม่ว่างอยากคัดตัวเลือกก่อนเสียวันเสาร์ไปดูห้องจริง เราฝังทัวร์ไว้ในหน้าประกาศ และดูได้ว่าคนใช้เวลากับห้องไหนนาน ทีมขายจะได้รู้ว่าควรคุยเรื่องอะไร' },
+    { icon: 'ti-building-community', title: 'Property Management Systems', desc: 'ระบบหลังบ้านสำหรับเจ้าของห้องเช่า นิติบุคคลอาคารชุด และผู้ดูแลพอร์ตห้องเช่า ครอบคลุมข้อมูลยูนิตและสัญญา การออกบิลค่าเช่าและค่าส่วนกลาง ตั๋วแจ้งซ่อม จดมิเตอร์ และเช็กลิสต์ตรวจห้อง ผู้จัดการแต่ละตึกเห็นเฉพาะห้องของตัวเอง ส่วนเจ้าของเห็นภาพรวมห้องว่างและรายได้ทั้งพอร์ต เราสร้างใหม่หรือเชื่อมกับโปรแกรมบัญชีที่ใช้อยู่ก็ได้' },
+    { icon: 'ti-signature', title: 'Digital Transaction & E-Signature Workflows', desc: 'ขั้นตอนที่พาลูกค้าไปทีละก้าว ตั้งแต่จอง อัปโหลดเอกสาร ทำสัญญา ไปจนถึงเซ็นอิเล็กทรอนิกส์ มีสถานะของผู้ซื้อหรือผู้เช่าแต่ละคน และแจ้งเตือนว่ายังขาดอะไร เงินจองจ่ายผ่าน PromptPay QR แล้วจับคู่กับดีลได้เลย เอกสารเก็บพร้อมบันทึกว่าใครเปิดดู ส่วนการโอนกรรมสิทธิ์ขั้นสุดท้ายยังต้องทำที่กรมที่ดิน เราจึงออกแบบให้ทุกฝ่ายพร้อมครบก่อนวันนั้น' },
+    { icon: 'ti-users-group', title: 'Tenant & Landlord Portals', desc: 'พอร์ทัลบนเว็บ หรือหน้าบน LINE ถ้าผู้เช่าของคุณชอบคุยผ่านแชต ผู้เช่าดูบิล จ่ายด้วย QR แจ้งซ่อมพร้อมแนบรูป และเปิดสัญญาได้เอง ส่วนเจ้าของห้องมีหน้าจอของตัวเอง ดูค่าเช่าที่ได้รับ สัญญาที่ใกล้หมด และสถานะงานซ่อมของห้องตัวเอง ช่วยลดข้อความถามว่า "โอนแล้วหรือยัง" กับ "ใครมาซ่อม" ที่พนักงานต้องตอบทุกวัน' },
+    { icon: 'ti-chart-bar', title: 'Market Analytics Dashboards', desc: 'แดชบอร์ดที่รวมข้อมูลขายและเช่าของคุณเข้ากับราคาตลาด ให้เห็นราคาต่อตารางเมตรแยกตามย่าน ห้องใช้เวลาขายหรือเช่านานแค่ไหน และโครงการหรือแบบห้องไหนขายเร็ว เหมาะกับผู้พัฒนาที่ต้องตั้งราคาเปิดขาย และนักลงทุนที่เทียบผลตอบแทน เราบอกชัดว่าตัวเลขแต่ละตัวมาจากไหน และไม่เอาตัวเลขประมาณการมาแสดงเหมือนข้อเท็จจริง' },
   ]
 
   const techStack = ['React', 'Next.js', 'Node.js', 'Google Maps API', 'PostgreSQL', 'GraphQL', 'AWS', 'DocuSign API', 'Machine Learning', 'Redis', 'Elasticsearch', 'WebGL', 'Stripe']
 
   const useCases = isEN ? [
-    { no: '01', title: 'Property Listing Marketplace', desc: 'Consumer marketplace with advanced search, map-based discovery, saved searches, and agent-buyer messaging that connects thousands of listings with active buyers and renters.' },
-    { no: '02', title: 'Virtual Tour Platform', desc: 'Immersive 3D walkthrough and virtual staging platform that lets prospective buyers explore properties remotely, complete with floor plans and measurement tools.' },
-    { no: '03', title: 'Property Management System', desc: 'Operations platform for landlords and property managers covering rent collection, maintenance tracking, lease management, and tenant communication across a multi-unit portfolio.' },
+    { no: '01', title: 'Property Listing Marketplace', desc: 'A listing site where buyers and renters filter by area, station, price, and unit type, view photos and tours, save searches, and message the agent directly or through LINE. Agents get a dashboard for their listings and enquiries, and admins can flag duplicate or outdated posts. Suited to brokerages, developers with several projects, and niche portals, for example serviced apartments or land.' },
+    { no: '02', title: 'Virtual Tour Platform', desc: 'A tour platform for sales galleries and project websites. It combines 360-degree rooms, interactive floor plans with measurements, and optional furniture layouts so buyers can picture the space. The sales team can send a tour link in a LINE chat and see who opened it. Good for off-plan launches where the show unit is limited and for buyers abroad.' },
+    { no: '03', title: 'Property Management System', desc: 'An operations system for a landlord or management company with many rooms. It handles leases, monthly rent and utility bills, payment matching from PromptPay transfers, repair tickets, inspection photos, and renewal reminders. Staff work from one list instead of a chat group, and owners receive a monthly summary they can read in a couple of minutes.' },
   ] : [
-    { no: '01', title: 'Property Listing Marketplace', desc: 'Marketplace สำหรับผู้บริโภค ค้นหาขั้นสูง ค้นหาบนแผนที่ บันทึกการค้นหา และส่งข้อความระหว่างตัวแทนกับผู้ซื้อ เชื่อมประกาศหลายพันรายการกับผู้ซื้อและผู้เช่าที่กำลังมองหา' },
-    { no: '02', title: 'Virtual Tour Platform' , desc: 'แพลตฟอร์มทัวร์ 3D และจัดห้องเสมือน ให้ผู้ซื้อที่สนใจดูทรัพย์จากที่ไกล พร้อมแผนผังชั้นและเครื่องมือวัดขนาด' },
-    { no: '03', title: 'Property Management System', desc: 'แพลตฟอร์มปฏิบัติการสำหรับเจ้าของบ้านและผู้จัดการอสังหาฯ ครอบคลุมการเก็บค่าเช่า ติดตามงานซ่อม จัดการสัญญาเช่า และสื่อสารกับผู้เช่าทั้งพอร์ตหลายยูนิต' },
+    { no: '01', title: 'Property Listing Marketplace', desc: 'เว็บประกาศที่ผู้ซื้อและผู้เช่ากรองตามย่าน สถานี ราคา และประเภทห้อง ดูรูปและทัวร์ บันทึกการค้นหา และส่งข้อความหานายหน้าได้โดยตรงหรือผ่าน LINE ฝั่งนายหน้ามีแดชบอร์ดจัดการประกาศและดูข้อความสอบถาม ส่วนแอดมินตรวจจับประกาศซ้ำหรือหมดอายุได้ เหมาะกับบริษัทนายหน้า ผู้พัฒนาที่มีหลายโครงการ และพอร์ทัลเฉพาะทาง เช่น เซอร์วิสอพาร์ตเมนต์หรือที่ดิน' },
+    { no: '02', title: 'Virtual Tour Platform', desc: 'แพลตฟอร์มทัวร์สำหรับออฟฟิศขายและเว็บไซต์โครงการ รวมห้อง 360 องศา แปลนที่โต้ตอบได้พร้อมขนาด และตัวเลือกจัดเฟอร์นิเจอร์ให้ลูกค้าเห็นภาพ ทีมขายส่งลิงก์ทัวร์ทางแชต LINE แล้วดูได้ว่าใครเปิด เหมาะกับการเปิดขายโครงการที่ห้องตัวอย่างมีจำกัด และลูกค้าที่อยู่ต่างประเทศ' },
+    { no: '03', title: 'Property Management System', desc: 'ระบบปฏิบัติการสำหรับเจ้าของหรือบริษัทที่ดูแลห้องจำนวนมาก จัดการสัญญา บิลค่าเช่าและค่าน้ำค่าไฟรายเดือน จับคู่ยอดโอนผ่าน PromptPay ตั๋วแจ้งซ่อม รูปตรวจห้อง และแจ้งเตือนต่อสัญญา พนักงานทำงานจากรายการเดียวแทนกลุ่มแชต และเจ้าของได้สรุปรายเดือนที่อ่านจบในไม่กี่นาที' },
   ]
 
   const heroVisual = (
@@ -172,8 +172,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <div className="w-12 h-[3px] rounded-full mb-8" style={{ background: 'linear-gradient(90deg, var(--purple-light), var(--lime))' }} />
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
-                  ? 'We help real estate developers, brokerages, and property managers build listing marketplaces, virtual tour platforms, property management systems, and digital transaction workflows that shorten sales cycles and cut operational overhead. Our solutions combine rich, map-based discovery experiences with rigorous backend engineering to turn browsers into buyers and tenants into long-term residents.'
-                  : 'เราช่วยผู้พัฒนาอสังหาริมทรัพย์ นายหน้า และผู้จัดการอสังหาฯ สร้าง Marketplace สำหรับประกาศขายและเช่า แพลตฟอร์ม Virtual Tour ระบบบริหารอสังหาฯ และขั้นตอนธุรกรรมดิจิทัล เพื่อให้ปิดการขายเร็วขึ้นและลดต้นทุน ระบบของเราผสมประสบการณ์ค้นหาบนแผนที่ที่ครบถ้วนกับงาน Backend ที่รัดกุม เพื่อเปลี่ยนคนดูให้เป็นผู้ซื้อ และผู้เช่าให้เป็นผู้อยู่อาศัยระยะยาว'}
+                  ? 'We build the software side of property: listing marketplaces, virtual tour platforms, rental and condo management systems, and online deal workflows. A typical project begins with one question, which is where a buyer or tenant waits on you today, whether for an answer from an agent, a document, or a repair. We then design around Thai realities such as LINE as the main chat channel, PromptPay for payments, Thai and English content, PDPA-safe handling of ID copies, and the fact that the Land Department transfer still happens in person. You get tools your sales and property teams can run daily, and customers who can see what is happening without chasing anyone.'
+                : 'เราทำซอฟต์แวร์ฝั่งอสังหาริมทรัพย์ ทั้งเว็บประกาศขายและเช่า แพลตฟอร์มทัวร์เสมือนจริง ระบบดูแลห้องเช่าและคอนโด และขั้นตอนทำดีลออนไลน์ โปรเจกต์ส่วนใหญ่เริ่มจากคำถามเดียวว่าตอนนี้ลูกค้าต้องรอคุณตรงไหน จะเป็นคำตอบจากนายหน้า เอกสาร หรืองานซ่อมก็ตาม แล้วเราออกแบบให้เข้ากับความจริงของไทย ทั้ง LINE ที่เป็นช่องแชตหลัก PromptPay สำหรับจ่ายเงิน เนื้อหาไทย-อังกฤษ การเก็บสำเนาบัตรให้ปลอดภัยตาม PDPA และการโอนที่กรมที่ดินที่ยังต้องไปเอง ผลที่ได้คือเครื่องมือที่ทีมขายและทีมดูแลทรัพย์ใช้ได้ทุกวัน และลูกค้าที่เห็นความคืบหน้าเองโดยไม่ต้องตามใคร'}
               </p>
             </div>
           </div>
@@ -190,8 +190,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
-                ? 'Understanding the critical obstacles that drive digital transformation in this industry.'
-                : 'ปัญหาหลักที่ธุรกิจในอุตสาหกรรมนี้ต้องเจอ'}
+                ? 'Four problems we see again and again with developers, brokers, and landlords in Thailand, and why they are harder than they look.'
+                : 'สี่ปัญหาที่เจอบ่อยกับผู้พัฒนาโครงการ นายหน้า และเจ้าของห้องเช่าในไทย และเหตุผลที่มันแก้ยากกว่าที่คิด'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -241,7 +241,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
+              {isEN ? 'The systems we build for property teams, and what each one changes in your daily work.' : 'ระบบที่เราสร้างให้ทีมอสังหาฯ พร้อมอธิบายว่าแต่ละตัวช่วยเปลี่ยนงานประจำวันของคุณยังไง'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -268,8 +268,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
-                ? 'Industry-proven tools and frameworks we leverage to build robust solutions.'
-                : 'เครื่องมือและ Framework ที่เราเลือกใช้ เพราะมั่นคงและเชื่อถือได้'}
+                ? 'Tools we pick for search, maps, documents, and payments because they are well documented and easy for your team to maintain.'
+                : 'เครื่องมือที่เราเลือกใช้กับงานค้นหา แผนที่ เอกสาร และการชำระเงิน เพราะมีเอกสารครบ และทีมของคุณดูแลต่อได้ง่าย'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -295,7 +295,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างงานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
+              {isEN ? 'Three typical projects, described by what gets built, who uses it, and what changes day to day.' : 'ตัวอย่างโปรเจกต์ทั่วไปสามแบบ เล่าให้ฟังว่าสร้างอะไร ใครเป็นคนใช้ และงานประจำวันเปลี่ยนไปยังไง'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -335,7 +335,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
+              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้เลยว่าคุณกำลังทำอะไรอยู่'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link

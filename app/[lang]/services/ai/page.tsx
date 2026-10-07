@@ -35,99 +35,107 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge    = isEN ? 'AI & Innovation / AI Development'  : 'AI & นวัตกรรม / พัฒนา AI'
   const title    = isEN ? 'Smarter Products'  : 'ผลิตภัณฑ์ที่ฉลาดขึ้น'
   const subtitle = isEN ? 'Powered by AI'    : 'ด้วยพลัง AI'
-  const heroDesc = isEN ? 'AI agents, RAG systems, and LLM products that automate real work — not demos that never leave the slide deck.'  : 'เอเจนต์ AI, ระบบ RAG และผลิตภัณฑ์ LLM ที่ช่วยทำงานแทนคนได้จริง ไม่ใช่แค่ตัวอย่างที่ใช้โชว์ในสไลด์'
-  const whyTitle = isEN ? 'Why AI is no longer optional'    : 'ทำไมตอนนี้ธุรกิจควรใช้ AI'
-  const whyDesc  = isEN ? 'Early AI adopters are compounding advantages — faster service, lower costs, and personalisation at a scale humans cannot match.'  : 'ธุรกิจที่เริ่มใช้ AI ก่อนจะได้เปรียบมากขึ้นเรื่อยๆ ทั้งบริการที่เร็วขึ้น ต้นทุนที่ต่ำลง และการนำเสนอที่ตรงกับลูกค้าแต่ละคนในระดับที่คนทำเองไม่ไหว'
+  const heroDesc = isEN ? 'Haliviq is an AI development company in Bangkok. We build AI agents, RAG assistants that answer from your own documents, and LLM features inside your products. Each one starts from a task your team already does by hand, and we measure it against that task before it goes live. The goal is something your staff and customers actually use, not a demo that looks good once in a meeting.'  : 'Haliviq ทำงานพัฒนา AI ที่กรุงเทพฯ เราสร้างเอเจนต์ AI ผู้ช่วยแบบ RAG ที่ตอบจากเอกสารของคุณเอง และฟีเจอร์ LLM ที่ฝังอยู่ในผลิตภัณฑ์ของคุณ ทุกงานเริ่มจากงานที่ทีมคุณทำด้วยมืออยู่ตอนนี้ และเราวัดผลเทียบกับงานนั้นก่อนเปิดใช้งานจริง เป้าหมายคือให้พนักงานและลูกค้าใช้กันจริงๆ ไม่ใช่ตัวอย่างที่ดูดีแค่ตอนเดโมในห้องประชุม'
+  const whyTitle = isEN ? 'Why more Thai businesses are putting AI to work now'    : 'ทำไมตอนนี้ธุรกิจถึงเริ่มใช้ AI กันจริงจัง'
+  const whyDesc  = isEN ? 'Teams that started early are already answering customers faster, spending less on repetitive work, and tailoring offers to each person in a way no manual process can match. The tools have become cheap and good enough that the question is no longer whether AI works, but which of your tasks it should take on first. Picking that first task well is most of the job.'  : 'ธุรกิจที่เริ่มก่อนตอนนี้ตอบลูกค้าได้เร็วขึ้น เสียเงินกับงานซ้ำๆ น้อยลง และนำเสนอสินค้าให้ตรงกับลูกค้าแต่ละคนได้ในระดับที่ทำด้วยมือไม่ไหว เครื่องมือถูกลงและเก่งขึ้นจนคำถามไม่ใช่ว่า AI ใช้ได้ไหม แต่เป็นว่างานไหนของคุณควรให้ AI ลองก่อน และการเลือกงานแรกให้ถูกคือครึ่งหนึ่งของความสำเร็จ'
   const ctaTitle = isEN ? 'Ready to build with AI?'    : 'พร้อมสร้างด้วย AI หรือยัง?'
-  const ctaDesc  = isEN ? 'Start with a free AI Opportunity Workshop. We will map the highest-value use cases for your business.'   : 'เริ่มด้วย AI Opportunity Workshop ฟรี เราจะช่วยหางานที่คุ้มค่าที่สุดสำหรับธุรกิจของคุณ'
+  const ctaDesc  = isEN ? 'Start with a free AI Opportunity Workshop. We sit down with your team, list the tasks where AI could help, and rank them by value and effort so you know where to begin.'   : 'เริ่มด้วย AI Opportunity Workshop ฟรี เรานั่งคุยกับทีมของคุณ ไล่ดูงานที่ AI ช่วยได้ แล้วจัดอันดับตามคุณค่าและแรงที่ต้องใช้ คุณจะรู้ว่าควรเริ่มตรงไหนก่อน'
   const overviewText = isEN
-    ? "We build AI systems that deliver measurable value — not chat demos that never leave the slide deck. Our work spans multi-step agents that plan and call tools, RAG knowledge assistants grounded in your own data, copilots embedded inside your existing products, and the evaluation pipelines that keep them reliable in production. We work with OpenAI, Anthropic Claude, and Google Gemini, building on LangChain and LangGraph, and we own the full lifecycle from an initial AI audit through agent design, integration, deployment, and ongoing monitoring."
-    : 'เราสร้างระบบ AI ที่วัดผลได้จริง ไม่ใช่แค่แชตตัวอย่างที่ใช้โชว์ในสไลด์ งานของเราครอบคลุมเอเจนต์ AI ที่วางแผนและเรียกใช้เครื่องมือได้เองหลายขั้นตอน, ผู้ช่วยค้นความรู้แบบ RAG ที่ตอบจากข้อมูลของคุณเอง, Copilot ที่ฝังอยู่ในผลิตภัณฑ์ที่คุณใช้อยู่แล้ว และระบบทดสอบ (Evaluation Pipeline) ที่ช่วยให้ระบบเชื่อถือได้เมื่อใช้งานจริง เราทำงานกับ OpenAI, Anthropic Claude และ Google Gemini โดยใช้ LangChain และ LangGraph และดูแลครบทุกช่วง ตั้งแต่ตรวจประเมิน AI ออกแบบเอเจนต์ เชื่อมระบบ นำขึ้นใช้งาน ไปจนถึงติดตามผลต่อเนื่อง'
+    ? 'We build AI that does a defined job inside your business. That includes agents that plan a task, call your tools and APIs, and finish a workflow; RAG assistants that answer from your own manuals, tickets, and databases and show where each answer came from; copilots built into products you already run; and the test sets and monitoring that tell you whether any of it is still working next month. We use OpenAI, Anthropic Claude, and Google Gemini, and pick between them for each task based on speed, cost, and how well they reason on your data. Orchestration is built with LangChain and LangGraph. A project usually begins with an AI audit that maps your data and workflows, moves to agent design and a small pilot on real data, and then continues through integration, launch, and monitoring. Thai-language content is part of the testing from the first week, because a model that works well in English does not automatically work well on Thai documents or Thai customers.'
+    : 'เราสร้าง AI ให้ทำงานที่กำหนดชัดเจนในธุรกิจของคุณ เช่น เอเจนต์ที่วางแผนงาน เรียกใช้เครื่องมือและ API แล้วทำขั้นตอนงานให้จบ ผู้ช่วยแบบ RAG ที่ตอบจากคู่มือ Ticket และฐานข้อมูลของคุณเอง พร้อมบอกว่าคำตอบแต่ละข้อมาจากไหน Copilot ที่ฝังอยู่ในผลิตภัณฑ์ที่คุณใช้อยู่แล้ว รวมถึงชุดทดสอบและระบบติดตามที่บอกได้ว่าเดือนหน้าทุกอย่างยังใช้ได้ดีอยู่หรือเปล่า เราใช้ OpenAI, Anthropic Claude และ Google Gemini โดยเลือกให้เหมาะกับแต่ละงาน ดูจากความเร็ว ต้นทุน และความสามารถในการคิดกับข้อมูลของคุณ ส่วนการจัดลำดับขั้นตอนของเอเจนต์ใช้ LangChain และ LangGraph โปรเจกต์ส่วนใหญ่เริ่มจากการตรวจประเมิน AI เพื่อดูข้อมูลและขั้นตอนงาน ต่อด้วยออกแบบเอเจนต์และทำงานนำร่องเล็กๆ กับข้อมูลจริง แล้วค่อยเชื่อมระบบ เปิดใช้งาน และติดตามผล เนื้อหาภาษาไทยอยู่ในชุดทดสอบตั้งแต่สัปดาห์แรก เพราะโมเดลที่เก่งภาษาอังกฤษไม่ได้เก่งกับเอกสารภาษาไทยหรือลูกค้าคนไทยโดยอัตโนมัติ'
 
   const heroBullets = isEN ? [
-      'Identify the highest-value AI use cases for your business',
-      'Design and train custom models on your own data',
-      'Integrate AI into existing products and workflows',
-      'Monitor model performance and retrain continuously',
-      'Ensure ethical, explainable, and secure AI deployment',
+      'An AI audit that finds the tasks worth automating and ranks them by value and effort',
+      'Agents, RAG assistants, and custom models built around your own data',
+      'AI added to the products and workflows you already run, so nobody starts from scratch',
+      'Test sets and monitoring that catch drift, cost creep, and wrong answers after launch',
+      'Clear limits on what the AI can read and do, with people reviewing the risky decisions',
+      'Thai-language testing included, because English results do not carry over',
     ] : [
-      'หางานที่ AI ช่วยได้และสร้างมูลค่าสูงสุดให้ธุรกิจของคุณ',
-      'ออกแบบและฝึกโมเดลจากข้อมูลของคุณเอง',
-      'ใส่ AI เข้าไปในผลิตภัณฑ์และขั้นตอนงานที่มีอยู่',
-      'ติดตามผลของโมเดลและฝึกใหม่อย่างต่อเนื่อง',
-      'ดูแลให้ AI มีความโปร่งใส อธิบายได้ และปลอดภัย',
+      'ตรวจประเมิน AI เพื่อหางานที่คุ้มจะทำอัตโนมัติ และจัดอันดับตามคุณค่ากับแรงที่ต้องใช้',
+      'สร้างเอเจนต์ ผู้ช่วยแบบ RAG และโมเดลเฉพาะจากข้อมูลของคุณเอง',
+      'ใส่ AI เข้าไปในผลิตภัณฑ์และขั้นตอนงานที่ใช้อยู่แล้ว ไม่ต้องเริ่มใหม่ทั้งหมด',
+      'มีชุดทดสอบและระบบติดตามที่จับความคลาดเคลื่อน ต้นทุนที่บานปลาย และคำตอบที่ผิดหลังเปิดใช้งาน',
+      'กำหนดชัดว่า AI อ่านและทำอะไรได้บ้าง และให้คนตรวจการตัดสินใจที่เสี่ยง',
+      'ทดสอบกับภาษาไทยด้วย เพราะผลภาษาอังกฤษเอามาใช้กับไทยตรงๆ ไม่ได้',
     ]
   const whyPoints   = isEN ? [
-      'AI-powered companies reduce operational costs by 22% on average in year one',
-      'ML personalisation increases conversion rates 3-5x vs manual segmentation',
-      'AI handles tier-1 customer support 24/7, reducing response time from hours to seconds',
-      'Predictive maintenance cuts equipment downtime by up to 50%',
-      'Generative AI compresses weeks of content, code, and design work into hours',
+      'AI-powered companies reduce operational costs by 22% on average in year one, mostly by taking over the routine, repeatable work.',
+      'ML-based recommendations lift conversion 3-5x compared with segmenting customers by hand, because each shopper sees what fits them.',
+      'AI can handle first-line customer support around the clock, bringing the first reply down from hours to seconds.',
+      'Predictive maintenance cuts equipment downtime by up to 50% by flagging a failing part before it stops the line.',
+      'Generative AI compresses weeks of content, code, and design drafting into hours, leaving people to review and refine.',
     ] : [
-      'บริษัทที่ใช้ AI ลดต้นทุนดำเนินงานได้เฉลี่ย 22% ในปีแรก',
-      'ระบบแนะนำด้วย ML เพิ่มอัตราการซื้อได้ 3-5 เท่าเมื่อเทียบกับการแบ่งกลุ่มลูกค้าด้วยมือ',
-      'AI ดูแลงานซัพพอร์ตลูกค้าด่านแรกได้ตลอด 24/7 ลดเวลาตอบจากหลายชั่วโมงเหลือไม่กี่วินาที',
-      'การซ่อมบำรุงเชิงพยากรณ์ช่วยลดเวลาเครื่องจักรหยุดทำงานได้ถึง 50%',
-      'Generative AI ช่วยย่นงานเนื้อหา โค้ด และดีไซน์ จากหลายสัปดาห์เหลือไม่กี่ชั่วโมง',
+      'บริษัทที่ใช้ AI ลดต้นทุนดำเนินงานได้เฉลี่ย 22% ในปีแรก ส่วนใหญ่มาจากการให้ AI ทำงานประจำที่ทำซ้ำได้',
+      'ระบบแนะนำด้วย ML เพิ่มอัตราการซื้อได้ 3-5 เท่าเมื่อเทียบกับการแบ่งกลุ่มลูกค้าด้วยมือ เพราะลูกค้าแต่ละคนเห็นของที่ตรงกับตัวเอง',
+      'AI ดูแลงานซัพพอร์ตลูกค้าด่านแรกได้ตลอด 24/7 ลดเวลาตอบครั้งแรกจากหลายชั่วโมงเหลือไม่กี่วินาที',
+      'การซ่อมบำรุงเชิงพยากรณ์ช่วยลดเวลาเครื่องจักรหยุดทำงานได้ถึง 50% เพราะเตือนก่อนที่ชิ้นส่วนจะพังจนไลน์หยุด',
+      'Generative AI ย่นงานเขียนเนื้อหา โค้ด และดีไซน์ที่เคยใช้หลายสัปดาห์ เหลือไม่กี่ชั่วโมง ให้คนมาตรวจและปรับแต่งต่อ',
     ]
   const outcomes    = isEN ? [
       {stat: '22%', label: 'Operational Cost Reduction', desc: 'Average year-one result'},
       {stat: '5x', label: 'Conversion Rate Uplift', desc: 'With ML personalisation'},
-      {stat: '24/7', label: 'AI Customer Support', desc: 'Zero downtime service'},
+      {stat: '24/7', label: 'AI Customer Support', desc: 'First reply at any hour'},
       {stat: '50%', label: 'Less Downtime', desc: 'With predictive maintenance'}
     ] : [
       {stat: '22%', label: 'ลดต้นทุนดำเนินงาน', desc: 'ผลเฉลี่ยในปีแรก'},
       {stat: '5x', label: 'อัตราการซื้อเพิ่มขึ้น', desc: 'ด้วยระบบแนะนำแบบ ML'},
-      {stat: '24/7', label: 'AI Customer Support', desc: 'ให้บริการไม่หยุด'},
+      {stat: '24/7', label: 'AI ดูแลลูกค้า', desc: 'ตอบครั้งแรกได้ทุกเวลา'},
       {stat: '50%', label: 'ลดเวลาเครื่องหยุดทำงาน', desc: 'ด้วยการซ่อมบำรุงเชิงพยากรณ์'}
     ]
   const features    = isEN ? [
-      {icon: 'ti-brain', title: 'AI Strategy & Use Case Discovery', desc: 'Identify AI use cases with the highest ROI for your business, analyse data readiness, and build the business case.'},
-      {icon: 'ti-robot', title: 'Custom ML Model Development', desc: 'Design and train ML models tailored to your specific problem — not generic off-the-shelf solutions.'},
-      {icon: 'ti-message-chatbot', title: 'Conversational AI & Chatbot', desc: 'Build AI assistants that understand your business context, answer accurately, and integrate with existing systems.'},
-      {icon: 'ti-eye', title: 'Computer Vision', desc: 'Analyse images and video for quality inspection, inventory counting, or security face recognition.'},
-      {icon: 'ti-file-text-ai', title: 'Document Intelligence', desc: 'Automatically read and extract data from documents, eliminating manual data entry and reducing errors.'},
-      {icon: 'ti-chart-line', title: 'Predictive Analytics', desc: 'Forecast sales, churn, demand, or risk in advance using production-grade ML models.'}
+      {icon: 'ti-brain', title: 'AI Strategy & Use Case Discovery', desc: 'We go through your workflows and data, list where AI could help, and rank each idea by expected value, effort, and data readiness. You leave with a short, honest list of what to build first and why.'},
+      {icon: 'ti-robot', title: 'Custom ML Model Development', desc: 'When a ready-made model is not accurate enough for your problem, we train one on your own data, check it against held-out examples, and document how it behaves.'},
+      {icon: 'ti-message-chatbot', title: 'Conversational AI & Chatbot', desc: 'Assistants that know your products, policies, and tone, answer in Thai and English, and connect to the systems that hold the answers. They hand over to a person when they should.'},
+      {icon: 'ti-eye', title: 'Computer Vision', desc: 'Models that look at photos or video to check product quality, count stock, or support security checks. We start from your real images and camera conditions, not stock samples.'},
+      {icon: 'ti-file-text-ai', title: 'Document Intelligence', desc: 'Read invoices, contracts, and forms, pull out the fields you need, and send them into your system. Staff review only the unclear ones instead of typing everything.'},
+      {icon: 'ti-chart-line', title: 'Predictive Analytics', desc: 'Forecast sales, churn, demand, or risk using your history, and see which factors drive each prediction. Results land in the dashboards or tools your team already uses.'}
     ] : [
-      {icon: 'ti-brain', title: 'AI Strategy & Use Case Discovery', desc: 'ระบุงานที่ AI ช่วยได้และคุ้มค่าที่สุดสำหรับธุรกิจของคุณ ประเมินความพร้อมของข้อมูลและผลตอบแทนที่คาดไว้'},
-      {icon: 'ti-robot', title: 'Custom ML Model Development', desc: 'ออกแบบและฝึกโมเดล ML ให้ตรงกับปัญหาของคุณ ไม่ใช่โซลูชันสำเร็จรูปทั่วไป'},
-      {icon: 'ti-message-chatbot', title: 'Conversational AI & Chatbot', desc: 'สร้างผู้ช่วย AI ที่เข้าใจบริบทธุรกิจ ตอบได้แม่นยำ และเชื่อมกับระบบที่มีอยู่'},
-      {icon: 'ti-eye', title: 'Computer Vision', desc: 'วิเคราะห์ภาพและวิดีโอ เพื่อตรวจคุณภาพ นับสินค้า หรือจดจำใบหน้าเพื่อความปลอดภัย'},
-      {icon: 'ti-file-text-ai', title: 'Document Intelligence', desc: 'อ่านและดึงข้อมูลจากเอกสารอัตโนมัติ ลดการคีย์ข้อมูลด้วยมือและลดข้อผิดพลาด'},
-      {icon: 'ti-chart-line', title: 'Predictive Analytics', desc: 'พยากรณ์ยอดขาย ลูกค้าที่จะเลิกใช้ ความต้องการสินค้า หรือความเสี่ยงล่วงหน้า ด้วยโมเดล ML'}
+      {icon: 'ti-brain', title: 'AI Strategy & Use Case Discovery', desc: 'เราไล่ดูขั้นตอนงานและข้อมูลของคุณ ลิสต์งานที่ AI ช่วยได้ แล้วจัดอันดับแต่ละไอเดียตามคุณค่าที่คาดไว้ แรงที่ต้องใช้ และความพร้อมของข้อมูล คุณจะได้รายการสั้นๆ ที่ตรงไปตรงมาว่าควรทำอะไรก่อนและเพราะอะไร'},
+      {icon: 'ti-robot', title: 'Custom ML Model Development', desc: 'ถ้าโมเดลสำเร็จรูปแม่นไม่พอกับปัญหาของคุณ เราฝึกโมเดลจากข้อมูลของคุณเอง ทดสอบกับตัวอย่างที่แยกไว้ และจดไว้ว่าโมเดลทำงานอย่างไร'},
+      {icon: 'ti-message-chatbot', title: 'Conversational AI & Chatbot', desc: 'ผู้ช่วยที่รู้จักสินค้า นโยบาย และน้ำเสียงของแบรนด์คุณ ตอบได้ทั้งไทยและอังกฤษ และเชื่อมกับระบบที่เก็บคำตอบ เมื่อถึงเวลาที่ควรให้คนดูต่อ ก็ส่งต่อให้เลย'},
+      {icon: 'ti-eye', title: 'Computer Vision', desc: 'โมเดลที่ดูภาพหรือวิดีโอ เพื่อตรวจคุณภาพสินค้า นับสต็อก หรือช่วยงานตรวจความปลอดภัย เราเริ่มจากภาพและสภาพกล้องจริงของคุณ ไม่ใช่ภาพตัวอย่างทั่วไป'},
+      {icon: 'ti-file-text-ai', title: 'Document Intelligence', desc: 'อ่านใบแจ้งหนี้ สัญญา และแบบฟอร์ม ดึงข้อมูลที่ต้องใช้ แล้วส่งเข้าระบบของคุณ พนักงานตรวจเฉพาะรายการที่ไม่ชัดเจน ไม่ต้องคีย์เองทุกใบ'},
+      {icon: 'ti-chart-line', title: 'Predictive Analytics', desc: 'พยากรณ์ยอดขาย ลูกค้าที่จะเลิกใช้ ความต้องการสินค้า หรือความเสี่ยง จากข้อมูลย้อนหลังของคุณ และดูได้ว่าปัจจัยไหนทำให้ได้ผลแบบนั้น ผลลัพธ์ไปอยู่ใน Dashboard หรือเครื่องมือที่ทีมใช้อยู่แล้ว'}
     ]
   const steps       = isEN ? [
-      {no: '01', title: 'AI Opportunity Assessment', desc: 'Analyse business processes to find the highest-impact, most feasible AI use cases.'},
-      {no: '02', title: 'Data Audit & Preparation', desc: 'Assess data quality and volume, and prepare datasets for training.'},
-      {no: '03', title: 'Model Development & Testing', desc: 'Build and test models, tune hyperparameters, and validate accuracy.'},
-      {no: '04', title: 'Integration & Deployment', desc: 'Deploy models to production and integrate with existing systems.'},
-      {no: '05', title: 'Monitor & Improve', desc: 'Track model performance, detect drift, and retrain when necessary.'}
+      {no: '01', title: 'AI Opportunity Assessment', desc: 'We walk through your processes with the people who do the work and pick the use cases that are both valuable and realistic with the data you have.'},
+      {no: '02', title: 'Data Audit & Preparation', desc: 'We check how much data you have, how clean it is, and who is allowed to use it, then prepare the datasets for training and testing.'},
+      {no: '03', title: 'Model Development & Testing', desc: 'We build the model or agent, tune it, and measure accuracy on examples it has never seen, including Thai-language cases.'},
+      {no: '04', title: 'Integration & Deployment', desc: 'We connect it to your existing systems and release it in stages, so problems show up with a few users rather than everyone.'},
+      {no: '05', title: 'Monitor & Improve', desc: 'We track accuracy, drift, and cost after launch and retrain or adjust when the numbers start to slip.'}
     ] : [
-      {no: '01', title: 'AI Opportunity Assessment', desc: 'วิเคราะห์ขั้นตอนการทำงานของธุรกิจ เพื่อหางาน AI ที่ให้ผลมากที่สุดและทำได้จริงที่สุด'},
-      {no: '02', title: 'Data Audit & Preparation', desc: 'ประเมินคุณภาพและปริมาณข้อมูล แล้วเตรียมชุดข้อมูลสำหรับฝึกโมเดล'},
-      {no: '03', title: 'Model Development & Testing', desc: 'สร้างและทดสอบโมเดล ปรับค่า Hyperparameter และตรวจความแม่นยำ'},
-      {no: '04', title: 'Integration & Deployment', desc: 'นำโมเดลขึ้นใช้งานจริงและเชื่อมกับระบบที่มีอยู่'},
-      {no: '05', title: 'Monitor & Improve', desc: 'ติดตามผลของโมเดล ตรวจจับ Drift และฝึกใหม่เมื่อจำเป็น'}
+      {no: '01', title: 'AI Opportunity Assessment', desc: 'เราไล่ดูขั้นตอนงานกับคนที่ทำงานนั้นจริง แล้วเลือกงานที่ทั้งคุ้มค่าและทำได้จริงกับข้อมูลที่คุณมี'},
+      {no: '02', title: 'Data Audit & Preparation', desc: 'เช็คว่ามีข้อมูลเท่าไหร่ สะอาดแค่ไหน และใครมีสิทธิ์ใช้ แล้วเตรียมชุดข้อมูลสำหรับฝึกและทดสอบ'},
+      {no: '03', title: 'Model Development & Testing', desc: 'สร้างโมเดลหรือเอเจนต์ ปรับแต่ง และวัดความแม่นยำกับตัวอย่างที่มันไม่เคยเห็น รวมถึงกรณีภาษาไทย'},
+      {no: '04', title: 'Integration & Deployment', desc: 'เชื่อมกับระบบที่มีอยู่ แล้วเปิดใช้งานเป็นระยะ ให้ปัญหาไปโผล่กับผู้ใช้กลุ่มเล็กก่อน ไม่ใช่ทุกคนพร้อมกัน'},
+      {no: '05', title: 'Monitor & Improve', desc: 'ติดตามความแม่นยำ ความคลาดเคลื่อน (Drift) และต้นทุนหลังเปิดใช้งาน แล้วฝึกใหม่หรือปรับเมื่อตัวเลขเริ่มแย่ลง'}
     ]
   const caseStudies = isEN ? [
-      {tag: 'FinTech · Bangkok', title: 'AI Document Processing, 93% Faster', desc: 'OCR + Rule Engine model reads loan documents automatically, cutting manual work 80%.', result: 'Processing Time down 93%'},
-      {tag: 'Healthcare · Bangkok', title: 'Medical Chatbot for Initial Triage', desc: 'AI answers health questions, screens symptoms, and books appointments automatically.', result: 'Doctor workload reduced 40%'},
-      {tag: 'Retail · Nationwide', title: 'AI Product Recommendation, +32% Revenue', desc: 'Personalised recommendation engine tailored to each individual customer.', result: 'Revenue up 32%'}
+      {tag: 'FinTech · Bangkok', title: 'AI Document Processing, 93% Faster', desc: 'An OCR model combined with a rule engine reads incoming loan documents, checks each field against the lender\'s rules, and sends clean records on. Manual work fell by 80%, and staff now look only at the documents the model is unsure about.', result: 'Processing Time down 93%'},
+      {tag: 'Healthcare · Bangkok', title: 'Medical Chatbot for Initial Triage', desc: 'The assistant answers basic health questions, screens symptoms and books appointments without staff involvement, and passes the conversation to a person when a case needs one.', result: 'Doctor workload reduced 40%'},
+      {tag: 'Retail · Nationwide', title: 'AI Product Recommendation, +32% Revenue', desc: 'A recommendation engine that changes what it shows to each customer based on what they browsed and bought, replacing one fixed list of best-sellers for everyone.', result: 'Revenue up 32%'}
     ] : [
-      {tag: 'FinTech · กรุงเทพฯ', title: 'AI อ่านเอกสารกู้เงิน ลดเวลาประมวลผล 93%', desc: 'ฝึกโมเดล OCR ร่วมกับ Rule Engine ให้อ่านเอกสารอัตโนมัติ ลดงานมือ 80%', result: 'เวลาประมวลผลลดลง 93%'},
-      {tag: 'Healthcare · กรุงเทพฯ', title: 'แชตบอตคัดกรองเบื้องต้นด้านการแพทย์', desc: 'AI ตอบคำถามสุขภาพเบื้องต้น คัดกรองอาการ และนัดหมายแพทย์อัตโนมัติ', result: 'ลดภาระงานแพทย์ 40%'},
-      {tag: 'Retail · ทั่วประเทศ', title: 'AI แนะนำสินค้า รายได้เพิ่ม 32%', desc: 'ระบบแนะนำสินค้าที่ปรับให้เหมาะกับลูกค้าแต่ละคน', result: 'รายได้เพิ่ม 32%'}
+      {tag: 'FinTech · กรุงเทพฯ', title: 'AI อ่านเอกสารกู้เงิน ลดเวลาประมวลผล 93%', desc: 'โมเดล OCR ทำงานร่วมกับ Rule Engine อ่านเอกสารสินเชื่อที่เข้ามา ตรวจแต่ละช่องกับกฎของผู้ให้กู้ แล้วส่งข้อมูลที่สะอาดต่อ งานมือลดลง 80% พนักงานดูเฉพาะเอกสารที่โมเดลไม่แน่ใจ', result: 'เวลาประมวลผลลดลง 93%'},
+      {tag: 'Healthcare · กรุงเทพฯ', title: 'แชตบอตคัดกรองเบื้องต้นด้านการแพทย์', desc: 'ผู้ช่วยตอบคำถามสุขภาพเบื้องต้น คัดกรองอาการ และนัดหมายแพทย์ได้เอง โดยไม่ต้องให้เจ้าหน้าที่เข้าไปช่วย และส่งต่อให้คนเมื่อเคสนั้นต้องใช้คน', result: 'ลดภาระงานแพทย์ 40%'},
+      {tag: 'Retail · ทั่วประเทศ', title: 'AI แนะนำสินค้า รายได้เพิ่ม 32%', desc: 'ระบบแนะนำสินค้าที่ปรับสิ่งที่แสดงให้ลูกค้าแต่ละคนตามสิ่งที่ดูและซื้อ แทนรายการสินค้าขายดีชุดเดียวที่ทุกคนเห็นเหมือนกัน', result: 'รายได้เพิ่ม 32%'}
     ]
   const faqs        = isEN ? [
-      {q: 'How much data do we need to start?', a: 'It depends on the use case. Some can start with a few hundred rows, others need tens of thousands. We assess this in the Discovery phase.'},
-      {q: 'Pre-built AI or custom models?', a: 'Both. If off-the-shelf works, we use it. If you need higher accuracy or handle sensitive data, we build custom models.'},
-      {q: 'Will AI replace our staff?', a: 'The goal is to augment, not replace. AI handles repetitive tasks so your team can focus on creative and decision-making work.'},
-      {q: 'How much does an AI project cost?', a: 'It depends on complexity. A Proof of Concept starts at a few hundred thousand THB; a full production system can reach several million. Contact us for an estimate.'}
+      {q: 'How much data do we need to start?', a: 'It depends on the task. Some can begin with a few hundred rows, others need tens of thousands. We check what you have during the assessment and tell you plainly if the data is not ready yet, and what to collect first.'},
+      {q: 'Should we use a ready-made AI or a custom model?', a: 'Either. If an off-the-shelf model does the job, we use it and save you the cost. If you need higher accuracy or handle sensitive data, we build a model of your own.'},
+      {q: 'Will AI replace our staff?', a: 'The aim is to take repetitive work off people so they can spend time on judgement calls and customer conversations. We usually design it so staff review the decisions that matter.'},
+      {q: 'How much does an AI project cost?', a: 'It depends on complexity. A Proof of Concept starts at a few hundred thousand THB, and a full production system can reach several million. Contact us for an estimate.'},
+      {q: 'Does it work in Thai?', a: 'Yes, but we do not assume it will. Thai documents, slang and mixed Thai-English messages are part of the test set from the first week, and we measure accuracy on them separately from English.'},
+      {q: 'How do you stop the AI from making things up?', a: 'For assistants that answer from your documents we use retrieval, so answers are built from your own material and show their source. We also set the assistant to say it does not know, rather than guess, and test it with questions it should refuse.'},
+      {q: 'What do we need to prepare before the first workshop?', a: 'Nothing formal. Bring two or three tasks that eat your team\'s time, a few real examples such as documents, tickets or sheets, and the person who knows how the work is really done. We handle the rest.'}
     ] : [
-      {q: 'ต้องมีข้อมูลเท่าไหร่ถึงจะเริ่มได้?', a: 'ขึ้นอยู่กับงานที่ทำ บางงานเริ่มได้ด้วยข้อมูลหลักร้อยแถว บางงานต้องใช้หลักหมื่น เราจะประเมินให้ในขั้นตอนประเมินความพร้อม'},
-      {q: 'ใช้ AI สำเร็จรูปหรือสร้างเอง?', a: 'ได้ทั้งสองแบบ ถ้าของสำเร็จรูปตอบโจทย์ก็ใช้เลย ถ้าต้องการความแม่นยำสูงหรือต้องดูแลข้อมูลอ่อนไหว เราจะสร้างโมเดลเฉพาะให้'},
-      {q: 'AI จะแทนที่พนักงานไหม?', a: 'เป้าหมายคือช่วยเสริมงานคน ไม่ใช่มาแทนที่ AI รับงานซ้ำๆ เพื่อให้ทีมไปทำงานที่ต้องใช้ความคิดสร้างสรรค์และการตัดสินใจ'},
-      {q: 'ค่าใช้จ่ายโปรเจกต์ AI เท่าไหร่?', a: 'ขึ้นอยู่กับความซับซ้อน งานทดลองแนวคิด (Proof of Concept) เริ่มที่ไม่กี่แสนบาท ระบบเต็มรูปแบบอาจถึงหลักล้าน ติดต่อมาเพื่อประเมินราคา'}
+      {q: 'ต้องมีข้อมูลเท่าไหร่ถึงจะเริ่มได้?', a: 'ขึ้นอยู่กับงานที่ทำ บางงานเริ่มได้ด้วยข้อมูลหลักร้อยแถว บางงานต้องใช้หลักหมื่น เราจะเช็กข้อมูลที่คุณมีตอนประเมินความพร้อม และบอกตรงๆ ถ้าข้อมูลยังไม่พร้อม พร้อมบอกว่าควรเก็บอะไรก่อน'},
+      {q: 'ควรใช้ AI สำเร็จรูปหรือสร้างโมเดลเอง?', a: 'ได้ทั้งสองแบบ ถ้าโมเดลสำเร็จรูปทำงานได้ เราก็ใช้เลยและประหยัดงบให้คุณ ถ้าต้องการความแม่นยำสูงกว่านั้นหรือต้องดูแลข้อมูลอ่อนไหว เราสร้างโมเดลเฉพาะให้'},
+      {q: 'AI จะมาแทนพนักงานไหม?', a: 'เป้าหมายคือให้ AI รับงานซ้ำๆ ไป เพื่อให้คนมีเวลาไปทำเรื่องที่ต้องใช้วิจารณญาณและคุยกับลูกค้า เรามักออกแบบให้พนักงานเป็นคนตรวจการตัดสินใจที่สำคัญ'},
+      {q: 'ค่าใช้จ่ายโปรเจกต์ AI เท่าไหร่?', a: 'ขึ้นอยู่กับความซับซ้อน งานทดลองแนวคิด (Proof of Concept) เริ่มที่ไม่กี่แสนบาท ระบบเต็มรูปแบบอาจถึงหลักล้าน ติดต่อมาเพื่อประเมินราคาได้เลย'},
+      {q: 'ใช้กับภาษาไทยได้ไหม?', a: 'ได้ แต่เราไม่ถือเอาเองว่าจะใช้ได้ เอกสารภาษาไทย ภาษาพูด และข้อความที่ผสมไทยกับอังกฤษ อยู่ในชุดทดสอบตั้งแต่สัปดาห์แรก และเราวัดความแม่นยำภาษาไทยแยกจากภาษาอังกฤษ'},
+      {q: 'จะกัน AI ไม่ให้แต่งคำตอบขึ้นมาเองได้ยังไง?', a: 'ผู้ช่วยที่ตอบจากเอกสารของคุณ เราใช้การค้นข้อมูล (Retrieval) ให้คำตอบสร้างจากเนื้อหาของคุณเองและโชว์แหล่งที่มา เราตั้งให้ผู้ช่วยบอกว่าไม่รู้แทนการเดา และทดสอบด้วยคำถามที่ควรปฏิเสธ'},
+      {q: 'ต้องเตรียมอะไรก่อนเวิร์กช็อปแรก?', a: 'ไม่ต้องเตรียมเป็นทางการ แค่เอางานสองสามอย่างที่กินเวลาทีมมา ตัวอย่างจริงบางส่วน เช่น เอกสาร Ticket หรือชีต และคนที่รู้ว่างานนั้นทำกันจริงๆ ยังไง ที่เหลือเราจัดการเอง'}
     ]
   const related     = isEN ? [
       {label: 'Data & Analytics', href: '/services/data-analytics'},
@@ -198,15 +206,15 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   )
 
   const capabilities = isEN ? [
-    { icon: 'ti-robot', title: 'AI Agents & Tool Use', desc: 'Multi-step agents that plan, call tools and APIs, recover from errors, and complete workflows end-to-end.' },
-    { icon: 'ti-chart-line', title: 'Predictive Models', desc: 'Forecasting, scoring, and recommendation models trained on your data and monitored in production.' },
-    { icon: 'ti-database-search', title: 'RAG & Knowledge Systems', desc: 'Retrieval-augmented generation over your docs, tickets, and databases with grounding and citations.' },
-    { icon: 'ti-adjustments-cog', title: 'Agentic Automation', desc: 'Human-in-the-loop automations that reduce manual work while keeping high-stakes decisions reviewable.' },
+    { icon: 'ti-robot', title: 'AI Agents & Tool Use', desc: 'Agents that break a task into steps, call your tools and APIs, recover when a step fails, and carry the workflow to the end. We define what each agent may touch before it runs, so it stays inside clear limits.' },
+    { icon: 'ti-chart-line', title: 'Predictive Models', desc: 'Forecasting, scoring, and recommendation models trained on your own history, for jobs like demand planning, churn warnings, or next-best-offer. They are monitored after launch so you notice when accuracy drops.' },
+    { icon: 'ti-database-search', title: 'RAG & Knowledge Systems', desc: 'Assistants that answer from your documents, tickets, and databases and cite the source passage, so staff can check any answer. Documents stay in storage you control, and Thai and English content are both tested.' },
+    { icon: 'ti-adjustments-cog', title: 'Agentic Automation', desc: 'Automations where AI does the routine steps and a person approves the risky ones. It takes manual work off the team while keeping a record of what was decided and by whom.' },
   ] : [
-    { icon: 'ti-robot', title: 'AI Agents & Tool Use', desc: 'เอเจนต์ AI หลายขั้นตอนที่วางแผนเอง เรียกใช้เครื่องมือและ API แก้ปัญหาเมื่อเกิดข้อผิดพลาด และทำงานได้ครบตั้งแต่ต้นจนจบ' },
-    { icon: 'ti-chart-line', title: 'Predictive Models', desc: 'โมเดลพยากรณ์ ให้คะแนน และแนะนำ ที่ฝึกจากข้อมูลของคุณเอง และติดตามผลต่อเนื่องหลังใช้งานจริง' },
-    { icon: 'ti-database-search', title: 'RAG & Knowledge Systems', desc: 'ระบบ RAG (Retrieval-Augmented Generation) ที่ตอบจากเอกสาร Ticket และฐานข้อมูลของคุณ พร้อมอ้างอิงแหล่งที่มาที่ตรวจสอบได้' },
-    { icon: 'ti-adjustments-cog', title: 'Agentic Automation', desc: 'ระบบอัตโนมัติที่ให้คนร่วมตรวจ ช่วยลดงานมือ โดยการตัดสินใจสำคัญยังให้คนตรวจสอบได้' },
+    { icon: 'ti-robot', title: 'AI Agents & Tool Use', desc: 'เอเจนต์ที่แตกงานเป็นขั้นตอน เรียกใช้เครื่องมือและ API ของคุณ แก้ปัญหาเองเมื่อขั้นไหนพลาด และทำงานจนจบ เรากำหนดไว้ก่อนเลยว่าเอเจนต์แต่ละตัวแตะอะไรได้บ้าง จึงทำงานอยู่ในขอบเขตที่ชัดเจน' },
+    { icon: 'ti-chart-line', title: 'Predictive Models', desc: 'โมเดลพยากรณ์ ให้คะแนน และแนะนำ ที่ฝึกจากข้อมูลย้อนหลังของคุณเอง ใช้กับงานอย่างวางแผนสต็อก เตือนลูกค้าที่กำลังจะหาย หรือแนะนำข้อเสนอที่เหมาะที่สุด และติดตามผลต่อหลังเปิดใช้ ถ้าความแม่นยำตกคุณจะรู้ทัน' },
+    { icon: 'ti-database-search', title: 'RAG & Knowledge Systems', desc: 'ผู้ช่วยที่ตอบจากเอกสาร Ticket และฐานข้อมูลของคุณ พร้อมอ้างอิงข้อความต้นทาง พนักงานจึงเช็คคำตอบได้ทุกข้อ เอกสารเก็บอยู่ในที่ที่คุณควบคุมได้ และทดสอบทั้งเนื้อหาภาษาไทยและอังกฤษ' },
+    { icon: 'ti-adjustments-cog', title: 'Agentic Automation', desc: 'ระบบอัตโนมัติที่ให้ AI ทำขั้นตอนประจำ และให้คนอนุมัติขั้นตอนที่เสี่ยง ลดงานมือของทีม และเก็บบันทึกไว้ว่าใครหรืออะไรเป็นคนตัดสินใจเรื่องไหน' },
   ]
 
   const techStack = [
@@ -223,39 +231,39 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   ] as { label: string; icon?: string; svg?: string }[]
 
   const approachSteps = isEN ? [
-    { no: '01', title: 'AI Audit', desc: 'Map your data, workflows, and highest-value use cases' },
-    { no: '02', title: 'Agent Design', desc: 'Define tools, guardrails, and success criteria' },
-    { no: '03', title: 'Build & Evaluate', desc: 'Iterative development with automated eval pipelines' },
-    { no: '04', title: 'Integration', desc: 'Connect to your existing products and data sources' },
-    { no: '05', title: 'Deploy', desc: 'Ship to production with monitoring from day one' },
-    { no: '06', title: 'Monitor', desc: 'Track drift, cost, and accuracy — retrain when needed' },
+    { no: '01', title: 'AI Audit', desc: 'We map your data, your workflows, and the use cases worth the effort, ranked with your team.' },
+    { no: '02', title: 'Agent Design', desc: 'We define the tools the agent can use, the limits it works within, and how success will be measured.' },
+    { no: '03', title: 'Build & Evaluate', desc: 'Short build cycles, each checked by an automated test set built from your real examples.' },
+    { no: '04', title: 'Integration', desc: 'We connect the AI to your existing products, APIs, and data sources.' },
+    { no: '05', title: 'Deploy', desc: 'Staged release to production with monitoring running from the first day.' },
+    { no: '06', title: 'Monitor', desc: 'We watch drift, cost, and accuracy, and retrain or adjust as your data changes.' },
   ] : [
-    { no: '01', title: 'AI Audit', desc: 'สำรวจข้อมูล ขั้นตอนงาน และงานที่ให้มูลค่าสูงสุด' },
-    { no: '02', title: 'Agent Design', desc: 'กำหนดเครื่องมือ ขอบเขตความปลอดภัย และเกณฑ์วัดความสำเร็จ' },
-    { no: '03', title: 'Build & Evaluate', desc: 'พัฒนาเป็นรอบๆ พร้อมระบบทดสอบอัตโนมัติ' },
-    { no: '04', title: 'Integration', desc: 'เชื่อมกับผลิตภัณฑ์และแหล่งข้อมูลที่มีอยู่' },
-    { no: '05', title: 'Deploy', desc: 'นำขึ้นใช้งานจริงพร้อมระบบติดตามตั้งแต่วันแรก' },
-    { no: '06', title: 'Monitor', desc: 'ติดตามความคลาดเคลื่อน (Drift) ต้นทุน และความแม่นยำ แล้วฝึกใหม่เมื่อจำเป็น' },
+    { no: '01', title: 'AI Audit', desc: 'สำรวจข้อมูล ขั้นตอนงาน และงานที่คุ้มกับแรงที่ลงไป แล้วจัดอันดับร่วมกับทีมของคุณ' },
+    { no: '02', title: 'Agent Design', desc: 'กำหนดเครื่องมือที่เอเจนต์ใช้ได้ ขอบเขตที่ต้องอยู่ในนั้น และวิธีวัดว่าสำเร็จหรือไม่' },
+    { no: '03', title: 'Build & Evaluate', desc: 'พัฒนาเป็นรอบสั้นๆ และตรวจทุกรอบด้วยชุดทดสอบอัตโนมัติที่สร้างจากตัวอย่างจริงของคุณ' },
+    { no: '04', title: 'Integration', desc: 'เชื่อม AI กับผลิตภัณฑ์ API และแหล่งข้อมูลที่คุณมีอยู่' },
+    { no: '05', title: 'Deploy', desc: 'เปิดใช้งานจริงเป็นระยะ พร้อมระบบติดตามตั้งแต่วันแรก' },
+    { no: '06', title: 'Monitor', desc: 'ดูความคลาดเคลื่อน (Drift) ต้นทุน และความแม่นยำ แล้วฝึกใหม่หรือปรับเมื่อข้อมูลของคุณเปลี่ยน' },
   ]
 
   const darkFaqs = isEN ? [
-    { q: 'What AI development services does Haliviq offer?', a: 'We build multi-step AI agents that use tools and APIs to complete real workflows, RAG knowledge assistants grounded in your private documents and databases, copilots embedded directly inside products you already run, and the evaluation pipelines that keep all of it reliable over time. A typical engagement starts with an AI audit to map where AI creates measurable value in your business, moves into agent design and a scoped proof of concept, and continues through human-in-the-loop workflow design and production monitoring after launch — so nothing ships as a one-off demo that quietly stops being useful.' },
-    { q: 'Which AI models and frameworks do you work with?', a: 'We build primarily on OpenAI, Anthropic Claude, and Google Gemini models, choosing per use case based on latency, cost, and reasoning quality rather than defaulting to one vendor. For orchestration we use LangChain and LangGraph to manage multi-step agent logic and state, LlamaIndex and pgvector for retrieval and embeddings, and Python with Hugging Face when a task calls for custom or open-source models. This mix lets us swap a model or provider later without rebuilding the whole system.' },
-    { q: 'Can you add AI to a product we already have?', a: 'Yes — most of our AI work is exactly this: embedding copilots, assistants, and automation into products that are already live rather than building something new from scratch. We start with a short AI audit of your existing product and data to find the use cases with the clearest ROI, then ship the highest-impact one first as a scoped pilot before expanding. This keeps risk low and gives you a working result to evaluate before committing to a larger roadmap.' },
-    { q: 'How do you keep AI systems reliable in production?', a: 'Every system we ship includes an evaluation pipeline that scores outputs against real examples before and after each change, grounding and citations for any RAG-based answers so responses can be traced back to a source document, human-in-the-loop review for high-stakes or irreversible decisions, and production monitoring that tracks accuracy, latency, and cost drift over time. We treat AI quality as an ongoing engineering discipline — the same as uptime or security — not a one-time launch checklist.' },
-    { q: 'How long does an AI project take?', a: 'It depends heavily on scope, but as a rough guide: a scoped proof of concept for a single agent or RAG use case typically takes 3-6 weeks from audit to a working demo on real data. Embedding a copilot into an existing product with proper guardrails and evaluation usually runs 8-14 weeks. A full multi-agent system with several integrations, human-in-the-loop review, and production monitoring can take 3-6 months. We always start with the smallest version that proves value, then expand from a working baseline rather than trying to build the complete system before anyone has used it.' },
-    { q: 'How much does an AI project cost?', a: 'Cost tracks scope and integration complexity more than model choice — API costs for OpenAI, Anthropic, or Gemini are usually a small fraction of total project cost compared to engineering time. A focused proof of concept for one use case generally starts in the low six figures (THB); a production-grade agent or RAG system integrated with your existing stack, complete with evaluation and monitoring, typically runs several times that. We quote a fixed price per phase after a discovery call, and always include ongoing token/API cost estimates so there are no surprises once the system is live.' },
-    { q: 'What about data privacy and security with AI systems?', a: "Your data never trains a foundation model provider's public models — we use enterprise API tiers from OpenAI, Anthropic, and Google that contractually exclude your data from training. For RAG systems, sensitive documents stay in your own database (typically pgvector inside Postgres you control), and we scope exactly what an agent is allowed to read, call, or write to before it goes live. For regulated industries we can also design fully on-premise or VPC-isolated deployments where compliance requires it." },
-    { q: 'Who owns the models, prompts, and code once the project is done?', a: "You do, entirely. All custom code, agent configurations, prompt templates, evaluation datasets, and fine-tuned model weights (where applicable) transfer to you on final payment — there's no proprietary lock-in to Haliviq's own tooling. If we build inside your own cloud account and GitHub organisation, which we recommend for anything production-bound, you have full visibility and control from day one and could, in principle, continue development without us." },
+    { q: 'What AI development services does Haliviq offer?', a: 'We build multi-step AI agents that use tools and APIs to finish real workflows, RAG assistants that answer from your private documents and databases, copilots embedded inside products you already run, and the test sets and monitoring that keep them reliable. A typical engagement starts with an AI audit to find where AI saves measurable time or money in your business. It then moves to agent design and a small pilot on real data, followed by human-in-the-loop review design and monitoring after launch, so the result does not turn into a one-off demo that quietly stops being used.' },
+    { q: 'Which AI models and frameworks do you work with?', a: 'We build mainly on OpenAI, Anthropic Claude, and Google Gemini, and we choose per task by looking at response speed, cost, and how well the model reasons on your material, rather than defaulting to one vendor. LangChain and LangGraph handle the step-by-step logic and state of agents, LlamaIndex and pgvector cover retrieval and embeddings, and Python with Hugging Face comes in when a task needs a custom or open-source model. Because the pieces are separate, you can swap a model or provider later without rebuilding the whole system.' },
+    { q: 'Can you add AI to a product we already have?', a: 'Yes, and most of our AI work is exactly this: putting copilots, assistants, and automation into products that are already live instead of building something new. We begin with a short audit of your product and data to find the use case with the clearest return, then ship that one first as a limited pilot before widening it. You get a working result to judge before committing to a larger plan.' },
+    { q: 'How do you keep AI systems reliable in production?', a: 'Every system we ship has a test set that scores outputs against real examples before and after each change. RAG answers carry citations so they can be traced to a source document, risky or irreversible decisions go to a person for review, and monitoring tracks accuracy, response time, and cost as they move over time. We treat AI quality as ongoing engineering work, like uptime or security, rather than a checklist you tick once at launch.' },
+    { q: 'How long does an AI project take?', a: 'It depends on scope. As a rough guide, a Proof of Concept for one agent or RAG use case takes 3-6 weeks from audit to a working demo on real data. Adding a copilot to an existing product, with limits and tests in place, usually takes 8-14 weeks. A full multi-agent system with several integrations, human review, and production monitoring can take 3-6 months. We always start with the smallest version that proves value, then grow it from something people are already using.' },
+    { q: 'How much does an AI project cost?', a: 'Cost follows scope and integration effort far more than model choice. API fees from OpenAI, Anthropic, or Gemini are usually a small part of the total next to engineering time. A focused Proof of Concept for one use case generally starts in the low six figures (THB). A production agent or RAG system connected to your stack, with testing and monitoring, typically costs several times that. We quote a fixed price per phase after a discovery call, and we include the expected ongoing token and API costs so nothing surprises you after launch.' },
+    { q: 'What about data privacy and security with AI systems?', a: "Your data is not used to train public models. We use the enterprise API tiers from OpenAI, Anthropic, and Google, whose terms exclude your data from training. For RAG, sensitive documents stay in a database you control, typically pgvector inside a Postgres instance that is yours, and we set exactly what an agent may read, call, or write before it goes live. If your industry requires it, we can design a deployment that runs on your own servers (on-premise) or inside an isolated VPC." },
+    { q: 'Who owns the models, prompts, and code once the project is done?', a: "You do. Custom code, agent configurations, prompt templates, evaluation datasets, and fine-tuned model weights where they apply all transfer to you on final payment, with no lock-in to tools that only Haliviq has. We recommend building inside your own cloud account and GitHub organisation for anything headed to production, so you can see and control everything from day one and carry on without us if you choose." },
   ] : [
-    { q: 'Haliviq ให้บริการพัฒนา AI อะไรบ้าง?', a: 'เราสร้างเอเจนต์ AI หลายขั้นตอนที่เรียกใช้เครื่องมือและ API เพื่อทำงานจริงให้เสร็จ, ผู้ช่วยค้นความรู้แบบ RAG ที่ตอบจากเอกสารและฐานข้อมูลส่วนตัวของคุณ, Copilot ที่ฝังอยู่ในผลิตภัณฑ์ที่คุณใช้อยู่แล้ว และระบบทดสอบ (Evaluation Pipeline) ที่ช่วยให้ทุกอย่างเชื่อถือได้ในระยะยาว โปรเจกต์ทั่วไปเริ่มจากการตรวจประเมิน AI เพื่อหาจุดที่ AI สร้างมูลค่าได้ชัดที่สุดในธุรกิจของคุณ จากนั้นออกแบบเอเจนต์และทำ Proof of Concept ในขอบเขตที่ชัดเจน แล้วต่อด้วยการออกแบบขั้นตอนที่ให้คนร่วมตรวจ และติดตามผลหลังเปิดใช้งาน เพื่อไม่ให้จบแค่ตัวอย่างที่ใช้ได้ครั้งเดียวแล้วเงียบหายไป' },
-    { q: 'ใช้โมเดลและ Framework อะไรบ้าง?', a: 'เราสร้างระบบบน OpenAI, Anthropic Claude และ Google Gemini เป็นหลัก โดยเลือกตามงาน ทั้งความเร็วในการตอบ ต้นทุน และคุณภาพการให้เหตุผล ไม่ยึดติดกับผู้ให้บริการรายใดรายหนึ่ง ส่วนการจัดลำดับขั้นตอน เราใช้ LangChain และ LangGraph ควบคุมตรรกะและสถานะของเอเจนต์หลายขั้นตอน ใช้ LlamaIndex และ pgvector สำหรับการค้นข้อมูลและ Embedding และใช้ Python ร่วมกับ Hugging Face เมื่องานต้องใช้โมเดลเฉพาะหรือโอเพนซอร์ส การผสมแบบนี้ทำให้เปลี่ยนโมเดลหรือผู้ให้บริการภายหลังได้โดยไม่ต้องรื้อระบบทั้งหมด' },
-    { q: 'เพิ่ม AI เข้าไปในผลิตภัณฑ์ที่มีอยู่แล้วได้ไหม?', a: 'ได้ งาน AI ส่วนใหญ่ของเราเป็นแบบนี้พอดี คือฝัง Copilot ผู้ช่วย และระบบอัตโนมัติเข้าไปในผลิตภัณฑ์ที่เปิดใช้งานอยู่แล้ว มากกว่าสร้างใหม่ตั้งแต่ศูนย์ เราเริ่มด้วยการตรวจประเมิน AI สั้นๆ กับผลิตภัณฑ์และข้อมูลของคุณ เพื่อหางานที่ให้ผลตอบแทนชัดที่สุด แล้วส่งมอบงานที่ให้ผลมากที่สุดก่อนเป็นโครงการนำร่องในขอบเขตที่กำหนด ก่อนขยายต่อ วิธีนี้ลดความเสี่ยง และให้คุณเห็นผลจริงก่อนตัดสินใจลงทุนกับแผนงานที่ใหญ่ขึ้น' },
-    { q: 'ทำให้ระบบ AI เชื่อถือได้เมื่อใช้งานจริงอย่างไร?', a: 'ทุกระบบที่เราส่งมอบมีระบบทดสอบที่ให้คะแนนผลลัพธ์เทียบกับตัวอย่างจริงทั้งก่อนและหลังการแก้ไขทุกครั้ง มีการอ้างอิงแหล่งที่มาให้คำตอบแบบ RAG เพื่อให้ย้อนไปตรวจกับเอกสารต้นทางได้ มีให้คนร่วมตรวจสำหรับการตัดสินใจที่เสี่ยงสูงหรือย้อนกลับไม่ได้ และมีการติดตามความแม่นยำ ความเร็วในการตอบ และต้นทุนที่เปลี่ยนไปอย่างต่อเนื่อง เรามองว่าคุณภาพของ AI เป็นงานวิศวกรรมที่ต้องดูแลต่อเนื่อง เหมือนเรื่อง Uptime หรือความปลอดภัย ไม่ใช่รายการตรวจที่ทำครั้งเดียวตอนเปิดใช้งาน' },
-    { q: 'โปรเจกต์ AI ใช้เวลานานแค่ไหน?', a: 'ขึ้นอยู่กับขอบเขตงาน โดยประมาณ Proof of Concept ของเอเจนต์หรือ RAG หนึ่งงานใช้เวลา 3-6 สัปดาห์ ตั้งแต่ตรวจประเมินจนได้ตัวอย่างที่ใช้งานได้กับข้อมูลจริง การฝัง Copilot เข้ากับผลิตภัณฑ์ที่มีอยู่พร้อมขอบเขตความปลอดภัยและระบบทดสอบที่เหมาะสม มักใช้ 8-14 สัปดาห์ ส่วนระบบหลายเอเจนต์เต็มรูปแบบที่เชื่อมหลายระบบ มีคนร่วมตรวจ และมีการติดตามผลหลังใช้งานจริง อาจใช้ 3-6 เดือน เราจะเริ่มจากเวอร์ชันเล็กที่สุดที่พิสูจน์คุณค่าได้ก่อนเสมอ แล้วค่อยขยายจากจุดที่ใช้งานได้จริง แทนที่จะสร้างระบบสมบูรณ์ก่อนที่จะมีใครได้ลองใช้' },
-    { q: 'โปรเจกต์ AI มีค่าใช้จ่ายเท่าไหร่?', a: 'ต้นทุนขึ้นอยู่กับขอบเขตงานและความซับซ้อนของการเชื่อมระบบ มากกว่าการเลือกโมเดล ค่า API ของ OpenAI, Anthropic หรือ Gemini มักเป็นสัดส่วนเล็กน้อยเมื่อเทียบกับค่าแรงวิศวกร Proof of Concept หนึ่งงานโดยทั่วไปเริ่มที่หลักแสนต้นๆ (บาท) ส่วนระบบเอเจนต์หรือ RAG ระดับใช้งานจริงที่เชื่อมกับระบบเดิม พร้อมระบบทดสอบและติดตามผลครบ มักอยู่ที่หลายเท่าของตัวเลขนั้น เราเสนอราคาคงที่เป็นรายเฟสหลังคุยทำความเข้าใจโจทย์ และรวมประมาณการค่า Token/API ที่ต้องจ่ายต่อเนื่องไว้ด้วยเสมอ เพื่อไม่ให้มีค่าใช้จ่ายที่คาดไม่ถึงหลังระบบใช้งานจริง' },
-    { q: 'เรื่องความเป็นส่วนตัวของข้อมูลและความปลอดภัยของระบบ AI เป็นอย่างไร?', a: 'ข้อมูลของคุณจะไม่ถูกนำไปฝึกโมเดลสาธารณะของผู้ให้บริการ เราใช้ Enterprise API ของ OpenAI, Anthropic และ Google ที่มีข้อตกลงชัดเจนว่าไม่นำข้อมูลไปฝึกโมเดล สำหรับระบบ RAG เอกสารสำคัญจะเก็บไว้ในฐานข้อมูลของคุณเอง (โดยทั่วไปคือ pgvector ใน Postgres ที่คุณควบคุมได้) และเรากำหนดขอบเขตชัดเจนว่าเอเจนต์อ่าน เรียกใช้ หรือเขียนอะไรได้บ้างก่อนเปิดใช้งานจริง สำหรับอุตสาหกรรมที่มีกฎข้อบังคับเฉพาะ เรายังออกแบบให้ติดตั้งบนเซิร์ฟเวอร์ของคุณเอง (On-premise) หรือแยกใน VPC ได้ตามที่ต้องปฏิบัติตามกฎ' },
-    { q: 'โมเดล Prompt และโค้ดเป็นของใครหลังจบโปรเจกต์?', a: 'เป็นของคุณทั้งหมด โค้ดที่พัฒนาให้ การตั้งค่าเอเจนต์ Prompt Template ชุดข้อมูลทดสอบ และน้ำหนักโมเดลที่ Fine-tune ไว้ (ถ้ามี) จะโอนให้คุณเมื่อชำระเงินงวดสุดท้าย ไม่มีการผูกติดกับเครื่องมือเฉพาะของ Haliviq หากเราทำงานบน Cloud Account และ GitHub Organization ของคุณเอง ซึ่งเราแนะนำสำหรับทุกระบบที่จะใช้งานจริง คุณจะเห็นและควบคุมได้เต็มที่ตั้งแต่วันแรก และพัฒนาต่อเองได้แม้ไม่มีเรา' },
+    { q: 'Haliviq ให้บริการพัฒนา AI อะไรบ้าง?', a: 'เราสร้างเอเจนต์ AI หลายขั้นตอนที่เรียกใช้เครื่องมือและ API ทำขั้นตอนงานจริงให้จบ ผู้ช่วยแบบ RAG ที่ตอบจากเอกสารและฐานข้อมูลส่วนตัวของคุณ Copilot ที่ฝังอยู่ในผลิตภัณฑ์ที่คุณใช้อยู่แล้ว และชุดทดสอบกับระบบติดตามที่ช่วยให้ทุกอย่างน่าเชื่อถือ โปรเจกต์ทั่วไปเริ่มจากการตรวจประเมิน AI เพื่อหาว่า AI ช่วยประหยัดเวลาหรือเงินได้ชัดๆ ตรงไหนในธุรกิจของคุณ จากนั้นออกแบบเอเจนต์และทำงานนำร่องเล็กๆ กับข้อมูลจริง แล้วต่อด้วยการออกแบบขั้นตอนที่ให้คนร่วมตรวจและติดตามผลหลังเปิดใช้งาน เพื่อไม่ให้จบแค่เป็นตัวอย่างที่ใช้ครั้งเดียวแล้วเงียบหายไป' },
+    { q: 'ใช้โมเดลและ Framework อะไรบ้าง?', a: 'เราสร้างบน OpenAI, Anthropic Claude และ Google Gemini เป็นหลัก โดยเลือกตามงาน ดูจากความเร็วในการตอบ ต้นทุน และความสามารถในการคิดกับข้อมูลของคุณ ไม่ยึดผู้ให้บริการรายเดียว LangChain และ LangGraph ใช้ควบคุมลำดับขั้นตอนและสถานะของเอเจนต์ LlamaIndex กับ pgvector ใช้ค้นข้อมูลและทำ Embedding ส่วน Python กับ Hugging Face ใช้เมื่องานต้องการโมเดลเฉพาะหรือโอเพนซอร์ส เพราะแยกส่วนกันแบบนี้ ภายหลังคุณเปลี่ยนโมเดลหรือผู้ให้บริการได้โดยไม่ต้องรื้อระบบทั้งหมด' },
+    { q: 'เพิ่ม AI เข้าไปในผลิตภัณฑ์ที่มีอยู่แล้วได้ไหม?', a: 'ได้ และงาน AI ส่วนใหญ่ของเราก็เป็นแบบนี้ คือใส่ Copilot ผู้ช่วย และระบบอัตโนมัติเข้าไปในผลิตภัณฑ์ที่เปิดใช้งานอยู่แล้ว มากกว่าสร้างใหม่ เราเริ่มจากตรวจผลิตภัณฑ์และข้อมูลของคุณสั้นๆ เพื่อหางานที่ให้ผลตอบแทนชัดที่สุด แล้วส่งงานนั้นก่อนเป็นโครงการนำร่องที่จำกัดขอบเขต ก่อนขยายต่อ คุณจะได้เห็นผลจริงก่อนตัดสินใจลงทุนกับแผนที่ใหญ่ขึ้น' },
+    { q: 'ทำให้ระบบ AI น่าเชื่อถือเมื่อใช้งานจริงได้อย่างไร?', a: 'ทุกระบบที่เราส่งมอบมีชุดทดสอบที่ให้คะแนนผลลัพธ์เทียบกับตัวอย่างจริง ทั้งก่อนและหลังแก้ไขทุกครั้ง คำตอบแบบ RAG มีการอ้างอิงแหล่งที่มา ย้อนไปดูเอกสารต้นทางได้ การตัดสินใจที่เสี่ยงหรือย้อนกลับไม่ได้จะส่งให้คนตรวจ และมีระบบติดตามความแม่นยำ เวลาตอบ และต้นทุนที่เปลี่ยนไปเรื่อยๆ เรามองว่าคุณภาพของ AI เป็นงานวิศวกรรมที่ต้องดูแลต่อเนื่อง เหมือนเรื่อง Uptime หรือความปลอดภัย ไม่ใช่รายการตรวจที่ติ๊กครั้งเดียวตอนเปิดใช้งาน' },
+    { q: 'โปรเจกต์ AI ใช้เวลานานแค่ไหน?', a: 'ขึ้นอยู่กับขอบเขตงาน โดยประมาณ Proof of Concept ของเอเจนต์หรือ RAG หนึ่งงานใช้เวลา 3-6 สัปดาห์ ตั้งแต่ตรวจประเมินจนได้ตัวอย่างที่ใช้กับข้อมูลจริงได้ การใส่ Copilot เข้าไปในผลิตภัณฑ์ที่มีอยู่ พร้อมขอบเขตและชุดทดสอบ มักใช้ 8-14 สัปดาห์ ส่วนระบบหลายเอเจนต์เต็มรูปแบบที่เชื่อมหลายระบบ มีคนร่วมตรวจ และติดตามผลหลังใช้งาน อาจใช้ 3-6 เดือน เราเริ่มจากเวอร์ชันเล็กที่สุดที่พิสูจน์คุณค่าได้ก่อนเสมอ แล้วค่อยต่อยอดจากสิ่งที่คนใช้อยู่แล้ว' },
+    { q: 'โปรเจกต์ AI มีค่าใช้จ่ายเท่าไหร่?', a: 'ต้นทุนขึ้นอยู่กับขอบเขตงานและแรงในการเชื่อมระบบ มากกว่าการเลือกโมเดลมาก ค่า API ของ OpenAI, Anthropic หรือ Gemini มักเป็นส่วนน้อยเมื่อเทียบกับค่าแรงวิศวกร Proof of Concept หนึ่งงานโดยทั่วไปเริ่มที่หลักแสนต้นๆ (บาท) ส่วนเอเจนต์หรือระบบ RAG ที่ใช้งานจริงและเชื่อมกับระบบเดิม พร้อมทดสอบและติดตามผล มักอยู่ที่หลายเท่าของตัวเลขนั้น เราเสนอราคาคงที่เป็นรายเฟสหลังคุยทำความเข้าใจโจทย์ และใส่ประมาณการค่า Token กับ API ที่ต้องจ่ายต่อเนื่องไว้ด้วย คุณจะไม่เจอค่าใช้จ่ายที่คาดไม่ถึงหลังเปิดใช้งาน' },
+    { q: 'เรื่องความเป็นส่วนตัวของข้อมูลและความปลอดภัยของระบบ AI เป็นอย่างไร?', a: 'ข้อมูลของคุณไม่ถูกนำไปฝึกโมเดลสาธารณะ เราใช้ Enterprise API ของ OpenAI, Anthropic และ Google ซึ่งในข้อตกลงระบุว่าไม่นำข้อมูลไปฝึกโมเดล สำหรับระบบ RAG เอกสารสำคัญเก็บไว้ในฐานข้อมูลที่คุณควบคุมได้ โดยทั่วไปคือ pgvector ใน Postgres ของคุณเอง และเรากำหนดชัดก่อนเปิดใช้งานว่าเอเจนต์อ่าน เรียกใช้ หรือเขียนอะไรได้บ้าง ถ้าอุตสาหกรรมของคุณต้องการ เราออกแบบให้ติดตั้งบนเซิร์ฟเวอร์ของคุณเอง (On-premise) หรือแยกใน VPC ได้' },
+    { q: 'โมเดล Prompt และโค้ดเป็นของใครหลังจบโปรเจกต์?', a: 'เป็นของคุณ โค้ดที่พัฒนา การตั้งค่าเอเจนต์ Prompt Template ชุดข้อมูลทดสอบ และน้ำหนักโมเดลที่ Fine-tune ไว้ (ถ้ามี) โอนให้คุณเมื่อชำระเงินงวดสุดท้าย ไม่มีการผูกติดกับเครื่องมือที่มีแต่ Haliviq เราแนะนำให้ทำบน Cloud Account และ GitHub Organization ของคุณเองสำหรับระบบที่จะใช้งานจริง คุณจะเห็นและควบคุมทุกอย่างได้ตั้งแต่วันแรก และพัฒนาต่อเองได้ถ้าต้องการ' },
   ]
 
   const postHeroSlot = (

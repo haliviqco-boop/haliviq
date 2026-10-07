@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import { t, type Lang } from '@/lib/i18n'
 import Footer from '@/components/Footer'
@@ -7,23 +8,45 @@ export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
 }
 
+export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+  const isEN = params.lang === 'en'
+  const title = isEN ? 'Contact Haliviq | Web & App Studio in Bangkok' : 'ติดต่อ Haliviq | สตูดิโอ Web และแอปในกรุงเทพฯ'
+  const description = isEN
+    ? 'Talk to Haliviq about a website, app, LINE mini app or AI project. Free first consultation, NDA on request, and a reply within 24 hours from our Bangkok team.'
+    : 'คุยกับ Haliviq เรื่อง website แอป LINE mini app หรือระบบ AI ปรึกษาครั้งแรกฟรี มี NDA ให้เมื่อต้องการ และทีมในกรุงเทพฯ ตอบกลับภายใน 24 ชั่วโมง'
+  const url = `https://haliviq.com/${params.lang}/contact`
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url },
+    twitter: { card: 'summary_large_image', title, description },
+  }
+}
+
 export default function Page({ params }: { params: { lang: Lang } }) {
   const lang = (params.lang === 'en' ? 'en' : 'th') as Lang
   const isEN = lang === 'en'
   const tr = t[lang] as any
 
   const faqs = isEN ? [
-    { q: 'How much does a project cost?', a: 'Pricing depends on scope, complexity, and team size. Small projects start around THB 300,000. Enterprise projects are quoted per scope. Contact us for a free estimate.' },
-    { q: 'How long does a project take?', a: 'A simple website takes 4-8 weeks. A full product takes 3-6 months. We always start with a Discovery phase to set realistic timelines.' },
-    { q: 'Do you work with startups?', a: 'Yes. We work with funded startups, SMEs, and enterprises. What matters is that you have a clear goal and are ready to commit.' },
-    { q: 'Do you handle maintenance after launch?', a: 'Yes. We offer maintenance packages covering bug fixes, updates, performance monitoring, and feature development.' },
-    { q: 'Can you work with our existing team?', a: 'Absolutely. We can embed as an extension of your team, taking on specific roles or the entire product build.' },
+    { q: 'How much does a project cost?', a: 'Pricing depends on scope, complexity and team size. Small projects start around THB 300,000, while larger or enterprise projects are quoted once we understand what needs to be built. The things that move the price most are the number of screens or page types, how many systems we have to connect to (payments, CRM, ERP, LINE and so on), and how much design and research is needed up front. Contact us for a free estimate.' },
+    { q: 'How long does a project take?', a: 'A simple website usually takes 4-8 weeks. A full product takes 3-6 months. We always begin with a Discovery phase, where we agree on the goal, the scope and the order of work, so the timeline we give you is based on a real plan rather than a guess.' },
+    { q: 'Do you work with startups?', a: 'Yes. We work with funded startups, SMEs and larger organizations. What matters most is that you have a clear goal and are ready to make decisions during the project. If your idea is still rough, a short Discovery or prototype phase is a good way to test it before committing to a full build.' },
+    { q: 'Do you handle maintenance after launch?', a: 'Yes. We offer maintenance packages that cover bug fixes, updates, performance monitoring and new feature work. A launch is rarely the end of a product, so we would rather stay on and keep it healthy than hand over a system nobody is looking after.' },
+    { q: 'Can you work with our existing team?', a: 'Absolutely. We can sit alongside your team and take on specific roles such as UX/UI design, front-end or back-end development, or we can own the whole product build. We use your tools and meeting rhythm where we can, so it does not feel like a separate vendor.' },
+    { q: 'What should I prepare before the first conversation?', a: 'Nothing formal is needed. It helps to know what problem you are trying to solve, who the users are, any deadline or event driving the timing, and roughly what budget range you have in mind. If you already have documents, screenshots, an old website or a competitor you like, bring them along. We will help shape the rest in the first call.' },
+    { q: 'Can we sign an NDA first, and who owns the work?', a: 'Yes, we can sign an NDA before you share anything sensitive. Ownership, handover and what you receive at the end (source code, design files, documentation) are agreed in the project contract, so both sides know the terms before work starts.' },
+    { q: 'Do you build for Thai users and Thai-market needs?', a: 'Yes. We are based in Bangkok and regularly work on Thai-language interfaces, LINE integrations, PromptPay and local payment flows, and PDPA-conscious data handling. We also build bilingual Thai and English products when your audience spans more than one market.' },
   ] : [
-    { q: 'ราคาเริ่มต้นเท่าไหร่?', a: 'ขึ้นอยู่กับขอบเขตงาน ความซับซ้อน และขนาดทีม โปรเจกต์เล็กเริ่มราว 300,000 บาท ส่วนโปรเจกต์ระดับองค์กร (Enterprise) ประเมินตามขอบเขตงาน ติดต่อเราเพื่อขอใบเสนอราคาฟรี' },
-    { q: 'ใช้เวลานานแค่ไหน?', a: 'เว็บไซต์ทั่วไป 4-8 สัปดาห์ ผลิตภัณฑ์เต็มรูปแบบ 3-6 เดือน เราเริ่มจากช่วงสำรวจความต้องการ (Discovery) เพื่อกำหนดระยะเวลาให้ชัดเจน' },
-    { q: 'รับงาน Startup ไหม?', a: 'รับครับ เราทำงานกับ Startup ที่ได้รับเงินทุนแล้ว SME และองค์กร สิ่งสำคัญคือมีเป้าหมายชัดเจนและพร้อมทำจริง' },
-    { q: 'ดูแลหลัง Launch ด้วยไหม?', a: 'ดูแลครับ มีแพ็กเกจดูแลรักษาระบบ ครอบคลุมการแก้บั๊ก อัปเดต ตรวจสอบประสิทธิภาพ และพัฒนาฟีเจอร์เพิ่ม' },
-    { q: 'ทำงานร่วมกับทีมที่มีอยู่ได้ไหม?', a: 'ได้เลย เราเป็นส่วนเสริมของทีมคุณ รับเฉพาะบางหน้าที่ หรือดูแลทั้งผลิตภัณฑ์ก็ได้' },
+    { q: 'ราคาเริ่มต้นเท่าไหร่?', a: 'ราคาขึ้นอยู่กับขอบเขตงาน ความซับซ้อน และขนาดทีม โปรเจกต์เล็กเริ่มราว 300,000 บาท ส่วนโปรเจกต์ระดับองค์กร (Enterprise) เราจะประเมินให้หลังจากเข้าใจว่าต้องสร้างอะไรบ้าง สิ่งที่ทำให้ราคาขึ้นลงมากที่สุดคือจำนวนหน้าจอหรือประเภทหน้า จำนวนระบบที่ต้องเชื่อมต่อ (เช่น ระบบชำระเงิน CRM ERP หรือ LINE) และงานออกแบบกับงานวิจัยที่ต้องทำก่อนเริ่มพัฒนา ติดต่อเราเพื่อขอใบเสนอราคาฟรีได้เลย' },
+    { q: 'ใช้เวลานานแค่ไหน?', a: 'เว็บไซต์ทั่วไปใช้เวลา 4-8 สัปดาห์ ส่วนผลิตภัณฑ์เต็มรูปแบบใช้ 3-6 เดือน เราจะเริ่มจากช่วงสำรวจความต้องการ (Discovery) ก่อนทุกครั้ง เพื่อคุยให้ชัดว่าเป้าหมายคืออะไร ขอบเขตแค่ไหน และทำอะไรก่อนหลัง ระยะเวลาที่บอกจึงมาจากแผนงานจริง ไม่ใช่การเดา' },
+    { q: 'รับงาน Startup ไหม?', a: 'รับ เราทำงานกับ Startup ที่ได้รับเงินทุนแล้ว SME และองค์กรใหญ่ สิ่งที่สำคัญที่สุดคือคุณมีเป้าหมายชัดเจนและพร้อมช่วยตัดสินใจระหว่างโปรเจกต์ ถ้าไอเดียยังไม่นิ่ง การทำ Discovery สั้น ๆ หรือ Prototype ก่อนเป็นวิธีที่ดีในการลองไอเดียก่อนลงทุนสร้างจริง' },
+    { q: 'ดูแลหลัง Launch ด้วยไหม?', a: 'ดูแล เรามีแพ็กเกจดูแลรักษาระบบ ครอบคลุมการแก้บั๊ก การอัปเดต การเช็กประสิทธิภาพ และการพัฒนาฟีเจอร์เพิ่ม เพราะหลังเปิดตัวงานยังไม่จบ เราอยากอยู่ช่วยดูแลต่อ มากกว่าส่งมอบระบบแล้วไม่มีใครดูแล' },
+    { q: 'ทำงานร่วมกับทีมที่มีอยู่ได้ไหม?', a: 'ได้เลย เราเข้าไปเป็นส่วนเสริมของทีมคุณได้ จะรับเฉพาะบางหน้าที่ เช่น ออกแบบ UX/UI งาน front-end หรือ back-end หรือดูแลทั้งผลิตภัณฑ์ก็ได้ และเราพยายามใช้เครื่องมือและจังหวะการประชุมแบบเดียวกับทีมคุณ เพื่อให้ทำงานด้วยกันได้เหมือนทีมเดียว' },
+    { q: 'ต้องเตรียมอะไรก่อนคุยครั้งแรก?', a: 'ไม่ต้องเตรียมเป็นทางการ แต่ถ้ารู้ว่ากำลังแก้ปัญหาอะไร ผู้ใช้คือใคร มีกำหนดส่งหรืออีเวนต์ที่ต้องเปิดตัวไหม และพอมีงบประมาณคร่าว ๆ อยู่ในใจไหม ก็จะช่วยให้คุยกันได้เร็วขึ้น ถ้ามีเอกสาร ภาพหน้าจอ เว็บไซต์เดิม หรือคู่แข่งที่ชอบ เอามาให้ดูได้เลย ที่เหลือเราจะช่วยจัดให้ชัดในการคุยครั้งแรก' },
+    { q: 'เซ็น NDA ก่อนได้ไหม แล้วงานเป็นของใคร?', a: 'ได้ เราเซ็น NDA ก่อนที่คุณจะส่งข้อมูลสำคัญให้ดูได้ เรื่องความเป็นเจ้าของงาน การส่งมอบ และสิ่งที่คุณจะได้รับตอนจบ (เช่น source code ไฟล์ออกแบบ เอกสาร) จะระบุไว้ในสัญญาโปรเจกต์ เพื่อให้ทั้งสองฝ่ายเข้าใจตรงกันก่อนเริ่มงาน' },
+    { q: 'ทำงานให้ผู้ใช้ในไทยโดยเฉพาะได้ไหม?', a: 'ได้ เราอยู่กรุงเทพฯ และทำงานกับหน้าจอภาษาไทย การเชื่อมต่อ LINE PromptPay และระบบชำระเงินในไทย รวมถึงการดูแลข้อมูลให้สอดคล้องกับ PDPA อยู่เป็นประจำ ถ้ากลุ่มลูกค้าของคุณอยู่หลายตลาด เราก็ทำผลิตภัณฑ์สองภาษา ไทยและอังกฤษ ได้เช่นกัน' },
   ]
 
   const channels = isEN ? [
@@ -66,8 +89,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                     ? <>Let&apos;s build<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,#53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>something great</span></>
                     : <>มาสร้าง<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,#53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>สิ่งดี ๆ ด้วยกัน</span></>}
                 </h1>
-                <p className="leading-relaxed mb-12" style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.85)', fontWeight: 400, maxWidth: 460 }}>
-                  {isEN ? 'Tell us about your project. We will get back to you within 24 hours with initial thoughts and next steps.' : 'เล่าเรื่องโปรเจกต์ของคุณให้เราฟัง เราจะตอบกลับภายใน 24 ชั่วโมง พร้อมความเห็นเบื้องต้นและขั้นตอนถัดไป'}
+                <p className="leading-relaxed mb-12" style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.85)', fontWeight: 400, maxWidth: 520 }}>
+                  {isEN ? 'Tell us about your project, even if it is still a rough idea. We will get back to you within 24 hours with our first thoughts and a suggested next step. If you would rather talk, call us or message us on LINE, and we can set up a first consultation at no cost.' : 'เล่าเรื่องโปรเจกต์ของคุณให้เราฟังได้เลย แม้จะเป็นแค่ไอเดียคร่าว ๆ เราจะตอบกลับภายใน 24 ชั่วโมง พร้อมความเห็นเบื้องต้นและขั้นตอนถัดไปที่เราแนะนำ ถ้าอยากคุยเลย โทรหาเราหรือทักทาง LINE ได้ แล้วเรานัดปรึกษาครั้งแรกให้ฟรี'}
                 </p>
                 <div className="space-y-4 mb-12">
                   {channels.map(c => (

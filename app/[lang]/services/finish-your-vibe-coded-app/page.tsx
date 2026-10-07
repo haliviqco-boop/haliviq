@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import ServiceLayout from '@/components/service/ServiceLayout'
 import { type Lang } from '@/lib/i18n'
@@ -31,6 +32,24 @@ export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
 }
 
+export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+  const isEN = params.lang === 'en'
+  const title = isEN
+    ? 'Finish Your AI-Built App | Vibe Code Rescue | Haliviq'
+    : 'ช่วยจบแอปที่สร้างด้วย AI ให้พร้อมเปิดตัว | Haliviq'
+  const description = isEN
+    ? 'Built an app with Cursor, Lovable, Bolt or Replit? Haliviq in Bangkok audits the code, fixes security gaps, sets up real hosting and finishes the last 10%.'
+    : 'สร้างแอปด้วย Cursor, Lovable, Bolt หรือ Replit แล้วติดที่ 10% สุดท้าย Haliviq ตรวจโค้ด แก้ช่องโหว่ ขึ้น Hosting จริง และช่วยจบจนพร้อมเปิดตัว ไม่ต้องเขียนใหม่'
+  const url = `https://haliviq.com/${params.lang}/services/finish-your-vibe-coded-app`
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url },
+    twitter: { card: 'summary_large_image', title, description },
+  }
+}
+
 export default function Page({ params }: { params: { lang: Lang } }) {
   const isEN = params.lang === 'en'
   const prefix = `/${params.lang}`
@@ -38,40 +57,42 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge    = isEN ? 'Engineering / Vibe-Coded Apps'  : 'Engineering / Vibe-Coded Apps'
   const title    = isEN ? 'You Built 90%'  : 'คุณสร้างมาแล้ว 90%'
   const subtitle = isEN ? 'We Handle the Last 10%'    : 'เราช่วยจบอีก 10% ที่เหลือ'
-  const heroDesc = isEN ? 'A codebase and architecture audit, security hardening, production infrastructure, and everything else "the last 10%" needs to actually go live.'  : 'ตรวจ Codebase และสถาปัตยกรรม เสริมความปลอดภัย วางระบบสำหรับใช้งานจริง และทุกอย่างที่ "10% สุดท้าย" ต้องมี เพื่อให้แอปเปิดใช้งานได้จริง'
+  const heroDesc = isEN ? 'You used an AI tool to get an app running, and now it has to survive real users, real payments, and real attackers. We read through the code your tool produced, fix what is unsafe, put the app on proper hosting with backups and monitoring, and finish the unglamorous details that block a launch. You keep what you built; we do not start over. It is made for founders, small teams, and in-house staff who are close to launch but not sure it is ready.'  : 'คุณใช้เครื่องมือ AI สร้างแอปจนรันได้แล้ว ตอนนี้แอปต้องรอดจากผู้ใช้จริง เงินจริง และคนที่คิดร้ายจริงๆ เราอ่านโค้ดที่เครื่องมือของคุณสร้างไว้ แก้จุดที่ไม่ปลอดภัย ย้ายแอปขึ้น Hosting ที่ดูแลได้ พร้อม Backup และ Monitoring แล้วทำรายละเอียดจุกจิกที่ขวางการเปิดตัวให้เสร็จ สิ่งที่คุณสร้างไว้ยังเป็นของคุณ เราไม่เริ่มใหม่ เหมาะกับผู้ก่อตั้ง ทีมเล็ก และทีมในองค์กรที่ใกล้เปิดตัวแล้วแต่ยังไม่มั่นใจว่าพร้อม'
   const whyTitle = isEN ? 'Why AI-generated apps stall before launch'    : 'ทำไมแอปที่สร้างด้วย AI ถึงติดขัดก่อนเปิดตัว'
-  const whyDesc  = isEN ? 'Tools like Cursor, Lovable, and Bolt get you a working prototype fast. What they do not give you is production security, real infrastructure, and the edge cases that only show up under real traffic.'  : 'เครื่องมืออย่าง Cursor, Lovable และ Bolt ช่วยให้ได้ Prototype ที่ใช้งานได้เร็ว แต่สิ่งที่ไม่ได้ให้มาคือความปลอดภัยระดับใช้งานจริง ระบบรองรับจริง และกรณีพิเศษที่จะเจอเมื่อมีคนใช้จริง'
+  const whyDesc  = isEN ? 'Cursor, Lovable, Bolt, and similar tools are very good at producing something that works on your laptop. They are not asked to think about who can read another user’s data, what happens when a payment webhook arrives twice, or how to restore the database after a mistake. Those gaps stay invisible while three people are testing. They show up the week real customers arrive, which is the worst possible time to find them.'  : 'Cursor, Lovable, Bolt และเครื่องมือแนวเดียวกัน เก่งมากเรื่องสร้างของที่รันได้บนเครื่องคุณ แต่ไม่มีใครบอกให้มันคิดเรื่องว่าใครอ่านข้อมูลของผู้ใช้คนอื่นได้ จะเกิดอะไรขึ้นถ้า Webhook ชำระเงินเข้ามาสองรอบ หรือจะกู้ฐานข้อมูลกลับมายังไงถ้าพลาด ช่องว่างเหล่านี้มองไม่เห็นตอนที่มีคนทดสอบแค่สามคน แต่จะโผล่ในสัปดาห์ที่ลูกค้าจริงเข้ามา ซึ่งเป็นเวลาที่แย่ที่สุดที่จะมาเจอ'
   const ctaTitle = isEN ? 'Ready to ship what you’ve built?'    : 'พร้อมปล่อยสิ่งที่คุณสร้างมาแล้วหรือยัง?'
-  const ctaDesc  = isEN ? 'Start with a codebase audit — we’ll tell you exactly what stands between your prototype and production.'   : 'เริ่มด้วยการตรวจ Codebase เราจะบอกชัดๆ ว่าอะไรที่ยังขวางระหว่าง Prototype กับการใช้งานจริง'
+  const ctaDesc  = isEN ? 'Start with a fixed-price codebase audit. Send us the repository and we will tell you plainly what stands between your prototype and production, in what order to fix it, and roughly what it will take.'   : 'เริ่มจากการตรวจ Codebase แบบราคาคงที่ ส่ง Repository มาให้เรา แล้วเราจะบอกตรงๆ ว่าอะไรยังขวางระหว่าง Prototype กับการใช้งานจริง ควรแก้ตามลำดับไหน และต้องใช้แรงประมาณเท่าไหร่'
   const overviewText = isEN
-    ? 'We take AI-assisted, "vibe-coded" applications built with tools like Cursor, Claude Code, Lovable, Bolt, v0, or Replit, and finish what production actually requires: a full codebase and architecture audit to understand what is really there, security hardening to close the gaps AI tools routinely leave open, real production infrastructure in place of a preview deployment, and hands-on work through the messy "last 10%" — auth edge cases, payment reliability, error handling, and the details that separate a demo from a product people can depend on.'
-    : 'เรารับช่วงต่อแอปที่สร้างด้วย AI แบบ "Vibe Coding" จากเครื่องมืออย่าง Cursor, Claude Code, Lovable, Bolt, v0 หรือ Replit และทำส่วนที่การใช้งานจริงต้องมีให้ครบ เริ่มจากตรวจ Codebase และสถาปัตยกรรมทั้งหมดเพื่อดูว่ามีอะไรอยู่จริง เสริมความปลอดภัยเพื่อปิดช่องโหว่ที่เครื่องมือ AI มักเปิดทิ้งไว้ วางระบบจริงแทนการ Deploy แบบทดลอง ไปจนถึงลงมือแก้ "10% สุดท้าย" ที่ยุ่งยาก เช่น กรณีพิเศษของระบบล็อกอิน ความน่าเชื่อถือของการชำระเงิน การจัดการ Error และรายละเอียดที่แยกเดโมออกจากผลิตภัณฑ์ที่คนพึ่งพาได้'
+    ? 'We take apps built with AI assistance, the so-called "vibe-coded" kind from Cursor, Claude Code, Lovable, Bolt, v0, or Replit, and do the work production needs. First comes an audit of the codebase and architecture, so we know what is really in there. Then security fixes for the gaps AI tools often leave open, proper hosting in place of a preview deployment, and hands-on work through the last 10%: login edge cases, payments that never double-charge, sensible error handling, and the small details that separate a demo from a product people rely on.'
+    : 'เรารับช่วงต่อแอปที่สร้างด้วย AI แบบ "Vibe Coding" จาก Cursor, Claude Code, Lovable, Bolt, v0 หรือ Replit แล้วทำส่วนที่การใช้งานจริงต้องมี เริ่มจากตรวจ Codebase และสถาปัตยกรรม เพื่อรู้ว่าข้างในมีอะไรอยู่จริง จากนั้นแก้ช่องโหว่ที่เครื่องมือ AI มักเปิดทิ้งไว้ ย้ายไปใช้ Hosting จริงแทนการ Deploy แบบทดลอง และลงมือทำ "10% สุดท้าย" ทั้งกรณีพิเศษของระบบล็อกอิน การชำระเงินที่ไม่ตัดเงินซ้ำ การจัดการ Error ที่สมเหตุสมผล และรายละเอียดเล็กๆ ที่แยกเดโมออกจากผลิตภัณฑ์ที่คนพึ่งพาได้'
 
   const heroBullets = isEN ? [
-      'Full codebase and architecture audit before touching anything',
-      'Security hardening for auth, secrets, and data exposure',
-      'Real production infrastructure, not a preview deployment',
-      'Hands-on fixes for the edge cases AI-generated code misses',
-      'Works with output from any major AI coding tool',
+      'A full codebase and architecture audit before anything is changed',
+      'Security fixes for login, secrets, and data that should not be reachable',
+      'Real hosting with backups, monitoring, and a deploy process, not a preview link',
+      'Hands-on fixes for the payment, login, and error cases AI-written code misses',
+      'Works on code from any major AI tool, and on repositories you started by hand',
+      'A written handover so your team understands the code and can change it without us',
     ] : [
-      'ตรวจ Codebase และสถาปัตยกรรมทั้งหมดก่อนแตะอะไรทั้งนั้น',
-      'เสริมความปลอดภัยให้ระบบล็อกอิน Secret และข้อมูลที่อาจรั่ว',
-      'วางระบบสำหรับใช้งานจริง ไม่ใช่แค่ Deploy แบบทดลอง',
-      'ลงมือแก้กรณีพิเศษที่โค้ดจาก AI มักพลาด',
-      'ทำงานกับโค้ดจากเครื่องมือ AI Coding ชั้นนำได้ทุกตัว',
+      'ตรวจ Codebase และสถาปัตยกรรมทั้งหมดก่อนแก้อะไรทั้งนั้น',
+      'แก้จุดอ่อนด้านความปลอดภัยของระบบล็อกอิน Secret และข้อมูลที่ไม่ควรเข้าถึงได้',
+      'ขึ้น Hosting จริง พร้อม Backup, Monitoring และขั้นตอน Deploy ไม่ใช่แค่ลิงก์ทดลอง',
+      'ลงมือแก้กรณีของการชำระเงิน ระบบล็อกอิน และ Error ที่โค้ดจาก AI มักพลาด',
+      'ทำงานกับโค้ดจากเครื่องมือ AI ชั้นนำได้ทุกตัว รวมถึง Repository ที่เริ่มด้วยมือ',
+      'ส่งมอบเอกสารให้ทีมคุณเข้าใจโค้ดและแก้ต่อเองได้โดยไม่ต้องพึ่งเรา',
     ]
   const whyPoints   = isEN ? [
-      'AI coding tools optimize for a working demo, not for what survives real traffic and real attackers.',
-      'Security gaps — exposed keys, missing auth checks, open endpoints — are extremely common in AI-generated code.',
-      'A preview deployment is not production infrastructure: no backups, no monitoring, no real scaling plan.',
-      'Payment, auth, and data edge cases only surface once real users start using the product.',
-      'Finishing the last 10% properly is far cheaper than a security incident or an outage after launch.',
+      'AI coding tools aim for a working demo, not for what survives heavy use and people actively probing for weaknesses.',
+      'Exposed keys, missing permission checks, and open endpoints are very common in AI-generated code, and they are easy to miss by eye.',
+      'A preview deployment is not production: it has no backups, no alerts, and no plan for more users.',
+      'Payment, login, and data edge cases only surface once real users start doing unexpected things.',
+      'Finishing the last 10% properly costs far less than a data leak or an outage right after launch.',
     ] : [
-      'เครื่องมือ AI Coding ปรับมาให้ได้เดโมที่ใช้งานได้ ไม่ใช่สิ่งที่ทนต่อผู้ใช้จริงและผู้ไม่หวังดีจริง',
-      'ช่องโหว่ด้านความปลอดภัย เช่น Key รั่ว ขาดการเช็กสิทธิ์ Endpoint เปิดโล่ง พบได้บ่อยมากในโค้ดที่สร้างจาก AI',
-      'การ Deploy แบบทดลองไม่ใช่ระบบสำหรับใช้งานจริง ไม่มี Backup ไม่มี Monitoring และไม่มีแผนรองรับผู้ใช้ที่เพิ่มขึ้น',
-      'กรณีพิเศษของการชำระเงิน ระบบล็อกอิน และข้อมูล จะโผล่มาเมื่อผู้ใช้จริงเริ่มใช้งาน',
-      'จบ 10% สุดท้ายให้ถูกต้อง ถูกกว่าเจอปัญหาความปลอดภัยหรือระบบล่มหลังเปิดตัวมาก',
+      'เครื่องมือ AI Coding ตั้งเป้าที่เดโมที่ใช้งานได้ ไม่ใช่สิ่งที่ทนการใช้งานหนักและคนที่ลองหาจุดอ่อนจริงๆ',
+      'Key รั่ว ไม่มีการเช็กสิทธิ์ และ Endpoint เปิดโล่ง พบได้บ่อยมากในโค้ดจาก AI และมองด้วยตาเปล่าแล้วหลุดง่าย',
+      'การ Deploy แบบทดลองไม่ใช่ Production ไม่มี Backup ไม่มีการแจ้งเตือน และไม่มีแผนรองรับผู้ใช้ที่เพิ่มขึ้น',
+      'กรณีพิเศษของการชำระเงิน ระบบล็อกอิน และข้อมูล จะโผล่ตอนที่ผู้ใช้จริงเริ่มทำอะไรที่ไม่คาดคิด',
+      'จบ 10% สุดท้ายให้ดี ถูกกว่าข้อมูลรั่วหรือระบบล่มหลังเปิดตัวมาก',
     ]
   const outcomes    = isEN ? [
       {stat: '15+', label: 'Security Issues Found', desc: 'Average per audited codebase'},
@@ -85,54 +106,60 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {stat: '0', label: 'ต้องเขียนใหม่ทั้งหมด', desc: 'เราต่อยอดจากของเดิม'}
     ]
   const features    = isEN ? [
-      {icon: 'ti-search-code', title: 'Codebase & Architecture Audit', desc: 'A full review of what your AI tool actually built, its structure, and its risks.'},
-      {icon: 'ti-shield-lock', title: 'Security Hardening', desc: 'Closing exposed keys, missing auth checks, and other gaps AI tools commonly leave.'},
-      {icon: 'ti-server', title: 'Production Infrastructure', desc: 'Real hosting, backups, monitoring, and scaling in place of a preview deployment.'},
-      {icon: 'ti-list-check', title: 'The Last 10%', desc: 'Auth edge cases, payment reliability, error handling, and launch-blocking details.'},
-      {icon: 'ti-git-branch', title: 'Codebase Cleanup', desc: 'Removing dead code, fixing structure issues, and making the app maintainable long-term.'},
-      {icon: 'ti-headset', title: 'Post-Launch Support', desc: 'Ongoing support so the app keeps running well after we hand it back to you.'}
+      {icon: 'ti-search-code', title: 'Codebase & Architecture Audit', desc: 'We read the whole repository and map how it is put together: data model, auth flow, third-party services, and environment setup. You get a ranked list of problems with a plain explanation of each, and a fixed-price quote for fixing them.'},
+      {icon: 'ti-shield-lock', title: 'Security Hardening', desc: 'We close the gaps that turn up again and again in AI-written apps: keys committed to the repo, endpoints with no permission check, database rules that let any user read any row, and unchecked form input. Fixes are tested, not just patched.'},
+      {icon: 'ti-server', title: 'Production Infrastructure', desc: 'We move the app from a preview link to hosting you can depend on, with separate staging and production, automatic backups, error alerts, a deploy pipeline, and a domain with HTTPS. We can use a Thai or regional provider if data location matters to you.'},
+      {icon: 'ti-list-check', title: 'The Last 10%', desc: 'The jobs that stop a launch: password reset that really works, payments that handle retries and failures, sensible empty and error states, email that lands in the inbox, and the flows the tool started and never finished.'},
+      {icon: 'ti-git-branch', title: 'Codebase Cleanup', desc: 'We remove dead code and duplicated logic, bring the folder structure into line, and add the tests that protect the important flows. The goal is a project a new developer can open on Monday and understand by Wednesday.'},
+      {icon: 'ti-headset', title: 'Post-Launch Support', desc: 'After go-live we watch the logs, fix what real users trip over, and help with the first features. Support is optional, billed monthly, and you can end it whenever your team feels ready to carry on alone.'}
     ] : [
-      {icon: 'ti-search-code', title: 'Codebase & Architecture Audit', desc: 'ตรวจให้ครบว่าเครื่องมือ AI สร้างอะไรไว้จริง โครงสร้างเป็นอย่างไร และมีความเสี่ยงอะไรบ้าง'},
-      {icon: 'ti-shield-lock', title: 'Security Hardening', desc: 'ปิด Key ที่รั่ว จุดที่ขาดการเช็กสิทธิ์ และช่องโหว่อื่นๆ ที่เครื่องมือ AI มักเปิดทิ้งไว้'},
-      {icon: 'ti-server', title: 'Production Infrastructure', desc: 'วาง Hosting จริง Backup Monitoring และการรองรับผู้ใช้ที่เพิ่มขึ้น แทนการ Deploy แบบทดลอง'},
-      {icon: 'ti-list-check', title: 'The Last 10%', desc: 'กรณีพิเศษของระบบล็อกอิน ความน่าเชื่อถือของการชำระเงิน การจัดการ Error และรายละเอียดที่ขวางการเปิดตัว'},
-      {icon: 'ti-git-branch', title: 'Codebase Cleanup', desc: 'ลบโค้ดที่ไม่ใช้ แก้ปัญหาโครงสร้าง และทำให้แอปดูแลต่อได้ในระยะยาว'},
-      {icon: 'ti-headset', title: 'Post-Launch Support', desc: 'ช่วยดูแลต่อเนื่องหลังส่งมอบ เพื่อให้แอปทำงานได้ดีต่อไป'}
+      {icon: 'ti-search-code', title: 'Codebase & Architecture Audit', desc: 'เราอ่านทั้ง Repository แล้ววาดว่าระบบประกอบกันยังไง ทั้ง Data Model ขั้นตอนล็อกอิน บริการภายนอกที่ใช้ และการตั้งค่า Environment คุณจะได้รายการปัญหาเรียงลำดับพร้อมคำอธิบายที่อ่านรู้เรื่อง และใบเสนอราคาแบบคงที่สำหรับการแก้'},
+      {icon: 'ti-shield-lock', title: 'Security Hardening', desc: 'เราปิดช่องโหว่ที่เจอซ้ำแล้วซ้ำอีกในแอปที่ AI เขียน เช่น Key ที่หลุดเข้า Repo Endpoint ที่ไม่เช็กสิทธิ์ กฎฐานข้อมูลที่ให้ผู้ใช้คนไหนก็อ่านข้อมูลแถวไหนก็ได้ และข้อมูลจากฟอร์มที่ไม่ได้ตรวจ การแก้ทุกจุดมีการทดสอบ ไม่ใช่แค่ปะๆ ไป'},
+      {icon: 'ti-server', title: 'Production Infrastructure', desc: 'เราย้ายแอปจากลิงก์ทดลองไปอยู่บน Hosting ที่พึ่งพาได้ แยก Staging กับ Production มี Backup อัตโนมัติ แจ้งเตือนเมื่อเกิด Error มี Pipeline สำหรับ Deploy และโดเมนที่ใช้ HTTPS ถ้าที่ตั้งของข้อมูลสำคัญกับคุณ เราใช้ผู้ให้บริการในไทยหรือในภูมิภาคได้'},
+      {icon: 'ti-list-check', title: 'The Last 10%', desc: 'งานที่ขวางการเปิดตัว เช่น ระบบรีเซ็ตรหัสผ่านที่ใช้ได้จริง การชำระเงินที่รับมือกับการลองใหม่และการล้มเหลว หน้าว่างและหน้า Error ที่สมเหตุสมผล อีเมลที่ไปถึงกล่องจดหมาย และขั้นตอนที่เครื่องมือเริ่มไว้แต่ไม่เคยทำเสร็จ'},
+      {icon: 'ti-git-branch', title: 'Codebase Cleanup', desc: 'เราลบโค้ดที่ไม่ใช้และตรรกะซ้ำซ้อน จัดโครงสร้างโฟลเดอร์ให้เป็นระเบียบ และเพิ่ม Test ครอบขั้นตอนสำคัญ เป้าหมายคือโปรเจกต์ที่นักพัฒนาใหม่เปิดวันจันทร์แล้วเข้าใจได้ภายในวันพุธ'},
+      {icon: 'ti-headset', title: 'Post-Launch Support', desc: 'หลังเปิดตัว เราดู Log แก้จุดที่ผู้ใช้จริงสะดุด และช่วยทำฟีเจอร์แรกๆ ต่อ การดูแลเป็นทางเลือก เก็บรายเดือน และเลิกได้เมื่อทีมคุณพร้อมไปต่อเอง'}
     ]
   const steps       = isEN ? [
-      {no: '01', title: 'Audit', desc: 'Full review of codebase, architecture, and risks.'},
-      {no: '02', title: 'Triage', desc: 'Prioritize blockers by risk and launch impact.'},
-      {no: '03', title: 'Harden', desc: 'Close security gaps and stabilize the foundation.'},
-      {no: '04', title: 'Complete', desc: 'Fix edge cases and finish unfinished flows.'},
-      {no: '05', title: 'Launch', desc: 'Move to real production infrastructure.'},
-      {no: '06', title: 'Support', desc: 'Ongoing monitoring and post-launch fixes.'}
+      {no: '01', title: 'Audit', desc: 'You give us read access to the repository and the services it uses. We go through the code, architecture, secrets, and hosting, and report what we found in plain language, with a fixed price for the audit itself.'},
+      {no: '02', title: 'Triage', desc: 'We sort the findings by risk and by whether they block launch. You see what must be fixed now, what can wait a few weeks, and what is only a nice-to-have.'},
+      {no: '03', title: 'Harden', desc: 'We fix the security problems first and steady the foundation: secrets rotated, permissions tightened, input checked, dependencies updated. Each fix is tested before we move on.'},
+      {no: '04', title: 'Complete', desc: 'We finish the flows the AI left half-done and handle the edge cases, from failed payments to expired sessions, then run through the app as a new user would.'},
+      {no: '05', title: 'Launch', desc: 'We move the app to production hosting with backups, monitoring, and a repeatable deploy, and rehearse the release so launch day is uneventful.'},
+      {no: '06', title: 'Support', desc: 'We watch the first weeks closely, fix issues real users find, and hand over notes that explain how the app is built. Ongoing support stays optional.'}
     ] : [
-      {no: '01', title: 'Audit', desc: 'ตรวจ Codebase สถาปัตยกรรม และความเสี่ยงทั้งหมด'},
-      {no: '02', title: 'Triage', desc: 'จัดลำดับสิ่งที่ขวางตามความเสี่ยงและผลต่อการเปิดตัว'},
-      {no: '03', title: 'Harden', desc: 'ปิดช่องโหว่ด้านความปลอดภัย และทำให้พื้นฐานมั่นคง'},
-      {no: '04', title: 'Complete', desc: 'แก้กรณีพิเศษ และทำขั้นตอนที่ยังไม่เสร็จให้จบ'},
-      {no: '05', title: 'Launch', desc: 'ย้ายไปใช้ระบบจริงสำหรับ Production'},
-      {no: '06', title: 'Support', desc: 'ติดตามต่อเนื่อง และแก้ไขปัญหาหลังเปิดตัว'}
+      {no: '01', title: 'Audit', desc: 'คุณให้สิทธิ์อ่าน Repository และบริการที่ใช้อยู่ เราไล่ดูโค้ด สถาปัตยกรรม Secret และ Hosting แล้วรายงานสิ่งที่เจอด้วยภาษาอ่านง่าย พร้อมราคาคงที่สำหรับงานตรวจเอง'},
+      {no: '02', title: 'Triage', desc: 'เราจัดกลุ่มสิ่งที่เจอตามความเสี่ยงและว่าขวางการเปิดตัวหรือเปล่า คุณจะเห็นว่าอะไรต้องแก้เดี๋ยวนี้ อะไรรอได้อีกสองสามสัปดาห์ และอะไรแค่มีก็ดี'},
+      {no: '03', title: 'Harden', desc: 'เราแก้ปัญหาความปลอดภัยก่อนและทำพื้นฐานให้นิ่ง เปลี่ยน Secret ใหม่ เข้มสิทธิ์ ตรวจข้อมูลขาเข้า และอัปเดต Dependency ทุกจุดที่แก้ทดสอบก่อนไปต่อ'},
+      {no: '04', title: 'Complete', desc: 'เราทำขั้นตอนที่ AI ทำค้างไว้ให้เสร็จ และจัดการกรณีพิเศษ ตั้งแต่จ่ายเงินไม่ผ่านไปจนถึง Session หมดอายุ แล้วลองใช้แอปแบบที่ผู้ใช้ใหม่จะใช้'},
+      {no: '05', title: 'Launch', desc: 'เราย้ายแอปขึ้น Hosting สำหรับ Production พร้อม Backup, Monitoring และขั้นตอน Deploy ที่ทำซ้ำได้ และซ้อมปล่อยก่อน วันเปิดตัวจะได้เรียบๆ ไม่มีเรื่องวุ่น'},
+      {no: '06', title: 'Support', desc: 'เราดูใกล้ชิดในสัปดาห์แรกๆ แก้ปัญหาที่ผู้ใช้จริงเจอ และส่งมอบโน้ตอธิบายว่าแอปสร้างยังไง ส่วนการดูแลต่อเนื่องเป็นทางเลือก'}
     ]
   const caseStudies = isEN ? [
-      {tag: 'SaaS Startup · Bangkok', title: 'Lovable Prototype Hardened & Launched', desc: 'Security audit, auth rebuild, and production infrastructure in 3 weeks.', result: '0 critical vulnerabilities at launch'},
-      {tag: 'Marketplace · Bangkok', title: 'Bolt-Built App Made Payment-Ready', desc: 'Stripe integration hardened, edge cases fixed, real hosting deployed.', result: 'Zero failed transactions post-launch'},
-      {tag: 'Internal Tool · Nationwide', title: 'Cursor-Generated Tool Scaled to 200 Users', desc: 'Architecture cleanup and infrastructure rebuild for company-wide rollout.', result: 'Scaled from prototype to 200 daily users'}
+      {tag: 'SaaS Startup · Bangkok', title: 'Lovable Prototype Hardened & Launched', desc: 'A founder-built Lovable prototype got a security audit, a rebuilt login system, and production hosting, all in 3 weeks.', result: '0 critical vulnerabilities at launch'},
+      {tag: 'Marketplace · Bangkok', title: 'Bolt-Built App Made Payment-Ready', desc: 'We hardened the Stripe integration, fixed the failure and retry cases around payments, and moved the app onto real hosting.', result: 'Zero failed transactions post-launch'},
+      {tag: 'Internal Tool · Nationwide', title: 'Cursor-Generated Tool Scaled to 200 Users', desc: 'We cleaned up the architecture and rebuilt the infrastructure so a tool written by one person could be rolled out to the whole company.', result: 'Scaled from prototype to 200 daily users'}
     ] : [
-      {tag: 'SaaS Startup · กรุงเทพฯ', title: 'Harden และเปิดตัว Prototype จาก Lovable', desc: 'ตรวจความปลอดภัย สร้างระบบล็อกอินใหม่ และวางระบบสำหรับใช้งานจริงใน 3 สัปดาห์', result: 'ไม่พบช่องโหว่ร้ายแรงตอนเปิดตัว'},
-      {tag: 'Marketplace · กรุงเทพฯ', title: 'ทำให้แอปจาก Bolt พร้อมรับชำระเงิน', desc: 'เสริมความแข็งแรงให้การเชื่อมต่อ Stripe แก้กรณีพิเศษ และวาง Hosting จริง', result: 'ไม่มีธุรกรรมล้มเหลวหลังเปิดตัว'},
-      {tag: 'Internal Tool · ทั่วประเทศ', title: 'ขยายเครื่องมือจาก Cursor รองรับผู้ใช้ 200 คน', desc: 'จัดระเบียบสถาปัตยกรรมและสร้างระบบใหม่ เพื่อใช้ทั้งบริษัท', result: 'ขยายจาก Prototype สู่ผู้ใช้ 200 คนต่อวัน'}
+      {tag: 'SaaS Startup · กรุงเทพฯ', title: 'Harden และเปิดตัว Prototype จาก Lovable', desc: 'Prototype ที่ผู้ก่อตั้งสร้างด้วย Lovable ได้รับการตรวจความปลอดภัย สร้างระบบล็อกอินใหม่ และขึ้น Hosting จริง ทั้งหมดใน 3 สัปดาห์', result: 'ไม่พบช่องโหว่ร้ายแรงตอนเปิดตัว'},
+      {tag: 'Marketplace · กรุงเทพฯ', title: 'ทำให้แอปจาก Bolt พร้อมรับชำระเงิน', desc: 'เราเสริมความแข็งแรงให้การเชื่อมต่อ Stripe แก้กรณีล้มเหลวและลองใหม่ของการจ่ายเงิน และย้ายแอปไปอยู่บน Hosting จริง', result: 'ไม่มีธุรกรรมล้มเหลวหลังเปิดตัว'},
+      {tag: 'Internal Tool · ทั่วประเทศ', title: 'ขยายเครื่องมือจาก Cursor รองรับผู้ใช้ 200 คน', desc: 'เราจัดระเบียบสถาปัตยกรรมและสร้างระบบรองรับใหม่ เพื่อให้เครื่องมือที่คนคนเดียวเขียนไว้ ใช้ได้ทั้งบริษัท', result: 'ขยายจาก Prototype สู่ผู้ใช้ 200 คนต่อวัน'}
     ]
   const faqs        = isEN ? [
-      {q: 'What tools do you support finishing apps from?', a: 'Cursor, Claude Code, Lovable, Bolt, v0, Replit, and similar AI-assisted coding tools — we work with whatever code exists, regardless of how it was built.'},
-      {q: 'Do you need to rewrite everything from scratch?', a: 'No, in most cases. We build on the existing codebase, fixing structure and security issues rather than starting over.'},
-      {q: 'What kind of security issues do you typically find?', a: 'Exposed API keys, missing authentication checks on endpoints, unvalidated user input, and overly permissive database access are the most common.'},
-      {q: 'Can you also add new features, not just fix issues?', a: 'Yes. Once the foundation is solid, we can continue building new features as an ongoing engagement.'}
+      {q: 'What tools do you support finishing apps from?', a: 'Cursor, Claude Code, Lovable, Bolt, v0, Replit, and similar AI-assisted tools. We work with whatever code exists, however it was built.'},
+      {q: 'Do you need to rewrite everything from scratch?', a: 'In most cases, no. We build on the existing codebase and fix structure and security problems in place. A rewrite is rarely needed, and we will say so honestly if it is.'},
+      {q: 'What kind of security issues do you typically find?', a: 'Exposed API keys, endpoints with no authentication check, unvalidated user input, and database rules that are far too permissive are the most common.'},
+      {q: 'Can you also add new features, not just fix issues?', a: 'Yes. Once the foundation is solid, we can keep building features with you as an ongoing engagement.'},
+      {q: 'How long does it take to go from prototype to launch?', a: 'A focused app usually takes 2-3 weeks from audit to launch. Bigger codebases, or ones with serious security gaps, can take 4-6 weeks.'},
+      {q: 'What do you need from us to start the audit?', a: 'Read access to the repository, a list of the services the app uses (database, payments, email, hosting), and a short note on what you expect users to do. We do not need production passwords.'},
+      {q: 'Will we be able to maintain the code afterwards?', a: 'Yes. We document the architecture, tidy the structure, and walk your team through it, so you can keep going without us.'}
     ] : [
-      {q: 'รองรับเครื่องมือแบบไหนบ้างในการช่วยจบแอป?', a: 'Cursor, Claude Code, Lovable, Bolt, v0, Replit และเครื่องมือ AI Coding ที่คล้ายกัน เราทำงานกับโค้ดที่มีอยู่ ไม่ว่าจะสร้างมาด้วยวิธีไหน'},
-      {q: 'ต้องเขียนใหม่ทั้งหมดไหม?', a: 'ส่วนใหญ่ไม่ต้องครับ เราต่อยอดจาก Codebase ที่มีอยู่ แก้ปัญหาโครงสร้างและความปลอดภัย แทนที่จะเริ่มใหม่ทั้งหมด'},
-      {q: 'ปัญหาด้านความปลอดภัยที่มักพบคืออะไรบ้าง?', a: 'API Key ที่รั่ว Endpoint ที่ไม่เช็กการยืนยันตัวตน ข้อมูลจากผู้ใช้ที่ไม่ได้ตรวจสอบ และฐานข้อมูลที่เปิดสิทธิ์กว้างเกินไป เป็นปัญหาที่พบบ่อยที่สุด'},
-      {q: 'เพิ่มฟีเจอร์ใหม่ได้ด้วยไหม ไม่ใช่แค่แก้ปัญหา?', a: 'ได้ครับ เมื่อพื้นฐานมั่นคงแล้ว เราพัฒนาฟีเจอร์ใหม่ให้ต่อเนื่องได้'}
+      {q: 'รองรับเครื่องมือแบบไหนบ้างในการช่วยจบแอป?', a: 'Cursor, Claude Code, Lovable, Bolt, v0, Replit และเครื่องมือ AI ที่คล้ายกัน เราทำงานกับโค้ดที่มีอยู่ ไม่ว่าจะสร้างมาด้วยวิธีไหน'},
+      {q: 'ต้องเขียนใหม่ทั้งหมดไหม?', a: 'ส่วนใหญ่ไม่ต้อง เราต่อยอดจาก Codebase ที่มีและแก้ปัญหาโครงสร้างกับความปลอดภัยในที่เดิม แทบไม่จำเป็นต้องเขียนใหม่ และถ้าจำเป็นจริง เราจะบอกตรงๆ'},
+      {q: 'ปัญหาด้านความปลอดภัยที่มักพบคืออะไรบ้าง?', a: 'API Key ที่หลุด Endpoint ที่ไม่เช็กการยืนยันตัวตน ข้อมูลจากผู้ใช้ที่ไม่ได้ตรวจ และกฎฐานข้อมูลที่เปิดสิทธิ์กว้างเกินไป เป็นปัญหาที่เจอบ่อยที่สุด'},
+      {q: 'เพิ่มฟีเจอร์ใหม่ได้ด้วยไหม ไม่ใช่แค่แก้ปัญหา?', a: 'ได้ เมื่อพื้นฐานมั่นคงแล้ว เราทำฟีเจอร์ใหม่ต่อให้ได้เรื่อยๆ ในรูปแบบงานต่อเนื่อง'},
+      {q: 'ใช้เวลานานแค่ไหนจาก Prototype ถึงเปิดตัว?', a: 'แอปที่ขอบเขตชัดเจนมักใช้ 2-3 สัปดาห์ตั้งแต่ตรวจจนเปิดตัว ส่วน Codebase ที่ใหญ่ หรือมีช่องโหว่ร้ายแรง อาจใช้ 4-6 สัปดาห์'},
+      {q: 'ต้องเตรียมอะไรให้เราก่อนเริ่มตรวจ?', a: 'สิทธิ์อ่าน Repository รายการบริการที่แอปใช้ (ฐานข้อมูล ชำระเงิน อีเมล Hosting) และโน้ตสั้นๆ ว่าคาดว่าผู้ใช้จะทำอะไรในแอป เราไม่ต้องการรหัสผ่านของระบบจริง'},
+      {q: 'หลังจบงาน เราจะดูแลโค้ดต่อเองได้ไหม?', a: 'ได้ เราทำเอกสารสถาปัตยกรรม จัดโครงสร้างให้เป็นระเบียบ และอธิบายให้ทีมคุณฟัง คุณไปต่อเองได้โดยไม่ต้องพึ่งเรา'}
     ]
   const related     = isEN ? [
       {label: 'Cybersecurity', href: '/services/cybersecurity'},
@@ -203,15 +230,19 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   )
 
   const capabilities = isEN ? [
-    { icon: 'ti-search-code', title: 'Codebase & Architecture Audit', desc: 'A full review of what your AI tool actually built, its structure, and its risks.' },
-    { icon: 'ti-shield-lock', title: 'Security Hardening', desc: 'Closing exposed keys, missing auth checks, and other gaps AI tools commonly leave.' },
-    { icon: 'ti-server', title: 'Production Infrastructure', desc: 'Real hosting, backups, monitoring, and scaling in place of a preview deployment.' },
-    { icon: 'ti-list-check', title: 'The Last 10%', desc: 'Auth edge cases, payment reliability, error handling, and launch-blocking details.' },
+    { icon: 'ti-search-code', title: 'Codebase & Architecture Audit', desc: 'A full read of the repository: data model, auth flow, third-party services, and hosting. You get a ranked list of risks in plain language and a fixed-price quote for fixing them.' },
+    { icon: 'ti-shield-lock', title: 'Security Hardening', desc: 'Exposed keys, endpoints without permission checks, loose database rules, and unchecked input closed and tested, not just patched.' },
+    { icon: 'ti-server', title: 'Production Infrastructure', desc: 'Staging and production, automatic backups, error alerts, a deploy pipeline, and HTTPS, on a Thai or regional provider if you prefer.' },
+    { icon: 'ti-list-check', title: 'The Last 10%', desc: 'Password reset, payment retries and failures, error states, email delivery, and the flows your AI tool left unfinished.' },
+    { icon: 'ti-git-branch', title: 'Codebase Cleanup', desc: 'Dead and duplicated code removed, structure tidied, and tests added around the flows that matter, so the project is easy for a new developer to pick up.' },
+    { icon: 'ti-headset', title: 'Post-Launch Support', desc: 'Log watching, fixes for what real users trip over, and help with the first features. Optional, billed monthly, and easy to stop.' },
   ] : [
-    { icon: 'ti-search-code', title: 'Codebase & Architecture Audit', desc: 'ตรวจให้ครบว่าเครื่องมือ AI สร้างอะไรไว้จริง โครงสร้างเป็นอย่างไร และมีความเสี่ยงอะไรบ้าง' },
-    { icon: 'ti-shield-lock', title: 'Security Hardening', desc: 'ปิด Key ที่รั่ว จุดที่ขาดการเช็กสิทธิ์ และช่องโหว่อื่นๆ ที่เครื่องมือ AI มักเปิดทิ้งไว้' },
-    { icon: 'ti-server', title: 'Production Infrastructure', desc: 'วาง Hosting จริง Backup Monitoring และการรองรับผู้ใช้ที่เพิ่มขึ้น แทนการ Deploy แบบทดลอง' },
-    { icon: 'ti-list-check', title: 'The Last 10%', desc: 'กรณีพิเศษของระบบล็อกอิน ความน่าเชื่อถือของการชำระเงิน การจัดการ Error และรายละเอียดที่ขวางการเปิดตัว' },
+    { icon: 'ti-search-code', title: 'Codebase & Architecture Audit', desc: 'อ่านทั้ง Repository ทั้ง Data Model ขั้นตอนล็อกอิน บริการภายนอก และ Hosting คุณได้รายการความเสี่ยงเรียงลำดับด้วยภาษาอ่านง่าย พร้อมใบเสนอราคาคงที่สำหรับการแก้' },
+    { icon: 'ti-shield-lock', title: 'Security Hardening', desc: 'ปิดและทดสอบทั้ง Key ที่หลุด Endpoint ที่ไม่เช็กสิทธิ์ กฎฐานข้อมูลที่หลวม และข้อมูลขาเข้าที่ไม่ได้ตรวจ ไม่ใช่แค่ปะไปเฉยๆ' },
+    { icon: 'ti-server', title: 'Production Infrastructure', desc: 'แยก Staging กับ Production มี Backup อัตโนมัติ แจ้งเตือน Error มี Pipeline Deploy และ HTTPS บนผู้ให้บริการในไทยหรือในภูมิภาคถ้าต้องการ' },
+    { icon: 'ti-list-check', title: 'The Last 10%', desc: 'รีเซ็ตรหัสผ่าน การลองใหม่และการล้มเหลวของการชำระเงิน หน้า Error การส่งอีเมล และขั้นตอนที่เครื่องมือ AI ทำค้างไว้' },
+    { icon: 'ti-git-branch', title: 'Codebase Cleanup', desc: 'ลบโค้ดที่ไม่ใช้และโค้ดซ้ำ จัดโครงสร้างให้เป็นระเบียบ และเพิ่ม Test ครอบขั้นตอนสำคัญ ให้นักพัฒนาใหม่รับช่วงต่อได้ง่าย' },
+    { icon: 'ti-headset', title: 'Post-Launch Support', desc: 'ดู Log แก้จุดที่ผู้ใช้จริงสะดุด และช่วยทำฟีเจอร์แรกๆ เป็นทางเลือก เก็บรายเดือน และเลิกได้ง่าย' },
   ]
 
   const techStack = [
@@ -232,39 +263,43 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   ] as { label: string; icon?: string; svg?: string }[]
 
   const approachSteps = isEN ? [
-    { no: '01', title: 'Audit', desc: 'Codebase, architecture, and risks' },
-    { no: '02', title: 'Triage', desc: 'Prioritize blockers by impact' },
-    { no: '03', title: 'Harden', desc: 'Close security gaps' },
-    { no: '04', title: 'Complete', desc: 'Fix edge cases and gaps' },
-    { no: '05', title: 'Launch', desc: 'Move to real infrastructure' },
-    { no: '06', title: 'Support', desc: 'Monitoring and post-launch fixes' },
+    { no: '01', title: 'Audit', desc: 'Code, architecture, secrets, hosting, and a fixed-price report' },
+    { no: '02', title: 'Triage', desc: 'Findings sorted by risk and launch impact' },
+    { no: '03', title: 'Harden', desc: 'Security fixes first, each one tested' },
+    { no: '04', title: 'Complete', desc: 'Unfinished flows and edge cases' },
+    { no: '05', title: 'Launch', desc: 'Production hosting, backups, and a rehearsed release' },
+    { no: '06', title: 'Support', desc: 'Close watch early on, plus handover notes' },
   ] : [
-    { no: '01', title: 'Audit', desc: 'Codebase สถาปัตยกรรม และความเสี่ยง' },
-    { no: '02', title: 'Triage', desc: 'จัดลำดับสิ่งที่ขวางตามผลกระทบ' },
-    { no: '03', title: 'Harden', desc: 'ปิดช่องโหว่ด้านความปลอดภัย' },
-    { no: '04', title: 'Complete', desc: 'แก้กรณีพิเศษและช่องว่าง' },
-    { no: '05', title: 'Launch', desc: 'ย้ายสู่ระบบจริง' },
-    { no: '06', title: 'Support', desc: 'ติดตามและแก้ไขหลังเปิดตัว' },
+    { no: '01', title: 'Audit', desc: 'โค้ด สถาปัตยกรรม Secret Hosting และรายงานราคาคงที่' },
+    { no: '02', title: 'Triage', desc: 'จัดกลุ่มสิ่งที่เจอตามความเสี่ยงและผลต่อการเปิดตัว' },
+    { no: '03', title: 'Harden', desc: 'แก้ความปลอดภัยก่อน ทุกจุดมีการทดสอบ' },
+    { no: '04', title: 'Complete', desc: 'ขั้นตอนที่ค้างและกรณีพิเศษ' },
+    { no: '05', title: 'Launch', desc: 'Hosting สำหรับ Production, Backup และซ้อมปล่อย' },
+    { no: '06', title: 'Support', desc: 'ดูใกล้ชิดช่วงแรก พร้อมโน้ตส่งมอบ' },
   ]
 
   const darkFaqs = isEN ? [
-    { q: 'What AI coding tools do you support finishing apps from?', a: 'Cursor, Claude Code, Lovable, Bolt, v0, Replit, and similar AI-assisted coding tools. We work with whatever code exists in your repository, regardless of how it was originally built.' },
-    { q: 'Do you need to rewrite everything from scratch?', a: 'No, in most cases. We build on the existing codebase, fixing structural and security issues rather than starting over — a full rewrite is rarely necessary or cost-effective.' },
-    { q: 'What kind of security issues do you typically find in AI-generated code?', a: 'Exposed API keys and secrets committed to the repository, missing authentication checks on API endpoints, unvalidated user input, and overly permissive database access rules are the most common findings.' },
-    { q: 'Can you also add new features, not just fix issues?', a: 'Yes. Once the foundation is solid and secure, we can continue building new features as an ongoing engagement, working within the existing codebase and conventions.' },
-    { q: 'How long does it take to go from prototype to production-ready?', a: 'A focused app with a moderate feature set typically takes 2-3 weeks from audit to production-ready launch. Larger or more complex codebases, or those with significant security gaps, can take 4-6 weeks.' },
-    { q: 'How much does this kind of engagement cost?', a: 'Pricing depends on codebase size and the number of issues found during the audit. We always start with a fixed-price audit so you know the scope and cost of remediation before committing to the full engagement.' },
-    { q: 'Will I understand the codebase once you’re done, or will it still be a black box?', a: 'You will understand it fully. We document the architecture, clean up structure as we go, and can walk your team through the codebase so you are never dependent on us to make future changes.' },
-    { q: 'What if the app has already launched and we’re seeing issues in production?', a: 'We handle that too. The audit approach is the same, but we prioritize live-issue triage first — stopping active problems — before moving into the broader hardening and completion work.' },
+    { q: 'What AI coding tools do you support finishing apps from?', a: 'Cursor, Claude Code, Lovable, Bolt, v0, Replit, and similar AI-assisted tools. We work with whatever code exists in your repository, however it was originally built, and that includes projects that mix AI-written and hand-written code.' },
+    { q: 'Do you need to rewrite everything from scratch?', a: 'In most cases, no. We build on the existing codebase and fix structural and security problems in place. A full rewrite is rarely necessary or cost-effective, and if we think one is the right call, we will explain why before you spend anything on it.' },
+    { q: 'What kind of security issues do you typically find in AI-generated code?', a: 'Exposed API keys and secrets committed to the repository, missing authentication checks on API endpoints, unvalidated user input, and database access rules that let far too many people read or change data are the most common findings.' },
+    { q: 'Can you also add new features, not just fix issues?', a: 'Yes. Once the foundation is solid and secure, we can continue building new features as an ongoing engagement, working within the existing codebase and its conventions.' },
+    { q: 'How long does it take to go from prototype to production-ready?', a: 'A focused app with a moderate feature set typically takes 2-3 weeks from audit to production-ready launch. Larger or more complex codebases, or ones with significant security gaps, can take 4-6 weeks.' },
+    { q: 'How much does this kind of engagement cost?', a: 'Pricing depends on codebase size and the number of issues found during the audit. We always start with a fixed-price audit, so you know the scope and cost of remediation before committing to the full engagement.' },
+    { q: 'Will I understand the codebase once you’re done, or will it still be a black box?', a: 'You will understand it. We document the architecture, tidy the structure as we go, and walk your team through the code, so you are never dependent on us to make future changes.' },
+    { q: 'What if the app has already launched and we’re seeing issues in production?', a: 'We handle that too. The audit is the same, but we triage live issues first and stop the active problems before moving on to the broader hardening and completion work.' },
+    { q: 'What do you need from us to start the audit?', a: 'Read access to the repository, a list of the services the app relies on (database, payments, email, hosting), and a short note on how you expect people to use it. We do not need production passwords to audit the code.' },
+    { q: 'Where will the app be hosted, and who owns the accounts?', a: 'You own every account: the hosting, the domain, the database, and the code repository. We set things up inside your accounts, or hand them over cleanly, and we can use a Thai or regional provider where data location matters to you.' },
   ] : [
-    { q: 'รองรับเครื่องมือ AI Coding แบบไหนบ้างในการช่วยจบแอป?', a: 'Cursor, Claude Code, Lovable, Bolt, v0, Replit และเครื่องมือ AI-Assisted Coding ที่คล้ายกัน เราทำงานกับโค้ดที่มีอยู่ใน Repository ของคุณ ไม่ว่าจะสร้างมาด้วยวิธีไหนแต่แรก' },
-    { q: 'ต้องเขียนใหม่ทั้งหมดไหม?', a: 'ส่วนใหญ่ไม่ต้องครับ เราต่อยอดจาก Codebase ที่มีอยู่ แก้ปัญหาโครงสร้างและความปลอดภัย แทนที่จะเริ่มใหม่ทั้งหมด การเขียนใหม่ทั้งหมดมักไม่จำเป็นและไม่คุ้มค่า' },
-    { q: 'ปัญหาด้านความปลอดภัยที่มักพบในโค้ดจาก AI คืออะไรบ้าง?', a: 'API Key และ Secret ที่ถูก Commit เข้า Repository, Endpoint ที่ไม่เช็กการยืนยันตัวตน, ข้อมูลจากผู้ใช้ที่ไม่ได้ตรวจสอบ และกฎของฐานข้อมูลที่เปิดสิทธิ์กว้างเกินไป เป็นปัญหาที่พบบ่อยที่สุด' },
-    { q: 'เพิ่มฟีเจอร์ใหม่ได้ด้วยไหม ไม่ใช่แค่แก้ปัญหา?', a: 'ได้ครับ เมื่อพื้นฐานมั่นคงและปลอดภัยแล้ว เราพัฒนาฟีเจอร์ใหม่ต่อเนื่องได้ โดยทำงานภายใน Codebase และแบบแผนที่มีอยู่' },
-    { q: 'ใช้เวลานานแค่ไหนกว่าจะจาก Prototype ไปพร้อมใช้งานจริง?', a: 'แอปที่ขอบเขตชัดเจนและมีฟีเจอร์ระดับปานกลาง มักใช้เวลา 2-3 สัปดาห์ ตั้งแต่ตรวจจนพร้อมเปิดตัว ส่วน Codebase ที่ใหญ่หรือซับซ้อนกว่า หรือมีช่องโหว่ด้านความปลอดภัยมาก อาจใช้เวลา 4-6 สัปดาห์' },
-    { q: 'งานลักษณะนี้มีค่าใช้จ่ายเท่าไหร่?', a: 'ราคาขึ้นอยู่กับขนาด Codebase และจำนวนปัญหาที่พบระหว่างตรวจ เราเริ่มด้วยการตรวจแบบราคาคงที่เสมอ เพื่อให้คุณรู้ขอบเขตและค่าใช้จ่ายในการแก้ไขก่อนตัดสินใจทำงานเต็มรูปแบบ' },
-    { q: 'หลังจบงานแล้ว เราจะเข้าใจ Codebase หรือยังเป็นกล่องดำอยู่?', a: 'คุณจะเข้าใจเต็มที่ครับ เราทำเอกสารสถาปัตยกรรม จัดระเบียบโครงสร้างไปพร้อมกัน และอธิบาย Codebase ให้ทีมคุณฟังได้ คุณจะได้ไม่ต้องพึ่งเราตลอดไปเมื่อต้องแก้ไขในอนาคต' },
-    { q: 'ถ้าแอปเปิดตัวไปแล้วและกำลังเจอปัญหาตอนใช้งานจริงล่ะ?', a: 'เราดูแลกรณีนี้ด้วยครับ วิธีตรวจเหมือนกัน แต่เราจะจัดการปัญหาที่กำลังเกิดขึ้นจริงก่อน เพื่อหยุดปัญหาที่ยังเกิดอยู่ แล้วค่อยไปต่อที่งานเสริมความปลอดภัยและทำส่วนที่ขาดให้จบ' },
+    { q: 'รองรับเครื่องมือ AI Coding แบบไหนบ้างในการช่วยจบแอป?', a: 'Cursor, Claude Code, Lovable, Bolt, v0, Replit และเครื่องมือ AI ที่คล้ายกัน เราทำงานกับโค้ดที่มีอยู่ใน Repository ของคุณ ไม่ว่าจะสร้างมาด้วยวิธีไหนแต่แรก รวมถึงโปรเจกต์ที่มีทั้งโค้ดที่ AI เขียนและที่คนเขียนปนกัน' },
+    { q: 'ต้องเขียนใหม่ทั้งหมดไหม?', a: 'ส่วนใหญ่ไม่ต้อง เราต่อยอดจาก Codebase ที่มีอยู่ และแก้ปัญหาโครงสร้างกับความปลอดภัยในที่เดิม การเขียนใหม่ทั้งหมดมักไม่จำเป็นและไม่คุ้ม ถ้าเราเห็นว่าเขียนใหม่เป็นทางที่ถูกจริงๆ เราจะอธิบายเหตุผลให้ก่อนที่คุณจะจ่ายอะไร' },
+    { q: 'ปัญหาด้านความปลอดภัยที่มักพบในโค้ดจาก AI คืออะไรบ้าง?', a: 'API Key และ Secret ที่ถูก Commit เข้า Repository, Endpoint ที่ไม่เช็กการยืนยันตัวตน, ข้อมูลจากผู้ใช้ที่ไม่ได้ตรวจ และกฎการเข้าถึงฐานข้อมูลที่ให้คนอ่านหรือแก้ข้อมูลได้กว้างเกินไป เป็นสิ่งที่เจอบ่อยที่สุด' },
+    { q: 'เพิ่มฟีเจอร์ใหม่ได้ด้วยไหม ไม่ใช่แค่แก้ปัญหา?', a: 'ได้ เมื่อพื้นฐานมั่นคงและปลอดภัยแล้ว เราทำฟีเจอร์ใหม่ต่อเนื่องได้ ในรูปแบบงานต่อเนื่อง โดยทำภายใน Codebase และแบบแผนที่มีอยู่' },
+    { q: 'ใช้เวลานานแค่ไหนกว่าจะจาก Prototype ไปพร้อมใช้งานจริง?', a: 'แอปที่ขอบเขตชัดเจนและมีฟีเจอร์ระดับปานกลาง มักใช้ 2-3 สัปดาห์ตั้งแต่ตรวจจนพร้อมเปิดตัว ส่วน Codebase ที่ใหญ่หรือซับซ้อนกว่า หรือมีช่องโหว่ด้านความปลอดภัยมาก อาจใช้ 4-6 สัปดาห์' },
+    { q: 'งานลักษณะนี้มีค่าใช้จ่ายเท่าไหร่?', a: 'ราคาขึ้นอยู่กับขนาด Codebase และจำนวนปัญหาที่พบระหว่างตรวจ เราเริ่มด้วยการตรวจแบบราคาคงที่เสมอ คุณจะรู้ขอบเขตและค่าใช้จ่ายในการแก้ไขก่อนตัดสินใจทำงานเต็มรูปแบบ' },
+    { q: 'หลังจบงานแล้ว เราจะเข้าใจ Codebase หรือยังเป็นกล่องดำอยู่?', a: 'คุณจะเข้าใจเต็มที่ เราทำเอกสารสถาปัตยกรรม จัดโครงสร้างไปพร้อมกัน และพาทีมคุณเดินดูโค้ด คุณจะได้ไม่ต้องพึ่งเราเมื่อต้องแก้ไขในอนาคต' },
+    { q: 'ถ้าแอปเปิดตัวไปแล้วและกำลังเจอปัญหาตอนใช้งานจริงล่ะ?', a: 'เราดูแลกรณีนี้ด้วย วิธีตรวจเหมือนกัน แต่เราจะคัดปัญหาที่เกิดอยู่จริงมาแก้ก่อน เพื่อหยุดความเสียหายที่ยังเกิดต่อ แล้วค่อยไปต่อที่งานเสริมความปลอดภัยและทำส่วนที่ขาดให้จบ' },
+    { q: 'ต้องเตรียมอะไรให้เราก่อนเริ่มตรวจ?', a: 'สิทธิ์อ่าน Repository รายการบริการที่แอปใช้ (ฐานข้อมูล ชำระเงิน อีเมล Hosting) และโน้ตสั้นๆ ว่าคาดว่าผู้ใช้จะใช้แอปยังไง เราไม่ต้องการรหัสผ่านของระบบจริงเพื่อตรวจโค้ด' },
+    { q: 'แอปจะอยู่บน Hosting ที่ไหน และใครเป็นเจ้าของบัญชี?', a: 'คุณเป็นเจ้าของทุกบัญชี ทั้ง Hosting โดเมน ฐานข้อมูล และ Repository ของโค้ด เราตั้งค่าในบัญชีของคุณ หรือส่งมอบให้เรียบร้อย และใช้ผู้ให้บริการในไทยหรือในภูมิภาคได้ถ้าที่ตั้งของข้อมูลสำคัญกับคุณ' },
   ]
 
   const postHeroSlot = (
@@ -415,7 +450,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
         </h2>
         <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-          {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+          {isEN ? "We'd love to hear what you're building." : 'เรายินดีฟังว่าคุณกำลังสร้างอะไรอยู่'}
         </p>
         <div className="flex flex-wrap items-center gap-6">
           <Link

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import ServiceLayout from '@/components/service/ServiceLayout'
 import { type Lang } from '@/lib/i18n'
@@ -26,6 +27,24 @@ export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
 }
 
+export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+  const isEN = params.lang === 'en'
+  const title = isEN
+    ? "QA Engineering & Test Automation, Bangkok | Haliviq"
+    : "รับทำ Test Automation และ QA ในทีมพัฒนา | Haliviq"
+  const description = isEN
+    ? "QA engineers who work inside your sprints in Bangkok: CI-integrated test automation, release gates and performance checks that keep weekly releases stable."
+    : "Haliviq ส่ง QA Engineer เข้าไปทำงานในสปรินต์ของทีมคุณ วางระบบ Test Automation ที่เชื่อมกับ CI ด่านตรวจก่อนปล่อย และเช็กประสิทธิภาพ ให้ปล่อยเวอร์ชันได้ถี่แต่นิ่ง"
+  const url = `https://haliviq.com/${params.lang}/services/quality-assurance-testing`
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: { title, description, url },
+    twitter: { card: 'summary_large_image', title, description },
+  }
+}
+
 export default function Page({ params }: { params: { lang: Lang } }) {
   const isEN = params.lang === 'en'
   const prefix = `/${params.lang}`
@@ -33,40 +52,44 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge    = isEN ? 'Engineering / Quality Assurance'  : 'วิศวกรรม / Quality Assurance'
   const title    = isEN ? 'Quality That Scales'  : 'คุณภาพที่โตได้'
   const subtitle = isEN ? 'With Your Release Speed'    : 'ตามจังหวะการปล่อยเวอร์ชัน'
-  const heroDesc = isEN ? 'Automated and exploratory testing embedded in delivery so quality scales with release speed.'  : 'ทดสอบอัตโนมัติและทดสอบแบบสำรวจ ฝังอยู่ในขั้นตอนส่งมอบงาน ให้คุณภาพโตทันความเร็วในการปล่อยเวอร์ชัน'
+  const heroDesc = isEN ? 'Teams that ship every week cannot wait for a test phase at the end. Haliviq puts QA engineers inside your sprints, next to your developers, to write automated tests that run on every commit, set the release gates that decide whether a build goes out, and keep the suite healthy as the product grows. It suits product teams in Bangkok and across Thailand who release often and want to stop trading speed for stability. We work on a monthly retainer or as an embedded team for a defined period.'  : 'ทีมที่ปล่อยงานทุกสัปดาห์รอช่วงทดสอบตอนท้ายไม่ได้ Haliviq ส่ง QA Engineer เข้าไปทำงานในสปรินต์ของคุณ นั่งข้างทีมพัฒนา เขียนเทสต์อัตโนมัติที่รันทุก commit วางด่านตรวจที่ตัดสินว่าบิลด์ไหนปล่อยได้ และดูแลชุดทดสอบให้ยังใช้ได้ดีเมื่อผลิตภัณฑ์โตขึ้น เหมาะกับทีมผลิตภัณฑ์ในกรุงเทพฯ และทั่วไทยที่ปล่อยเวอร์ชันบ่อยและไม่อยากแลกความเร็วกับความนิ่ง เราทำงานแบบรายเดือน หรือเป็นทีมที่เข้าไปอยู่ร่วมช่วงเวลาที่กำหนด'
   const whyTitle = isEN ? 'Why testing bolted on at the end always costs more'    : 'ทำไมการทดสอบตอนท้ายถึงแพงกว่าเสมอ'
-  const whyDesc  = isEN ? 'A bug caught in code review costs minutes to fix. The same bug found in production costs incident response, customer trust, and engineering time pulled from the roadmap.'  : 'บั๊กที่เจอตอนรีวิวโค้ดแก้ไม่กี่นาที แต่บั๊กเดียวกันที่ไปเจอบนระบบจริงต้องแลกด้วยการแก้ปัญหาเร่งด่วน ความเชื่อมั่นของลูกค้า และเวลาของวิศวกรที่ควรใช้ทำงานตามแผน'
+  const whyDesc  = isEN ? 'A bug caught in code review costs minutes. The same bug found in production costs an incident call, an apology to customers and a few engineer-days taken from the roadmap. Most teams know this, yet testing still gets squeezed into the last two days before a release. Building quality into the delivery pipeline moves that effort to where it is cheapest, and it lets releases get faster as the product grows instead of slower.'  : 'บั๊กที่เจอตอนรีวิวโค้ดแก้ไม่กี่นาที แต่บั๊กเดียวกันที่ไปเจอบนระบบจริงต้องแลกด้วยประชุมแก้เหตุด่วน คำขอโทษลูกค้า และเวลาวิศวกรหลายวันที่ควรเอาไปทำตามแผน หลายทีมรู้เรื่องนี้ดี แต่การทดสอบก็ยังถูกอัดไว้ช่วงสองวันสุดท้ายก่อนปล่อยอยู่ดี การฝังคุณภาพไว้ในสายการส่งมอบงานย้ายแรงไปทำในจุดที่ถูกที่สุด และทำให้ปล่อยเวอร์ชันได้เร็วขึ้นเมื่อผลิตภัณฑ์โต แทนที่จะช้าลง'
   const ctaTitle = isEN ? 'Ready for quality that keeps up?'    : 'พร้อมให้คุณภาพตามทันความเร็วหรือยัง?'
-  const ctaDesc  = isEN ? 'Start with a free test coverage audit. We will show you where the risk actually is.'   : 'เริ่มด้วยการตรวจความครอบคลุมของการทดสอบฟรี เราจะชี้ให้เห็นว่าความเสี่ยงอยู่ตรงไหนจริงๆ'
+  const ctaDesc  = isEN ? 'Start with a free test coverage audit. Share your repository access or a walkthrough of your release process, and we will show you which user journeys are unprotected and what to automate first.'   : 'เริ่มจากตรวจความครอบคลุมของการทดสอบฟรี แชร์สิทธิ์เข้า repository หรือพาเราเดินดูขั้นตอนปล่อยเวอร์ชัน เราจะชี้ให้ดูว่าเส้นทางผู้ใช้ไหนยังไม่มีอะไรคุ้มครอง และควรทำอัตโนมัติอะไรก่อน'
   const overviewText = isEN
-    ? 'We treat quality as a product capability, not a final checkpoint before ship. Our teams build test strategies, set up CI-integrated automation spanning unit, API, and end-to-end coverage, layer in performance and security testing, and turn results into reports teams can actually act on — combining tools like Playwright, Cypress, and Jest with hands-on exploratory testing to catch what automation alone cannot.'
-    : 'เรามองคุณภาพเป็นส่วนหนึ่งของผลิตภัณฑ์ ไม่ใช่ด่านตรวจก่อนส่งมอบ ทีมเราวางกลยุทธ์ทดสอบ สร้างระบบทดสอบอัตโนมัติที่เชื่อมกับ CI ทั้ง Unit, API และ End-to-end เสริมด้วยทดสอบประสิทธิภาพและความปลอดภัย แล้วสรุปผลเป็นรายงานที่ทีมนำไปใช้ได้จริง เราใช้เครื่องมืออย่าง Playwright, Cypress และ Jest ควบคู่กับการทดสอบแบบสำรวจโดยคน เพื่อจับสิ่งที่ระบบอัตโนมัติจับไม่ได้'
+    ? 'We treat quality as a product capability, not a checkpoint before shipping. Our QA engineers join your team and start with a risk-based test strategy: which journeys earn the most revenue, which ones break most often, and where a failure hurts most. Then we build CI-integrated automation across unit, API and end-to-end layers using tools such as Playwright, Cypress and Jest, add performance and security checks, and define release gates your team agrees on. Exploratory testing by people who understand the product covers what scripts cannot. Every release produces a short report that tells developers what to fix, not a dashboard nobody opens.'
+    : 'เรามองคุณภาพเป็นความสามารถหนึ่งของผลิตภัณฑ์ ไม่ใช่ด่านตรวจก่อนส่งมอบ QA Engineer ของเรามาเป็นส่วนหนึ่งของทีมคุณ เริ่มจากวางกลยุทธ์ทดสอบตามความเสี่ยง ว่าเส้นทางไหนทำรายได้มากที่สุด เส้นทางไหนพังบ่อย และตรงไหนที่พังแล้วเจ็บที่สุด จากนั้นเราสร้างระบบทดสอบอัตโนมัติที่เชื่อมกับ CI ทั้งระดับ Unit, API และ End-to-end ด้วยเครื่องมืออย่าง Playwright, Cypress และ Jest เพิ่มการเช็กประสิทธิภาพและความปลอดภัย และกำหนดด่านตรวจก่อนปล่อยที่ทีมตกลงร่วมกัน ส่วนที่สคริปต์ครอบคลุมไม่ถึง ให้คนที่เข้าใจผลิตภัณฑ์ทดสอบแบบสำรวจ ทุกรอบปล่อยมีรายงานสั้นๆ ที่บอกนักพัฒนาว่าต้องแก้อะไร ไม่ใช่ dashboard ที่ไม่มีใครเปิดดู'
 
   const heroBullets = isEN ? [
-      'CI-native unit, API, and end-to-end test suites',
-      'Performance and load testing against realistic traffic',
-      'Security testing: SAST/DAST and dependency scanning',
-      'Exploratory QA for edge cases automation cannot cover',
-      'Reports that turn into fixes, not just dashboards',
+      'Test strategy based on risk: your revenue journeys and your most fragile areas come first',
+      'CI-native unit, API and end-to-end suites that run on every commit or pull request',
+      'Release gates your team agrees on, so a failing build is stopped before it ships',
+      'Performance and load checks against realistic traffic, repeated before big releases',
+      'Security scans in the pipeline: SAST/DAST and dependency scanning',
+      'Exploratory QA for the edge cases, and flaky-test tracking so the suite stays trusted',
     ] : [
-      'สร้างชุดทดสอบ Unit, API และ End-to-end ที่เชื่อมกับ CI',
-      'ทดสอบประสิทธิภาพและโหลดด้วยปริมาณผู้ใช้ใกล้เคียงจริง',
-      'ทดสอบความปลอดภัย: SAST/DAST และสแกน Dependency',
-      'ทดสอบแบบสำรวจโดยคน สำหรับเคสแปลกๆ ที่ระบบอัตโนมัติจับไม่ได้',
-      'รายงานที่นำไปแก้ได้จริง ไม่ใช่แค่ Dashboard สวยๆ',
+      'วางกลยุทธ์ทดสอบตามความเสี่ยง โดยเริ่มจากเส้นทางที่ทำรายได้และจุดที่เปราะบางที่สุด',
+      'ชุดทดสอบ Unit, API และ End-to-end ที่เชื่อมกับ CI รันทุก commit หรือ pull request',
+      'ด่านตรวจก่อนปล่อยที่ทีมตกลงร่วมกัน บิลด์ที่ไม่ผ่านจะถูกหยุดก่อนขึ้นระบบ',
+      'เช็กประสิทธิภาพและโหลดด้วยปริมาณผู้ใช้ใกล้เคียงจริง และรันซ้ำก่อนปล่อยเวอร์ชันใหญ่',
+      'สแกนความปลอดภัยในสายส่งมอบงาน ทั้ง SAST/DAST และสแกน Dependency',
+      'ทดสอบแบบสำรวจสำหรับเคสแปลกๆ และติดตามเทสต์ที่ไม่นิ่ง เพื่อให้ทีมยังเชื่อถือชุดทดสอบ',
     ]
   const whyPoints   = isEN ? [
-      'Automated regression suites let teams ship daily without gambling on stability.',
-      'Performance testing before launch catches scaling problems while they are still cheap to fix.',
-      'Security scanning integrated into CI catches vulnerabilities before they reach production.',
-      'Exploratory testing by people who understand the product finds what scripts miss.',
-      'Clear defect reports cut the time between "something is broken" and "it is fixed" dramatically.',
+      'Automated regression suites let teams ship daily without gambling on stability, because every change is checked against the journeys that matter.',
+      'Performance testing before launch exposes scaling problems while they are still cheap to fix, not on the morning of a campaign.',
+      'Security scanning inside CI catches known vulnerable dependencies and common web flaws before they reach production.',
+      'Exploratory testing by people who understand the product finds what scripts miss: confusing flows, visual glitches and odd combinations of settings.',
+      'Clear defect reports with steps to reproduce cut the time between "something is broken" and "it is fixed", and end the back-and-forth between QA and developers.',
+      'Developers who trust the suite refactor more boldly and review faster, which pays back in delivery speed over the following months.',
     ] : [
-      'ชุด Regression Test อัตโนมัติช่วยให้ทีมปล่อยงานได้ทุกวันโดยไม่ต้องห่วงเรื่องความเสถียร',
-      'ทดสอบประสิทธิภาพก่อนเปิดตัว จะเจอปัญหาเรื่องการรองรับผู้ใช้ตั้งแต่ยังแก้ได้ไม่แพง',
-      'สแกนความปลอดภัยที่เชื่อมกับ CI จับช่องโหว่ได้ก่อนขึ้นระบบจริง',
-      'ทดสอบแบบสำรวจโดยคนที่เข้าใจผลิตภัณฑ์จริง เจอสิ่งที่สคริปต์จับไม่ได้',
-      'รายงานข้อบกพร่องที่ชัดเจน ช่วยลดเวลาตั้งแต่ "มีอะไรพัง" จนถึง "แก้เสร็จแล้ว" ได้มาก',
+      'ชุด Regression Test อัตโนมัติช่วยให้ทีมปล่อยงานได้ทุกวันโดยไม่ต้องเสี่ยงเรื่องความเสถียร เพราะทุกการเปลี่ยนแปลงถูกเช็กกับเส้นทางที่สำคัญ',
+      'ทดสอบประสิทธิภาพก่อนเปิดตัว จะเจอปัญหาเรื่องการรองรับผู้ใช้ตั้งแต่ยังแก้ได้ไม่แพง ไม่ต้องไปเจอตอนเช้าวันแคมเปญ',
+      'สแกนความปลอดภัยใน CI จับ dependency ที่มีช่องโหว่และจุดอ่อนทั่วไปของเว็บได้ก่อนขึ้นระบบจริง',
+      'ทดสอบแบบสำรวจโดยคนที่เข้าใจผลิตภัณฑ์ เจอสิ่งที่สคริปต์พลาด เช่น ขั้นตอนที่สับสน บั๊กด้านหน้าตา และการตั้งค่าที่ผสมกันแปลกๆ',
+      'รายงานบั๊กที่ชัดพร้อมขั้นตอนทำซ้ำ ลดเวลาตั้งแต่ "มีอะไรพัง" จนถึง "แก้เสร็จแล้ว" และจบการถามตอบไปมาระหว่าง QA กับนักพัฒนา',
+      'นักพัฒนาที่เชื่อถือชุดทดสอบกล้า refactor มากขึ้นและรีวิวเร็วขึ้น ซึ่งคืนผลเป็นความเร็วในการส่งมอบในหลายเดือนต่อมา',
     ]
   const outcomes    = isEN ? [
       {stat: '90%+', label: 'Automated Coverage', desc: 'Across critical user journeys'},
@@ -80,34 +103,34 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {stat: '<1%', label: 'อัตราเทสต์ที่ไม่นิ่ง (Flaky)', desc: 'ในชุดทดสอบที่ดูแลต่อเนื่อง'}
     ]
   const features    = isEN ? [
-      {icon: 'ti-robot', title: 'Test Automation', desc: 'CI-native unit, API, and end-to-end suites that catch regressions before users do.'},
-      {icon: 'ti-gauge', title: 'Performance & Load', desc: 'Load, stress, and soak testing against realistic traffic so scale is a known quantity.'},
-      {icon: 'ti-shield-bolt', title: 'Security Testing', desc: 'SAST/DAST, dependency scanning, and checks aligned with your threat model.'},
-      {icon: 'ti-user-search', title: 'Exploratory QA', desc: 'Human-led testing for edge cases, UX friction, and scenarios automation cannot cover.'},
-      {icon: 'ti-report', title: 'Actionable Reporting', desc: 'Defect signals with reproduction steps that teams can act on immediately.'},
-      {icon: 'ti-refresh', title: 'Continuous Improvement', desc: 'Flake reduction and coverage growth tracked release over release.'}
+      {icon: 'ti-robot', title: 'Test Automation', desc: 'We write unit, API and end-to-end tests that run in your CI pipeline and catch regressions before users do. We begin with the highest-risk journeys such as sign-up, payment and the main back-office flow, then widen coverage a little every sprint.'},
+      {icon: 'ti-gauge', title: 'Performance & Load', desc: 'Load, stress and soak tests against traffic that looks like your real users, run before launches and big campaigns. You get the capacity limit in plain numbers and a short list of the slowest parts for your developers to fix.'},
+      {icon: 'ti-shield-bolt', title: 'Security Testing', desc: 'SAST and DAST scans, dependency checks and targeted manual tests aligned with your threat model, running inside the pipeline. Each finding comes with a severity level and a suggested fix.'},
+      {icon: 'ti-user-search', title: 'Exploratory QA', desc: 'A tester who understands your product explores it the way a curious user would: odd inputs, interrupted flows, slow networks. This finds the edge cases and UX friction that automation alone cannot cover.'},
+      {icon: 'ti-report', title: 'Actionable Reporting', desc: 'After each release cycle you get a short summary: what was tested, what failed, how serious it is and how to reproduce it. The report goes to the tracker your team already uses, so fixes get assigned straight away.'},
+      {icon: 'ti-refresh', title: 'Continuous Improvement', desc: 'We track flaky tests, run time and coverage release by release, and fix the causes of unreliable tests. The suite stays fast and trusted, and it keeps growing in the places where bugs actually appear.'}
     ] : [
-      {icon: 'ti-robot', title: 'Test Automation', desc: 'ชุดทดสอบ Unit, API และ End-to-end ที่เชื่อมกับ CI จับ Regression ได้ก่อนผู้ใช้เจอ'},
-      {icon: 'ti-gauge', title: 'Performance & Load', desc: 'ทดสอบ Load, Stress และ Soak ด้วยปริมาณผู้ใช้ใกล้เคียงจริง ให้คาดการณ์การรองรับผู้ใช้ได้'},
-      {icon: 'ti-shield-bolt', title: 'Security Testing', desc: 'SAST/DAST, สแกน Dependency และตรวจเฉพาะจุดตามความเสี่ยงของระบบคุณ'},
-      {icon: 'ti-user-search', title: 'Exploratory QA', desc: 'ทดสอบโดยคนสำหรับเคสแปลกๆ ความติดขัดด้าน UX และสถานการณ์ที่ระบบอัตโนมัติครอบคลุมไม่ถึง'},
-      {icon: 'ti-report', title: 'Actionable Reporting', desc: 'รายงานปัญหาพร้อมขั้นตอนทำซ้ำ ที่ทีมนำไปแก้ได้ทันที'},
-      {icon: 'ti-refresh', title: 'Continuous Improvement', desc: 'ลดเทสต์ที่ไม่นิ่งและเพิ่มความครอบคลุมต่อเนื่องทุกรอบปล่อยเวอร์ชัน'}
+      {icon: 'ti-robot', title: 'Test Automation', desc: 'เราเขียนเทสต์ระดับ Unit, API และ End-to-end ที่รันใน CI pipeline ของคุณ จับ Regression ได้ก่อนผู้ใช้เจอ เริ่มจากเส้นทางที่เสี่ยงที่สุด เช่น สมัครสมาชิก ชำระเงิน และงานหลักฝั่งหลังบ้าน แล้วขยายความครอบคลุมขึ้นอีกนิดในทุกสปรินต์'},
+      {icon: 'ti-gauge', title: 'Performance & Load', desc: 'ทดสอบ Load, Stress และ Soak ด้วยปริมาณผู้ใช้ที่ใกล้เคียงของจริง รันก่อนเปิดตัวและก่อนแคมเปญใหญ่ คุณจะได้ตัวเลขที่ระบบรับไหวแบบเข้าใจง่าย กับรายการจุดที่ช้าที่สุดให้ทีมพัฒนาไปแก้'},
+      {icon: 'ti-shield-bolt', title: 'Security Testing', desc: 'สแกน SAST และ DAST ตรวจ dependency และทดสอบด้วยมือเฉพาะจุดตามความเสี่ยงของระบบ ทำงานอยู่ในสายส่งมอบงาน ทุกข้อที่เจอมีระดับความรุนแรงและวิธีแก้ที่แนะนำ'},
+      {icon: 'ti-user-search', title: 'Exploratory QA', desc: 'ผู้ทดสอบที่เข้าใจผลิตภัณฑ์ของคุณลองเล่นแบบที่ผู้ใช้ขี้สงสัยจะทำ ใส่ข้อมูลแปลกๆ ขัดจังหวะขั้นตอน ใช้เน็ตช้า วิธีนี้เจอเคสพิเศษและจุดติดขัดด้าน UX ที่ระบบอัตโนมัติอย่างเดียวครอบคลุมไม่ถึง'},
+      {icon: 'ti-report', title: 'Actionable Reporting', desc: 'หลังจบแต่ละรอบปล่อยเวอร์ชัน คุณจะได้สรุปสั้นๆ ว่าทดสอบอะไรไป อะไรไม่ผ่าน ร้ายแรงแค่ไหน และทำซ้ำอย่างไร รายงานเข้า tracker ที่ทีมของคุณใช้อยู่แล้ว งานแก้จึงมีคนรับทันที'},
+      {icon: 'ti-refresh', title: 'Continuous Improvement', desc: 'เราติดตามเทสต์ที่ไม่นิ่ง เวลารัน และความครอบคลุมทุกรอบปล่อย แล้วแก้ที่ต้นเหตุของเทสต์ที่เชื่อถือไม่ได้ ชุดทดสอบจึงเร็วและเป็นที่ไว้ใจ และโตต่อในจุดที่บั๊กเกิดจริง'}
     ]
   const steps       = isEN ? [
-      {no: '01', title: 'Planning', desc: 'Risk-based test strategy scoped to what matters most.'},
-      {no: '02', title: 'Test Design', desc: 'Cases, test data, and a clear coverage map.'},
-      {no: '03', title: 'Automation', desc: 'Stable CI pipelines and maintainable test suites.'},
-      {no: '04', title: 'Execution', desc: 'Regression, exploratory, and release-gate testing.'},
-      {no: '05', title: 'Reporting', desc: 'Defect signals teams can act on immediately.'},
-      {no: '06', title: 'Improve', desc: 'Flake reduction and steady coverage growth.'}
+      {no: '01', title: 'Planning', desc: 'We list your critical journeys and the areas that break most often, then agree a risk-based strategy: what to automate, what to test by hand and what quality bar a release must meet.'},
+      {no: '02', title: 'Test Design', desc: 'We write test cases, prepare realistic test data and draw a coverage map, so everyone can see what is protected and what is not yet.'},
+      {no: '03', title: 'Automation', desc: 'We build stable CI pipelines and maintainable suites, using page objects and shared fixtures so a small UI change does not break fifty tests.'},
+      {no: '04', title: 'Execution', desc: 'Regression runs on every change, exploratory sessions cover new features, and release-gate checks run before anything goes to production.'},
+      {no: '05', title: 'Reporting', desc: 'Defects arrive with steps to reproduce, severity and evidence in your tracker, and a short summary tells stakeholders if the release is safe.'},
+      {no: '06', title: 'Improve', desc: 'Each cycle we remove flaky tests, speed up the suite and add coverage where bugs actually turned up.'}
     ] : [
-      {no: '01', title: 'Planning', desc: 'วางกลยุทธ์ทดสอบตามความเสี่ยง โดยเน้นสิ่งที่สำคัญที่สุด'},
-      {no: '02', title: 'Test Design', desc: 'ออกแบบเคสทดสอบ ข้อมูลทดสอบ และแผนที่ความครอบคลุมให้ชัดเจน'},
-      {no: '03', title: 'Automation', desc: 'สร้าง CI Pipeline ที่เสถียรและชุดทดสอบที่ดูแลง่าย'},
-      {no: '04', title: 'Execution', desc: 'ทำ Regression, ทดสอบแบบสำรวจ และทดสอบก่อนอนุมัติปล่อยเวอร์ชัน'},
-      {no: '05', title: 'Reporting', desc: 'รายงานปัญหาที่ทีมนำไปแก้ได้ทันที'},
-      {no: '06', title: 'Improve', desc: 'ลดเทสต์ที่ไม่นิ่งและเพิ่มความครอบคลุมต่อเนื่อง'}
+      {no: '01', title: 'Planning', desc: 'เราไล่ดูเส้นทางสำคัญและจุดที่พังบ่อย แล้วตกลงกลยุทธ์ตามความเสี่ยง ว่าอะไรควรทำอัตโนมัติ อะไรทดสอบด้วยมือ และเกณฑ์คุณภาพที่เวอร์ชันต้องผ่าน'},
+      {no: '02', title: 'Test Design', desc: 'เราเขียน Test Case เตรียมข้อมูลทดสอบที่เหมือนจริง และวาดแผนที่ความครอบคลุม เพื่อให้ทุกคนเห็นว่าอะไรมีอะไรคุ้มครองแล้ว และอะไรยังไม่มี'},
+      {no: '03', title: 'Automation', desc: 'เราสร้าง CI pipeline ที่เสถียรและชุดทดสอบที่ดูแลง่าย ใช้ page object และ fixture ที่ใช้ร่วมกัน เพื่อไม่ให้แก้ UI นิดเดียวแล้วเทสต์พังห้าสิบตัว'},
+      {no: '04', title: 'Execution', desc: 'Regression รันทุกครั้งที่มีการเปลี่ยนแปลง ฟีเจอร์ใหม่ทดสอบแบบสำรวจ และด่านตรวจก่อนปล่อยจะรันก่อนขึ้นระบบจริงทุกครั้ง'},
+      {no: '05', title: 'Reporting', desc: 'บั๊กเข้า tracker พร้อมขั้นตอนทำซ้ำ ระดับความรุนแรง และหลักฐาน และมีสรุปสั้นๆ บอกผู้เกี่ยวข้องว่าเวอร์ชันนี้ปลอดภัยพอไหม'},
+      {no: '06', title: 'Improve', desc: 'ทุกรอบเรากำจัดเทสต์ที่ไม่นิ่ง ทำให้ชุดทดสอบเร็วขึ้น และเพิ่มความครอบคลุมในจุดที่เจอบั๊กจริง'}
     ]
   const caseStudies = isEN ? [
       {tag: 'FinTech · Bangkok', title: 'Zero Critical Bugs Across 40 Releases', desc: 'Full CI-integrated regression suite covering payment flows end-to-end.', result: 'Release cadence: weekly'},
@@ -119,15 +142,15 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {tag: 'Healthcare · กรุงเทพฯ', title: 'ปิดช่องโหว่ความปลอดภัยก่อนเปิดตัว', desc: 'สแกน SAST/DAST ที่เชื่อมกับ CI จับช่องโหว่ได้ 12 จุดก่อนเปิดตัว', result: 'แก้ช่องโหว่ 12 จุดก่อนเปิดตัว'}
     ]
   const faqs        = isEN ? [
-      {q: 'What testing services do you offer?', a: 'Automated and exploratory testing embedded in delivery: unit and integration tests, end-to-end suites, performance testing, and security scanning.'},
-      {q: 'Which testing tools do you use?', a: 'Playwright, Cypress, Jest, and Vitest for functional testing, k6 for performance, and OWASP ZAP for security scanning.'},
-      {q: 'Can you add automated tests to an existing codebase?', a: 'Yes. We start with the highest-risk user journeys and build an end-to-end safety net first.'},
-      {q: 'Do you do manual testing too?', a: 'Yes. We combine exploratory testing with automation rather than choosing one over the other.'}
+      {q: 'What testing services do you offer?', a: 'Automated and exploratory testing built into delivery: unit and integration tests, end-to-end suites, performance testing and security scanning, run by QA engineers who work alongside your developers.'},
+      {q: 'Which testing tools do you use?', a: 'Playwright, Cypress, Jest and Vitest for functional testing, k6 for performance and OWASP ZAP for security scanning. We choose tools that fit the stack you already have.'},
+      {q: 'Can you add automated tests to an existing codebase?', a: 'Yes. We start with the highest-risk user journeys and build an end-to-end safety net first, then add integration and unit tests as the suite earns trust.'},
+      {q: 'Do you do manual testing too?', a: 'Yes. We combine exploratory testing with automation, because each finds problems the other misses.'}
     ] : [
-      {q: 'รับทดสอบแบบไหนบ้าง?', a: 'ทดสอบอัตโนมัติและทดสอบแบบสำรวจที่ฝังในขั้นตอนส่งมอบงาน ได้แก่ Unit, Integration, End-to-end, ประสิทธิภาพ และสแกนความปลอดภัย'},
-      {q: 'ใช้เครื่องมือทดสอบอะไรบ้าง?', a: 'Playwright, Cypress, Jest และ Vitest สำหรับทดสอบการทำงาน, k6 สำหรับประสิทธิภาพ และ OWASP ZAP สำหรับสแกนความปลอดภัย'},
-      {q: 'เพิ่มชุดทดสอบอัตโนมัติให้โค้ดเดิมได้ไหม?', a: 'ได้ครับ เราเริ่มจากเส้นทางผู้ใช้ที่เสี่ยงที่สุด และสร้างตาข่ายรองรับแบบ End-to-end ก่อน'},
-      {q: 'ทดสอบด้วยมือด้วยไหม?', a: 'ทำครับ เรารวมการทดสอบแบบสำรวจเข้ากับระบบอัตโนมัติ ไม่ได้เลือกอย่างใดอย่างหนึ่ง'}
+      {q: 'รับทดสอบแบบไหนบ้าง?', a: 'ทดสอบอัตโนมัติและทดสอบแบบสำรวจที่ฝังอยู่ในขั้นตอนส่งมอบงาน ได้แก่ Unit และ Integration Test ชุด End-to-end ทดสอบประสิทธิภาพ และสแกนความปลอดภัย โดย QA Engineer ที่ทำงานเคียงข้างนักพัฒนาของคุณ'},
+      {q: 'ใช้เครื่องมือทดสอบอะไรบ้าง?', a: 'Playwright, Cypress, Jest และ Vitest สำหรับทดสอบการทำงาน, k6 สำหรับประสิทธิภาพ และ OWASP ZAP สำหรับสแกนความปลอดภัย เราเลือกเครื่องมือให้เข้ากับระบบที่คุณมีอยู่'},
+      {q: 'เพิ่มชุดทดสอบอัตโนมัติให้โค้ดเดิมได้ไหม?', a: 'ได้ เราเริ่มจากเส้นทางผู้ใช้ที่เสี่ยงที่สุด สร้างตาข่ายรองรับแบบ End-to-end ก่อน แล้วเพิ่ม Integration และ Unit Test ตามที่ชุดทดสอบเริ่มเชื่อถือได้'},
+      {q: 'ทดสอบด้วยมือด้วยไหม?', a: 'ทำ เราใช้การทดสอบแบบสำรวจควบคู่กับระบบอัตโนมัติ เพราะแต่ละแบบเจอปัญหาที่อีกแบบพลาด'}
     ]
   const related     = isEN ? [
       {label: 'Application Modernization', href: '/services/application-modernization'},
@@ -198,15 +221,19 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   )
 
   const capabilities = isEN ? [
-    { icon: 'ti-robot', title: 'Test Automation', desc: 'CI-native unit, API, and end-to-end suites that catch regressions before users do.' },
-    { icon: 'ti-gauge', title: 'Performance & Load', desc: 'Load, stress, and soak testing against realistic traffic so scale is a known quantity.' },
-    { icon: 'ti-shield-bolt', title: 'Security Testing', desc: 'SAST/DAST, dependency scanning, and targeted checks aligned with your threat model.' },
-    { icon: 'ti-user-search', title: 'Exploratory QA', desc: 'Human-led testing for edge cases, UX friction, and scenarios automation cannot cover alone.' },
+    { icon: 'ti-robot', title: 'Test Automation', desc: 'Unit, API and end-to-end suites wired into CI, so every pull request is checked before it merges. We start with sign-up, payment and the main back-office flows, then widen coverage each sprint instead of attempting everything on day one.' },
+    { icon: 'ti-gauge', title: 'Performance & Load', desc: 'Load, stress and soak tests against traffic shaped like your real users, repeated before launches and big campaigns. The output is a capacity limit in plain numbers and a short list of the slowest parts to fix.' },
+    { icon: 'ti-shield-bolt', title: 'Security Testing', desc: 'SAST and DAST scans, dependency checks and targeted manual tests aligned with your threat model, running in the pipeline. Findings arrive with a severity level and a suggested fix.' },
+    { icon: 'ti-user-search', title: 'Exploratory QA', desc: 'Human-led testing for edge cases, UX friction and unusual combinations of settings that automation cannot cover alone. Done by testers who learn your product, so they know what normal looks like.' },
+    { icon: 'ti-report', title: 'Actionable Reporting', desc: 'A short summary after every release cycle and defects filed in your tracker with steps to reproduce, severity and evidence, so developers can start fixing without asking follow-up questions.' },
+    { icon: 'ti-refresh', title: 'Continuous Improvement', desc: 'We watch flaky tests, run time and coverage release by release, and fix root causes, so the suite stays fast, trusted and aimed at the places where bugs really appear.' },
   ] : [
-    { icon: 'ti-robot', title: 'Test Automation', desc: 'ชุดทดสอบ Unit, API และ End-to-end ที่เชื่อมกับ CI จับ Regression ได้ก่อนผู้ใช้เจอ' },
-    { icon: 'ti-gauge', title: 'Performance & Load', desc: 'ทดสอบ Load, Stress และ Soak ด้วยปริมาณผู้ใช้ใกล้เคียงจริง ให้คาดการณ์การรองรับผู้ใช้ได้' },
-    { icon: 'ti-shield-bolt', title: 'Security Testing', desc: 'SAST/DAST, สแกน Dependency และตรวจเฉพาะจุดตามความเสี่ยงของระบบคุณ' },
-    { icon: 'ti-user-search', title: 'Exploratory QA', desc: 'ทดสอบโดยคนสำหรับเคสแปลกๆ ความติดขัดด้าน UX และสถานการณ์ที่ระบบอัตโนมัติอย่างเดียวครอบคลุมไม่ถึง' },
+    { icon: 'ti-robot', title: 'Test Automation', desc: 'ชุดทดสอบ Unit, API และ End-to-end ที่เชื่อมกับ CI ทุก pull request จึงถูกเช็กก่อน merge เราเริ่มจากสมัครสมาชิก ชำระเงิน และงานหลักฝั่งหลังบ้าน แล้วขยายความครอบคลุมทุกสปรินต์ ไม่ใช่พยายามทำทุกอย่างตั้งแต่วันแรก' },
+    { icon: 'ti-gauge', title: 'Performance & Load', desc: 'ทดสอบ Load, Stress และ Soak ด้วยปริมาณผู้ใช้ที่ใกล้เคียงของจริง และรันซ้ำก่อนเปิดตัวหรือก่อนแคมเปญใหญ่ ผลที่ได้คือตัวเลขที่ระบบรับไหวแบบเข้าใจง่าย กับรายการจุดที่ช้าที่สุดให้ไปแก้' },
+    { icon: 'ti-shield-bolt', title: 'Security Testing', desc: 'สแกน SAST และ DAST ตรวจ dependency และทดสอบด้วยมือเฉพาะจุดตามความเสี่ยงของระบบ รันอยู่ใน pipeline ผลที่เจอมาพร้อมระดับความรุนแรงและวิธีแก้ที่แนะนำ' },
+    { icon: 'ti-user-search', title: 'Exploratory QA', desc: 'ทดสอบโดยคนสำหรับเคสแปลกๆ จุดติดขัดด้าน UX และการตั้งค่าที่ผสมกันแปลกๆ ซึ่งระบบอัตโนมัติอย่างเดียวครอบคลุมไม่ถึง ทำโดยผู้ทดสอบที่เรียนรู้ผลิตภัณฑ์ของคุณ จึงรู้ว่าแบบปกติหน้าตาเป็นยังไง' },
+    { icon: 'ti-report', title: 'Actionable Reporting', desc: 'สรุปสั้นๆ ทุกรอบปล่อยเวอร์ชัน และบั๊กที่เข้า tracker ของคุณพร้อมขั้นตอนทำซ้ำ ความรุนแรง และหลักฐาน นักพัฒนาจึงเริ่มแก้ได้เลยโดยไม่ต้องถามต่อ' },
+    { icon: 'ti-refresh', title: 'Continuous Improvement', desc: 'เราดูเทสต์ที่ไม่นิ่ง เวลารัน และความครอบคลุมทุกรอบปล่อย แล้วแก้ที่ต้นเหตุ ชุดทดสอบจึงเร็ว เป็นที่ไว้ใจ และมุ่งไปที่จุดที่บั๊กเกิดจริง' },
   ]
 
   const techStack = [
@@ -222,39 +249,41 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   ] as { label: string; icon?: string; svg?: string }[]
 
   const approachSteps = isEN ? [
-    { no: '01', title: 'Planning', desc: 'Risk-based test strategy' },
-    { no: '02', title: 'Test Design', desc: 'Cases, data, and coverage map' },
-    { no: '03', title: 'Automation', desc: 'CI pipelines and stable suites' },
-    { no: '04', title: 'Execution', desc: 'Regression, exploratory, release' },
-    { no: '05', title: 'Reporting', desc: 'Defect signals teams can act on' },
-    { no: '06', title: 'Improve', desc: 'Flake reduction and coverage growth' },
+    { no: '01', title: 'Planning', desc: 'Risk-based strategy: what to automate, what to test by hand' },
+    { no: '02', title: 'Test Design', desc: 'Cases, realistic data and a visible coverage map' },
+    { no: '03', title: 'Automation', desc: 'Stable CI pipelines and suites that are easy to maintain' },
+    { no: '04', title: 'Execution', desc: 'Regression on every change, exploratory on new features' },
+    { no: '05', title: 'Reporting', desc: 'Defects with steps to reproduce, plus a release summary' },
+    { no: '06', title: 'Improve', desc: 'Fewer flaky tests, faster runs, coverage where bugs appear' },
   ] : [
-    { no: '01', title: 'Planning', desc: 'วางกลยุทธ์ทดสอบตามความเสี่ยง' },
-    { no: '02', title: 'Test Design', desc: 'เคสทดสอบ ข้อมูล และแผนที่ความครอบคลุม' },
-    { no: '03', title: 'Automation', desc: 'CI Pipeline และชุดทดสอบที่เสถียร' },
-    { no: '04', title: 'Execution', desc: 'Regression, Exploratory, Release' },
-    { no: '05', title: 'Reporting', desc: 'รายงานปัญหาที่นำไปแก้ได้จริง' },
-    { no: '06', title: 'Improve', desc: 'ลดเทสต์ที่ไม่นิ่งและเพิ่มความครอบคลุม' },
+    { no: '01', title: 'Planning', desc: 'กลยุทธ์ตามความเสี่ยง ว่าอะไรทำอัตโนมัติ อะไรทดสอบด้วยมือ' },
+    { no: '02', title: 'Test Design', desc: 'เคสทดสอบ ข้อมูลที่เหมือนจริง และแผนที่ความครอบคลุมที่มองเห็นได้' },
+    { no: '03', title: 'Automation', desc: 'CI pipeline ที่เสถียรและชุดทดสอบที่ดูแลง่าย' },
+    { no: '04', title: 'Execution', desc: 'Regression ทุกครั้งที่เปลี่ยนโค้ด ฟีเจอร์ใหม่ทดสอบแบบสำรวจ' },
+    { no: '05', title: 'Reporting', desc: 'บั๊กพร้อมขั้นตอนทำซ้ำ และสรุปความพร้อมของเวอร์ชัน' },
+    { no: '06', title: 'Improve', desc: 'เทสต์ไม่นิ่งน้อยลง รันเร็วขึ้น ครอบคลุมจุดที่เจอบั๊ก' },
   ]
 
   const darkFaqs = isEN ? [
-    { q: 'What testing services does Haliviq offer?', a: 'Automated and exploratory testing embedded in the delivery process: unit and integration tests, end-to-end suites, performance testing, and security scanning, so quality scales with release speed instead of slowing it down.' },
-    { q: 'Which testing tools do you use?', a: 'Playwright, Cypress, Jest, and Vitest for functional and end-to-end testing, k6 for performance, OWASP ZAP for security scanning, and BrowserStack for cross-device coverage. We pick the toolset that fits your existing stack rather than pushing a fixed list on every project.' },
-    { q: 'Can you add automated tests to an existing codebase with no coverage?', a: 'Yes. We start with the highest-risk user journeys, build an end-to-end safety net first, and then push coverage down into integration and unit tests as the suite earns trust — rather than trying to write every test on day one.' },
-    { q: 'Do you do manual testing too, or is it all automated?', a: 'Both. Exploratory testing by people who understand the product finds what scripts miss — confusing flows, visual glitches, edge cases nobody thought to script. We combine it with automation rather than choosing one over the other.' },
-    { q: 'How long does it take to build out a test strategy?', a: 'A focused audit of your highest-risk flows and a prioritised coverage plan takes 1-2 weeks. Building the initial automated suite for a mid-size product typically runs 4-8 weeks, after which the suite grows incrementally with every release rather than needing another big push.' },
-    { q: 'How much does ongoing QA cost?', a: 'It scales with the size of the codebase and the depth of coverage needed. A focused test-strategy audit starts in the low five figures (THB); an initial automation build-out for one product area typically starts in the mid five figures, and ongoing QA support is quoted as a monthly retainer sized to your release cadence.' },
-    { q: 'Will testing slow down our release cycle?', a: 'The opposite, once the suite is in place. A CI-integrated automation suite runs in minutes on every commit, which means teams ship more confidently and more often, not less — the slowdown from testing usually comes from manual regression cycles, which is exactly what automation replaces.' },
-    { q: 'What happens when tests become flaky or unreliable?', a: 'We treat flaky tests as a defect in the suite itself, not something to silently retry past. Part of our ongoing process is tracking flake rate and fixing root causes — timing issues, shared state, environment differences — so the suite stays something the team trusts rather than ignores.' },
+    { q: 'What testing services does Haliviq offer?', a: 'Automated and exploratory testing built into the delivery process: unit and integration tests, end-to-end suites, performance testing and security scanning. Our QA engineers work inside your sprints, so quality keeps pace with release speed instead of slowing it down.' },
+    { q: 'Which testing tools do you use?', a: 'Playwright, Cypress, Jest and Vitest for functional and end-to-end testing, k6 for performance, OWASP ZAP for security scanning and BrowserStack for cross-device coverage. We pick the toolset that fits your existing stack rather than pushing a fixed list on every project.' },
+    { q: 'Can you add automated tests to an existing codebase with no coverage?', a: 'Yes. We start with the highest-risk user journeys, build an end-to-end safety net first, and then push coverage down into integration and unit tests as the suite earns trust, rather than trying to write every test on day one.' },
+    { q: 'Do you do manual testing too, or is it all automated?', a: 'Both. Exploratory testing by people who understand the product finds what scripts miss: confusing flows, visual glitches, edge cases nobody thought to script. We combine it with automation rather than choosing one over the other.' },
+    { q: 'How long does it take to build out a test strategy?', a: 'A focused audit of your highest-risk flows and a prioritised coverage plan takes 1-2 weeks. Building the initial automated suite for a mid-size product typically runs 4-8 weeks. After that the suite grows a little with every release instead of needing another big push.' },
+    { q: 'How much does ongoing QA cost?', a: 'It scales with the size of the codebase and the depth of coverage you need. A focused test-strategy audit starts in the low five figures (THB). An initial automation build-out for one product area typically starts in the mid five figures. Ongoing QA support is quoted as a monthly retainer sized to your release cadence.' },
+    { q: 'Will testing slow down our release cycle?', a: 'The opposite, once the suite is in place. A CI-integrated suite runs in minutes on every commit, so teams ship with more confidence and more often. The slowdown people associate with testing usually comes from manual regression cycles, which is exactly what automation replaces.' },
+    { q: 'What happens when tests become flaky or unreliable?', a: 'We treat a flaky test as a defect in the suite, not something to retry until it goes green. We track the flake rate and fix root causes such as timing issues, shared state and environment differences, so the team keeps trusting the suite instead of ignoring it.' },
+    { q: 'How does this differ from a one-off pre-launch QA audit?', a: 'A pre-launch audit checks a product at one point in time and ends with a sign-off. This service is ongoing: QA engineers sit with your developers, automation runs on every change and release gates stay in place. If you only need a check before go-live, our QA and testing service is the better fit.' },
   ] : [
-    { q: 'Haliviq รับทดสอบแบบไหนบ้าง?', a: 'ทดสอบอัตโนมัติและทดสอบแบบสำรวจที่ฝังอยู่ในขั้นตอนส่งมอบงาน ได้แก่ Unit และ Integration Test, ชุด End-to-end, ทดสอบประสิทธิภาพ และสแกนความปลอดภัย ให้คุณภาพโตทันความเร็วในการปล่อยเวอร์ชัน ไม่ใช่ทำให้ช้าลง' },
+    { q: 'Haliviq รับทดสอบแบบไหนบ้าง?', a: 'ทดสอบอัตโนมัติและทดสอบแบบสำรวจที่ฝังอยู่ในขั้นตอนส่งมอบงาน ได้แก่ Unit และ Integration Test ชุด End-to-end ทดสอบประสิทธิภาพ และสแกนความปลอดภัย QA Engineer ของเราทำงานอยู่ในสปรินต์ของคุณ คุณภาพจึงโตทันความเร็วในการปล่อยเวอร์ชัน ไม่ใช่ทำให้ช้าลง' },
     { q: 'ใช้เครื่องมือทดสอบอะไรบ้าง?', a: 'Playwright, Cypress, Jest และ Vitest สำหรับทดสอบการทำงานและ End-to-end, k6 สำหรับประสิทธิภาพ, OWASP ZAP สำหรับสแกนความปลอดภัย และ BrowserStack สำหรับทดสอบข้ามอุปกรณ์ เราเลือกเครื่องมือให้เข้ากับระบบเดิมของคุณ ไม่ได้ใช้ชุดตายตัวกับทุกโปรเจกต์' },
-    { q: 'เพิ่มชุดทดสอบอัตโนมัติให้โค้ดเดิมที่ยังไม่มีการทดสอบได้ไหม?', a: 'ได้ครับ เราเริ่มจากเส้นทางผู้ใช้ที่เสี่ยงที่สุด สร้างตาข่ายรองรับแบบ End-to-end ก่อน แล้วค่อยขยายไปถึง Integration และ Unit Test เมื่อชุดทดสอบเริ่มเชื่อถือได้ ไม่ใช่พยายามเขียนทุกอย่างตั้งแต่วันแรก' },
-    { q: 'ทดสอบด้วยมือด้วยไหม หรือทำอัตโนมัติอย่างเดียว?', a: 'ทำทั้งสองอย่างครับ การทดสอบแบบสำรวจโดยคนที่เข้าใจผลิตภัณฑ์จะเจอสิ่งที่สคริปต์พลาด เช่น ขั้นตอนที่สับสน บั๊กด้านหน้าตา หรือเคสแปลกๆ ที่ไม่มีใครคิดจะเขียนสคริปต์ เราใช้ควบคู่กับระบบอัตโนมัติ ไม่ได้เลือกอย่างใดอย่างหนึ่ง' },
-    { q: 'วางกลยุทธ์ทดสอบใช้เวลานานแค่ไหน?', a: 'ตรวจเส้นทางที่เสี่ยงที่สุดและวางแผนความครอบคลุมใช้เวลา 1-2 สัปดาห์ ส่วนการสร้างชุดทดสอบอัตโนมัติชุดแรกสำหรับผลิตภัณฑ์ขนาดกลางมักใช้ 4-8 สัปดาห์ หลังจากนั้นชุดทดสอบจะโตไปพร้อมทุกรอบปล่อยเวอร์ชัน โดยไม่ต้องเร่งทำใหญ่อีก' },
-    { q: 'งาน QA ต่อเนื่องมีค่าใช้จ่ายเท่าไหร่?', a: 'ขึ้นกับขนาดโค้ดและความลึกของการทดสอบที่ต้องการ การตรวจกลยุทธ์ทดสอบแบบเจาะจงเริ่มที่หลักหมื่นปลายๆ (บาท) การสร้างระบบทดสอบอัตโนมัติเริ่มต้นสำหรับหนึ่งส่วนของผลิตภัณฑ์มักเริ่มที่หลักแสนต้นๆ ส่วนงาน QA ต่อเนื่องเสนอราคาเป็นรายเดือนตามความถี่ในการปล่อยเวอร์ชัน' },
-    { q: 'การทดสอบจะทำให้ปล่อยเวอร์ชันช้าลงไหม?', a: 'ตรงข้ามเลยครับ เมื่อชุดทดสอบพร้อมแล้ว ระบบอัตโนมัติที่เชื่อมกับ CI รันเสร็จในไม่กี่นาทีทุก Commit ทีมจึงปล่อยงานได้มั่นใจขึ้นและบ่อยขึ้น ที่ช้าจริงๆ มักมาจากการทำ Regression ด้วยมือ ซึ่งระบบอัตโนมัติเข้ามาแทนได้โดยตรง' },
-    { q: 'ถ้าเทสต์เริ่มไม่นิ่งหรือเชื่อถือไม่ได้จะทำอย่างไร?', a: 'เรามองเทสต์ที่ไม่นิ่งเป็นข้อบกพร่องของชุดทดสอบเอง ไม่ใช่เรื่องที่รันซ้ำให้ผ่านแล้วจบ งานต่อเนื่องของเรารวมการติดตามอัตราที่ไม่นิ่งและแก้ที่ต้นเหตุ เช่น ปัญหาเรื่องจังหวะเวลา สถานะที่ใช้ร่วมกัน หรือความต่างของสภาพแวดล้อม เพื่อให้ทีมยังเชื่อถือชุดทดสอบ ไม่ถูกมองข้าม' },
+    { q: 'เพิ่มชุดทดสอบอัตโนมัติให้โค้ดเดิมที่ยังไม่มีการทดสอบได้ไหม?', a: 'ได้ เราเริ่มจากเส้นทางผู้ใช้ที่เสี่ยงที่สุด สร้างตาข่ายรองรับแบบ End-to-end ก่อน แล้วค่อยขยายไปถึง Integration และ Unit Test เมื่อชุดทดสอบเริ่มเชื่อถือได้ ไม่ใช่พยายามเขียนทุกอย่างตั้งแต่วันแรก' },
+    { q: 'ทดสอบด้วยมือด้วยไหม หรือทำอัตโนมัติอย่างเดียว?', a: 'ทำทั้งสองอย่าง การทดสอบแบบสำรวจโดยคนที่เข้าใจผลิตภัณฑ์จะเจอสิ่งที่สคริปต์พลาด เช่น ขั้นตอนที่สับสน บั๊กด้านหน้าตา หรือเคสแปลกๆ ที่ไม่มีใครคิดจะเขียนสคริปต์ เราใช้ควบคู่กับระบบอัตโนมัติ ไม่ได้เลือกอย่างใดอย่างหนึ่ง' },
+    { q: 'วางกลยุทธ์ทดสอบใช้เวลานานแค่ไหน?', a: 'ตรวจเส้นทางที่เสี่ยงที่สุดและวางแผนความครอบคลุมใช้เวลา 1-2 สัปดาห์ ส่วนการสร้างชุดทดสอบอัตโนมัติชุดแรกสำหรับผลิตภัณฑ์ขนาดกลางมักใช้ 4-8 สัปดาห์ หลังจากนั้นชุดทดสอบจะโตขึ้นนิดหน่อยในทุกรอบปล่อยเวอร์ชัน ไม่ต้องเร่งทำก้อนใหญ่อีก' },
+    { q: 'งาน QA ต่อเนื่องมีค่าใช้จ่ายเท่าไหร่?', a: 'ขึ้นกับขนาดโค้ดและความลึกของการทดสอบที่ต้องการ การตรวจกลยุทธ์ทดสอบแบบเจาะจงเริ่มที่หลักหมื่นต้นๆ (บาท) การสร้างระบบทดสอบอัตโนมัติเริ่มต้นสำหรับหนึ่งส่วนของผลิตภัณฑ์มักเริ่มที่หลักหมื่นกลางๆ ส่วนงาน QA ต่อเนื่องเสนอราคาเป็นรายเดือนตามความถี่ในการปล่อยเวอร์ชัน' },
+    { q: 'การทดสอบจะทำให้ปล่อยเวอร์ชันช้าลงไหม?', a: 'ตรงข้ามเลย เมื่อชุดทดสอบพร้อมแล้ว ระบบอัตโนมัติที่เชื่อมกับ CI รันเสร็จในไม่กี่นาทีทุก commit ทีมจึงปล่อยงานได้มั่นใจขึ้นและบ่อยขึ้น ที่คนมักรู้สึกว่าการทดสอบทำให้ช้า ส่วนใหญ่มาจากการทำ Regression ด้วยมือ ซึ่งระบบอัตโนมัติเข้ามาแทนได้โดยตรง' },
+    { q: 'ถ้าเทสต์เริ่มไม่นิ่งหรือเชื่อถือไม่ได้จะทำอย่างไร?', a: 'เรามองเทสต์ที่ไม่นิ่งเป็นข้อบกพร่องของชุดทดสอบเอง ไม่ใช่เรื่องที่รันซ้ำจนผ่านแล้วจบ เราติดตามอัตราที่ไม่นิ่งและแก้ที่ต้นเหตุ เช่น ปัญหาเรื่องจังหวะเวลา สถานะที่ใช้ร่วมกัน หรือความต่างของสภาพแวดล้อม เพื่อให้ทีมยังเชื่อถือชุดทดสอบ ไม่ถูกมองข้าม' },
+    { q: 'บริการนี้ต่างจากการตรวจ QA ครั้งเดียวก่อนเปิดตัวยังไง?', a: 'การตรวจก่อนเปิดตัวเช็กผลิตภัณฑ์ ณ จุดเวลาหนึ่งและจบด้วยการอนุมัติ ส่วนบริการนี้ทำต่อเนื่อง QA Engineer นั่งทำงานกับนักพัฒนาของคุณ ระบบอัตโนมัติรันทุกครั้งที่เปลี่ยนโค้ด และด่านตรวจก่อนปล่อยอยู่ตลอด ถ้าคุณแค่ต้องการเช็กก่อนเปิดตัว บริการ QA & Testing ของเราเหมาะกว่า' },
   ]
 
   const postHeroSlot = (
@@ -405,7 +434,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
         </h2>
         <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-          {isEN ? "We'd love to hear what you're building." : 'เรายินดีรับฟังสิ่งที่คุณกำลังสร้างครับ'}
+          {isEN ? "We'd love to hear what you're building." : 'เรายินดีฟังว่าคุณกำลังสร้างอะไรอยู่'}
         </p>
         <div className="flex flex-wrap items-center gap-6">
           <Link

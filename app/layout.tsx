@@ -3,8 +3,8 @@ import Script from 'next/script'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Haliviq — Digital Product Studio',
-  description: 'Strategy, design, and engineering under one roof.',
+  title: 'Haliviq | Digital Product Studio in Bangkok',
+  description: 'Haliviq is a Bangkok digital product studio. We plan, design and build websites, mobile apps, LINE mini apps and AI tools for Thai and Southeast Asian teams.',
   icons: {
     icon: [
       { url: '/favicon.png', type: 'image/png' },
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
     apple: '/favicon.png',
   },
   openGraph: {
-    title: 'Haliviq — Digital Product Studio',
-    description: 'Strategy, design, and engineering under one roof.',
+    title: 'Haliviq | Digital Product Studio in Bangkok',
+    description: 'Haliviq is a Bangkok digital product studio. We plan, design and build websites, mobile apps, LINE mini apps and AI tools for Thai and Southeast Asian teams.',
     images: ['/og/haliviq-og.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Haliviq — Digital Product Studio',
-    description: 'Strategy, design, and engineering under one roof.',
+    title: 'Haliviq | Digital Product Studio in Bangkok',
+    description: 'Haliviq is a Bangkok digital product studio. We plan, design and build websites, mobile apps, LINE mini apps and AI tools for Thai and Southeast Asian teams.',
     images: ['/og/haliviq-og.png'],
   },
 }

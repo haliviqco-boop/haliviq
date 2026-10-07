@@ -15,19 +15,19 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   const badge = isEN ? 'Industry / Financial Services' : 'อุตสาหกรรม / บริการทางการเงิน'
   const heroSubhead = isEN
-    ? 'Digital solutions for banks, insurance, and financial institutions.'
-    : 'ระบบธนาคารดิจิทัลและระบบชำระเงินที่ปลอดภัย ตรงตามมาตรฐาน ธปท.'
+    ? 'Banking apps, PromptPay and payment flows, eKYC onboarding and fraud monitoring for Thai banks, lenders, insurers and fintechs, designed around Bank of Thailand expectations and PDPA from day one.'
+    : 'แอปธนาคาร ระบบชำระเงินและ PromptPay การเปิดบัญชีด้วย eKYC และระบบเฝ้าระวังการทุจริต สำหรับธนาคาร ผู้ให้สินเชื่อ บริษัทประกัน และ Fintech ในไทย ออกแบบให้ตรงตามแนวทางของ ธปท. และ PDPA ตั้งแต่วันแรก'
 
   const challenges = isEN ? [
-    { icon: 'ti-scale', title: 'Regulatory Complexity', desc: 'Navigating evolving regulations across jurisdictions while maintaining innovation velocity requires sophisticated compliance systems that adapt to changing requirements automatically.' },
-    { icon: 'ti-server-2', title: 'Legacy Infrastructure', desc: 'Core banking systems built decades ago are brittle and expensive to maintain, yet they process millions of daily transactions that cannot tolerate downtime during modernisation.' },
-    { icon: 'ti-shield-exclamation', title: 'Escalating Cyber Threats', desc: 'Financial institutions face increasingly sophisticated attacks targeting customer data, transaction systems, and proprietary algorithms, demanding defense-in-depth security architectures.' },
-    { icon: 'ti-star', title: 'Rising Customer Expectations', desc: 'Consumers expect instant, personalised, always-available financial services across every channel, setting a bar that legacy institutions struggle to meet with outdated technology.' },
+    { icon: 'ti-scale', title: 'Regulatory Complexity', desc: 'A financial product in Thailand can answer to the Bank of Thailand, the SEC, the OIC and PDPA at the same time, and the circulars on e-payments, eKYC and outsourcing keep being revised. Many teams still check each release against those documents by hand. We turn the rules that apply to your licence into checks and approval steps inside the product, with a log your compliance team can hand straight to an auditor.' },
+    { icon: 'ti-server-2', title: 'Legacy Core Systems', desc: 'Many core banking systems were written decades ago and still process millions of transactions a day, so there is no quiet weekend when it is safe to switch them off. Replacing everything at once is too risky and too expensive. We build new apps and services beside the core, connect them through APIs or a message layer, and move one product line at a time, each with a rollback plan.' },
+    { icon: 'ti-shield-exclamation', title: 'Fraud and Cyber Threats', desc: 'Phishing links, SIM-swap, mule accounts and fake QR codes are familiar scams to Thai bank customers, and attackers also go after APIs and internal admin tools. Security needs several layers: device checks, step-up authentication, transaction monitoring and a clear incident procedure. We plan these with your security team from the first sprint instead of adding them in the week before launch.' },
+    { icon: 'ti-star', title: 'Customer Expectations', desc: 'Thai customers are used to scanning a PromptPay QR and watching the money land within seconds, and they compare every financial app with the smoothest one on their phone. A long sign-up form, a branch visit for a simple request or an interface that only makes sense in English will lose them. We design in Thai first, keep each flow short, and test it with real users before development starts.' },
   ] : [
-    { icon: 'ti-scale', title: 'กฎระเบียบที่ซับซ้อน', desc: 'ต้องปรับตามกฎระเบียบที่ต่างกันในแต่ละประเทศ โดยยังสร้างสิ่งใหม่ได้เร็ว จึงต้องมีระบบ Compliance ที่ปรับตามข้อกำหนดใหม่ได้เอง' },
-    { icon: 'ti-server-2', title: 'Legacy Infrastructure', desc: 'ระบบ Core Banking ที่สร้างมาหลายสิบปีเปราะบางและดูแลแพง แต่ยังต้องประมวลผลธุรกรรมหลายล้านรายการต่อวัน และหยุดระบบระหว่างปรับปรุงไม่ได้' },
-    { icon: 'ti-shield-exclamation', title: 'ภัยไซเบอร์ที่รุนแรงขึ้น', desc: 'สถาบันการเงินถูกโจมตีด้วยวิธีที่ซับซ้อนขึ้นเรื่อยๆ ทั้งข้อมูลลูกค้า ระบบธุรกรรม และอัลกอริทึมเฉพาะ จึงต้องมีสถาปัตยกรรมความปลอดภัยแบบป้องกันหลายชั้น' },
-    { icon: 'ti-star', title: 'ลูกค้าคาดหวังสูงขึ้น', desc: 'ผู้บริโภคอยากได้บริการการเงินที่เร็ว ตรงใจ และใช้ได้ทุกช่องทางตลอดเวลา ซึ่งสถาบันเดิมที่ใช้เทคโนโลยีเก่าทำตามได้ยาก' },
+    { icon: 'ti-scale', title: 'กฎระเบียบที่ซับซ้อน', desc: 'ผลิตภัณฑ์การเงินในไทยอาจต้องอยู่ภายใต้ ธปท. ก.ล.ต. คปภ. และ PDPA พร้อมกัน และประกาศเรื่อง e-payment, eKYC กับการใช้บริการภายนอกก็ถูกปรับอยู่เรื่อยๆ หลายทีมยังต้องนั่งเทียบแต่ละรุ่นของระบบกับเอกสารเหล่านี้ด้วยมือ เราเอากฎที่เกี่ยวกับใบอนุญาตของคุณมาทำเป็นขั้นตรวจและขั้นอนุมัติในตัวระบบ พร้อมเก็บ Log ให้ทีม Compliance ส่งต่อให้ผู้ตรวจสอบได้เลย' },
+    { icon: 'ti-server-2', title: 'ระบบ Core เก่าที่หยุดไม่ได้', desc: 'ระบบ Core Banking หลายแห่งเขียนมาตั้งแต่หลายสิบปีก่อนและยังประมวลผลธุรกรรมหลายล้านรายการต่อวัน จึงไม่มีช่วงเสาร์อาทิตย์ไหนที่ปิดระบบได้สบายใจ จะรื้อเปลี่ยนทีเดียวก็เสี่ยงและแพงเกินไป เราสร้างแอปและบริการใหม่ไว้ข้างๆ ระบบ Core เชื่อมกันผ่าน API หรือชั้น Message แล้วค่อยย้ายทีละผลิตภัณฑ์ โดยแต่ละขั้นมีแผนย้อนกลับเสมอ' },
+    { icon: 'ti-shield-exclamation', title: 'ภัยหลอกลวงและภัยไซเบอร์', desc: 'ลิงก์ฟิชชิง SIM-swap บัญชีม้า และ QR ปลอม เป็นมิจฉาชีพที่ลูกค้าธนาคารไทยคุ้นหูกันดี และผู้โจมตียังพุ่งเป้าไปที่ API กับระบบหลังบ้านด้วย ความปลอดภัยจึงต้องมีหลายชั้น ทั้งตรวจอุปกรณ์ ยืนยันตัวตนเพิ่มเมื่อทำรายการเสี่ยง เฝ้าดูธุรกรรม และมีขั้นตอนรับมือเหตุการณ์ที่ชัดเจน เราวางเรื่องนี้ร่วมกับทีม Security ของคุณตั้งแต่สปรินต์แรก ไม่ใช่มาเพิ่มในสัปดาห์ก่อนเปิดตัว' },
+    { icon: 'ti-star', title: 'ลูกค้าคาดหวังสูงขึ้น', desc: 'คนไทยชินกับการสแกน PromptPay แล้วเงินเข้าภายในไม่กี่วินาที และเอาแอปการเงินทุกตัวไปเทียบกับแอปที่ใช้ลื่นที่สุดในมือถือ ถ้าฟอร์มสมัครยาว ต้องไปสาขาเพื่อเรื่องง่ายๆ หรือหน้าจอที่อ่านรู้เรื่องแค่ภาษาอังกฤษ ลูกค้าก็พร้อมไปใช้เจ้าอื่น เราออกแบบเป็นภาษาไทยก่อน ทำให้แต่ละขั้นสั้นที่สุด และลองกับผู้ใช้จริงก่อนเริ่มพัฒนา' },
   ]
 
   const metrics = [
@@ -37,29 +37,31 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   ]
 
   const capabilities = isEN ? [
-    { icon: 'ti-building-bank', title: 'Digital Banking Platforms', desc: 'Mobile-first banking applications with account management, payments, budgeting tools, and personalised financial insights.' },
-    { icon: 'ti-credit-card', title: 'Payment Solutions', desc: 'Secure payment processing systems supporting real-time transfers, QR payments, digital wallets, and cross-border transactions.' },
-    { icon: 'ti-shield-check', title: 'Risk & Compliance Platforms', desc: 'Automated KYC, AML, and regulatory reporting systems that reduce compliance costs while maintaining audit readiness.' },
-    { icon: 'ti-pig-money', title: 'Wealth Management Tools', desc: 'Portfolio management and advisory platforms with robo-advisory capabilities, risk profiling, and real-time market analytics.' },
-    { icon: 'ti-api', title: 'Open Banking APIs', desc: 'Secure API platforms enabling third-party integrations, account aggregation, and data sharing in compliance with open banking regulations.' },
+    { icon: 'ti-building-bank', title: 'Digital Banking Platforms', desc: 'Mobile-first banking apps covering account opening, balances, transfers, bill payment, card controls and spending summaries. They suit banks, savings co-operatives and digital-only lenders that want a better app than the one customers complain about today. We deliver the app, the admin tools behind it and the integration with your core.' },
+    { icon: 'ti-credit-card', title: 'Payment Solutions', desc: 'Payment flows for PromptPay QR, card, wallets and bank transfer, with reconciliation and refund handling built in. Merchants, platforms and payment providers use them to accept money without losing track of what was settled and when. We pay particular attention to timeouts, duplicate payments and failed callbacks, because that is where real money goes missing.' },
+    { icon: 'ti-shield-check', title: 'Risk & Compliance Platforms', desc: 'Tools for KYC checks, AML screening, transaction limits and regulatory reports, with every decision recorded. Compliance and risk officers can see why a case was flagged, who reviewed it and what they decided. This cuts repeated manual checking and keeps you ready when an inspection arrives.' },
+    { icon: 'ti-pig-money', title: 'Wealth Management Tools', desc: 'Portfolio views, suitability questionnaires, advisor workspaces and market data screens for asset managers, securities firms and advisory teams. Investors see their holdings clearly, and advisors see which clients need a call. We build to the way your firm already classifies risk, not to a generic template.' },
+    { icon: 'ti-api', title: 'Open Banking APIs', desc: 'A managed API layer with authentication, consent, rate limits and a developer portal, so partners can connect to your services safely. It helps banks and fintechs share data and trigger payments with partners without handing over database access. You get versioned APIs, clear documentation and monitoring of who calls what.' },
+    { icon: 'ti-fingerprint', title: 'Digital Onboarding & eKYC', desc: 'Sign-up flows that read a Thai national ID, run a face match and liveness check, and screen the applicant before an account opens. Lenders, insurers and wallets use them to turn a branch visit into a few minutes on a phone. We design the steps so people who fail a check get a clear way to retry or reach a human.' },
   ] : [
-    { icon: 'ti-building-bank', title: 'Digital Banking Platforms', desc: 'แอปธนาคารบนมือถือเป็นหลัก จัดการบัญชี ชำระเงิน มีเครื่องมือวางงบประมาณ และให้คำแนะนำทางการเงินเฉพาะบุคคล' },
-    { icon: 'ti-credit-card', title: 'Payment Solutions', desc: 'ระบบชำระเงินที่ปลอดภัย รองรับโอนเงินแบบเรียลไทม์ QR Payment, Digital Wallet และธุรกรรมข้ามประเทศ' },
-    { icon: 'ti-shield-check', title: 'Risk & Compliance Platforms', desc: 'ระบบ KYC, AML และรายงานตามกฎระเบียบอัตโนมัติ ลดต้นทุน Compliance และพร้อมรับการตรวจสอบเสมอ' },
-    { icon: 'ti-pig-money', title: 'Wealth Management Tools', desc: 'แพลตฟอร์มจัดการพอร์ตลงทุนและให้คำปรึกษา มี Robo-advisory ประเมินความเสี่ยงของนักลงทุน และวิเคราะห์ตลาดแบบเรียลไทม์' },
-    { icon: 'ti-api', title: 'Open Banking APIs', desc: 'แพลตฟอร์ม API ที่ปลอดภัย รองรับการเชื่อมต่อกับบริษัทภายนอก การรวมบัญชี และการแชร์ข้อมูลตามกฎ Open Banking' },
+    { icon: 'ti-building-bank', title: 'Digital Banking Platforms', desc: 'แอปธนาคารที่เน้นมือถือเป็นหลัก ตั้งแต่เปิดบัญชี ดูยอด โอนเงิน จ่ายบิล ควบคุมบัตร ไปจนถึงสรุปรายจ่าย เหมาะกับธนาคาร สหกรณ์ออมทรัพย์ และผู้ให้สินเชื่อดิจิทัลที่อยากได้แอปที่ดีกว่าตัวที่ลูกค้าบ่นอยู่ตอนนี้ เราส่งมอบทั้งแอป ระบบหลังบ้าน และการเชื่อมกับ Core ของคุณ' },
+    { icon: 'ti-credit-card', title: 'Payment Solutions', desc: 'ระบบรับชำระเงินผ่าน PromptPay QR บัตร Wallet และโอนเงินผ่านธนาคาร พร้อมระบบกระทบยอดและคืนเงินในตัว เหมาะกับร้านค้า แพลตฟอร์ม และผู้ให้บริการชำระเงินที่อยากรับเงินได้โดยไม่ต้องเดาว่ายอดไหนเคลียร์แล้วเมื่อไหร่ เราให้ความสำคัญเป็นพิเศษกับกรณี Timeout การจ่ายซ้ำ และ Callback ที่ล้มเหลว เพราะตรงนี้คือจุดที่เงินจริงหาย' },
+    { icon: 'ti-shield-check', title: 'Risk & Compliance Platforms', desc: 'เครื่องมือตรวจ KYC คัดกรอง AML ตั้งวงเงินธุรกรรม และออกรายงานตามกฎ โดยบันทึกทุกการตัดสินใจไว้ เจ้าหน้าที่ Compliance และ Risk เปิดดูได้ว่าเคสนี้ถูกติดธงเพราะอะไร ใครตรวจ และสรุปว่าอย่างไร ช่วยลดงานตรวจซ้ำด้วยมือ และทำให้พร้อมเมื่อมีการเข้าตรวจ' },
+    { icon: 'ti-pig-money', title: 'Wealth Management Tools', desc: 'หน้าดูพอร์ต แบบประเมินความเหมาะสมในการลงทุน พื้นที่ทำงานของที่ปรึกษา และหน้าข้อมูลตลาด สำหรับบริษัทจัดการกองทุน บริษัทหลักทรัพย์ และทีมที่ปรึกษา นักลงทุนเห็นสิ่งที่ถืออยู่ชัดเจน ส่วนที่ปรึกษาก็รู้ว่าลูกค้าคนไหนควรโทรหา เราสร้างตามวิธีที่บริษัทคุณจัดระดับความเสี่ยงอยู่แล้ว ไม่ใช่เทมเพลตสำเร็จรูป' },
+    { icon: 'ti-api', title: 'Open Banking APIs', desc: 'ชั้น API ที่จัดการครบทั้งการยืนยันตัวตน การขอความยินยอม การจำกัดจำนวนครั้ง และพอร์ทัลสำหรับนักพัฒนา เพื่อให้พาร์ทเนอร์เชื่อมต่อกับบริการของคุณได้อย่างปลอดภัย ช่วยให้ธนาคารและ Fintech แชร์ข้อมูลและสั่งชำระเงินกับพาร์ทเนอร์ได้โดยไม่ต้องเปิดฐานข้อมูลให้ คุณจะได้ API ที่มีเวอร์ชัน เอกสารชัดเจน และเห็นว่าใครเรียกอะไรบ้าง' },
+    { icon: 'ti-fingerprint', title: 'การเปิดบัญชีออนไลน์และ eKYC', desc: 'ขั้นตอนสมัครที่อ่านบัตรประชาชนไทย เทียบใบหน้า ตรวจว่าเป็นคนจริง และคัดกรองผู้สมัครก่อนเปิดบัญชี ผู้ให้สินเชื่อ บริษัทประกัน และ Wallet ใช้เปลี่ยนการไปสาขาให้เหลือไม่กี่นาทีบนมือถือ เราออกแบบให้คนที่ตรวจไม่ผ่านรู้ว่าต้องลองใหม่อย่างไร หรือติดต่อเจ้าหน้าที่ได้ทางไหน' },
   ]
 
   const techStack = ['React', 'Node.js', 'Kubernetes', 'PostgreSQL', 'Redis', 'Kafka', 'AWS', 'Blockchain', 'AI/ML', 'GraphQL', 'OAuth 2.0', 'PCI DSS']
 
   const useCases = isEN ? [
-    { no: '01', title: 'Mobile Banking Application', desc: 'Full-featured mobile banking platform with biometric login, real-time transactions, budgeting tools, card management, and personalised financial insights.' },
-    { no: '02', title: 'Fraud Detection Engine', desc: 'Real-time transaction monitoring system using machine learning to detect anomalous patterns, flag suspicious activity, and reduce false positive rates.' },
-    { no: '03', title: 'Open Banking Integration', desc: 'API gateway platform enabling secure account data sharing, payment initiation, and third-party fintech integrations in compliance with open banking regulations.' },
+    { no: '01', title: 'Mobile Banking Application', desc: 'A full retail banking app with biometric login, instant transfers, card management and spending insights. A bank or lender gets a design system, the app for iOS and Android, an admin console and integration with its existing core. We usually launch to a small group of staff and customers first, then widen.' },
+    { no: '02', title: 'Fraud Detection Engine', desc: 'A transaction-monitoring service that scores payments as they happen, using rules plus machine learning on patterns such as new devices, unusual amounts and rapid repeat transfers. Analysts get a queue of flagged cases with the reasons shown. The aim is to catch more real fraud without blocking good customers.' },
+    { no: '03', title: 'Open Banking Integration', desc: 'An API gateway and developer portal that lets partners read account data with customer consent and start payments. Partners can sign up, test in a sandbox and go live under your rules. You keep control of access, limits and monitoring in one place.' },
   ] : [
-    { no: '01', title: 'Mobile Banking Application', desc: 'Mobile Banking ครบชุด ล็อกอินด้วยชีวมิติ ธุรกรรมเรียลไทม์ เครื่องมือวางงบประมาณ จัดการบัตร และคำแนะนำทางการเงินเฉพาะบุคคล' },
-    { no: '02', title: 'Fraud Detection Engine', desc: 'ระบบตรวจสอบธุรกรรมแบบเรียลไทม์ด้วย Machine Learning ตรวจจับรูปแบบผิดปกติ แจ้งเตือนกิจกรรมน่าสงสัย และลดการเตือนผิด (False Positive)' },
-    { no: '03', title: 'Open Banking Integration', desc: 'แพลตฟอร์ม API Gateway ที่รองรับการแชร์ข้อมูลบัญชีอย่างปลอดภัย เริ่มการชำระเงิน และเชื่อมกับ Fintech ภายนอกตามกฎ Open Banking' },
+    { no: '01', title: 'แอป Mobile Banking', desc: 'แอปธนาคารรายย่อยเต็มรูปแบบ ล็อกอินด้วยชีวมิติ โอนเงินทันที จัดการบัตร และดูสรุปรายจ่าย ธนาคารหรือผู้ให้สินเชื่อจะได้ Design System แอปบน iOS และ Android หน้าคอนโซลหลังบ้าน และการเชื่อมกับ Core เดิม เรามักเปิดให้พนักงานกับลูกค้ากลุ่มเล็กใช้ก่อน แล้วค่อยขยาย' },
+    { no: '02', title: 'ระบบตรวจจับการทุจริต', desc: 'บริการเฝ้าดูธุรกรรมที่ให้คะแนนความเสี่ยงของการจ่ายเงินทันทีที่เกิดขึ้น ใช้ทั้งกฎและ Machine Learning กับรูปแบบอย่างอุปกรณ์ใหม่ ยอดผิดปกติ และการโอนซ้ำถี่ๆ นักวิเคราะห์จะได้คิวเคสที่ติดธง พร้อมเหตุผลที่แสดงไว้ เป้าหมายคือจับการทุจริตจริงให้ได้มากขึ้นโดยไม่ไปบล็อกลูกค้าปกติ' },
+    { no: '03', title: 'การเชื่อมต่อ Open Banking', desc: 'API Gateway และพอร์ทัลนักพัฒนาที่ให้พาร์ทเนอร์ดูข้อมูลบัญชีเมื่อลูกค้ายินยอม และสั่งชำระเงินได้ พาร์ทเนอร์สมัคร ทดสอบใน Sandbox แล้วขึ้นใช้งานจริงภายใต้กฎของคุณ ส่วนคุณคุมสิทธิ์ วงเงิน และการเฝ้าดูได้ที่เดียว' },
   ]
 
   const heroVisual = (
@@ -172,8 +174,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <div className="w-12 h-[3px] rounded-full mb-8" style={{ background: 'linear-gradient(90deg, var(--purple-light), var(--lime))' }} />
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
-                  ? 'We work with banks, insurers, asset managers, and fintech startups to build secure, scalable platforms — from mobile banking apps and fraud detection engines to payment systems and open banking integrations. Our approach combines deep financial domain knowledge with modern engineering, helping you move faster without compromising on compliance.'
-                  : 'เราทำงานร่วมกับธนาคาร บริษัทประกัน ผู้จัดการสินทรัพย์ และสตาร์ทอัพ Fintech เพื่อสร้างแพลตฟอร์มที่ปลอดภัยและขยายได้ ตั้งแต่แอป Mobile Banking ระบบตรวจจับการทุจริต ไปจนถึงระบบชำระเงินและการเชื่อมต่อ Open Banking เราผสมความเข้าใจด้านการเงินอย่างลึกซึ้งกับวิศวกรรมยุคใหม่ ช่วยให้คุณไปได้เร็วขึ้นโดยไม่ลดมาตรฐาน Compliance'}
+                  ? 'We work with banks, insurers, asset managers, lenders and fintech start-ups on the software their customers touch every day: mobile banking, payments, onboarding and fraud monitoring. Projects start by listing which licences, regulators and data you are responsible for, so compliance becomes part of the design instead of a late review. Delivery runs in short cycles with working builds, security testing and a clear handover to your own engineers or ours.'
+                  : 'เราทำงานกับธนาคาร บริษัทประกัน บริษัทจัดการสินทรัพย์ ผู้ให้สินเชื่อ และสตาร์ทอัพ Fintech ในซอฟต์แวร์ที่ลูกค้าของคุณใช้ทุกวัน ทั้งโมบายแบงก์กิ้ง ระบบชำระเงิน การเปิดบัญชี และการเฝ้าระวังการทุจริต โปรเจกต์จะเริ่มจากการไล่ดูว่าคุณถือใบอนุญาตอะไร อยู่ภายใต้หน่วยงานไหน และดูแลข้อมูลอะไรบ้าง เพื่อให้ Compliance เป็นส่วนหนึ่งของการออกแบบ ไม่ใช่ด่านตรวจตอนท้าย เราส่งงานเป็นรอบสั้นๆ ที่มี Build ใช้งานได้จริง ทดสอบความปลอดภัย และส่งมอบให้ทีมวิศวกรของคุณหรือของเราดูแลต่อได้ชัดเจน'}
               </p>
             </div>
           </div>
@@ -190,8 +192,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
-                ? 'Understanding the critical obstacles that drive digital transformation in this industry.'
-                : 'ปัญหาหลักที่ธุรกิจในอุตสาหกรรมนี้ต้องเจอ'}
+                ? 'The problems teams in this industry bring to us most often, and the ones we plan each project around.'
+                : 'นี่คือปัญหาที่ทีมในอุตสาหกรรมนี้เล่าให้เราฟังบ่อยที่สุด และเป็นสิ่งที่เราใช้วางแผนแต่ละโปรเจกต์'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -241,7 +243,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
+              {isEN ? 'The kinds of systems we build for this industry, what each one does, and who it is for.' : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -268,8 +270,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
-                ? 'Industry-proven tools and frameworks we leverage to build robust solutions.'
-                : 'เครื่องมือและ Framework ที่เราเลือกใช้ เพราะมั่นคงและเชื่อถือได้'}
+                ? 'The tools and frameworks we reach for most often, chosen because they are stable, well documented and easy to find people to maintain.'
+                : 'เครื่องมือและ Framework ที่เราเลือกใช้บ่อย เพราะเสถียร เอกสารครบ และหาคนมาดูแลต่อได้ง่าย'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -295,7 +297,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างงานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
+              {isEN ? 'Typical projects we take on in this industry, and what each one delivers.' : 'ตัวอย่างโปรเจกต์ที่เรารับทำในอุตสาหกรรมนี้ พร้อมสิ่งที่ลูกค้าจะได้รับ'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -335,7 +337,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
+              {isEN ? 'Tell us what you are building, and we will suggest where to start.' : 'เล่าให้เราฟังหน่อยว่าคุณกำลังทำอะไรอยู่ แล้วเราจะช่วยดูว่าควรเริ่มจากตรงไหน'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link

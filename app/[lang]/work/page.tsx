@@ -5,11 +5,11 @@ import WorkPageClient from './WorkPageClient'
 export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
   const isEN = params.lang === 'en'
   const title = isEN
-    ? 'Our Work — 20+ Digital Products Shipped | Haliviq'
-    : 'ผลงานของเรา — ส่งมอบงานดิจิทัลกว่า 20 โปรเจกต์ | Haliviq'
+    ? 'Website & App Portfolio, Bangkok | Haliviq'
+    : 'ผลงานเว็บไซต์และแอปมือถือ กรุงเทพฯ | Haliviq'
   const description = isEN
-    ? 'Browse Haliviq\'s portfolio of websites, mobile apps, and AI CRM systems across F&B, government, real estate, retail, and more — grouped by service category.'
-    : 'ดูผลงานของ Haliviq ทั้งเว็บไซต์ แอปมือถือ และระบบ AI CRM ให้ธุรกิจอาหาร หน่วยงานรัฐ อสังหาริมทรัพย์ ค้าปลีก และอื่น ๆ แยกตามประเภทบริการ'
+    ? 'Portfolio of a Bangkok digital product studio: restaurant websites, government apps, real-estate CRM and e-commerce stores, grouped by industry with scope for each.'
+    : 'ผลงานของ Haliviq สตูดิโอดิจิทัลในกรุงเทพฯ ทั้งเว็บไซต์ร้านอาหาร แอปหน่วยงานรัฐ CRM อสังหาฯ และร้านอีคอมเมิร์ซ แยกตามประเภทธุรกิจ พร้อมขอบเขตงาน'
   const siteUrl = `https://haliviq.com/${params.lang}/work`
   return {
     title,

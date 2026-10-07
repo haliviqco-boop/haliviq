@@ -15,19 +15,19 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   const badge = isEN ? 'Industry / Hospitality & Travel' : 'อุตสาหกรรม / การบริการและการท่องเที่ยว'
   const heroSubhead = isEN
-    ? 'Enhance guest experiences with innovative technology solutions.'
-    : 'ใช้เทคโนโลยีทำให้ผู้เข้าพักได้รับความสะดวกมากขึ้น'
+    ? 'Booking, front-desk, and guest-service software for hotels, resorts, and travel brands that want more direct bookings and fewer manual steps.'
+    : 'ซอฟต์แวร์จอง งานหน้าเคาน์เตอร์ และบริการผู้เข้าพัก สำหรับโรงแรม รีสอร์ต และแบรนด์ท่องเที่ยวที่อยากได้ยอดจองตรงมากขึ้น และมีงานพิมพ์มือน้อยลง'
 
   const challenges = isEN ? [
-    { icon: 'ti-star', title: 'Elevated Guest Expectations', desc: 'Modern travelers expect seamless digital experiences from booking through checkout, including mobile check-in, personalised recommendations, and instant service requests.' },
-    { icon: 'ti-refresh', title: 'Operational Inefficiency', desc: 'Fragmented property management, booking, and guest communication systems create operational silos that increase costs and degrade the guest experience across touchpoints.' },
-    { icon: 'ti-calendar', title: 'Seasonal Demand Volatility', desc: 'Dramatic demand fluctuations require dynamic pricing, flexible staffing, and revenue optimisation systems that adapt in real time to maximise occupancy and profitability.' },
-    { icon: 'ti-user', title: 'Persistent Staff Shortages', desc: 'The hospitality industry faces chronic labour shortages, driving the need for automation and self-service technologies that maintain service quality with fewer team members.' },
+    { icon: 'ti-star', title: 'Elevated Guest Expectations', desc: 'Guests book on a phone, compare three sites, and expect the hotel to know who they are when they arrive. They want to check in without queuing, ask for towels or a late checkout by message, and pay the way they prefer, whether that is a card, PromptPay, or a wallet. When any of these steps needs a phone call or a paper form, it tends to end up in a review. We begin by finding the two or three moments where your guests currently wait or repeat themselves, and fix those first.' },
+    { icon: 'ti-refresh', title: 'Operational Inefficiency', desc: 'Plenty of properties run the booking engine, PMS, channel manager, housekeeping notes, and guest chat as separate tools, so the same booking is typed in two or three times. The front desk reconciles numbers by hand, housekeeping hears about a late checkout through a shouted message, and finance closes the month from several spreadsheets. We map every place where data is copied manually and either connect or replace those points, so each fact is entered once and everyone sees the same thing.' },
+    { icon: 'ti-calendar', title: 'Seasonal Demand Volatility', desc: 'Occupancy in Thailand moves with high season, long weekends, school holidays, and festivals such as Songkran, so a room priced the same all year either sells out too cheaply or sits empty. Rates, promotions, minimum stays, and staff rosters all need to follow demand. We build pricing rules and booking-pace reports that compare this year with last, so your revenue manager can adjust weeks ahead instead of reacting on the day.' },
+    { icon: 'ti-user', title: 'Persistent Staff Shortages', desc: 'Hotels find it hard to hire and keep front-desk, reservation, and housekeeping staff, especially in peak months. Self-service for routine requests, such as check-in, invoices, extra amenities, and luggage storage, frees your team for the guests who really need a person. We design these flows in Thai and English, and in other languages where your guest mix calls for it, so staff are not translating all day.' },
   ] : [
-    { icon: 'ti-star', title: 'ผู้เข้าพักคาดหวังสูงขึ้น', desc: 'นักเดินทางยุคใหม่อยากได้ประสบการณ์ดิจิทัลที่ราบรื่นตั้งแต่จองจนถึงเช็กเอาต์ ทั้งเช็กอินผ่านมือถือ คำแนะนำที่ตรงใจ และขอบริการได้ทันที' },
-    { icon: 'ti-refresh', title: 'การทำงานที่ไม่คล่องตัว', desc: 'ระบบจัดการที่พัก การจอง และการสื่อสารกับผู้เข้าพักที่แยกกัน ทำให้แต่ละฝ่ายทำงานแยกส่วน ต้นทุนสูงขึ้น และประสบการณ์ของผู้เข้าพักแย่ลงในทุกขั้นตอน' },
-    { icon: 'ti-calendar', title: 'ความต้องการที่ขึ้นลงตามฤดูกาล', desc: 'ความต้องการที่ผันผวนมากต้องใช้ราคาที่ปรับตามช่วง กำลังคนที่ยืดหยุ่น และระบบเพิ่มรายได้ที่ปรับตัวแบบเรียลไทม์ เพื่อให้ห้องเต็มและได้กำไรสูงสุด' },
-    { icon: 'ti-user', title: 'ขาดแคลนพนักงานเรื้อรัง', desc: 'ธุรกิจโรงแรมและท่องเที่ยวขาดแรงงานมาต่อเนื่อง จึงต้องการระบบอัตโนมัติและเทคโนโลยีให้ลูกค้าบริการตัวเอง เพื่อรักษาคุณภาพบริการด้วยทีมที่เล็กลง' },
+    { icon: 'ti-star', title: 'ผู้เข้าพักคาดหวังสูงขึ้น', desc: 'แขกจองผ่านมือถือ เปรียบเทียบสามเว็บ แล้วคาดหวังว่าโรงแรมจะรู้ว่าเขาคือใครตอนมาถึง เขาอยากเช็กอินโดยไม่ต้องต่อคิว ขอผ้าเช็ดตัวหรือเลทเช็กเอาต์ผ่านแชต และจ่ายเงินแบบที่สะดวก จะเป็นบัตร PromptPay หรือวอลเล็ตก็ตาม ถ้าขั้นตอนไหนต้องโทรหรือกรอกกระดาษ มักไปจบที่รีวิว เราเริ่มจากหาให้เจอว่าแขกของคุณต้องรอหรือต้องบอกซ้ำตรงจุดไหนบ้าง แล้วแก้สองสามจุดนั้นก่อน' },
+    { icon: 'ti-refresh', title: 'การทำงานที่ไม่คล่องตัว', desc: 'หลายที่พักใช้ระบบจอง PMS Channel Manager โน้ตแม่บ้าน และแชตกับแขกแยกกัน การจองรายการเดียวเลยถูกพิมพ์สองสามรอบ เคาน์เตอร์ต้องนั่งเทียบตัวเลขเอง แม่บ้านรู้ว่ามีเลทเช็กเอาต์จากข้อความที่ตะโกนบอก และฝ่ายบัญชีปิดเดือนจากสเปรดชีตหลายไฟล์ เราไล่ดูทุกจุดที่ต้องคัดลอกข้อมูลด้วยมือ แล้วเชื่อมหรือเปลี่ยนจุดเหล่านั้น เพื่อให้กรอกข้อมูลครั้งเดียวและทุกคนเห็นตรงกัน' },
+    { icon: 'ti-calendar', title: 'ความต้องการที่ขึ้นลงตามฤดูกาล', desc: 'ห้องพักในไทยเต็มไม่เท่ากันตลอดปี ขึ้นกับไฮซีซัน วันหยุดยาว ปิดเทอม และเทศกาลอย่างสงกรานต์ ถ้าตั้งราคาเท่ากันทั้งปี ห้องก็จะขายหมดเร็วเกินไปในราคาถูก หรือไม่ก็ว่างเปล่า ราคา โปรโมชัน จำนวนคืนขั้นต่ำ และตารางพนักงานต้องขยับตามความต้องการ เราทำกฎการตั้งราคาและรายงานจังหวะการจอง ที่เทียบปีนี้กับปีก่อน เพื่อให้ฝ่ายดูแลรายได้ปรับราคาล่วงหน้าได้เป็นสัปดาห์ ไม่ต้องมานั่งแก้กันหน้างาน' },
+    { icon: 'ti-user', title: 'ขาดแคลนพนักงานเรื้อรัง', desc: 'โรงแรมหาและรักษาพนักงานเคาน์เตอร์ ฝ่ายจอง และแม่บ้านได้ยาก โดยเฉพาะช่วงไฮซีซัน ถ้างานที่ทำซ้ำทุกวัน เช่น เช็กอิน ขอใบเสร็จ ขอของเพิ่ม หรือฝากกระเป๋า ให้แขกทำเองได้ ทีมก็มีเวลาดูแลแขกที่ต้องการคนจริง ๆ มากขึ้น เราออกแบบขั้นตอนเหล่านี้ให้ใช้ได้ทั้งไทยและอังกฤษ และภาษาอื่นถ้ากลุ่มแขกของคุณต้องการ พนักงานจะได้ไม่ต้องเป็นล่ามทั้งวัน' },
   ]
 
   const metrics = [
@@ -37,29 +37,31 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   ]
 
   const capabilities = isEN ? [
-    { icon: 'ti-calendar-event', title: 'Booking Engine Platforms', desc: 'Direct booking systems with real-time availability, dynamic pricing, package configuration, and seamless payment processing.' },
-    { icon: 'ti-building', title: 'Property Management Systems', desc: 'Centralised PMS platforms managing reservations, housekeeping, maintenance, guest profiles, and multi-property operations.' },
-    { icon: 'ti-bell', title: 'Guest Engagement Tools', desc: 'Mobile apps and digital concierge platforms for personalised recommendations, service requests, and real-time guest communication.' },
-    { icon: 'ti-trending-up', title: 'Revenue Optimization Systems', desc: 'AI-driven pricing and revenue management platforms that maximise occupancy and RevPAR through dynamic rate optimisation.' },
-    { icon: 'ti-wifi', title: 'Contactless Experience Solutions', desc: 'Mobile check-in, digital key, and contactless payment systems that streamline the guest journey while reducing operational overhead.' },
+    { icon: 'ti-calendar-event', title: 'Booking Engine Platforms', desc: 'A booking engine on your own website, so guests can book at your best rate without going through an agent. It shows live availability, supports packages and promo codes, handles deposits and full payment by card or PromptPay, and sends confirmations in the guest\'s language. Built for phones first, since that is where most hotel searches begin.' },
+    { icon: 'ti-building', title: 'Property Management Systems', desc: 'A central PMS covering reservations, room assignment, housekeeping status, maintenance tickets, guest profiles, and invoicing, for one property or several. Front desk, housekeeping, and finance each see the screens they need, and a manager can look across all properties at once. We can build it new or extend the PMS you already run.' },
+    { icon: 'ti-bell', title: 'Guest Engagement Tools', desc: 'Apps and web tools that let guests message the hotel, request services, see opening hours, and get local tips, with requests landing in the right staff queue. Where guests already use LINE, we can offer the same service there, so nobody has to download an app for a three-night stay.' },
+    { icon: 'ti-trending-up', title: 'Revenue Optimization Systems', desc: 'Pricing and revenue tools that look at booking pace, past seasons, local events, and competitor rates, then suggest room rates and minimum stays. Your revenue manager stays in charge: the system explains each suggestion, and you decide whether to accept it.' },
+    { icon: 'ti-wifi', title: 'Contactless Experience Solutions', desc: 'Online check-in, digital room keys, and cashless payment so a guest can go straight to the room. Staff still have a clear screen for ID checks and special cases, and the flow works with the lock hardware your property already has where it supports it.' },
+    { icon: 'ti-plug-connected', title: 'Channel Manager & OTA Integration', desc: 'Many Thai hotels sell most of their rooms through online travel agents, each with its own extranet, rate plans, and cancellation rules. We connect your PMS and booking engine to the channel manager you already use, or build the connection if you do not have one, so availability and rates stay in step across every channel. That cuts overbookings, removes the nightly copy-and-paste, and makes it clear which channel is actually earning you money after commission.' },
   ] : [
-    { icon: 'ti-calendar-event', title: 'Booking Engine Platforms', desc: 'ระบบจองตรงที่แสดงห้องว่างแบบเรียลไทม์ ปรับราคาตามช่วง จัดแพ็กเกจ และชำระเงินได้ราบรื่น' },
-    { icon: 'ti-building', title: 'Property Management Systems', desc: 'แพลตฟอร์ม PMS กลาง จัดการการจอง แม่บ้าน ซ่อมบำรุง ข้อมูลผู้เข้าพัก และงานของหลายที่พัก' },
-    { icon: 'ti-bell', title: 'Guest Engagement Tools', desc: 'แอปมือถือและ Digital Concierge ให้คำแนะนำตรงใจ รับคำขอบริการ และคุยกับผู้เข้าพักแบบเรียลไทม์' },
-    { icon: 'ti-trending-up', title: 'Revenue Optimization Systems', desc: 'แพลตฟอร์มตั้งราคาและจัดการรายได้ด้วย AI เพิ่มอัตราเข้าพักและ RevPAR ด้วยการปรับราคาตามสถานการณ์' },
-    { icon: 'ti-wifi', title: 'Contactless Experience Solutions', desc: 'เช็กอินผ่านมือถือ กุญแจดิจิทัล และชำระเงินแบบไม่สัมผัส ทำให้ผู้เข้าพักสะดวกขึ้นและลดงานของพนักงาน' },
+    { icon: 'ti-calendar-event', title: 'Booking Engine Platforms', desc: 'ระบบจองบนเว็บไซต์ของคุณเอง ให้แขกจองได้ในราคาดีที่สุดโดยไม่ต้องผ่านเอเจนต์ แสดงห้องว่างตามจริง รองรับแพ็กเกจและโค้ดส่วนลด รับมัดจำหรือชำระเต็มจำนวนผ่านบัตรหรือ PromptPay และส่งใบยืนยันเป็นภาษาของแขก ออกแบบเพื่อมือถือเป็นหลัก เพราะคนส่วนใหญ่เริ่มหาโรงแรมจากมือถือ' },
+    { icon: 'ti-building', title: 'Property Management Systems', desc: 'PMS กลางที่ดูแลการจอง การจัดห้อง สถานะห้องของแม่บ้าน งานแจ้งซ่อม ข้อมูลแขก และใบแจ้งหนี้ ได้ทั้งที่พักเดียวและหลายที่พัก ฝ่ายเคาน์เตอร์ แม่บ้าน และบัญชีเห็นหน้าจอที่ตัวเองต้องใช้ ส่วนผู้จัดการดูภาพรวมทุกที่พักพร้อมกันได้ เราสร้างใหม่ให้ หรือต่อยอดจาก PMS ที่คุณใช้อยู่ก็ได้' },
+    { icon: 'ti-bell', title: 'Guest Engagement Tools', desc: 'แอปและเว็บให้แขกส่งข้อความหาโรงแรม ขอบริการ ดูเวลาเปิดของสิ่งอำนวยความสะดวก และดูคำแนะนำร้านหรือที่เที่ยวใกล้ที่พัก โดยคำขอจะไปเข้าคิวของพนักงานที่รับผิดชอบเลย ถ้าแขกของคุณใช้ LINE อยู่แล้ว เราทำบริการแบบเดียวกันบน LINE ได้ แขกที่พักสามคืนจะได้ไม่ต้องโหลดแอป' },
+    { icon: 'ti-trending-up', title: 'Revenue Optimization Systems', desc: 'เครื่องมือตั้งราคาและดูแลรายได้ที่ดูจังหวะการจอง ฤดูกาลปีก่อน อีเวนต์ในพื้นที่ และราคาคู่แข่ง แล้วแนะนำราคาห้องและจำนวนคืนขั้นต่ำ คนตัดสินใจยังเป็นฝ่ายรายได้ของคุณ ระบบจะอธิบายเหตุผลของทุกคำแนะนำ แล้วคุณเลือกเองว่าจะใช้หรือไม่' },
+    { icon: 'ti-wifi', title: 'Contactless Experience Solutions', desc: 'เช็กอินออนไลน์ กุญแจห้องดิจิทัล และจ่ายเงินแบบไม่ใช้เงินสด แขกเดินขึ้นห้องได้เลย ส่วนพนักงานยังมีหน้าจอที่ชัดเจนไว้ตรวจบัตรและจัดการกรณีพิเศษ และถ้าระบบล็อกประตูที่โรงแรมใช้อยู่รองรับ เราก็เชื่อมให้ใช้งานร่วมกันได้' },
+    { icon: 'ti-plug-connected', title: 'Channel Manager & OTA Integration', desc: 'โรงแรมในไทยหลายแห่งขายห้องผ่านเอเจนต์ออนไลน์เป็นหลัก ซึ่งแต่ละเจ้ามีหน้าแอดมิน แผนราคา และเงื่อนไขยกเลิกไม่เหมือนกัน เราเชื่อม PMS และระบบจองของคุณเข้ากับ Channel Manager ที่ใช้อยู่แล้ว หรือทำตัวเชื่อมให้ถ้ายังไม่มี เพื่อให้ห้องว่างและราคาตรงกันทุกช่องทาง ลดปัญหาห้องซ้อน เลิกนั่งคัดลอกตัวเลขทุกคืน และเห็นชัดว่าช่องทางไหนทำเงินให้จริงหลังหักค่าคอมมิชชัน' },
   ]
 
   const techStack = ['React', 'React Native', 'Node.js', 'Redis', 'Elasticsearch', 'AWS', 'Stripe', 'Google Maps API', 'IoT', 'Machine Learning']
 
   const useCases = isEN ? [
-    { no: '01', title: 'Direct Booking Engine', desc: 'Conversion-optimized booking platform with real-time availability, dynamic pricing, package upsells, promotional codes, and integrated payment processing.' },
-    { no: '02', title: 'Guest Experience Mobile App', desc: 'White-label mobile application for guests with mobile check-in, digital key, service requests, local recommendations, and in-app messaging with staff.' },
-    { no: '03', title: 'Revenue Management System', desc: 'AI-driven revenue optimization platform that analyzes market demand, competitor rates, and booking patterns to recommend dynamic pricing strategies.' },
+    { no: '01', title: 'Direct Booking Engine', desc: 'A booking site built to turn visitors into reservations. Guests pick dates, see live rates for each room type, add breakfast or airport transfers, apply a promo code, and pay, with every step readable on a small screen. Reservations flow straight into your PMS, and your team gets a report showing how many people dropped off at which step. Best suited to independent hotels and resorts that want to rely less on agent commission.' },
+    { no: '02', title: 'Guest Experience Mobile App', desc: 'A branded app or LINE-based experience for guests. Before arrival they complete check-in details; during the stay they open the door, request housekeeping, book a spa slot, or message staff; after checkout they receive the invoice. Staff see requests in one queue with timestamps, so nothing gets lost between shifts. Suitable for a single resort or a group of properties that share a guest base.' },
+    { no: '03', title: 'Revenue Management System', desc: 'A pricing assistant for the person who sets your rates. It combines your booking history, current pace, local events, and competitor prices into a daily view with suggested rates, and keeps a log of what was changed and why. It is built to support revenue managers, not replace them, and it can start small, with a pricing dashboard, before moving to automatic rate pushes.' },
   ] : [
-    { no: '01', title: 'Direct Booking Engine', desc: 'แพลตฟอร์มจองที่ปรับให้ปิดการขายได้มากที่สุด แสดงห้องว่างแบบเรียลไทม์ ปรับราคาตามช่วง ขายแพ็กเกจเพิ่ม โค้ดส่วนลด และชำระเงินครบ' },
-    { no: '02', title: 'Guest Experience Mobile App', desc: 'แอปมือถือแบรนด์ของคุณเองสำหรับผู้เข้าพัก เช็กอินผ่านมือถือ กุญแจดิจิทัล ขอบริการ แนะนำสถานที่ และแชตกับพนักงานในแอป' },
-    { no: '03', title: 'Revenue Management System', desc: 'แพลตฟอร์มเพิ่มรายได้ด้วย AI วิเคราะห์ความต้องการของตลาด ราคาคู่แข่ง และรูปแบบการจอง เพื่อแนะนำกลยุทธ์ตั้งราคาตามสถานการณ์' },
+    { no: '01', title: 'Direct Booking Engine', desc: 'เว็บจองที่สร้างมาเพื่อเปลี่ยนคนเข้าชมให้เป็นการจองจริง แขกเลือกวันที่ ดูราคาสดของห้องแต่ละประเภท เพิ่มอาหารเช้าหรือรถรับส่งสนามบิน ใส่โค้ดส่วนลด แล้วจ่ายเงิน ทุกขั้นตอนอ่านง่ายบนจอเล็ก การจองไหลเข้า PMS เลย และทีมคุณจะได้รายงานว่ามีคนหลุดออกไปที่ขั้นตอนไหนมากที่สุด เหมาะกับโรงแรมและรีสอร์ตอิสระที่อยากพึ่งค่าคอมมิชชันเอเจนต์ให้น้อยลง' },
+    { no: '02', title: 'Guest Experience Mobile App', desc: 'แอปแบรนด์ของคุณเองหรือบริการบน LINE สำหรับแขก ก่อนมาถึงแขกกรอกข้อมูลเช็กอินไว้ก่อน ระหว่างพักก็เปิดประตู ขอแม่บ้าน จองคิวสปา หรือส่งข้อความหาพนักงานได้ พอเช็กเอาต์ก็ได้รับใบแจ้งหนี้ ฝั่งพนักงานเห็นคำขอทั้งหมดในคิวเดียวพร้อมเวลา งานจึงไม่หลุดระหว่างเปลี่ยนกะ เหมาะกับรีสอร์ตแห่งเดียวหรือกลุ่มที่พักที่มีฐานแขกร่วมกัน' },
+    { no: '03', title: 'Revenue Management System', desc: 'ผู้ช่วยตั้งราคาสำหรับคนที่ดูแลเรื่องราคาห้องของคุณ รวมประวัติการจอง จังหวะการจองตอนนี้ อีเวนต์ในพื้นที่ และราคาคู่แข่งมาไว้ในหน้าจอรายวัน พร้อมราคาที่แนะนำ และเก็บบันทึกว่าเปลี่ยนอะไรเพราะอะไร ระบบนี้ช่วยฝ่ายรายได้ ไม่ได้มาแทนเขา และเริ่มจากของเล็ก ๆ อย่างแดชบอร์ดราคาก่อน แล้วค่อยขยับไปส่งราคาอัตโนมัติทีหลังก็ได้' },
   ]
 
   const heroVisual = (
@@ -147,8 +149,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <div className="w-12 h-[3px] rounded-full mb-8" style={{ background: 'linear-gradient(90deg, var(--purple-light), var(--lime))' }} />
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
-                  ? 'We help hotels, resorts, and travel companies build direct booking engines, property management systems, guest experience apps, and revenue optimization platforms. Our solutions handle seasonal demand fluctuations and multi-property complexity while delighting guests with intuitive, seamless digital experiences.'
-                  : 'เราช่วยโรงแรม รีสอร์ต และบริษัทท่องเที่ยวสร้างระบบจองตรง ระบบจัดการที่พัก (PMS) แอปสำหรับผู้เข้าพัก และแพลตฟอร์มเพิ่มรายได้ ระบบของเรารองรับความต้องการที่ขึ้นลงตามฤดูกาลและการดูแลหลายที่พัก พร้อมให้ผู้เข้าพักใช้งานดิจิทัลได้ง่ายและราบรื่น'}
+                  ? 'We build the software behind a hotel or travel brand: direct booking engines, property management systems (PMS), guest apps, and pricing tools. A project usually starts by tracing how one reservation travels today, from your website or an online travel agent, through the front desk and housekeeping, to checkout, and then fixing the steps where staff retype data or guests have to ask twice. We design for how travel works in Thailand: high and low seasons, guests booking in several languages, payment by card or PromptPay, and teams that run more than one property from a single back office. What you get is a system your staff can learn in a shift and your guests can use without calling the front desk.'
+                  : 'เราสร้างซอฟต์แวร์ที่อยู่เบื้องหลังโรงแรมและแบรนด์ท่องเที่ยว ทั้งระบบจองตรง ระบบจัดการที่พัก (PMS) แอปสำหรับผู้เข้าพัก และเครื่องมือช่วยตั้งราคา โปรเจกต์ส่วนใหญ่เริ่มจากการนั่งไล่ดูกับคุณว่าการจองหนึ่งรายการเดินทางผ่านใครบ้าง ตั้งแต่เว็บไซต์หรือเอเจนต์ออนไลน์ ไปจนถึงเคาน์เตอร์ แม่บ้าน และเช็กเอาต์ แล้วค่อยแก้จุดที่พนักงานต้องพิมพ์ข้อมูลซ้ำหรือแขกต้องถามซ้ำ เราออกแบบให้เข้ากับการท่องเที่ยวของไทย ทั้งไฮซีซันและโลว์ซีซัน แขกที่จองหลายภาษา การจ่ายผ่านบัตรหรือ PromptPay และทีมที่ดูแลหลายที่พักจากหลังบ้านเดียว ผลที่ได้คือระบบที่พนักงานเรียนรู้ได้ภายในไม่กี่กะ และแขกใช้เองได้โดยไม่ต้องโทรถามเคาน์เตอร์'}
               </p>
             </div>
           </div>
@@ -165,8 +167,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
-                ? 'Understanding the critical obstacles that drive digital transformation in this industry.'
-                : 'ปัญหาหลักที่ธุรกิจในอุตสาหกรรมนี้ต้องเจอ'}
+                ? 'Four problems we hear from hotel and travel teams again and again, and why they keep coming back.'
+                : 'สี่ปัญหาที่ทีมโรงแรมและธุรกิจท่องเที่ยวเล่าให้เราฟังบ่อยที่สุด และเหตุผลที่มันวนกลับมาเรื่อย ๆ'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -216,7 +218,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
+              {isEN ? 'The systems we build for hotels, resorts, and tour companies, and what each one changes for your team.' : 'ระบบที่เราสร้างให้โรงแรม รีสอร์ต และบริษัททัวร์ พร้อมอธิบายว่าแต่ละตัวช่วยเปลี่ยนวิธีทำงานของทีมคุณยังไง'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -243,8 +245,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
-                ? 'Industry-proven tools and frameworks we leverage to build robust solutions.'
-                : 'เครื่องมือและ Framework ที่เราเลือกใช้ เพราะมั่นคงและเชื่อถือได้'}
+                ? 'Tools we choose for booking, mobile, and data work because they are well documented and easy for your own team to take over later.'
+                : 'เครื่องมือที่เราเลือกใช้กับงานจอง แอปมือถือ และข้อมูล เพราะมีเอกสารครบ และทีมของคุณรับช่วงดูแลต่อได้ง่าย'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -270,7 +272,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างงานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
+              {isEN ? 'Three typical projects, described by what gets built, who uses it, and what changes day to day.' : 'ตัวอย่างโปรเจกต์ทั่วไปสามแบบ เล่าให้ฟังว่าสร้างอะไร ใครเป็นคนใช้ และการทำงานประจำวันเปลี่ยนไปยังไง'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -310,7 +312,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
+              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังหน่อยว่าคุณกำลังทำอะไรอยู่'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link

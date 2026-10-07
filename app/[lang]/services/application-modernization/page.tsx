@@ -27,40 +27,42 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   const badge    = isEN ? 'Engineering / Application Modernization'  : 'วิศวกรรม / ปรับปรุงระบบเดิม (Application Modernization)'
   const title    = isEN ? 'Modernize Legacy Systems'  : 'ปรับปรุงระบบเดิม'
   const subtitle = isEN ? 'Without Stopping the Business'    : 'โดยไม่หยุดธุรกิจ'
-  const heroDesc = isEN ? 'Evolve legacy systems into maintainable, API-first, cloud-ready platforms without stopping the business.'  : 'ปรับระบบเดิมให้เป็นแพลตฟอร์มแบบ API-first พร้อมใช้บน Cloud และดูแลง่าย โดยไม่ต้องหยุดธุรกิจ'
-  const whyTitle = isEN ? 'Why legacy systems quietly cap your growth'    : 'ทำไมระบบเดิมถึงค่อยๆ ฉุดการเติบโตโดยไม่มีใครรู้ตัว'
-  const whyDesc  = isEN ? 'Every feature that takes weeks instead of days, every outage from a fragile dependency, every engineer who avoids touching "that module" — that is legacy debt compounding against you.'  : 'ฟีเจอร์ที่ต้องใช้เป็นสัปดาห์แทนที่จะเป็นวัน ระบบล่มเพราะส่วนที่เปราะบาง วิศวกรที่ไม่กล้าแตะโมดูลนั้น ทั้งหมดคือหนี้ทางเทคนิคที่พอกพูนขึ้นเรื่อยๆ'
+  const heroDesc = isEN ? 'Many Thai companies run on software that was written ten or fifteen years ago and still holds the business together. It works, but every change is slow, nobody wants to touch it, and new channels such as a mobile app or a partner integration are hard to add. Haliviq modernizes these systems one piece at a time: we put an API layer in front, move individual functions to newer services, and keep the old system running until each replacement has proven itself. Your staff and customers keep working throughout.'  : 'บริษัทไทยหลายแห่งยังใช้ซอฟต์แวร์ที่เขียนไว้เมื่อสิบถึงสิบห้าปีก่อน และมันยังแบกธุรกิจอยู่ ระบบยังใช้งานได้ แต่แก้อะไรทีก็ช้า ไม่มีใครอยากแตะ และการเพิ่มช่องทางใหม่อย่างแอปมือถือหรือการเชื่อมกับพาร์ทเนอร์ก็ทำได้ยาก Haliviq ปรับปรุงระบบแบบนี้ทีละส่วน เราวางชั้น API ไว้ด้านหน้า ย้ายฟังก์ชันทีละอย่างไปอยู่บนบริการใหม่ และให้ระบบเดิมทำงานต่อจนกว่าส่วนใหม่จะพิสูจน์ตัวเองแล้ว พนักงานและลูกค้าของคุณทำงานต่อได้ตลอด'
+  const whyTitle = isEN ? 'Why old systems slow you down without anyone noticing'    : 'ทำไมระบบเก่าถึงค่อยๆ ฉุดธุรกิจโดยไม่มีใครรู้ตัว'
+  const whyDesc  = isEN ? 'A feature that takes weeks instead of days, an outage caused by one fragile dependency, an engineer who avoids "that module" because nobody remembers how it works: these are the visible signs of legacy debt. The cost grows quietly because each workaround makes the next change harder. Modernizing in small, tested steps stops that growth without the risk of a big-bang rewrite.'  : 'ฟีเจอร์ที่ต้องใช้เป็นสัปดาห์แทนที่จะเป็นวัน ระบบล่มเพราะส่วนที่เปราะบางจุดเดียว วิศวกรที่เลี่ยง "โมดูลนั้น" เพราะไม่มีใครจำได้แล้วว่ามันทำงานยังไง ทั้งหมดนี้คือสัญญาณของหนี้ทางเทคนิคที่สะสมมานาน ต้นทุนเพิ่มขึ้นแบบเงียบๆ เพราะทุกการแก้ขัดทำให้การแก้ครั้งต่อไปยากขึ้น การปรับปรุงเป็นขั้นเล็กๆ ที่ทดสอบแล้วช่วยหยุดสิ่งนี้ได้ โดยไม่ต้องเสี่ยงกับการเขียนใหม่ทั้งระบบรวดเดียว'
   const ctaTitle = isEN ? 'Ready to modernize without the risk?'    : 'พร้อมปรับปรุงระบบโดยไม่เสี่ยงหรือยัง?'
-  const ctaDesc  = isEN ? 'Start with a free legacy system assessment. We will tell you honestly what to rewrite, wrap, or leave alone.'   : 'เริ่มด้วยการประเมินระบบเดิมฟรี เราจะบอกตรงๆ ว่าส่วนไหนควรเขียนใหม่ ครอบด้วย API หรือปล่อยไว้ตามเดิม'
+  const ctaDesc  = isEN ? 'Start with a free legacy system assessment. We will tell you plainly which parts to rewrite, which to wrap in an API, and which to leave alone.'   : 'เริ่มด้วยการประเมินระบบเดิมฟรี เราจะบอกตรงๆ ว่าส่วนไหนควรเขียนใหม่ ส่วนไหนควรครอบด้วย API และส่วนไหนปล่อยไว้ตามเดิมได้'
   const overviewText = isEN
-    ? "We modernize critical applications through assessment, strangler-fig migrations, refactoring, and re-architecture — deliberately avoiding prolonged, risky rewrites. That means decomposing monoliths, introducing APIs and event-driven patterns, containerizing workloads, and executing data migrations with cutover strategies that preserve revenue while your users stay productive throughout, not after a six-month blackout."
-    : 'เราปรับปรุงแอปพลิเคชันหลักของคุณด้วยการประเมินระบบ ย้ายแบบ Strangler-fig ปรับโครงสร้างโค้ด และออกแบบสถาปัตยกรรมใหม่ โดยตั้งใจเลี่ยงการเขียนใหม่ทั้งระบบที่ใช้เวลานานและเสี่ยงสูง คือแตก Monolith เป็นส่วนย่อย ใช้ API และการทำงานแบบ Event-driven ใช้ Container ย้ายข้อมูล และวางแผนสลับไปใช้ระบบใหม่โดยไม่กระทบรายได้ ผู้ใช้ของคุณทำงานต่อได้ตลอด ไม่ใช่หยุดระบบไป 6 เดือน'
+    ? "We modernize business-critical applications without the long, risky rewrite. The work starts with an assessment of your code, data, and how the system is really used, so we can sort each part into rewrite, wrap, replace, or leave alone. From there we use the strangler-fig approach: new services take over one capability at a time behind an API gateway while the old system keeps serving users. Depending on what we find, that can mean splitting a monolith along its natural seams, adding APIs and event-driven messaging, moving workloads into containers, and migrating data with checks that prove the old and new records match before each cutover. Every step can be rolled back. We also write tests around the existing behaviour first, because a system with no tests turns every change into a gamble. The result is a platform your team can understand, change quickly, and run at lower cost, reached without a six-month period when the business waits for the new version."
+    : 'เราปรับปรุงแอปพลิเคชันที่ธุรกิจพึ่งพาโดยไม่ต้องเขียนใหม่ยาวๆ ที่เสี่ยงสูง งานเริ่มจากประเมินโค้ด ข้อมูล และวิธีที่ระบบถูกใช้งานจริง เพื่อจัดแต่ละส่วนเป็น เขียนใหม่ ครอบด้วย API เปลี่ยนตัว หรือปล่อยไว้ จากนั้นเราใช้แนวทาง Strangler-fig คือให้บริการใหม่เข้ามารับหน้าที่ทีละอย่างผ่าน API Gateway ขณะที่ระบบเดิมยังให้บริการผู้ใช้ต่อไป ขึ้นอยู่กับสิ่งที่เจอ อาจต้องแตก Monolith ตามรอยต่อตามธรรมชาติ เพิ่ม API และการส่งข้อความแบบ Event-driven ย้ายงานเข้า Container และย้ายข้อมูลโดยตรวจให้แน่ใจก่อนสลับระบบทุกครั้งว่าข้อมูลเก่ากับใหม่ตรงกัน ทุกขั้นย้อนกลับได้ เราเขียน Test ครอบพฤติกรรมของระบบเดิมไว้ก่อนด้วย เพราะระบบที่ไม่มี Test ทำให้ทุกการแก้เป็นการเสี่ยงโชค ผลที่ได้คือแพลตฟอร์มที่ทีมของคุณเข้าใจ แก้ได้เร็ว และดูแลได้ถูกลง โดยไม่ต้องมีช่วงหลายเดือนที่ธุรกิจต้องรอระบบใหม่'
 
   const heroBullets = isEN ? [
-      'Incremental modernization using the strangler-fig pattern',
-      'Decompose monoliths into services behind an API gateway',
-      'Containerize and move workloads onto Kubernetes',
-      'Data migrations with parity verification, not guesswork',
-      'The business keeps running throughout — no rewrite blackout',
+      'Step-by-step modernization with the strangler-fig pattern, so the old system keeps running',
+      'Monoliths split into services at their natural seams, behind an API gateway',
+      'Workloads moved into containers and onto Kubernetes where that makes sense',
+      'Data migrations that compare old and new records before every cutover',
+      'Tests written around current behaviour before anything is changed',
+      'A rollback path for every step, and no rewrite blackout',
     ] : [
-      'ปรับปรุงทีละส่วนด้วย Strangler-fig Pattern',
-      'แตก Monolith เป็นบริการย่อยผ่าน API Gateway',
-      'ใช้ Container และย้ายงานขึ้น Kubernetes',
-      'ย้ายข้อมูลพร้อมตรวจความถูกต้อง ไม่ใช่การเดา',
-      'ธุรกิจทำงานต่อได้ตลอด ไม่ต้องหยุดระบบนานๆ'
+      'ปรับปรุงทีละขั้นด้วย Strangler-fig Pattern ระบบเดิมจึงทำงานต่อได้',
+      'แตก Monolith เป็นบริการย่อยตามรอยต่อตามธรรมชาติ ผ่าน API Gateway',
+      'ย้ายงานเข้า Container และขึ้น Kubernetes เมื่อเหมาะสม',
+      'ย้ายข้อมูลโดยเทียบข้อมูลเก่ากับใหม่ก่อนสลับระบบทุกครั้ง',
+      'เขียน Test ครอบพฤติกรรมปัจจุบันก่อนเริ่มแก้อะไร',
+      'ทุกขั้นมีทางย้อนกลับ และไม่ต้องหยุดระบบรอเขียนใหม่',
     ]
   const whyPoints   = isEN ? [
-      'Legacy systems with no tests make every change a gamble — modernization starts by locking in behavior first.',
-      'The strangler pattern lets new services take over one capability at a time, with rollback always available.',
-      'A full rewrite is rarely the right answer — it is usually slower, riskier, and more expensive than incremental change.',
-      'API-first architecture unlocks new channels (mobile, partners, AI) without touching the legacy core.',
-      'Total cost of ownership drops significantly once hosting, licensing, and maintenance move to modern patterns.',
+      'Legacy systems with no tests make every change a gamble, so modernization starts by locking in current behaviour.',
+      'The strangler pattern lets new services take over one capability at a time, with a rollback always ready.',
+      'A full rewrite is rarely the right answer. It is usually slower, riskier, and more expensive than changing the system in steps.',
+      'An API-first design opens new channels such as mobile, partners, and AI without touching the legacy core.',
+      'Total cost of ownership falls once hosting, licensing, and maintenance move to modern setups.',
     ] : [
-      'ระบบเดิมที่ไม่มี Test ทำให้ทุกการแก้ไขเหมือนการเสี่ยงโชค เราจึงเริ่มจากล็อกพฤติกรรมของระบบไว้ก่อน',
-      'Strangler Pattern ให้บริการใหม่เข้ามาแทนที่ทีละส่วน และย้อนกลับได้เสมอ',
-      'การเขียนใหม่ทั้งหมดมักไม่ใช่คำตอบ เพราะช้ากว่า เสี่ยงกว่า และแพงกว่าการเปลี่ยนทีละส่วน',
-      'สถาปัตยกรรมแบบ API-first เปิดช่องทางใหม่ (Mobile, พาร์ทเนอร์, AI) โดยไม่ต้องแตะแกนหลักของระบบเดิม',
-      'ต้นทุนรวมในการเป็นเจ้าของระบบลดลงมาก เมื่อค่าโฮสติ้ง ค่าไลเซนส์ และค่าดูแลรักษาย้ายมาใช้แนวทางสมัยใหม่',
+      'ระบบเดิมที่ไม่มี Test ทำให้ทุกการแก้เป็นการเสี่ยงโชค เราจึงเริ่มจากล็อกพฤติกรรมปัจจุบันของระบบไว้ก่อน',
+      'Strangler Pattern ให้บริการใหม่รับหน้าที่ทีละอย่าง และมีทางย้อนกลับพร้อมเสมอ',
+      'การเขียนใหม่ทั้งหมดมักไม่ใช่คำตอบ เพราะมักช้ากว่า เสี่ยงกว่า และแพงกว่าการเปลี่ยนทีละส่วน',
+      'การออกแบบแบบ API-first เปิดช่องทางใหม่อย่างแอปมือถือ พาร์ทเนอร์ และ AI ได้ โดยไม่ต้องแตะแกนหลักของระบบเดิม',
+      'ต้นทุนรวมในการเป็นเจ้าของระบบลดลงเมื่อค่าโฮสติ้ง ค่าไลเซนส์ และค่าดูแลรักษาย้ายมาใช้แนวทางสมัยใหม่',
     ]
   const outcomes    = isEN ? [
       {stat: '5x', label: 'Faster Feature Delivery', desc: 'After decomposition and API layer'},
@@ -74,54 +76,60 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {stat: '100%', label: 'ตรวจความตรงกันของข้อมูล', desc: 'ก่อนสลับระบบทุกครั้ง'}
     ]
   const features    = isEN ? [
-      {icon: 'ti-search', title: 'Legacy Assessment', desc: 'Technical and business analysis determining what to rewrite, wrap, replace, or retain.'},
-      {icon: 'ti-adjustments', title: 'Incremental Refactoring', desc: 'In-place structural and testability improvements while maintaining continuous delivery.'},
-      {icon: 'ti-cloud', title: 'Cloud-Native Patterns', desc: 'Containers, microservices, serverless, and event-driven designs where justified.'},
-      {icon: 'ti-api', title: 'API Modernization', desc: 'Stable APIs and integration layers enabling new channels without full rewrites.'},
-      {icon: 'ti-database-export', title: 'Data Migration', desc: 'Parity-verified data transitions with rollback safety at every cutover.'},
-      {icon: 'ti-topology-star-3', title: 'Microservices Decomposition', desc: 'Breaking monoliths apart at natural seams, not arbitrary boundaries.'}
+      {icon: 'ti-search', title: 'Legacy Assessment', desc: 'We read the code, inspect the data, and talk to the people who use the system, then give each part a clear verdict: rewrite, wrap, replace, or keep. You get a plan with reasons, not a default recommendation to rebuild.'},
+      {icon: 'ti-adjustments', title: 'Incremental Refactoring', desc: 'We tidy the structure and add tests a section at a time, while the team keeps releasing. Each change is small enough to review and to undo.'},
+      {icon: 'ti-cloud', title: 'Cloud-Native Patterns', desc: 'Containers, microservices, serverless, and event-driven designs are used only where they solve a real problem such as scaling or release speed. Where a simpler setup works, we keep it simple.'},
+      {icon: 'ti-api', title: 'API Modernization', desc: 'A stable API layer in front of the old system lets a mobile app, a partner, or an AI tool use your data without touching the core. It is often the fastest first step.'},
+      {icon: 'ti-database-export', title: 'Data Migration', desc: 'We move data in stages, compare old and new records before each cutover, and keep a way back. Mismatches are fixed before users ever see them.'},
+      {icon: 'ti-topology-star-3', title: 'Microservices Decomposition', desc: 'We split a monolith where the business already draws a line, such as orders, billing, or inventory, instead of cutting it into arbitrary pieces that then have to talk constantly.'}
     ] : [
-      {icon: 'ti-search', title: 'Legacy Assessment', desc: 'วิเคราะห์ทั้งด้านเทคนิคและธุรกิจ เพื่อตัดสินใจว่าส่วนไหนควรเขียนใหม่ ครอบด้วย API เปลี่ยนใหม่ หรือคงไว้'},
-      {icon: 'ti-adjustments', title: 'Incremental Refactoring', desc: 'ปรับโครงสร้างและทำให้ทดสอบได้ทีละส่วน โดยยังส่งงานได้ต่อเนื่อง'},
-      {icon: 'ti-cloud', title: 'Cloud-Native Patterns', desc: 'Container, Microservices, Serverless และ Event-driven Design เมื่อมีเหตุผลรองรับ'},
-      {icon: 'ti-api', title: 'API Modernization', desc: 'สร้างชั้น API และการเชื่อมระบบที่มั่นคง เปิดช่องทางใหม่ได้โดยไม่ต้องเขียนใหม่ทั้งหมด'},
-      {icon: 'ti-database-export', title: 'Data Migration', desc: 'ย้ายข้อมูลพร้อมตรวจความตรงกัน และย้อนกลับได้อย่างปลอดภัยในทุกการสลับระบบ'},
-      {icon: 'ti-topology-star-3', title: 'Microservices Decomposition', desc: 'แตก Monolith ตามรอยต่อที่เป็นธรรมชาติ ไม่ใช่แบ่งแบบสุ่ม'}
+      {icon: 'ti-search', title: 'Legacy Assessment', desc: 'เราอ่านโค้ด ดูข้อมูล และคุยกับคนที่ใช้ระบบ แล้วให้ผลชัดเจนกับแต่ละส่วนว่าควรเขียนใหม่ ครอบด้วย API เปลี่ยนตัว หรือคงไว้ คุณจะได้แผนพร้อมเหตุผล ไม่ใช่คำแนะนำให้สร้างใหม่แบบอัตโนมัติ'},
+      {icon: 'ti-adjustments', title: 'Incremental Refactoring', desc: 'เราจัดโครงสร้างและเพิ่ม Test ทีละส่วน ขณะที่ทีมยังปล่อยงานต่อได้ แต่ละการเปลี่ยนแปลงเล็กพอที่จะตรวจและย้อนกลับได้'},
+      {icon: 'ti-cloud', title: 'Cloud-Native Patterns', desc: 'Container, Microservices, Serverless และ Event-driven Design จะใช้เฉพาะเมื่อแก้ปัญหาจริง เช่น ขยายระบบหรือปล่อยงานให้เร็วขึ้น ถ้าแบบง่ายกว่าก็พอ เราก็เลือกแบบง่าย'},
+      {icon: 'ti-api', title: 'API Modernization', desc: 'ชั้น API ที่มั่นคงหน้าระบบเดิม ช่วยให้แอปมือถือ พาร์ทเนอร์ หรือเครื่องมือ AI ใช้ข้อมูลของคุณได้โดยไม่ต้องแตะแกนหลัก มักเป็นก้าวแรกที่เร็วที่สุด'},
+      {icon: 'ti-database-export', title: 'Data Migration', desc: 'เราย้ายข้อมูลเป็นช่วง เทียบข้อมูลเก่ากับใหม่ก่อนสลับทุกครั้ง และเก็บทางย้อนกลับไว้ ถ้าข้อมูลไม่ตรงก็แก้ก่อนที่ผู้ใช้จะเห็น'},
+      {icon: 'ti-topology-star-3', title: 'Microservices Decomposition', desc: 'เราแตก Monolith ตรงที่ธุรกิจแบ่งเส้นอยู่แล้ว เช่น ออเดอร์ การเรียกเก็บเงิน หรือสต็อก ไม่ใช่หั่นเป็นชิ้นตามใจแล้วต้องคุยกันตลอดเวลา'}
     ]
   const steps       = isEN ? [
-      {no: '01', title: 'Assess', desc: 'Examine code, data, and operational conditions.'},
-      {no: '02', title: 'Strategy', desc: 'Define rewrite, refactor, or replace pathways.'},
-      {no: '03', title: 'Modernize', desc: 'Execute incremental structural enhancements.'},
-      {no: '04', title: 'Migrate', desc: 'Handle platform and data transitions.'},
-      {no: '05', title: 'Verify', desc: 'Confirm parity, performance, no regressions.'},
-      {no: '06', title: 'Optimize', desc: 'Improve cost efficiency, scalability, operability.'}
+      {no: '01', title: 'Assess', desc: 'We examine the code, data, and how the system behaves in daily use, including the parts nobody documented.'},
+      {no: '02', title: 'Strategy', desc: 'We decide, part by part, whether to rewrite, refactor, wrap, or replace, and agree an order that protects revenue.'},
+      {no: '03', title: 'Modernize', desc: 'We restructure in small steps, with tests around the old behaviour so changes can be checked straight away.'},
+      {no: '04', title: 'Migrate', desc: 'We move platforms and data in stages, with a rollback ready at each cutover.'},
+      {no: '05', title: 'Verify', desc: 'We confirm that data matches, performance holds up, and nothing that worked before has stopped working.'},
+      {no: '06', title: 'Optimize', desc: 'We tune hosting cost, scaling, and day-to-day operation so the new setup is cheaper to run than the old one.'}
     ] : [
-      {no: '01', title: 'Assess', desc: 'ตรวจโค้ด ข้อมูล และสภาพการทำงานจริง'},
-      {no: '02', title: 'Strategy', desc: 'กำหนดว่าจะเขียนใหม่ ปรับโครงสร้าง หรือเปลี่ยนใหม่'},
-      {no: '03', title: 'Modernize', desc: 'ปรับโครงสร้างทีละขั้น'},
-      {no: '04', title: 'Migrate', desc: 'จัดการการย้ายแพลตฟอร์มและข้อมูล'},
-      {no: '05', title: 'Verify', desc: 'ยืนยันว่าข้อมูลตรงกัน ประสิทธิภาพดี และไม่มีของเดิมพัง'},
-      {no: '06', title: 'Optimize', desc: 'ปรับต้นทุน การขยายระบบ และการดูแลระบบ'}
+      {no: '01', title: 'Assess', desc: 'ตรวจโค้ด ข้อมูล และพฤติกรรมของระบบในการใช้งานประจำวัน รวมถึงส่วนที่ไม่มีใครเขียนเอกสารไว้'},
+      {no: '02', title: 'Strategy', desc: 'ตัดสินใจทีละส่วนว่าจะเขียนใหม่ ปรับโครงสร้าง ครอบด้วย API หรือเปลี่ยนตัว และตกลงลำดับที่ไม่กระทบรายได้'},
+      {no: '03', title: 'Modernize', desc: 'ปรับโครงสร้างทีละขั้นเล็กๆ โดยมี Test ครอบพฤติกรรมเดิม ตรวจผลการเปลี่ยนแปลงได้ทันที'},
+      {no: '04', title: 'Migrate', desc: 'ย้ายแพลตฟอร์มและข้อมูลเป็นช่วง และเตรียมทางย้อนกลับไว้ทุกครั้งที่สลับ'},
+      {no: '05', title: 'Verify', desc: 'ยืนยันว่าข้อมูลตรงกัน ประสิทธิภาพยังดี และสิ่งที่เคยใช้ได้ยังใช้ได้'},
+      {no: '06', title: 'Optimize', desc: 'ปรับต้นทุนโฮสติ้ง การขยายระบบ และการดูแลประจำวัน ให้ระบบใหม่ถูกกว่าระบบเดิมในการดูแล'}
     ]
   const caseStudies = isEN ? [
-      {tag: 'Banking · Bangkok', title: 'Monolith to Microservices, Zero Downtime', desc: 'Strangler-fig migration of core banking over 8 months, no outage.', result: 'Feature delivery: 5x faster'},
-      {tag: 'Retail · Nationwide', title: 'Legacy ERP Wrapped with Modern APIs', desc: 'New mobile and partner channels shipped without touching the core.', result: '3 new channels in 4 months'},
-      {tag: 'Logistics · Bangkok', title: '15-Year-Old System Moved to Kubernetes', desc: 'Containerized and migrated with full data parity verification.', result: 'Infra cost down 45%'}
+      {tag: 'Banking · Bangkok', title: 'Monolith to Microservices, Zero Downtime', desc: 'We moved core banking over 8 months using the strangler-fig pattern, one capability at a time behind a gateway. Customers and branch staff never saw an outage, and each finished piece shortened the release cycle.', result: 'Feature delivery: 5x faster'},
+      {tag: 'Retail · Nationwide', title: 'Legacy ERP Wrapped with Modern APIs', desc: 'New mobile and partner channels went live on top of a modern API layer, and the core ERP, which the finance team relied on every day, was left untouched.', result: '3 new channels in 4 months'},
+      {tag: 'Logistics · Bangkok', title: '15-Year-Old System Moved to Kubernetes', desc: 'The system was containerized and migrated in stages, with data parity checked for every part before cutover so dispatch and billing kept running.', result: 'Infra cost down 45%'}
     ] : [
-      {tag: 'ธนาคาร · กรุงเทพฯ', title: 'จาก Monolith สู่ Microservices โดยไม่มีระบบหยุด', desc: 'ย้ายระบบธนาคารหลักด้วย Strangler-fig ตลอด 8 เดือน ไม่มีระบบล่ม', result: 'ส่งฟีเจอร์เร็วขึ้น 5 เท่า'},
-      {tag: 'Retail · ทั่วประเทศ', title: 'ครอบ ERP เดิมด้วย API สมัยใหม่', desc: 'เปิดช่องทาง Mobile และพาร์ทเนอร์ใหม่ โดยไม่ต้องแตะระบบหลักเดิม', result: 'เปิด 3 ช่องทางใหม่ใน 4 เดือน'},
-      {tag: 'Logistics · กรุงเทพฯ', title: 'ย้ายระบบอายุ 15 ปีขึ้น Kubernetes', desc: 'ใช้ Container และย้ายระบบ พร้อมตรวจความตรงกันของข้อมูลครบทุกส่วน', result: 'ต้นทุนโครงสร้างพื้นฐานลดลง 45%'}
+      {tag: 'ธนาคาร · กรุงเทพฯ', title: 'จาก Monolith สู่ Microservices โดยไม่มีระบบหยุด', desc: 'เราย้ายระบบธนาคารหลักด้วย Strangler-fig ตลอด 8 เดือน ทีละความสามารถ ผ่านเกตเวย์ ลูกค้าและพนักงานสาขาไม่เจอระบบล่มเลย และทุกส่วนที่เสร็จทำให้รอบการปล่อยงานสั้นลง', result: 'ส่งฟีเจอร์เร็วขึ้น 5 เท่า'},
+      {tag: 'Retail · ทั่วประเทศ', title: 'ครอบ ERP เดิมด้วย API สมัยใหม่', desc: 'ช่องทางมือถือและพาร์ทเนอร์ใหม่เปิดใช้งานบนชั้น API สมัยใหม่ โดยไม่ต้องแตะ ERP หลักเดิมที่ทีมการเงินใช้ทุกวัน', result: 'เปิด 3 ช่องทางใหม่ใน 4 เดือน'},
+      {tag: 'Logistics · กรุงเทพฯ', title: 'ย้ายระบบอายุ 15 ปีขึ้น Kubernetes', desc: 'ย้ายเข้า Container และสลับระบบทีละช่วง โดยตรวจความตรงกันของข้อมูลทุกส่วนก่อนสลับ งานจัดส่งและการเรียกเก็บเงินจึงเดินต่อได้', result: 'ต้นทุนโครงสร้างพื้นฐานลดลง 45%'}
     ]
   const faqs        = isEN ? [
-      {q: 'How do you modernize without stopping the business?', a: 'Incrementally, using the strangler pattern — new services take over one capability at a time while the legacy system keeps running.'},
-      {q: 'What does the legacy system become?', a: 'Maintainable, API-first, cloud-ready platforms: typically services in containers on Kubernetes, event-driven where it helps.'},
-      {q: 'Our system has no documentation. Can you still work with it?', a: 'Yes. We start by mapping what the system actually does from its code, data, and traffic, and lock in behavior with tests first.'},
-      {q: 'When is a full rewrite the right choice?', a: 'Rarely, and only when the cost of incremental change genuinely exceeds a rebuild. We tell you honestly after an assessment.'}
+      {q: 'How do you modernize without stopping the business?', a: 'In steps, using the strangler pattern. New services take over one capability at a time while the legacy system keeps running, and traffic moves across only once the new piece has proven itself.'},
+      {q: 'What does the legacy system become?', a: 'A maintainable, API-first, cloud-ready platform. Typically that means services in containers on Kubernetes, with event-driven messaging where it helps.'},
+      {q: 'Our system has no documentation. Can you still work with it?', a: 'Yes, it is a common starting point. We map what the system actually does from its code, data, and traffic, and write tests around current behaviour before changing anything.'},
+      {q: 'When is a full rewrite the right choice?', a: 'Rarely. It makes sense only when changing the system in steps would cost more than rebuilding it. We tell you honestly after the assessment.'},
+      {q: 'Can you work with the original developers or an outside vendor?', a: 'Yes. If the original developers or the vendor are still around, we involve them early to learn the reasons behind odd decisions in the code. If they are gone, we rebuild that knowledge from the system itself.'},
+      {q: 'Will we need to retrain our users?', a: 'Not at first. Because the old screens and workflows keep running while pieces are replaced behind them, users see little change. When a screen does change, we release it to a small group first and gather feedback.'},
+      {q: 'What do we need to give you to start the assessment?', a: 'Read access to the source code and a copy of the database schema, a short walkthrough from someone who knows the system, and a list of what hurts most today. Test or staging access helps if you have it.'}
     ] : [
-      {q: 'ปรับปรุงระบบโดยไม่หยุดธุรกิจได้อย่างไร?', a: 'ปรับแบบค่อยเป็นค่อยไปด้วย Strangler Pattern บริการใหม่เข้ามาแทนที่ทีละส่วน ขณะที่ระบบเดิมยังทำงานต่อไป'},
-      {q: 'ระบบเดิมจะกลายเป็นอะไร?', a: 'แพลตฟอร์มที่ดูแลง่าย เป็น API-first และพร้อมใช้บน Cloud โดยทั่วไปคือบริการบน Container ใน Kubernetes และใช้ Event-driven เมื่อเหมาะสม'},
-      {q: 'ระบบเราไม่มีเอกสารเลย ทำได้ไหม?', a: 'ได้ เป็นเรื่องปกติ เราเริ่มจากทำแผนที่สิ่งที่ระบบทำจริงจากโค้ด ข้อมูล และปริมาณการใช้งาน แล้วล็อกพฤติกรรมด้วย Test ก่อน'},
-      {q: 'เมื่อไหร่ควรเขียนใหม่ทั้งหมด?', a: 'น้อยครั้งมาก และเฉพาะเมื่อการเปลี่ยนทีละส่วนมีต้นทุนสูงกว่าการสร้างใหม่จริงๆ เราจะบอกตรงๆ หลังประเมินระบบ'}
+      {q: 'ปรับปรุงระบบโดยไม่หยุดธุรกิจได้อย่างไร?', a: 'ทำทีละขั้นด้วย Strangler Pattern บริการใหม่รับหน้าที่ทีละอย่างขณะที่ระบบเดิมยังทำงานต่อ และย้าย Traffic ไปเมื่อส่วนใหม่พิสูจน์ตัวเองแล้วเท่านั้น'},
+      {q: 'ระบบเดิมจะกลายเป็นอะไร?', a: 'แพลตฟอร์มที่ดูแลง่าย เป็น API-first และพร้อมใช้บน Cloud โดยทั่วไปคือบริการใน Container บน Kubernetes และใช้ Event-driven เมื่อช่วยได้'},
+      {q: 'ระบบเราไม่มีเอกสารเลย ทำได้ไหม?', a: 'ได้ เจอบ่อยมาก เราเริ่มจากทำแผนที่สิ่งที่ระบบทำจริงจากโค้ด ข้อมูล และ Traffic แล้วเขียน Test ครอบพฤติกรรมปัจจุบันก่อนแก้อะไร'},
+      {q: 'เมื่อไหร่ควรเขียนใหม่ทั้งหมด?', a: 'น้อยครั้งมาก เฉพาะเมื่อการเปลี่ยนทีละส่วนมีต้นทุนสูงกว่าการสร้างใหม่ เราจะบอกตรงๆ หลังประเมินระบบ'},
+      {q: 'ทำงานร่วมกับทีมที่เขียนระบบเดิมหรือเวนเดอร์ภายนอกได้ไหม?', a: 'ได้ ถ้าทีมที่เขียนเดิมหรือเวนเดอร์ยังอยู่ เราชวนมาตั้งแต่ต้นเพื่อเข้าใจเหตุผลของโค้ดแปลกๆ ถ้าไม่อยู่แล้ว เราสร้างความรู้ส่วนนั้นขึ้นใหม่จากตัวระบบเอง'},
+      {q: 'ต้องอบรมผู้ใช้ใหม่ไหม?', a: 'ช่วงแรกไม่ต้อง เพราะหน้าจอและขั้นตอนเดิมยังทำงานต่อขณะที่เปลี่ยนชิ้นส่วนอยู่ข้างหลัง ผู้ใช้เห็นความเปลี่ยนแปลงน้อย ถ้าหน้าไหนเปลี่ยนจริง เราปล่อยให้กลุ่มเล็กลองก่อนและเก็บฟีดแบ็ก'},
+      {q: 'ต้องเตรียมอะไรให้ก่อนเริ่มประเมิน?', a: 'สิทธิ์อ่านซอร์สโค้ดและสำเนา Schema ของฐานข้อมูล คนที่รู้จักระบบมาอธิบายสั้นๆ และรายการสิ่งที่เจ็บที่สุดตอนนี้ ถ้ามีสภาพแวดล้อมทดสอบหรือ Staging ให้เข้าได้ก็ช่วยมาก'}
     ]
   const related     = isEN ? [
       {label: 'Cloud Services & Migration', href: '/services/cloud-services-migration'},
@@ -192,15 +200,19 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   )
 
   const capabilities = isEN ? [
-    { icon: 'ti-search', title: 'Legacy Assessment', desc: 'Technical and business analysis determining what to rewrite, wrap, replace, or retain.' },
-    { icon: 'ti-adjustments', title: 'Incremental Refactoring', desc: 'In-place structural and testability improvements maintaining continuous delivery.' },
-    { icon: 'ti-cloud', title: 'Cloud-Native Patterns', desc: 'Containers, microservices, serverless, and event-driven designs where justified.' },
-    { icon: 'ti-api', title: 'API Modernization', desc: 'Stable APIs and integration layers enabling new channels without full rewrites.' },
+    { icon: 'ti-search', title: 'Legacy Assessment', desc: 'We review the code, the data, and how people really use the system, then give each part a verdict: rewrite, wrap, replace, or keep. You receive a written plan with reasons and an order of work that protects revenue.' },
+    { icon: 'ti-adjustments', title: 'Incremental Refactoring', desc: 'Structure is cleaned up and tests are added one section at a time while your team keeps shipping. Each change is small enough to review and to roll back.' },
+    { icon: 'ti-cloud', title: 'Cloud-Native Patterns', desc: 'Containers, microservices, serverless, and event-driven designs are used where they fix a real problem, such as slow releases or scaling limits. Where a simpler design is enough, we keep it.' },
+    { icon: 'ti-api', title: 'API Modernization', desc: 'A stable API layer in front of the old system lets a mobile app, a partner, or an AI tool use your data without a rewrite. It is often the quickest first step and starts paying back early.' },
+    { icon: 'ti-database-export', title: 'Data Migration', desc: 'Data moves in stages, with old and new records compared before each cutover and a way back kept open, so mismatches are fixed before users ever see them.' },
+    { icon: 'ti-topology-star-3', title: 'Microservices Decomposition', desc: 'A monolith is split where the business already draws a line, such as orders, billing or inventory, instead of into arbitrary pieces that then talk to each other constantly.' },
   ] : [
-    { icon: 'ti-search', title: 'Legacy Assessment', desc: 'วิเคราะห์ด้านเทคนิคและธุรกิจ เพื่อตัดสินใจว่าส่วนไหนควรเขียนใหม่ ครอบด้วย API เปลี่ยนใหม่ หรือคงไว้' },
-    { icon: 'ti-adjustments', title: 'Incremental Refactoring', desc: 'ปรับโครงสร้างและทำให้ทดสอบได้ทีละส่วน โดยยังส่งงานได้ต่อเนื่อง' },
-    { icon: 'ti-cloud', title: 'Cloud-Native Patterns', desc: 'Container, Microservices, Serverless และ Event-driven Design เมื่อมีเหตุผลรองรับ' },
-    { icon: 'ti-api', title: 'API Modernization', desc: 'สร้างชั้น API และการเชื่อมระบบที่มั่นคง เปิดช่องทางใหม่ได้โดยไม่ต้องเขียนใหม่ทั้งหมด' },
+    { icon: 'ti-search', title: 'Legacy Assessment', desc: 'เราตรวจโค้ด ข้อมูล และวิธีที่คนใช้ระบบจริง แล้วให้ผลกับแต่ละส่วนว่าควรเขียนใหม่ ครอบด้วย API เปลี่ยนตัว หรือคงไว้ คุณจะได้แผนเป็นลายลักษณ์อักษรพร้อมเหตุผลและลำดับงานที่ไม่กระทบรายได้' },
+    { icon: 'ti-adjustments', title: 'Incremental Refactoring', desc: 'จัดโครงสร้างและเพิ่ม Test ทีละส่วน ขณะที่ทีมของคุณยังปล่อยงานต่อได้ แต่ละการเปลี่ยนแปลงเล็กพอที่จะตรวจและย้อนกลับได้' },
+    { icon: 'ti-cloud', title: 'Cloud-Native Patterns', desc: 'ใช้ Container, Microservices, Serverless และ Event-driven Design เมื่อช่วยแก้ปัญหาจริง เช่น ปล่อยงานช้าหรือขยายระบบไม่ไหว ถ้าแบบที่ง่ายกว่าพอ เราก็ใช้แบบนั้น' },
+    { icon: 'ti-api', title: 'API Modernization', desc: 'ชั้น API ที่มั่นคงหน้าระบบเดิมช่วยให้แอปมือถือ พาร์ทเนอร์ หรือเครื่องมือ AI ใช้ข้อมูลของคุณได้โดยไม่ต้องเขียนใหม่ มักเป็นก้าวแรกที่เร็วที่สุดและเริ่มคืนทุนได้เร็ว' },
+    { icon: 'ti-database-export', title: 'Data Migration', desc: 'ย้ายข้อมูลเป็นช่วง เทียบข้อมูลเก่ากับใหม่ก่อนสลับทุกครั้ง และเปิดทางย้อนกลับไว้ ถ้าข้อมูลไม่ตรงก็แก้ก่อนที่ผู้ใช้จะเห็น' },
+    { icon: 'ti-topology-star-3', title: 'Microservices Decomposition', desc: 'แตก Monolith ตรงที่ธุรกิจแบ่งเส้นอยู่แล้ว เช่น ออเดอร์ การเรียกเก็บเงิน หรือสต็อก ไม่ใช่หั่นเป็นชิ้นตามใจแล้วต้องคุยกันตลอดเวลา' },
   ]
 
   const techStack = [
@@ -214,39 +226,39 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   ] as { label: string; icon?: string; svg?: string }[]
 
   const approachSteps = isEN ? [
-    { no: '01', title: 'Assess', desc: 'Code, data, operational conditions' },
-    { no: '02', title: 'Strategy', desc: 'Rewrite, refactor, or replace' },
-    { no: '03', title: 'Modernize', desc: 'Incremental structural changes' },
-    { no: '04', title: 'Migrate', desc: 'Platform and data transitions' },
-    { no: '05', title: 'Verify', desc: 'Parity, performance, no regressions' },
-    { no: '06', title: 'Optimize', desc: 'Cost, scalability, operability' },
+    { no: '01', title: 'Assess', desc: 'Code, data, and how the system behaves in daily use, including undocumented corners.' },
+    { no: '02', title: 'Strategy', desc: 'A verdict for each part (rewrite, refactor, wrap, or replace) and an order that protects revenue.' },
+    { no: '03', title: 'Modernize', desc: 'Small structural changes, with tests around the old behaviour so each one can be checked.' },
+    { no: '04', title: 'Migrate', desc: 'Platform and data moved in stages, with a rollback ready at every cutover.' },
+    { no: '05', title: 'Verify', desc: 'Data matches, performance holds, and nothing that used to work has broken.' },
+    { no: '06', title: 'Optimize', desc: 'Hosting cost, scaling, and daily operation tuned so the new setup is cheaper to run.' },
   ] : [
-    { no: '01', title: 'Assess', desc: 'โค้ด ข้อมูล และสภาพการทำงานจริง' },
-    { no: '02', title: 'Strategy', desc: 'เขียนใหม่ ปรับโครงสร้าง หรือเปลี่ยนใหม่' },
-    { no: '03', title: 'Modernize', desc: 'ปรับโครงสร้างทีละขั้น' },
-    { no: '04', title: 'Migrate', desc: 'ย้ายแพลตฟอร์มและข้อมูล' },
-    { no: '05', title: 'Verify', desc: 'ข้อมูลตรงกัน ประสิทธิภาพดี และไม่มีของเดิมพัง' },
-    { no: '06', title: 'Optimize', desc: 'ต้นทุน การขยายระบบ และการดูแลระบบ' },
+    { no: '01', title: 'Assess', desc: 'ตรวจโค้ด ข้อมูล และพฤติกรรมของระบบในการใช้งานประจำวัน รวมถึงส่วนที่ไม่มีเอกสาร' },
+    { no: '02', title: 'Strategy', desc: 'ให้ผลทีละส่วนว่าจะเขียนใหม่ ปรับโครงสร้าง ครอบด้วย API หรือเปลี่ยนตัว และจัดลำดับที่ไม่กระทบรายได้' },
+    { no: '03', title: 'Modernize', desc: 'ปรับโครงสร้างทีละขั้นเล็กๆ มี Test ครอบพฤติกรรมเดิม จึงตรวจได้ทุกขั้น' },
+    { no: '04', title: 'Migrate', desc: 'ย้ายแพลตฟอร์มและข้อมูลเป็นช่วง พร้อมทางย้อนกลับทุกครั้งที่สลับ' },
+    { no: '05', title: 'Verify', desc: 'ข้อมูลตรงกัน ประสิทธิภาพยังดี และสิ่งที่เคยใช้ได้ไม่พัง' },
+    { no: '06', title: 'Optimize', desc: 'ปรับต้นทุนโฮสติ้ง การขยายระบบ และการดูแลประจำวัน ให้ระบบใหม่ดูแลถูกกว่า' },
   ]
 
   const darkFaqs = isEN ? [
-    { q: 'How do you modernize legacy applications without stopping the business?', a: 'Incrementally. We use the strangler pattern: new services take over one capability at a time behind an API gateway while the legacy system keeps running, so the business never stops for a rewrite. Traffic shifts gradually as each new piece proves itself in production.' },
-    { q: 'What does Haliviq modernize legacy systems into?', a: 'Maintainable, API-first, cloud-ready platforms: typically services in containers on Kubernetes, event-driven where it helps, and serverless where it is simpler. The target architecture follows your team and workloads, not fashion — we don\'t default to microservices just because it sounds modern.' },
-    { q: 'Our legacy system has no documentation. Can you still work with it?', a: 'Yes. That is normal, not a blocker. We start by mapping what the system actually does from its code, data, and production traffic, and we lock in current behavior with tests before changing anything — so we know immediately if a change breaks something.' },
-    { q: 'When is a full rewrite the right choice instead of incremental modernization?', a: 'Rarely, and only when the cost of incremental change genuinely exceeds a rebuild — usually when the underlying technology is fully unsupported or the domain model itself is fundamentally wrong. We will tell you honestly which side of that line your system is on after an assessment, not sell you a rewrite by default.' },
-    { q: 'How long does a typical modernization project take?', a: 'A single-module strangler migration usually takes 2-4 months from assessment to full cutover. A full monolith decomposition for a larger system is phased over 6-18 months, with each phase delivering working software and measurable progress rather than one long project with nothing to show until the end.' },
-    { q: 'How much does application modernization cost?', a: 'Cost scales with the size and complexity of the legacy system and how much of it needs to change. A focused assessment typically starts in the low five figures (THB); a phased modernization program is quoted per phase after that assessment, so you can validate value before committing to the next stage.' },
-    { q: 'What happens to our team during the modernization process?', a: 'We work alongside your engineers rather than in a silo, pairing on the parts of the system they know best and transferring knowledge as we go. By the time we hand over, your team understands the new architecture because they helped build it, not because they read a document afterward.' },
-    { q: 'Who owns the code and infrastructure after the project?', a: 'You do, entirely. All new services, infrastructure code, and documentation live in your own repositories and cloud accounts from day one. We work inside your environment, so there is no separate system to migrate away from us at handover.' },
+    { q: 'How do you modernize legacy applications without stopping the business?', a: 'In small steps, using the strangler pattern. New services take over one capability at a time behind an API gateway while the legacy system keeps running, so nobody waits for a big rewrite to finish. Traffic moves across gradually, only after each new piece has proven itself in production, and every step has a way back if something looks wrong.' },
+    { q: 'What does Haliviq modernize legacy systems into?', a: 'Into maintainable, API-first, cloud-ready platforms. Typically that means services in containers on Kubernetes, with event-driven messaging where it helps and serverless where it is simpler. The target design follows your team and your workloads, not fashion. We do not choose microservices by default just because the word sounds modern, and for some systems a well-structured monolith behind a good API is the right answer.' },
+    { q: 'Our legacy system has no documentation. Can you still work with it?', a: 'Yes. It is a common starting point, not a blocker. We map what the system really does from its code, its data, and its production traffic, and we talk to the people who use it every day. Before changing anything we write tests that lock in current behaviour, so we find out immediately if a change breaks something.' },
+    { q: 'When is a full rewrite the right choice instead of incremental modernization?', a: 'Rarely. It makes sense only when changing the system in steps would genuinely cost more than rebuilding it, for example when the underlying technology is no longer supported by anyone or the data model is wrong at its core. After the assessment we tell you which side of that line your system sits on. We do not sell a rewrite by default.' },
+    { q: 'How long does a typical modernization project take?', a: 'A single-module strangler migration usually takes 2-4 months from assessment to full cutover. Decomposing a large monolith is phased over 6-18 months, and each phase delivers working software and measurable progress, so you see results along the way instead of waiting for one long project to end. The size of the system and how well it is understood are the biggest factors.' },
+    { q: 'How much does application modernization cost?', a: 'It depends on the size and complexity of the legacy system and how much of it has to change. A focused assessment typically starts in the low five figures (THB). A phased program is quoted phase by phase after that assessment, so you can see the value of one stage before agreeing to the next. Hosting and licence savings from the new setup are part of the business case we put in front of you.' },
+    { q: 'What happens to our team during the modernization process?', a: 'We work alongside your engineers, not in a separate corner. We pair with them on the parts of the system they know best and hand over knowledge as we go. By handover your team understands the new architecture because they helped build it, not because they were given a document at the end.' },
+    { q: 'Who owns the code and infrastructure after the project?', a: 'You do. New services, infrastructure code, and documentation sit in your own repositories and cloud accounts from the first day. Because we work inside your environment, there is no separate system to move out of at handover.' },
   ] : [
-    { q: 'ปรับปรุงระบบเดิมโดยไม่หยุดธุรกิจได้อย่างไร?', a: 'ปรับแบบค่อยเป็นค่อยไป เราใช้ Strangler Pattern โดยบริการใหม่จะเข้ามาแทนที่ทีละส่วนผ่าน API Gateway ขณะที่ระบบเดิมยังทำงานต่อไป ธุรกิจจึงไม่ต้องหยุดรอการเขียนใหม่ Traffic จะค่อยๆ ย้ายไปเมื่อแต่ละส่วนใหม่พิสูจน์ตัวเองบนระบบจริงแล้ว' },
-    { q: 'Haliviq ปรับระบบเดิมให้กลายเป็นอะไร?', a: 'แพลตฟอร์มที่ดูแลง่าย เป็น API-first และพร้อมใช้บน Cloud โดยทั่วไปคือบริการบน Container ใน Kubernetes ใช้ Event-driven เมื่อช่วยได้จริง และใช้ Serverless เมื่อง่ายกว่า สถาปัตยกรรมปลายทางจะดูตามทีมและงานของคุณ ไม่ใช่ตามกระแส เราไม่เลือก Microservices ทันทีเพียงเพราะฟังดูทันสมัย' },
-    { q: 'ระบบเดิมของเราไม่มีเอกสารเลย ยังทำงานด้วยได้ไหม?', a: 'ได้ เป็นเรื่องปกติ ไม่ใช่อุปสรรค เราเริ่มจากทำแผนที่สิ่งที่ระบบทำจริงจากโค้ด ข้อมูล และ Traffic บนระบบจริง แล้วล็อกพฤติกรรมปัจจุบันด้วย Test ก่อนแก้อะไร เพื่อให้รู้ทันทีถ้าการแก้ไขทำให้อะไรพัง' },
-    { q: 'เมื่อไหร่ควรเลือก Rewrite ทั้งหมดแทนการปรับปรุงแบบค่อยเป็นค่อยไป?', a: 'น้อยครั้งมาก และเฉพาะเมื่อการเปลี่ยนทีละส่วนมีต้นทุนสูงกว่าการสร้างใหม่จริงๆ มักเกิดเมื่อเทคโนโลยีเดิมไม่มีใครรองรับแล้ว หรือโครงสร้างของข้อมูลธุรกิจผิดมาตั้งแต่ต้น เราจะบอกตรงๆ ว่าระบบของคุณอยู่ฝั่งไหนหลังประเมินระบบ ไม่ได้ขายการเขียนใหม่เป็นค่าเริ่มต้น' },
-    { q: 'โปรเจกต์ Modernization ทั่วไปใช้เวลานานแค่ไหน?', a: 'ย้ายหนึ่งโมดูลด้วย Strangler Pattern มักใช้เวลา 2-4 เดือน ตั้งแต่ประเมินระบบจนสลับใช้ระบบใหม่เต็มรูปแบบ ส่วนการแตก Monolith ทั้งระบบสำหรับระบบขนาดใหญ่ จะแบ่งเป็นเฟสตลอด 6-18 เดือน แต่ละเฟสส่งมอบซอฟต์แวร์ที่ใช้งานได้จริงและความคืบหน้าที่วัดผลได้ ไม่ใช่โปรเจกต์ยาวที่ไม่มีอะไรให้เห็นจนจบ' },
-    { q: 'Application Modernization มีค่าใช้จ่ายเท่าไหร่?', a: 'ต้นทุนขึ้นอยู่กับขนาดและความซับซ้อนของระบบเดิม และปริมาณที่ต้องเปลี่ยน การประเมินระบบแบบเจาะจงมักเริ่มที่หลักหมื่นปลายๆ (บาท) ส่วนโปรแกรมปรับปรุงที่แบ่งเป็นเฟสจะเสนอราคาเป็นรายเฟสหลังการประเมิน เพื่อให้คุณเห็นคุณค่าก่อนตัดสินใจเฟสถัดไป' },
-    { q: 'ทีมของเราจะเป็นอย่างไรระหว่างกระบวนการ Modernization?', a: 'เราทำงานเคียงข้างทีมวิศวกรของคุณ ไม่ใช่แยกทำเงียบๆ โดยทำงานคู่กับส่วนของระบบที่พวกเขาเข้าใจดีที่สุด และถ่ายทอดความรู้ไปตลอดทาง เมื่อส่งมอบ ทีมของคุณจะเข้าใจสถาปัตยกรรมใหม่ เพราะพวกเขาช่วยสร้างมันขึ้นมา ไม่ใช่เพราะอ่านเอกสารทีหลัง' },
-    { q: 'Code และ Infrastructure เป็นของใครหลังจบโปรเจกต์?', a: 'เป็นของคุณทั้งหมด บริการใหม่ โค้ดโครงสร้างพื้นฐาน และเอกสารทั้งหมดอยู่ใน Repository และ Cloud Account ของคุณเองตั้งแต่วันแรก เราทำงานในสภาพแวดล้อมของคุณ จึงไม่มีระบบแยกที่ต้องย้ายออกจากเราตอนส่งมอบ' },
+    { q: 'ปรับปรุงระบบเดิมโดยไม่หยุดธุรกิจได้อย่างไร?', a: 'ทำเป็นขั้นเล็กๆ ด้วย Strangler Pattern บริการใหม่จะรับหน้าที่ทีละอย่างผ่าน API Gateway ขณะที่ระบบเดิมยังทำงานต่อ ไม่มีใครต้องรอให้เขียนใหม่เสร็จก่อน Traffic จะค่อยๆ ย้ายไปเมื่อแต่ละส่วนใหม่พิสูจน์ตัวเองบนระบบจริงแล้วเท่านั้น และทุกขั้นมีทางย้อนกลับถ้าเห็นว่าผิดปกติ' },
+    { q: 'Haliviq ปรับระบบเดิมให้กลายเป็นอะไร?', a: 'ให้เป็นแพลตฟอร์มที่ดูแลง่าย เป็น API-first และพร้อมใช้บน Cloud โดยทั่วไปคือบริการใน Container บน Kubernetes ใช้ Event-driven เมื่อช่วยได้จริง และใช้ Serverless เมื่อง่ายกว่า สถาปัตยกรรมปลายทางดูตามทีมและงานของคุณ ไม่ใช่ตามกระแส เราไม่เลือก Microservices เป็นค่าเริ่มต้นเพราะคำนี้ฟังดูทันสมัย บางระบบ Monolith ที่โครงสร้างดีและมี API ที่ดีหน้าระบบก็เป็นคำตอบที่ถูกแล้ว' },
+    { q: 'ระบบเดิมของเราไม่มีเอกสารเลย ยังทำงานด้วยได้ไหม?', a: 'ได้ เจอบ่อยมากและไม่ใช่อุปสรรค เราทำแผนที่สิ่งที่ระบบทำจริงจากโค้ด ข้อมูล และ Traffic บนระบบจริง และคุยกับคนที่ใช้ระบบทุกวัน ก่อนแก้อะไรเราเขียน Test ที่ล็อกพฤติกรรมปัจจุบันไว้ก่อน ถ้าการแก้ไขทำให้อะไรพัง เราจะรู้ทันที' },
+    { q: 'เมื่อไหร่ควรเลือก Rewrite ทั้งหมดแทนการปรับปรุงทีละขั้น?', a: 'น้อยครั้งมาก ควรทำเฉพาะเมื่อการเปลี่ยนทีละส่วนมีต้นทุนสูงกว่าการสร้างใหม่จริงๆ เช่น เทคโนโลยีเดิมไม่มีใครรองรับแล้ว หรือโครงสร้างข้อมูลผิดมาตั้งแต่แก่น หลังประเมินระบบ เราจะบอกว่าระบบของคุณอยู่ฝั่งไหน เราไม่ขายการเขียนใหม่เป็นค่าเริ่มต้น' },
+    { q: 'โปรเจกต์ Modernization ทั่วไปใช้เวลานานแค่ไหน?', a: 'ย้ายหนึ่งโมดูลด้วย Strangler Pattern มักใช้เวลา 2-4 เดือน ตั้งแต่ประเมินระบบจนสลับใช้ระบบใหม่เต็มรูปแบบ ส่วนการแตก Monolith ขนาดใหญ่จะแบ่งเป็นเฟสตลอด 6-18 เดือน แต่ละเฟสส่งมอบซอฟต์แวร์ที่ใช้งานได้จริงและความคืบหน้าที่วัดได้ คุณจึงเห็นผลระหว่างทาง ไม่ต้องรอโปรเจกต์ยาวๆ จบก่อน ปัจจัยหลักคือขนาดของระบบและระดับที่เราเข้าใจระบบนั้น' },
+    { q: 'Application Modernization มีค่าใช้จ่ายเท่าไหร่?', a: 'ขึ้นอยู่กับขนาดและความซับซ้อนของระบบเดิม และปริมาณที่ต้องเปลี่ยน การประเมินระบบแบบเจาะจงมักเริ่มที่หลักหมื่นปลายๆ (บาท) ส่วนโปรแกรมที่แบ่งเป็นเฟสจะเสนอราคาเป็นรายเฟสหลังประเมิน คุณจะเห็นคุณค่าของเฟสหนึ่งก่อนตัดสินใจเฟสต่อไป และเราใส่ส่วนที่ประหยัดได้จากค่าโฮสติ้งและไลเซนส์ไว้ในแผนธุรกิจที่เสนอด้วย' },
+    { q: 'ทีมของเราจะเป็นอย่างไรระหว่างทำ Modernization?', a: 'เราทำงานเคียงข้างทีมวิศวกรของคุณ ไม่ได้แยกไปทำเงียบๆ เราจับคู่ทำงานกับพวกเขาในส่วนที่เขารู้ดีที่สุด และถ่ายทอดความรู้ไปเรื่อยๆ พอส่งมอบ ทีมของคุณเข้าใจสถาปัตยกรรมใหม่เพราะช่วยสร้างมันมา ไม่ใช่เพราะได้เอกสารตอนท้าย' },
+    { q: 'Code และ Infrastructure เป็นของใครหลังจบโปรเจกต์?', a: 'เป็นของคุณทั้งหมด บริการใหม่ โค้ดโครงสร้างพื้นฐาน และเอกสารอยู่ใน Repository และ Cloud Account ของคุณเองตั้งแต่วันแรก เราทำงานในสภาพแวดล้อมของคุณ ตอนส่งมอบจึงไม่มีระบบแยกที่ต้องย้ายออกจากเรา' },
   ]
 
   const postHeroSlot = (

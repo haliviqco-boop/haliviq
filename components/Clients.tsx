@@ -1,16 +1,16 @@
 'use client'
 import { type Lang, type T } from '@/lib/i18n'
-type Props = { lang: Lang; tr: T }
+type Props = { lang?: Lang; tr: T }
 
 const clients = [
-  { name: 'NFI สถาบันอาหาร', img: '/images/clients/nfi.png' },
-  { name: 'กระทรวงพาณิชย์', img: '/images/clients/ministry-commerce.png' },
-  { name: 'กระทรวงพลังงาน', img: '/images/clients/ministry-energy.png' },
-  { name: 'กระทรวงแรงงาน', img: '/images/clients/ministry-labour.png' },
-  { name: 'DITP', img: '/images/clients/ditp.png' },
+  { name: 'NFI สถาบันอาหาร', name_en: 'NFI (National Food Institute)', img: '/images/clients/nfi.png' },
+  { name: 'กระทรวงพาณิชย์', name_en: 'Ministry of Commerce', img: '/images/clients/ministry-commerce.png' },
+  { name: 'กระทรวงพลังงาน', name_en: 'Ministry of Energy', img: '/images/clients/ministry-energy.png' },
+  { name: 'กระทรวงแรงงาน', name_en: 'Ministry of Labour', img: '/images/clients/ministry-labour.png' },
+  { name: 'DITP', name_en: 'DITP', img: '/images/clients/ditp.png' },
 ]
 
-export default function Clients({ tr }: Props) {
+export default function Clients({ lang, tr }: Props) {
   return (
     <section className="py-16 border-y overflow-hidden" style={{ background: '#0B0918', borderColor: 'rgba(255,255,255,0.08)' }}>
       <div className="max-w-7xl mx-auto px-4 lg:px-10 mb-12 text-center">
@@ -33,7 +33,7 @@ export default function Clients({ tr }: Props) {
             <div key={i} className="flex items-center justify-center px-12 shrink-0">
               <img
                 src={c.img}
-                alt={c.name}
+                alt={lang === 'en' ? c.name_en : c.name}
                 className="h-14 w-auto object-contain client-logo"
                 style={{ maxWidth: '180px' }}
               />

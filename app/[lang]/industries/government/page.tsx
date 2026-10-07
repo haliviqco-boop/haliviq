@@ -15,19 +15,19 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   const badge = isEN ? 'Industry / Government & Public Sector' : 'อุตสาหกรรม / ภาครัฐและหน่วยงานสาธารณะ'
   const heroSubhead = isEN
-    ? 'Digital services for government and public institutions.'
-    : 'บริการออนไลน์สำหรับหน่วยงานรัฐและองค์กรสาธารณะ'
+    ? 'Citizen-facing online services, licence and case workflows and secure data exchange for Thai ministries, local administrations and public agencies, built to be accessible to everyone and careful with personal data.'
+    : 'บริการออนไลน์สำหรับประชาชน ระบบขอใบอนุญาตและติดตามเรื่อง และการแลกเปลี่ยนข้อมูลอย่างปลอดภัย สำหรับกระทรวง องค์กรปกครองส่วนท้องถิ่น และหน่วยงานรัฐในไทย ออกแบบให้ทุกคนใช้ได้และดูแลข้อมูลส่วนบุคคลอย่างรอบคอบ'
 
   const challenges = isEN ? [
-    { icon: 'ti-server-cog', title: 'Legacy System Modernization at Scale', desc: 'Decades-old mainframe and monolithic systems run mission-critical services, making replacement risky, yet the cost and complexity of modernizing at government scale is enormous.' },
-    { icon: 'ti-shield-lock', title: 'Strict Data-Privacy & Security Compliance', desc: 'Citizen data demands the highest standards of security and regulatory compliance, requiring rigorous access controls, encryption, and audit trails across every system.' },
-    { icon: 'ti-accessible', title: 'Digital-Accessibility Requirements for All Citizens', desc: 'Public digital services must be usable by every citizen regardless of ability, device, or connectivity, requiring strict adherence to accessibility standards from day one.' },
-    { icon: 'ti-topology-star-3', title: 'Cross-Agency Interoperability', desc: 'Delivering a single, coherent citizen experience requires data and workflows to flow seamlessly across agencies that were never designed to share information.' },
+    { icon: 'ti-server-cog', title: 'Old Systems That Cannot Stop', desc: 'Many agencies still run registries, payment and licensing on mainframes or large single-block applications that were written long before mobile or APIs. They cannot simply be switched off, because people queue for the services they provide every day. We put an API layer in front of the old system first, then move services one at a time, so citizens keep getting served throughout.' },
+    { icon: 'ti-shield-lock', title: 'Citizen Data and Security Rules', desc: 'Agencies hold national ID numbers, addresses, tax and health details, and are expected to follow PDPA together with their own security policies. Every officer should see only what the job needs, and every access should be traceable. We build role-based permissions, encryption and audit logs into each service and document them for your data-protection officer and security reviewers.' },
+    { icon: 'ti-accessible', title: 'Services That Everyone Can Use', desc: 'People who use public services include older citizens, people with low vision, users on cheap phones and people with weak mobile data in provincial areas. A form that only works on a new laptop excludes them. We build to WCAG, use plain Thai wording, keep pages light, and test with screen readers and low-end devices before launch.' },
+    { icon: 'ti-topology-star-3', title: 'Agencies That Do Not Share Data', desc: 'A citizen applying for one permit is often asked to bring the same documents from several offices, because each agency keeps its own records. Connecting them takes agreed data definitions, consent from the citizen and secure interfaces, not just technology. We work with each agency to define what is shared, who approves it, and how errors are corrected.' },
   ] : [
-    { icon: 'ti-server-cog', title: 'ปรับปรุงระบบเก่าขนาดใหญ่', desc: 'ระบบ Mainframe และ Monolithic อายุหลายสิบปียังรันบริการสำคัญอยู่ การเปลี่ยนระบบจึงเสี่ยงสูง และต้นทุนกับความซับซ้อนของการปรับปรุงในระดับภาครัฐก็สูงมากเช่นกัน' },
-    { icon: 'ti-shield-lock', title: 'ข้อกำหนดด้านความเป็นส่วนตัวและความปลอดภัยของข้อมูลที่เข้มงวด', desc: 'ข้อมูลประชาชนต้องมีมาตรฐานความปลอดภัยและการทำตามกฎสูงสุด ทุกระบบต้องมีการควบคุมการเข้าถึง การเข้ารหัส และ Audit Trail ที่รัดกุม' },
-    { icon: 'ti-accessible', title: 'ทุกคนต้องเข้าถึงบริการดิจิทัลได้', desc: 'บริการดิจิทัลของรัฐต้องใช้ได้กับประชาชนทุกคน ไม่ว่าจะมีข้อจำกัดทางร่างกาย อุปกรณ์ หรือการเชื่อมต่ออย่างไร จึงต้องยึดมาตรฐาน Accessibility อย่างเคร่งครัดตั้งแต่ต้น' },
-    { icon: 'ti-topology-star-3', title: 'Cross-Agency Interoperability', desc: 'การให้ประชาชนใช้บริการได้ราบรื่น ต้องให้ข้อมูลและขั้นตอนงานไหลต่อกันได้ระหว่างหน่วยงาน ซึ่งเดิมไม่ได้ออกแบบมาให้แชร์ข้อมูลกัน' },
+    { icon: 'ti-server-cog', title: 'ระบบเก่าที่หยุดไม่ได้', desc: 'หลายหน่วยงานยังใช้ทะเบียน ระบบรับชำระ และระบบใบอนุญาตที่อยู่บน Mainframe หรือแอปก้อนใหญ่ก้อนเดียว ซึ่งเขียนมาก่อนยุคมือถือและ API จะปิดทิ้งเลยก็ไม่ได้ เพราะทุกวันมีคนมารอรับบริการอยู่ เราจึงทำชั้น API ครอบหน้าระบบเก่าก่อน แล้วค่อยย้ายบริการทีละตัว ประชาชนจะได้ใช้บริการต่อเนื่องตลอดช่วงเปลี่ยน' },
+    { icon: 'ti-shield-lock', title: 'กฎเรื่องข้อมูลประชาชนและความปลอดภัย', desc: 'หน่วยงานเก็บเลขบัตรประชาชน ที่อยู่ ข้อมูลภาษี และข้อมูลสุขภาพ และต้องทำตาม PDPA ควบคู่กับนโยบายความปลอดภัยของตัวเอง เจ้าหน้าที่แต่ละคนควรเห็นเฉพาะข้อมูลที่งานต้องใช้ และทุกการเข้าถึงต้องตรวจสอบย้อนหลังได้ เราใส่การกำหนดสิทธิ์ตามบทบาท การเข้ารหัส และ Audit Log ไว้ในทุกบริการ และทำเอกสารให้เจ้าหน้าที่คุ้มครองข้อมูลกับผู้ตรวจด้านความปลอดภัยของคุณใช้ได้' },
+    { icon: 'ti-accessible', title: 'บริการที่ทุกคนใช้ได้', desc: 'คนที่ใช้บริการภาครัฐมีทั้งผู้สูงอายุ ผู้มีปัญหาด้านสายตา คนที่ใช้มือถือราคาไม่แพง และคนต่างจังหวัดที่เน็ตมือถือไม่แรง ถ้าฟอร์มใช้ได้แค่บนแล็ปท็อปรุ่นใหม่ ก็เท่ากับกันคนกลุ่มนี้ออกไป เราสร้างตามมาตรฐาน WCAG ใช้ภาษาไทยที่อ่านง่าย ทำหน้าเว็บให้เบา และทดสอบกับ Screen Reader และมือถือรุ่นเล็กก่อนเปิดใช้' },
+    { icon: 'ti-topology-star-3', title: 'หน่วยงานที่ไม่ได้แชร์ข้อมูลกัน', desc: 'ประชาชนที่มายื่นขอใบอนุญาตเรื่องเดียวมักถูกขอเอกสารชุดเดิมจากหลายที่ เพราะแต่ละหน่วยงานเก็บข้อมูลของตัวเอง การเชื่อมกันต้องอาศัยการตกลงนิยามข้อมูล ความยินยอมของประชาชน และช่องทางเชื่อมต่อที่ปลอดภัย ไม่ได้ขึ้นกับเทคโนโลยีอย่างเดียว เราคุยกับแต่ละหน่วยงานเพื่อกำหนดว่าจะแชร์อะไร ใครเป็นผู้อนุมัติ และถ้าข้อมูลผิดจะแก้ไขอย่างไร' },
   ]
 
   const metrics = [
@@ -37,31 +37,31 @@ export default function Page({ params }: { params: { lang: Lang } }) {
   ]
 
   const capabilities = isEN ? [
-    { icon: 'ti-building-bank', title: 'E-Government Portals', desc: 'Unified citizen-facing portals that consolidate services, forms, and payments from multiple agencies into a single, intuitive digital front door.' },
-    { icon: 'ti-id-badge-2', title: 'Digital-ID & Permit Systems', desc: 'Secure digital identity and permit-issuance platforms that let citizens verify themselves and apply for licenses or permits entirely online.' },
-    { icon: 'ti-accessible', title: 'Accessibility-Compliant Public Websites', desc: 'WCAG-compliant public websites and applications built with inclusive design so every citizen can access government services with ease.' },
-    { icon: 'ti-lock-square', title: 'Secure Citizen-Data Platforms', desc: 'Hardened data platforms with Zero Trust architecture, encryption at rest and in transit, and full audit logging to protect sensitive citizen information.' },
-    { icon: 'ti-affiliate', title: 'Cross-Agency Data-Integration Systems', desc: 'Interoperability layers and shared APIs that connect siloed agency systems so citizen data and workflows move seamlessly across departments.' },
-    { icon: 'ti-layout-dashboard', title: 'Digital-Service Delivery Dashboards', desc: 'Real-time operational dashboards that give agency leaders visibility into service uptake, processing times, and citizen satisfaction.' },
+    { icon: 'ti-building-bank', title: 'E-Government Portals', desc: 'One citizen-facing site or app that brings forms, fee payment and status tracking from several agencies together. It suits ministries and provincial or municipal offices that want people to stop hunting for the right counter. We organise the content by what people need to do, not by how the organisation chart looks.' },
+    { icon: 'ti-id-badge-2', title: 'Digital-ID & Permit Systems', desc: 'Identity verification and online permit or licence applications, with document upload, officer review and e-signature. Citizens apply from home; officers see a complete file instead of a stack of paper. We connect to the national digital-ID options your agency is allowed to use.' },
+    { icon: 'ti-accessible', title: 'Accessibility-Compliant Public Websites', desc: 'Public websites and apps built to WCAG with clear Thai writing, readable contrast and full keyboard use. Agencies get sites that work for older users and for people using assistive tools. We include an accessibility check in every release, not as a one-off audit.' },
+    { icon: 'ti-lock-square', title: 'Secure Citizen-Data Platforms', desc: 'Data stores and services designed on Zero Trust principles, with encryption in storage and transit, key management and full audit logging. They suit agencies holding registries, benefits or case files. We can plan for government cloud or on-premise hosting when policy requires data to stay inside the country.' },
+    { icon: 'ti-affiliate', title: 'Cross-Agency Data-Integration Systems', desc: 'Shared APIs and an integration layer that let agencies exchange verified data with citizen consent. A person no longer has to carry the same certificate from office to office. We start with one real service that spans two agencies, prove it works, and then widen.' },
+    { icon: 'ti-layout-dashboard', title: 'Digital-Service Delivery Dashboards', desc: 'Dashboards that show how many requests came in, how long each step takes, where cases get stuck and how citizens rate the service. Directors and service owners use them to decide where to add staff or simplify a process. Definitions are agreed with your team so numbers match what people expect.' },
   ] : [
-    { icon: 'ti-building-bank', title: 'E-Government Portals', desc: 'Portal กลางสำหรับประชาชน รวมบริการ แบบฟอร์ม และการชำระเงินของหลายหน่วยงานไว้ในช่องทางดิจิทัลเดียวที่ใช้ง่าย' },
-    { icon: 'ti-id-badge-2', title: 'Digital-ID และระบบใบอนุญาต', desc: 'แพลตฟอร์ม Digital Identity และออกใบอนุญาตที่ปลอดภัย ให้ประชาชนยืนยันตัวตนและยื่นขอใบอนุญาตออนไลน์ได้ครบ' },
-    { icon: 'ti-accessible', title: 'เว็บไซต์ภาครัฐที่ได้มาตรฐาน Accessibility', desc: 'เว็บไซต์และแอปภาครัฐที่ได้มาตรฐาน WCAG ออกแบบให้ทุกคนใช้ได้ เพื่อให้ประชาชนเข้าถึงบริการได้สะดวก' },
-    { icon: 'ti-lock-square', title: 'แพลตฟอร์มข้อมูลประชาชนที่ปลอดภัย', desc: 'แพลตฟอร์มข้อมูลบนสถาปัตยกรรม Zero Trust เข้ารหัสทั้งตอนเก็บและตอนส่ง พร้อม Audit Logging ครบ เพื่อปกป้องข้อมูลอ่อนไหวของประชาชน' },
-    { icon: 'ti-affiliate', title: 'ระบบเชื่อมข้อมูลข้ามหน่วยงาน', desc: 'ชั้นเชื่อมต่อและ API กลาง ที่เชื่อมระบบของแต่ละหน่วยงานที่แยกกันอยู่ ให้ข้อมูลและขั้นตอนงานของประชาชนไหลข้ามหน่วยงานได้' },
-    { icon: 'ti-layout-dashboard', title: 'Dashboard ติดตามการให้บริการดิจิทัล', desc: 'Dashboard แบบเรียลไทม์ให้ผู้บริหารหน่วยงานเห็นการใช้บริการ ระยะเวลาดำเนินการ และความพึงพอใจของประชาชน' },
+    { icon: 'ti-building-bank', title: 'E-Government Portals', desc: 'เว็บไซต์หรือแอปกลางสำหรับประชาชน ที่รวมแบบฟอร์ม การจ่ายค่าธรรมเนียม และการติดตามสถานะ จากหลายหน่วยงานไว้ด้วยกัน เหมาะกับกระทรวงและสำนักงานระดับจังหวัดหรือเทศบาล ที่อยากให้ประชาชนไม่ต้องเดินหาว่าต้องไปเคาน์เตอร์ไหน เราจัดเนื้อหาตามสิ่งที่ประชาชนต้องการทำ ไม่ใช่ตามผังโครงสร้างองค์กร' },
+    { icon: 'ti-id-badge-2', title: 'Digital-ID และระบบใบอนุญาต', desc: 'ระบบยืนยันตัวตนและยื่นขอใบอนุญาตออนไลน์ พร้อมอัปโหลดเอกสาร ให้เจ้าหน้าที่ตรวจ และลงนามอิเล็กทรอนิกส์ ประชาชนยื่นเรื่องได้จากที่บ้าน ส่วนเจ้าหน้าที่เห็นแฟ้มครบในหน้าเดียวแทนกองกระดาษ เราเชื่อมกับตัวเลือก Digital ID ระดับชาติที่หน่วยงานของคุณใช้ได้' },
+    { icon: 'ti-accessible', title: 'เว็บไซต์ภาครัฐที่ได้มาตรฐาน Accessibility', desc: 'เว็บไซต์และแอปภาครัฐที่สร้างตามมาตรฐาน WCAG เขียนภาษาไทยชัดเจน สีตัดกันอ่านง่าย และใช้ด้วยคีย์บอร์ดได้ครบ หน่วยงานจะได้เว็บที่ผู้สูงอายุและผู้ใช้เครื่องมือช่วยเหลือใช้งานได้ เราตรวจ Accessibility ในทุกรุ่นที่ปล่อย ไม่ใช่ตรวจครั้งเดียวแล้วจบ' },
+    { icon: 'ti-lock-square', title: 'แพลตฟอร์มข้อมูลประชาชนที่ปลอดภัย', desc: 'ระบบเก็บและให้บริการข้อมูลที่ออกแบบตามแนวคิด Zero Trust เข้ารหัสทั้งตอนเก็บและตอนส่ง มีการจัดการ Key และ Audit Log ครบ เหมาะกับหน่วยงานที่ดูแลทะเบียน สวัสดิการ หรือแฟ้มคดี เราวางแผนให้ใช้ Cloud ของรัฐหรือติดตั้งในองค์กรได้ ถ้านโยบายกำหนดให้ข้อมูลอยู่ในประเทศ' },
+    { icon: 'ti-affiliate', title: 'ระบบเชื่อมข้อมูลข้ามหน่วยงาน', desc: 'API กลางและชั้นเชื่อมต่อที่ให้หน่วยงานแลกเปลี่ยนข้อมูลที่ยืนยันแล้วเมื่อประชาชนยินยอม คนหนึ่งคนไม่ต้องถือใบรับรองใบเดิมไปทุกที่อีกต่อไป เราเริ่มจากบริการจริงหนึ่งตัวที่คร่อมสองหน่วยงาน พิสูจน์ว่าใช้ได้ แล้วค่อยขยาย' },
+    { icon: 'ti-layout-dashboard', title: 'Dashboard ติดตามการให้บริการดิจิทัล', desc: 'Dashboard ที่แสดงว่ามีคำขอเข้ามากี่เรื่อง แต่ละขั้นใช้เวลาเท่าไหร่ เรื่องไปติดอยู่ตรงไหน และประชาชนให้คะแนนบริการอย่างไร ผู้อำนวยการและเจ้าของบริการใช้ตัดสินใจว่าควรเพิ่มคนหรือลดขั้นตอนตรงไหน เรากำหนดนิยามตัวเลขร่วมกับทีมของคุณ เพื่อให้ตัวเลขตรงกับที่ทุกคนเข้าใจ' },
   ]
 
   const techStack = ['React', 'Node.js', 'PostgreSQL', 'AWS GovCloud', 'OAuth 2.0', 'Zero Trust', 'GraphQL', 'Kubernetes', 'Digital ID', 'WCAG', 'Elasticsearch', 'Redis']
 
   const useCases = isEN ? [
-    { no: '01', title: 'Citizen Services Portal', desc: 'A unified digital front door where citizens can request documents, pay fees, and track applications across multiple agencies from a single account.' },
-    { no: '02', title: 'Digital Permit & Licensing System', desc: 'An end-to-end online permitting platform with document upload, status tracking, and automated compliance checks that replaces paper-based approvals.' },
-    { no: '03', title: 'Cross-Agency Data Platform', desc: 'A secure interoperability layer that lets multiple agencies share verified citizen data in real time while preserving strict access controls and audit trails.' },
+    { no: '01', title: 'Citizen Services Portal', desc: 'A single account where residents request documents, pay fees and track applications handled by different agencies. We deliver the portal, the officer back office and the connections to each agency system. Services are added in waves, starting with the ones that generate the most counter visits.' },
+    { no: '02', title: 'Digital Permit & Licensing System', desc: 'An online permit workflow with upload, officer review, automatic completeness checks, payment and a downloadable certificate. Applicants know where their file is, and officers stop chasing missing pages. We map your actual approval steps first so the system matches the regulation, not an idealised version.' },
+    { no: '03', title: 'Cross-Agency Data Platform', desc: 'A secure exchange layer so one agency can request verified information from another with the citizen\'s consent. Every request is logged and can be reviewed. It removes repeated document collection while keeping each agency in control of its own data.' },
   ] : [
-    { no: '01', title: 'Citizen Services Portal', desc: 'ช่องทางดิจิทัลกลางที่ประชาชนขอเอกสาร ชำระค่าธรรมเนียม และติดตามคำขอจากหลายหน่วยงานได้ในบัญชีเดียว' },
-    { no: '02', title: 'ระบบขอใบอนุญาตดิจิทัล', desc: 'แพลตฟอร์มขอใบอนุญาตออนไลน์ครบขั้นตอน อัปโหลดเอกสาร ติดตามสถานะ และตรวจสอบการทำตามกฎอัตโนมัติ แทนการอนุมัติด้วยกระดาษ' },
-    { no: '03', title: 'Cross-Agency Data Platform', desc: 'ชั้นเชื่อมต่อที่ปลอดภัย ให้หลายหน่วยงานแชร์ข้อมูลประชาชนที่ยืนยันแล้วแบบเรียลไทม์ โดยยังคุมสิทธิ์เข้าถึงและเก็บ Audit Trail อย่างเข้มงวด' },
+    { no: '01', title: 'พอร์ทัลบริการประชาชน', desc: 'บัญชีเดียวที่ประชาชนใช้ขอเอกสาร จ่ายค่าธรรมเนียม และติดตามคำขอที่หลายหน่วยงานดูแลอยู่ เราส่งมอบพอร์ทัล ระบบหลังบ้านสำหรับเจ้าหน้าที่ และการเชื่อมกับระบบของแต่ละหน่วยงาน บริการจะทยอยเพิ่มเป็นรอบ โดยเริ่มจากบริการที่คนมาที่เคาน์เตอร์เยอะที่สุด' },
+    { no: '02', title: 'ระบบขอใบอนุญาตดิจิทัล', desc: 'ขั้นตอนขอใบอนุญาตออนไลน์ มีอัปโหลดเอกสาร เจ้าหน้าที่ตรวจ ตรวจความครบถ้วนอัตโนมัติ ชำระเงิน และดาวน์โหลดใบอนุญาต ผู้ยื่นรู้ว่าเรื่องอยู่ที่ไหน เจ้าหน้าที่ไม่ต้องตามเอกสารที่ขาด เราเริ่มจากเขียนแผนผังขั้นตอนอนุมัติจริงของคุณ เพื่อให้ระบบตรงกับกฎระเบียบ ไม่ใช่เวอร์ชันในอุดมคติ' },
+    { no: '03', title: 'แพลตฟอร์มข้อมูลข้ามหน่วยงาน', desc: 'ชั้นแลกเปลี่ยนข้อมูลที่ปลอดภัย ให้หน่วยงานหนึ่งขอข้อมูลที่ยืนยันแล้วจากอีกหน่วยงานได้เมื่อประชาชนยินยอม ทุกคำขอมี Log ตรวจย้อนหลังได้ ช่วยตัดการเก็บเอกสารซ้ำ โดยที่แต่ละหน่วยงานยังควบคุมข้อมูลของตัวเองได้' },
   ]
 
   const heroVisual = (
@@ -173,8 +173,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <div className="w-12 h-[3px] rounded-full mb-8" style={{ background: 'linear-gradient(90deg, var(--purple-light), var(--lime))' }} />
               <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
-                  ? 'We help government agencies and public institutions build e-government portals, digital-ID and permit systems, and secure cross-agency data platforms that make public services faster, more accessible, and easier to trust. Our solutions meet the highest security and accessibility standards while modernizing legacy infrastructure without disrupting the services citizens rely on.'
-                  : 'เราช่วยหน่วยงานภาครัฐและองค์กรสาธารณะสร้าง E-Government Portal ระบบ Digital-ID และใบอนุญาต และแพลตฟอร์มข้อมูลข้ามหน่วยงานที่ปลอดภัย เพื่อให้บริการประชาชนได้เร็วขึ้น เข้าถึงง่ายขึ้น และน่าเชื่อถือขึ้น ระบบของเราตรงตามมาตรฐานความปลอดภัยและ Accessibility ระดับสูงสุด และปรับปรุงระบบเดิมได้โดยไม่กระทบบริการที่ประชาชนใช้อยู่'}
+                  ? 'We help ministries, provincial and municipal offices and public organisations move services that people currently do in person, by paper or by phone onto reliable digital channels. Work starts by walking the real process with the officers who run it, so the online version follows the regulation and not an assumption. Accessibility, PDPA and the agency security policy are treated as requirements from the first sprint, and we can plan for government cloud or on-premise hosting where data must remain in Thailand. We also write handover documentation so your own team, or a later vendor, can maintain the system.'
+                  : 'เราช่วยกระทรวง สำนักงานจังหวัด เทศบาล และองค์กรสาธารณะ ย้ายบริการที่ประชาชนยังต้องไปทำด้วยตัวเอง ทางกระดาษ หรือทางโทรศัพท์ ขึ้นมาอยู่บนช่องทางดิจิทัลที่เชื่อถือได้ งานเริ่มจากเดินดูขั้นตอนจริงกับเจ้าหน้าที่ที่ทำอยู่ เพื่อให้เวอร์ชันออนไลน์ตรงกับระเบียบ ไม่ใช่การคาดเดา เรื่อง Accessibility PDPA และนโยบายความปลอดภัยของหน่วยงานเราถือเป็นข้อกำหนดตั้งแต่สปรินต์แรก และวางแผนใช้ Cloud ของรัฐหรือติดตั้งในองค์กรได้ ถ้าข้อมูลต้องอยู่ในประเทศไทย เรายังเขียนเอกสารส่งมอบให้ทีมของคุณหรือผู้รับเหมารายถัดไปดูแลระบบต่อได้ด้วย'}
               </p>
             </div>
           </div>
@@ -191,8 +191,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
-                ? 'Understanding the critical obstacles that drive digital transformation in this industry.'
-                : 'ปัญหาหลักที่ธุรกิจในอุตสาหกรรมนี้ต้องเจอ'}
+                ? 'The problems teams in this industry bring to us most often, and the ones we plan each project around.'
+                : 'นี่คือปัญหาที่ทีมในอุตสาหกรรมนี้เล่าให้เราฟังบ่อยที่สุด และเป็นสิ่งที่เราใช้วางแผนแต่ละโปรเจกต์'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
@@ -242,7 +242,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? "Proven solutions we build to address your industry's most pressing needs." : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
+              {isEN ? 'The kinds of systems we build for this industry, what each one does, and who it is for.' : 'ระบบที่เราสร้างและใช้งานได้จริง เพื่อแก้ปัญหาสำคัญของอุตสาหกรรมคุณ'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
@@ -269,8 +269,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             </h2>
             <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
-                ? 'Industry-proven tools and frameworks we leverage to build robust solutions.'
-                : 'เครื่องมือและ Framework ที่เราเลือกใช้ เพราะมั่นคงและเชื่อถือได้'}
+                ? 'The tools and frameworks we reach for most often, chosen because they are stable, well documented and easy to find people to maintain.'
+                : 'เครื่องมือและ Framework ที่เราเลือกใช้บ่อย เพราะเสถียร เอกสารครบ และหาคนมาดูแลต่อได้ง่าย'}
             </p>
             <div className="flex flex-wrap gap-3">
               {techStack.map((tag) => (
@@ -296,7 +296,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
             <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
-              {isEN ? 'Concrete project types we deliver for clients in this industry.' : 'ตัวอย่างงานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
+              {isEN ? 'Typical projects we take on in this industry, and what each one delivers.' : 'ตัวอย่างโปรเจกต์ที่เรารับทำในอุตสาหกรรมนี้ พร้อมสิ่งที่ลูกค้าจะได้รับ'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
@@ -336,7 +336,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
             <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
-              {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังได้ครับว่าคุณกำลังทำอะไรอยู่'}
+              {isEN ? 'Tell us what you are building, and we will suggest where to start.' : 'เล่าให้เราฟังหน่อยว่าคุณกำลังทำอะไรอยู่ แล้วเราจะช่วยดูว่าควรเริ่มจากตรงไหน'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link
