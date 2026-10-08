@@ -2,9 +2,21 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { t, type Lang } from '@/lib/i18n'
+import type { Metadata } from 'next'
+import { alt } from '@/lib/seo'
 
 export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
+}
+
+export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+  const isEN = params.lang === 'en'
+  const title = isEN ? "Aerospace & Defense Software & Digital Solutions | Haliviq" : "การบินอวกาศและกลาโหม | โซลูชันดิจิทัล | Haliviq"
+  const description = isEN
+    ? "Secure software for aerospace and defense teams: encrypted communications, satellite and ground-station dashboards, parts traceability and simulation tools…"
+    : "ซอฟต์แวร์ที่ปลอดภัยสำหรับงานการบินอวกาศและกลาโหม ตั้งแต่ระบบสื่อสารเข้ารหัส แดชบอร์ดดาวเทียมและ Ground Station…"
+  const url = `https://haliviq.com/${params.lang}/industries/aerospace-defense`
+  return { title, description, alternates: alt(url), openGraph: { title, description, url }, twitter: { card: 'summary_large_image', title, description } }
 }
 
 export default function Page({ params }: { params: { lang: Lang } }) {

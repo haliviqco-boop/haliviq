@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { t, type Lang } from '@/lib/i18n'
+import { alt } from '@/lib/seo'
 
 export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
@@ -14,7 +15,7 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }): 
     ? 'How Haliviq uses cookies and similar technologies, and how you can manage your preferences.'
     : 'Haliviq ใช้คุกกี้และเทคโนโลยีที่คล้ายกันอย่างไร และท่านตั้งค่าได้อย่างไร'
   const siteUrl = `https://haliviq.com/${params.lang}/cookies`
-  return { title, description, alternates: { canonical: siteUrl }, openGraph: { title, description, url: siteUrl } }
+  return { title, description, alternates: alt(siteUrl), openGraph: { title, description, url: siteUrl } }
 }
 
 export default function Page({ params }: { params: { lang: Lang } }) {

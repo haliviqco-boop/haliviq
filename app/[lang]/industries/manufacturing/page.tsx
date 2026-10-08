@@ -2,9 +2,21 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { t, type Lang } from '@/lib/i18n'
+import type { Metadata } from 'next'
+import { alt } from '@/lib/seo'
 
 export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
+}
+
+export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+  const isEN = params.lang === 'en'
+  const title = isEN ? "Manufacturing & Industrials Software & Digital Solutions | Haliviq" : "การผลิตและอุตสาหกรรม | โซลูชันดิจิทัล | Haliviq"
+  const description = isEN
+    ? "Software that connects machines, quality checks, and supply data so plant managers see problems while there is still time to fix them."
+    : "ซอฟต์แวร์ที่เชื่อมเครื่องจักร การตรวจคุณภาพ และข้อมูลซัพพลายเข้าด้วยกัน ให้ผู้จัดการโรงงานเห็นปัญหาตั้งแต่ยังแก้ทัน"
+  const url = `https://haliviq.com/${params.lang}/industries/manufacturing`
+  return { title, description, alternates: alt(url), openGraph: { title, description, url }, twitter: { card: 'summary_large_image', title, description } }
 }
 
 export default function Page({ params }: { params: { lang: Lang } }) {

@@ -2,9 +2,21 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { t, type Lang } from '@/lib/i18n'
+import type { Metadata } from 'next'
+import { alt } from '@/lib/seo'
 
 export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
+}
+
+export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+  const isEN = params.lang === 'en'
+  const title = isEN ? "Hospitality & Travel Software & Digital Solutions | Haliviq" : "การบริการและการท่องเที่ยว | โซลูชันดิจิทัล | Haliviq"
+  const description = isEN
+    ? "Booking, front-desk, and guest-service software for hotels, resorts, and travel brands that want more direct bookings and fewer manual steps."
+    : "ซอฟต์แวร์จอง งานหน้าเคาน์เตอร์ และบริการผู้เข้าพัก สำหรับโรงแรม รีสอร์ต และแบรนด์ท่องเที่ยวที่อยากได้ยอดจองตรงมากขึ้น และมีงานพิมพ์มือน้อยลง"
+  const url = `https://haliviq.com/${params.lang}/industries/hospitality-travel`
+  return { title, description, alternates: alt(url), openGraph: { title, description, url }, twitter: { card: 'summary_large_image', title, description } }
 }
 
 export default function Page({ params }: { params: { lang: Lang } }) {

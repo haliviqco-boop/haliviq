@@ -2,9 +2,21 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { t, type Lang } from '@/lib/i18n'
+import type { Metadata } from 'next'
+import { alt } from '@/lib/seo'
 
 export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
+}
+
+export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+  const isEN = params.lang === 'en'
+  const title = isEN ? "Real Estate Software & Digital Solutions | Haliviq" : "อสังหาริมทรัพย์ | โซลูชันดิจิทัล | Haliviq"
+  const description = isEN
+    ? "Listing sites, virtual tours, rental management, and digital deal paperwork for developers, brokerages, and landlords who want fewer spreadsheets and faster…"
+    : "เว็บประกาศขายและเช่า ทัวร์เสมือนจริง ระบบดูแลห้องเช่า และเอกสารดีลแบบดิจิทัล สำหรับผู้พัฒนาโครงการ นายหน้า และเจ้าของที่ปล่อยเช่า…"
+  const url = `https://haliviq.com/${params.lang}/industries/real-estate`
+  return { title, description, alternates: alt(url), openGraph: { title, description, url }, twitter: { card: 'summary_large_image', title, description } }
 }
 
 export default function Page({ params }: { params: { lang: Lang } }) {

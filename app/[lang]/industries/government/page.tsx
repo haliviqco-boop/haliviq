@@ -2,9 +2,21 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { t, type Lang } from '@/lib/i18n'
+import type { Metadata } from 'next'
+import { alt } from '@/lib/seo'
 
 export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
+}
+
+export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+  const isEN = params.lang === 'en'
+  const title = isEN ? "Government & Public Sector Software & Digital Solutions | Haliviq" : "ภาครัฐและหน่วยงานสาธารณะ | โซลูชันดิจิทัล | Haliviq"
+  const description = isEN
+    ? "Citizen-facing online services, licence and case workflows and secure data exchange for Thai ministries, local administrations and public agencies, built to…"
+    : "บริการออนไลน์สำหรับประชาชน ระบบขอใบอนุญาตและติดตามเรื่อง และการแลกเปลี่ยนข้อมูลอย่างปลอดภัย สำหรับกระทรวง องค์กรปกครองส่วนท้องถิ่น…"
+  const url = `https://haliviq.com/${params.lang}/industries/government`
+  return { title, description, alternates: alt(url), openGraph: { title, description, url }, twitter: { card: 'summary_large_image', title, description } }
 }
 
 export default function Page({ params }: { params: { lang: Lang } }) {

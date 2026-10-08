@@ -14,6 +14,46 @@ const catLabel: Record<BlogCat, { en: string; th: string }> = {
   'Case Study': { en: 'Case Study', th: 'กรณีศึกษา' },
 }
 
+const svcLabel: Record<string, { en: string; th: string }> = {
+  'web-development': { en: 'Web Development', th: 'พัฒนาเว็บไซต์' },
+  'enterprise-solutions': { en: 'Enterprise Solutions', th: 'ระบบองค์กร' },
+  cybersecurity: { en: 'Cybersecurity', th: 'ความปลอดภัยไซเบอร์' },
+  'pdpa-compliance': { en: 'PDPA Compliance', th: 'PDPA Compliance' },
+  'application-modernization': { en: 'Application Modernization', th: 'ปรับปรุงระบบเก่า' },
+  ai: { en: 'AI Services', th: 'บริการ AI' },
+  'ai-voice-agents': { en: 'AI Voice Agents', th: 'AI Voice Agents' },
+  automation: { en: 'Workflow Automation', th: 'ระบบ Automation' },
+  'design-systems': { en: 'Design Systems', th: 'Design System' },
+  'user-research': { en: 'User Research', th: 'วิจัยผู้ใช้' },
+  'ux-ui-design': { en: 'UX/UI Design', th: 'ออกแบบ UX/UI' },
+  'digital-transformation': { en: 'Digital Transformation', th: 'Digital Transformation' },
+  ecommerce: { en: 'E-commerce', th: 'E-commerce' },
+  'erp-crm': { en: 'ERP & CRM', th: 'ระบบ ERP และ CRM' },
+  'brand-experience': { en: 'Brand Experience', th: 'ประสบการณ์แบรนด์' },
+}
+const svcFor: Record<string, string[]> = {
+  'nextjs-perf': ['web-development'],
+  'build-vs-buy': ['enterprise-solutions', 'erp-crm'],
+  'passkeys-passwordless': ['cybersecurity'],
+  'thailand-pdpa-guide': ['pdpa-compliance', 'cybersecurity'],
+  'legacy-modernization': ['application-modernization'],
+  'ai-product-2025': ['ai', 'automation'],
+  'rag-in-production': ['ai'],
+  'ai-regulation-world': ['ai', 'pdpa-compliance'],
+  'ai-agent-guardrails': ['ai', 'ai-voice-agents'],
+  'why-design-system-matters': ['design-systems', 'ux-ui-design'],
+  'ux-research': ['user-research', 'ux-ui-design'],
+  'thai-typography': ['ux-ui-design'],
+  'accessibility-wcag': ['ux-ui-design', 'web-development'],
+  'dx-mistakes': ['digital-transformation'],
+  'mobile-payments-asean': ['ecommerce'],
+  'case-prima-marine': ['web-development', 'ux-ui-design'],
+  'case-baan-khanitha': ['ux-ui-design', 'web-development'],
+  'case-dsk-aesthetics': ['ai', 'ux-ui-design'],
+  'case-admire-homes': ['erp-crm', 'ux-ui-design'],
+  'case-meko-hospital': ['brand-experience', 'ux-ui-design'],
+}
+
 export function generateStaticParams() {
   return ['en', 'th'].flatMap((lang) => articles.map((a) => ({ lang, slug: a.slug })))
 }
@@ -167,6 +207,19 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
             <div className="mt-10 flex flex-wrap gap-3">
               <Link href={`/${lang}/case-studies/${a.caseSlug}`} className="btn-primary">{isEN ? 'See the full case study' : 'ดูกรณีศึกษาฉบับเต็ม'}</Link>
               <Link href={`/${lang}/work/${a.caseSlug}`} className="btn-outline">{isEN ? 'Project details' : 'รายละเอียดโปรเจกต์'}</Link>
+            </div>
+          )}
+
+          {(svcFor[a.slug] || []).length > 0 && (
+            <div className="mt-12">
+              <p className="t-label mb-4" style={{ color: 'var(--purple)' }}>{isEN ? 'Related services' : 'บริการที่เกี่ยวข้อง'}</p>
+              <div className="flex flex-wrap gap-3">
+                {(svcFor[a.slug] || []).map((sv) => (
+                  <Link key={sv} href={`/${lang}/services/${sv}`} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm border border-[#E4E4EC] text-[#0A0A0F] hover:border-[var(--purple)] hover:text-[var(--purple)] transition-colors">
+                    {svcLabel[sv][lang]} <i className="ti ti-arrow-up-right" style={{ fontSize: 13 }} aria-hidden="true" />
+                  </Link>
+                ))}
+              </div>
             </div>
           )}
 

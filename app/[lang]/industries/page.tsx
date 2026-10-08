@@ -2,9 +2,21 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
 import { t, type Lang } from '@/lib/i18n'
+import type { Metadata } from 'next'
+import { alt } from '@/lib/seo'
 
 export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
+}
+
+export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+  const isEN = params.lang === 'en'
+  const title = isEN ? 'Industries We Serve | Digital Solutions | Haliviq' : 'อุตสาหกรรมที่เราให้บริการ | โซลูชันดิจิทัล | Haliviq'
+  const description = isEN
+    ? 'From healthcare and fintech to logistics, retail and government, see how Haliviq designs and builds websites, apps and AI tools for each industry in Thailand.'
+    : 'ตั้งแต่สุขภาพ ฟินเทค โลจิสติกส์ ค้าปลีก ไปจนถึงภาครัฐ ดูว่า Haliviq ออกแบบและพัฒนา website แอป และระบบ AI ให้แต่ละอุตสาหกรรมในไทยอย่างไร'
+  const url = `https://haliviq.com/${params.lang}/industries`
+  return { title, description, alternates: alt(url), openGraph: { title, description, url }, twitter: { card: 'summary_large_image', title, description } }
 }
 
 const glass = 'rgba(255,255,255,0.05)'

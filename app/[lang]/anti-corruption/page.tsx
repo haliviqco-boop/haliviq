@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import LegalPage from '@/components/LegalPage'
 import { type Lang } from '@/lib/i18n'
+import { alt } from '@/lib/seo'
 
 export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
@@ -11,7 +12,7 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }): 
   const title = isEN ? 'Anti-Bribery & Anti-Corruption (ABAC) Policy | Haliviq' : 'นโยบายต่อต้านการให้สินบนและการทุจริต (ABAC) | Haliviq'
   const description = isEN ? 'Haliviq has zero tolerance for bribery and corruption in any form.' : 'Haliviq ไม่ยอมรับการให้สินบนและการทุจริตในทุกรูปแบบ'
   const url = `https://haliviq.com/${params.lang}/anti-corruption`
-  return { title, description, alternates: { canonical: url }, openGraph: { title, description, url } }
+  return { title, description, alternates: alt(url), openGraph: { title, description, url } }
 }
 
 export default function Page({ params }: { params: { lang: Lang } }) {

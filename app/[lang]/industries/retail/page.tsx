@@ -2,9 +2,21 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { t, type Lang } from '@/lib/i18n'
+import type { Metadata } from 'next'
+import { alt } from '@/lib/seo'
 
 export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
+}
+
+export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+  const isEN = params.lang === 'en'
+  const title = isEN ? "Retail & E-commerce Software & Digital Solutions | Haliviq" : "ค้าปลีกและอีคอมเมิร์ซ | โซลูชันดิจิทัล | Haliviq"
+  const description = isEN
+    ? "Online stores, stock systems, loyalty programmes, and marketplaces for retailers and brands that sell across web, app, LINE, and physical shops."
+    : "หน้าร้านออนไลน์ ระบบสต็อก โปรแกรมสะสมแต้ม และ Marketplace สำหรับผู้ค้าปลีกและแบรนด์ที่ขายทั้งบนเว็บ แอป LINE และหน้าร้านจริง"
+  const url = `https://haliviq.com/${params.lang}/industries/retail`
+  return { title, description, alternates: alt(url), openGraph: { title, description, url }, twitter: { card: 'summary_large_image', title, description } }
 }
 
 export default function Page({ params }: { params: { lang: Lang } }) {

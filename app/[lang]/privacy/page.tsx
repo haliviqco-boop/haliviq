@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import LegalPage, { type LegalSection } from '@/components/LegalPage'
 import { type Lang } from '@/lib/i18n'
+import { alt } from '@/lib/seo'
 
 export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
@@ -13,7 +14,7 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }): 
     ? "How Haliviq collects, uses, shares, and protects your personal data, in line with Thailand's PDPA and applicable data protection laws."
     : 'นโยบายความเป็นส่วนตัวของ Haliviq เรื่องการเก็บ ใช้ เปิดเผย และปกป้องข้อมูลส่วนบุคคล ตาม พ.ร.บ. คุ้มครองข้อมูลส่วนบุคคล (PDPA)'
   const siteUrl = `https://haliviq.com/${params.lang}/privacy`
-  return { title, description, alternates: { canonical: siteUrl }, openGraph: { title, description, url: siteUrl } }
+  return { title, description, alternates: alt(siteUrl), openGraph: { title, description, url: siteUrl } }
 }
 
 export default function Page({ params }: { params: { lang: Lang } }) {

@@ -2,9 +2,21 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { t, type Lang } from '@/lib/i18n'
+import type { Metadata } from 'next'
+import { alt } from '@/lib/seo'
 
 export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
+}
+
+export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+  const isEN = params.lang === 'en'
+  const title = isEN ? "Telecommunications Software & Digital Solutions | Haliviq" : "โทรคมนาคม | โซลูชันดิจิทัล | Haliviq"
+  const description = isEN
+    ? "Self-service apps, network dashboards, billing integration, and support automation for mobile, broadband, and IoT connectivity providers."
+    : "แอปให้ลูกค้าดูแลบริการเอง แดชบอร์ดเครือข่าย การเชื่อมระบบบิล และระบบซัพพอร์ตอัตโนมัติ สำหรับผู้ให้บริการมือถือ บรอดแบนด์ และการเชื่อมต่อ IoT"
+  const url = `https://haliviq.com/${params.lang}/industries/telecommunications`
+  return { title, description, alternates: alt(url), openGraph: { title, description, url }, twitter: { card: 'summary_large_image', title, description } }
 }
 
 export default function Page({ params }: { params: { lang: Lang } }) {

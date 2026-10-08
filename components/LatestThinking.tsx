@@ -14,14 +14,14 @@ const gradients = [
   'linear-gradient(135deg, #5A4ED4 0%, #53C3D7 100%)',
 ]
 
-function ArticleImage({ src, i, top }: { src: string; i: number; top?: boolean }) {
+function ArticleImage({ src, i, top, alt }: { src: string; i: number; top?: boolean; alt?: string }) {
   const [broken, setBroken] = useState(false)
   return (
     <div className="relative w-full rounded-2xl overflow-hidden" style={{ aspectRatio: '16/10' }}>
       {!broken ? (
         <img
           src={src}
-          alt=""
+          alt={alt || ''}
           onError={() => setBroken(true)}
           className="absolute inset-0 w-full h-full object-cover"
           style={{ objectPosition: top ? 'center top' : 'center' }}
@@ -133,7 +133,7 @@ export default function LatestThinking({ lang, tr }: Props) {
               className="group flex-none snap-start flex flex-col gap-5 p-5 rounded-3xl border border-white/10 hover:border-[var(--purple)]/50 transition-colors duration-300"
               style={{ width: 'clamp(210px, calc((100% - 4*1.25rem)/5), 280px)' }}
             >
-              <ArticleImage src={post.img} i={i} top={post.top} />
+              <ArticleImage src={post.img} i={i} top={post.top} alt={post.title} />
               <div className="flex flex-col gap-3 px-1 pb-1">
                 <h3
                   className="t-display transition-colors duration-300"

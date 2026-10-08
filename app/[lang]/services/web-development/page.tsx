@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ServiceLayout from '@/components/service/ServiceLayout'
 import { type Lang } from '@/lib/i18n'
+import { alt } from '@/lib/seo'
 
 const BRAND_LOGOS: Record<string, { hex: string; path: string }> = {
   flutter: { hex: '#02569B', path: 'M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z' },
@@ -52,7 +53,7 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }): 
   return {
     title,
     description,
-    alternates: { canonical: url },
+    alternates: alt(url),
     openGraph: { title, description, url },
     twitter: { card: 'summary_large_image', title, description },
   }

@@ -2,9 +2,21 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { t, type Lang } from '@/lib/i18n'
+import type { Metadata } from 'next'
+import { alt } from '@/lib/seo'
 
 export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
+}
+
+export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+  const isEN = params.lang === 'en'
+  const title = isEN ? "Automotive Software & Digital Solutions | Haliviq" : "ยานยนต์ | โซลูชันดิจิทัล | Haliviq"
+  const description = isEN
+    ? "Connected-vehicle and mobility software for car makers, dealers and fleet operators: EV charging apps, telematics dashboards, service booking and predictive…"
+    : "ซอฟต์แวร์รถยนต์เชื่อมต่ออินเทอร์เน็ตและบริการ Mobility สำหรับผู้ผลิตรถ ดีลเลอร์ และผู้ดูแลกองยานพาหนะ ตั้งแต่แอปชาร์จ EV แดชบอร์ด Telematics…"
+  const url = `https://haliviq.com/${params.lang}/industries/automotive`
+  return { title, description, alternates: alt(url), openGraph: { title, description, url }, twitter: { card: 'summary_large_image', title, description } }
 }
 
 export default function Page({ params }: { params: { lang: Lang } }) {

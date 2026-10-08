@@ -2,9 +2,21 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { t, type Lang } from '@/lib/i18n'
+import type { Metadata } from 'next'
+import { alt } from '@/lib/seo'
 
 export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
+}
+
+export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+  const isEN = params.lang === 'en'
+  const title = isEN ? "Healthcare & Life Sciences Software & Digital Solutions | Haliviq" : "สุขภาพและวิทยาศาสตร์ชีวภาพ | โซลูชันดิจิทัล | Haliviq"
+  const description = isEN
+    ? "Telemedicine, patient apps, hospital and clinic back-office systems and clinical data tools for Thai healthcare providers, built to handle health records…"
+    : "Telemedicine แอปสำหรับผู้ป่วย ระบบหลังบ้านของโรงพยาบาลและคลินิก และเครื่องมือจัดการข้อมูลทางคลินิก สำหรับผู้ให้บริการสุขภาพในไทย…"
+  const url = `https://haliviq.com/${params.lang}/industries/healthcare`
+  return { title, description, alternates: alt(url), openGraph: { title, description, url }, twitter: { card: 'summary_large_image', title, description } }
 }
 
 export default function Page({ params }: { params: { lang: Lang } }) {

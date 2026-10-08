@@ -2,9 +2,21 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { t, type Lang } from '@/lib/i18n'
+import type { Metadata } from 'next'
+import { alt } from '@/lib/seo'
 
 export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
+}
+
+export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+  const isEN = params.lang === 'en'
+  const title = isEN ? "Professional Services Software & Digital Solutions | Haliviq" : "บริการวิชาชีพ | โซลูชันดิจิทัล | Haliviq"
+  const description = isEN
+    ? "Client, document, and time-billing software for consultancies, law firms, accountants, and other firms that sell expertise by the hour or by the project."
+    : "ซอฟต์แวร์ดูแลลูกค้า จัดการเอกสาร และบันทึกเวลาออกบิล สำหรับบริษัทที่ปรึกษา สำนักงานกฎหมาย สำนักงานบัญชี…"
+  const url = `https://haliviq.com/${params.lang}/industries/professional-services`
+  return { title, description, alternates: alt(url), openGraph: { title, description, url }, twitter: { card: 'summary_large_image', title, description } }
 }
 
 export default function Page({ params }: { params: { lang: Lang } }) {

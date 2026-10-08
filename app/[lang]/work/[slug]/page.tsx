@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { t, type Lang } from '@/lib/i18n'
 import { workProjects, getWorkProject } from '@/lib/work-data'
+import { alt } from '@/lib/seo'
 
 export async function generateStaticParams() {
   const langs: Lang[] = ['th', 'en']
@@ -20,7 +21,7 @@ export async function generateMetadata({ params }: { params: { lang: Lang; slug:
   return {
     title,
     description: c.metaDescription,
-    alternates: { canonical: siteUrl },
+    alternates: alt(siteUrl),
     openGraph: {
       title,
       description: c.metaDescription,

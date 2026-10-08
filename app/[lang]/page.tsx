@@ -11,17 +11,63 @@ import LatestThinking from '@/components/LatestThinking'
 import FAQ from '@/components/FAQ'
 import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
+import type { Metadata } from 'next'
+import { alt } from '@/lib/seo'
 
 export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
+}
+
+export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
+  const lang = params.lang === 'en' ? 'en' : 'th'
+  return { alternates: alt(`https://haliviq.com/${lang}`) }
 }
 
 export default function HomePage({ params }: { params: { lang: string } }) {
   const lang = (params.lang === 'en' ? 'en' : 'th') as Lang
   const tr = t[lang] as any
 
+  const orgLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'ProfessionalService',
+        '@id': 'https://haliviq.com/#organization',
+        name: 'Haliviq',
+        url: 'https://haliviq.com',
+        logo: 'https://haliviq.com/favicon.png',
+        image: 'https://haliviq.com/og/haliviq-og.png',
+        slogan: 'Human Ideas. Intelligent Future.',
+        description: lang === 'en'
+          ? 'A design and AI studio in Bangkok building UX/UI, websites, mobile apps, LINE mini apps and AI tools.'
+          : 'สตูดิโอดีไซน์และ AI ในกรุงเทพฯ ออกแบบและพัฒนา UX/UI, website, แอปมือถือ, LINE mini app และระบบ AI',
+        telephone: '+66909189009',
+        email: 'wu@haliviq.com',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '111 Sukhumvit Road, Bang Chak, Phra Khanong',
+          addressLocality: 'Bangkok',
+          postalCode: '10260',
+          addressCountry: 'TH',
+        },
+        areaServed: ['TH', 'SG', 'MY', 'ID', 'VN', 'PH'],
+        knowsAbout: ['UX/UI design', 'Artificial intelligence', 'Web development', 'Mobile app development', 'PDPA compliance'],
+        sameAs: ['https://www.facebook.com/haliviq', 'https://www.instagram.com/haliviq', 'https://lin.ee/zyTrkx4'],
+      },
+      {
+        '@type': 'WebSite',
+        '@id': 'https://haliviq.com/#website',
+        url: 'https://haliviq.com',
+        name: 'Haliviq',
+        inLanguage: ['th', 'en'],
+        publisher: { '@id': 'https://haliviq.com/#organization' },
+      },
+    ],
+  }
+
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }} />
       <Navbar lang={lang} tr={tr} transparent />
       <Hero lang={lang} tr={tr} />
       <CoreSkills lang={lang} tr={tr} />

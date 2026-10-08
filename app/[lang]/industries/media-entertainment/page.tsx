@@ -2,9 +2,21 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { t, type Lang } from '@/lib/i18n'
+import type { Metadata } from 'next'
+import { alt } from '@/lib/seo'
 
 export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
+}
+
+export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+  const isEN = params.lang === 'en'
+  const title = isEN ? "Media & Entertainment Software & Digital Solutions | Haliviq" : "สื่อและบันเทิง | โซลูชันดิจิทัล | Haliviq"
+  const description = isEN
+    ? "Streaming, content, and audience software for publishers, studios, and creators who want viewers to keep coming back and be willing to pay."
+    : "ซอฟต์แวร์สตรีมมิง จัดการคอนเทนต์ และวิเคราะห์ผู้ชม สำหรับสำนักข่าว สตูดิโอ และครีเอเตอร์ที่อยากให้คนดูกลับมาซ้ำและยอมจ่าย"
+  const url = `https://haliviq.com/${params.lang}/industries/media-entertainment`
+  return { title, description, alternates: alt(url), openGraph: { title, description, url }, twitter: { card: 'summary_large_image', title, description } }
 }
 
 export default function Page({ params }: { params: { lang: Lang } }) {

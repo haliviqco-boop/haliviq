@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import LegalPage, { type LegalSection } from '@/components/LegalPage'
 import { type Lang } from '@/lib/i18n'
+import { alt } from '@/lib/seo'
 
 export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
@@ -13,7 +14,7 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }): 
     ? "The terms and conditions that govern your use of Haliviq's website and services."
     : 'ข้อกำหนดและเงื่อนไขการใช้งานเว็บไซต์และบริการของ Haliviq'
   const siteUrl = `https://haliviq.com/${params.lang}/terms`
-  return { title, description, alternates: { canonical: siteUrl }, openGraph: { title, description, url: siteUrl } }
+  return { title, description, alternates: alt(siteUrl), openGraph: { title, description, url: siteUrl } }
 }
 
 const en: LegalSection[] = [

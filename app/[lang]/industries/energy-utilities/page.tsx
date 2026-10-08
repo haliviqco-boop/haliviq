@@ -2,9 +2,21 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { t, type Lang } from '@/lib/i18n'
+import type { Metadata } from 'next'
+import { alt } from '@/lib/seo'
 
 export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
+}
+
+export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+  const isEN = params.lang === 'en'
+  const title = isEN ? "Energy & Utilities Software & Digital Solutions | Haliviq" : "พลังงานและสาธารณูปโภค | โซลูชันดิจิทัล | Haliviq"
+  const description = isEN
+    ? "Smart-meter dashboards, grid and solar monitoring, outage response and billing systems for power, water and renewable-energy operators, built for…"
+    : "แดชบอร์ด Smart Meter ระบบติดตามโครงข่ายและโซลาร์ ระบบรับมือไฟดับและคิดบิล สำหรับผู้ให้บริการไฟฟ้า น้ำประปา และพลังงานหมุนเวียน…"
+  const url = `https://haliviq.com/${params.lang}/industries/energy-utilities`
+  return { title, description, alternates: alt(url), openGraph: { title, description, url }, twitter: { card: 'summary_large_image', title, description } }
 }
 
 export default function Page({ params }: { params: { lang: Lang } }) {

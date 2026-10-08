@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { t, type Lang } from '@/lib/i18n'
 import { caseStudies, getCaseStudy } from '@/lib/case-studies-data'
+import { alt } from '@/lib/seo'
 
 // Keep meta descriptions near 155 characters: fill with whole sentences (EN) or cut at a word boundary (TH).
 function trimMeta(text: string, max = 158): string {
@@ -38,7 +39,7 @@ export async function generateMetadata({ params }: { params: { lang: Lang; slug:
   return {
     title,
     description: metaDesc,
-    alternates: { canonical: siteUrl },
+    alternates: alt(siteUrl),
     openGraph: {
       title,
       description: metaDesc,

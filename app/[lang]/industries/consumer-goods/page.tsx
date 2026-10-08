@@ -2,9 +2,21 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { t, type Lang } from '@/lib/i18n'
+import type { Metadata } from 'next'
+import { alt } from '@/lib/seo'
 
 export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
+}
+
+export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
+  const isEN = params.lang === 'en'
+  const title = isEN ? "Consumer Goods Software & Digital Solutions | Haliviq" : "สินค้าอุปโภคบริโภค | โซลูชันดิจิทัล | Haliviq"
+  const description = isEN
+    ? "Software for consumer product brands: direct-to-consumer stores, loyalty apps, sell-in and sell-out dashboards, demand forecasting and product data…"
+    : "ซอฟต์แวร์สำหรับแบรนด์สินค้าอุปโภคบริโภค ตั้งแต่ร้านค้าออนไลน์ของแบรนด์เอง แอปสะสมแต้ม แดชบอร์ดยอดขาย การพยากรณ์ความต้องการซื้อ…"
+  const url = `https://haliviq.com/${params.lang}/industries/consumer-goods`
+  return { title, description, alternates: alt(url), openGraph: { title, description, url }, twitter: { card: 'summary_large_image', title, description } }
 }
 
 export default function Page({ params }: { params: { lang: Lang } }) {

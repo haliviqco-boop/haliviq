@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import ServiceLayout from '@/components/service/ServiceLayout'
 import { type Lang } from '@/lib/i18n'
+import { alt } from '@/lib/seo'
 
 export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }): 
   return {
     title,
     description,
-    alternates: { canonical: url },
+    alternates: alt(url),
     openGraph: { title, description, url },
     twitter: { card: 'summary_large_image', title, description },
   }

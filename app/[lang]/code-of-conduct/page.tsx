@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import LegalPage from '@/components/LegalPage'
 import { type Lang } from '@/lib/i18n'
+import { alt } from '@/lib/seo'
 
 export async function generateStaticParams() {
   return [{ lang: 'th' }, { lang: 'en' }]
@@ -11,7 +12,7 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }): 
   const title = isEN ? 'Code of Conduct | Haliviq' : 'จรรยาบรรณธุรกิจ | Haliviq'
   const description = isEN ? 'The standards of conduct Haliviq expects from our team, partners, and suppliers.' : 'มาตรฐานความประพฤติที่ Haliviq คาดหวังจากทีมงาน พาร์ทเนอร์ และซัพพลายเออร์'
   const url = `https://haliviq.com/${params.lang}/code-of-conduct`
-  return { title, description, alternates: { canonical: url }, openGraph: { title, description, url } }
+  return { title, description, alternates: alt(url), openGraph: { title, description, url } }
 }
 
 export default function Page({ params }: { params: { lang: Lang } }) {
