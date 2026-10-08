@@ -1660,6 +1660,146 @@ export const caseStudies: CaseStudy[] = [
       ],
     },
   },
+  {
+    "slug": "dede",
+    "industryTag": "Government & Energy",
+    "result": "แอปมือถือและเว็บไซต์",
+    "year": "2025",
+    "th": {
+      "badge": "พลังงานและภาครัฐ",
+      "client": "DEDE",
+      "title": "แอป DEDE สำหรับเช็กอินตรวจสอบ และเว็บไซต์",
+      "desc": "แอปพลิเคชันที่ให้ผู้ตรวจสอบและรับรองการจัดการพลังงานถ่ายภาพและเช็กอินระบุเวลาขณะเข้าตรวจ พร้อมเว็บไซต์ของโครงการ",
+      "duration": "ตามขอบเขตงาน",
+      "servicesProvided": [
+        "พัฒนาแอปมือถือ",
+        "พัฒนาเว็บไซต์",
+        "ออกแบบ UX/UI"
+      ],
+      "heroImage": "/images/case-studies/dede/cover.jpg",
+      "challengeHeading": "โจทย์ของโปรเจกต์",
+      "challenge": "ผู้ตรวจสอบและรับรองการจัดการพลังงานต้องเข้าตรวจรายงานการจัดการพลังงานที่โรงงานควบคุมและอาคารควบคุม จึงต้องมีวิธีที่เชื่อถือได้ว่าไปตรวจจริง และเห็นอะไรบ้าง โดยไม่ต้องเพิ่มงานเอกสารหน้างาน",
+      "solutionHeading": "แนวทางที่เราทำ",
+      "solution": "เราออกแบบและพัฒนาแอป DEDE (ดีดี) ให้ผู้ตรวจสอบถ่ายภาพและเช็กอินระบุเวลาขณะเข้าตรวจได้ในไม่กี่ขั้นตอน และทำเว็บไซต์ที่อธิบายโครงการและเป็นที่ให้ผู้ใช้ทำความเข้าใจได้ชัดเจน",
+      "overviewHeading": "ภาพรวมโปรเจกต์",
+      "overview": "โปรเจกต์นี้ของ DEDE ครอบคลุม: แอปพลิเคชันที่ให้ผู้ตรวจสอบและรับรองการจัดการพลังงานถ่ายภาพและเช็กอินระบุเวลาขณะเข้าตรวจ พร้อมเว็บไซต์ของโครงการ",
+      "approachHeading": "แนวทางที่เราทำ",
+      "approach": [
+        {
+          "title": "ศึกษาหน้างานจริง",
+          "desc": "ทำความเข้าใจขั้นตอนการเข้าตรวจของผู้ตรวจสอบ เพื่อกำหนดขอบเขตและสิ่งที่ต้องบันทึก"
+        },
+        {
+          "title": "ออกแบบ UX/UI",
+          "desc": "ออกแบบหน้าจอที่ใช้ง่ายหน้างาน ขั้นตอนน้อย ปุ่มใหญ่และชัดเจน"
+        },
+        {
+          "title": "พัฒนาแอปมือถือ",
+          "desc": "พัฒนาแอปมือถือสำหรับผู้ตรวจสอบภาคสนาม ถ่ายภาพและเช็กอินระบุเวลาได้ในแอปเดียว"
+        },
+        {
+          "title": "พัฒนาเว็บไซต์",
+          "desc": "พัฒนาเว็บไซต์ที่ชัดเจน รองรับทุกอุปกรณ์ และทีมงานอัปเดตเนื้อหาได้ง่าย"
+        }
+      ],
+      "keyFeaturesHeading": "ฟีเจอร์เด่น",
+      "keyFeatures": [
+        {
+          "title": "ถ่ายภาพหน้างาน",
+          "bullets": [
+            "ถ่ายภาพในแอปขณะเข้าตรวจ",
+            "ภาพผูกกับรายการตรวจนั้นโดยตรง",
+            "ใช้ง่ายแม้ถือมือเดียว"
+          ]
+        },
+        {
+          "title": "เช็กอินระบุเวลา",
+          "bullets": [
+            "เช็กอินเมื่อเริ่มตรวจที่โรงงานควบคุมหรืออาคารควบคุม",
+            "บันทึกเวลาเข้าตรวจพร้อมการเช็กอิน",
+            "แสดงผลยืนยันชัดเจนว่าบันทึกสำเร็จ"
+          ]
+        },
+        {
+          "title": "เว็บไซต์ของโครงการ",
+          "bullets": [
+            "อธิบายว่าแอปมีไว้ทำอะไรและใครใช้",
+            "หน้าเว็บชัดเจน รองรับทุกอุปกรณ์",
+            "ทีมงานอัปเดตเนื้อหาได้ต่อเนื่อง"
+          ]
+        }
+      ],
+      "backLabel": "กลับไปหน้า Case Studies",
+      "servicesLabel": "บริการที่ให้"
+    },
+    "en": {
+      "badge": "Energy & Government",
+      "client": "DEDE",
+      "title": "DEDE Inspection Check-in App and Website",
+      "desc": "A mobile app that lets energy management auditors and certifiers photograph and check in with a time stamp during on-site inspections, plus a website for the program.",
+      "duration": "Project-based",
+      "servicesProvided": [
+        "Mobile App Development",
+        "Website Development",
+        "UX/UI Design"
+      ],
+      "heroImage": "/images/case-studies/dede/cover.jpg",
+      "challengeHeading": "The Challenge",
+      "challenge": "Auditors and certifiers of energy management visit controlled factories and controlled buildings to inspect energy management reports. They need a dependable way to show that a visit happened and what was seen, without extra paperwork on site.",
+      "solutionHeading": "Our Solution",
+      "solution": "We designed and built the DEDE app so an inspector can take photos and check in with a recorded time while inspecting, in a few simple steps. We also built a website that explains the program and gives users a clear place to learn about it.",
+      "overviewHeading": "Project Overview",
+      "overview": "This project gave DEDE: A mobile app that lets energy management auditors and certifiers photograph and check in with a time stamp during on-site inspections, plus a website for the program.",
+      "approachHeading": "Our Approach",
+      "approach": [
+        {
+          "title": "Discovery & Research",
+          "desc": "Studied how inspectors work on site to define the scope and what must be recorded."
+        },
+        {
+          "title": "UX/UI Design",
+          "desc": "Designed simple screens for use on site, with few steps and large, clear controls."
+        },
+        {
+          "title": "Mobile App Development",
+          "desc": "Built a mobile app for field inspectors with camera capture and time-stamped check-in."
+        },
+        {
+          "title": "Website Development",
+          "desc": "Built a clear, responsive website that explains the program and is easy for the team to update."
+        }
+      ],
+      "keyFeaturesHeading": "Key Features",
+      "keyFeatures": [
+        {
+          "title": "Photo Capture on Site",
+          "bullets": [
+            "Take photos inside the app during an inspection",
+            "Photos stay attached to the inspection record",
+            "Simple flow that works with one hand"
+          ]
+        },
+        {
+          "title": "Time-Stamped Check-in",
+          "bullets": [
+            "Check in when starting an inspection at a controlled factory or building",
+            "The time of the visit is recorded with the check-in",
+            "Clear confirmation so the inspector knows it worked"
+          ]
+        },
+        {
+          "title": "Program Website",
+          "bullets": [
+            "Explains what the app is for and who uses it",
+            "Clear, responsive pages for any device",
+            "Content the team can keep up to date"
+          ]
+        }
+      ],
+      "backLabel": "Back to Case Studies",
+      "servicesLabel": "Services Provided"
+    }
+  },
 ]
 
 export function getCaseStudy(slug: string) {

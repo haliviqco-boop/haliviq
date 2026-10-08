@@ -69,6 +69,7 @@ const projectsEN = [
   { id:40, service:'beauty', tags:["Beauty", "CRM"], year:'2025', title:"Website, UX/UI and AI-Assisted CRM for an Aesthetic Clinic", client:"DSK", desc:"Digital strategy advice, an elegant UX/UI and a CRM where AI helps prioritise which enquiries to follow up first.", result:"Website + CRM", slug:'dsk' },
   { id:41, service:'realestate', tags:["Home Builder", "CRM"], year:'2025', title:"Website, UX/UI and AI-Assisted CRM for a Home Builder", client:"Admire", desc:"Large-format house and project galleries, a visible consultation route and an AI-assisted CRM that reminds the team when to follow up.", result:"Website + CRM", slug:'admire' },
   { id:42, service:'beauty', tags:["Beauty", "Brand"], year:'2025', title:"Brand, Website and Graphics for an Aesthetic Hospital", client:"MEKO International Hospital", desc:"Brand guidelines, treatment-focused website pages and reusable campaign and social templates for the hospital's in-house team.", result:"Brand + Website", slug:'meko-international-hospital' },
+  { id:43, service:'government', tags:["Energy", "Mobile App", "Website"], year:'2025', title:"DEDE Inspection Check-in App and Website", client:"DEDE", desc:"A mobile app that lets energy management auditors and certifiers photograph and check in with a time stamp during on-site inspections, plus a website for the program.", result:"Mobile App + Website", slug:'dede' },
 ]
 
 const projectsTH = [
@@ -113,6 +114,7 @@ const projectsTH = [
   { id:40, service:'beauty', tags:["Beauty", "CRM"], year:'2025', title:"เว็บไซต์ UX/UI และ AI CRM สำหรับคลินิกศัลยกรรมความงาม", client:"DSK", desc:"คำปรึกษาแผนดิจิทัล UX/UI ที่สง่างาม และ CRM ที่ AI ช่วยจัดลำดับว่าควรติดตามคำถามไหนก่อน", result:"เว็บไซต์ + CRM", slug:'dsk' },
   { id:41, service:'realestate', tags:["Home Builder", "CRM"], year:'2025', title:"เว็บไซต์ UX/UI และ AI CRM สำหรับธุรกิจรับสร้างบ้าน", client:"Admire", desc:"แกลเลอรีแบบบ้านและโครงการภาพใหญ่ ช่องทางขอคำปรึกษาที่เห็นชัด และ CRM ที่มี AI ช่วยเตือนทีมเมื่อถึงเวลาตามลูกค้า", result:"เว็บไซต์ + CRM", slug:'admire' },
   { id:42, service:'beauty', tags:["Beauty", "Brand"], year:'2025', title:"แบรนด์ เว็บไซต์ และกราฟิกสำหรับโรงพยาบาลศัลยกรรมความงาม", client:"MEKO International Hospital", desc:"แนวทางแบรนด์ หน้าเว็บที่เน้นบริการรักษา และเทมเพลตแคมเปญกับโซเชียลที่ทีมโรงพยาบาลนำไปใช้ซ้ำได้", result:"แบรนด์ + เว็บไซต์", slug:'meko-international-hospital' },
+  { id:43, service:'government', tags:["Energy", "Mobile App", "Website"], year:'2025', title:"แอป DEDE สำหรับเช็กอินตรวจสอบ และเว็บไซต์", client:"DEDE", desc:"แอปพลิเคชันที่ให้ผู้ตรวจสอบและรับรองการจัดการพลังงานถ่ายภาพและเช็กอินระบุเวลาขณะเข้าตรวจ พร้อมเว็บไซต์ของโครงการ", result:"แอปมือถือและเว็บไซต์", slug:'dede' },
 ]
 
 const gradients = [

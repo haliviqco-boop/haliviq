@@ -7004,6 +7004,205 @@ export const workProjects: WorkProject[] = [
       "servicesLabel": "Services Provided",
       "ogImage": "/images/case-studies/meko-international-hospital/cover.jpg"
     }
+  },
+  {
+    "slug": "dede",
+    "industryTag": "Energy & Government",
+    "year": "2025",
+    "th": {
+      "metaTitle": "DEDE แอป DEDE สำหรับเช็กอินตรวจสอบ และเว็บไซต์ — ผลงาน Haliviq",
+      "metaDescription": "สรุปงานที่ส่งมอบ เทคโนโลยี และแนวทางของโปรเจกต์ DEDE โดย Haliviq: พัฒนาแอปมือถือ, พัฒนาเว็บไซต์, ออกแบบ UX/UI",
+      "h1": "DEDE — แอป DEDE สำหรับเช็กอินตรวจสอบ และเว็บไซต์",
+      "client": "DEDE",
+      "badge": "พลังงานและภาครัฐ",
+      "servicesProvided": [
+        "พัฒนาแอปมือถือ",
+        "พัฒนาเว็บไซต์",
+        "ออกแบบ UX/UI"
+      ],
+      "intro": "ผู้ตรวจสอบและรับรองการจัดการพลังงานต้องเข้าตรวจรายงานการจัดการพลังงานที่โรงงานควบคุมและอาคารควบคุม จึงต้องมีวิธีที่เชื่อถือได้ว่าไปตรวจจริง และเห็นอะไรบ้าง โดยไม่ต้องเพิ่มงานเอกสารหน้างาน เราออกแบบและพัฒนาแอป DEDE (ดีดี) ให้ผู้ตรวจสอบถ่ายภาพและเช็กอินระบุเวลาขณะเข้าตรวจได้ในไม่กี่ขั้นตอน และทำเว็บไซต์ที่อธิบายโครงการและเป็นที่ให้ผู้ใช้ทำความเข้าใจได้ชัดเจน หน้านี้สรุปงานที่ส่งมอบและแนวทางการทำงาน สำหรับธุรกิจที่มองหาสตูดิโอพัฒนาผลิตภัณฑ์ดิจิทัลในประเทศไทย",
+      "snapshot": [
+        {
+          "label": "อุตสาหกรรม",
+          "value": "พลังงานและภาครัฐ"
+        },
+        {
+          "label": "ขอบเขต",
+          "value": "พัฒนาแอปมือถือ, พัฒนาเว็บไซต์, ออกแบบ UX/UI"
+        },
+        {
+          "label": "ปี",
+          "value": "2025"
+        },
+        {
+          "label": "บริการ",
+          "value": "3"
+        }
+      ],
+      "objectivesHeading": "เป้าหมายของโปรเจกต์",
+      "objectives": [
+        "สะท้อนแบรนด์ DEDE ด้วยประสบการณ์ที่ชัดเจนและเป็นมืออาชีพ",
+        "ทำให้ข้อมูลสำคัญค้นหาได้ง่ายบนทุกอุปกรณ์",
+        "สร้างช่องทางที่ชัดเจนให้ลูกค้าสอบถามหรือดำเนินการต่อ",
+        "มอบเครื่องมือให้ทีมงานดูแลและต่อยอดสิ่งที่พัฒนาได้เอง"
+      ],
+      "deliverablesHeading": "สิ่งที่เราส่งมอบ",
+      "deliverables": [
+        "พัฒนาแอปมือถือ",
+        "พัฒนาเว็บไซต์",
+        "ออกแบบ UX/UI",
+        "ระบบจัดการเนื้อหาสำหรับทีมงาน",
+        "ส่งมอบงานและอบรมทีมงาน"
+      ],
+      "approachHeading": "ขั้นตอนการทำงาน",
+      "approach": [
+        {
+          "title": "ศึกษาหน้างานจริง",
+          "desc": "ทำความเข้าใจขั้นตอนการเข้าตรวจของผู้ตรวจสอบ เพื่อกำหนดขอบเขตและสิ่งที่ต้องบันทึก"
+        },
+        {
+          "title": "ออกแบบ UX/UI",
+          "desc": "ออกแบบหน้าจอที่ใช้ง่ายหน้างาน ขั้นตอนน้อย ปุ่มใหญ่และชัดเจน"
+        },
+        {
+          "title": "พัฒนาแอปมือถือ",
+          "desc": "พัฒนาแอปมือถือสำหรับผู้ตรวจสอบภาคสนาม ถ่ายภาพและเช็กอินระบุเวลาได้ในแอปเดียว"
+        },
+        {
+          "title": "พัฒนาเว็บไซต์",
+          "desc": "พัฒนาเว็บไซต์ที่ชัดเจน รองรับทุกอุปกรณ์ และทีมงานอัปเดตเนื้อหาได้ง่าย"
+        },
+        {
+          "title": "ทดสอบและเปิดใช้งาน",
+          "desc": "ทดสอบบนอุปกรณ์จริง เปิดใช้งานและส่งมอบให้ทีมงาน"
+        }
+      ],
+      "techHeading": "เทคโนโลยีและเครื่องมือ",
+      "tech": [
+        "แอปพลิเคชันมือถือ",
+        "ถ่ายภาพและเช็กอินระบุเวลา",
+        "เว็บไซต์ Responsive",
+        "ระบบจัดการเนื้อหาสำหรับทีมงาน"
+      ],
+      "resultsHeading": "ผลลัพธ์",
+      "results": [
+        "เปิดตัวประสบการณ์ที่ประณีตและสะท้อนแบรนด์ DEDE",
+        "ข้อมูลเป็นระเบียบ ค้นหาง่ายทั้งบนมือถือและเดสก์ท็อป",
+        "ลูกค้ามีช่องทางติดต่อที่ชัดเจน",
+        "ทีมงานอัปเดตเนื้อหาได้เองอย่างต่อเนื่อง"
+      ],
+      "faqHeading": "คำถามที่พบบ่อย",
+      "faq": [
+        {
+          "question": "แอป DEDE ใช้กับใคร",
+          "answer": "ใช้กับผู้ตรวจสอบและรับรองการจัดการพลังงานที่เข้าตรวจรายงานการจัดการพลังงานที่โรงงานควบคุมและอาคารควบคุม"
+        },
+        {
+          "question": "แอปบันทึกอะไรบ้าง",
+          "answer": "บันทึกภาพที่ถ่ายขณะเข้าตรวจ และการเช็กอินพร้อมเวลาที่เข้าตรวจ"
+        }
+      ],
+      "backLabel": "กลับไปหน้า Work",
+      "servicesLabel": "บริการที่ให้",
+      "ogImage": "/images/case-studies/dede/cover.jpg"
+    },
+    "en": {
+      "metaTitle": "DEDE DEDE Inspection Check-in App and Website — Haliviq",
+      "metaDescription": "Deliverables, approach and tech behind DEDE's project by Haliviq: Mobile App Development, Website Development, UX/UI Design.",
+      "h1": "DEDE — DEDE Inspection Check-in App and Website",
+      "client": "DEDE",
+      "badge": "Energy & Government",
+      "servicesProvided": [
+        "Mobile App Development",
+        "Website Development",
+        "UX/UI Design"
+      ],
+      "intro": "Auditors and certifiers of energy management visit controlled factories and controlled buildings to inspect energy management reports. They need a dependable way to show that a visit happened and what was seen, without extra paperwork on site. We designed and built the DEDE app so an inspector can take photos and check in with a recorded time while inspecting, in a few simple steps. We also built a website that explains the program and gives users a clear place to learn about it. This page summarizes the deliverables and approach, for businesses looking for a digital product studio in Thailand.",
+      "snapshot": [
+        {
+          "label": "Industry",
+          "value": "Energy & Government"
+        },
+        {
+          "label": "Scope",
+          "value": "Mobile App Development, Website Development, UX/UI Design"
+        },
+        {
+          "label": "Year",
+          "value": "2025"
+        },
+        {
+          "label": "Services",
+          "value": "3"
+        }
+      ],
+      "objectivesHeading": "Project Objectives",
+      "objectives": [
+        "Reflect the DEDE brand through a clear, professional experience.",
+        "Make key information easy to find on any device.",
+        "Create clear paths for customers to enquire or take action.",
+        "Give the team tools to maintain and grow what we built."
+      ],
+      "deliverablesHeading": "What We Delivered",
+      "deliverables": [
+        "Mobile App Development",
+        "Website Development",
+        "UX/UI Design",
+        "Content management for the team",
+        "Handover and team training"
+      ],
+      "approachHeading": "How We Built It",
+      "approach": [
+        {
+          "title": "Discovery & Research",
+          "desc": "Studied how inspectors work on site to define the scope and what must be recorded."
+        },
+        {
+          "title": "UX/UI Design",
+          "desc": "Designed simple screens for use on site, with few steps and large, clear controls."
+        },
+        {
+          "title": "Mobile App Development",
+          "desc": "Built a mobile app for field inspectors with camera capture and time-stamped check-in."
+        },
+        {
+          "title": "Website Development",
+          "desc": "Built a clear, responsive website that explains the program and is easy for the team to update."
+        },
+        {
+          "title": "Testing & Launch",
+          "desc": "Tested on real devices, launched and handed over to the team."
+        }
+      ],
+      "techHeading": "Technology & Tools",
+      "tech": [
+        "Mobile application",
+        "Camera capture and time-stamped check-in",
+        "Responsive website",
+        "Content management for the team"
+      ],
+      "resultsHeading": "Results",
+      "results": [
+        "Launched a polished experience that reflects the DEDE brand.",
+        "Information is organized and easy to find on mobile and desktop.",
+        "Customers have clear ways to get in touch.",
+        "The team can keep content up to date independently."
+      ],
+      "faqHeading": "Frequently Asked Questions",
+      "faq": [
+        {
+          "question": "Who is the DEDE app for?",
+          "answer": "It is for auditors and certifiers of energy management who visit controlled factories and controlled buildings to inspect energy management reports."
+        },
+        {
+          "question": "What does the app record?",
+          "answer": "Photos taken during the inspection and a check-in with the time of the visit."
+        }
+      ],
+      "backLabel": "Back to Work",
+      "servicesLabel": "Services Provided",
+      "ogImage": "/images/case-studies/dede/cover.jpg"
+    }
   }
 ]
 
