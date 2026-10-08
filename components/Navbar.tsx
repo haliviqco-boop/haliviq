@@ -40,6 +40,7 @@ const servicesMenuTh = {
     {label:'อสังหาริมทรัพย์',href:'/industries/real-estate'},
     {label:'การศึกษา',href:'/industries/education'},
     {label:'โลจิสติกส์',href:'/industries/logistics'},
+    {label:'พลังงานและสาธารณูปโภค',href:'/industries/energy-utilities'},
   ],
 }
 
@@ -77,6 +78,7 @@ const servicesMenuEn = {
     {label:'Real Estate',href:'/industries/real-estate'},
     {label:'Education',href:'/industries/education'},
     {label:'Logistics',href:'/industries/logistics'},
+    {label:'Energy & Utilities',href:'/industries/energy-utilities'},
   ],
 }
 
@@ -107,6 +109,7 @@ const flagshipIndustriesTh = [
   { icon: 'ti-building-skyscraper', title: 'อสังหาริมทรัพย์', href: '/industries/real-estate', desc: 'แพลตฟอร์มดิจิทัลสำหรับค้นหา จัดการ และขายอสังหาฯ ให้ทั้งทีมขายและลูกค้าใช้ง่าย' },
   { icon: 'ti-school', title: 'การศึกษา', href: '/industries/education', desc: 'ใช้เทคโนโลยีการศึกษาสมัยใหม่ช่วยให้ผู้เรียนเรียนรู้ได้ดีขึ้น และช่วยให้ผู้สอนทำงานสะดวกขึ้น' },
   { icon: 'ti-truck-delivery', title: 'โลจิสติกส์', href: '/industries/logistics', desc: 'ระบบซัพพลายเชน ขนส่ง และคลังสินค้าที่ทำงานฉลาดขึ้น เห็นสถานะของแต่ละขั้นตอนชัดเจน' },
+  { icon: 'ti-bolt', title: 'พลังงานและสาธารณูปโภค', href: '/industries/energy-utilities', desc: 'แดชบอร์ดสมาร์ทมิเตอร์ ระบบติดตามโครงข่าย และแอปสำหรับทีมภาคสนาม' },
 ]
 
 const workMenuTh = [
@@ -142,6 +145,7 @@ const flagshipIndustriesEn = [
   { icon: 'ti-building-skyscraper', title: 'Real Estate', href: '/industries/real-estate', desc: 'Digital platforms for searching, managing and selling property, easy for both sales teams and buyers.' },
   { icon: 'ti-school', title: 'Education', href: '/industries/education', desc: 'Education technology that helps learners study better and makes teachers\' work easier.' },
   { icon: 'ti-truck-delivery', title: 'Logistics', href: '/industries/logistics', desc: 'Smarter supply chain, fleet and warehouse operations, with a clear view of every stage.' },
+  { icon: 'ti-bolt', title: 'Energy & Utilities', href: '/industries/energy-utilities', desc: 'Smart-meter dashboards, grid monitoring and field-crew apps for power and water operators.' },
 ]
 
 const segmentsTh = [
