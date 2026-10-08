@@ -17,11 +17,11 @@ export default function Hero({ lang, tr }: Props) {
       <div className="absolute inset-0" style={{background:'linear-gradient(180deg, rgba(5,3,16,0.55) 0%, rgba(5,3,16,0.15) 30%, rgba(5,3,16,0.1) 55%, rgba(5,3,16,0.65) 100%)', zIndex:2}}/>
 
       <div className="relative flex flex-col" style={{zIndex:3, minHeight:'100vh'}}>
-        <div className="flex-1 flex items-center justify-center">
+        <div className="flex-1 flex items-center justify-center pt-28 pb-10 lg:pt-24">
           <div className="max-w-5xl mx-auto px-4 lg:px-10 text-center">
             {/* Tagline — thin, wide letter-spacing, brand mark */}
-            <p className="fade-up" style={{animationDelay:'0s', fontFamily:'var(--font-main)', fontWeight:400, fontSize:'clamp(0.65rem,1.1vw,0.85rem)', letterSpacing:'0.35em', color:'rgba(244,242,255,0.8)', textTransform:'uppercase', marginBottom:'1.75rem'}}>
-              Human Ideas. Intelligent Future.
+            <p className="fade-up" style={{animationDelay:'0s', fontFamily:'var(--font-main)', fontWeight:400, fontSize:'clamp(0.65rem,1.1vw,0.85rem)', letterSpacing:'clamp(0.12em,0.9vw,0.35em)', lineHeight:1.8, color:'rgba(244,242,255,0.8)', textTransform:'uppercase', marginBottom:'1.75rem'}}>
+              {lang === 'th' ? 'ความคิดของคน สู่อนาคตที่ฉลาดขึ้น' : 'Human Ideas. Intelligent Future.'}
             </p>
 
             <h1 className="t-display leading-relaxed text-[clamp(2.75rem,6vw,5.5rem)] mb-6 fade-up" style={{animationDelay:'0.1s', color:'#fff'}}>

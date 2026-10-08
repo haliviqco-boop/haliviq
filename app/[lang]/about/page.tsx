@@ -11,11 +11,11 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
   const isEN = params.lang === 'en'
   const title = isEN
-    ? 'About Haliviq | Digital Product Studio in Bangkok'
-    : 'เกี่ยวกับ Haliviq | สตูดิโอดิจิทัลในกรุงเทพฯ'
+    ? 'About Haliviq | Human Ideas. Intelligent Future.'
+    : 'เกี่ยวกับ Haliviq | ความคิดของคน สู่อนาคตที่ฉลาดขึ้น'
   const description = isEN
-    ? 'Meet the Bangkok team behind Haliviq: a small studio that plans, designs and builds websites, apps and AI tools for Thai and Southeast Asian businesses.'
-    : 'รู้จักทีม Haliviq สตูดิโอในกรุงเทพฯ ที่ช่วยวางแผน ออกแบบ และพัฒนา website แอป และระบบ AI ให้ธุรกิจในไทยและเอเชียตะวันออกเฉียงใต้ ทีมเล็กที่ดูแลงานใกล้ชิด'
+    ? 'Meet the Bangkok team behind Haliviq. Human Ideas. Intelligent Future. We combine UX/UI design and AI to build products for Thai and Southeast Asian businesses.'
+    : 'รู้จักทีม Haliviq ความคิดของคน สู่อนาคตที่ฉลาดขึ้น เรารวมงานออกแบบ UX/UI กับ AI เพื่อสร้างผลิตภัณฑ์ให้ธุรกิจในไทยและเอเชียตะวันออกเฉียงใต้'
   const siteUrl = `https://haliviq.com/${params.lang}/about`
   return {
     title,

@@ -33,10 +33,10 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
   const isEN = params.lang === 'en'
-  const title = isEN ? 'Careers at Haliviq | Tech Jobs in Bangkok' : 'ร่วมงานกับ Haliviq | ตำแหน่งงานสาย Tech กรุงเทพฯ'
+  const title = isEN ? 'Careers at Haliviq | AI & Design Jobs in Bangkok' : 'ร่วมงานกับ Haliviq | งานสาย AI และ Design กรุงเทพฯ'
   const description = isEN
-    ? 'Join a Bangkok digital product studio. See open roles in engineering, design, product and project management, plus benefits, hybrid working and our hiring process.'
-    : 'ร่วมงานกับสตูดิโอพัฒนาผลิตภัณฑ์ดิจิทัลในกรุงเทพฯ ดูตำแหน่งงานสาย Engineering Design Product และ Project Management พร้อมสวัสดิการ การทำงานแบบไฮบริด และขั้นตอนสมัคร'
+    ? 'Join Haliviq in Bangkok and help build the intelligent future. Open roles in AI, design, engineering, product and project management, with hybrid work and a clear hiring process.'
+    : 'ร่วมสร้างอนาคตที่ฉลาดขึ้นกับ Haliviq ที่กรุงเทพฯ ดูตำแหน่งงานสาย AI, Design, Engineering, Product และ Project Management พร้อมสวัสดิการ ทำงานแบบไฮบริด และขั้นตอนสมัครงานที่ชัดเจน'
   const url = `https://haliviq.com/${params.lang}/careers`
   return {
     title,
@@ -128,10 +128,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                   <span className="t-label" style={{ fontSize: '0.7rem', color: 'var(--purple-light)' }}>{isEN ? 'Now Hiring 12 Positions' : 'กำลังเปิดรับ 12 ตำแหน่ง'}</span>
                 </div>
                 <h1 className="t-display text-[clamp(3rem,6.5vw,5.6rem)] leading-relaxed mb-8" style={{ color: '#fff' }}>
-                  {isEN ? <>Come build<br /><span style={G}>something great</span><br />together</> : <>มาสร้าง<br /><span style={G}>สิ่งดีๆ</span><br />ไปด้วยกัน</>}
+                  {isEN ? <>Bring human ideas.<br /><span style={G}>Build the intelligent</span><br />future with us</> : <>เอาความคิดของคนมาเป็นตัวตั้ง<br /><span style={G}>แล้วสร้างอนาคต</span><br />ที่ฉลาดขึ้นด้วยกัน</>}
                 </h1>
                 <p className="text-lg leading-relaxed mb-10 max-w-lg" style={muted}>
-                  {isEN ? 'Haliviq is a Bangkok studio where designers, engineers and strategists sit on the same team. Together we plan, design and build websites, apps and AI tools for businesses in Thailand and across Southeast Asia. Whether you write code, design screens or run projects, you will work on real client products from start to launch.' : 'Haliviq เป็นสตูดิโอในกรุงเทพฯ ที่นักออกแบบ วิศวกร และนักวางกลยุทธ์ทำงานอยู่ในทีมเดียวกัน เราช่วยกันวางแผน ออกแบบ และพัฒนา website แอป และระบบ AI ให้ธุรกิจในไทยและเอเชียตะวันออกเฉียงใต้ ไม่ว่าคุณจะเขียนโค้ด ออกแบบหน้าจอ หรือดูแลโปรเจกต์ ก็จะได้ทำงานกับผลิตภัณฑ์ของลูกค้าจริงตั้งแต่เริ่มจนเปิดใช้งาน'}
+                  {isEN ? 'Human Ideas. Intelligent Future. is how we work at Haliviq. We are a Bangkok studio that puts design and AI side by side: designers shape how a product feels, AI engineers make it smarter, and strategists keep both pointed at a real business problem. Whether you design screens, build AI features, write code or run projects, you will work on real client products from first sketch to launch, and learn from people who care about the craft.' : 'Human Ideas. Intelligent Future. หรือ "ความคิดของคน สู่อนาคตที่ฉลาดขึ้น" คือวิธีที่เราทำงานที่ Haliviq เราเป็นสตูดิโอในกรุงเทพฯ ที่เอางานดีไซน์กับ AI มาไว้ข้างกัน ดีไซเนอร์ดูว่าผลิตภัณฑ์ควรให้ความรู้สึกแบบไหน วิศวกร AI ทำให้มันฉลาดขึ้น ส่วนนักกลยุทธ์คอยดูว่าทั้งสองอย่างยังตอบโจทย์ธุรกิจจริง ไม่ว่าคุณจะออกแบบหน้าจอ สร้างฟีเจอร์ AI เขียนโค้ด หรือดูแลโปรเจกต์ คุณจะได้ทำงานกับลูกค้าจริงตั้งแต่ภาพร่างแรกจนถึงวันเปิดตัว และได้เรียนรู้จากคนที่ใส่ใจงานฝีมือจริง ๆ'}
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <a href="#openings" className="btn-primary" style={{ fontSize: '1rem', padding: '14px 32px' }}>

@@ -13,7 +13,7 @@ export const t = {
     },
     // ── HERO ──
     hero: {
-      badge: 'สตูดิโอพัฒนาผลิตภัณฑ์ดิจิทัล — กรุงเทพฯ',
+      badge: 'ความคิดของคน สู่อนาคตที่ฉลาดขึ้น',
       h1a: 'เราสร้าง', h1b: 'ผลิตภัณฑ์ดิจิทัล', h1c: 'ที่สร้างความต่าง',
       sub: 'เราช่วยดูให้ตั้งแต่วางกลยุทธ์ ออกแบบ ไปจนถึงเขียนโค้ดและเปิดใช้งานจริง ทั้งหมดอยู่ในทีมเดียวที่กรุงเทพฯ ทำงานด้านนี้มากว่า 8 ปี เน้นสร้างผลิตภัณฑ์ที่ธุรกิจเอาไปใช้แล้วเห็นผลจริง ไม่ว่าจะเป็นเว็บไซต์ แอป ระบบ AI หรือระบบหลังบ้านขององค์กร',
       btn1: 'เริ่มโปรเจกต์', btn2: 'ดูผลงานของเรา',
@@ -269,14 +269,14 @@ export const t = {
     },
     // ── ABOUT ──
     about: {
-      label: 'เกี่ยวกับ Haliviq', h2a: 'เราไม่ได้แค่สร้างซอฟต์แวร์', h2b: 'เราสร้างธุรกิจ',
-      p1: 'Haliviq เป็นสตูดิโอพัฒนาผลิตภัณฑ์ดิจิทัลในกรุงเทพฯ เราเชื่อว่าเทคโนโลยีที่ดีควรใช้งานได้โดยไม่ต้องคิดมาก และควรทำให้ชีวิตกับธุรกิจของผู้คนดีขึ้นจริง ไม่ใช่แค่ดูดีบนสไลด์',
-      p2: 'เรามีทีมกว่า 40 คน ทั้งนักกลยุทธ์ ดีไซเนอร์ และวิศวกร ทำงานกับบริษัทที่อยากเติบโต ตั้งแต่ Startup จนถึงองค์กรขนาดใหญ่ ทุกโปรเจกต์คุณจะได้คุยกับทีมที่ลงมือทำงานจริง และรู้ว่างานคืบหน้าถึงไหนตลอดเวลา',
+      label: 'เกี่ยวกับ Haliviq', h2a: 'ความคิดของคน', h2b: 'สู่อนาคตที่ฉลาดขึ้น',
+      p1: 'Haliviq เป็นสตูดิโอดีไซน์และ AI ในกรุงเทพฯ เราเริ่มจากความคิดของคนก่อนเสมอ คือดูว่าคนใช้งานคิดยังไง ตัดสินใจยังไง และติดตรงไหน แล้วค่อยเลือกเทคโนโลยีที่ช่วยให้ไอเดียของเขาไปได้ไกลขึ้น ไม่ใช่เอาเทคโนโลยีมาตั้งแล้วให้คนปรับตัวตาม',
+      p2: 'เรามีทีมกว่า 40 คน ทั้งนักกลยุทธ์ ดีไซเนอร์ และวิศวกร งานของเราคือ UX/UI ที่คนใช้แล้วเข้าใจง่าย กับ AI ที่ช่วยงานจริง ตั้งแต่ค้นหาข้อมูล สรุปเอกสาร ไปจนถึงตอบลูกค้า ทุกโปรเจกต์คุณจะได้คุยกับคนที่ลงมือทำงานเอง และรู้ตลอดว่างานไปถึงไหนแล้ว',
       stats: ['โปรเจกต์', 'ประสบการณ์', 'ลูกค้ากลับมา'],
       pillars: [
-        { title: 'เริ่มจากกลยุทธ์', desc: 'เราถามว่า "ทำไม" ก่อนจะถามว่า "ทำยังไง" ทุกโปรเจกต์เริ่มจากการเอาสิ่งที่ธุรกิจคาดหวังมาจับคู่กับวิธีแก้ที่ถูกต้อง เพื่อไม่ให้ทำของที่ไม่มีใครใช้' },
+        { title: 'เริ่มจากคน', desc: 'เราถามก่อนว่าคนใช้งานคิดและทำงานกันยังไง แล้วค่อยเลือกวิธีแก้ ทุกโปรเจกต์เลยเริ่มจากการคุยกับผู้ใช้และทีมของคุณ ไม่ใช่เริ่มจากเทคโนโลยีที่กำลังฮิต' },
         { title: 'วิศวกรรมที่นำด้วยดีไซน์', desc: 'ดีไซเนอร์กับวิศวกรทำงานเป็นทีมเดียวกัน ไม่ต้องส่งต่องานข้ามทีม รายละเอียดที่ออกแบบไว้เลยไม่หายระหว่างทาง' },
-        { title: 'เร็วแต่ไม่ลวก', desc: 'เราทำงานเป็น Sprint แบบ Agile เห็นความคืบหน้าทุกสัปดาห์ และเขียนโค้ดให้สะอาด เพื่อให้ส่งงานได้เร็วและถูกต้องตั้งแต่ครั้งแรก' },
+        { title: 'AI ที่มีเหตุผล', desc: 'เราใช้ AI ตรงที่มันช่วยประหยัดเวลาหรือช่วยให้ตัดสินใจได้ดีขึ้นจริง และออกแบบให้มีคนตรวจคำตอบเสมอ ถ้างานไหนแค่ฟอร์มดี ๆ หรือหน้าเว็บที่ออกแบบใหม่ก็พอ เราก็จะบอกตรง ๆ' },
         { title: 'พาร์ทเนอร์ที่แท้จริง', desc: 'เราไม่ได้มาแค่รับจ้างทำงาน แต่ทำตัวเป็นส่วนหนึ่งของทีมคุณ ร่วมรับผิดชอบผลลัพธ์และอยู่ช่วยกันต่อในระยะยาว' },
       ],
     },
@@ -346,7 +346,7 @@ export const t = {
       allIndustries: 'All Industries',
     },
     hero: {
-      badge: 'Digital Product Studio — Bangkok',
+      badge: 'Human Ideas. Intelligent Future.',
       h1a: 'We Build', h1b: 'Digital Products', h1c: 'That Matter.',
       sub: 'Strategy, design and engineering sit in one Bangkok team, so the people who shape your idea are still in the room when it ships. We have spent 8+ years building websites, apps, AI tools and internal systems for businesses and organizations across Thailand and Asia.',
       btn1: 'Start a Project', btn2: 'View Our Work',
@@ -597,14 +597,14 @@ export const t = {
       ],
     },
     about: {
-      label: 'About Haliviq', h2a: 'We don\'t just build software.', h2b: 'We build businesses.',
-      p1: 'Haliviq is a digital product studio in Bangkok. We believe good technology should be easy enough to use without thinking about it, and should leave people and businesses better off, not just look good in a slide deck.',
-      p2: 'Our team of 40+ strategists, designers and engineers works with companies that want to grow, from funded startups to large enterprises. On every project you talk to the people doing the work and always know where things stand.',
+      label: 'About Haliviq', h2a: 'Human Ideas.', h2b: 'Intelligent Future.',
+      p1: 'Haliviq is a design and AI studio in Bangkok. We start with people: how your users think, how they decide, and where they get stuck. Only then do we pick the technology that helps their ideas go further, instead of asking people to bend around whatever tool is fashionable.',
+      p2: 'Our team of 40+ strategists, designers and engineers focuses on two things: UX/UI that people understand at first glance, and AI that does real work, from finding information and summarizing documents to answering customers. On every project you talk to the people doing the work and always know where things stand.',
       stats: ['Projects', 'Experience', 'Retention'],
       pillars: [
-        { title: 'Strategy First', desc: 'We ask "why" before "how". Every project begins by matching what your business expects with the right digital solution, so we do not build something nobody uses.' },
+        { title: 'Start With People', desc: 'We ask how your users think and work before we decide what to build. Every project begins with conversations with your users and your team, not with whatever technology happens to be trending.' },
         { title: 'Design-Led Engineering', desc: 'Designers and engineers work as one team, with no hand-offs between departments, so the details that were designed are the details that ship.' },
-        { title: 'Speed Without Shortcuts', desc: 'We work in agile sprints, show progress every week and keep the code clean, so we can deliver quickly and get it right the first time.' },
+        { title: 'AI With a Purpose', desc: 'We use AI where it saves real time or sharpens a decision, and we design it so a person can always check the answer. When a well-made form or a redesigned page does the job, we will tell you so.' },
         { title: 'True Partnership', desc: 'We are not here just to take a brief and invoice. We act as part of your team, share responsibility for the result, and stay on to help over the long term.' },
       ],
     },
