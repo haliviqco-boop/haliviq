@@ -1,6 +1,18 @@
 'use client'
 import { useRef, useState } from 'react'
 
+// Fires a lead conversion. Consent Mode (set in app/layout.tsx) keeps this cookieless until the visitor accepts.
+// Optional: set NEXT_PUBLIC_ADS_CONVERSION_LABEL (the part after "AW-18293218603/" in Google Ads) to report it as an Ads conversion.
+function trackLead() {
+  try {
+    const g = (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag
+    if (!g) return
+    g('event', 'generate_lead', { form: 'contact' })
+    const label = process.env.NEXT_PUBLIC_ADS_CONVERSION_LABEL
+    if (label) g('event', 'conversion', { send_to: `AW-18293218603/${label}` })
+  } catch {}
+}
+
 export default function ContactFormShell({ lang, children }: { lang: 'en' | 'th'; children: React.ReactNode }) {
   const isEN = lang === 'en'
   const [state, setState] = useState<'idle' | 'sending' | 'ok' | 'error'>('idle')
@@ -22,6 +34,7 @@ export default function ContactFormShell({ lang, children }: { lang: 'en' | 'th'
       const r = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
       if (!r.ok) throw new Error(String(r.status))
       setState('ok')
+      trackLead()
       formRef.current?.reset()
     } catch {
       setState('error')
