@@ -147,6 +147,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
                   <ContactFields lang={lang} part="phone" />
 
+                  <ContactFields lang={lang} part="interest" />
+
                   <div>
                     <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>
                       {isEN ? 'Message' : 'ข้อความ'} <span style={{ color: '#F87171' }}>*</span>

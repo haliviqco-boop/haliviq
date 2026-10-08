@@ -15,7 +15,7 @@ export default function ContactFormShell({ lang, children }: { lang: 'en' | 'th'
     const fd = new FormData(e.currentTarget)
     const payload = {
       name: fd.get('name'), email: fd.get('email'), phone: fd.get('phone'), phoneCountry: fd.get('phoneCountry'),
-      message: fd.get('message'), currency: fd.get('currency'), budget: fd.get('budget'), source: fd.get('source'),
+      message: fd.get('message'), currency: fd.get('currency'), budget: fd.get('budget'), source: fd.get('source'), interests: fd.getAll('interest'),
       newsletter: fd.get('newsletter') === 'on', website: fd.get('website'), lang, page: window.location.pathname,
     }
     try {

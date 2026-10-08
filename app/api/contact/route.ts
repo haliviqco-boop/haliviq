@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server'
 
 export const runtime = 'nodejs'
-// Redeploy trigger: picks up RESEND_API_KEY and CONTACT_TO_EMAIL env vars (2026-10-08)
 
 /**
  * Temporary back end for the contact form.
@@ -41,6 +40,7 @@ export async function POST(req: Request) {
     currency: clean(body.currency, 4),
     budget: clean(body.budget, 80),
     source: clean(body.source, 120),
+    interests: Array.isArray(body.interests) ? body.interests.slice(0, 20).map((v) => clean(v, 80)).filter(Boolean) : [],
     newsletter: body.newsletter === true,
     lang: clean(body.lang, 4),
     page: clean(body.page, 300),
@@ -52,7 +52,7 @@ export async function POST(req: Request) {
 
   const lines = [
     ['Name', data.name], ['Email', data.email], ['Phone', data.phone ? `${data.phoneCountry} ${data.phone}` : ''],
-    ['Budget', data.budget ? `${data.budget} (${data.currency})` : ''], ['Heard about us', data.source],
+    ['Interested in', data.interests.join(', ')], ['Budget', data.budget ? `${data.budget} (${data.currency})` : ''], ['Heard about us', data.source],
     ['Newsletter', data.newsletter ? 'yes' : 'no'], ['Language', data.lang], ['Page', data.page],
   ].filter(([, v]) => v)
 

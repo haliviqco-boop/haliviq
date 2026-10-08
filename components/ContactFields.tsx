@@ -1,5 +1,5 @@
 'use client'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 
 // [ISO region, dial code]
 const COUNTRIES: [string, string][] = [
@@ -20,6 +20,27 @@ const RATES: Record<string, number> = {
 const THB_BANDS = [300000, 1000000, 3000000, 10000000]
 const USD_BANDS = [10000, 30000, 100000, 300000]
 
+// [value sent to the team (EN), EN label, TH label]
+const INTERESTS: [string, string][] = [
+  ['Websites', 'พัฒนาเว็บไซต์'],
+  ['Mobile apps (iOS & Android)', 'แอปมือถือ iOS & Android'],
+  ['E-commerce', 'อีคอมเมิร์ซ'],
+  ['UX / UI design', 'ออกแบบ UX / UI'],
+  ['Brand experience', 'ประสบการณ์แบรนด์'],
+  ['AI products', 'ผลิตภัณฑ์ AI'],
+  ['Automation', 'ระบบอัตโนมัติ'],
+  ['ERP / CRM', 'ระบบ ERP / CRM'],
+  ['Backend & API', 'Backend & API'],
+  ['Cloud & DevOps', 'Cloud & DevOps'],
+  ['Data & analytics', 'ข้อมูลและการวิเคราะห์'],
+  ['Digital transformation', 'ปรับองค์กรสู่ดิจิทัล'],
+  ['Product discovery & research', 'หาแนวทางผลิตภัณฑ์ และวิจัยผู้ใช้'],
+  ['LINE Mini Apps', 'LINE Mini App'],
+  ['Cybersecurity', 'ความปลอดภัยไซเบอร์'],
+  ['Support & maintenance', 'บำรุงรักษาและซัพพอร์ต'],
+  ['Not sure yet, need advice', 'ยังไม่แน่ใจ ขอคำปรึกษา'],
+]
+
 const flag = (iso: string) => String.fromCodePoint(...Array.from(iso).map((c) => 127397 + c.charCodeAt(0)))
 const nice = (n: number) => {
   const p = Math.pow(10, Math.floor(Math.log10(n)) - 1)
@@ -27,9 +48,18 @@ const nice = (n: number) => {
 }
 const box = { background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff', fontWeight: 400 } as const
 
-export default function ContactFields({ lang, part }: { lang: 'en' | 'th'; part: 'phone' | 'budget' }) {
+export default function ContactFields({ lang, part }: { lang: 'en' | 'th'; part: 'phone' | 'budget' | 'interest' }) {
   const isEN = lang === 'en'
   const [cur, setCur] = useState('THB')
+  const [picked, setPicked] = useState<string[]>([])
+  const groupRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const form = groupRef.current?.closest('form')
+    if (!form) return
+    const onReset = () => setPicked([])
+    form.addEventListener('reset', onReset)
+    return () => form.removeEventListener('reset', onReset)
+  }, [])
   const regionNames = useMemo(() => new Intl.DisplayNames([lang], { type: 'region' }), [lang])
   const curNames = useMemo(() => new Intl.DisplayNames([lang], { type: 'currency' }), [lang])
   const countries = useMemo(
@@ -63,6 +93,25 @@ export default function ContactFields({ lang, part }: { lang: 'en' | 'th'; part:
             ))}
           </select>
           <input id="cf-phone" name="phone" type="tel" inputMode="tel" autoComplete="tel-national" placeholder={isEN ? 'Phone number' : 'เบอร์โทรศัพท์'} className="w-full px-5 py-3.5 rounded-xl text-sm outline-none" style={box} />
+        </div>
+      </div>}
+
+      {part === 'interest' && <div>
+        <p className="block text-xs mb-3" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }} id="cf-interest-label">
+          {isEN ? 'What are you interested in?' : 'บริการที่คุณสนใจ'} <span style={{ color: 'rgba(255,255,255,0.4)' }}>({isEN ? 'Optional, pick any' : 'ไม่บังคับ เลือกได้หลายข้อ'})</span>
+        </p>
+        <div ref={groupRef} role="group" aria-labelledby="cf-interest-label" className="flex flex-wrap gap-2">
+          {INTERESTS.map(([val, th]) => {
+            const on = picked.includes(val)
+            return (
+              <label key={val} className="cursor-pointer select-none rounded-full px-4 py-2 text-xs transition-colors"
+                style={{ background: on ? 'rgba(123,110,246,0.25)' : 'rgba(255,255,255,0.05)', border: `1px solid ${on ? 'var(--purple)' : 'rgba(255,255,255,0.12)'}`, color: on ? '#fff' : 'rgba(255,255,255,0.7)', fontWeight: 400 }}>
+                <input type="checkbox" name="interest" value={val} checked={on} className="sr-only"
+                  onChange={(e) => setPicked((p) => (e.target.checked ? [...p, val] : p.filter((x) => x !== val)))} />
+                {isEN ? val : th}
+              </label>
+            )
+          })}
         </div>
       </div>}
 
