@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 
 export const runtime = 'nodejs'
+// Redeploy trigger: picks up RESEND_API_KEY and CONTACT_TO_EMAIL env vars (2026-10-08)
 
 /**
  * Temporary back end for the contact form.
