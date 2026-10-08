@@ -50,7 +50,9 @@ const box = { background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,
 
 export default function ContactFields({ lang, part }: { lang: 'en' | 'th'; part: 'phone' | 'budget' | 'interest' }) {
   const isEN = lang === 'en'
-  const [cur, setCur] = useState('THB')
+  const cur0 = isEN ? 'USD' : 'THB'
+  const home = isEN ? 'US' : 'TH'
+  const [cur, setCur] = useState(isEN ? 'USD' : 'THB')
   const [picked, setPicked] = useState<string[]>([])
   const groupRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
@@ -63,8 +65,8 @@ export default function ContactFields({ lang, part }: { lang: 'en' | 'th'; part:
   const regionNames = useMemo(() => new Intl.DisplayNames([lang], { type: 'region' }), [lang])
   const curNames = useMemo(() => new Intl.DisplayNames([lang], { type: 'currency' }), [lang])
   const countries = useMemo(
-    () => COUNTRIES.map(([iso, dial]) => ({ iso, dial, name: regionNames.of(iso) || iso })).sort((a, b) => (a.iso === 'TH' ? -1 : b.iso === 'TH' ? 1 : a.name.localeCompare(b.name, lang))),
-    [regionNames, lang],
+    () => COUNTRIES.map(([iso, dial]) => ({ iso, dial, name: regionNames.of(iso) || iso })).sort((a, b) => (a.iso === home ? -1 : b.iso === home ? 1 : a.name.localeCompare(b.name, lang))),
+    [regionNames, lang, home],
   )
   const money = (n: number, c: string) => new Intl.NumberFormat('en', { style: 'currency', currency: c, maximumFractionDigits: 0, currencyDisplay: 'narrowSymbol' }).format(n)
   const bands = useMemo(() => {
@@ -87,7 +89,7 @@ export default function ContactFields({ lang, part }: { lang: 'en' | 'th'; part:
           {isEN ? 'Phone Number' : 'เบอร์โทรศัพท์'} <span style={{ color: 'rgba(255,255,255,0.4)' }}>({isEN ? 'Optional' : 'ไม่บังคับ'})</span>
         </label>
         <div className="grid grid-cols-[auto_1fr] gap-3">
-          <select name="phoneCountry" aria-label={isEN ? 'Country code' : 'รหัสประเทศ'} defaultValue="TH" className="px-3 py-3.5 rounded-xl text-sm outline-none max-w-[150px]" style={box}>
+          <select name="phoneCountry" aria-label={isEN ? 'Country code' : 'รหัสประเทศ'} defaultValue={home} className="px-3 py-3.5 rounded-xl text-sm outline-none max-w-[150px]" style={box}>
             {countries.map((c) => (
               <option key={c.iso} value={c.iso} style={{ color: '#000' }}>{flag(c.iso)} +{c.dial} {c.name}</option>
             ))}
@@ -121,7 +123,7 @@ export default function ContactFields({ lang, part }: { lang: 'en' | 'th'; part:
         </label>
         <div className="grid grid-cols-[auto_1fr] gap-3">
           <select name="currency" aria-label={isEN ? 'Currency' : 'สกุลเงิน'} value={cur} onChange={(e) => setCur(e.target.value)} className="px-3 py-3.5 rounded-xl text-sm outline-none max-w-[150px]" style={box}>
-            {Object.keys(RATES).map((c) => (
+            {[cur0, ...Object.keys(RATES).filter((k) => k !== cur0)].map((c) => (
               <option key={c} value={c} style={{ color: '#000' }}>{c} · {curNames.of(c)}</option>
             ))}
           </select>
