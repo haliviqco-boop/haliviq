@@ -7020,7 +7020,7 @@ export const workProjects: WorkProject[] = [
         "พัฒนาเว็บไซต์",
         "ออกแบบ UX/UI"
       ],
-      "intro": "ผู้ตรวจสอบและรับรองการจัดการพลังงานต้องเข้าตรวจรายงานการจัดการพลังงานที่โรงงานควบคุมและอาคารควบคุม จึงต้องมีวิธีที่เชื่อถือได้ว่าไปตรวจจริง และเห็นอะไรบ้าง โดยไม่ต้องเพิ่มงานเอกสารหน้างาน เราออกแบบและพัฒนาแอป DEDE (ดีดี) ให้ผู้ตรวจสอบถ่ายภาพและเช็กอินระบุเวลาขณะเข้าตรวจได้ในไม่กี่ขั้นตอน และทำเว็บไซต์ที่อธิบายโครงการและเป็นที่ให้ผู้ใช้ทำความเข้าใจได้ชัดเจน หน้านี้สรุปงานที่ส่งมอบและแนวทางการทำงาน สำหรับธุรกิจที่มองหาสตูดิโอพัฒนาผลิตภัณฑ์ดิจิทัลในประเทศไทย",
+      "intro": "ผู้ตรวจสอบและรับรองการจัดการพลังงานต้องเข้าตรวจรายงานการจัดการพลังงานที่โรงงานควบคุมและอาคารควบคุม จึงต้องมีวิธีที่เชื่อถือได้ว่าไปตรวจจริง และเห็นอะไรบ้าง โดยไม่ต้องเพิ่มงานเอกสารหน้างาน ในฐานะพันธมิตรด้านการออกแบบและพัฒนาของ riddec เราออกแบบและพัฒนาแอป “ดีดี” (DD App) สำหรับโครงการของ DEDE ให้ผู้ตรวจสอบถ่ายภาพและเช็กอินระบุเวลาขณะเข้าตรวจได้ในไม่กี่ขั้นตอน และทำเว็บไซต์ที่อธิบายโครงการและเป็นที่ให้ผู้ใช้ทำความเข้าใจได้ชัดเจน หน้านี้สรุปงานที่ส่งมอบและแนวทางการทำงาน สำหรับธุรกิจที่มองหาสตูดิโอพัฒนาผลิตภัณฑ์ดิจิทัลในประเทศไทย",
       "snapshot": [
         {
           "label": "อุตสาหกรรม",
@@ -7117,7 +7117,7 @@ export const workProjects: WorkProject[] = [
         "Website Development",
         "UX/UI Design"
       ],
-      "intro": "Auditors and certifiers of energy management visit controlled factories and controlled buildings to inspect energy management reports. They need a dependable way to show that a visit happened and what was seen, without extra paperwork on site. We designed and built the DEDE app so an inspector can take photos and check in with a recorded time while inspecting, in a few simple steps. We also built a website that explains the program and gives users a clear place to learn about it. This page summarizes the deliverables and approach, for businesses looking for a digital product studio in Thailand.",
+      "intro": "Auditors and certifiers of energy management visit controlled factories and controlled buildings to inspect energy management reports. They need a dependable way to show that a visit happened and what was seen, without extra paperwork on site. As design and development partner to riddec, we designed and built the DEDE (DD) app for a DEDE project so an inspector can take photos and check in with a recorded time while inspecting, in a few simple steps. We also built a website that explains the program and gives users a clear place to learn about it. This page summarizes the deliverables and approach, for businesses looking for a digital product studio in Thailand.",
       "snapshot": [
         {
           "label": "Industry",
