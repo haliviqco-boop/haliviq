@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { caseStudies } from '@/lib/case-studies-data'
 import { articles } from '@/lib/blog-data'
+import { tilNotes } from '@/lib/til-data'
 
 const BASE_URL = 'https://haliviq.com'
 
@@ -79,6 +80,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: route === '' ? 'weekly' : 'monthly',
         priority: route === '' ? 1 : 0.7,
       })
+    }
+    for (const n of tilNotes) {
+      entries.push({ url: `${BASE_URL}/${lang}/today-i-learned/${n.slug}`, lastModified: new Date(n.date), changeFrequency: 'monthly', priority: 0.5 })
     }
     for (const a of articles) {
       entries.push({
