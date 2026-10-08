@@ -11,7 +11,7 @@ export const socialLinks: { name: string; url: string; svg: ReactNode }[] = [
 export default function SocialIcons({ className = '' }: { className?: string }) {
   return (
     <div className={`flex gap-3 ${className}`}>
-      {socialLinks.map(({ name, url, svg }) => (
+      {socialLinks.filter((l) => l.url && l.url !== '#').map(({ name, url, svg }) => (
         <a key={name} href={url} target="_blank" rel="noopener noreferrer" aria-label={name}
           className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110"
           style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}>

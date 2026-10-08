@@ -4,6 +4,7 @@ import { t, type Lang } from '@/lib/i18n'
 import Footer from '@/components/Footer'
 import SocialIcons from '@/components/SocialIcons'
 import ContactFields from '@/components/ContactFields'
+import ContactFormShell from '@/components/ContactFormShell'
 import { alt } from '@/lib/seo'
 
 export async function generateStaticParams() {
@@ -124,13 +125,13 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
               <div className="rounded-3xl p-8 lg:p-10 lg:sticky lg:top-24" style={{ background: '#141329', border: '1px solid rgba(255,255,255,0.08)' }}>
                 <h2 className="mb-8" style={{ fontWeight: 500, fontSize: '1.3rem', color: '#fff' }}>{isEN ? 'Tell us about your project' : 'เล่าเรื่องโปรเจกต์ของคุณ'}</h2>
-                <div className="space-y-5">
+                <ContactFormShell lang={lang}>
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>
                         {isEN ? 'Name' : 'ชื่อ'} <span style={{ color: '#F87171' }}>*</span>
                       </label>
-                      <input type="text" placeholder={isEN ? 'Your name' : 'ชื่อของคุณ'} required
+                      <input type="text" name="name" autoComplete="name" placeholder={isEN ? 'Your name' : 'ชื่อของคุณ'} required
                         className="w-full px-5 py-3.5 rounded-xl text-sm outline-none transition-colors"
                         style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff', fontWeight: 400 }} />
                     </div>
@@ -138,7 +139,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                       <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>
                         Email <span style={{ color: '#F87171' }}>*</span>
                       </label>
-                      <input type="email" placeholder="your@email.com" required
+                      <input type="email" name="email" autoComplete="email" placeholder="your@email.com" required
                         className="w-full px-5 py-3.5 rounded-xl text-sm outline-none transition-colors"
                         style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff', fontWeight: 400 }} />
                     </div>
@@ -150,7 +151,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                     <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>
                       {isEN ? 'Message' : 'ข้อความ'} <span style={{ color: '#F87171' }}>*</span>
                     </label>
-                    <textarea rows={5} placeholder={isEN ? 'Tell us about your project...' : 'เล่าเรื่องโปรเจกต์ของคุณ...'} required
+                    <textarea name="message" rows={5} placeholder={isEN ? 'Tell us about your project...' : 'เล่าเรื่องโปรเจกต์ของคุณ...'} required
                       className="w-full px-5 py-3.5 rounded-xl text-sm outline-none transition-colors resize-none"
                       style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff', fontWeight: 400 }} />
                   </div>
@@ -161,7 +162,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                     <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>
                       {isEN ? 'How did you hear about Haliviq?' : 'คุณรู้จัก Haliviq จากช่องทางไหน?'} <span style={{ color: 'rgba(255,255,255,0.4)' }}>({isEN ? 'Optional' : 'ไม่บังคับ'})</span>
                     </label>
-                    <select
+                    <select name="source"
                       className="w-full px-5 py-3.5 rounded-xl text-sm outline-none appearance-none"
                       style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.6)', fontWeight: 400 }}
                       defaultValue=""
@@ -176,7 +177,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                   </div>
 
                   <label className="flex items-start gap-3 p-4 rounded-xl cursor-pointer" style={{ border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.02)' }}>
-                    <input type="checkbox" defaultChecked
+                    <input type="checkbox" name="newsletter" defaultChecked
                       className="mt-0.5 shrink-0"
                       style={{ width: 18, height: 18, accentColor: 'var(--purple)' }} />
                     <span>
@@ -187,7 +188,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                     </span>
                   </label>
 
-                  <button className="w-full justify-center py-4 rounded-full inline-flex items-center gap-2 transition-transform hover:scale-[1.02]"
+                  <button type="submit" className="w-full justify-center py-4 rounded-full inline-flex items-center gap-2 transition-transform hover:scale-[1.02]"
                     style={{ fontSize: '1rem', background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500, boxShadow: '0 8px 28px rgba(123,110,246,0.35)' }}>
                     {isEN ? 'Send Message' : 'ส่งข้อความ'}
                     <i className="ti ti-arrow-right" style={{ fontSize: 15 }} aria-hidden="true" />
@@ -200,7 +201,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                       <>เมื่อส่งแบบฟอร์มนี้ ถือว่าคุณยอมรับ<a href={`/${lang}/privacy`} className="hover:text-white transition-colors" style={{ color: 'var(--lime)', textDecoration: 'underline' }}>นโยบายความเป็นส่วนตัว</a>ของเรา</>
                     )}
                   </p>
-                </div>
+                </ContactFormShell>
               </div>
             </div>
           </div>
