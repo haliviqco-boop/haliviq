@@ -47,11 +47,11 @@ export default function ContactFormShell({ lang, children }: { lang: 'en' | 'th'
     return (
       <div role="status" className="text-center py-10">
         <div className="w-14 h-14 rounded-full mx-auto mb-5 flex items-center justify-center" style={{ background: 'rgba(83,195,215,0.15)' }}>
-          <i className="ti ti-check" style={{ fontSize: 26, color: 'var(--lime)' }} aria-hidden="true" />
+          <i className="ti ti-check" style={{ fontSize: 26, color: 'var(--accent-2)' }} aria-hidden="true" />
         </div>
-        <p className="mb-2" style={{ color: '#fff', fontWeight: 600, fontSize: '1.2rem' }}>{isEN ? 'Thank you, we got your message.' : 'ขอบคุณ เราได้รับข้อความแล้ว'}</p>
-        <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.8 }}>{isEN ? 'We will reply within 24 hours with our first thoughts and a suggested next step.' : 'เราจะตอบกลับภายใน 24 ชั่วโมง พร้อมความเห็นเบื้องต้นและขั้นตอนที่แนะนำ'}</p>
-        <button type="button" onClick={() => setState('idle')} className="mt-6 text-sm underline" style={{ color: 'var(--purple-light)' }}>{isEN ? 'Send another message' : 'ส่งข้อความอีกครั้ง'}</button>
+        <p className="mb-2" style={{ color: 'var(--ink)', fontWeight: 600, fontSize: '1.2rem' }}>{isEN ? 'Thank you, we got your message.' : 'ขอบคุณ เราได้รับข้อความแล้ว'}</p>
+        <p style={{ color: 'rgb(var(--fg) / 0.65)', lineHeight: 1.8 }}>{isEN ? 'We will reply within 24 hours with our first thoughts and a suggested next step.' : 'เราจะตอบกลับภายใน 24 ชั่วโมง พร้อมความเห็นเบื้องต้นและขั้นตอนที่แนะนำ'}</p>
+        <button type="button" onClick={() => setState('idle')} className="mt-6 text-sm underline" style={{ color: 'var(--accent)' }}>{isEN ? 'Send another message' : 'ส่งข้อความอีกครั้ง'}</button>
       </div>
     )
   }
@@ -62,7 +62,7 @@ export default function ContactFormShell({ lang, children }: { lang: 'en' | 'th'
         <label>Website <input type="text" name="website" tabIndex={-1} autoComplete="off" /></label>
       </div>
       {children}
-      {state === 'sending' && <p role="status" className="text-center text-sm" style={{ color: 'rgba(255,255,255,0.7)' }}>{isEN ? 'Sending...' : 'กำลังส่ง...'}</p>}
+      {state === 'sending' && <p role="status" className="text-center text-sm" style={{ color: 'rgb(var(--fg) / 0.7)' }}>{isEN ? 'Sending...' : 'กำลังส่ง...'}</p>}
       {state === 'error' && (
         <p role="alert" className="text-center text-sm" style={{ color: '#F87171' }}>
           {isEN ? 'Sorry, that did not go through. Please try again or email wu@haliviq.com.' : 'ขออภัย ส่งไม่สำเร็จ ลองใหม่อีกครั้ง หรืออีเมลมาที่ wu@haliviq.com'}

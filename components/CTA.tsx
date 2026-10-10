@@ -6,7 +6,7 @@ export default function CTA({ lang, tr }: Props) {
   const c = (tr as any).ctaSimple
 
   return (
-    <section className="relative overflow-hidden py-28 lg:py-40" style={{ background: '#08070F' }}>
+    <section className="theme-dark relative overflow-hidden py-28 lg:py-40" style={{ background: 'var(--bg)' }}>
       {/* starfield */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -37,13 +37,13 @@ export default function CTA({ lang, tr }: Props) {
       <div className="relative max-w-6xl mx-auto px-4 lg:px-10">
         <h2
           className="t-display mb-5"
-          style={{ color: '#fff', fontSize: 'clamp(2.5rem,6vw,4.5rem)', maxWidth: 720 }}
+          style={{ color: 'var(--ink)', fontSize: 'clamp(2.5rem,6vw,4.5rem)', maxWidth: 720 }}
         >
           {c.h2}
         </h2>
         <p
           className="t-body mb-10"
-          style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}
+          style={{ color: 'rgb(var(--fg) / 0.85)', fontSize: '1.1rem', fontWeight: 400 }}
         >
           {c.sub}
         </p>
@@ -65,7 +65,7 @@ export default function CTA({ lang, tr }: Props) {
           <a
             href={`mailto:${c.email}`}
             className="text-sm"
-            style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 400 }}
+            style={{ color: 'rgb(var(--fg) / 0.85)', fontWeight: 400 }}
           >
             {c.email}
           </a>

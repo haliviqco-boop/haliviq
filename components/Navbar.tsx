@@ -1,7 +1,9 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import LangSwitcher from '@/components/LangSwitcher'
+import ThemeToggle from '@/components/ThemeToggle'
 import { type Lang, type T } from '@/lib/i18n'
 
 type Props = { lang: Lang; tr: T; transparent?: boolean }
@@ -216,29 +218,33 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
   // logo and bright nav text at all scroll positions, since the whole page is dark —
   // only the header backdrop swaps from fully transparent to a dark blurred bar on scroll.
   const isTransparent = transparent
-  const navTextColor = isTransparent ? 'var(--purple-light)' : 'var(--purple)'
+  const navTextColor = 'var(--accent)'
+  // The homepage hero is a dark image in both themes, so the header sits on a dark
+  // surface until the page scrolls; everywhere else it follows the active theme.
+  const pathname = usePathname()
+  const isHome = /^\/(th|en)\/?$/.test(pathname || '')
+  const onHeroDark = isHome && !scrolled
 
   // Mobile menu panel: match whichever theme the page itself uses, same as the
   // desktop nav above, instead of always forcing the light panel.
-  const mobileBg = isTransparent ? '#08070F' : '#fff'
-  const mobileBorder = isTransparent ? 'rgba(255,255,255,0.14)' : '#E4E4EC'
-  const mobileSubBorder = isTransparent ? 'rgba(255,255,255,0.08)' : '#F0F0F6'
-  const mobileHeadColor = isTransparent ? 'var(--purple-light)' : 'var(--purple)'
-  const mobileItemColor = isTransparent ? 'rgba(255,255,255,0.85)' : '#0A0A0F'
+  const mobileBg = 'var(--bg)'
+  const mobileBorder = 'var(--line)'
+  const mobileSubBorder = 'var(--line-soft)'
+  const mobileHeadColor = 'var(--accent)'
+  const mobileItemColor = 'rgb(var(--fg) / 0.85)'
 
   return (
     <>
-      <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        transparent
-          ? (scrolled ? 'bg-[#08070F]/90 backdrop-blur-xl shadow-sm shadow-black/[0.3] border-b border-white/[0.08]' : 'bg-transparent border-b border-transparent')
-          : 'bg-white/96 backdrop-blur-xl shadow-sm shadow-black/[0.04] border-b border-[#E4E4EC]'
-      }`}>
+      <header className={`${onHeroDark ? 'theme-dark ' : ''}fixed top-0 inset-x-0 z-50 transition-all duration-300 backdrop-blur-xl border-b ${
+        transparent && !scrolled ? 'border-transparent' : 'shadow-sm border-[color:var(--line)]'
+      }`} style={{ background: transparent && !scrolled ? 'transparent' : 'color-mix(in srgb, var(--bg) 92%, transparent)' }}>
         {/* Brand gradient hairline across the very top edge */}
         <div className="h-[3px] w-full" style={{background:'linear-gradient(90deg, var(--purple-dark) 0%, var(--purple) 30%, var(--purple-light) 60%, var(--lime) 100%)', opacity: isTransparent && !scrolled ? 1 : 0, transition:'opacity 0.3s'}}/>
         <div className="max-w-7xl mx-auto px-4 lg:px-6 flex items-center justify-between h-[60px]">
 
           <Link href={`${prefix}`}>
-            <img src={isTransparent ? '/haliviq-logo-light.svg' : '/haliviq-logo.svg'} alt="Haliviq" className="h-9 w-auto transition-all duration-300"/>
+            <img src="/haliviq-logo-light.svg" alt="Haliviq" className="logo-for-dark h-9 w-auto transition-all duration-300"/>
+            <img src="/haliviq-logo.svg" alt="" aria-hidden="true" className="logo-for-light h-9 w-auto transition-all duration-300"/>
           </Link>
 
           {/* Desktop nav */}
@@ -256,7 +262,7 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
               {servicesOpen && (
                 <div
                   className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[560px] rounded-2xl p-5"
-                  style={{ zIndex: 200, background: '#0B0A16', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 30px 60px -20px rgba(0,0,0,0.6)' }}
+                  style={{ zIndex: 200, background: 'var(--bg-1)', border: '1px solid rgb(var(--fg) / 0.08)', boxShadow: '0 30px 60px -20px rgb(var(--shadow-c) / 0.5)' }}
                 >
                   <div className="mb-4">
                     {flagshipServices.map((s) => (
@@ -264,16 +270,16 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
                         key={s.href}
                         href={`${prefix}${s.href}`}
                         onClick={() => setServicesOpen(false)}
-                        className="group flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors"
+                        className="group flex items-start gap-4 p-3 rounded-xl hover:bg-[rgb(var(--fg)/0.05)] transition-colors"
                       >
-                        <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style={{ background: 'rgba(255,255,255,0.06)' }}>
-                          <i className={`ti ${s.icon}`} style={{ fontSize: 18, color: 'var(--purple-light)' }} aria-hidden="true" />
+                        <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style={{ background: 'rgb(var(--fg) / 0.06)' }}>
+                          <i className={`ti ${s.icon}`} style={{ fontSize: 18, color: 'var(--accent)' }} aria-hidden="true" />
                         </div>
                         <div>
-                          <p className="mb-0.5 transition-colors group-hover:text-[var(--purple-light)]" style={{ color: '#fff', fontWeight: 500, fontSize: '0.95rem' }}>
+                          <p className="mb-0.5 transition-colors group-hover:text-[color:var(--accent)]" style={{ color: 'var(--ink)', fontWeight: 500, fontSize: '0.95rem' }}>
                             {s.title}
                           </p>
-                          <p style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 400, fontSize: '0.82rem', lineHeight: 1.45 }}>
+                          <p style={{ color: 'rgb(var(--fg) / 0.85)', fontWeight: 400, fontSize: '0.82rem', lineHeight: 1.45 }}>
                             {s.desc}
                           </p>
                         </div>
@@ -287,14 +293,14 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
                         key={seg.title}
                         href={`${prefix}/contact`}
                         onClick={() => setServicesOpen(false)}
-                        className="rounded-xl p-4 hover:bg-white/[0.06] transition-colors"
-                        style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+                        className="rounded-xl p-4 hover:bg-[rgb(var(--fg)/0.06)] transition-colors"
+                        style={{ background: 'rgb(var(--fg) / 0.04)', border: '1px solid rgb(var(--fg) / 0.08)' }}
                       >
-                        <div className="w-9 h-9 rounded-lg flex items-center justify-center mb-3" style={{ background: 'rgba(255,255,255,0.06)' }}>
-                          <i className={`ti ${seg.icon}`} style={{ fontSize: 16, color: 'var(--lime)' }} aria-hidden="true" />
+                        <div className="w-9 h-9 rounded-lg flex items-center justify-center mb-3" style={{ background: 'rgb(var(--fg) / 0.06)' }}>
+                          <i className={`ti ${seg.icon}`} style={{ fontSize: 16, color: 'var(--accent-2)' }} aria-hidden="true" />
                         </div>
-                        <p className="mb-1" style={{ color: '#fff', fontWeight: 500, fontSize: '0.85rem' }}>{seg.title}</p>
-                        <p style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 400, fontSize: '0.75rem', lineHeight: 1.5 }}>{seg.desc}</p>
+                        <p className="mb-1" style={{ color: 'var(--ink)', fontWeight: 500, fontSize: '0.85rem' }}>{seg.title}</p>
+                        <p style={{ color: 'rgb(var(--fg) / 0.85)', fontWeight: 400, fontSize: '0.75rem', lineHeight: 1.5 }}>{seg.desc}</p>
                       </Link>
                     ))}
                   </div>
@@ -305,7 +311,7 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
                     className="flex items-center justify-between px-4 py-3 rounded-xl transition-colors hover:bg-[rgba(123,110,246,0.18)]"
                     style={{ background: 'rgba(123,110,246,0.12)', border: '1px solid rgba(123,110,246,0.3)' }}
                   >
-                    <span style={{ color: 'var(--purple-light)', fontWeight: 500, fontSize: '0.9rem' }}>{allServicesLabel}</span>
+                    <span style={{ color: 'var(--accent)', fontWeight: 500, fontSize: '0.9rem' }}>{allServicesLabel}</span>
                     <svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="var(--purple-light)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   </Link>
                 </div>
@@ -325,7 +331,7 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
               {workOpen && (
                 <div
                   className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[380px] rounded-2xl p-5"
-                  style={{ zIndex: 200, background: '#0B0A16', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 30px 60px -20px rgba(0,0,0,0.6)' }}
+                  style={{ zIndex: 200, background: 'var(--bg-1)', border: '1px solid rgb(var(--fg) / 0.08)', boxShadow: '0 30px 60px -20px rgb(var(--shadow-c) / 0.5)' }}
                 >
                   <div className="mb-3">
                     {workMenu.map((w, i) => (
@@ -333,12 +339,12 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
                         key={i}
                         href={`${prefix}${w.href}`}
                         onClick={() => setWorkOpen(false)}
-                        className={`group block p-3 rounded-xl hover:bg-white/5 transition-colors ${i > 0 ? 'mt-1' : ''}`}
+                        className={`group block p-3 rounded-xl hover:bg-[rgb(var(--fg)/0.05)] transition-colors ${i > 0 ? 'mt-1' : ''}`}
                       >
-                        <p className="mb-1 transition-colors group-hover:text-[var(--purple-light)]" style={{ color: '#fff', fontWeight: 500, fontSize: '0.95rem' }}>
+                        <p className="mb-1 transition-colors group-hover:text-[color:var(--accent)]" style={{ color: 'var(--ink)', fontWeight: 500, fontSize: '0.95rem' }}>
                           {w.title}
                         </p>
-                        <p style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 400, fontSize: '0.82rem', lineHeight: 1.45 }}>
+                        <p style={{ color: 'rgb(var(--fg) / 0.7)', fontWeight: 400, fontSize: '0.82rem', lineHeight: 1.45 }}>
                           {w.desc}
                         </p>
                       </Link>
@@ -351,7 +357,7 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
                     className="flex items-center justify-between px-4 py-3 rounded-xl transition-colors hover:bg-[rgba(123,110,246,0.18)]"
                     style={{ background: 'rgba(123,110,246,0.12)', border: '1px solid rgba(123,110,246,0.3)' }}
                   >
-                    <span style={{ color: 'var(--purple-light)', fontWeight: 500, fontSize: '0.9rem' }}>{lang === 'en' ? 'All Work' : 'ผลงานทั้งหมด'}</span>
+                    <span style={{ color: 'var(--accent)', fontWeight: 500, fontSize: '0.9rem' }}>{lang === 'en' ? 'All Work' : 'ผลงานทั้งหมด'}</span>
                     <svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="var(--purple-light)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   </Link>
                 </div>
@@ -371,7 +377,7 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
               {industriesOpen && (
                 <div
                   className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[380px] rounded-2xl p-5"
-                  style={{ zIndex: 200, background: '#0B0A16', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 30px 60px -20px rgba(0,0,0,0.6)' }}
+                  style={{ zIndex: 200, background: 'var(--bg-1)', border: '1px solid rgb(var(--fg) / 0.08)', boxShadow: '0 30px 60px -20px rgb(var(--shadow-c) / 0.5)' }}
                 >
                   <div className="mb-3">
                     {flagshipIndustries.map((ind) => (
@@ -379,16 +385,16 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
                         key={ind.href}
                         href={`${prefix}${ind.href}`}
                         onClick={() => setIndustriesOpen(false)}
-                        className="group flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors"
+                        className="group flex items-start gap-4 p-3 rounded-xl hover:bg-[rgb(var(--fg)/0.05)] transition-colors"
                       >
-                        <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style={{ background: 'rgba(255,255,255,0.06)' }}>
-                          <i className={`ti ${ind.icon}`} style={{ fontSize: 18, color: 'var(--lime)' }} aria-hidden="true" />
+                        <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style={{ background: 'rgb(var(--fg) / 0.06)' }}>
+                          <i className={`ti ${ind.icon}`} style={{ fontSize: 18, color: 'var(--accent-2)' }} aria-hidden="true" />
                         </div>
                         <div>
-                          <p className="mb-0.5 transition-colors group-hover:text-[var(--purple-light)]" style={{ color: '#fff', fontWeight: 500, fontSize: '0.95rem' }}>
+                          <p className="mb-0.5 transition-colors group-hover:text-[color:var(--accent)]" style={{ color: 'var(--ink)', fontWeight: 500, fontSize: '0.95rem' }}>
                             {ind.title}
                           </p>
-                          <p style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 400, fontSize: '0.82rem', lineHeight: 1.45 }}>
+                          <p style={{ color: 'rgb(var(--fg) / 0.85)', fontWeight: 400, fontSize: '0.82rem', lineHeight: 1.45 }}>
                             {ind.desc}
                           </p>
                         </div>
@@ -402,7 +408,7 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
                     className="flex items-center justify-between px-4 py-3 rounded-xl transition-colors hover:bg-[rgba(123,110,246,0.18)]"
                     style={{ background: 'rgba(123,110,246,0.12)', border: '1px solid rgba(123,110,246,0.3)' }}
                   >
-                    <span style={{ color: 'var(--purple-light)', fontWeight: 500, fontSize: '0.9rem' }}>{allIndustriesLabel}</span>
+                    <span style={{ color: 'var(--accent)', fontWeight: 500, fontSize: '0.9rem' }}>{allIndustriesLabel}</span>
                     <svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="var(--purple-light)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   </Link>
                 </div>
@@ -422,19 +428,19 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
               {insightsOpen && (
                 <div
                   className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[340px] rounded-2xl p-5"
-                  style={{ zIndex: 200, background: '#0B0A16', border: '1px solid rgba(255,255,255,0.08)', boxShadow: '0 30px 60px -20px rgba(0,0,0,0.6)' }}
+                  style={{ zIndex: 200, background: 'var(--bg-1)', border: '1px solid rgb(var(--fg) / 0.08)', boxShadow: '0 30px 60px -20px rgb(var(--shadow-c) / 0.5)' }}
                 >
                   {insightsMenu.map((it, i) => (
                     <Link
                       key={it.href}
                       href={`${prefix}${it.href}`}
                       onClick={() => setInsightsOpen(false)}
-                      className={`group block p-3 rounded-xl hover:bg-white/5 transition-colors ${i > 0 ? 'mt-1' : ''}`}
+                      className={`group block p-3 rounded-xl hover:bg-[rgb(var(--fg)/0.05)] transition-colors ${i > 0 ? 'mt-1' : ''}`}
                     >
-                      <p className="mb-1 transition-colors group-hover:text-[var(--purple-light)]" style={{ color: '#fff', fontWeight: 500, fontSize: '0.98rem' }}>
+                      <p className="mb-1 transition-colors group-hover:text-[color:var(--accent)]" style={{ color: 'var(--ink)', fontWeight: 500, fontSize: '0.98rem' }}>
                         {it.title}
                       </p>
-                      <p style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 400, fontSize: '0.83rem', lineHeight: 1.5 }}>
+                      <p style={{ color: 'rgb(var(--fg) / 0.7)', fontWeight: 400, fontSize: '0.83rem', lineHeight: 1.5 }}>
                         {it.desc}
                       </p>
                     </Link>
@@ -447,6 +453,7 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
 
           <div className="hidden lg:flex items-center gap-3">
             <LangSwitcher/>
+            <ThemeToggle lang={lang}/>
             <Link href={`${prefix}/contact`} className="transition-colors mr-1" style={{fontWeight:400,fontSize:'16px', color:navTextColor}}>{n.contact}</Link>
             <Link href={`${prefix}/contact`} className="inline-flex items-center gap-2 rounded-full transition-transform hover:scale-[1.03]" style={{fontSize:'1rem',padding:'12px 24px', background:'#2B1764', color:'#fff'}}>
               {n.cta}
@@ -456,6 +463,7 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
 
           <div className="lg:hidden flex items-center gap-2">
             <LangSwitcher/>
+            <ThemeToggle lang={lang}/>
             <button onClick={() => setMenuOpen(!menuOpen)} className="p-2" style={{color:navTextColor}}>
               <div className={`w-5 h-0.5 bg-current mb-1.5 transition-all ${menuOpen?'rotate-45 translate-y-2':''}`}/>
               <div className={`w-5 h-0.5 bg-current mb-1.5 transition-all ${menuOpen?'opacity-0':''}`}/>
@@ -502,7 +510,7 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
                           {(items as any[]).map((i:any) => (
                             <Link key={i.href} href={`${prefix}${i.href}`}
                               onClick={() => { setMenuOpen(false); setMobileServicesOpen(false); setOpenCatKey(null) }}
-                              className="block py-1.5 hover:text-[var(--purple-light)] transition-colors"
+                              className="block py-1.5 hover:text-[color:var(--accent)] transition-colors"
                               style={{fontWeight:400,fontSize:'1rem', color: mobileItemColor}}>{i.label}</Link>
                           ))}
                         </div>
@@ -531,7 +539,7 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
                   {workMenu.map((w, i) => (
                     <Link key={i} href={`${prefix}${w.href}`}
                       onClick={() => { setMenuOpen(false); setMobileWorkOpen(false) }}
-                      className="block py-1.5 hover:text-[var(--purple-light)] transition-colors"
+                      className="block py-1.5 hover:text-[color:var(--accent)] transition-colors"
                       style={{fontWeight:400,fontSize:'1rem', color: mobileItemColor}}>{w.title}</Link>
                   ))}
                   <Link href={`${prefix}/work`}
@@ -560,7 +568,7 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
                   {flagshipIndustries.map((ind) => (
                     <Link key={ind.href} href={`${prefix}${ind.href}`}
                       onClick={() => { setMenuOpen(false); setMobileIndustriesOpen(false) }}
-                      className="block py-1.5 hover:text-[var(--purple-light)] transition-colors"
+                      className="block py-1.5 hover:text-[color:var(--accent)] transition-colors"
                       style={{fontWeight:400,fontSize:'1rem', color: mobileItemColor}}>{ind.title}</Link>
                   ))}
                   <Link href={`${prefix}/industries`}
@@ -589,7 +597,7 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
                   {insightsMenu.map((it) => (
                     <Link key={it.href} href={`${prefix}${it.href}`}
                       onClick={() => { setMenuOpen(false); setMobileInsightsOpen(false) }}
-                      className="block py-1.5 hover:text-[var(--purple-light)] transition-colors"
+                      className="block py-1.5 hover:text-[color:var(--accent)] transition-colors"
                       style={{fontWeight:400,fontSize:'1rem', color: mobileItemColor}}>{it.title}</Link>
                   ))}
                 </div>
@@ -600,7 +608,7 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
             {mobileNav.map(({ key, label, href }) => (
               <Link key={key} href={`${prefix}${href}`}
                 onClick={() => setMenuOpen(false)}
-                className="flex items-center justify-between py-3 hover:text-[var(--purple-light)] transition-colors border-b"
+                className="flex items-center justify-between py-3 hover:text-[color:var(--accent)] transition-colors border-b"
                 style={{fontWeight:400,fontSize:"1.15rem", color: mobileHeadColor, borderColor: mobileBorder}}>
                 {label}
               </Link>

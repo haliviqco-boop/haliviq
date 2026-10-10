@@ -145,7 +145,7 @@ const IconBox = ({ gi, ii }: { gi: number; ii: number }) => {
   const isPng = typeof icon === 'string' && (icon as string).startsWith('png:')
   const pngSrc = isPng ? (icon as string).replace('png:', '') : ''
   return (
-    <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-2 overflow-hidden flex-shrink-0"
+    <div className="theme-dark w-12 h-12 rounded-2xl flex items-center justify-center mb-2 overflow-hidden flex-shrink-0"
       style={{ background: isPng ? 'transparent' : '#10122A' }}>
       {isEnt
         ? <img src={enterpriseImgs[ii]} alt="" style={{ width: 38, height: 38, objectFit: 'contain' }}/>
@@ -271,7 +271,7 @@ export default function Services({ lang, tr }: Props) {
   const isEN = lang === 'en'
 
   return (
-    <section id="services" className="bg-white py-16 overflow-hidden">
+    <section id="services" className="bg-[var(--bg)] py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 lg:px-10">
         <div className="text-center max-w-2xl mx-auto mb-20">
           <p className="t-label mb-5" style={{background:'linear-gradient(135deg,var(--purple) 0%,var(--lime) 100%)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text',fontWeight:500}}>{s.label}</p>
@@ -282,7 +282,7 @@ export default function Services({ lang, tr }: Props) {
           <p className="t-body text-base lg:text-lg">{s.sub}</p>
         </div>
 
-        <div className="divide-y divide-[#E4E4EC] border-y border-[#E4E4EC]">
+        <div className="divide-y divide-[color:var(--line)] border-y border-[color:var(--line)]">
           {s.groups.map((group, gi) => (
             <div key={gi} className="py-16 lg:py-12">
               <div className="grid lg:grid-cols-[240px_1fr] gap-12 lg:gap-20 mb-8">

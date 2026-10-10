@@ -34,19 +34,19 @@ export function HeroArt() {
   return (
     <Frame id="hero" viewBox="0 0 560 560">
       <circle cx="280" cy="250" r="230" fill="url(#hero-glow)" />
-      <g fill="none" stroke="rgba(255,255,255,0.08)">
+      <g fill="none" stroke="rgb(var(--fg) / 0.08)">
         <circle cx="280" cy="270" r="200" /><circle cx="280" cy="270" r="140" strokeDasharray="4 8" />
       </g>
       {/* big screen */}
-      <rect x="110" y="90" width="340" height="220" rx="18" fill="#0F0C20" stroke="rgba(255,255,255,0.18)" />
+      <rect x="110" y="90" width="340" height="220" rx="18" fill="#0F0C20" stroke="rgb(var(--fg) / 0.18)" />
       <rect x="110" y="90" width="340" height="30" rx="18" fill="#1A1633" />
       <circle cx="132" cy="105" r="4.5" fill="#FF6B7A" /><circle cx="148" cy="105" r="4.5" fill="#FFC857" /><circle cx="164" cy="105" r="4.5" fill="#5BE0A1" />
       <rect x="132" y="140" width="130" height="14" rx="7" fill="url(#hero-g)" />
-      <rect x="132" y="164" width="190" height="8" rx="4" fill="rgba(255,255,255,0.25)" />
-      <rect x="132" y="180" width="160" height="8" rx="4" fill="rgba(255,255,255,0.15)" />
+      <rect x="132" y="164" width="190" height="8" rx="4" fill="rgb(var(--fg) / 0.25)" />
+      <rect x="132" y="180" width="160" height="8" rx="4" fill="rgb(var(--fg) / 0.15)" />
       <rect x="132" y="218" width="96" height="60" rx="10" fill="rgba(123,110,246,0.25)" stroke={P} />
       <rect x="240" y="218" width="96" height="60" rx="10" fill="rgba(83,195,215,0.18)" stroke={C} />
-      <rect x="348" y="140" width="84" height="138" rx="10" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)" />
+      <rect x="348" y="140" width="84" height="138" rx="10" fill="rgb(var(--fg) / 0.05)" stroke="rgb(var(--fg) / 0.15)" />
       <path d="M358 255 L376 228 L392 244 L410 206 L424 222" fill="none" stroke={C} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
       {/* stand + desk */}
       <rect x="262" y="310" width="36" height="22" fill="#1A1633" />
@@ -100,7 +100,7 @@ export function OfficeArt() {
     <Frame id="off" viewBox="0 0 520 440">
       <circle cx="400" cy="90" r="120" fill="url(#off-glow)" />
       {/* skyline window */}
-      <rect x="40" y="40" width="440" height="230" rx="14" fill="#0F0C20" stroke="rgba(255,255,255,0.15)" />
+      <rect x="40" y="40" width="440" height="230" rx="14" fill="#0F0C20" stroke="rgb(var(--fg) / 0.15)" />
       <g fill="#1B1736">
         <rect x="70" y="150" width="46" height="120" /><rect x="124" y="110" width="58" height="160" /><rect x="190" y="170" width="40" height="100" />
         <rect x="240" y="90" width="64" height="180" /><rect x="312" y="140" width="50" height="130" /><rect x="370" y="120" width="60" height="150" />
@@ -139,10 +139,10 @@ export function WorkspaceArt() {
   return (
     <Frame id="ws">
       <circle cx="260" cy="130" r="110" fill="url(#ws-glow)" />
-      <rect x="110" y="70" width="180" height="116" rx="10" fill="#0F0C20" stroke="rgba(255,255,255,0.2)" />
+      <rect x="110" y="70" width="180" height="116" rx="10" fill="#0F0C20" stroke="rgb(var(--fg) / 0.2)" />
       <rect x="126" y="88" width="70" height="8" rx="4" fill="url(#ws-g)" />
-      <rect x="126" y="106" width="130" height="6" rx="3" fill="rgba(255,255,255,0.25)" />
-      <rect x="126" y="120" width="104" height="6" rx="3" fill="rgba(255,255,255,0.15)" />
+      <rect x="126" y="106" width="130" height="6" rx="3" fill="rgb(var(--fg) / 0.25)" />
+      <rect x="126" y="120" width="104" height="6" rx="3" fill="rgb(var(--fg) / 0.15)" />
       <rect x="126" y="140" width="52" height="30" rx="6" fill="rgba(123,110,246,0.3)" />
       <rect x="190" y="140" width="52" height="30" rx="6" fill="rgba(83,195,215,0.25)" />
       <rect x="188" y="186" width="24" height="26" fill="#1A1633" />
@@ -178,12 +178,12 @@ export function HackathonArt() {
   return (
     <Frame id="hk">
       <circle cx="200" cy="140" r="120" fill="url(#hk-glow)" />
-      <rect x="95" y="70" width="210" height="130" rx="10" fill="#0B0918" stroke="rgba(255,255,255,0.2)" />
+      <rect x="95" y="70" width="210" height="130" rx="10" fill="#0B0918" stroke="rgb(var(--fg) / 0.2)" />
       <g fontFamily="monospace" fontSize="11">
         <text x="110" y="95" fill={C}>{'const idea ='}</text>
         <text x="125" y="113" fill={PL}>{'build(fast)'}</text>
         <text x="110" y="131" fill={C}>{'ship(it) →'}</text>
-        <text x="125" y="149" fill="rgba(255,255,255,0.55)">{'// 24h'}</text>
+        <text x="125" y="149" fill="rgb(var(--fg) / 0.55)">{'// 24h'}</text>
       </g>
       <path d="M262 100 L240 144 H258 L246 178 L282 130 H262 Z" fill="url(#hk-g)" />
       <path d="M70 210 H330 L318 226 H82 Z" fill="#1A1633" />

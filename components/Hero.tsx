@@ -9,7 +9,7 @@ export default function Hero({ lang, tr }: Props) {
   const prefix = `/${lang}`
 
   return (
-    <section className="relative overflow-hidden" style={{minHeight:'100vh', background:'#050310'}}>
+    <section className="theme-dark relative overflow-hidden" style={{minHeight:'100vh', background:'#050310'}}>
       {/* Purple dune landscape background — animated GIF (motion baked into the file) */}
       <img src="/images/hero/dune-bg.gif" alt=""
         className="absolute inset-0 w-full h-full object-cover" style={{zIndex:0}}/>
@@ -24,11 +24,11 @@ export default function Hero({ lang, tr }: Props) {
               {lang === 'th' ? 'ความคิดของคน สู่อนาคตที่ฉลาดขึ้น' : 'Human Ideas. Intelligent Future.'}
             </p>
 
-            <h1 className="t-display leading-relaxed text-[clamp(2.75rem,6vw,5.5rem)] mb-6 fade-up" style={{animationDelay:'0.1s', color:'#fff'}}>
+            <h1 className="t-display leading-relaxed text-[clamp(2.75rem,6vw,5.5rem)] mb-6 fade-up" style={{animationDelay:'0.1s', color:'var(--ink)'}}>
               {h.h1a} <span style={{background:'linear-gradient(135deg,var(--purple-light) 0%,#8CD8E3 100%)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text'}}>{h.h1b}</span> {h.h1c}
             </h1>
 
-            <p className="t-body max-w-xl mx-auto mb-10 fade-up" style={{animationDelay:'0.2s', fontSize:'1.05rem', color: 'rgba(255,255,255,0.85)', fontWeight:400}}>
+            <p className="t-body max-w-xl mx-auto mb-10 fade-up" style={{animationDelay:'0.2s', fontSize:'1.05rem', color: 'rgb(var(--fg) / 0.85)', fontWeight:400}}>
               {h.sub}
             </p>
 
@@ -50,12 +50,12 @@ export default function Hero({ lang, tr }: Props) {
         </div>
 
         {/* Client logo strip — pinned to the bottom edge of the hero, like OOZOU */}
-        <div className="border-t border-white/10" style={{background:'rgba(10,7,22,0.55)', backdropFilter:'blur(16px)'}}>
+        <div className="border-t border-[color:rgb(var(--fg)/0.1)]" style={{background:'rgba(10,7,22,0.55)', backdropFilter:'blur(16px)'}}>
           <div className="max-w-7xl mx-auto px-4 lg:px-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-4 py-7">
             {h.statsN.map((n, i) => (
               <div key={i} className="text-center">
-                <span className="stat-num" style={{color:'#fff', fontSize:'1.35rem'}}>{n}</span>
-                <span className="ml-2 text-xs" style={{fontWeight:400, color: 'rgba(255,255,255,0.85)'}}>{h.stats[i]}</span>
+                <span className="stat-num" style={{color:'var(--ink)', fontSize:'1.35rem'}}>{n}</span>
+                <span className="ml-2 text-xs" style={{fontWeight:400, color: 'rgb(var(--fg) / 0.85)'}}>{h.stats[i]}</span>
               </div>
             ))}
           </div>

@@ -10,7 +10,7 @@ export default function FAQ({ lang, tr }: Props) {
   const [active, setActive] = useState<number | null>(null)
 
   return (
-    <section className="relative overflow-hidden py-24 lg:py-32" style={{ background: '#0B0A16' }}>
+    <section className="relative overflow-hidden py-24 lg:py-32" style={{ background: 'var(--bg-1)' }}>
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.05]"
         style={{
@@ -28,7 +28,7 @@ export default function FAQ({ lang, tr }: Props) {
       />
 
       <div className="relative max-w-6xl mx-auto px-4 lg:px-10">
-        <h2 className="t-display mb-3" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
+        <h2 className="t-display mb-3" style={{ color: 'var(--ink)', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
           {f.h2}
         </h2>
         <p
@@ -45,11 +45,11 @@ export default function FAQ({ lang, tr }: Props) {
           {f.subtitle}
         </p>
 
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.12)' }}>
+        <div style={{ borderTop: '1px solid rgb(var(--fg) / 0.12)' }}>
           {items.map((item, i) => {
             const isOpen = active === i
             return (
-              <div key={item.q} style={{ borderBottom: '1px solid rgba(255,255,255,0.12)' }}>
+              <div key={item.q} style={{ borderBottom: '1px solid rgb(var(--fg) / 0.12)' }}>
                 <button
                   type="button"
                   onClick={() => setActive(isOpen ? null : i)}
@@ -60,7 +60,7 @@ export default function FAQ({ lang, tr }: Props) {
                     className="t-display leading-snug transition-colors duration-300"
                     style={{
                       fontSize: 'clamp(1.05rem,2vw,1.4rem)',
-                      color: isOpen ? undefined : 'rgba(255,255,255,0.9)',
+                      color: isOpen ? undefined : 'rgb(var(--fg) / 0.9)',
                       ...(isOpen
                         ? {
                             background: 'linear-gradient(90deg, var(--purple-light) 0%, var(--lime) 100%)',
@@ -83,7 +83,7 @@ export default function FAQ({ lang, tr }: Props) {
                   >
                     <path
                       d="M6 9l6 6 6-6"
-                      stroke={isOpen ? 'var(--lime)' : 'rgba(255,255,255,0.45)'}
+                      stroke={isOpen ? 'var(--lime)' : 'rgb(var(--fg) / 0.45)'}
                       strokeWidth="1.8"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -102,7 +102,7 @@ export default function FAQ({ lang, tr }: Props) {
                     <p
                       className="t-body"
                       style={{
-                        color: 'rgba(255,255,255,0.85)',
+                        color: 'rgb(var(--fg) / 0.85)',
                         fontSize: '1rem',
                         lineHeight: 1.75,
                         maxWidth: 720,

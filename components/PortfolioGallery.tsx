@@ -17,7 +17,7 @@ function GalleryCard({ it, prefix, height, index }: { it: Item; prefix: string; 
     <Link
       href={`${prefix}/work`}
       className="group relative rounded-2xl overflow-hidden block"
-      style={{ height, background: '#141329', border: '1px solid rgba(255,255,255,0.08)' }}
+      style={{ height, background: '#141329', border: '1px solid rgb(var(--fg) / 0.08)' }}
     >
       {it.img ? (
         <img
@@ -27,14 +27,14 @@ function GalleryCard({ it, prefix, height, index }: { it: Item; prefix: string; 
         />
       ) : (
         <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-105" style={{ background: gradients[index % gradients.length] }}>
-          <i className="ti ti-photo" style={{ fontSize: 28, color: '#fff', opacity: 0.35 }} aria-hidden="true" />
+          <i className="ti ti-photo" style={{ fontSize: 28, color: 'var(--ink)', opacity: 0.35 }} aria-hidden="true" />
         </div>
       )}
       <div
         className="absolute inset-0"
         style={{ background: 'linear-gradient(180deg, transparent 45%, rgba(8,7,15,0.9) 100%)' }}
       />
-      <div className="absolute left-0 right-0 bottom-0 p-4 lg:p-5">
+      <div className="theme-dark absolute left-0 right-0 bottom-0 p-4 lg:p-5" style={{ background: 'transparent' }}>
         <p
           className="mb-1"
           style={{
@@ -50,7 +50,7 @@ function GalleryCard({ it, prefix, height, index }: { it: Item; prefix: string; 
         >
           {it.tag}
         </p>
-        <h3 style={{ color: '#fff', fontWeight: 500, fontSize: '0.95rem', lineHeight: 1.3 }}>{it.title}</h3>
+        <h3 style={{ color: 'var(--ink)', fontWeight: 500, fontSize: '0.95rem', lineHeight: 1.3 }}>{it.title}</h3>
       </div>
     </Link>
   )
@@ -62,10 +62,10 @@ export default function PortfolioGallery({ lang, tr }: Props) {
   const prefix = `/${lang}`
 
   return (
-    <section className="relative overflow-hidden pb-24 lg:pb-32" style={{ background: '#08070F' }}>
+    <section className="relative overflow-hidden pb-24 lg:pb-32" style={{ background: 'var(--bg)' }}>
       <div className="relative max-w-7xl mx-auto px-4 lg:px-10">
         <div className="flex flex-wrap items-end justify-between gap-6 mb-10 lg:mb-12">
-          <h2 className="t-display" style={{ color: '#fff', fontSize: 'clamp(1.75rem,3.2vw,2.5rem)' }}>
+          <h2 className="t-display" style={{ color: 'var(--ink)', fontSize: 'clamp(1.75rem,3.2vw,2.5rem)' }}>
             {pg.h2}
           </h2>
         </div>
@@ -115,7 +115,7 @@ export default function PortfolioGallery({ lang, tr }: Props) {
           <Link
             href={`${prefix}/work`}
             className="inline-flex items-center gap-2 text-sm"
-            style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 400 }}
+            style={{ color: 'rgb(var(--fg) / 0.85)', fontWeight: 400 }}
           >
             {pg.viewAll}
             <svg width="14" height="14" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" /></svg>

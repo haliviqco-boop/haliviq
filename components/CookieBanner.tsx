@@ -47,17 +47,17 @@ export default function CookieBanner({ lang }: { lang: Lang }) {
     <div
       role="dialog"
       aria-label={isEN ? 'Cookie consent' : 'ความยินยอมใช้คุกกี้'}
-      className="fixed left-4 right-4 bottom-4 md:left-auto md:right-6 md:bottom-6 md:max-w-md z-[100] rounded-2xl p-5"
-      style={{ background: '#141329', border: '1px solid rgba(255,255,255,0.12)', boxShadow: '0 20px 50px -10px rgba(0,0,0,0.6)' }}
+      className="theme-dark fixed left-4 right-4 bottom-4 md:left-auto md:right-6 md:bottom-6 md:max-w-md z-[100] rounded-2xl p-5"
+      style={{ background: '#141329', border: '1px solid rgb(var(--fg) / 0.12)', boxShadow: '0 20px 50px -10px rgba(0,0,0,0.6)' }}
     >
-      <p className="mb-1" style={{ color: '#fff', fontWeight: 500, fontSize: '1rem' }}>
+      <p className="mb-1" style={{ color: 'var(--ink)', fontWeight: 500, fontSize: '1rem' }}>
         {isEN ? 'We use cookies' : 'เว็บไซต์นี้ใช้คุกกี้'}
       </p>
-      <p className="text-xs leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 400 }}>
+      <p className="text-xs leading-relaxed mb-4" style={{ color: 'rgb(var(--fg) / 0.65)', fontWeight: 400 }}>
         {isEN
           ? 'We use essential cookies to keep this site working, and optional analytics cookies to see which pages people visit and how they use them. You can accept all of them or keep only the essential ones, and the choice is yours. '
           : 'เราใช้คุกกี้ที่จำเป็นเพื่อให้เว็บไซต์ทำงานได้ และคุกกี้วิเคราะห์ (ไม่บังคับ) เพื่อดูว่ามีคนเข้าหน้าไหนและใช้เว็บไซต์กันอย่างไร จะกดยอมรับทั้งหมด หรือเลือกเฉพาะที่จำเป็นก็ได้ ตัดสินใจได้เลย '}
-        <Link href={`/${lang}/cookies`} style={{ color: 'var(--lime)', textDecoration: 'underline' }}>
+        <Link href={`/${lang}/cookies`} style={{ color: 'var(--accent-2)', textDecoration: 'underline' }}>
           {isEN ? 'Cookie Policy' : 'นโยบายคุกกี้'}
         </Link>
       </p>
@@ -65,7 +65,7 @@ export default function CookieBanner({ lang }: { lang: Lang }) {
         <button
           onClick={() => choose('essential')}
           className="flex-1 py-2.5 rounded-full text-xs"
-          style={{ border: '1px solid rgba(255,255,255,0.25)', color: '#fff', fontWeight: 400 }}
+          style={{ border: '1px solid rgb(var(--fg) / 0.25)', color: 'var(--ink)', fontWeight: 400 }}
         >
           {isEN ? 'Essential only' : 'เฉพาะที่จำเป็น'}
         </button>

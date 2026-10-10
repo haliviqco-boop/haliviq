@@ -61,7 +61,7 @@ export default function LatestThinking({ lang, tr }: Props) {
   }
 
   return (
-    <section className="relative overflow-hidden py-24 lg:py-32" style={{ background: '#0B0A16' }}>
+    <section className="relative overflow-hidden py-24 lg:py-32" style={{ background: 'var(--bg-1)' }}>
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.05]"
         style={{
@@ -81,7 +81,7 @@ export default function LatestThinking({ lang, tr }: Props) {
       <div className="relative max-w-[1600px] mx-auto px-4 lg:px-10">
         <div className="flex flex-wrap items-end justify-between gap-6 mb-10 lg:mb-12">
           <div>
-            <h2 className="t-display mb-3" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
+            <h2 className="t-display mb-3" style={{ color: 'var(--ink)', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
               {lt.h2}
             </h2>
             <p
@@ -105,17 +105,17 @@ export default function LatestThinking({ lang, tr }: Props) {
               type="button"
               aria-label="Previous"
               onClick={() => scrollByCard(-1)}
-              className="w-11 h-11 rounded-full flex items-center justify-center border border-white/15 hover:border-[var(--purple)]/60 hover:bg-white/5 transition-colors"
+              className="w-11 h-11 rounded-full flex items-center justify-center text-[color:var(--ink)] border border-[color:rgb(var(--fg)/0.15)] hover:border-[var(--purple)]/60 hover:bg-[rgb(var(--fg)/0.05)] transition-colors"
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="#fff" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </button>
             <button
               type="button"
               aria-label="Next"
               onClick={() => scrollByCard(1)}
-              className="w-11 h-11 rounded-full flex items-center justify-center border border-white/15 hover:border-[var(--purple)]/60 hover:bg-white/5 transition-colors"
+              className="w-11 h-11 rounded-full flex items-center justify-center text-[color:var(--ink)] border border-[color:rgb(var(--fg)/0.15)] hover:border-[var(--purple)]/60 hover:bg-[rgb(var(--fg)/0.05)] transition-colors"
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#fff" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" /></svg>
             </button>
           </div>
         </div>
@@ -130,23 +130,23 @@ export default function LatestThinking({ lang, tr }: Props) {
               key={post.slug}
               data-card
               href={`${prefix}/blog/${post.slug}`}
-              className="group flex-none snap-start flex flex-col gap-5 p-5 rounded-3xl border border-white/10 hover:border-[var(--purple)]/50 transition-colors duration-300"
+              className="group flex-none snap-start flex flex-col gap-5 p-5 rounded-3xl border border-[color:rgb(var(--fg)/0.1)] hover:border-[var(--purple)]/50 transition-colors duration-300"
               style={{ width: 'clamp(210px, calc((100% - 4*1.25rem)/5), 280px)' }}
             >
               <ArticleImage src={post.img} i={i} top={post.top} alt={post.title} />
               <div className="flex flex-col gap-3 px-1 pb-1">
                 <h3
                   className="t-display transition-colors duration-300"
-                  style={{ color: '#fff', fontSize: '1rem', lineHeight: 1.5, fontWeight: 600 }}
+                  style={{ color: 'var(--ink)', fontSize: '1rem', lineHeight: 1.5, fontWeight: 600 }}
                 >
                   <span className="group-hover:opacity-80 transition-opacity">{post.title}</span>
                 </h3>
-                <p className="t-body" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.88rem', lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                <p className="t-body" style={{ color: 'rgb(var(--fg) / 0.85)', fontSize: '0.88rem', lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                   {post.excerpt}
                 </p>
                 <span
                   className="inline-flex items-center gap-1.5 text-sm mt-1"
-                  style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 400 }}
+                  style={{ color: 'rgb(var(--fg) / 0.85)', fontWeight: 400 }}
                 >
                   {lt.readArticle}
                   <svg width="13" height="13" viewBox="0 0 12 12" fill="none" className="transition-transform duration-300 group-hover:translate-x-1">
@@ -162,7 +162,7 @@ export default function LatestThinking({ lang, tr }: Props) {
           <Link
             href={`${prefix}/blog`}
             className="inline-flex items-center gap-2 text-base"
-            style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 400 }}
+            style={{ color: 'rgb(var(--fg) / 0.85)', fontWeight: 400 }}
           >
             {lt.readMore}
             <svg width="15" height="15" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" /></svg>

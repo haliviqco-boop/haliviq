@@ -16,21 +16,21 @@ export default function Work({ lang, tr }: Props) {
   const isEN = lang === 'en'
 
   return (
-    <section id="work" className="bg-white py-16 lg:py-12">
+    <section id="work" className="bg-[var(--bg)] py-16 lg:py-12">
       <div className="max-w-7xl mx-auto px-4 lg:px-10">
 
         {/* Header */}
         <div className="flex items-end justify-between mb-8">
-          <h2 className="t-display text-[clamp(1.8rem,4vw,3rem)] text-[#0A0A0F]">
+          <h2 className="t-display text-[clamp(1.8rem,4vw,3rem)] text-[color:var(--ink)]">
             <span style={{fontWeight:400}}>{w.label}</span>
             {' '}
-            <span style={{fontWeight:400, color:'#70708A', fontSize:'clamp(0.9rem,1.8vw,1.3rem)'}}>
+            <span style={{fontWeight:400, color:'var(--text-3)', fontSize:'clamp(0.9rem,1.8vw,1.3rem)'}}>
               — {isEN ? 'Our Work' : 'ผลงานของเรา'}
             </span>
           </h2>
           <Link href={`${prefix}/work`}
             className="text-sm border-b pb-0.5 hover:text-[var(--purple)] hover:border-[var(--purple)] transition-colors whitespace-nowrap"
-            style={{fontWeight:400, color:'#0A0A0F', borderColor:'#0A0A0F'}}>
+            style={{fontWeight:400, color:'var(--ink)', borderColor:'var(--ink)'}}>
             {w.seeAll}
           </Link>
         </div>
@@ -64,17 +64,17 @@ export default function Work({ lang, tr }: Props) {
               <div className="absolute inset-0 bg-[var(--purple)] opacity-0 group-hover:opacity-20 transition-opacity duration-300"/>
 
               {/* Text */}
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <h3 className="text-white leading-snug mb-1" style={{fontWeight:400, fontSize:'0.95rem'}}>
+              <div className="theme-dark absolute bottom-0 left-0 right-0 p-4" style={{ background: 'transparent' }}>
+                <h3 className="text-[color:var(--ink)] leading-snug mb-1" style={{fontWeight:400, fontSize:'0.95rem'}}>
                   {isEN ? c.title_en : c.title_th}
                 </h3>
-                <p className="text-white/55 text-xs" style={{fontWeight:400}}>
+                <p className="text-[color:rgb(var(--fg)/0.55)] text-xs" style={{fontWeight:400}}>
                   {isEN ? c.tag_en : c.tag_th}
                 </p>
               </div>
 
               {/* Arrow */}
-              <div className="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+              <div className="absolute top-3 right-3 w-7 h-7 rounded-full bg-[rgb(var(--fg)/0.2)] backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                 <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
                   <path d="M2 12L12 2M12 2H5M12 2v7" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>

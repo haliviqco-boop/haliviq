@@ -4,7 +4,7 @@ type Props = { lang: Lang; tr: T }
 export default function Process({ tr }: Props) {
   const p = tr.process
   return (
-    <section className="bg-[#F7F7FC] py-16">
+    <section className="bg-[var(--bg-1)] py-16">
       <div className="max-w-7xl mx-auto px-4 lg:px-10">
         <div className="mb-16">
           <p className="t-label mb-5">{p.label}</p>
@@ -20,7 +20,7 @@ export default function Process({ tr }: Props) {
                 <span style={{fontWeight:700,fontSize:'3rem',lineHeight:1,background:'linear-gradient(135deg,var(--purple),var(--lime))',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text'}}>{s.no}</span>
                 <span className="pill text-xs">{s.time}</span>
               </div>
-              <h3 className="text-[#0A0A0F] leading-snug mb-3 group-hover:text-[var(--purple)] transition-colors" style={{fontWeight:500,fontSize:'1.3rem'}}>{s.title}</h3>
+              <h3 className="text-[color:var(--ink)] leading-snug mb-3 group-hover:text-[var(--purple)] transition-colors" style={{fontWeight:500,fontSize:'1.3rem'}}>{s.title}</h3>
               <p className="t-body" style={{fontSize:'0.82rem',fontWeight:400}}>{s.desc}</p>
             </div>
           ))}

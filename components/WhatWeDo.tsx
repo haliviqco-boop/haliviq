@@ -12,7 +12,7 @@ export default function WhatWeDo({ lang, tr }: Props) {
   return (
     <section
       className="relative overflow-hidden py-24 lg:py-32"
-      style={{ background: '#0B0A16' }}
+      style={{ background: 'var(--bg-1)' }}
     >
       {/* subtle noise texture */}
       <div
@@ -39,12 +39,12 @@ export default function WhatWeDo({ lang, tr }: Props) {
       <div className="relative max-w-6xl mx-auto px-4 lg:px-10">
         <h2
           className="t-display mb-14 lg:mb-20"
-          style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}
+          style={{ color: 'var(--ink)', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}
         >
           {w.h2}
         </h2>
 
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.12)' }}>
+        <div style={{ borderTop: '1px solid rgb(var(--fg) / 0.12)' }}>
           {items.map((item, i) => {
             const isActive = active === i
             return (
@@ -54,7 +54,7 @@ export default function WhatWeDo({ lang, tr }: Props) {
                 onClick={() => setActive(i)}
                 className="cursor-pointer"
                 style={{
-                  borderBottom: '1px solid rgba(255,255,255,0.12)',
+                  borderBottom: '1px solid rgb(var(--fg) / 0.12)',
                   transition: 'border-color .35s ease',
                   borderTopColor: isActive
                     ? 'transparent'
@@ -86,7 +86,7 @@ export default function WhatWeDo({ lang, tr }: Props) {
                             WebkitTextFillColor: 'transparent',
                             backgroundClip: 'text',
                           }
-                        : { color: 'rgba(255,255,255,0.88)' }),
+                        : { color: 'rgb(var(--fg) / 0.88)' }),
                     }}
                   >
                     {item.heading}
@@ -106,7 +106,7 @@ export default function WhatWeDo({ lang, tr }: Props) {
                   >
                     <path
                       d="M5 19L19 5M19 5H9M19 5V15"
-                      stroke={isActive ? 'var(--lime)' : 'rgba(255,255,255,0.4)'}
+                      stroke={isActive ? 'var(--lime)' : 'rgb(var(--fg) / 0.4)'}
                       strokeWidth="1.6"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -126,7 +126,7 @@ export default function WhatWeDo({ lang, tr }: Props) {
                     <p
                       className="t-body"
                       style={{
-                        color: 'rgba(255,255,255,0.85)',
+                        color: 'rgb(var(--fg) / 0.85)',
                         fontSize: '1rem',
                         lineHeight: 1.7,
                         maxWidth: 640,

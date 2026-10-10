@@ -59,10 +59,10 @@ export default function ServiceLayout({
 
         {/* Hero */}
         {heroDark ? (
-          <section className="relative overflow-hidden pt-[80px]" style={{ background: '#08070F' }}>
+          <section className="relative overflow-hidden pt-[80px]" style={{ background: 'var(--bg)' }}>
             <div
               className="absolute inset-0 pointer-events-none opacity-[0.35]"
-              style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' }}
+              style={{ backgroundImage: 'radial-gradient(rgb(var(--fg) / 0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' }}
             />
             <div
               className="absolute -top-40 -left-32 w-[560px] h-[560px] rounded-full pointer-events-none"
@@ -71,7 +71,7 @@ export default function ServiceLayout({
             <div className="relative max-w-7xl mx-auto px-4 lg:px-10 py-24 lg:py-32">
               <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
-                  <h1 className="t-display mb-6 leading-relaxed" style={{ color: '#fff', fontSize: 'clamp(2.8rem,6vw,5.5rem)' }}>
+                  <h1 className="t-display mb-6 leading-relaxed" style={{ color: 'var(--ink)', fontSize: 'clamp(2.8rem,6vw,5.5rem)' }}>
                     {title}
                     {subtitle && (
                       <>
@@ -80,7 +80,7 @@ export default function ServiceLayout({
                       </>
                     )}
                   </h1>
-                  <p className="leading-relaxed mb-10" style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.85)', fontWeight: 400, maxWidth: 560 }}>{heroDesc}</p>
+                  <p className="leading-relaxed mb-10" style={{ fontSize: '1.15rem', color: 'rgb(var(--fg) / 0.85)', fontWeight: 400, maxWidth: 560 }}>{heroDesc}</p>
                   <div className="flex flex-wrap gap-4">
                     <Link
                       href={`${prefix}/contact`}
@@ -91,7 +91,7 @@ export default function ServiceLayout({
                       <svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                     </Link>
                     {heroShowSecondaryCta && (
-                      <Link href={`${prefix}/work`} className="inline-flex items-center gap-2 rounded-full border transition-colors" style={{ fontSize: '1rem', padding: '14px 32px', borderColor: 'rgba(255,255,255,0.2)', color: '#fff', fontWeight: 400 }}>
+                      <Link href={`${prefix}/work`} className="inline-flex items-center gap-2 rounded-full border transition-colors" style={{ fontSize: '1rem', padding: '14px 32px', borderColor: 'rgb(var(--fg) / 0.2)', color: 'var(--ink)', fontWeight: 400 }}>
                         {lang === 'en' ? 'View Work' : 'ดูผลงาน'}
                       </Link>
                     )}
@@ -104,7 +104,7 @@ export default function ServiceLayout({
             </div>
           </section>
         ) : (
-          <section className="pt-[80px] bg-white">
+          <section className="pt-[80px] bg-[var(--bg)]">
             <div className="gradient-bar" />
             <div className="max-w-7xl mx-auto px-4 lg:px-10 py-20 lg:py-16">
               <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -112,7 +112,7 @@ export default function ServiceLayout({
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 text-xs tracking-widest uppercase" style={{ background: bg, color }}>
                     <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ background: color }} />{badge}
                   </div>
-                  <h1 className="t-display text-[clamp(2.8rem,6vw,5.5rem)] text-[#0A0A0F] mb-6 leading-relaxed">
+                  <h1 className="t-display text-[clamp(2.8rem,6vw,5.5rem)] text-[color:var(--ink)] mb-6 leading-relaxed">
                     {title}<br />
                     <span style={{ background: `linear-gradient(135deg,${color},var(--purple-light))`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>{subtitle}</span>
                   </h1>
