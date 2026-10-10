@@ -155,14 +155,14 @@ const gradients = [
 
 function PhoneMock({ variant }: { variant: 'home' | 'doctor' }) {
   return (
-    <div className="w-[190px] h-[390px] rounded-[32px] p-1.5 shrink-0" style={{ background: '#0A0A0F', boxShadow: '0 30px 60px -20px rgba(0,0,0,0.5)' }}>
+    <div className="w-[190px] h-[390px] rounded-[32px] p-1.5 shrink-0" style={{ background: 'var(--ink)', boxShadow: '0 30px 60px -20px rgba(0,0,0,0.5)' }}>
       <div className="w-full h-full rounded-[26px] overflow-hidden relative" style={{ background: '#fff' }}>
-        <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 rounded-full" style={{ background: '#0A0A0F', zIndex: 2 }} />
+        <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-4 rounded-full" style={{ background: 'var(--ink)', zIndex: 2 }} />
         {variant === 'home' ? (
           <div className="pt-9 px-3">
             <div className="flex items-center gap-2 mb-3">
               <div className="w-7 h-7 rounded-full" style={{ background: 'var(--purple-bg)' }} />
-              <div className="h-2 w-20 rounded" style={{ background: '#EDEDF5' }} />
+              <div className="h-2 w-20 rounded" style={{ background: 'var(--line-soft)' }} />
             </div>
             <div className="h-7 rounded-lg mb-3" style={{ background: '#F5F5FA' }} />
             <div className="grid grid-cols-2 gap-2 mb-3">
@@ -172,17 +172,17 @@ function PhoneMock({ variant }: { variant: 'home' | 'doctor' }) {
                 </div>
               ))}
             </div>
-            <div className="h-2 w-16 rounded mb-2" style={{ background: '#EDEDF5' }} />
+            <div className="h-2 w-16 rounded mb-2" style={{ background: 'var(--line-soft)' }} />
             <div className="h-20 rounded-xl" style={{ background: 'linear-gradient(135deg, var(--purple-bg), var(--lime-bg))' }} />
           </div>
         ) : (
           <div className="pt-9 px-3">
             <div className="h-20 rounded-xl mb-3" style={{ background: 'linear-gradient(135deg, var(--purple), var(--purple-light))' }} />
-            <div className="h-2.5 w-24 rounded mb-2" style={{ background: '#0A0A0F', opacity: 0.75 }} />
-            <div className="h-2 w-32 rounded mb-4" style={{ background: '#EDEDF5' }} />
+            <div className="h-2.5 w-24 rounded mb-2" style={{ background: 'var(--ink)', opacity: 0.75 }} />
+            <div className="h-2 w-32 rounded mb-4" style={{ background: 'var(--line-soft)' }} />
             <div className="h-2 w-14 rounded mb-2" style={{ background: '#CFCFE0' }} />
-            <div className="h-2 w-28 rounded mb-1.5" style={{ background: '#EDEDF5' }} />
-            <div className="h-2 w-20 rounded mb-5" style={{ background: '#EDEDF5' }} />
+            <div className="h-2 w-28 rounded mb-1.5" style={{ background: 'var(--line-soft)' }} />
+            <div className="h-2 w-20 rounded mb-5" style={{ background: 'var(--line-soft)' }} />
             <div className="h-9 rounded-full" style={{ background: 'var(--lime-dark)' }} />
           </div>
         )}
@@ -213,10 +213,10 @@ export default function CaseStudiesPageClient({ params }: { params: { lang: Lang
     <>
       <Navbar lang={lang} tr={tr} transparent />
       <main>
-        <section className="relative overflow-hidden pt-[80px]" style={{ background: '#08070F' }}>
+        <section className="relative overflow-hidden pt-[80px]" style={{ background: 'var(--bg)' }}>
           <div
             className="absolute inset-0 pointer-events-none opacity-[0.35]"
-            style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' }}
+            style={{ backgroundImage: 'radial-gradient(rgb(var(--fg) / 0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' }}
           />
           <div
             className="absolute -top-40 -left-32 w-[560px] h-[560px] rounded-full pointer-events-none"
@@ -225,26 +225,26 @@ export default function CaseStudiesPageClient({ params }: { params: { lang: Lang
           <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-20 lg:pt-28 pb-16">
             <div className="mb-16">
               <p className="t-label mb-5">{isEN ? 'Case Studies' : 'Case Studies'}</p>
-              <h1 className="t-display text-[clamp(3rem,7vw,6.5rem)] leading-relaxed mb-6" style={{ color: '#fff' }}>
+              <h1 className="t-display text-[clamp(3rem,7vw,6.5rem)] leading-relaxed mb-6" style={{ color: 'var(--ink)' }}>
                 {isEN ? <>Real work,<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Real results</span></> : <>ผลงานจริง<br /><span style={{ background:'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>ผลลัพธ์ที่วัดได้</span></>}
               </h1>
-              <p className="text-sm max-w-2xl leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)', fontWeight: 400 }}>
+              <p className="text-sm max-w-2xl leading-relaxed" style={{ color: 'rgb(var(--fg) / 0.75)', fontWeight: 400 }}>
                 {isEN ? "A closer look at the websites, mobile apps and CRM systems we have built for restaurants, public agencies, property developers, retailers and clinics. Each case study explains what the client needed, how we went about it and what ended up in the finished product." : 'รวมงานที่เราทำให้ร้านอาหาร หน่วยงานรัฐ ผู้พัฒนาอสังหาริมทรัพย์ ธุรกิจค้าปลีก และคลินิก ทั้งเว็บไซต์ แอปมือถือ และระบบ CRM แต่ละเรื่องจะเล่าให้ฟังว่าลูกค้าต้องการอะไร เราวางแนวทางอย่างไร และได้อะไรออกมาในงานจริง'}
               </p>
             </div>
 
             {/* Featured case study — cover art + 2 rows of feature cards */}
-            <div className="rounded-[32px] overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
-              <div className="relative py-16 px-6 lg:px-16" style={{ background: 'linear-gradient(160deg, #171232 0%, #1B1A33 100%)' }}>
+            <div className="rounded-[32px] overflow-hidden" style={{ border: '1px solid rgb(var(--fg) / 0.1)' }}>
+              <div className="theme-dark relative py-16 px-6 lg:px-16" style={{ background: 'linear-gradient(160deg, #171232 0%, #1B1A33 100%)' }}>
                 <div className="grid lg:grid-cols-[1fr_auto_1fr] gap-8 items-center">
                   <div className="grid grid-rows-2 gap-5 order-2 lg:order-1">
                     {left.map((c) => (
-                      <div key={c.title} className="rounded-2xl p-5" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                      <div key={c.title} className="rounded-2xl p-5" style={{ background: 'rgb(var(--fg) / 0.05)', border: '1px solid rgb(var(--fg) / 0.08)' }}>
                         <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ background: 'rgba(123,110,246,0.18)' }}>
-                          <i className={`ti ${c.icon}`} style={{ fontSize: 18, color: 'var(--purple-light)' }} aria-hidden="true" />
+                          <i className={`ti ${c.icon}`} style={{ fontSize: 18, color: 'var(--accent)' }} aria-hidden="true" />
                         </div>
-                        <p className="mb-1" style={{ color: '#fff', fontWeight: 500, fontSize: '0.95rem' }}>{c.title}</p>
-                        <p style={{ color: 'rgba(255,255,255,0.6)', fontWeight: 400, fontSize: '0.8rem', lineHeight: 1.5 }}>{c.desc}</p>
+                        <p className="mb-1" style={{ color: 'var(--ink)', fontWeight: 500, fontSize: '0.95rem' }}>{c.title}</p>
+                        <p style={{ color: 'rgb(var(--fg) / 0.6)', fontWeight: 400, fontSize: '0.8rem', lineHeight: 1.5 }}>{c.desc}</p>
                       </div>
                     ))}
                   </div>
@@ -256,28 +256,28 @@ export default function CaseStudiesPageClient({ params }: { params: { lang: Lang
 
                   <div className="grid grid-rows-2 gap-5 order-3">
                     {right.map((c) => (
-                      <div key={c.title} className="rounded-2xl p-5" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                      <div key={c.title} className="rounded-2xl p-5" style={{ background: 'rgb(var(--fg) / 0.05)', border: '1px solid rgb(var(--fg) / 0.08)' }}>
                         <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style={{ background: 'rgba(196,232,106,0.18)' }}>
-                          <i className={`ti ${c.icon}`} style={{ fontSize: 18, color: 'var(--lime)' }} aria-hidden="true" />
+                          <i className={`ti ${c.icon}`} style={{ fontSize: 18, color: 'var(--accent-2)' }} aria-hidden="true" />
                         </div>
-                        <p className="mb-1" style={{ color: '#fff', fontWeight: 500, fontSize: '0.95rem' }}>{c.title}</p>
-                        <p style={{ color: 'rgba(255,255,255,0.6)', fontWeight: 400, fontSize: '0.8rem', lineHeight: 1.5 }}>{c.desc}</p>
+                        <p className="mb-1" style={{ color: 'var(--ink)', fontWeight: 500, fontSize: '0.95rem' }}>{c.title}</p>
+                        <p style={{ color: 'rgb(var(--fg) / 0.6)', fontWeight: 400, fontSize: '0.8rem', lineHeight: 1.5 }}>{c.desc}</p>
                       </div>
                     ))}
                   </div>
                 </div>
               </div>
 
-              <div className="p-10 lg:p-14" style={{ background: '#08070F' }}>
+              <div className="p-10 lg:p-14" style={{ background: 'var(--bg)' }}>
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="px-3 py-1 rounded-full text-xs" style={{ background: 'rgba(123,110,246,0.15)', color: 'var(--purple-light)', fontWeight: 400 }}>{featured.badge}</span>
-                  <span className="flex items-center gap-2 text-sm" style={{ color: 'rgba(255,255,255,0.55)', fontWeight: 400 }}>
+                  <span className="px-3 py-1 rounded-full text-xs" style={{ background: 'rgba(123,110,246,0.15)', color: 'var(--accent)', fontWeight: 400 }}>{featured.badge}</span>
+                  <span className="flex items-center gap-2 text-sm" style={{ color: 'rgb(var(--fg) / 0.55)', fontWeight: 400 }}>
                     <i className="ti ti-building-hospital" style={{ fontSize: 15 }} aria-hidden="true" /> {featured.client}
                   </span>
                 </div>
-                <h2 className="t-display text-[clamp(1.7rem,3vw,2.6rem)] leading-tight mb-5" style={{ color: 'var(--lime)' }}>{featured.title}</h2>
-                <p className="max-w-2xl mb-8" style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 400, fontSize: '0.95rem', lineHeight: 1.6 }}>{featured.desc}</p>
-                <Link href={`/${lang}/work`} className="inline-flex items-center gap-2 text-base transition-all hover:gap-3" style={{ color: 'var(--lime)', fontWeight: 400 }}>
+                <h2 className="t-display text-[clamp(1.7rem,3vw,2.6rem)] leading-tight mb-5" style={{ color: 'var(--accent-2)' }}>{featured.title}</h2>
+                <p className="max-w-2xl mb-8" style={{ color: 'rgb(var(--fg) / 0.65)', fontWeight: 400, fontSize: '0.95rem', lineHeight: 1.6 }}>{featured.desc}</p>
+                <Link href={`/${lang}/work`} className="inline-flex items-center gap-2 text-base transition-all hover:gap-3" style={{ color: 'var(--accent-2)', fontWeight: 400 }}>
                   {isEN ? 'View Case Study' : 'ดูรายละเอียด'} <i className="ti ti-arrow-right" style={{ fontSize: 15 }} aria-hidden="true" />
                 </Link>
               </div>
@@ -286,7 +286,7 @@ export default function CaseStudiesPageClient({ params }: { params: { lang: Lang
         </section>
 
         {/* Grouped by industry — same horizontal-scroll pattern as Blog */}
-        <section className="py-20 lg:py-28" style={{ background: '#08070F' }}>
+        <section className="py-20 lg:py-28" style={{ background: 'var(--bg)' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col gap-16">
             {groups.map((g) => {
               const items = cases.filter(c => c.tags.includes(g.label) && (c as any).slug)
@@ -295,8 +295,8 @@ export default function CaseStudiesPageClient({ params }: { params: { lang: Lang
                 <div key={g.label}>
                   <div className="flex items-end justify-between mb-8">
                     <div>
-                      <h2 className="t-display text-[clamp(1.8rem,3vw,2.6rem)] leading-none mb-2" style={{ color: '#fff' }}>{g.label}</h2>
-                      <p className="text-sm" style={{ color: 'var(--lime)', fontWeight: 400 }}>
+                      <h2 className="t-display text-[clamp(1.8rem,3vw,2.6rem)] leading-none mb-2" style={{ color: 'var(--ink)' }}>{g.label}</h2>
+                      <p className="text-sm" style={{ color: 'var(--accent-2)', fontWeight: 400 }}>
                         {isEN ? 'Projects we have delivered for clients in this industry.' : 'งานที่เราทำให้ลูกค้าในอุตสาหกรรมนี้'}
                       </p>
                     </div>
@@ -304,18 +304,18 @@ export default function CaseStudiesPageClient({ params }: { params: { lang: Lang
                       <button
                         aria-label={isEN ? 'Scroll left' : 'เลื่อนซ้าย'}
                         onClick={() => scrollRow(g.label, -1)}
-                        className="w-9 h-9 rounded-full flex items-center justify-center transition-colors hover:bg-white/10"
-                        style={{ border: '1px solid rgba(255,255,255,0.15)' }}
+                        className="w-9 h-9 rounded-full flex items-center justify-center transition-colors hover:bg-[rgb(var(--fg)/0.1)]"
+                        style={{ border: '1px solid rgb(var(--fg) / 0.15)' }}
                       >
-                        <i className="ti ti-chevron-left" style={{ fontSize: 16, color: '#fff' }} aria-hidden="true" />
+                        <i className="ti ti-chevron-left" style={{ fontSize: 16, color: 'var(--ink)' }} aria-hidden="true" />
                       </button>
                       <button
                         aria-label={isEN ? 'Scroll right' : 'เลื่อนขวา'}
                         onClick={() => scrollRow(g.label, 1)}
-                        className="w-9 h-9 rounded-full flex items-center justify-center transition-colors hover:bg-white/10"
-                        style={{ border: '1px solid rgba(255,255,255,0.15)' }}
+                        className="w-9 h-9 rounded-full flex items-center justify-center transition-colors hover:bg-[rgb(var(--fg)/0.1)]"
+                        style={{ border: '1px solid rgb(var(--fg) / 0.15)' }}
                       >
-                        <i className="ti ti-chevron-right" style={{ fontSize: 16, color: '#fff' }} aria-hidden="true" />
+                        <i className="ti ti-chevron-right" style={{ fontSize: 16, color: 'var(--ink)' }} aria-hidden="true" />
                       </button>
                     </div>
                   </div>
@@ -331,21 +331,21 @@ export default function CaseStudiesPageClient({ params }: { params: { lang: Lang
                         key={c.id}
                         href={(c as any).slug ? `/${lang}/case-studies/${(c as any).slug}` : `/${lang}/work`}
                         className="group shrink-0 w-[280px] snap-start rounded-2xl p-4 transition-all duration-300 hover:-translate-y-1"
-                        style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}
+                        style={{ background: 'rgb(var(--fg) / 0.03)', border: '1px solid rgb(var(--fg) / 0.08)' }}
                       >
                         <div className="h-32 rounded-xl flex items-center justify-center mb-4 relative overflow-hidden" style={cover ? undefined : { background: gradients[i % gradients.length] }}>
                           {cover ? (
                             // eslint-disable-next-line @next/next/no-img-element
                             <img src={cover} alt={c.title} loading="lazy" width={280} height={128} className="absolute inset-0 w-full h-full object-cover" />
                           ) : (
-                            <i className="ti ti-photo" style={{ fontSize: 22, color: '#fff', opacity: 0.45 }} aria-hidden="true" />
+                            <i className="ti ti-photo" style={{ fontSize: 22, color: 'var(--ink)', opacity: 0.45 }} aria-hidden="true" />
                           )}
-                          <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs" style={{ background: 'rgba(255,255,255,0.9)', color: 'var(--purple)', fontWeight: 500 }}>{c.result}</span>
+                          <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs" style={{ background: 'rgb(var(--fg) / 0.9)', color: 'var(--purple)', fontWeight: 500 }}>{c.result}</span>
                         </div>
-                        <p className="text-xs mb-1.5" style={{ color: 'rgba(255,255,255,0.45)', fontWeight: 400 }}>{c.client}</p>
-                        <h3 className="text-white leading-snug mb-2 group-hover:text-[var(--purple-light)] transition-colors" style={{ fontWeight: 500, fontSize: '0.98rem' }}>{c.title}</h3>
-                        <p style={{ color: 'rgba(255,255,255,0.55)', fontWeight: 400, fontSize: '0.8rem', lineHeight: 1.5 }} className="mb-4 line-clamp-5">{c.desc}</p>
-                        <span className="text-sm flex items-center gap-1.5 group-hover:gap-2.5 transition-all" style={{ color: 'var(--purple-light)', fontWeight: 400 }}>
+                        <p className="text-xs mb-1.5" style={{ color: 'rgb(var(--fg) / 0.45)', fontWeight: 400 }}>{c.client}</p>
+                        <h3 className="text-[color:var(--ink)] leading-snug mb-2 group-hover:text-[color:var(--accent)] transition-colors" style={{ fontWeight: 500, fontSize: '0.98rem' }}>{c.title}</h3>
+                        <p style={{ color: 'rgb(var(--fg) / 0.55)', fontWeight: 400, fontSize: '0.8rem', lineHeight: 1.5 }} className="mb-4 line-clamp-5">{c.desc}</p>
+                        <span className="text-sm flex items-center gap-1.5 group-hover:gap-2.5 transition-all" style={{ color: 'var(--accent)', fontWeight: 400 }}>
                           {isEN ? 'View Case Study' : 'ดูรายละเอียด'} <i className="ti ti-arrow-up-right" style={{ fontSize: 13 }} aria-hidden="true" />
                         </span>
                       </Link>
@@ -358,17 +358,17 @@ export default function CaseStudiesPageClient({ params }: { params: { lang: Lang
           </div>
         </section>
 
-        <section className="relative overflow-hidden" style={{ background: '#050308' }}>
+        <section className="theme-dark relative overflow-hidden" style={{ background: '#050308' }}>
           <div
             className="absolute inset-0 pointer-events-none opacity-40"
-            style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '180px 180px, 260px 260px', backgroundPosition: '0 0, 90px 130px' }}
+            style={{ backgroundImage: 'radial-gradient(rgb(var(--fg) / 0.5) 1px, transparent 1px), radial-gradient(rgb(var(--fg) / 0.3) 1px, transparent 1px)', backgroundSize: '180px 180px, 260px 260px', backgroundPosition: '0 0, 90px 130px' }}
           />
           <div
             className="absolute left-0 right-0 bottom-0 pointer-events-none"
             style={{ height: 260, background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(123,110,246,0.35) 0%, rgba(83,195,215,0.08) 45%, transparent 75%)' }}
           />
           <div className="relative max-w-4xl mx-auto px-6 lg:px-10 py-24 text-center">
-            <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#fff', fontWeight: 500 }}>{isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจไหม?'}</p>
+            <p className="text-sm tracking-widest uppercase mb-6" style={{ color: 'var(--ink)', fontWeight: 500 }}>{isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจไหม?'}</p>
             <h2 className="t-display text-[clamp(1.75rem,4vw,3rem)] mb-6 leading-normal md:whitespace-nowrap" style={{ background: 'linear-gradient(135deg, var(--purple-light) 0%, #53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
               {isEN ? <>Let's build your next case study</> : <>มาทำโปรเจกต์ถัดไปด้วยกัน</>}
             </h2>

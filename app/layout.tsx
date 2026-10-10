@@ -28,8 +28,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="th">
+    <html lang="th" suppressHydrationWarning>
       <head>
+        {/* Apply the saved theme before first paint so there is no flash. Dark is the default. React does not manage this attribute, so a client re-render cannot reset it. */}
+        <script dangerouslySetInnerHTML={{ __html: "var t='dark';try{var s=localStorage.getItem('haliviq-theme');if(s==='light'||s==='dark')t=s}catch(e){}document.documentElement.setAttribute('data-theme',t)" }} />
         <link rel="preload" href="/fonts/LINESeedSansTH_Th.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/>
         <link rel="preload" href="/fonts/LINESeedSansTH_Rg.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/>
         <link rel="preload" href="/fonts/LINESeedSansTH_Bd.woff2" as="font" type="font/woff2" crossOrigin="anonymous"/>

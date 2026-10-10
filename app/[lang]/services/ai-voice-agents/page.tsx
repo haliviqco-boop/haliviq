@@ -147,28 +147,28 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   const voiceLines = [
     { n: 1, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>voice-agent --connect sip://line-01</span></> },
-    { n: 2, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Telephony line connected' : 'เชื่อมสายโทรศัพท์แล้ว'}</> },
+    { n: 2, jsx: <><span style={{ color: 'var(--accent-2)' }}>✓</span>&nbsp;{isEN ? 'Telephony line connected' : 'เชื่อมสายโทรศัพท์แล้ว'}</> },
     { n: 3, jsx: <>&nbsp;</> },
     { n: 4, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>call --lang th-TH --latency-target 400ms</span></> },
-    { n: 5, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Response latency: 380ms' : 'Response Latency: 380ms'}</> },
+    { n: 5, jsx: <><span style={{ color: 'var(--accent-2)' }}>✓</span>&nbsp;{isEN ? 'Response latency: 380ms' : 'Response Latency: 380ms'}</> },
     { n: 6, jsx: <>&nbsp;</> },
     { n: 7, jsx: <><span style={{ color: '#82AAFF' }}>{'>'}</span>&nbsp;<span style={{ color: '#C792EA' }}>resolve --intent booking.status</span></> },
-    { n: 8, jsx: <><span style={{ color: 'var(--lime)' }}>✓</span>&nbsp;{isEN ? 'Call resolved, no transfer needed' : 'ปิดเรื่องโดยไม่ต้องโอนสาย'}</> },
+    { n: 8, jsx: <><span style={{ color: 'var(--accent-2)' }}>✓</span>&nbsp;{isEN ? 'Call resolved, no transfer needed' : 'ปิดเรื่องโดยไม่ต้องโอนสาย'}</> },
   ]
 
   const heroSlot = (
     <div className="relative pb-10 pr-6">
-      <div className="rounded-2xl overflow-hidden" style={{ background: '#141329', border: '1px solid rgba(123,110,246,0.35)' }}>
-        <div className="flex items-center gap-2 px-5 py-3.5" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+      <div className="theme-dark rounded-2xl overflow-hidden" style={{ background: '#141329', border: '1px solid rgba(123,110,246,0.35)' }}>
+        <div className="flex items-center gap-2 px-5 py-3.5" style={{ borderBottom: '1px solid rgb(var(--fg) / 0.08)' }}>
           <span className="w-2.5 h-2.5 rounded-full" style={{ background: '#F87171' }} />
           <span className="w-2.5 h-2.5 rounded-full" style={{ background: '#FBBF24' }} />
           <span className="w-2.5 h-2.5 rounded-full" style={{ background: '#34D399' }} />
-          <span className="ml-3 text-xs" style={{ color: 'rgba(255,255,255,0.85)', fontFamily: 'monospace' }}>call-session.log</span>
+          <span className="ml-3 text-xs" style={{ color: 'rgb(var(--fg) / 0.85)', fontFamily: 'monospace' }}>call-session.log</span>
         </div>
-        <div className="px-6 py-6" style={{ fontFamily: 'monospace', fontSize: '0.9rem', lineHeight: 1.9, color: 'rgba(255,255,255,0.85)' }}>
+        <div className="px-6 py-6" style={{ fontFamily: 'monospace', fontSize: '0.9rem', lineHeight: 1.9, color: 'rgb(var(--fg) / 0.85)' }}>
           {voiceLines.map((l) => (
             <div key={l.n} className="flex gap-4">
-              <span style={{ color: 'rgba(255,255,255,0.25)', width: 16, textAlign: 'right' }}>{l.n}</span>
+              <span style={{ color: 'rgb(var(--fg) / 0.25)', width: 16, textAlign: 'right' }}>{l.n}</span>
               <span>{l.jsx}</span>
             </div>
           ))}
@@ -176,11 +176,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       </div>
 
       <div
-        className="absolute -bottom-2 -right-2 w-[220px] rounded-2xl p-4"
-        style={{ background: '#1B1A33', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 20px 50px -10px rgba(0,0,0,0.6)' }}
+        className="theme-dark absolute -bottom-2 -right-2 w-[220px] rounded-2xl p-4"
+        style={{ background: '#1B1A33', border: '1px solid rgb(var(--fg) / 0.1)', boxShadow: '0 20px 50px -10px rgba(0,0,0,0.6)' }}
       >
         <div className="flex items-center justify-between mb-3">
-          <span className="text-[10px] tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.85)' }}>{isEN ? 'Call Resolution' : 'Call Resolution'}</span>
+          <span className="text-[10px] tracking-widest uppercase" style={{ color: 'rgb(var(--fg) / 0.85)' }}>{isEN ? 'Call Resolution' : 'Call Resolution'}</span>
           <span className="w-2 h-2 rounded-full" style={{ background: 'var(--lime)' }} />
         </div>
         <div className="flex items-center gap-3 mb-3">
@@ -188,12 +188,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.5 21 3 14.5 3 6a2 2 0 0 1 1-2Z" stroke="#fff" strokeWidth="1.6" strokeLinejoin="round" /></svg>
           </div>
           <div className="flex-1 space-y-1.5">
-            <div className="h-1.5 rounded-full" style={{ background: 'rgba(255,255,255,0.15)', width: '90%' }} />
-            <div className="h-1.5 rounded-full" style={{ background: 'rgba(255,255,255,0.15)', width: '65%' }} />
+            <div className="h-1.5 rounded-full" style={{ background: 'rgb(var(--fg) / 0.15)', width: '90%' }} />
+            <div className="h-1.5 rounded-full" style={{ background: 'rgb(var(--fg) / 0.15)', width: '65%' }} />
             <div className="h-3.5 rounded-full" style={{ background: 'linear-gradient(90deg,var(--purple),var(--lime))', width: '70%' }} />
           </div>
         </div>
-        <div className="flex items-center gap-1.5 text-xs" style={{ color: 'var(--lime)' }}>
+        <div className="flex items-center gap-1.5 text-xs" style={{ color: 'var(--accent-2)' }}>
           <i className="ti ti-circle-check" style={{ fontSize: 13 }} aria-hidden="true" />
           {isEN ? '70% calls resolved without transfer' : 'ปิดเรื่อง 70% โดยไม่โอนสาย'}
         </div>
@@ -268,35 +268,35 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   const postHeroSlot = (
     <>
-    <section className="relative overflow-hidden" style={{ background: '#08070F' }}>
+    <section className="relative overflow-hidden" style={{ background: 'var(--bg)' }}>
       <div className="relative max-w-7xl mx-auto px-4 lg:px-10 pb-24 lg:pb-32">
-        <div className="rounded-2xl p-10 lg:p-16 mb-16 lg:mb-24" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
+        <div className="rounded-2xl p-10 lg:p-16 mb-16 lg:mb-24" style={{ background: 'rgb(var(--fg) / 0.03)', border: '1px solid rgb(var(--fg) / 0.06)' }}>
           <div className="w-12 h-[3px] rounded-full mb-8" style={{ background: 'linear-gradient(90deg, var(--purple-light), var(--lime))' }} />
-          <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
+          <p className="leading-relaxed" style={{ color: 'rgb(var(--fg) / 0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
             {overviewText}
           </p>
         </div>
 
-        <p className="mb-5 text-xs tracking-widest uppercase" style={{ color: 'var(--lime)', fontWeight: 600 }}>
+        <p className="mb-5 text-xs tracking-widest uppercase" style={{ color: 'var(--accent-2)', fontWeight: 600 }}>
           {isEN ? 'Capabilities' : 'ความสามารถ'}
         </p>
-        <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
+        <h2 className="t-display mb-4" style={{ color: 'var(--ink)', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
           {isEN ? 'Key Capabilities' : 'ความสามารถหลัก'}
         </h2>
-        <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400 }}>
+        <p className="mb-12" style={{ color: 'rgb(var(--fg) / 0.85)', fontSize: '1.2rem', fontWeight: 400 }}>
           {isEN ? 'Concrete capabilities we bring to this engagement — not buzzwords.' : 'ความสามารถที่จับต้องได้จริงที่เรานำมาใช้ในทุกโปรเจกต์ ไม่ใช่แค่คำสวยหรู'}
         </p>
 
         <div className="grid sm:grid-cols-2 gap-5">
           {capabilities.map((c) => (
-            <div key={c.title} className="p-8 rounded-2xl" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
+            <div key={c.title} className="p-8 rounded-2xl" style={{ background: 'rgb(var(--fg) / 0.03)', border: '1px solid rgb(var(--fg) / 0.07)' }}>
               <div className="flex items-start gap-5">
                 <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'rgba(123,110,246,0.15)' }}>
-                  <i className={`ti ${c.icon}`} style={{ fontSize: 20, color: 'var(--purple-light)' }} aria-hidden="true" />
+                  <i className={`ti ${c.icon}`} style={{ fontSize: 20, color: 'var(--accent)' }} aria-hidden="true" />
                 </div>
                 <div>
-                  <h3 className="mb-2" style={{ color: '#fff', fontWeight: 600, fontSize: '1.35rem' }}>{c.title}</h3>
-                  <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>{c.desc}</p>
+                  <h3 className="mb-2" style={{ color: 'var(--ink)', fontWeight: 600, fontSize: '1.35rem' }}>{c.title}</h3>
+                  <p className="leading-relaxed" style={{ color: 'rgb(var(--fg) / 0.85)', fontSize: '1.1rem', fontWeight: 400 }}>{c.desc}</p>
                 </div>
               </div>
             </div>
@@ -304,13 +304,13 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </div>
 
         <div className="mt-16 lg:mt-24">
-          <p className="mb-5 text-xs tracking-widest uppercase" style={{ color: 'var(--lime)', fontWeight: 600 }}>
+          <p className="mb-5 text-xs tracking-widest uppercase" style={{ color: 'var(--accent-2)', fontWeight: 600 }}>
             {isEN ? 'Tools We Use' : 'เครื่องมือที่ใช้'}
           </p>
-          <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
+          <h2 className="t-display mb-4" style={{ color: 'var(--ink)', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
             {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้งาน'}
           </h2>
-          <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
+          <p className="mb-12" style={{ color: 'rgb(var(--fg) / 0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'A modern voice AI stack chosen for latency, accuracy, and reliability at call-center scale.'
               : 'Voice AI Stack ที่ทันสมัย เลือกมาเพื่อให้ตอบไว แม่นยำ และเชื่อถือได้ในระดับคอลเซ็นเตอร์'}
@@ -321,13 +321,13 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <span
                 key={t.label}
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-base"
-                style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.85)', fontWeight: 400 }}
+                style={{ background: 'rgb(var(--fg) / 0.03)', border: '1px solid rgb(var(--fg) / 0.08)', color: 'rgb(var(--fg) / 0.85)', fontWeight: 400 }}
               >
                 {t.label}
                 {t.svg ? (
                   <BrandLogo name={t.svg} />
                 ) : (
-                  <i className={`ti ${t.icon}`} style={{ fontSize: 15, color: 'var(--purple-light)' }} aria-hidden="true" />
+                  <i className={`ti ${t.icon}`} style={{ fontSize: 15, color: 'var(--accent)' }} aria-hidden="true" />
                 )}
               </span>
             ))}
@@ -335,13 +335,13 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </div>
 
         <div className="mt-16 lg:mt-24">
-          <p className="mb-5 text-xs tracking-widest uppercase" style={{ color: 'var(--lime)', fontWeight: 600 }}>
+          <p className="mb-5 text-xs tracking-widest uppercase" style={{ color: 'var(--accent-2)', fontWeight: 600 }}>
             {isEN ? 'How We Work' : 'วิธีการทำงาน'}
           </p>
-          <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
+          <h2 className="t-display mb-4" style={{ color: 'var(--ink)', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
             {isEN ? 'Our Approach' : 'แนวทางการทำงานของเรา'}
           </h2>
-          <p className="mb-16" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
+          <p className="mb-16" style={{ color: 'rgb(var(--fg) / 0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
             {isEN
               ? 'A clear path from discovery to a production voice agent — adjusted per call flow, never one-size-fits-all.'
               : 'เส้นทางที่ชัดเจนจากการสำรวจโจทย์ไปจนถึง Voice Agent ที่ใช้งานจริง ปรับตามแต่ละขั้นตอนการรับสาย ไม่ใช่สูตรตายตัว'}
@@ -367,8 +367,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                   >
                     {s.no}
                   </div>
-                  <h3 className="mb-2" style={{ color: '#fff', fontWeight: 600, fontSize: '1.2rem' }}>{s.title}</h3>
-                  <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1rem', fontWeight: 400 }}>{s.desc}</p>
+                  <h3 className="mb-2" style={{ color: 'var(--ink)', fontWeight: 600, fontSize: '1.2rem' }}>{s.title}</h3>
+                  <p className="leading-relaxed" style={{ color: 'rgb(var(--fg) / 0.85)', fontSize: '1rem', fontWeight: 400 }}>{s.desc}</p>
                 </div>
               ))}
             </div>
@@ -376,21 +376,21 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </div>
 
         <div className="mt-16 lg:mt-24">
-          <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
+          <h2 className="t-display mb-4" style={{ color: 'var(--ink)', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
             {isEN ? 'Frequently Asked Questions' : 'คำถามที่พบบ่อย'}
           </h2>
-          <p className="mb-4" style={{ color: 'var(--lime)', fontSize: '1.2rem', fontWeight: 600 }}>
+          <p className="mb-4" style={{ color: 'var(--accent-2)', fontSize: '1.2rem', fontWeight: 600 }}>
             {isEN ? 'Straight answers about how our voice agents work.' : 'คำตอบตรงไปตรงมาเกี่ยวกับวิธีที่ Voice Agent ของเราทำงาน'}
           </p>
 
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+          <div style={{ borderTop: '1px solid rgb(var(--fg) / 0.1)' }}>
             {darkFaqs.map((f, i) => (
-              <details key={f.q} className="group marker:hidden [&::-webkit-details-marker]:hidden" style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }} open={i === 0}>
+              <details key={f.q} className="group marker:hidden [&::-webkit-details-marker]:hidden" style={{ borderBottom: '1px solid rgb(var(--fg) / 0.1)' }} open={i === 0}>
                 <summary className="flex items-center justify-between gap-6 cursor-pointer list-none py-6">
-                  <span style={{ color: '#fff', fontSize: 'clamp(1.15rem,1.8vw,1.4rem)', fontWeight: 500 }}>{f.q}</span>
-                  <i className="ti ti-chevron-down shrink-0 transition-transform duration-300 group-open:rotate-180" style={{ fontSize: 20, color: 'rgba(255,255,255,0.85)' }} aria-hidden="true" />
+                  <span style={{ color: 'var(--ink)', fontSize: 'clamp(1.15rem,1.8vw,1.4rem)', fontWeight: 500 }}>{f.q}</span>
+                  <i className="ti ti-chevron-down shrink-0 transition-transform duration-300 group-open:rotate-180" style={{ fontSize: 20, color: 'rgb(var(--fg) / 0.85)' }} aria-hidden="true" />
                 </summary>
-                <p className="pb-6 leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.15rem', fontWeight: 400, maxWidth: 900 }}>
+                <p className="pb-6 leading-relaxed" style={{ color: 'rgb(var(--fg) / 0.85)', fontSize: '1.15rem', fontWeight: 400, maxWidth: 900 }}>
                   {f.a}
                 </p>
               </details>
@@ -400,20 +400,20 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       </div>
     </section>
 
-    <section className="relative overflow-hidden" style={{ background: '#050308' }}>
+    <section className="theme-dark relative overflow-hidden" style={{ background: '#050308' }}>
       <div
         className="absolute inset-0 pointer-events-none opacity-40"
-        style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '180px 180px, 260px 260px', backgroundPosition: '0 0, 90px 130px' }}
+        style={{ backgroundImage: 'radial-gradient(rgb(var(--fg) / 0.5) 1px, transparent 1px), radial-gradient(rgb(var(--fg) / 0.3) 1px, transparent 1px)', backgroundSize: '180px 180px, 260px 260px', backgroundPosition: '0 0, 90px 130px' }}
       />
       <div
         className="absolute left-0 right-0 bottom-0 pointer-events-none"
         style={{ height: 260, background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(123,110,246,0.35) 0%, rgba(83,195,215,0.08) 45%, transparent 75%)' }}
       />
       <div className="relative max-w-7xl mx-auto px-4 lg:px-10 py-28 lg:py-36">
-        <h2 className="t-display mb-5 leading-tight" style={{ color: '#fff', fontSize: 'clamp(2.5rem,5.5vw,4.2rem)' }}>
+        <h2 className="t-display mb-5 leading-tight" style={{ color: 'var(--ink)', fontSize: 'clamp(2.5rem,5.5vw,4.2rem)' }}>
           {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
         </h2>
-        <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
+        <p className="mb-10" style={{ color: 'rgb(var(--fg) / 0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
           {isEN ? "We'd love to hear what you're building." : 'เรายินดีฟังว่าคุณกำลังสร้างอะไรอยู่'}
         </p>
         <div className="flex flex-wrap items-center gap-6">
@@ -425,7 +425,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             {isEN ? 'Start a Conversation' : 'เริ่มคุยกับเรา'}
             <i className="ti ti-arrow-right" style={{ fontSize: 17 }} aria-hidden="true" />
           </Link>
-          <a href="mailto:wu@haliviq.com" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>
+          <a href="mailto:wu@haliviq.com" style={{ color: 'rgb(var(--fg) / 0.85)', fontSize: '1.1rem', fontWeight: 400 }}>
             wu@haliviq.com
           </a>
         </div>

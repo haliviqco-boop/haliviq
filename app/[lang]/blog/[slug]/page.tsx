@@ -112,34 +112,34 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       {faqLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />}
       <main>
-        <section className="pt-[80px] bg-white">
+        <section className="pt-[80px] bg-[var(--bg)]">
           <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg,var(--purple),var(--purple-light),var(--lime))' }} />
           <div className="max-w-4xl mx-auto px-6 lg:px-10 py-14 lg:py-20">
-            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-[#8A8AA0] mb-8">
+            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-[color:var(--text-3)] mb-8">
               <Link href={`/${lang}/blog`} className="hover:text-[var(--purple)] transition-colors">{isEN ? 'Insights' : 'บทความ'}</Link>
               <i className="ti ti-chevron-right" style={{ fontSize: 12 }} aria-hidden="true" />
               <span>{catLabel[a.cat][lang]}</span>
             </nav>
             <div className="flex flex-wrap items-center gap-3 mb-6">
               <span className="px-3 py-1.5 rounded-full text-xs" style={{ background: 'var(--purple-bg)', color: 'var(--purple)' }}>{catLabel[a.cat][lang]}</span>
-              <span className="text-xs text-[#8A8AA0]">{a.readMin} {isEN ? 'min read' : 'นาที'}</span>
-              <span className="text-xs text-[#8A8AA0]">·</span>
-              <time className="text-xs text-[#8A8AA0]" dateTime={a.date}>{formatDate(a.date, lang)}</time>
+              <span className="text-xs text-[color:var(--text-3)]">{a.readMin} {isEN ? 'min read' : 'นาที'}</span>
+              <span className="text-xs text-[color:var(--text-3)]">·</span>
+              <time className="text-xs text-[color:var(--text-3)]" dateTime={a.date}>{formatDate(a.date, lang)}</time>
             </div>
-            <h1 className="t-display text-[clamp(2rem,4.6vw,3.4rem)] text-[#0A0A0F] mb-7" style={{ lineHeight: 1.35 }}>{l.title}</h1>
-            <p className="text-lg text-[#4A4A60] mb-9" style={{ lineHeight: 1.85 }}>{l.intro}</p>
-            <div className="flex items-center gap-4 pb-8 border-b border-[#E4E4EC]">
+            <h1 className="t-display text-[clamp(2rem,4.6vw,3.4rem)] text-[color:var(--ink)] mb-7" style={{ lineHeight: 1.35 }}>{l.title}</h1>
+            <p className="text-lg text-[color:var(--text-2)] mb-9" style={{ lineHeight: 1.85 }}>{l.intro}</p>
+            <div className="flex items-center gap-4 pb-8 border-b border-[color:var(--line)]">
               <div className="w-11 h-11 rounded-full flex items-center justify-center text-white text-sm" style={{ background: 'var(--purple)' }}>H</div>
               <div>
-                <p className="text-sm text-[#0A0A0F]">{isEN ? 'Haliviq Team' : 'ทีม Haliviq'}</p>
-                <p className="text-xs text-[#8A8AA0]">{isEN ? 'Digital product studio, Bangkok' : 'สตูดิโอผลิตภัณฑ์ดิจิทัล กรุงเทพฯ'}</p>
+                <p className="text-sm text-[color:var(--ink)]">{isEN ? 'Haliviq Team' : 'ทีม Haliviq'}</p>
+                <p className="text-xs text-[color:var(--text-3)]">{isEN ? 'Digital product studio, Bangkok' : 'สตูดิโอผลิตภัณฑ์ดิจิทัล กรุงเทพฯ'}</p>
               </div>
             </div>
           </div>
         </section>
 
         <div className="max-w-6xl mx-auto px-6 lg:px-10 mb-14">
-          <div className="relative w-full rounded-3xl overflow-hidden bg-[#08070F]" style={{ aspectRatio: '16/8' }}>
+          <div className="relative w-full rounded-3xl overflow-hidden bg-[var(--bg)]" style={{ aspectRatio: '16/8' }}>
             <img src={coverOf(a)} alt={l.title} className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: topPos }} />
           </div>
         </div>
@@ -147,14 +147,14 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
         <article className="max-w-3xl mx-auto px-6 lg:px-10 pb-16">
           {l.sections.map((s, i) => (
             <section key={s.h}>
-              <h2 className="t-display text-[#0A0A0F]" style={h2}>{s.h}</h2>
+              <h2 className="t-display text-[color:var(--ink)]" style={h2}>{s.h}</h2>
               {s.p.map((para, j) => (
-                <p key={j} className="text-base text-[#3D3D55] mb-5" style={{ lineHeight: 1.95 }}>{para}</p>
+                <p key={j} className="text-base text-[color:var(--text-2)] mb-5" style={{ lineHeight: 1.95 }}>{para}</p>
               ))}
               {s.list && (
                 <ul className="space-y-3 mb-6">
                   {s.list.map((it) => (
-                    <li key={it} className="flex gap-3 text-[#3D3D55]" style={{ lineHeight: 1.85 }}>
+                    <li key={it} className="flex gap-3 text-[color:var(--text-2)]" style={{ lineHeight: 1.85 }}>
                       <span className="mt-[0.7em] shrink-0 w-1.5 h-1.5 rounded-full" style={{ background: 'var(--purple)' }} />
                       <span>{it}</span>
                     </li>
@@ -163,25 +163,25 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
               )}
               {s.quote && (
                 <blockquote className="my-8 pl-6 border-l-4 py-2" style={{ borderColor: 'var(--purple)' }}>
-                  <p className="text-xl text-[#0A0A0F]" style={{ lineHeight: 1.7 }}>{s.quote}</p>
+                  <p className="text-xl text-[color:var(--ink)]" style={{ lineHeight: 1.7 }}>{s.quote}</p>
                 </blockquote>
               )}
               {i === figAt && (
                 <figure className="my-10">
-                  <div className="relative w-full rounded-2xl overflow-hidden bg-[#08070F]" style={{ aspectRatio: '16/8' }}>
+                  <div className="relative w-full rounded-2xl overflow-hidden bg-[var(--bg)]" style={{ aspectRatio: '16/8' }}>
                     <img src={figureOf(a)} alt={l.figCaption} loading="lazy" className="absolute inset-0 w-full h-full object-cover" />
                   </div>
-                  <figcaption className="text-xs text-[#8A8AA0] text-center mt-3">{l.figCaption}</figcaption>
+                  <figcaption className="text-xs text-[color:var(--text-3)] text-center mt-3">{l.figCaption}</figcaption>
                 </figure>
               )}
             </section>
           ))}
 
-          <div className="mt-14 p-7 rounded-2xl border border-[#E4E4EC] bg-[#F7F7FC]">
+          <div className="mt-14 p-7 rounded-2xl border border-[color:var(--line)] bg-[var(--bg-1)]">
             <p className="t-label mb-4" style={{ color: 'var(--purple)' }}>{isEN ? 'Key takeaways' : 'สรุปสั้น ๆ'}</p>
             <ul className="space-y-3">
               {l.takeaways.map((k) => (
-                <li key={k} className="flex gap-3 text-[#0A0A0F]" style={{ lineHeight: 1.8 }}>
+                <li key={k} className="flex gap-3 text-[color:var(--ink)]" style={{ lineHeight: 1.8 }}>
                   <i className="ti ti-check" style={{ color: 'var(--purple)', marginTop: 5 }} aria-hidden="true" />
                   <span>{k}</span>
                 </li>
@@ -191,12 +191,12 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
 
           {l.faq && l.faq.length > 0 && (
             <div className="mt-14">
-              <h2 className="t-display text-[#0A0A0F]" style={{ ...h2, marginTop: 0 }}>{isEN ? 'Frequently asked questions' : 'คำถามที่พบบ่อย'}</h2>
+              <h2 className="t-display text-[color:var(--ink)]" style={{ ...h2, marginTop: 0 }}>{isEN ? 'Frequently asked questions' : 'คำถามที่พบบ่อย'}</h2>
               <div className="space-y-4">
                 {l.faq.map((f) => (
-                  <div key={f.q} className="p-6 rounded-2xl border border-[#E4E4EC]">
-                    <h3 className="text-[#0A0A0F] mb-2" style={{ fontWeight: 600, lineHeight: 1.6 }}>{f.q}</h3>
-                    <p className="text-sm text-[#4A4A60]" style={{ lineHeight: 1.85 }}>{f.a}</p>
+                  <div key={f.q} className="p-6 rounded-2xl border border-[color:var(--line)]">
+                    <h3 className="text-[color:var(--ink)] mb-2" style={{ fontWeight: 600, lineHeight: 1.6 }}>{f.q}</h3>
+                    <p className="text-sm text-[color:var(--text-2)]" style={{ lineHeight: 1.85 }}>{f.a}</p>
                   </div>
                 ))}
               </div>
@@ -215,7 +215,7 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
               <p className="t-label mb-4" style={{ color: 'var(--purple)' }}>{isEN ? 'Related services' : 'บริการที่เกี่ยวข้อง'}</p>
               <div className="flex flex-wrap gap-3">
                 {(svcFor[a.slug] || []).map((sv) => (
-                  <Link key={sv} href={`/${lang}/services/${sv}`} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm border border-[#E4E4EC] text-[#0A0A0F] hover:border-[var(--purple)] hover:text-[var(--purple)] transition-colors">
+                  <Link key={sv} href={`/${lang}/services/${sv}`} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm border border-[color:var(--line)] text-[color:var(--ink)] hover:border-[var(--purple)] hover:text-[var(--purple)] transition-colors">
                     {svcLabel[sv][lang]} <i className="ti ti-arrow-up-right" style={{ fontSize: 13 }} aria-hidden="true" />
                   </Link>
                 ))}
@@ -223,34 +223,34 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
             </div>
           )}
 
-          <div className="flex flex-wrap gap-2 mt-12 pt-10 border-t border-[#E4E4EC]">
+          <div className="flex flex-wrap gap-2 mt-12 pt-10 border-t border-[color:var(--line)]">
             {a.tags.map((tag) => (
-              <span key={tag} className="px-4 py-2 rounded-full text-xs border border-[#E4E4EC] text-[#6E6E88]">{tag}</span>
+              <span key={tag} className="px-4 py-2 rounded-full text-xs border border-[color:var(--line)] text-[color:var(--text-3)]">{tag}</span>
             ))}
           </div>
 
-          <div className="mt-10 p-8 rounded-2xl text-white" style={{ background: 'linear-gradient(135deg,#1B1740 0%,#2B2370 100%)' }}>
+          <div className="theme-dark mt-10 p-8 rounded-2xl text-white" style={{ background: 'linear-gradient(135deg,#1B1740 0%,#2B2370 100%)' }}>
             <p className="text-xl mb-2" style={{ fontWeight: 600, lineHeight: 1.5 }}>{isEN ? 'Have a project like this in mind?' : 'มีโปรเจกต์แบบนี้อยู่ในใจไหม'}</p>
-            <p className="text-sm mb-5" style={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.8 }}>{isEN ? 'Tell us where you are today and we will suggest a sensible first step, with no obligation.' : 'เล่าให้เราฟังว่าตอนนี้อยู่ตรงไหน เดี๋ยวเราแนะนำก้าวแรกที่เหมาะให้ โดยไม่มีข้อผูกมัด'}</p>
+            <p className="text-sm mb-5" style={{ color: 'rgb(var(--fg) / 0.8)', lineHeight: 1.8 }}>{isEN ? 'Tell us where you are today and we will suggest a sensible first step, with no obligation.' : 'เล่าให้เราฟังว่าตอนนี้อยู่ตรงไหน เดี๋ยวเราแนะนำก้าวแรกที่เหมาะให้ โดยไม่มีข้อผูกมัด'}</p>
             <Link href={`/${lang}/contact`} className="btn-primary">{isEN ? 'Talk to us' : 'คุยกับเรา'}</Link>
           </div>
         </article>
 
-        <section className="bg-[#F7F7FC] border-t border-[#E4E4EC] py-16">
+        <section className="bg-[var(--bg-1)] border-t border-[color:var(--line)] py-16">
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <p className="t-label mb-8">{isEN ? 'Related articles' : 'บทความที่เกี่ยวข้อง'}</p>
             <div className="grid sm:grid-cols-3 gap-6">
               {related.map((r) => (
-                <Link key={r.slug} href={`/${lang}/blog/${r.slug}`} className="group border border-[#E4E4EC] bg-white rounded-3xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <Link key={r.slug} href={`/${lang}/blog/${r.slug}`} className="group border border-[color:var(--line)] bg-[var(--bg)] rounded-3xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                   <div className="relative w-full overflow-hidden" style={{ aspectRatio: '16/10' }}>
                     <img src={coverOf(r)} alt={r[lang].title} loading="lazy" className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: r.cat === 'Case Study' ? 'center top' : 'center' }} />
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-2 mb-3">
                       <span className="text-xs px-3 py-1 rounded-full" style={{ background: 'var(--purple-bg)', color: 'var(--purple)' }}>{catLabel[r.cat][lang]}</span>
-                      <span className="text-xs text-[#8A8AA0]">{r.readMin} {isEN ? 'min' : 'นาที'}</span>
+                      <span className="text-xs text-[color:var(--text-3)]">{r.readMin} {isEN ? 'min' : 'นาที'}</span>
                     </div>
-                    <h3 className="text-[#0A0A0F] group-hover:text-[var(--purple)] transition-colors" style={{ fontWeight: 600, fontSize: '1rem', lineHeight: 1.55 }}>{r[lang].title}</h3>
+                    <h3 className="text-[color:var(--ink)] group-hover:text-[var(--purple)] transition-colors" style={{ fontWeight: 600, fontSize: '1rem', lineHeight: 1.55 }}>{r[lang].title}</h3>
                   </div>
                 </Link>
               ))}

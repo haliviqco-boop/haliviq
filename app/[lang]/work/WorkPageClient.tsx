@@ -142,10 +142,10 @@ export default function WorkPageClient({ params }: { params: { lang: Lang } }) {
     <>
       <Navbar lang={lang} tr={tr} transparent />
       <main>
-        <section className="relative overflow-hidden pt-[80px]" style={{ background: '#08070F' }}>
+        <section className="relative overflow-hidden pt-[80px]" style={{ background: 'var(--bg)' }}>
           <div
             className="absolute inset-0 pointer-events-none opacity-[0.35]"
-            style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' }}
+            style={{ backgroundImage: 'radial-gradient(rgb(var(--fg) / 0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' }}
           />
           <div
             className="absolute -top-40 -left-32 w-[560px] h-[560px] rounded-full pointer-events-none"
@@ -155,14 +155,14 @@ export default function WorkPageClient({ params }: { params: { lang: Lang } }) {
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
               <div>
                 <p className="t-label mb-5">{isEN ? 'Our Work' : 'ผลงานของเรา'}</p>
-                <h1 className="t-display text-[clamp(3rem,7vw,6.5rem)] leading-relaxed" style={{ color: '#fff' }}>
+                <h1 className="t-display text-[clamp(3rem,7vw,6.5rem)] leading-relaxed" style={{ color: 'var(--ink)' }}>
                   {isEN ? 'Products We Are' : 'ผลงานที่เรา'}<br />
                   <span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                     {isEN ? 'Proud Of' : 'ภูมิใจนำเสนอ'}
                   </span>
                 </h1>
               </div>
-              <p className="text-sm max-w-md leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)', fontWeight: 400 }}>
+              <p className="text-sm max-w-md leading-relaxed" style={{ color: 'rgb(var(--fg) / 0.75)', fontWeight: 400 }}>
                 {isEN ? '120+ projects over 8 years. Below is a selection of recent websites, mobile apps and CRM systems, grouped by the kind of business we built them for. Open any card to see the scope, the approach and the services behind it.' : 'เราทำมาแล้ว 120+ โปรเจกต์ใน 8 ปี ด้านล่างคือเว็บไซต์ แอปมือถือ และระบบ CRM ที่ทำล่าสุด แยกตามประเภทธุรกิจของลูกค้า กดเข้าไปดูแต่ละงานได้ว่าทำอะไรบ้าง เริ่มต้นอย่างไร และใช้บริการอะไรของเรา'}
               </p>
             </div>
@@ -170,7 +170,7 @@ export default function WorkPageClient({ params }: { params: { lang: Lang } }) {
         </section>
 
         {/* Dark section — projects grouped by service category, horizontal scroll rows */}
-        <section className="py-20 lg:py-28" style={{ background: '#08070F' }}>
+        <section className="py-20 lg:py-28" style={{ background: 'var(--bg)' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col gap-16">
             {serviceGroups.map((sg) => {
               const items = projects.filter(p => p.service === sg.key && (p as any).slug)
@@ -179,11 +179,11 @@ export default function WorkPageClient({ params }: { params: { lang: Lang } }) {
                 <div key={sg.key}>
                   <div className="flex items-end justify-between mb-8">
                     <div className="max-w-xl">
-                      <h2 className="t-display text-[clamp(1.6rem,2.8vw,2.4rem)] leading-tight mb-2" style={{ color:'#fff' }}>{sg.label}</h2>
-                      <p className="text-sm mb-1.5" style={{ color:'rgba(255,255,255,0.6)', fontWeight:400, lineHeight:1.5 }}>
+                      <h2 className="t-display text-[clamp(1.6rem,2.8vw,2.4rem)] leading-tight mb-2" style={{ color:'var(--ink)' }}>{sg.label}</h2>
+                      <p className="text-sm mb-1.5" style={{ color:'rgb(var(--fg) / 0.6)', fontWeight:400, lineHeight:1.5 }}>
                         {(sg as any).desc}
                       </p>
-                      <p className="text-sm" style={{ color:'var(--lime)', fontWeight:400 }}>
+                      <p className="text-sm" style={{ color:'var(--accent-2)', fontWeight:400 }}>
                         {isEN ? `${items.length} project${items.length > 1 ? 's' : ''} in this category` : `${items.length} โปรเจกต์ในหมวดนี้`}
                       </p>
                     </div>
@@ -191,18 +191,18 @@ export default function WorkPageClient({ params }: { params: { lang: Lang } }) {
                       <button
                         aria-label={isEN ? 'Scroll left' : 'เลื่อนซ้าย'}
                         onClick={() => scrollRow(sg.key, -1)}
-                        className="w-9 h-9 rounded-full flex items-center justify-center transition-colors hover:bg-white/10"
-                        style={{ border:'1px solid rgba(255,255,255,0.15)' }}
+                        className="w-9 h-9 rounded-full flex items-center justify-center transition-colors hover:bg-[rgb(var(--fg)/0.1)]"
+                        style={{ border:'1px solid rgb(var(--fg) / 0.15)' }}
                       >
-                        <i className="ti ti-chevron-left" style={{ fontSize:16, color:'#fff' }} aria-hidden="true" />
+                        <i className="ti ti-chevron-left" style={{ fontSize:16, color:'var(--ink)' }} aria-hidden="true" />
                       </button>
                       <button
                         aria-label={isEN ? 'Scroll right' : 'เลื่อนขวา'}
                         onClick={() => scrollRow(sg.key, 1)}
-                        className="w-9 h-9 rounded-full flex items-center justify-center transition-colors hover:bg-white/10"
-                        style={{ border:'1px solid rgba(255,255,255,0.15)' }}
+                        className="w-9 h-9 rounded-full flex items-center justify-center transition-colors hover:bg-[rgb(var(--fg)/0.1)]"
+                        style={{ border:'1px solid rgb(var(--fg) / 0.15)' }}
                       >
-                        <i className="ti ti-chevron-right" style={{ fontSize:16, color:'#fff' }} aria-hidden="true" />
+                        <i className="ti ti-chevron-right" style={{ fontSize:16, color:'var(--ink)' }} aria-hidden="true" />
                       </button>
                     </div>
                   </div>
@@ -220,24 +220,24 @@ export default function WorkPageClient({ params }: { params: { lang: Lang } }) {
                         key={p.id}
                         {...cardProps}
                         className="group shrink-0 w-[300px] snap-start rounded-2xl p-4 transition-all duration-300 hover:-translate-y-1 cursor-pointer block"
-                        style={{ background:'rgba(255,255,255,0.03)', border:'1px solid rgba(255,255,255,0.08)' }}
+                        style={{ background:'rgb(var(--fg) / 0.03)', border:'1px solid rgb(var(--fg) / 0.08)' }}
                       >
                         <div className="relative h-36 rounded-xl flex items-center justify-center mb-4 overflow-hidden" style={cover ? undefined : { background: gradients[i % gradients.length] }}>
                           {cover ? (
                             // eslint-disable-next-line @next/next/no-img-element
                             <img src={cover} alt={p.title} loading="lazy" width={300} height={144} className="absolute inset-0 w-full h-full object-cover" />
                           ) : (
-                            <i className="ti ti-photo" style={{ fontSize:22, color:'#fff', opacity:0.4 }} aria-hidden="true" />
+                            <i className="ti ti-photo" style={{ fontSize:22, color:'var(--ink)', opacity:0.4 }} aria-hidden="true" />
                           )}
-                          <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs bg-white/20 backdrop-blur-sm text-white" style={{ fontWeight:400 }}>{p.year}</span>
-                          <span className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full text-xs flex items-center gap-1" style={{ background:'rgba(8,7,15,0.6)', color:'var(--lime)', fontWeight:500 }}>
+                          <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs bg-[rgb(var(--fg)/0.2)] backdrop-blur-sm text-[color:var(--ink)]" style={{ fontWeight:400 }}>{p.year}</span>
+                          <span className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full text-xs flex items-center gap-1" style={{ background:'rgba(8,7,15,0.6)', color:'var(--accent-2)', fontWeight:500 }}>
                             <i className="ti ti-trending-up" style={{ fontSize:12 }} aria-hidden="true" />{p.result}
                           </span>
                         </div>
-                        <p className="text-xs mb-1.5" style={{ color:'var(--purple-light)', fontWeight:400 }}>{p.client}</p>
-                        <h3 className="text-white leading-snug mb-2 group-hover:text-[var(--purple-light)] transition-colors" style={{ fontWeight:500, fontSize:'0.98rem' }}>{p.title}</h3>
-                        <p style={{ color:'rgba(255,255,255,0.55)', fontWeight:400, fontSize:'0.8rem', lineHeight:1.5 }} className="mb-4 line-clamp-5">{p.desc}</p>
-                        <span className="text-sm flex items-center gap-1.5 group-hover:gap-2.5 transition-all" style={{ color:'var(--purple-light)', fontWeight:400 }}>
+                        <p className="text-xs mb-1.5" style={{ color:'var(--accent)', fontWeight:400 }}>{p.client}</p>
+                        <h3 className="text-[color:var(--ink)] leading-snug mb-2 group-hover:text-[color:var(--accent)] transition-colors" style={{ fontWeight:500, fontSize:'0.98rem' }}>{p.title}</h3>
+                        <p style={{ color:'rgb(var(--fg) / 0.55)', fontWeight:400, fontSize:'0.8rem', lineHeight:1.5 }} className="mb-4 line-clamp-5">{p.desc}</p>
+                        <span className="text-sm flex items-center gap-1.5 group-hover:gap-2.5 transition-all" style={{ color:'var(--accent)', fontWeight:400 }}>
                           {isEN ? 'View project' : 'ดูรายละเอียด'} <i className="ti ti-arrow-up-right" style={{ fontSize:13 }} aria-hidden="true" />
                         </span>
                       </CardTag>
@@ -250,21 +250,21 @@ export default function WorkPageClient({ params }: { params: { lang: Lang } }) {
           </div>
         </section>
 
-        <section className="relative overflow-hidden" style={{ background: '#050308' }}>
+        <section className="theme-dark relative overflow-hidden" style={{ background: '#050308' }}>
           <div
             className="absolute inset-0 pointer-events-none opacity-40"
-            style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '180px 180px, 260px 260px', backgroundPosition: '0 0, 90px 130px' }}
+            style={{ backgroundImage: 'radial-gradient(rgb(var(--fg) / 0.5) 1px, transparent 1px), radial-gradient(rgb(var(--fg) / 0.3) 1px, transparent 1px)', backgroundSize: '180px 180px, 260px 260px', backgroundPosition: '0 0, 90px 130px' }}
           />
           <div
             className="absolute left-0 right-0 bottom-0 pointer-events-none"
             style={{ height: 260, background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(123,110,246,0.35) 0%, rgba(83,195,215,0.08) 45%, transparent 75%)' }}
           />
           <div className="relative max-w-3xl mx-auto px-6 lg:px-10 py-24 text-center">
-            <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#fff', fontWeight: 500 }}>{isEN ? 'Ready to start?' : 'พร้อมเริ่มหรือยัง?'}</p>
+            <p className="text-sm tracking-widest uppercase mb-6" style={{ color: 'var(--ink)', fontWeight: 500 }}>{isEN ? 'Ready to start?' : 'พร้อมเริ่มหรือยัง?'}</p>
             <h2 className="t-display text-[clamp(2rem,5vw,4.5rem)] mb-6 leading-tight" style={{ background: 'linear-gradient(135deg, var(--purple-light) 0%, #53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
               {isEN ? <>Let your project<br />be on this list</> : <>ให้โปรเจกต์ของคุณ<br />อยู่ในรายการนี้</>}
             </h2>
-            <p className="mb-10 max-w-md mx-auto" style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 400 }}>
+            <p className="mb-10 max-w-md mx-auto" style={{ color: 'rgb(var(--fg) / 0.7)', fontWeight: 400 }}>
               {isEN ? 'Tell us what you are trying to launch, fix or grow, and we will say how we would approach it. The first conversation is free, and there is no obligation to continue.' : 'เล่าให้เราฟังว่าคุณอยากทำอะไร แก้อะไร หรืออยากต่อยอดอะไร แล้วเราจะบอกว่าเราจะเริ่มอย่างไร คุยกันครั้งแรกไม่เสียค่าใช้จ่าย และไม่มีข้อผูกมัดว่าต้องทำงานต่อด้วยกัน'}
             </p>
             <Link href={`/${lang}/contact`} className="inline-flex items-center gap-2 px-10 py-4 rounded-full text-sm transition-opacity hover:opacity-90" style={{ background: 'linear-gradient(135deg, var(--purple) 0%, var(--purple-dark) 100%)', color: '#fff', fontWeight: 500 }}>

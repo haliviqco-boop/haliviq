@@ -28,9 +28,9 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }): 
 }
 
 // Shared visual tokens for the service illustrations
-const glass = 'rgba(255,255,255,0.05)'
-const glassBorder = '1px solid rgba(255,255,255,0.1)'
-const dim = 'rgba(255,255,255,0.35)'
+const glass = 'rgb(var(--fg) / 0.05)'
+const glassBorder = '1px solid rgb(var(--fg) / 0.1)'
+const dim = 'rgb(var(--fg) / 0.35)'
 
 function Panel({ children, style, className }: { children: any; style?: any; className?: string }) {
   return (
@@ -47,8 +47,8 @@ function Bar({ w, color = 'var(--purple-light)' }: { w: number; color?: string }
 function Check({ label }: { label: string }) {
   return (
     <div className="flex items-center gap-1.5">
-      <i className="ti ti-check" style={{ color: 'var(--lime)', fontSize: 11 }} aria-hidden="true" />
-      <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.85)' }}>{label}</span>
+      <i className="ti ti-check" style={{ color: 'var(--accent-2)', fontSize: 11 }} aria-hidden="true" />
+      <span style={{ fontSize: 10, color: 'rgb(var(--fg) / 0.85)' }}>{label}</span>
     </div>
   )
 }
@@ -61,13 +61,13 @@ function ServiceVisual({ slug }: { slug: string }) {
         <div className="absolute inset-0 flex items-center justify-center gap-2 px-6">
           <Panel style={{ width: 74 }}>
             <div style={{ fontSize: 9, color: dim, marginBottom: 6 }}>MANUAL</div>
-            <Bar w={70} color="rgba(255,255,255,0.2)" />
+            <Bar w={70} color="rgb(var(--fg) / 0.2)" />
             <div className="h-1.5" />
-            <Bar w={45} color="rgba(255,255,255,0.2)" />
+            <Bar w={45} color="rgb(var(--fg) / 0.2)" />
           </Panel>
           <div className="flex-1 h-px" style={{ background: 'repeating-linear-gradient(90deg,var(--lime) 0 4px,transparent 4px 9px)' }} />
           <div className="w-9 h-9 rounded-full flex items-center justify-center shrink-0" style={{ background: 'rgba(155,107,255,0.25)', border: '1px solid var(--purple-light)' }}>
-            <i className="ti ti-bolt" style={{ color: 'var(--lime)', fontSize: 16 }} aria-hidden="true" />
+            <i className="ti ti-bolt" style={{ color: 'var(--accent-2)', fontSize: 16 }} aria-hidden="true" />
           </div>
           <div className="flex-1 h-px" style={{ background: 'repeating-linear-gradient(90deg,var(--lime) 0 4px,transparent 4px 9px)' }} />
           <Panel style={{ width: 74 }} className="flex flex-col gap-2">
@@ -87,7 +87,7 @@ function ServiceVisual({ slug }: { slug: string }) {
               ))}
             </div>
             <div className="h-10 rounded-md mb-2" style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 100%)', opacity: 0.6 }} />
-            <Bar w={80} color="rgba(255,255,255,0.2)" />
+            <Bar w={80} color="rgb(var(--fg) / 0.2)" />
           </Panel>
         </div>
       )
@@ -97,7 +97,7 @@ function ServiceVisual({ slug }: { slug: string }) {
           <Panel style={{ width: 120 }}>
             <div style={{ fontSize: 9, color: dim, marginBottom: 6 }}>product.tsx</div>
             {[60, 85, 40, 70].map((w, i) => (
-              <div key={i} className="mb-1.5"><Bar w={w} color="rgba(255,255,255,0.18)" /></div>
+              <div key={i} className="mb-1.5"><Bar w={w} color="rgb(var(--fg) / 0.18)" /></div>
             ))}
           </Panel>
           <Panel style={{ width: 88 }} className="self-end">
@@ -116,16 +116,16 @@ function ServiceVisual({ slug }: { slug: string }) {
     case 'mobile-apps':
       return (
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="rounded-2xl relative" style={{ width: 92, height: 150, background: 'rgba(255,255,255,0.06)', border: glassBorder, padding: 8 }}>
-            <div className="w-8 h-1 rounded-full mx-auto mb-3" style={{ background: 'rgba(255,255,255,0.25)' }} />
-            <div style={{ fontSize: 9, color: '#fff', marginBottom: 6 }}>Your app</div>
+          <div className="rounded-2xl relative" style={{ width: 92, height: 150, background: 'rgb(var(--fg) / 0.06)', border: glassBorder, padding: 8 }}>
+            <div className="w-8 h-1 rounded-full mx-auto mb-3" style={{ background: 'rgb(var(--fg) / 0.25)' }} />
+            <div style={{ fontSize: 9, color: 'var(--ink)', marginBottom: 6 }}>Your app</div>
             <div className="rounded-lg mb-2" style={{ height: 34, background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 100%)', opacity: 0.55 }} />
             <div className="grid grid-cols-2 gap-1.5">
-              <div className="rounded-md h-8" style={{ background: 'rgba(255,255,255,0.08)' }} />
-              <div className="rounded-md h-8" style={{ background: 'rgba(255,255,255,0.08)' }} />
+              <div className="rounded-md h-8" style={{ background: 'rgb(var(--fg) / 0.08)' }} />
+              <div className="rounded-md h-8" style={{ background: 'rgb(var(--fg) / 0.08)' }} />
             </div>
             <div className="absolute rounded-full flex items-center justify-center" style={{ width: 20, height: 20, background: 'var(--lime)', bottom: -8, right: -8 }}>
-              <i className="ti ti-check" style={{ fontSize: 12, color: '#0A0A0F' }} aria-hidden="true" />
+              <i className="ti ti-check" style={{ fontSize: 12, color: 'var(--ink)' }} aria-hidden="true" />
             </div>
           </div>
         </div>
@@ -136,17 +136,17 @@ function ServiceVisual({ slug }: { slug: string }) {
           <Panel style={{ width: 76 }}>
             <div style={{ fontSize: 9, color: dim, marginBottom: 6 }}>MONOLITH</div>
             <div className="space-y-1.5">
-              <Bar w={90} color="rgba(255,255,255,0.18)" />
-              <Bar w={65} color="rgba(255,255,255,0.18)" />
-              <Bar w={80} color="rgba(255,255,255,0.18)" />
+              <Bar w={90} color="rgb(var(--fg) / 0.18)" />
+              <Bar w={65} color="rgb(var(--fg) / 0.18)" />
+              <Bar w={80} color="rgb(var(--fg) / 0.18)" />
             </div>
           </Panel>
-          <i className="ti ti-arrow-right" style={{ color: 'var(--lime)', fontSize: 16 }} aria-hidden="true" />
+          <i className="ti ti-arrow-right" style={{ color: 'var(--accent-2)', fontSize: 16 }} aria-hidden="true" />
           <div className="flex flex-col gap-1.5">
             {['UI', 'API', 'Data'].map((s) => (
               <div key={s} className="rounded px-2 py-1 flex items-center gap-1.5" style={{ background: glass, border: glassBorder }}>
                 <span className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--lime)' }} />
-                <span style={{ fontSize: 9, color: 'rgba(255,255,255,0.85)' }}>{s} service</span>
+                <span style={{ fontSize: 9, color: 'rgb(var(--fg) / 0.85)' }}>{s} service</span>
               </div>
             ))}
           </div>
@@ -155,12 +155,12 @@ function ServiceVisual({ slug }: { slug: string }) {
     case 'cloud-services-migration':
       return (
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
-          <i className="ti ti-cloud" style={{ color: 'var(--purple-light)', fontSize: 42 }} aria-hidden="true" />
+          <i className="ti ti-cloud" style={{ color: 'var(--accent)', fontSize: 42 }} aria-hidden="true" />
           <div className="flex gap-2">
             {[0, 1, 2].map((i) => (
               <div key={i} className="rounded-md flex flex-col items-center justify-center gap-1" style={{ width: 34, height: 26, background: glass, border: glassBorder }}>
                 <span className="w-3.5 h-0.5 rounded-full" style={{ background: 'var(--lime)' }} />
-                <span className="w-3.5 h-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.25)' }} />
+                <span className="w-3.5 h-0.5 rounded-full" style={{ background: 'rgb(var(--fg) / 0.25)' }} />
               </div>
             ))}
           </div>
@@ -185,12 +185,12 @@ function ServiceVisual({ slug }: { slug: string }) {
         <div className="absolute inset-0 flex items-center justify-center gap-3 px-5">
           <Panel style={{ width: 96 }}>
             <div style={{ fontSize: 9, color: dim, marginBottom: 6 }}>AI PROTOTYPE</div>
-            <div style={{ fontSize: 9, color: 'rgba(255,255,255,0.4)' }} className="font-mono">const app = build()</div>
+            <div style={{ fontSize: 9, color: 'rgb(var(--fg) / 0.4)' }} className="font-mono">const app = build()</div>
             <div className="mt-2 rounded px-1.5 py-1" style={{ background: 'rgba(155,107,255,0.15)' }}>
-              <span style={{ fontSize: 9, color: 'var(--purple-light)' }}>3 issues found</span>
+              <span style={{ fontSize: 9, color: 'var(--accent)' }}>3 issues found</span>
             </div>
           </Panel>
-          <i className="ti ti-arrow-right" style={{ color: 'var(--lime)', fontSize: 16 }} aria-hidden="true" />
+          <i className="ti ti-arrow-right" style={{ color: 'var(--accent-2)', fontSize: 16 }} aria-hidden="true" />
           <Panel style={{ width: 96 }}>
             <div style={{ fontSize: 9, color: dim, marginBottom: 6 }}>PRODUCTION</div>
             <Check label="Tests passing" />
@@ -205,12 +205,12 @@ function ServiceVisual({ slug }: { slug: string }) {
           <Panel style={{ width: 72 }}>
             <div style={{ fontSize: 9, color: dim, marginBottom: 6 }}>YOUR SYSTEMS</div>
             <div className="space-y-1.5">
-              <Bar w={70} color="rgba(255,255,255,0.18)" />
-              <Bar w={55} color="rgba(255,255,255,0.18)" />
+              <Bar w={70} color="rgb(var(--fg) / 0.18)" />
+              <Bar w={55} color="rgb(var(--fg) / 0.18)" />
             </div>
           </Panel>
           <div className="w-11 h-11 rounded-full flex items-center justify-center shrink-0" style={{ background: 'rgba(155,107,255,0.25)', border: '1px solid var(--purple-light)' }}>
-            <i className="ti ti-user-code" style={{ color: 'var(--lime)', fontSize: 18 }} aria-hidden="true" />
+            <i className="ti ti-user-code" style={{ color: 'var(--accent-2)', fontSize: 18 }} aria-hidden="true" />
           </div>
           <Panel style={{ width: 72 }}>
             <div style={{ fontSize: 9, color: dim, marginBottom: 6 }}>PRODUCTION</div>
@@ -226,14 +226,14 @@ function ServiceVisual({ slug }: { slug: string }) {
               <span key={i} className="w-2.5 h-2.5 rounded-full" style={{ background: 'rgba(155,107,255,0.4)', border: '1px solid var(--purple-light)' }} />
             ))}
           </div>
-          <div className="flex-1 h-px" style={{ background: 'repeating-linear-gradient(90deg,rgba(255,255,255,0.2) 0 3px,transparent 3px 7px)' }} />
+          <div className="flex-1 h-px" style={{ background: 'repeating-linear-gradient(90deg,rgb(var(--fg) / 0.2) 0 3px,transparent 3px 7px)' }} />
           <Panel style={{ width: 118 }}>
             <div style={{ fontSize: 9, color: dim, marginBottom: 6 }}>ASSISTANT</div>
-            <div className="rounded px-1.5 py-1 mb-1.5" style={{ background: 'rgba(255,255,255,0.08)' }}>
-              <span style={{ fontSize: 9, color: 'rgba(255,255,255,0.85)' }}>Check Q4 numbers?</span>
+            <div className="rounded px-1.5 py-1 mb-1.5" style={{ background: 'rgb(var(--fg) / 0.08)' }}>
+              <span style={{ fontSize: 9, color: 'rgb(var(--fg) / 0.85)' }}>Check Q4 numbers?</span>
             </div>
             <div className="rounded px-1.5 py-1" style={{ background: 'rgba(155,107,255,0.2)' }}>
-              <span style={{ fontSize: 9, color: 'var(--lime)' }}>Revenue up 18%</span>
+              <span style={{ fontSize: 9, color: 'var(--accent-2)' }}>Revenue up 18%</span>
             </div>
           </Panel>
         </div>
@@ -243,7 +243,7 @@ function ServiceVisual({ slug }: { slug: string }) {
         <div className="absolute inset-0 flex items-center justify-center">
           <Panel style={{ width: 170 }}>
             <div className="flex items-center gap-1.5 mb-3">
-              <i className="ti ti-microphone" style={{ color: 'var(--lime)', fontSize: 13 }} aria-hidden="true" />
+              <i className="ti ti-microphone" style={{ color: 'var(--accent-2)', fontSize: 13 }} aria-hidden="true" />
               <span style={{ fontSize: 9, color: dim }}>LISTENING &amp; RESPONDING</span>
             </div>
             <div className="flex items-end gap-[3px] h-8">
@@ -278,7 +278,7 @@ function ServiceVisual({ slug }: { slug: string }) {
             <div className="grid grid-cols-3 gap-2">
               {['ti-shopping-bag', 'ti-bottle', 'ti-shirt'].map((ic) => (
                 <div key={ic} className="rounded-md flex items-center justify-center" style={{ height: 32, background: 'rgba(155,107,255,0.18)' }}>
-                  <i className={`ti ${ic}`} style={{ color: 'var(--lime)', fontSize: 15 }} aria-hidden="true" />
+                  <i className={`ti ${ic}`} style={{ color: 'var(--accent-2)', fontSize: 15 }} aria-hidden="true" />
                 </div>
               ))}
             </div>
@@ -288,14 +288,14 @@ function ServiceVisual({ slug }: { slug: string }) {
     case 'line-mini-apps':
       return (
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="rounded-2xl" style={{ width: 96, height: 130, background: 'rgba(255,255,255,0.06)', border: glassBorder, padding: 9 }}>
-            <div style={{ fontSize: 9, color: '#fff', marginBottom: 8 }}>LINE / Mini App</div>
+          <div className="rounded-2xl" style={{ width: 96, height: 130, background: 'rgb(var(--fg) / 0.06)', border: glassBorder, padding: 9 }}>
+            <div style={{ fontSize: 9, color: 'var(--ink)', marginBottom: 8 }}>LINE / Mini App</div>
             <div className="rounded-lg flex items-center justify-center mb-2" style={{ height: 40, background: 'rgba(0,180,90,0.18)', border: '1px solid rgba(0,200,100,0.35)' }}>
-              <i className="ti ti-brand-line" style={{ color: 'var(--lime)', fontSize: 20 }} aria-hidden="true" />
+              <i className="ti ti-brand-line" style={{ color: 'var(--accent-2)', fontSize: 20 }} aria-hidden="true" />
             </div>
             <div className="rounded-md px-2 py-1.5 flex items-center gap-1.5" style={{ background: 'rgba(155,107,255,0.2)' }}>
-              <i className="ti ti-check" style={{ color: 'var(--lime)', fontSize: 11 }} aria-hidden="true" />
-              <span style={{ fontSize: 9, color: '#fff' }}>Booked!</span>
+              <i className="ti ti-check" style={{ color: 'var(--accent-2)', fontSize: 11 }} aria-hidden="true" />
+              <span style={{ fontSize: 9, color: 'var(--ink)' }}>Booked!</span>
             </div>
           </div>
         </div>
@@ -305,8 +305,8 @@ function ServiceVisual({ slug }: { slug: string }) {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="relative" style={{ width: 190, height: 130 }}>
             <div className="absolute rounded-lg flex flex-col items-center justify-center gap-1" style={{ width: 50, top: '38%', left: '50%', transform: 'translate(-50%,-50%)', height: 44, background: 'rgba(155,107,255,0.25)', border: '1px solid var(--purple-light)' }}>
-              <i className="ti ti-building-factory" style={{ color: 'var(--lime)', fontSize: 16 }} aria-hidden="true" />
-              <span style={{ fontSize: 8, color: '#fff' }}>ERP</span>
+              <i className="ti ti-building-factory" style={{ color: 'var(--accent-2)', fontSize: 16 }} aria-hidden="true" />
+              <span style={{ fontSize: 8, color: 'var(--ink)' }}>ERP</span>
             </div>
             {[
               { l: 'CRM', top: 0, left: 0 },
@@ -315,7 +315,7 @@ function ServiceVisual({ slug }: { slug: string }) {
               { l: 'INVENTORY', bottom: 0, right: 0 },
             ].map((b: any) => (
               <div key={b.l} className="absolute rounded-md px-2 py-1" style={{ ...b, background: glass, border: glassBorder }}>
-                <span style={{ fontSize: 8, color: 'rgba(255,255,255,0.85)' }}>{b.l}</span>
+                <span style={{ fontSize: 8, color: 'rgb(var(--fg) / 0.85)' }}>{b.l}</span>
               </div>
             ))}
           </div>
@@ -325,11 +325,11 @@ function ServiceVisual({ slug }: { slug: string }) {
       return (
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="relative flex items-center justify-center" style={{ width: 80, height: 80 }}>
-            <div className="absolute rounded-full" style={{ width: 80, height: 80, border: '1px dashed rgba(255,255,255,0.15)' }} />
-            <i className="ti ti-shield-check" style={{ color: 'var(--purple-light)', fontSize: 44 }} aria-hidden="true" />
+            <div className="absolute rounded-full" style={{ width: 80, height: 80, border: '1px dashed rgb(var(--fg) / 0.15)' }} />
+            <i className="ti ti-shield-check" style={{ color: 'var(--accent)', fontSize: 44 }} aria-hidden="true" />
             <div className="absolute rounded-md px-1.5 py-1 flex items-center gap-1" style={{ bottom: -6, right: -14, background: 'rgba(0,0,0,0.4)', border: glassBorder }}>
-              <i className="ti ti-check" style={{ color: 'var(--lime)', fontSize: 10 }} aria-hidden="true" />
-              <span style={{ fontSize: 8, color: '#fff' }}>Protected</span>
+              <i className="ti ti-check" style={{ color: 'var(--accent-2)', fontSize: 10 }} aria-hidden="true" />
+              <span style={{ fontSize: 8, color: 'var(--ink)' }}>Protected</span>
             </div>
           </div>
         </div>
@@ -342,8 +342,8 @@ function ServiceVisual({ slug }: { slug: string }) {
             <div className="space-y-2">
               {[{ l: 'Essential services', on: true }, { l: 'Analytics', on: false }, { l: 'Personalization', on: false }].map((r) => (
                 <div key={r.l} className="flex items-center justify-between">
-                  <span style={{ fontSize: 9, color: 'rgba(255,255,255,0.85)' }}>{r.l}</span>
-                  <span className="rounded-full relative" style={{ width: 22, height: 12, background: r.on ? 'var(--lime)' : 'rgba(255,255,255,0.15)' }}>
+                  <span style={{ fontSize: 9, color: 'rgb(var(--fg) / 0.85)' }}>{r.l}</span>
+                  <span className="rounded-full relative" style={{ width: 22, height: 12, background: r.on ? 'var(--lime)' : 'rgb(var(--fg) / 0.15)' }}>
                     <span className="absolute rounded-full bg-white" style={{ width: 9, height: 9, top: 1.5, left: r.on ? 11 : 2 }} />
                   </span>
                 </div>
@@ -360,7 +360,7 @@ function ServiceVisual({ slug }: { slug: string }) {
               {[{ l: 'UPTIME', v: '99.99%' }, { l: 'LATENCY', v: '42ms' }, { l: 'ERRORS', v: '0' }].map((s) => (
                 <div key={s.l}>
                   <div style={{ fontSize: 7, color: dim }}>{s.l}</div>
-                  <div style={{ fontSize: 11, color: '#fff', fontWeight: 500 }}>{s.v}</div>
+                  <div style={{ fontSize: 11, color: 'var(--ink)', fontWeight: 500 }}>{s.v}</div>
                 </div>
               ))}
             </div>
@@ -376,7 +376,7 @@ function ServiceVisual({ slug }: { slug: string }) {
       return (
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(155,107,255,0.2)', border: glassBorder }}>
-            <i className="ti ti-sparkles" style={{ color: 'var(--lime)', fontSize: 20 }} aria-hidden="true" />
+            <i className="ti ti-sparkles" style={{ color: 'var(--accent-2)', fontSize: 20 }} aria-hidden="true" />
           </div>
         </div>
       )
@@ -466,11 +466,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       <Navbar lang={lang} tr={tr} />
       <main>
         {/* Hero */}
-        <section className="pt-[80px] bg-white">
+        <section className="pt-[80px] bg-[var(--bg)]">
           <div className="h-1 w-full" style={{ background: 'linear-gradient(90deg,var(--purple),var(--purple-light),var(--lime))' }} />
           <div className="max-w-5xl mx-auto px-6 lg:px-10 pt-20 lg:pt-28 pb-16 text-center">
             <p className="t-label mb-5">{isEN ? 'Services' : 'บริการ'}</p>
-            <h1 className="t-display text-[clamp(2.6rem,5.5vw,4.8rem)] text-[#0A0A0F] leading-relaxed mb-6">
+            <h1 className="t-display text-[clamp(2.6rem,5.5vw,4.8rem)] text-[color:var(--ink)] leading-relaxed mb-6">
               {isEN ? (
                 <>Everything You Need,<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>In One Studio</span></>
               ) : (
@@ -486,11 +486,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </section>
 
         {/* Category sections */}
-        <section className="pb-24 pt-4" style={{ background: '#08070E' }}>
+        <section className="pb-24 pt-4" style={{ background: 'var(--bg)' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             {categories.map((cat, ci) => (
-              <div key={cat.key} className={`py-12 ${ci !== 0 ? 'border-t' : ''}`} style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
-                <h2 className="mb-8" style={{ fontWeight: 500, fontSize: '1.4rem', color: 'var(--lime)' }}>{cat.label}</h2>
+              <div key={cat.key} className={`py-12 ${ci !== 0 ? 'border-t' : ''}`} style={{ borderColor: 'rgb(var(--fg) / 0.06)' }}>
+                <h2 className="mb-8" style={{ fontWeight: 500, fontSize: '1.4rem', color: 'var(--accent-2)' }}>{cat.label}</h2>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
                   {cat.items.map((it) => {
                     const slug = it.href.split('/').pop() as string
@@ -498,16 +498,16 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                       <Link key={it.href} href={`${prefix}${it.href}`} className="group flex flex-col">
                         {/* Visual mockup thumbnail */}
                         <div
-                          className="relative h-56 rounded-2xl overflow-hidden mb-6 group-hover:border-[var(--purple-light)]/40 transition-colors"
-                          style={{ background: 'linear-gradient(160deg,#171025 0%,#0B0813 100%)', border: '1px solid rgba(255,255,255,0.07)' }}
+                          className="theme-dark relative h-56 rounded-2xl overflow-hidden mb-6 group-hover:border-[var(--purple-light)]/40 transition-colors"
+                          style={{ background: 'linear-gradient(160deg,#171025 0%,#0B0813 100%)', border: '1px solid rgb(var(--fg) / 0.07)' }}
                         >
                           <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle,#fff 1px,transparent 1px)', backgroundSize: '18px 18px' }} />
                           <ServiceVisual slug={slug} />
                         </div>
                         {/* Content */}
-                        <h3 className="text-white mb-2.5" style={{ fontWeight: 500, fontSize: '1.2rem' }}>{it.title}</h3>
-                        <p className="text-sm leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 400 }}>{it.desc}</p>
-                        <span className="inline-flex items-center gap-1.5 text-sm mt-auto" style={{ color: 'var(--lime)', fontWeight: 500 }}>
+                        <h3 className="text-[color:var(--ink)] mb-2.5" style={{ fontWeight: 500, fontSize: '1.2rem' }}>{it.title}</h3>
+                        <p className="text-sm leading-relaxed mb-4" style={{ color: 'rgb(var(--fg) / 0.85)', fontWeight: 400 }}>{it.desc}</p>
+                        <span className="inline-flex items-center gap-1.5 text-sm mt-auto" style={{ color: 'var(--accent-2)', fontWeight: 500 }}>
                           {isEN ? 'Learn more' : 'ดูเพิ่มเติม'}
                           <i className="ti ti-arrow-right text-sm group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                         </span>
@@ -521,21 +521,21 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </section>
 
         {/* Segments */}
-        <section className="py-20" style={{ background: '#F7F7FC' }}>
+        <section className="py-20" style={{ background: 'var(--bg-1)' }}>
           <div className="max-w-5xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-12">
               <p className="t-label mb-5">{isEN ? 'Who We Work With' : 'เราทำงานกับใคร'}</p>
-              <h2 className="t-display text-[clamp(2rem,4vw,3rem)] text-[#0A0A0F]">
+              <h2 className="t-display text-[clamp(2rem,4vw,3rem)] text-[color:var(--ink)]">
                 {isEN ? 'Built for Your Scale' : 'ออกแบบให้เหมาะกับขนาดธุรกิจคุณ'}
               </h2>
             </div>
             <div className="grid sm:grid-cols-2 gap-6">
               {segments.map((seg) => (
-                <div key={seg.title} className="bg-white border border-[#E4E4EC] rounded-2xl p-8">
+                <div key={seg.title} className="bg-[var(--bg)] border border-[color:var(--line)] rounded-2xl p-8">
                   <div className="w-12 h-12 rounded-xl bg-[var(--purple-bg)] flex items-center justify-center mb-6">
                     <i className={`ti ${seg.icon}`} style={{ fontSize: 22, color: 'var(--purple)' }} aria-hidden="true" />
                   </div>
-                  <h3 className="text-[#0A0A0F] mb-3" style={{ fontWeight: 500, fontSize: '1.3rem' }}>{seg.title}</h3>
+                  <h3 className="text-[color:var(--ink)] mb-3" style={{ fontWeight: 500, fontSize: '1.3rem' }}>{seg.title}</h3>
                   <p className="t-body text-sm leading-relaxed">{seg.desc}</p>
                 </div>
               ))}
@@ -544,22 +544,22 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </section>
 
         {/* CTA */}
-        <section className="py-24 lg:py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg,#2D1B69 0%,var(--purple) 40%,var(--purple-light) 100%)' }}>
+        <section className="theme-dark py-24 lg:py-32 relative overflow-hidden" style={{ background: 'linear-gradient(135deg,#2D1B69 0%,var(--purple) 40%,var(--purple-light) 100%)' }}>
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle,#fff 1px,transparent 1px)', backgroundSize: '28px 28px' }} />
           <div className="relative max-w-4xl mx-auto px-4 lg:px-10 text-center">
-            <p className="mb-6" style={{ color: '#ffffff', fontSize: '0.85rem', fontWeight: 400 }}>{isEN ? 'Start Today' : 'เริ่มวันนี้'}</p>
-            <h2 className="t-display mb-4 leading-tight" style={{ color: '#ffffff', fontSize: 'clamp(2rem,4vw,4rem)', fontWeight: 500 }}>
+            <p className="mb-6" style={{ color: 'var(--ink)', fontSize: '0.85rem', fontWeight: 400 }}>{isEN ? 'Start Today' : 'เริ่มวันนี้'}</p>
+            <h2 className="t-display mb-4 leading-tight" style={{ color: 'var(--ink)', fontSize: 'clamp(2rem,4vw,4rem)', fontWeight: 500 }}>
               {isEN ? 'Not Sure Where to Start?' : 'ไม่แน่ใจว่าจะเริ่มจากตรงไหน?'}
             </h2>
-            <p className="text-white text-base mb-10 max-w-lg mx-auto" style={{ fontWeight: 400 }}>
+            <p className="text-[color:var(--ink)] text-base mb-10 max-w-lg mx-auto" style={{ fontWeight: 400 }}>
               {isEN ? 'Tell us what you are working on and where you are stuck. We will point you to the right service, and tell you honestly if another approach would suit you better.' : 'เล่าให้เราฟังว่าคุณกำลังทำอะไรอยู่และติดตรงไหน เราจะแนะนำบริการที่เหมาะ และบอกตรงๆ ถ้ามีวิธีอื่นที่เหมาะกว่า'}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link href={`${prefix}/contact`} className="inline-flex items-center gap-2 px-10 py-4 bg-white rounded-full text-sm font-medium hover:bg-[var(--purple-bg)] transition-colors" style={{ color: 'var(--purple)', fontWeight: 400 }}>
+              <Link href={`${prefix}/contact`} className="inline-flex items-center gap-2 px-10 py-4 bg-white rounded-full text-sm font-medium hover:bg-[#EEEDFB] transition-colors" style={{ color: 'var(--purple)', fontWeight: 400 }}>
                 {isEN ? 'Talk to Us' : 'คุยกับเรา'}
                 <i className="ti ti-arrow-right" style={{ fontSize: 15 }} aria-hidden="true" />
               </Link>
-              <Link href="mailto:wu@haliviq.com" className="inline-flex items-center gap-2 px-10 py-4 border border-white/30 text-white rounded-full text-sm hover:border-white/60 transition-colors" style={{ fontWeight: 400 }}>
+              <Link href="mailto:wu@haliviq.com" className="inline-flex items-center gap-2 px-10 py-4 border border-[color:rgb(var(--fg)/0.3)] text-[color:var(--ink)] rounded-full text-sm hover:border-[color:rgb(var(--fg)/0.6)] transition-colors" style={{ fontWeight: 400 }}>
                 wu@haliviq.com
               </Link>
             </div>

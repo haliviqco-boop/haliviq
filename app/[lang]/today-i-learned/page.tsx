@@ -39,13 +39,13 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     <>
       <Navbar lang={lang} tr={tr} transparent />
       <main>
-        <section className="pt-[112px] pb-16 lg:pb-24" style={{ background: '#08070F' }}>
+        <section className="pt-[112px] pb-16 lg:pb-24" style={{ background: 'var(--bg)' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
-            <p className="text-xs tracking-widest uppercase mb-5" style={{ color: 'var(--purple-light)', fontWeight: 400, letterSpacing: '0.2em' }}>{isEN ? 'Insights' : 'Insights'}</p>
-            <h1 className="t-display text-[clamp(2.6rem,6vw,4.5rem)] leading-relaxed mb-6" style={{ color: '#fff' }}>
+            <p className="text-xs tracking-widest uppercase mb-5" style={{ color: 'var(--accent)', fontWeight: 400, letterSpacing: '0.2em' }}>{isEN ? 'Insights' : 'Insights'}</p>
+            <h1 className="t-display text-[clamp(2.6rem,6vw,4.5rem)] leading-relaxed mb-6" style={{ color: 'var(--ink)' }}>
               {isEN ? 'Today I Learned' : 'Today I Learned'}
             </h1>
-            <p className="max-w-2xl mb-10" style={{ color: 'rgba(255,255,255,0.6)', fontWeight: 400, fontSize: '1rem', lineHeight: 1.6 }}>
+            <p className="max-w-2xl mb-10" style={{ color: 'rgb(var(--fg) / 0.6)', fontWeight: 400, fontSize: '1rem', lineHeight: 1.6 }}>
               {isEN ? 'Short, practical notes from the Haliviq team: quick lessons from daily engineering and design work. Each one is something we ran into while building, with the reason it happens and what we do about it now. Filter by topic to find notes on React, Next.js, PostgreSQL, Docker, Figma, security and more.' : 'บันทึกสั้น ๆ ที่ใช้ได้จริงจากทีม Haliviq เป็นบทเรียนเล็ก ๆ จากงานวิศวกรรมและดีไซน์ในแต่ละวัน แต่ละเรื่องคือสิ่งที่เราเจอระหว่างลงมือทำ พร้อมอธิบายว่าทำไมถึงเกิดขึ้น และตอนนี้เราแก้อย่างไร เลือกกรองตามหัวข้อได้ ทั้ง React, Next.js, PostgreSQL, Docker, Figma, security และอื่น ๆ'}
             </p>
 
@@ -55,8 +55,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                 onClick={() => setActive('all')}
                 className="shrink-0 whitespace-nowrap px-4 py-2 rounded-lg text-sm transition-colors"
                 style={active === 'all'
-                  ? { border: '1px solid var(--purple-light)', color: 'var(--purple-light)', fontWeight: 400, scrollSnapAlign: 'start' }
-                  : { border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.7)', fontWeight: 400, scrollSnapAlign: 'start' }}
+                  ? { border: '1px solid var(--purple-light)', color: 'var(--accent)', fontWeight: 400, scrollSnapAlign: 'start' }
+                  : { border: '1px solid rgb(var(--fg) / 0.15)', color: 'rgb(var(--fg) / 0.7)', fontWeight: 400, scrollSnapAlign: 'start' }}
               >
                 {isEN ? 'All Topics' : 'ทั้งหมด'}
               </button>
@@ -66,10 +66,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                   onClick={() => setActive(tp.label)}
                   className="shrink-0 whitespace-nowrap px-4 py-2 rounded-lg text-sm transition-colors"
                   style={active === tp.label
-                    ? { border: '1px solid var(--purple-light)', color: 'var(--purple-light)', fontWeight: 400, scrollSnapAlign: 'start' }
-                    : { border: '1px solid rgba(255,255,255,0.15)', color: 'rgba(255,255,255,0.7)', fontWeight: 400, scrollSnapAlign: 'start' }}
+                    ? { border: '1px solid var(--purple-light)', color: 'var(--accent)', fontWeight: 400, scrollSnapAlign: 'start' }
+                    : { border: '1px solid rgb(var(--fg) / 0.15)', color: 'rgb(var(--fg) / 0.7)', fontWeight: 400, scrollSnapAlign: 'start' }}
                 >
-                  {tp.label} <span style={{ color: 'rgba(255,255,255,0.35)' }}>{tp.count}</span>
+                  {tp.label} <span style={{ color: 'rgb(var(--fg) / 0.35)' }}>{tp.count}</span>
                 </button>
               ))}
             </div>
@@ -81,36 +81,36 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                   key={n.slug}
                   href={`/${lang}/today-i-learned/${n.slug}`}
                   className="group block rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1"
-                  style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}
+                  style={{ background: 'rgb(var(--fg) / 0.03)', border: '1px solid rgb(var(--fg) / 0.08)' }}
                 >
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-xs tracking-widest uppercase" style={{ color: topicColors[n.topic] || 'var(--purple-light)', fontWeight: 500, letterSpacing: '0.08em' }}>{n.topic}</span>
-                    <span className="text-xs" style={{ color: 'rgba(255,255,255,0.4)', fontWeight: 400 }}>{n.date}</span>
+                    <span className="text-xs" style={{ color: 'rgb(var(--fg) / 0.4)', fontWeight: 400 }}>{n.date}</span>
                   </div>
-                  <h3 className="mb-3 group-hover:text-[var(--purple-light)] transition-colors" style={{ color: '#fff', fontWeight: 500, fontSize: '1.05rem', lineHeight: 1.5 }}>{n.title}</h3>
-                  <p style={{ color: 'rgba(255,255,255,0.55)', fontWeight: 400, fontSize: '0.85rem', lineHeight: 1.6 }}>{n.excerpt}</p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm group-hover:gap-2.5 transition-all" style={{ color: 'var(--purple-light)' }}>{isEN ? 'Read note' : 'อ่านโน้ต'} <i className="ti ti-arrow-up-right" style={{ fontSize: 13 }} aria-hidden="true" /></span>
+                  <h3 className="mb-3 group-hover:text-[color:var(--accent)] transition-colors" style={{ color: 'var(--ink)', fontWeight: 500, fontSize: '1.05rem', lineHeight: 1.5 }}>{n.title}</h3>
+                  <p style={{ color: 'rgb(var(--fg) / 0.55)', fontWeight: 400, fontSize: '0.85rem', lineHeight: 1.6 }}>{n.excerpt}</p>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm group-hover:gap-2.5 transition-all" style={{ color: 'var(--accent)' }}>{isEN ? 'Read note' : 'อ่านโน้ต'} <i className="ti ti-arrow-up-right" style={{ fontSize: 13 }} aria-hidden="true" /></span>
                 </Link>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="relative overflow-hidden" style={{ background: '#050308' }}>
+        <section className="theme-dark relative overflow-hidden" style={{ background: '#050308' }}>
           <div
             className="absolute inset-0 pointer-events-none opacity-40"
-            style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '180px 180px, 260px 260px', backgroundPosition: '0 0, 90px 130px' }}
+            style={{ backgroundImage: 'radial-gradient(rgb(var(--fg) / 0.5) 1px, transparent 1px), radial-gradient(rgb(var(--fg) / 0.3) 1px, transparent 1px)', backgroundSize: '180px 180px, 260px 260px', backgroundPosition: '0 0, 90px 130px' }}
           />
           <div
             className="absolute left-0 right-0 bottom-0 pointer-events-none"
             style={{ height: 260, background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(123,110,246,0.35) 0%, rgba(83,195,215,0.08) 45%, transparent 75%)' }}
           />
           <div className="relative max-w-4xl mx-auto px-6 lg:px-10 py-24 text-center">
-            <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#fff', fontWeight: 500 }}>{isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}</p>
+            <p className="text-sm tracking-widest uppercase mb-6" style={{ color: 'var(--ink)', fontWeight: 500 }}>{isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}</p>
             <h2 className="t-display text-[clamp(1.75rem,4vw,3rem)] mb-6 leading-normal md:whitespace-nowrap" style={{ background: 'linear-gradient(135deg, var(--purple-light) 0%, #53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
               {isEN ? "We'd love to hear what you're building." : 'เราอยากฟังว่าคุณกำลังสร้างอะไรอยู่'}
             </h2>
-            <p className="mb-10 max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.75)', fontWeight: 400 }}>
+            <p className="mb-10 max-w-xl mx-auto" style={{ color: 'rgb(var(--fg) / 0.75)', fontWeight: 400 }}>
               {isEN ? 'These notes come from our daily design and engineering work in Bangkok. If you are planning a website, app or AI tool and want a team that pays attention to details like these, tell us about it.' : 'บันทึกเหล่านี้มาจากงานออกแบบและพัฒนาที่ทีมเราทำกันทุกวันในกรุงเทพฯ ถ้าคุณกำลังวางแผนทำ website แอป หรือระบบ AI และอยากได้ทีมที่ใส่ใจรายละเอียดแบบนี้ เล่าให้เราฟังได้เลย'}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -118,7 +118,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                 {isEN ? 'Start a Conversation' : 'เริ่มคุยกับเรา'}
                 <i className="ti ti-arrow-right" style={{ fontSize: 14 }} aria-hidden="true" />
               </Link>
-              <a href="mailto:wu@haliviq.com" className="text-sm transition-colors" style={{ color: '#fff', fontWeight: 400 }}>wu@haliviq.com</a>
+              <a href="mailto:wu@haliviq.com" className="text-sm transition-colors" style={{ color: 'var(--ink)', fontWeight: 400 }}>wu@haliviq.com</a>
             </div>
           </div>
         </section>

@@ -78,12 +78,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
 
   const heroVisual = (
     <div className="relative pb-10 pr-6">
-      <div className="rounded-2xl overflow-hidden" style={{ background: '#141329', border: '1px solid rgba(123,110,246,0.35)' }}>
-        <div className="flex items-center justify-between px-5 py-3.5" style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-          <span className="text-xs tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.85)', fontFamily: 'monospace' }}>{isEN ? 'Studio / Stream' : 'Studio / Stream'}</span>
+      <div className="theme-dark rounded-2xl overflow-hidden" style={{ background: '#141329', border: '1px solid rgba(123,110,246,0.35)' }}>
+        <div className="flex items-center justify-between px-5 py-3.5" style={{ borderBottom: '1px solid rgb(var(--fg) / 0.08)' }}>
+          <span className="text-xs tracking-widest uppercase" style={{ color: 'rgb(var(--fg) / 0.85)', fontFamily: 'monospace' }}>{isEN ? 'Studio / Stream' : 'Studio / Stream'}</span>
           <div className="flex gap-1">
-            <span className="w-3 h-[2px] rounded-full" style={{ background: 'rgba(255,255,255,0.3)' }} />
-            <span className="w-3 h-[2px] rounded-full" style={{ background: 'rgba(255,255,255,0.3)' }} />
+            <span className="w-3 h-[2px] rounded-full" style={{ background: 'rgb(var(--fg) / 0.3)' }} />
+            <span className="w-3 h-[2px] rounded-full" style={{ background: 'rgb(var(--fg) / 0.3)' }} />
           </div>
         </div>
         <div className="p-5">
@@ -94,34 +94,34 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             </svg>
             <span
               className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] tracking-widest uppercase"
-              style={{ background: 'rgba(83,195,215,0.14)', color: 'var(--lime)' }}
+              style={{ background: 'rgba(83,195,215,0.14)', color: 'var(--accent-2)' }}
             >
               <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ background: 'var(--lime)', animation: 'blinkDot 1.6s ease-in-out infinite' }} />
               {isEN ? 'Live' : 'ถ่ายทอดสด'}
             </span>
           </div>
-          <p className="mb-1" style={{ color: '#fff', fontWeight: 500, fontSize: '1.05rem' }}>{isEN ? 'Season Finale Premiere' : 'รอบปฐมทัศน์ตอนจบซีซัน'}</p>
-          <p className="text-xs mb-3" style={{ color: 'rgba(255,255,255,0.5)' }}>{isEN ? '128K watching now' : 'มีผู้ชม 128K คนขณะนี้'}</p>
+          <p className="mb-1" style={{ color: 'var(--ink)', fontWeight: 500, fontSize: '1.05rem' }}>{isEN ? 'Season Finale Premiere' : 'รอบปฐมทัศน์ตอนจบซีซัน'}</p>
+          <p className="text-xs mb-3" style={{ color: 'rgb(var(--fg) / 0.5)' }}>{isEN ? '128K watching now' : 'มีผู้ชม 128K คนขณะนี้'}</p>
           <div className="flex gap-1.5">
             <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'var(--lime)' }} />
-            <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'rgba(255,255,255,0.3)' }} />
+            <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'rgb(var(--fg) / 0.3)' }} />
             <span className="w-2.5 h-2.5 rounded-full" style={{ background: 'var(--purple-light)' }} />
           </div>
         </div>
       </div>
 
       <div
-        className="absolute -bottom-2 -right-2 w-[180px] rounded-2xl p-4"
-        style={{ background: '#1B1A33', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 20px 50px -10px rgba(0,0,0,0.6)', animation: 'badgeFloat 3.4s ease-in-out infinite' }}
+        className="theme-dark absolute -bottom-2 -right-2 w-[180px] rounded-2xl p-4"
+        style={{ background: '#1B1A33', border: '1px solid rgb(var(--fg) / 0.1)', boxShadow: '0 20px 50px -10px rgba(0,0,0,0.6)', animation: 'badgeFloat 3.4s ease-in-out infinite' }}
       >
         <div className="flex items-center justify-between mb-2.5">
-          <span className="text-[10px] tracking-widest uppercase" style={{ color: 'rgba(255,255,255,0.85)' }}>{isEN ? 'Viewers' : 'ผู้ชม'}</span>
-          <i className="ti ti-broadcast" style={{ fontSize: 14, color: 'var(--lime)' }} aria-hidden="true" />
+          <span className="text-[10px] tracking-widest uppercase" style={{ color: 'rgb(var(--fg) / 0.85)' }}>{isEN ? 'Viewers' : 'ผู้ชม'}</span>
+          <i className="ti ti-broadcast" style={{ fontSize: 14, color: 'var(--accent-2)' }} aria-hidden="true" />
         </div>
         <div className="w-9 h-9 rounded-lg flex items-center justify-center mb-2" style={{ background: 'rgba(123,110,246,0.15)' }}>
-          <i className="ti ti-device-tv" style={{ fontSize: 16, color: 'var(--purple-light)' }} aria-hidden="true" />
+          <i className="ti ti-device-tv" style={{ fontSize: 16, color: 'var(--accent)' }} aria-hidden="true" />
         </div>
-        <p className="text-xs mb-3" style={{ color: 'rgba(255,255,255,0.5)' }}>{isEN ? '+12% vs last week' : '+12% เทียบสัปดาห์ก่อน'}</p>
+        <p className="text-xs mb-3" style={{ color: 'rgb(var(--fg) / 0.5)' }}>{isEN ? '+12% vs last week' : '+12% เทียบสัปดาห์ก่อน'}</p>
         <div
           className="rounded-lg text-center py-1.5 text-xs"
           style={{ background: 'linear-gradient(90deg, var(--purple), var(--purple-light))', color: '#fff' }}
@@ -138,10 +138,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       <main>
 
         {/* Hero */}
-        <section className="relative overflow-hidden pt-[80px]" style={{ background: '#08070F' }}>
+        <section className="relative overflow-hidden pt-[80px]" style={{ background: 'var(--bg)' }}>
           <div
             className="absolute inset-0 pointer-events-none opacity-[0.35]"
-            style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' }}
+            style={{ backgroundImage: 'radial-gradient(rgb(var(--fg) / 0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' }}
           />
           <div
             className="absolute -top-40 -left-32 w-[560px] h-[560px] rounded-full pointer-events-none"
@@ -150,14 +150,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           <div className="relative max-w-7xl mx-auto px-4 lg:px-10 py-24 lg:py-32">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 text-xs tracking-widest uppercase" style={{ background: 'rgba(123,110,246,0.15)', color: 'var(--purple-light)' }}>
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 text-xs tracking-widest uppercase" style={{ background: 'rgba(123,110,246,0.15)', color: 'var(--accent)' }}>
                   <span className="w-1.5 h-1.5 rounded-full inline-block" style={{ background: 'var(--lime)', animation: 'blinkDot 1.6s ease-in-out infinite' }} />
                   {badge}
                 </div>
                 <h1 className="t-display mb-6 leading-relaxed" style={{ fontSize: 'clamp(2.8rem,6vw,5.5rem)', background: 'linear-gradient(135deg, var(--purple-light) 0%, #53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                   {isEN ? 'Media &' : 'สื่อและ'}<br />{isEN ? 'Entertainment' : 'บันเทิง'}
                 </h1>
-                <p className="leading-relaxed mb-10" style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.85)', fontWeight: 400, maxWidth: 560 }}>
+                <p className="leading-relaxed mb-10" style={{ fontSize: '1.15rem', color: 'rgb(var(--fg) / 0.85)', fontWeight: 400, maxWidth: 560 }}>
                   {heroSubhead}
                 </p>
                 <div className="flex flex-wrap gap-4">
@@ -169,7 +169,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                     {isEN ? 'View Case Studies' : 'ดูผลงานของเรา'}
                     <svg width="15" height="15" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   </Link>
-                  <Link href={`${prefix}/contact`} className="inline-flex items-center gap-2 rounded-full border transition-colors" style={{ fontSize: '1rem', padding: '14px 32px', borderColor: 'rgba(255,255,255,0.2)', color: '#fff', fontWeight: 400 }}>
+                  <Link href={`${prefix}/contact`} className="inline-flex items-center gap-2 rounded-full border transition-colors" style={{ fontSize: '1rem', padding: '14px 32px', borderColor: 'rgb(var(--fg) / 0.2)', color: 'var(--ink)', fontWeight: 400 }}>
                     {isEN ? 'Free Consultation' : 'ปรึกษาฟรี'}
                   </Link>
                 </div>
@@ -182,11 +182,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </section>
 
         {/* Intro */}
-        <section className="relative overflow-hidden" style={{ background: '#08070F' }}>
+        <section className="relative overflow-hidden" style={{ background: 'var(--bg)' }}>
           <div className="relative max-w-7xl mx-auto px-4 lg:px-10 pb-20 lg:pb-28">
-            <div className="rounded-2xl p-10 lg:p-14" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
+            <div className="rounded-2xl p-10 lg:p-14" style={{ background: 'rgb(var(--fg) / 0.03)', border: '1px solid rgb(var(--fg) / 0.06)' }}>
               <div className="w-12 h-[3px] rounded-full mb-8" style={{ background: 'linear-gradient(90deg, var(--purple-light), var(--lime))' }} />
-              <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
+              <p className="leading-relaxed" style={{ color: 'rgb(var(--fg) / 0.85)', fontSize: 'clamp(1.05rem,1.6vw,1.35rem)', fontWeight: 400, maxWidth: 900 }}>
                 {isEN
                   ? 'We build the platforms that publish and monetise content: streaming and OTT apps, content management systems, audience analytics, ticketing, and tools for creators. A project starts with a plain question: what does a viewer do between discovering your content and paying for it, and where do they leave? From there we design the player, catalogue, sign-up, and payment flow, and the back-office tools your editors and rights team use every day. We build for Thai viewing habits, with mobile-first screens, Thai-language search and subtitles, payment by card, PromptPay, or e-wallet, and capacity planned for the spikes that come with a live event or a viral clip.'
                   : 'เราสร้างแพลตฟอร์มสำหรับเผยแพร่และหารายได้จากคอนเทนต์ ทั้งแอป Streaming และ OTT ระบบจัดการคอนเทนต์ การวิเคราะห์ผู้ชม ระบบจำหน่ายบัตร และเครื่องมือสำหรับครีเอเตอร์ โปรเจกต์เริ่มจากคำถามตรง ๆ ว่าคนดูทำอะไรบ้างตั้งแต่เจอคอนเทนต์ของคุณจนถึงตอนจ่ายเงิน และเขาเลิกไปตรงไหน จากนั้นเราออกแบบทั้งตัวเล่นวิดีโอ หน้าคลังคอนเทนต์ การสมัคร และการจ่ายเงิน รวมถึงเครื่องมือหลังบ้านที่ทีมบรรณาธิการและฝ่ายลิขสิทธิ์ใช้ทุกวัน เราออกแบบให้ตรงกับพฤติกรรมการดูของคนไทย คือเน้นมือถือ ค้นหาและมีซับไตเติลเป็นภาษาไทย จ่ายผ่านบัตร PromptPay หรืออี-วอลเล็ตได้ และเผื่อกำลังรับสำหรับช่วงที่มีไลฟ์สดหรือคลิปที่กลายเป็นไวรัล'}
@@ -196,29 +196,29 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </section>
 
         {/* Key Challenges */}
-        <section className="relative overflow-hidden" style={{ background: '#050308' }}>
+        <section className="relative overflow-hidden" style={{ background: 'var(--bg-deep)' }}>
           <div className="relative max-w-7xl mx-auto px-4 lg:px-10 py-20 lg:py-28">
-            <p className="mb-5 text-xs tracking-widest uppercase" style={{ color: 'var(--lime)', fontWeight: 600 }}>
+            <p className="mb-5 text-xs tracking-widest uppercase" style={{ color: 'var(--accent-2)', fontWeight: 600 }}>
               {isEN ? 'Challenges' : 'ความท้าทาย'}
             </p>
-            <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
+            <h2 className="t-display mb-4" style={{ color: 'var(--ink)', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
               {isEN ? 'Key Challenges' : 'ความท้าทายหลัก'}
             </h2>
-            <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
+            <p className="mb-14" style={{ color: 'rgb(var(--fg) / 0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Four things that decide whether a media product makes money: delivery cost at scale, viewer loyalty, rights management, and income beyond the subscription.'
                 : 'สี่เรื่องที่ตัดสินว่าผลิตภัณฑ์สื่อจะทำเงินได้ไหม คือต้นทุนส่งวิดีโอเมื่อคนดูเยอะ ความภักดีของผู้ชม การจัดการลิขสิทธิ์ และรายได้นอกเหนือจากค่าสมาชิก'}
             </p>
             <div className="grid sm:grid-cols-2 gap-5">
               {challenges.map((c) => (
-                <div key={c.title} className="p-8 rounded-2xl" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
+                <div key={c.title} className="p-8 rounded-2xl" style={{ background: 'rgb(var(--fg) / 0.03)', border: '1px solid rgb(var(--fg) / 0.07)' }}>
                   <div className="flex items-start gap-5">
                     <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'rgba(123,110,246,0.15)' }}>
-                      <i className={`ti ${c.icon}`} style={{ fontSize: 20, color: 'var(--purple-light)' }} aria-hidden="true" />
+                      <i className={`ti ${c.icon}`} style={{ fontSize: 20, color: 'var(--accent)' }} aria-hidden="true" />
                     </div>
                     <div>
-                      <h3 className="mb-2" style={{ color: '#fff', fontWeight: 600, fontSize: '1.35rem' }}>{c.title}</h3>
-                      <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>{c.desc}</p>
+                      <h3 className="mb-2" style={{ color: 'var(--ink)', fontWeight: 600, fontSize: '1.35rem' }}>{c.title}</h3>
+                      <p className="leading-relaxed" style={{ color: 'rgb(var(--fg) / 0.85)', fontSize: '1.1rem', fontWeight: 400 }}>{c.desc}</p>
                     </div>
                   </div>
                 </div>
@@ -228,19 +228,19 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </section>
 
         {/* Industry at a Glance */}
-        <div className="border-y" style={{ borderColor: 'rgba(255,255,255,0.08)', background: '#0C0A17' }}>
+        <div className="border-y" style={{ borderColor: 'rgb(var(--fg) / 0.08)', background: 'var(--bg-1)' }}>
           <div className="max-w-7xl mx-auto px-4 lg:px-10">
-            <div className="grid sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x" style={{ borderColor: 'rgba(255,255,255,0.08)' } as any}>
+            <div className="grid sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x" style={{ borderColor: 'rgb(var(--fg) / 0.08)' } as any}>
               {metrics.map((m) => (
                 <div key={m.label} className="px-4 lg:px-10 py-10">
-                  <p className="mb-3 text-xs tracking-widest uppercase" style={{ color: 'var(--lime)', fontWeight: 600 }}>
+                  <p className="mb-3 text-xs tracking-widest uppercase" style={{ color: 'var(--accent-2)', fontWeight: 600 }}>
                     {isEN ? 'Industry at a Glance' : 'ภาพรวมอุตสาหกรรม'}
                   </p>
                   <div className="mb-3 leading-none" style={{ fontFamily: 'var(--font-main)', fontWeight: 400, fontSize: 'clamp(2.2rem,4vw,3.2rem)', background: 'linear-gradient(135deg,var(--purple-light),var(--lime))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                     {m.value}
                   </div>
-                  <p className="mb-3 leading-snug" style={{ color: '#fff', fontWeight: 500, fontSize: '1.05rem' }}>{m.label}</p>
-                  <p className="text-xs" style={{ color: 'rgba(255,255,255,0.4)' }}>{m.source}</p>
+                  <p className="mb-3 leading-snug" style={{ color: 'var(--ink)', fontWeight: 500, fontSize: '1.05rem' }}>{m.label}</p>
+                  <p className="text-xs" style={{ color: 'rgb(var(--fg) / 0.4)' }}>{m.source}</p>
                 </div>
               ))}
             </div>
@@ -248,25 +248,25 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </div>
 
         {/* Our Capabilities */}
-        <section className="relative overflow-hidden" style={{ background: '#08070F' }}>
+        <section className="relative overflow-hidden" style={{ background: 'var(--bg)' }}>
           <div className="relative max-w-7xl mx-auto px-4 lg:px-10 py-20 lg:py-28">
-            <p className="mb-5 text-xs tracking-widest uppercase" style={{ color: 'var(--lime)', fontWeight: 600 }}>
+            <p className="mb-5 text-xs tracking-widest uppercase" style={{ color: 'var(--accent-2)', fontWeight: 600 }}>
               {isEN ? 'Capabilities' : 'ความสามารถ'}
             </p>
-            <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
+            <h2 className="t-display mb-4" style={{ color: 'var(--ink)', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
               {isEN ? 'Our Capabilities' : 'ความสามารถของเรา'}
             </h2>
-            <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
+            <p className="mb-14" style={{ color: 'rgb(var(--fg) / 0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN ? 'What we build for publishers, broadcasters, and creators, and what each tool does for audiences and for your own team.' : 'ระบบที่เราสร้างให้สำนักพิมพ์ สถานี และครีเอเตอร์ และสิ่งที่แต่ละเครื่องมือทำให้ทั้งผู้ชมและทีมของคุณ'}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {capabilities.map((c) => (
-                <div key={c.title} className="p-8 rounded-2xl" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
+                <div key={c.title} className="p-8 rounded-2xl" style={{ background: 'rgb(var(--fg) / 0.03)', border: '1px solid rgb(var(--fg) / 0.07)' }}>
                   <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ background: 'rgba(83,195,215,0.12)' }}>
-                    <i className={`ti ${c.icon}`} style={{ fontSize: 24, color: 'var(--lime)' }} aria-hidden="true" />
+                    <i className={`ti ${c.icon}`} style={{ fontSize: 24, color: 'var(--accent-2)' }} aria-hidden="true" />
                   </div>
-                  <h3 className="mb-3" style={{ color: '#fff', fontWeight: 600, fontSize: '1.3rem' }}>{c.title}</h3>
-                  <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>{c.desc}</p>
+                  <h3 className="mb-3" style={{ color: 'var(--ink)', fontWeight: 600, fontSize: '1.3rem' }}>{c.title}</h3>
+                  <p className="leading-relaxed" style={{ color: 'rgb(var(--fg) / 0.85)', fontSize: '1.1rem', fontWeight: 400 }}>{c.desc}</p>
                 </div>
               ))}
             </div>
@@ -274,15 +274,15 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </section>
 
         {/* Technology We Use */}
-        <section className="relative overflow-hidden" style={{ background: '#050308' }}>
+        <section className="relative overflow-hidden" style={{ background: 'var(--bg-deep)' }}>
           <div className="relative max-w-7xl mx-auto px-4 lg:px-10 py-20 lg:py-28">
-            <p className="mb-5 text-xs tracking-widest uppercase" style={{ color: 'var(--lime)', fontWeight: 600 }}>
+            <p className="mb-5 text-xs tracking-widest uppercase" style={{ color: 'var(--accent-2)', fontWeight: 600 }}>
               {isEN ? 'Tech Stack' : 'เทคโนโลยีที่ใช้'}
             </p>
-            <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
+            <h2 className="t-display mb-4" style={{ color: 'var(--ink)', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
               {isEN ? 'Technologies We Use' : 'เทคโนโลยีที่เราใช้'}
             </h2>
-            <p className="mb-12" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
+            <p className="mb-12" style={{ color: 'rgb(var(--fg) / 0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN
                 ? 'Video delivery, real-time, and web tools we use so playback stays smooth and content reaches viewers on any device.'
                 : 'เครื่องมือด้านการส่งวิดีโอ เรียลไทม์ และเว็บที่เราใช้ เพื่อให้เล่นวิดีโอลื่นและคอนเทนต์ไปถึงคนดูได้ทุกอุปกรณ์'}
@@ -292,7 +292,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                 <span
                   key={tag}
                   className="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-base"
-                  style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.85)', fontWeight: 400 }}
+                  style={{ background: 'rgb(var(--fg) / 0.03)', border: '1px solid rgb(var(--fg) / 0.08)', color: 'rgb(var(--fg) / 0.85)', fontWeight: 400 }}
                 >
                   {tag}
                 </span>
@@ -302,20 +302,20 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </section>
 
         {/* Use Cases */}
-        <section className="relative overflow-hidden" style={{ background: '#08070F' }}>
+        <section className="relative overflow-hidden" style={{ background: 'var(--bg)' }}>
           <div className="relative max-w-7xl mx-auto px-4 lg:px-10 py-20 lg:py-28">
-            <p className="mb-5 text-xs tracking-widest uppercase" style={{ color: 'var(--lime)', fontWeight: 600 }}>
+            <p className="mb-5 text-xs tracking-widest uppercase" style={{ color: 'var(--accent-2)', fontWeight: 600 }}>
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </p>
-            <h2 className="t-display mb-4" style={{ color: '#fff', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
+            <h2 className="t-display mb-4" style={{ color: 'var(--ink)', fontSize: 'clamp(2.25rem,4.5vw,3.5rem)' }}>
               {isEN ? 'Use Cases' : 'ตัวอย่างการใช้งาน'}
             </h2>
-            <p className="mb-14" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
+            <p className="mb-14" style={{ color: 'rgb(var(--fg) / 0.85)', fontSize: '1.2rem', fontWeight: 400, maxWidth: 640 }}>
               {isEN ? 'Three typical projects, covering what is built, who uses it, and how it earns or saves money.' : 'ตัวอย่างโปรเจกต์ทั่วไปสามแบบ ว่าสร้างอะไร ใครใช้ และช่วยหาเงินหรือประหยัดเงินได้ยังไง'}
             </p>
             <div className="grid lg:grid-cols-3 gap-6">
               {useCases.map((u) => (
-                <div key={u.no} className="p-8 rounded-2xl" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}>
+                <div key={u.no} className="p-8 rounded-2xl" style={{ background: 'rgb(var(--fg) / 0.03)', border: '1px solid rgb(var(--fg) / 0.07)' }}>
                   <div
                     className="w-14 h-14 rounded-full flex items-center justify-center mb-6 font-mono"
                     style={{
@@ -328,8 +328,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                   >
                     {u.no}
                   </div>
-                  <h3 className="mb-3" style={{ color: '#fff', fontWeight: 600, fontSize: '1.3rem' }}>{u.title}</h3>
-                  <p className="leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>{u.desc}</p>
+                  <h3 className="mb-3" style={{ color: 'var(--ink)', fontWeight: 600, fontSize: '1.3rem' }}>{u.title}</h3>
+                  <p className="leading-relaxed" style={{ color: 'rgb(var(--fg) / 0.85)', fontSize: '1.1rem', fontWeight: 400 }}>{u.desc}</p>
                 </div>
               ))}
             </div>
@@ -337,10 +337,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </section>
 
         {/* Final CTA */}
-        <section className="relative overflow-hidden" style={{ background: '#050308' }}>
+        <section className="theme-dark relative overflow-hidden" style={{ background: '#050308' }}>
           <div
             className="absolute inset-0 pointer-events-none opacity-40"
-            style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '180px 180px, 260px 260px', backgroundPosition: '0 0, 90px 130px' }}
+            style={{ backgroundImage: 'radial-gradient(rgb(var(--fg) / 0.5) 1px, transparent 1px), radial-gradient(rgb(var(--fg) / 0.3) 1px, transparent 1px)', backgroundSize: '180px 180px, 260px 260px', backgroundPosition: '0 0, 90px 130px' }}
           />
           <div
             className="absolute left-0 right-0 bottom-0 pointer-events-none"
@@ -350,7 +350,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <h2 className="t-display mb-5 leading-tight" style={{ background: 'linear-gradient(135deg, #fff 0%, #53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', fontSize: 'clamp(2.5rem,5.5vw,4.2rem)' }}>
               {isEN ? 'Have a project in mind?' : 'มีโปรเจกต์ในใจแล้วใช่ไหม?'}
             </h2>
-            <p className="mb-10" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
+            <p className="mb-10" style={{ color: 'rgb(var(--fg) / 0.85)', fontSize: '1.25rem', fontWeight: 400 }}>
               {isEN ? "We'd love to hear what you're building." : 'เล่าให้เราฟังหน่อยว่าคุณกำลังทำอะไรอยู่'}
             </p>
             <div className="flex flex-wrap items-center gap-6">
@@ -362,7 +362,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                 {isEN ? 'Talk to Us' : 'คุยกับเรา'}
                 <i className="ti ti-arrow-right" style={{ fontSize: 17 }} aria-hidden="true" />
               </Link>
-              <a href="mailto:wu@haliviq.com" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', fontWeight: 400 }}>
+              <a href="mailto:wu@haliviq.com" style={{ color: 'rgb(var(--fg) / 0.85)', fontSize: '1.1rem', fontWeight: 400 }}>
                 wu@haliviq.com
               </a>
             </div>

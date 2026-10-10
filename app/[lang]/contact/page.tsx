@@ -74,10 +74,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     <>
       <Navbar lang={lang} tr={tr} />
       <main>
-        <section className="relative overflow-hidden pt-[80px]" style={{ background: '#08070F' }}>
+        <section className="relative overflow-hidden pt-[80px]" style={{ background: 'var(--bg)' }}>
           <div
             className="absolute inset-0 pointer-events-none opacity-[0.35]"
-            style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' }}
+            style={{ backgroundImage: 'radial-gradient(rgb(var(--fg) / 0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' }}
           />
           <div
             className="absolute -top-40 -left-32 w-[560px] h-[560px] rounded-full pointer-events-none"
@@ -87,27 +87,27 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
               <div>
                 <p className="t-label mb-5">{isEN ? 'Get in Touch' : 'ติดต่อเรา'}</p>
-                <h1 className="t-display text-[clamp(3rem,6vw,5.5rem)] leading-relaxed mb-8" style={{ color: '#fff' }}>
+                <h1 className="t-display text-[clamp(3rem,6vw,5.5rem)] leading-relaxed mb-8" style={{ color: 'var(--ink)' }}>
                   {isEN
                     ? <>Let&apos;s build<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,#53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>something great</span></>
                     : <>มาสร้าง<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,#53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>สิ่งดี ๆ ด้วยกัน</span></>}
                 </h1>
-                <p className="leading-relaxed mb-12" style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.85)', fontWeight: 400, maxWidth: 520 }}>
+                <p className="leading-relaxed mb-12" style={{ fontSize: '1.15rem', color: 'rgb(var(--fg) / 0.85)', fontWeight: 400, maxWidth: 520 }}>
                   {isEN ? 'Tell us about your project, even if it is still a rough idea. We will get back to you within 24 hours with our first thoughts and a suggested next step. If you would rather talk, call us or message us on LINE, and we can set up a first consultation at no cost.' : 'เล่าเรื่องโปรเจกต์ของคุณให้เราฟังได้เลย แม้จะเป็นแค่ไอเดียคร่าว ๆ เราจะตอบกลับภายใน 24 ชั่วโมง พร้อมความเห็นเบื้องต้นและขั้นตอนถัดไปที่เราแนะนำ ถ้าอยากคุยเลย โทรหาเราหรือทักทาง LINE ได้ แล้วเรานัดปรึกษาครั้งแรกให้ฟรี'}
                 </p>
                 <div className="space-y-4 mb-12">
                   {channels.map(c => (
                     <a key={c.title} href={c.href}
                       className="flex items-center gap-5 p-5 rounded-2xl transition-all group"
-                      style={{ border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.03)' }}>
+                      style={{ border: '1px solid rgb(var(--fg) / 0.1)', background: 'rgb(var(--fg) / 0.03)' }}>
                       <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-colors"
                         style={{ background: 'rgba(123,110,246,0.15)' }}>
-                        <i className={`ti ${c.icon}`} style={{ fontSize: 22, color: 'var(--purple-light)' }} aria-hidden="true" />
+                        <i className={`ti ${c.icon}`} style={{ fontSize: 22, color: 'var(--accent)' }} aria-hidden="true" />
                       </div>
                       <div>
-                        <p className="text-sm mb-0.5" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>{c.title}</p>
-                        <p style={{ fontWeight: 500, fontSize: '1.15rem', color: '#fff' }}>{c.value}</p>
-                        <p className="text-sm" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>{c.sub}</p>
+                        <p className="text-sm mb-0.5" style={{ fontWeight: 400, color: 'rgb(var(--fg) / 0.5)' }}>{c.title}</p>
+                        <p style={{ fontWeight: 500, fontSize: '1.15rem', color: 'var(--ink)' }}>{c.value}</p>
+                        <p className="text-sm" style={{ fontWeight: 400, color: 'rgb(var(--fg) / 0.5)' }}>{c.sub}</p>
                       </div>
                     </a>
                   ))}
@@ -116,32 +116,32 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                 <div className="flex items-center gap-3 flex-wrap">
                   {(isEN ? ['Free first consultation', 'NDA on request', 'Response within 24 hours'] : ['ปรึกษาครั้งแรกฟรี', 'มี NDA พร้อมให้ลงนาม', 'ตอบกลับภายใน 24 ชั่วโมง']).map(txt => (
                     <div key={txt} className="flex items-center gap-1.5">
-                      <i className="ti ti-circle-check" style={{ fontSize: 14, color: 'var(--lime)' }} aria-hidden="true" />
-                      <span className="text-sm" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.6)' }}>{txt}</span>
+                      <i className="ti ti-circle-check" style={{ fontSize: 14, color: 'var(--accent-2)' }} aria-hidden="true" />
+                      <span className="text-sm" style={{ fontWeight: 400, color: 'rgb(var(--fg) / 0.6)' }}>{txt}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="rounded-3xl p-8 lg:p-10 lg:sticky lg:top-24" style={{ background: '#141329', border: '1px solid rgba(255,255,255,0.08)' }}>
-                <h2 className="mb-8" style={{ fontWeight: 500, fontSize: '1.3rem', color: '#fff' }}>{isEN ? 'Tell us about your project' : 'เล่าเรื่องโปรเจกต์ของคุณ'}</h2>
+              <div className="theme-dark rounded-3xl p-8 lg:p-10 lg:sticky lg:top-24" style={{ background: '#141329', border: '1px solid rgb(var(--fg) / 0.08)' }}>
+                <h2 className="mb-8" style={{ fontWeight: 500, fontSize: '1.3rem', color: 'var(--ink)' }}>{isEN ? 'Tell us about your project' : 'เล่าเรื่องโปรเจกต์ของคุณ'}</h2>
                 <ContactFormShell lang={lang}>
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>
+                      <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgb(var(--fg) / 0.5)' }}>
                         {isEN ? 'Name' : 'ชื่อ'} <span style={{ color: '#F87171' }}>*</span>
                       </label>
                       <input type="text" name="name" autoComplete="name" placeholder={isEN ? 'Your name' : 'ชื่อของคุณ'} required
                         className="w-full px-5 py-3.5 rounded-xl text-sm outline-none transition-colors"
-                        style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff', fontWeight: 400 }} />
+                        style={{ background: 'rgb(var(--fg) / 0.05)', border: '1px solid rgb(var(--fg) / 0.12)', color: 'var(--ink)', fontWeight: 400 }} />
                     </div>
                     <div>
-                      <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>
+                      <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgb(var(--fg) / 0.5)' }}>
                         Email <span style={{ color: '#F87171' }}>*</span>
                       </label>
                       <input type="email" name="email" autoComplete="email" placeholder="your@email.com" required
                         className="w-full px-5 py-3.5 rounded-xl text-sm outline-none transition-colors"
-                        style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff', fontWeight: 400 }} />
+                        style={{ background: 'rgb(var(--fg) / 0.05)', border: '1px solid rgb(var(--fg) / 0.12)', color: 'var(--ink)', fontWeight: 400 }} />
                     </div>
                   </div>
 
@@ -150,23 +150,23 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                   <ContactFields lang={lang} part="interest" />
 
                   <div>
-                    <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>
+                    <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgb(var(--fg) / 0.5)' }}>
                       {isEN ? 'Message' : 'ข้อความ'} <span style={{ color: '#F87171' }}>*</span>
                     </label>
                     <textarea name="message" rows={5} placeholder={isEN ? 'Tell us about your project...' : 'เล่าเรื่องโปรเจกต์ของคุณ...'} required
                       className="w-full px-5 py-3.5 rounded-xl text-sm outline-none transition-colors resize-none"
-                      style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', color: '#fff', fontWeight: 400 }} />
+                      style={{ background: 'rgb(var(--fg) / 0.05)', border: '1px solid rgb(var(--fg) / 0.12)', color: 'var(--ink)', fontWeight: 400 }} />
                   </div>
 
                   <ContactFields lang={lang} part="budget" />
 
                   <div>
-                    <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgba(255,255,255,0.5)' }}>
-                      {isEN ? 'How did you hear about Haliviq?' : 'คุณรู้จัก Haliviq จากช่องทางไหน?'} <span style={{ color: 'rgba(255,255,255,0.4)' }}>({isEN ? 'Optional' : 'ไม่บังคับ'})</span>
+                    <label className="block text-xs mb-2" style={{ fontWeight: 400, color: 'rgb(var(--fg) / 0.5)' }}>
+                      {isEN ? 'How did you hear about Haliviq?' : 'คุณรู้จัก Haliviq จากช่องทางไหน?'} <span style={{ color: 'rgb(var(--fg) / 0.4)' }}>({isEN ? 'Optional' : 'ไม่บังคับ'})</span>
                     </label>
                     <select name="source"
                       className="w-full px-5 py-3.5 rounded-xl text-sm outline-none appearance-none"
-                      style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.6)', fontWeight: 400 }}
+                      style={{ background: 'rgb(var(--fg) / 0.05)', border: '1px solid rgb(var(--fg) / 0.12)', color: 'rgb(var(--fg) / 0.6)', fontWeight: 400 }}
                       defaultValue=""
                     >
                       <option value="" style={{ color: '#000' }}>{isEN ? 'Please select...' : 'กรุณาเลือก...'}</option>
@@ -178,13 +178,13 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                     </select>
                   </div>
 
-                  <label className="flex items-start gap-3 p-4 rounded-xl cursor-pointer" style={{ border: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.02)' }}>
+                  <label className="flex items-start gap-3 p-4 rounded-xl cursor-pointer" style={{ border: '1px solid rgb(var(--fg) / 0.1)', background: 'rgb(var(--fg) / 0.02)' }}>
                     <input type="checkbox" name="newsletter" defaultChecked
                       className="mt-0.5 shrink-0"
                       style={{ width: 18, height: 18, accentColor: 'var(--purple)' }} />
                     <span>
-                      <span className="block text-sm mb-1" style={{ fontWeight: 500, color: '#fff' }}>{isEN ? 'Subscribe to our newsletter' : 'สมัครรับข่าวสารจากเรา'}</span>
-                      <span className="block text-xs leading-relaxed" style={{ color: 'rgba(255,255,255,0.5)', fontWeight: 400 }}>
+                      <span className="block text-sm mb-1" style={{ fontWeight: 500, color: 'var(--ink)' }}>{isEN ? 'Subscribe to our newsletter' : 'สมัครรับข่าวสารจากเรา'}</span>
+                      <span className="block text-xs leading-relaxed" style={{ color: 'rgb(var(--fg) / 0.5)', fontWeight: 400 }}>
                         {isEN ? 'Get the latest insights, articles, and updates about digital transformation and technology trends.' : 'รับบทความและข่าวสารล่าสุดเรื่องการปรับธุรกิจสู่ดิจิทัล (Digital Transformation) และเทคโนโลยี'}
                       </span>
                     </span>
@@ -196,11 +196,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                     <i className="ti ti-arrow-right" style={{ fontSize: 15 }} aria-hidden="true" />
                   </button>
 
-                  <p className="text-center text-xs" style={{ color: 'rgba(255,255,255,0.4)', fontWeight: 400 }}>
+                  <p className="text-center text-xs" style={{ color: 'rgb(var(--fg) / 0.4)', fontWeight: 400 }}>
                     {isEN ? (
-                      <>By submitting this form, you agree to our <a href={`/${lang}/privacy`} className="hover:text-white transition-colors" style={{ color: 'var(--lime)', textDecoration: 'underline' }}>Privacy Policy</a>.</>
+                      <>By submitting this form, you agree to our <a href={`/${lang}/privacy`} className="hover:text-[color:var(--ink)] transition-colors" style={{ color: 'var(--accent-2)', textDecoration: 'underline' }}>Privacy Policy</a>.</>
                     ) : (
-                      <>เมื่อส่งแบบฟอร์มนี้ ถือว่าคุณยอมรับ<a href={`/${lang}/privacy`} className="hover:text-white transition-colors" style={{ color: 'var(--lime)', textDecoration: 'underline' }}>นโยบายความเป็นส่วนตัว</a>ของเรา</>
+                      <>เมื่อส่งแบบฟอร์มนี้ ถือว่าคุณยอมรับ<a href={`/${lang}/privacy`} className="hover:text-[color:var(--ink)] transition-colors" style={{ color: 'var(--accent-2)', textDecoration: 'underline' }}>นโยบายความเป็นส่วนตัว</a>ของเรา</>
                     )}
                   </p>
                 </ContactFormShell>
@@ -209,19 +209,19 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           </div>
         </section>
 
-        <section className="py-24" style={{ background: '#0B0918' }}>
+        <section className="py-24" style={{ background: 'var(--bg-1)' }}>
           <div className="max-w-4xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-16">
               <p className="t-label mb-5">{isEN ? 'FAQ' : 'คำถามที่พบบ่อย'}</p>
-              <h2 className="t-display text-[clamp(2rem,4vw,3.5rem)]" style={{ color: '#fff' }}>
+              <h2 className="t-display text-[clamp(2rem,4vw,3.5rem)]" style={{ color: 'var(--ink)' }}>
                 {isEN ? 'Common Questions' : 'คำถามที่พบบ่อย'}
               </h2>
             </div>
             <div className="space-y-4">
               {faqs.map(faq => (
-                <div key={faq.q} className="rounded-2xl p-7" style={{ background: '#141329', border: '1px solid rgba(255,255,255,0.08)' }}>
-                  <h3 className="mb-3" style={{ fontWeight: 500, fontSize: '1.3rem', color: '#fff' }}>{faq.q}</h3>
-                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>{faq.a}</p>
+                <div key={faq.q} className="theme-dark rounded-2xl p-7" style={{ background: '#141329', border: '1px solid rgb(var(--fg) / 0.08)' }}>
+                  <h3 className="mb-3" style={{ fontWeight: 500, fontSize: '1.3rem', color: 'var(--ink)' }}>{faq.q}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: 'rgb(var(--fg) / 0.75)' }}>{faq.a}</p>
                 </div>
               ))}
             </div>

@@ -150,7 +150,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       outcomes={outcomes} ctaTitle={ctaTitle} ctaDesc={ctaDesc}
       features={features} steps={steps} caseStudies={caseStudies}
       faqs={faqs} related={related}
-      color="var(--purple-light)" bg="var(--purple-bg)"
+      color="var(--accent)" bg="var(--purple-bg)"
       heroImg="/images/services/user-research/hero.jpg"
       whyImg="/images/services/user-research/why1.jpg"
       whyImg2="/images/services/user-research/why2.jpg"

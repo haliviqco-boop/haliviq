@@ -81,36 +81,36 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       <Navbar lang={lang} tr={tr} transparent />
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden pt-[80px]" style={{ background: '#08070F' }}>
+        <section className="relative overflow-hidden pt-[80px]" style={{ background: 'var(--bg)' }}>
           <div
             className="absolute inset-0 pointer-events-none opacity-[0.35]"
-            style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' }}
+            style={{ backgroundImage: 'radial-gradient(rgb(var(--fg) / 0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' }}
           />
           <div
             className="absolute -top-40 -left-32 w-[560px] h-[560px] rounded-full pointer-events-none"
             style={{ background: 'radial-gradient(circle, rgba(123,110,246,0.28) 0%, transparent 70%)', filter: 'blur(20px)' }}
           />
           <div className="relative max-w-5xl mx-auto px-6 lg:px-10 pt-20 lg:pt-28 pb-16 text-center">
-            <p className="t-label mb-5" style={{ color: 'rgba(255,255,255,0.6)' }}>{a.label}</p>
-            <h1 className="t-display text-[clamp(2.6rem,5.5vw,4.8rem)] leading-relaxed mb-6" style={{ color: '#fff' }}>
+            <p className="t-label mb-5" style={{ color: 'rgb(var(--fg) / 0.6)' }}>{a.label}</p>
+            <h1 className="t-display text-[clamp(2.6rem,5.5vw,4.8rem)] leading-relaxed mb-6" style={{ color: 'var(--ink)' }}>
               {a.h2a}
               <br />
               <span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                 {a.h2b}
               </span>
             </h1>
-            <p className="text-lg leading-relaxed max-w-2xl mx-auto mb-4" style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 400 }}>
+            <p className="text-lg leading-relaxed max-w-2xl mx-auto mb-4" style={{ color: 'rgb(var(--fg) / 0.7)', fontWeight: 400 }}>
               {a.p1}
             </p>
-            <p className="text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 400 }}>
+            <p className="text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: 'rgb(var(--fg) / 0.7)', fontWeight: 400 }}>
               {a.p2}
             </p>
 
-            <div className="grid grid-cols-3 gap-6 max-w-lg mx-auto mt-14 pt-10" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+            <div className="grid grid-cols-3 gap-6 max-w-lg mx-auto mt-14 pt-10" style={{ borderTop: '1px solid rgb(var(--fg) / 0.1)' }}>
               {['120+', isEN ? '8 yrs' : '8 ปี', '95%'].map((n, idx) => (
                 <div key={idx}>
-                  <div className="t-display" style={{ fontSize: 'clamp(1.6rem,3vw,2.4rem)', color: '#fff' }}>{n}</div>
-                  <p className="text-xs mt-1" style={{ color: 'rgba(255,255,255,0.5)', fontWeight: 400 }}>{a.stats[idx]}</p>
+                  <div className="t-display" style={{ fontSize: 'clamp(1.6rem,3vw,2.4rem)', color: 'var(--ink)' }}>{n}</div>
+                  <p className="text-xs mt-1" style={{ color: 'rgb(var(--fg) / 0.5)', fontWeight: 400 }}>{a.stats[idx]}</p>
                 </div>
               ))}
             </div>
@@ -118,16 +118,16 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </section>
 
         {/* Pillars */}
-        <section className="pb-24 pt-4" style={{ background: '#08070E' }}>
+        <section className="pb-24 pt-4" style={{ background: 'var(--bg)' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10 py-12">
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {a.pillars.map((p: { title: string; desc: string }, i: number) => (
-                <div key={i} className="rounded-2xl p-6" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                  <span className="inline-flex items-center justify-center w-9 h-9 rounded-full text-sm mb-4" style={{ fontWeight: 700, background: 'rgba(155,107,255,0.18)', color: 'var(--purple-light)' }}>
+                <div key={i} className="rounded-2xl p-6" style={{ background: 'rgb(var(--fg) / 0.04)', border: '1px solid rgb(var(--fg) / 0.08)' }}>
+                  <span className="inline-flex items-center justify-center w-9 h-9 rounded-full text-sm mb-4" style={{ fontWeight: 700, background: 'rgba(155,107,255,0.18)', color: 'var(--accent)' }}>
                     0{i + 1}
                   </span>
-                  <h4 className="text-white mb-2" style={{ fontWeight: 500, fontSize: '1.1rem' }}>{p.title}</h4>
-                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 400 }}>{p.desc}</p>
+                  <h4 className="text-[color:var(--ink)] mb-2" style={{ fontWeight: 500, fontSize: '1.1rem' }}>{p.title}</h4>
+                  <p className="text-sm leading-relaxed" style={{ color: 'rgb(var(--fg) / 0.65)', fontWeight: 400 }}>{p.desc}</p>
                 </div>
               ))}
             </div>
@@ -135,10 +135,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </section>
 
         {/* Our Story — AI philosophy */}
-        <section className="relative overflow-hidden py-24" style={{ background: '#08070F' }}>
+        <section className="relative overflow-hidden py-24" style={{ background: 'var(--bg)' }}>
           <div
             className="absolute inset-0 pointer-events-none opacity-[0.3]"
-            style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' }}
+            style={{ backgroundImage: 'radial-gradient(rgb(var(--fg) / 0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' }}
           />
           <div
             className="absolute -top-32 -right-32 w-[520px] h-[520px] rounded-full pointer-events-none"
@@ -146,10 +146,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           />
           <div className="relative max-w-5xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-14">
-              <p className="t-label mb-5" style={{ color: 'rgba(255,255,255,0.6)' }}>
+              <p className="t-label mb-5" style={{ color: 'rgb(var(--fg) / 0.6)' }}>
                 {isEN ? 'Our Story' : 'ความเป็นมาของเรา'}
               </p>
-              <h2 className="t-display text-[clamp(2rem,4.2vw,3.4rem)] mb-2" style={{ color: '#fff' }}>
+              <h2 className="t-display text-[clamp(2rem,4.2vw,3.4rem)] mb-2" style={{ color: 'var(--ink)' }}>
                 {isEN ? 'Haliviq and ' : 'HALIVIQ กับ'}
                 <span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                   {isEN ? 'Our Approach to AI' : 'แนวคิดด้าน AI'}
@@ -172,17 +172,17 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                     'สำหรับ HALIVIQ ประโยค "Human Ideas. Intelligent Future." หมายถึงอนาคตที่คนนำความคิดของตัวเองไปได้ไกลขึ้น โดยมีเครื่องมือช่วยค้นหา ทำความเข้าใจ และลงมือทำ โดยไม่ต้องเสียเวลากับงานจุกจิก',
                   ]
               ).map((para, i) => (
-                <p key={i} className="text-lg leading-relaxed max-w-3xl mx-auto text-center" style={{ color: 'rgba(255,255,255,0.75)', fontWeight: 400 }}>
+                <p key={i} className="text-lg leading-relaxed max-w-3xl mx-auto text-center" style={{ color: 'rgb(var(--fg) / 0.75)', fontWeight: 400 }}>
                   {para}
                 </p>
               ))}
             </div>
 
             <div className="text-center mb-10">
-              <p className="t-label mb-4" style={{ color: 'rgba(255,255,255,0.6)' }}>
+              <p className="t-label mb-4" style={{ color: 'rgb(var(--fg) / 0.6)' }}>
                 {isEN ? 'Where We Stand' : 'จุดยืนของเรา'}
               </p>
-              <p className="text-lg max-w-2xl mx-auto mb-10" style={{ color: 'rgba(255,255,255,0.75)', fontWeight: 400 }}>
+              <p className="text-lg max-w-2xl mx-auto mb-10" style={{ color: 'rgb(var(--fg) / 0.75)', fontWeight: 400 }}>
                 {isEN
                   ? 'Our core strength is UX/UI design. We start there because most digital products succeed or fail on how clear they are to use, and then we carry the same thinking through to website development, application development and AI design, so the design is still intact when the product ships.'
                   : 'จุดแข็งหลักของเราคือการออกแบบ UX/UI เพราะผลิตภัณฑ์ดิจิทัลส่วนใหญ่ได้หรือเสียกันที่ว่าคนใช้แล้วเข้าใจง่ายแค่ไหน จากนั้นเราก็ต่อยอดแนวคิดเดียวกันไปถึงการพัฒนา website การพัฒนาแอป และการออกแบบ AI เพื่อให้งานที่ออกแบบไว้ถูกทำออกมาตรงตามที่วางไว้'}
@@ -196,17 +196,17 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                 { icon: 'ti-device-mobile', titleEN: 'Application Development', titleTH: 'พัฒนาแอปพลิเคชัน' },
                 { icon: 'ti-sparkles', titleEN: 'AI Design', titleTH: 'ออกแบบ AI' },
               ].map((f, i) => (
-                <div key={i} className="rounded-2xl p-6 text-center" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                <div key={i} className="rounded-2xl p-6 text-center" style={{ background: 'rgb(var(--fg) / 0.04)', border: '1px solid rgb(var(--fg) / 0.08)' }}>
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4 mx-auto" style={{ background: 'rgba(123,110,246,0.15)' }}>
-                    <i className={`ti ${f.icon}`} style={{ fontSize: 20, color: 'var(--purple-light)' }} aria-hidden="true" />
+                    <i className={`ti ${f.icon}`} style={{ fontSize: 20, color: 'var(--accent)' }} aria-hidden="true" />
                   </div>
-                  <h4 className="text-white" style={{ fontWeight: 500, fontSize: '0.98rem' }}>{isEN ? f.titleEN : f.titleTH}</h4>
+                  <h4 className="text-[color:var(--ink)]" style={{ fontWeight: 500, fontSize: '0.98rem' }}>{isEN ? f.titleEN : f.titleTH}</h4>
                 </div>
               ))}
             </div>
 
             <div className="text-center mb-10">
-              <p className="t-label mb-4" style={{ color: 'rgba(255,255,255,0.6)' }}>
+              <p className="t-label mb-4" style={{ color: 'rgb(var(--fg) / 0.6)' }}>
                 {isEN ? 'Our AI Services' : 'บริการด้าน AI ของเรา'}
               </p>
             </div>
@@ -234,12 +234,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                   descTH: 'ระบบที่ย้ายข้อมูลระหว่างเครื่องมือต่าง ๆ ร่างเอกสารที่ทำซ้ำ และแจ้งเตือนเมื่อมีเคสผิดปกติ ทีมจะได้ไม่ต้องเสียเวลากับงานซ้ำ ๆ',
                 },
               ].map((s, i) => (
-                <div key={i} className="rounded-2xl p-6" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                <div key={i} className="rounded-2xl p-6" style={{ background: 'rgb(var(--fg) / 0.04)', border: '1px solid rgb(var(--fg) / 0.08)' }}>
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4" style={{ background: 'rgba(123,110,246,0.15)' }}>
-                    <i className={`ti ${s.icon}`} style={{ fontSize: 20, color: 'var(--purple-light)' }} aria-hidden="true" />
+                    <i className={`ti ${s.icon}`} style={{ fontSize: 20, color: 'var(--accent)' }} aria-hidden="true" />
                   </div>
-                  <h4 className="text-white mb-2" style={{ fontWeight: 500, fontSize: '1.05rem' }}>{isEN ? s.titleEN : s.titleTH}</h4>
-                  <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 400 }}>{isEN ? s.descEN : s.descTH}</p>
+                  <h4 className="text-[color:var(--ink)] mb-2" style={{ fontWeight: 500, fontSize: '1.05rem' }}>{isEN ? s.titleEN : s.titleTH}</h4>
+                  <p className="text-sm leading-relaxed" style={{ color: 'rgb(var(--fg) / 0.65)', fontWeight: 400 }}>{isEN ? s.descEN : s.descTH}</p>
                 </div>
               ))}
             </div>
@@ -248,7 +248,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <Link
                 href={`${prefix}/services/ai`}
                 className="inline-flex items-center gap-2 text-sm"
-                style={{ color: 'var(--lime)', fontWeight: 500 }}
+                style={{ color: 'var(--accent-2)', fontWeight: 500 }}
               >
                 {isEN ? 'See all AI services' : 'ดูบริการ AI ทั้งหมด'}
                 <i className="ti ti-arrow-right" style={{ fontSize: 15 }} aria-hidden="true" />
@@ -258,10 +258,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </section>
 
         {/* Team / Leadership */}
-        <section className="relative overflow-hidden py-24" style={{ background: '#0A0812' }}>
+        <section className="theme-dark relative overflow-hidden py-24" style={{ background: '#0A0812' }}>
           <div
             className="absolute inset-0 pointer-events-none opacity-[0.25]"
-            style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' }}
+            style={{ backgroundImage: 'radial-gradient(rgb(var(--fg) / 0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' }}
           />
           <div
             className="absolute -bottom-40 -right-32 w-[560px] h-[560px] rounded-full pointer-events-none"
@@ -269,16 +269,16 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           />
           <div className="relative max-w-6xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-16">
-              <p className="t-label mb-5" style={{ color: 'rgba(255,255,255,0.6)' }}>
+              <p className="t-label mb-5" style={{ color: 'rgb(var(--fg) / 0.6)' }}>
                 {isEN ? 'Leadership' : 'ทีมผู้บริหาร'}
               </p>
-              <h2 className="t-display text-[clamp(2rem,4.2vw,3.4rem)] mb-5" style={{ color: '#fff' }}>
+              <h2 className="t-display text-[clamp(2rem,4.2vw,3.4rem)] mb-5" style={{ color: 'var(--ink)' }}>
                 {isEN ? 'The People Behind ' : 'คนที่อยู่เบื้องหลัง '}
                 <span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
                   Haliviq
                 </span>
               </h2>
-              <p className="text-base max-w-xl mx-auto" style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 400 }}>
+              <p className="text-base max-w-xl mx-auto" style={{ color: 'rgb(var(--fg) / 0.65)', fontWeight: 400 }}>
                 {isEN
                   ? 'We keep the team small on purpose. The people you meet at the start are the ones who stay close to your project through planning, design, build and handover, so nothing gets lost between departments.'
                   : 'เราตั้งใจให้ทีมเล็ก คนที่คุยกับคุณตั้งแต่วันแรกจะเป็นคนที่ดูแลโปรเจกต์ต่อไปตลอด ทั้งตอนวางแผน ออกแบบ พัฒนา และส่งมอบ งานเลยไม่หลุดระหว่างแผนก'}
@@ -290,7 +290,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                 <div
                   key={m.name}
                   className="group rounded-3xl overflow-hidden transition-colors"
-                  style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
+                  style={{ background: 'rgb(var(--fg) / 0.04)', border: '1px solid rgb(var(--fg) / 0.08)' }}
                 >
                   <div className="relative overflow-hidden" style={{ aspectRatio: '4 / 5' }}>
                     <img
@@ -303,10 +303,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                     <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(180deg, transparent 60%, rgba(10,8,18,0.7) 100%)' }} />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-white mb-1" style={{ fontWeight: 500, fontSize: '1.25rem' }}>
-                      {m.name} <span style={{ color: 'var(--lime)', fontWeight: 500 }}>&ldquo;{m.nickname}&rdquo;</span>
+                    <h3 className="text-[color:var(--ink)] mb-1" style={{ fontWeight: 500, fontSize: '1.25rem' }}>
+                      {m.name} <span style={{ color: 'var(--accent-2)', fontWeight: 500 }}>&ldquo;{m.nickname}&rdquo;</span>
                     </h3>
-                    <p className="text-sm" style={{ color: 'rgba(255,255,255,0.6)', fontWeight: 400 }}>
+                    <p className="text-sm" style={{ color: 'rgb(var(--fg) / 0.6)', fontWeight: 400 }}>
                       {isEN ? m.titleEN : m.titleTH}
                     </p>
                   </div>
@@ -317,17 +317,17 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </section>
 
         {/* CTA */}
-        <section className="relative overflow-hidden" style={{ background: '#050308' }}>
+        <section className="theme-dark relative overflow-hidden" style={{ background: '#050308' }}>
           <div
             className="absolute inset-0 pointer-events-none opacity-40"
-            style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '180px 180px, 260px 260px', backgroundPosition: '0 0, 90px 130px' }}
+            style={{ backgroundImage: 'radial-gradient(rgb(var(--fg) / 0.5) 1px, transparent 1px), radial-gradient(rgb(var(--fg) / 0.3) 1px, transparent 1px)', backgroundSize: '180px 180px, 260px 260px', backgroundPosition: '0 0, 90px 130px' }}
           />
           <div
             className="absolute left-0 right-0 bottom-0 pointer-events-none"
             style={{ height: 260, background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(123,110,246,0.35) 0%, rgba(83,195,215,0.08) 45%, transparent 75%)' }}
           />
           <div className="relative max-w-4xl mx-auto px-4 lg:px-10 py-24 lg:py-32 text-center">
-            <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#fff', fontWeight: 500 }}>
+            <p className="text-sm tracking-widest uppercase mb-6" style={{ color: 'var(--ink)', fontWeight: 500 }}>
               {isEN ? 'Start Today' : 'เริ่มต้นวันนี้'}
             </p>
             <h2
@@ -336,7 +336,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             >
               {isEN ? "Let's Build Something Together" : 'มาสร้างสิ่งดี ๆ ด้วยกัน'}
             </h2>
-            <p className="text-base mb-10 max-w-lg mx-auto" style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 400 }}>
+            <p className="text-base mb-10 max-w-lg mx-auto" style={{ color: 'rgb(var(--fg) / 0.7)', fontWeight: 400 }}>
               {isEN ? 'Tell us what you are working on, even if it is only a rough idea. We will reply with an honest view of where we can help and what a sensible first step looks like.' : 'เล่าให้ฟังว่าตอนนี้คุณกำลังทำอะไรอยู่ แม้จะเป็นแค่ไอเดียคร่าว ๆ ก็ได้ เราจะตอบกลับตรง ๆ ว่าช่วยตรงไหนได้บ้าง และก้าวแรกที่เหมาะควรเป็นอะไร'}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
@@ -344,7 +344,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                 {isEN ? 'Talk to Us' : 'คุยกับเรา'}
                 <i className="ti ti-arrow-right" style={{ fontSize: 15 }} aria-hidden="true" />
               </Link>
-              <Link href="mailto:wu@haliviq.com" className="inline-flex items-center gap-2 px-10 py-4 rounded-full text-sm transition-colors" style={{ border: '1px solid rgba(255,255,255,0.3)', color: '#fff', fontWeight: 400 }}>
+              <Link href="mailto:wu@haliviq.com" className="inline-flex items-center gap-2 px-10 py-4 rounded-full text-sm transition-colors" style={{ border: '1px solid rgb(var(--fg) / 0.3)', color: 'var(--ink)', fontWeight: 400 }}>
                 wu@haliviq.com
               </Link>
             </div>

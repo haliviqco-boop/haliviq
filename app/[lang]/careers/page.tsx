@@ -12,7 +12,7 @@ const openings = [
     { title: 'Mobile Developer (React Native)', type: 'Full-time', level: 'Mid', skills: ['React Native', 'iOS', 'Android', 'TypeScript'] },
     { title: 'DevOps / Cloud Engineer', type: 'Full-time', level: 'Senior', skills: ['AWS', 'Kubernetes', 'CI/CD', 'Terraform'] },
   ]},
-  { dept: 'Design', color: 'var(--purple-light)', bg: 'var(--purple-bg)', jobs: [
+  { dept: 'Design', color: 'var(--accent)', bg: 'var(--purple-bg)', jobs: [
     { title: 'Senior UX/UI Designer', type: 'Full-time', level: 'Senior', skills: ['Figma', 'User Research', 'Prototyping', 'Design Systems'] },
     { title: 'Product Designer', type: 'Full-time', level: 'Mid', skills: ['Figma', 'UX Strategy', 'Interaction Design', 'Usability Testing'] },
     { title: 'Motion Designer', type: 'Full-time', level: 'Mid', skills: ['After Effects', 'Lottie', 'Figma', 'CSS Animation'] },
@@ -22,7 +22,7 @@ const openings = [
     { title: 'Business Analyst / Consultant', type: 'Full-time', level: 'Mid-Senior', skills: ['Requirements Gathering', 'Process Analysis', 'SQL', 'Presentation'] },
     { title: 'AI/ML Engineer', type: 'Full-time', level: 'Senior', skills: ['Python', 'LLM', 'MLOps', 'TensorFlow/PyTorch'] },
   ]},
-  { dept: 'Project Management', color: 'var(--purple-light)', bg: 'var(--purple-bg)', jobs: [
+  { dept: 'Project Management', color: 'var(--accent)', bg: 'var(--purple-bg)', jobs: [
     { title: 'Technical Project Manager', type: 'Full-time', level: 'Senior', skills: ['Agile/Scrum', 'JIRA', 'Risk Management', 'Client Communication'] },
     { title: 'Scrum Master', type: 'Full-time', level: 'Mid', skills: ['Scrum', 'Kanban', 'Facilitation', 'Agile Coaching'] },
   ]},
@@ -106,19 +106,19 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     : ['ไม่มีค่าสมัคร', 'ตอบกลับทุกใบสมัคร', 'แจ้งผลทุกรอบการสัมภาษณ์']
 
   const G = { background: 'linear-gradient(135deg,#A99CF8 0%,#7B6EF6 45%,#53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' } as const
-  const card = { background: 'rgba(255,255,255,0.035)', border: '1px solid rgba(255,255,255,0.1)' } as const
-  const muted = { color: 'rgba(255,255,255,0.68)', fontWeight: 400 } as const
-  const dots = { backgroundImage: 'radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' } as const
+  const card = { background: 'rgb(var(--fg) / 0.035)', border: '1px solid rgb(var(--fg) / 0.1)' } as const
+  const muted = { color: 'rgb(var(--fg) / 0.68)', fontWeight: 400 } as const
+  const dots = { backgroundImage: 'radial-gradient(rgb(var(--fg) / 0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' } as const
   const Tile = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
-    <div className={`rounded-2xl overflow-hidden ${className}`} style={{ border: '1px solid rgba(255,255,255,0.1)' }}>{children}</div>
+    <div className={`rounded-2xl overflow-hidden ${className}`} style={{ border: '1px solid rgb(var(--fg) / 0.1)' }}>{children}</div>
   )
 
   return (
     <>
       <Navbar lang={lang} tr={tr} transparent />
-      <main style={{ background: '#08070F' }}>
+      <main style={{ background: 'var(--bg)' }}>
         {/* Hero */}
-        <section className="relative overflow-hidden pt-[80px]" style={{ background: '#08070F' }}>
+        <section className="relative overflow-hidden pt-[80px]" style={{ background: 'var(--bg)' }}>
           <div className="absolute inset-0 pointer-events-none opacity-[0.35]" style={dots} />
           <div className="absolute -top-40 -left-32 w-[620px] h-[620px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(123,110,246,0.3) 0%, transparent 70%)', filter: 'blur(20px)' }} />
           <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-20 lg:pt-28 pb-16 lg:pb-24">
@@ -126,9 +126,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               <div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8" style={{ background: 'rgba(123,110,246,0.15)', border: '1px solid rgba(123,110,246,0.35)' }}>
                   <span className="w-2 h-2 rounded-full bg-[var(--lime)] animate-pulse inline-block" />
-                  <span className="t-label" style={{ fontSize: '0.7rem', color: 'var(--purple-light)' }}>{isEN ? 'Now Hiring 12 Positions' : 'กำลังเปิดรับ 12 ตำแหน่ง'}</span>
+                  <span className="t-label" style={{ fontSize: '0.7rem', color: 'var(--accent)' }}>{isEN ? 'Now Hiring 12 Positions' : 'กำลังเปิดรับ 12 ตำแหน่ง'}</span>
                 </div>
-                <h1 className="t-display text-[clamp(3rem,6.5vw,5.6rem)] leading-relaxed mb-8" style={{ color: '#fff' }}>
+                <h1 className="t-display text-[clamp(3rem,6.5vw,5.6rem)] leading-relaxed mb-8" style={{ color: 'var(--ink)' }}>
                   {isEN ? <>Bring human ideas.<br /><span style={G}>Build the intelligent</span><br />future with us</> : <>เอาความคิดของคนมาเป็นตัวตั้ง<br /><span style={G}>แล้วสร้างอนาคต</span><br />ที่ฉลาดขึ้นด้วยกัน</>}
                 </h1>
                 <p className="text-lg leading-relaxed mb-10 max-w-lg" style={muted}>
@@ -139,7 +139,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                     {isEN ? 'View Open Roles' : 'ดูตำแหน่งงาน'}
                     <i className="ti ti-arrow-down" style={{ fontSize: 15 }} aria-hidden="true" />
                   </a>
-                  <a href="mailto:careers@haliviq.co" className="inline-flex items-center gap-2 rounded-full transition-colors hover:bg-white/10" style={{ fontSize: '1rem', padding: '13px 32px', border: '1.5px solid rgba(255,255,255,0.25)', color: '#fff', fontWeight: 400 }}>
+                  <a href="mailto:careers@haliviq.co" className="inline-flex items-center gap-2 rounded-full transition-colors hover:bg-[rgb(var(--fg)/0.1)]" style={{ fontSize: '1rem', padding: '13px 32px', border: '1.5px solid rgb(var(--fg) / 0.25)', color: 'var(--ink)', fontWeight: 400 }}>
                     {isEN ? 'Send Your CV' : 'ส่ง CV มาก่อน'}
                   </a>
                 </div>
@@ -152,14 +152,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </section>
 
         {/* Stats */}
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', borderBottom: '1px solid rgba(255,255,255,0.08)', background: '#0B0A14' }}>
+        <div style={{ borderTop: '1px solid rgb(var(--fg) / 0.08)', borderBottom: '1px solid rgb(var(--fg) / 0.08)', background: 'var(--bg-1)' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="grid grid-cols-2 lg:grid-cols-4">
               {stats.map((s, i) => (
-                <div key={s.l} className="px-6 lg:px-10 py-8" style={{ borderLeft: i ? '1px solid rgba(255,255,255,0.08)' : undefined }}>
+                <div key={s.l} className="px-6 lg:px-10 py-8" style={{ borderLeft: i ? '1px solid rgb(var(--fg) / 0.08)' : undefined }}>
                   <div className="text-[clamp(2rem,3.5vw,2.8rem)] leading-none mb-1" style={{ fontFamily: 'var(--font-main)', fontWeight: 500, ...G }}>{s.n}</div>
-                  <p className="text-base mb-0.5" style={{ color: '#fff', fontWeight: 400 }}>{s.l}</p>
-                  <p className="text-sm" style={{ color: 'rgba(255,255,255,0.5)', fontWeight: 400 }}>{s.d}</p>
+                  <p className="text-base mb-0.5" style={{ color: 'var(--ink)', fontWeight: 400 }}>{s.l}</p>
+                  <p className="text-sm" style={{ color: 'rgb(var(--fg) / 0.5)', fontWeight: 400 }}>{s.d}</p>
                 </div>
               ))}
             </div>
@@ -167,12 +167,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </div>
 
         {/* Culture */}
-        <section className="py-24 lg:py-32" style={{ background: '#08070F' }}>
+        <section className="py-24 lg:py-32" style={{ background: 'var(--bg)' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center mb-20">
               <div>
-                <p className="t-label mb-5" style={{ color: 'rgba(255,255,255,0.6)' }}>{isEN ? 'Our Culture' : 'วัฒนธรรมองค์กร'}</p>
-                <h2 className="t-display text-[clamp(2.2rem,4.5vw,4rem)] leading-tight mb-8" style={{ color: '#fff' }}>
+                <p className="t-label mb-5" style={{ color: 'rgb(var(--fg) / 0.6)' }}>{isEN ? 'Our Culture' : 'วัฒนธรรมองค์กร'}</p>
+                <h2 className="t-display text-[clamp(2.2rem,4.5vw,4rem)] leading-tight mb-8" style={{ color: 'var(--ink)' }}>
                   {isEN ? <>No<br /><span style={G}>Micromanagement</span></> : <>ที่นี่ไว้ใจกัน<br /><span style={G}>ไม่ตามจี้งาน</span></>}
                 </h2>
                 <p className="text-sm leading-relaxed mb-6" style={muted}>
@@ -188,9 +188,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {values.map(v => (
                 <div key={v.title} className="p-7 rounded-2xl group hover:-translate-y-1 hover:border-[rgba(123,110,246,0.5)] transition-all duration-300" style={card}>
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: 'rgba(123,110,246,0.18)' }}>
-                    <i className={`ti ${v.icon}`} style={{ fontSize: 22, color: 'var(--purple-light)' }} aria-hidden="true" />
+                    <i className={`ti ${v.icon}`} style={{ fontSize: 22, color: 'var(--accent)' }} aria-hidden="true" />
                   </div>
-                  <h3 className="mb-2" style={{ color: '#fff', fontWeight: 500, fontSize: '1.3rem' }}>{v.title}</h3>
+                  <h3 className="mb-2" style={{ color: 'var(--ink)', fontWeight: 500, fontSize: '1.3rem' }}>{v.title}</h3>
                   <p className="text-sm leading-relaxed" style={muted}>{v.desc}</p>
                 </div>
               ))}
@@ -199,11 +199,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </section>
 
         {/* Life */}
-        <section className="py-24" style={{ background: '#0B0A14' }}>
+        <section className="py-24" style={{ background: 'var(--bg-1)' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="mb-12">
-              <p className="t-label mb-4" style={{ color: 'rgba(255,255,255,0.6)' }}>{isEN ? 'Life at Haliviq' : 'ชีวิตที่ Haliviq'}</p>
-              <h2 className="t-display text-[clamp(2rem,4vw,3.5rem)]" style={{ color: '#fff' }}>
+              <p className="t-label mb-4" style={{ color: 'rgb(var(--fg) / 0.6)' }}>{isEN ? 'Life at Haliviq' : 'ชีวิตที่ Haliviq'}</p>
+              <h2 className="t-display text-[clamp(2rem,4vw,3.5rem)]" style={{ color: 'var(--ink)' }}>
                 {isEN ? <>Great Work,<br /><span style={G}>Great Life</span></> : <>งานดี<br /><span style={G}>ชีวิตก็ดี</span></>}
               </h2>
             </div>
@@ -218,11 +218,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </section>
 
         {/* Benefits */}
-        <section className="py-24 lg:py-32" style={{ background: '#08070F' }}>
+        <section className="py-24 lg:py-32" style={{ background: 'var(--bg)' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="text-center max-w-2xl mx-auto mb-16">
-              <p className="t-label mb-5" style={{ color: 'rgba(255,255,255,0.6)' }}>{isEN ? 'Benefits' : 'สวัสดิการ'}</p>
-              <h2 className="t-display text-[clamp(2rem,4.5vw,3.8rem)] leading-tight" style={{ color: '#fff' }}>
+              <p className="t-label mb-5" style={{ color: 'rgb(var(--fg) / 0.6)' }}>{isEN ? 'Benefits' : 'สวัสดิการ'}</p>
+              <h2 className="t-display text-[clamp(2rem,4.5vw,3.8rem)] leading-tight" style={{ color: 'var(--ink)' }}>
                 {isEN ? <>We care for our team<br /><span style={G}>like we care for clients</span></> : <>ดูแลทีม<br /><span style={G}>เหมือนดูแลลูกค้า</span></>}
               </h2>
             </div>
@@ -230,9 +230,9 @@ export default function Page({ params }: { params: { lang: Lang } }) {
               {benefits.map(b => (
                 <div key={b.title} className="p-7 rounded-2xl hover:-translate-y-1 hover:border-[rgba(123,110,246,0.5)] transition-all duration-300" style={card}>
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: 'rgba(83,195,215,0.15)' }}>
-                    <i className={`ti ${b.icon}`} style={{ fontSize: 22, color: 'var(--lime)' }} aria-hidden="true" />
+                    <i className={`ti ${b.icon}`} style={{ fontSize: 22, color: 'var(--accent-2)' }} aria-hidden="true" />
                   </div>
-                  <h3 className="mb-2" style={{ color: '#fff', fontWeight: 500, fontSize: '1.25rem' }}>{b.title}</h3>
+                  <h3 className="mb-2" style={{ color: 'var(--ink)', fontWeight: 500, fontSize: '1.25rem' }}>{b.title}</h3>
                   <p className="text-sm leading-relaxed" style={muted}>{b.desc}</p>
                 </div>
               ))}
@@ -241,44 +241,44 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </section>
 
         {/* Openings */}
-        <section id="openings" className="py-24 lg:py-32 scroll-mt-20" style={{ background: '#0B0A14' }}>
+        <section id="openings" className="py-24 lg:py-32 scroll-mt-20" style={{ background: 'var(--bg-1)' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-16">
               <div>
-                <p className="t-label mb-5" style={{ color: 'rgba(255,255,255,0.6)' }}>{isEN ? 'Open Roles' : 'ตำแหน่งงาน'}</p>
-                <h2 className="t-display text-[clamp(2rem,4.5vw,3.8rem)] leading-tight" style={{ color: '#fff' }}>
+                <p className="t-label mb-5" style={{ color: 'rgb(var(--fg) / 0.6)' }}>{isEN ? 'Open Roles' : 'ตำแหน่งงาน'}</p>
+                <h2 className="t-display text-[clamp(2rem,4.5vw,3.8rem)] leading-tight" style={{ color: 'var(--ink)' }}>
                   {isEN ? <>12 open positions<br /><span style={G}>Starting now</span></> : <>เปิดรับ 12 ตำแหน่ง<br /><span style={G}>สมัครได้เลย</span></>}
                 </h2>
               </div>
               <p className="text-sm max-w-xs" style={muted}>
-                {isEN ? <>No role that fits? Send your CV to <a href="mailto:careers@haliviq.co" className="hover:underline" style={{ color: 'var(--purple-light)' }}>careers@haliviq.co</a></> : <>ไม่เจอตำแหน่งที่ตรงกับคุณ? ส่ง CV มาได้ที่ <a href="mailto:careers@haliviq.co" className="hover:underline" style={{ color: 'var(--purple-light)' }}>careers@haliviq.co</a></>}
+                {isEN ? <>No role that fits? Send your CV to <a href="mailto:careers@haliviq.co" className="hover:underline" style={{ color: 'var(--accent)' }}>careers@haliviq.co</a></> : <>ไม่เจอตำแหน่งที่ตรงกับคุณ? ส่ง CV มาได้ที่ <a href="mailto:careers@haliviq.co" className="hover:underline" style={{ color: 'var(--accent)' }}>careers@haliviq.co</a></>}
               </p>
             </div>
             <div className="space-y-8">
               {openings.map(dept => (
                 <div key={dept.dept}>
                   <div className="flex items-center gap-4 mb-4">
-                    <span className="px-4 py-2 rounded-full text-sm" style={{ background: 'rgba(123,110,246,0.18)', color: 'var(--purple-light)', fontWeight: 400 }}>{dept.dept}</span>
-                    <div className="flex-1 h-px" style={{ background: 'rgba(255,255,255,0.08)' }} />
+                    <span className="px-4 py-2 rounded-full text-sm" style={{ background: 'rgba(123,110,246,0.18)', color: 'var(--accent)', fontWeight: 400 }}>{dept.dept}</span>
+                    <div className="flex-1 h-px" style={{ background: 'rgb(var(--fg) / 0.08)' }} />
                   </div>
                   <div className="grid sm:grid-cols-2 gap-4">
                     {dept.jobs.map(job => (
                       <a key={job.title} href={`mailto:careers@haliviq.co?subject=${encodeURIComponent(job.title)}`} className="group block rounded-2xl p-7 hover:-translate-y-0.5 hover:border-[rgba(123,110,246,0.5)] transition-all duration-300" style={card}>
                         <div className="flex items-start justify-between mb-4">
                           <div>
-                            <h3 className="mb-2 group-hover:text-[var(--purple-light)] transition-colors" style={{ color: '#fff', fontWeight: 500, fontSize: '1.3rem' }}>{job.title}</h3>
+                            <h3 className="mb-2 group-hover:text-[color:var(--accent)] transition-colors" style={{ color: 'var(--ink)', fontWeight: 500, fontSize: '1.3rem' }}>{job.title}</h3>
                             <div className="flex items-center gap-2">
-                              <span className="text-sm px-2.5 py-1 rounded-full" style={{ background: 'rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.7)', fontWeight: 400 }}>{job.type}</span>
-                              <span className="text-sm px-2.5 py-1 rounded-full" style={{ background: 'rgba(83,195,215,0.15)', color: 'var(--lime)', fontWeight: 400 }}>{job.level}</span>
+                              <span className="text-sm px-2.5 py-1 rounded-full" style={{ background: 'rgb(var(--fg) / 0.07)', color: 'rgb(var(--fg) / 0.7)', fontWeight: 400 }}>{job.type}</span>
+                              <span className="text-sm px-2.5 py-1 rounded-full" style={{ background: 'rgba(83,195,215,0.15)', color: 'var(--accent-2)', fontWeight: 400 }}>{job.level}</span>
                             </div>
                           </div>
                           <div className="w-10 h-10 rounded-xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all" style={{ border: '1px solid var(--purple)' }}>
-                            <i className="ti ti-arrow-up-right" style={{ fontSize: 16, color: 'var(--purple-light)' }} aria-hidden="true" />
+                            <i className="ti ti-arrow-up-right" style={{ fontSize: 16, color: 'var(--accent)' }} aria-hidden="true" />
                           </div>
                         </div>
                         <div className="flex flex-wrap gap-2">
                           {job.skills.map(s => (
-                            <span key={s} className="text-sm px-3 py-1 rounded-full" style={{ border: '1px solid rgba(255,255,255,0.14)', color: 'rgba(255,255,255,0.65)', fontWeight: 400 }}>{s}</span>
+                            <span key={s} className="text-sm px-3 py-1 rounded-full" style={{ border: '1px solid rgb(var(--fg) / 0.14)', color: 'rgb(var(--fg) / 0.65)', fontWeight: 400 }}>{s}</span>
                           ))}
                         </div>
                       </a>
@@ -291,11 +291,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </section>
 
         {/* Process */}
-        <section className="py-24" style={{ background: '#08070F' }}>
+        <section className="py-24" style={{ background: 'var(--bg)' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="mb-16 text-center">
-              <p className="t-label mb-5" style={{ color: 'rgba(255,255,255,0.6)' }}>{isEN ? 'Application Process' : 'ขั้นตอนการสมัคร'}</p>
-              <h2 className="t-display text-[clamp(2rem,4vw,3.5rem)]" style={{ color: '#fff' }}>
+              <p className="t-label mb-5" style={{ color: 'rgb(var(--fg) / 0.6)' }}>{isEN ? 'Application Process' : 'ขั้นตอนการสมัคร'}</p>
+              <h2 className="t-display text-[clamp(2rem,4vw,3.5rem)]" style={{ color: 'var(--ink)' }}>
                 {isEN ? <>Straightforward<br /><span style={G}>No Time Wasted</span></> : <>ตรงไปตรงมา<br /><span style={G}>ไม่เสียเวลา</span></>}
               </h2>
             </div>
@@ -304,12 +304,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                 <div key={step.no} className="rounded-2xl p-7 hover:-translate-y-1 hover:border-[rgba(123,110,246,0.5)] transition-all duration-300" style={card}>
                   <div className="flex items-center justify-between mb-5">
                     <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(123,110,246,0.18)' }}>
-                      <i className={`ti ${step.icon}`} style={{ fontSize: 22, color: 'var(--purple-light)' }} aria-hidden="true" />
+                      <i className={`ti ${step.icon}`} style={{ fontSize: 22, color: 'var(--accent)' }} aria-hidden="true" />
                     </div>
-                    <span className="text-sm font-mono" style={{ color: 'rgba(255,255,255,0.5)' }}>{step.time}</span>
+                    <span className="text-sm font-mono" style={{ color: 'rgb(var(--fg) / 0.5)' }}>{step.time}</span>
                   </div>
-                  <span className="text-sm font-mono block mb-2" style={{ color: 'var(--lime)' }}>{step.no}</span>
-                  <h3 className="mb-2" style={{ color: '#fff', fontWeight: 500, fontSize: '1.3rem' }}>{step.title}</h3>
+                  <span className="text-sm font-mono block mb-2" style={{ color: 'var(--accent-2)' }}>{step.no}</span>
+                  <h3 className="mb-2" style={{ color: 'var(--ink)', fontWeight: 500, fontSize: '1.3rem' }}>{step.title}</h3>
                   <p className="text-sm leading-relaxed" style={muted}>{step.desc}</p>
                 </div>
               ))}
@@ -318,12 +318,12 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </section>
 
         {/* CTA */}
-        <section className="py-24 relative overflow-hidden" style={{ background: '#050308' }}>
+        <section className="py-24 relative overflow-hidden" style={{ background: 'var(--bg-deep)' }}>
           <div className="absolute inset-0 opacity-[0.3]" style={dots} />
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[760px] h-[760px] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(123,110,246,0.28) 0%, transparent 65%)' }} />
           <div className="relative max-w-4xl mx-auto px-6 lg:px-10 text-center">
-            <p className="text-xs tracking-widest uppercase mb-6 font-mono" style={{ color: 'rgba(255,255,255,0.55)' }}>{isEN ? 'No role that fits?' : 'ยังไม่เจอตำแหน่งที่ใช่?'}</p>
-            <h2 className="t-display text-[clamp(2.2rem,5vw,4.6rem)] mb-8 leading-tight" style={{ color: '#fff' }}>
+            <p className="text-xs tracking-widest uppercase mb-6 font-mono" style={{ color: 'rgb(var(--fg) / 0.55)' }}>{isEN ? 'No role that fits?' : 'ยังไม่เจอตำแหน่งที่ใช่?'}</p>
+            <h2 className="t-display text-[clamp(2.2rem,5vw,4.6rem)] mb-8 leading-tight" style={{ color: 'var(--ink)' }}>
               {isEN ? <>Send your CV first.<br /><span style={G}>We will find a place for you.</span></> : <>ส่ง CV มาก่อน<br /><span style={G}>แล้วเราจะหาที่ให้</span></>}
             </h2>
             <p className="text-base mb-6 max-w-xl mx-auto" style={muted}>
@@ -332,8 +332,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
             <div className="flex flex-wrap justify-center gap-5 mb-12">
               {ctaTrust.map(txt => (
                 <div key={txt} className="flex items-center gap-2">
-                  <i className="ti ti-circle-check" style={{ fontSize: 15, color: 'var(--lime)' }} aria-hidden="true" />
-                  <span className="text-base" style={{ color: 'rgba(255,255,255,0.65)', fontWeight: 400 }}>{txt}</span>
+                  <i className="ti ti-circle-check" style={{ fontSize: 15, color: 'var(--accent-2)' }} aria-hidden="true" />
+                  <span className="text-base" style={{ color: 'rgb(var(--fg) / 0.65)', fontWeight: 400 }}>{txt}</span>
                 </div>
               ))}
             </div>
@@ -342,7 +342,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                 <i className="ti ti-mail" style={{ fontSize: 15 }} aria-hidden="true" />
                 careers@haliviq.co
               </a>
-              <a href="#openings" className="inline-flex items-center gap-2 rounded-full transition-colors hover:bg-white/10" style={{ fontSize: '1rem', padding: '13px 36px', border: '1.5px solid rgba(255,255,255,0.25)', color: '#fff', fontWeight: 400 }}>
+              <a href="#openings" className="inline-flex items-center gap-2 rounded-full transition-colors hover:bg-[rgb(var(--fg)/0.1)]" style={{ fontSize: '1rem', padding: '13px 36px', border: '1.5px solid rgb(var(--fg) / 0.25)', color: 'var(--ink)', fontWeight: 400 }}>
                 {isEN ? 'View Open Roles' : 'ดูตำแหน่งงาน'}
                 <i className="ti ti-arrow-down" style={{ fontSize: 15 }} aria-hidden="true" />
               </a>

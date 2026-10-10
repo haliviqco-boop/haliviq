@@ -19,9 +19,9 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }): 
   return { title, description, alternates: alt(url), openGraph: { title, description, url }, twitter: { card: 'summary_large_image', title, description } }
 }
 
-const glass = 'rgba(255,255,255,0.05)'
-const glassBorder = '1px solid rgba(255,255,255,0.1)'
-const dim = 'rgba(255,255,255,0.4)'
+const glass = 'rgb(var(--fg) / 0.05)'
+const glassBorder = '1px solid rgb(var(--fg) / 0.1)'
+const dim = 'rgb(var(--fg) / 0.4)'
 
 function Panel({ children, style, className }: { children: any; style?: any; className?: string }) {
   return (
@@ -50,7 +50,7 @@ function AnimatedIcon({ icon, badgeLabel, badgeValue, color = 'var(--lime)' }: {
           <span className="rounded-full shrink-0" style={{ width: 5, height: 5, background: 'var(--lime)', animation: 'blinkDot 1.6s ease-in-out infinite' }} />
           <div>
             <div style={{ fontSize: 7, color: dim, whiteSpace: 'nowrap' }}>{badgeLabel}</div>
-            <div style={{ fontSize: 10, color: '#fff', fontWeight: 500, whiteSpace: 'nowrap' }}>{badgeValue}</div>
+            <div style={{ fontSize: 10, color: 'var(--ink)', fontWeight: 500, whiteSpace: 'nowrap' }}>{badgeValue}</div>
           </div>
         </div>
       </div>
@@ -69,7 +69,7 @@ function IndustryVisual({ slug }: { slug: string }) {
               <span className="rounded-full" style={{ width: 5, height: 5, background: 'var(--lime)', animation: 'blinkDot 1.6s ease-in-out infinite' }} />
               <span style={{ fontSize: 9, color: dim }}>ACCOUNT BALANCE</span>
             </div>
-            <div style={{ fontSize: 20, color: '#fff', fontWeight: 500, marginBottom: 10 }}>฿1,284,500</div>
+            <div style={{ fontSize: 20, color: 'var(--ink)', fontWeight: 500, marginBottom: 10 }}>฿1,284,500</div>
             <div className="flex items-end gap-[3px] h-8">
               {[35, 55, 40, 70, 50, 85, 60, 75, 45, 65].map((h, i) => (
                 <div key={i} style={{ height: `${h}%`, width: 4, background: 'var(--lime)', borderRadius: 2, opacity: 0.85, transformOrigin: 'bottom', animation: `barGrow 1.8s ease-in-out ${i * 0.12}s infinite` }} />
@@ -83,7 +83,7 @@ function IndustryVisual({ slug }: { slug: string }) {
         <div className="absolute inset-0 flex items-center justify-center">
           <Panel style={{ width: 178 }}>
             <div className="flex items-center gap-1.5 mb-3">
-              <i className="ti ti-heartbeat" style={{ color: 'var(--lime)', fontSize: 13, animation: 'blinkDot 1.4s ease-in-out infinite' }} aria-hidden="true" />
+              <i className="ti ti-heartbeat" style={{ color: 'var(--accent-2)', fontSize: 13, animation: 'blinkDot 1.4s ease-in-out infinite' }} aria-hidden="true" />
               <span style={{ fontSize: 9, color: dim }}>PATIENT VITALS</span>
             </div>
             <svg width="100%" height="28" viewBox="0 0 150 28" fill="none">
@@ -104,7 +104,7 @@ function IndustryVisual({ slug }: { slug: string }) {
             <div className="grid grid-cols-3 gap-2">
               {['ti-shopping-bag', 'ti-shirt', 'ti-device-mobile'].map((ic, i) => (
                 <div key={ic} className="rounded-md flex items-center justify-center" style={{ height: 32, background: 'rgba(155,107,255,0.18)', animation: `iconFloat 2.6s ease-in-out ${i * 0.2}s infinite` }}>
-                  <i className={`ti ${ic}`} style={{ color: 'var(--lime)', fontSize: 15 }} aria-hidden="true" />
+                  <i className={`ti ${ic}`} style={{ color: 'var(--accent-2)', fontSize: 15 }} aria-hidden="true" />
                 </div>
               ))}
             </div>
@@ -122,8 +122,8 @@ function IndustryVisual({ slug }: { slug: string }) {
               ))}
             </div>
             <div className="flex items-center justify-between">
-              <Bar w={50} color="rgba(255,255,255,0.2)" />
-              <span style={{ fontSize: 9, color: 'var(--lime)' }}>฿8.9M</span>
+              <Bar w={50} color="rgb(var(--fg) / 0.2)" />
+              <span style={{ fontSize: 9, color: 'var(--accent-2)' }}>฿8.9M</span>
             </div>
           </Panel>
         </div>
@@ -148,12 +148,12 @@ function IndustryVisual({ slug }: { slug: string }) {
       return (
         <div className="absolute inset-0 flex items-center justify-center gap-3 px-6">
           <div className="w-11 h-11 rounded-full flex items-center justify-center shrink-0" style={{ background: 'rgba(155,107,255,0.25)', border: '1px solid var(--purple-light)', animation: 'iconFloat 2.6s ease-in-out infinite' }}>
-            <i className="ti ti-truck-delivery" style={{ color: 'var(--lime)', fontSize: 18 }} aria-hidden="true" />
+            <i className="ti ti-truck-delivery" style={{ color: 'var(--accent-2)', fontSize: 18 }} aria-hidden="true" />
           </div>
           <div className="flex-1 h-px" style={{ backgroundImage: 'repeating-linear-gradient(90deg,var(--lime) 0 4px,transparent 4px 9px)', backgroundSize: '26px 1px', animation: 'dashScroll 0.8s linear infinite' }} />
           <Panel style={{ width: 84 }}>
             <div style={{ fontSize: 9, color: dim, marginBottom: 4 }}>ETA</div>
-            <div style={{ fontSize: 14, color: '#fff', fontWeight: 500 }}>12:40</div>
+            <div style={{ fontSize: 14, color: 'var(--ink)', fontWeight: 500 }}>12:40</div>
           </Panel>
         </div>
       )
@@ -218,10 +218,10 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       <Navbar lang={lang} tr={tr} transparent />
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden pt-[80px]" style={{ background: '#08070F' }}>
+        <section className="relative overflow-hidden pt-[80px]" style={{ background: 'var(--bg)' }}>
           <div
             className="absolute inset-0 pointer-events-none opacity-[0.35]"
-            style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' }}
+            style={{ backgroundImage: 'radial-gradient(rgb(var(--fg) / 0.14) 1px, transparent 1px)', backgroundSize: '22px 22px' }}
           />
           <div
             className="absolute -top-40 -left-32 w-[560px] h-[560px] rounded-full pointer-events-none"
@@ -229,14 +229,14 @@ export default function Page({ params }: { params: { lang: Lang } }) {
           />
           <div className="relative max-w-5xl mx-auto px-6 lg:px-10 pt-20 lg:pt-28 pb-16 text-center">
             <p className="t-label mb-5">{isEN ? 'Industries' : 'อุตสาหกรรม'}</p>
-            <h1 className="t-display text-[clamp(2.6rem,5.5vw,4.8rem)] leading-relaxed mb-6" style={{ color: '#fff' }}>
+            <h1 className="t-display text-[clamp(2.6rem,5.5vw,4.8rem)] leading-relaxed mb-6" style={{ color: 'var(--ink)' }}>
               {isEN ? (
                 <>Built for Your<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Industry</span></>
               ) : (
                 <>ระบบที่เข้าใจ<br /><span style={{ background: 'linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 50%,var(--lime) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>ธุรกิจของคุณจริงๆ</span></>
               )}
             </h1>
-            <p className="text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 400 }}>
+            <p className="text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: 'rgb(var(--fg) / 0.7)', fontWeight: 400 }}>
               {isEN
                 ? 'A bank, a farm and a hospital do not share rules, users or risks, so they should not share the same software. Below are the 18 industries we build for from Bangkok, with the regulations, workflows and customer habits we plan around in each. Pick yours to see the problems we usually meet, what we build, and how a project typically starts.'
                 : 'ธนาคาร ฟาร์ม และโรงพยาบาล มีกฎ ผู้ใช้ และความเสี่ยงไม่เหมือนกัน ซอฟต์แวร์ก็ไม่ควรเหมือนกันด้วย ด้านล่างคือ 18 อุตสาหกรรมที่เรารับทำจากกรุงเทพฯ พร้อมกฎระเบียบ ขั้นตอนงาน และพฤติกรรมลูกค้าที่เราต้องคำนึงถึงในแต่ละสาย กดเข้าไปดูปัญหาที่เจอบ่อย สิ่งที่เราทำให้ได้ และโปรเจกต์มักเริ่มจากตรงไหน'}
@@ -245,21 +245,21 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </section>
 
         {/* Industries grid */}
-        <section className="pb-24 pt-4" style={{ background: '#08070E' }}>
+        <section className="pb-24 pt-4" style={{ background: 'var(--bg)' }}>
           <div className="max-w-7xl mx-auto px-6 lg:px-10 py-12">
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14">
               {industries.map((it) => (
                 <Link key={it.href} href={`${prefix}${it.href}`} className="group flex flex-col">
                   <div
-                    className="relative h-56 rounded-2xl overflow-hidden mb-6 group-hover:border-[var(--purple-light)]/40 transition-colors"
-                    style={{ background: 'linear-gradient(160deg,#171025 0%,#0B0813 100%)', border: '1px solid rgba(255,255,255,0.07)' }}
+                    className="theme-dark relative h-56 rounded-2xl overflow-hidden mb-6 group-hover:border-[var(--purple-light)]/40 transition-colors"
+                    style={{ background: 'linear-gradient(160deg,#171025 0%,#0B0813 100%)', border: '1px solid rgb(var(--fg) / 0.07)' }}
                   >
                     <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle,#fff 1px,transparent 1px)', backgroundSize: '18px 18px' }} />
                     <IndustryVisual slug={it.slug} />
                   </div>
-                  <h3 className="text-white mb-2.5" style={{ fontWeight: 500, fontSize: '1.2rem' }}>{it.title}</h3>
-                  <p className="text-sm leading-relaxed mb-4" style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 400 }}>{it.desc}</p>
-                  <span className="inline-flex items-center gap-1.5 text-sm mt-auto" style={{ color: 'var(--lime)', fontWeight: 500 }}>
+                  <h3 className="text-[color:var(--ink)] mb-2.5" style={{ fontWeight: 500, fontSize: '1.2rem' }}>{it.title}</h3>
+                  <p className="text-sm leading-relaxed mb-4" style={{ color: 'rgb(var(--fg) / 0.85)', fontWeight: 400 }}>{it.desc}</p>
+                  <span className="inline-flex items-center gap-1.5 text-sm mt-auto" style={{ color: 'var(--accent-2)', fontWeight: 500 }}>
                     {isEN ? 'Learn more' : 'ดูเพิ่มเติม'}
                     <i className="ti ti-arrow-right text-sm group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </span>
@@ -270,21 +270,21 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </section>
 
         {/* CTA */}
-        <section className="relative overflow-hidden" style={{ background: '#050308' }}>
+        <section className="theme-dark relative overflow-hidden" style={{ background: '#050308' }}>
           <div
             className="absolute inset-0 pointer-events-none opacity-40"
-            style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), radial-gradient(rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '180px 180px, 260px 260px', backgroundPosition: '0 0, 90px 130px' }}
+            style={{ backgroundImage: 'radial-gradient(rgb(var(--fg) / 0.5) 1px, transparent 1px), radial-gradient(rgb(var(--fg) / 0.3) 1px, transparent 1px)', backgroundSize: '180px 180px, 260px 260px', backgroundPosition: '0 0, 90px 130px' }}
           />
           <div
             className="absolute left-0 right-0 bottom-0 pointer-events-none"
             style={{ height: 260, background: 'radial-gradient(ellipse 70% 100% at 50% 100%, rgba(123,110,246,0.35) 0%, rgba(83,195,215,0.08) 45%, transparent 75%)' }}
           />
           <div className="relative max-w-4xl mx-auto px-4 lg:px-10 py-24 lg:py-32 text-center">
-            <p className="text-sm tracking-widest uppercase mb-6" style={{ color: '#fff', fontWeight: 500 }}>{isEN ? 'Start Today' : 'เริ่มวันนี้'}</p>
+            <p className="text-sm tracking-widest uppercase mb-6" style={{ color: 'var(--ink)', fontWeight: 500 }}>{isEN ? 'Start Today' : 'เริ่มวันนี้'}</p>
             <h2 className="t-display mb-6 leading-tight" style={{ background: 'linear-gradient(135deg, var(--purple-light) 0%, #53C3D7 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', fontSize: 'clamp(2rem,4vw,4rem)' }}>
               {isEN ? "Don't See Your Industry?" : 'ไม่เห็นอุตสาหกรรมของคุณ?'}
             </h2>
-            <p className="text-base mb-10 max-w-lg mx-auto" style={{ color: 'rgba(255,255,255,0.7)', fontWeight: 400 }}>
+            <p className="text-base mb-10 max-w-lg mx-auto" style={{ color: 'rgb(var(--fg) / 0.7)', fontWeight: 400 }}>
               {isEN ? 'Tell us what your business does and who uses your product. We will tell you honestly whether we have worked in a similar space, and where we would start.' : 'เล่าให้เราฟังว่าธุรกิจคุณทำอะไร และใครเป็นคนใช้ระบบ เราจะบอกตรงๆ ว่าเคยทำงานใกล้เคียงแบบนี้ไหม และถ้าเริ่ม เราจะเริ่มจากตรงไหน'}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
@@ -292,7 +292,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                 {isEN ? 'Talk to Us' : 'คุยกับเรา'}
                 <i className="ti ti-arrow-right" style={{ fontSize: 15 }} aria-hidden="true" />
               </Link>
-              <Link href="mailto:wu@haliviq.com" className="inline-flex items-center gap-2 px-10 py-4 rounded-full text-sm transition-colors" style={{ border: '1px solid rgba(255,255,255,0.3)', color: '#fff', fontWeight: 400 }}>
+              <Link href="mailto:wu@haliviq.com" className="inline-flex items-center gap-2 px-10 py-4 rounded-full text-sm transition-colors" style={{ border: '1px solid rgb(var(--fg) / 0.3)', color: 'var(--ink)', fontWeight: 400 }}>
                 wu@haliviq.com
               </Link>
             </div>
