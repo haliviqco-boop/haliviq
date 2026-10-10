@@ -296,3 +296,10 @@ html[data-theme="light"] .theme-toggle .tt-star { opacity: 0; animation: none; }
 html[data-theme="light"] .theme-toggle .tt-cloud { opacity: .95; }
 @keyframes twinkle { 0%,100% { opacity: .9; transform: scale(1); } 50% { opacity: .3; transform: scale(.6); } }
 @media (prefers-reduced-motion: reduce) { .theme-toggle *, .theme-toggle { transition: none !important; animation: none !important; } }
+
+/* Homepage hero: dark image in dark mode, white-veiled in light mode */
+.hero-veil { display: none; }
+html[data-theme="light"] .hero-veil { display: block; background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.84) 45%, rgba(255,255,255,0.96) 100%); }
+html[data-theme="light"] .hero-dark-overlay { display: none; }
+.hero-wordmark { filter: drop-shadow(0 0 24px rgba(165,119,253,0.55)); }
+html[data-theme="light"] .hero-wordmark { filter: none; }

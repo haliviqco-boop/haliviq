@@ -9,23 +9,25 @@ export default function Hero({ lang, tr }: Props) {
   const prefix = `/${lang}`
 
   return (
-    <section className="theme-dark relative overflow-hidden" style={{minHeight:'100vh', background:'#050310'}}>
+    <section className="relative overflow-hidden" style={{minHeight:'100vh', background:'#050310'}}>
       {/* Purple dune landscape background — animated GIF (motion baked into the file) */}
       <img src="/images/hero/dune-bg.gif" alt=""
         className="absolute inset-0 w-full h-full object-cover" style={{zIndex:0}}/>
-      {/* Soft top-to-bottom overlay for nav + text legibility */}
-      <div className="absolute inset-0" style={{background:'linear-gradient(180deg, rgba(5,3,16,0.55) 0%, rgba(5,3,16,0.15) 30%, rgba(5,3,16,0.1) 55%, rgba(5,3,16,0.65) 100%)', zIndex:2}}/>
+      {/* Light mode: translucent white veil over the dunes so the hero reads as a light surface */}
+      <div className="hero-veil absolute inset-0" style={{zIndex:1}}/>
+      {/* Soft top-to-bottom overlay for nav + text legibility (dark mode) */}
+      <div className="hero-dark-overlay absolute inset-0" style={{background:'linear-gradient(180deg, rgba(5,3,16,0.55) 0%, rgba(5,3,16,0.15) 30%, rgba(5,3,16,0.1) 55%, rgba(5,3,16,0.65) 100%)', zIndex:2}}/>
 
       <div className="relative flex flex-col" style={{zIndex:3, minHeight:'100vh'}}>
         <div className="flex-1 flex items-center justify-center pt-28 pb-10 lg:pt-24">
           <div className="max-w-5xl mx-auto px-4 lg:px-10 text-center">
             {/* Tagline — thin, wide letter-spacing, brand mark */}
-            <p className="fade-up" style={{animationDelay:'0s', fontFamily:'var(--font-main)', fontWeight:400, fontSize:'clamp(0.65rem,1.1vw,0.85rem)', letterSpacing:'clamp(0.12em,0.9vw,0.35em)', lineHeight:1.8, color:'rgba(244,242,255,0.8)', textTransform:'uppercase', marginBottom:'1.75rem'}}>
+            <p className="fade-up" style={{animationDelay:'0s', fontFamily:'var(--font-main)', fontWeight:400, fontSize:'clamp(0.65rem,1.1vw,0.85rem)', letterSpacing:'clamp(0.12em,0.9vw,0.35em)', lineHeight:1.8, color:'rgb(var(--fg) / 0.8)', textTransform:'uppercase', marginBottom:'1.75rem'}}>
               {lang === 'th' ? 'ความคิดของคน สู่อนาคตที่ฉลาดขึ้น' : 'Human Ideas. Intelligent Future.'}
             </p>
 
             <h1 className="t-display leading-relaxed text-[clamp(2.75rem,6vw,5.5rem)] mb-6 fade-up" style={{animationDelay:'0.1s', color:'var(--ink)'}}>
-              {h.h1a} <span style={{background:'linear-gradient(135deg,var(--purple-light) 0%,#8CD8E3 100%)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text'}}>{h.h1b}</span> {h.h1c}
+              {h.h1a} <span style={{background:'linear-gradient(135deg,var(--accent) 0%,var(--accent-2) 100%)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text'}}>{h.h1b}</span> {h.h1c}
             </h1>
 
             <p className="t-body max-w-xl mx-auto mb-10 fade-up" style={{animationDelay:'0.2s', fontSize:'1.05rem', color: 'rgb(var(--fg) / 0.85)', fontWeight:400}}>
@@ -46,11 +48,13 @@ export default function Hero({ lang, tr }: Props) {
         {/* Wordmark — sits low, glowing over the dune valley like the brand key art */}
         <div className="flex justify-center fade-up pb-10" style={{animationDelay:'0.4s'}}>
           <img src="/haliviq-logo-light.svg" alt="Haliviq"
-            className="w-auto opacity-90" style={{height:'clamp(24px,4vw,40px)', filter:'drop-shadow(0 0 24px rgba(165,119,253,0.55))'}}/>
+            className="logo-for-dark hero-wordmark w-auto opacity-90" style={{height:'clamp(24px,4vw,40px)'}}/>
+          <img src="/haliviq-logo.svg" alt="" aria-hidden="true"
+            className="logo-for-light hero-wordmark w-auto opacity-90" style={{height:'clamp(24px,4vw,40px)'}}/>
         </div>
 
         {/* Client logo strip — pinned to the bottom edge of the hero, like OOZOU */}
-        <div className="border-t border-[color:rgb(var(--fg)/0.1)]" style={{background:'rgba(10,7,22,0.55)', backdropFilter:'blur(16px)'}}>
+        <div className="border-t border-[color:rgb(var(--fg)/0.1)]" style={{background:'color-mix(in srgb, var(--bg) 55%, transparent)', backdropFilter:'blur(16px)'}}>
           <div className="max-w-7xl mx-auto px-4 lg:px-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-4 py-7">
             {h.statsN.map((n, i) => (
               <div key={i} className="text-center">

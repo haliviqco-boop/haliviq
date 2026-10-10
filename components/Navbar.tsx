@@ -1,7 +1,6 @@
 'use client'
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import LangSwitcher from '@/components/LangSwitcher'
 import ThemeToggle from '@/components/ThemeToggle'
 import { type Lang, type T } from '@/lib/i18n'
@@ -219,11 +218,6 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
   // only the header backdrop swaps from fully transparent to a dark blurred bar on scroll.
   const isTransparent = transparent
   const navTextColor = 'var(--accent)'
-  // The homepage hero is a dark image in both themes, so the header sits on a dark
-  // surface until the page scrolls; everywhere else it follows the active theme.
-  const pathname = usePathname()
-  const isHome = /^\/(th|en)\/?$/.test(pathname || '')
-  const onHeroDark = isHome && !scrolled
 
   // Mobile menu panel: match whichever theme the page itself uses, same as the
   // desktop nav above, instead of always forcing the light panel.
@@ -235,7 +229,7 @@ export default function Navbar({ lang, tr, transparent = false }: Props) {
 
   return (
     <>
-      <header className={`${onHeroDark ? 'theme-dark ' : ''}fixed top-0 inset-x-0 z-50 transition-all duration-300 backdrop-blur-xl border-b ${
+      <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 backdrop-blur-xl border-b ${
         transparent && !scrolled ? 'border-transparent' : 'shadow-sm border-[color:var(--line)]'
       }`} style={{ background: transparent && !scrolled ? 'transparent' : 'color-mix(in srgb, var(--bg) 92%, transparent)' }}>
         {/* Brand gradient hairline across the very top edge */}
