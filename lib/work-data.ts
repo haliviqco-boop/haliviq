@@ -7203,6 +7203,189 @@ export const workProjects: WorkProject[] = [
       "servicesLabel": "Services Provided",
       "ogImage": "/images/case-studies/dede/cover.jpg"
     }
+  },
+  {
+    "slug": "suda",
+    "industryTag": "F&B",
+    "year": "2026",
+    "th": {
+      "metaTitle": "ออกแบบแบรนด์และเว็บไซต์ร้านอาหารไทยในอเมริกา | SUDA",
+      "metaDescription": "ดูงานอัตลักษณ์แบรนด์และเว็บไซต์เปิดตัวที่ Haliviq ทำให้ SUDA ร้านอาหารไทยร่วมสมัยและค็อกเทลบาร์ที่ Bellevue รัฐวอชิงตัน",
+      "h1": "SUDA: แบรนด์และเว็บไซต์ร้านอาหารไทยที่ Bellevue รัฐวอชิงตัน",
+      "client": "SUDA",
+      "badge": "F&B",
+      "servicesProvided": [
+        "อัตลักษณ์แบรนด์",
+        "ออกแบบโลโก้",
+        "ออกแบบเว็บไซต์",
+        "พัฒนาเว็บไซต์"
+      ],
+      "intro": "SUDA เป็นร้านอาหารไทยร่วมสมัยและค็อกเทลบาร์ที่กำลังจะเปิดที่เมือง Bellevue รัฐวอชิงตัน ภายใต้ประโยค \"Thai-rooted. Reimagined.\" เราออกแบบแบรนด์และทำเว็บไซต์แนะนำร้านก่อนวันเปิด ใช้โลโก้ตัวอักษรสีทองบนพื้นเขียวเข้ม ลายเส้นพฤกษศาสตร์ และตัวอักษรเซอริฟแบบ small caps มีหน้าเปิดตัวที่บอกที่อยู่ ช่องทางติดต่อ ลิงก์ Instagram และพาไปรู้จักร้านอาหารไทยในเครือเดียวกัน",
+      "snapshot": [
+        {
+          "label": "อุตสาหกรรม",
+          "value": "F&B"
+        },
+        {
+          "label": "สถานที่",
+          "value": "Bellevue รัฐวอชิงตัน สหรัฐอเมริกา"
+        },
+        {
+          "label": "ขอบเขต",
+          "value": "อัตลักษณ์แบรนด์ โลโก้ ออกแบบและพัฒนาเว็บไซต์"
+        },
+        {
+          "label": "ปี",
+          "value": "2026"
+        }
+      ],
+      "objectivesHeading": "เป้าหมายของโปรเจกต์",
+      "objectives": [
+        "สื่อประโยค \"Thai-rooted. Reimagined.\" ผ่านหน้าตาที่จำได้ในพริบตา",
+        "แตกต่างจากภาพลักษณ์ร้านอาหารไทยที่คุ้นตา แต่ยังอบอุ่นและประณีต",
+        "ให้แขกเจอที่อยู่ ช่องทางติดต่อ และ Instagram ก่อนวันเปิดร้าน",
+        "เผื่อให้เว็บไซต์ต่อยอดเป็นเมนูและระบบจองได้ในภายหลัง"
+      ],
+      "deliverablesHeading": "สิ่งที่เราส่งมอบ",
+      "deliverables": [
+        "อัตลักษณ์แบรนด์และโลโก้ตัวอักษรที่ออกแบบเฉพาะ",
+        "ชุดสีทองและเขียวเข้ม",
+        "ลายเส้นพฤกษศาสตร์",
+        "ตัวอักษรเซอริฟแบบ small caps",
+        "เว็บไซต์เปิดตัวที่รองรับทุกหน้าจอ พร้อมที่อยู่ ช่องทางติดต่อ และโซเชียล"
+      ],
+      "approachHeading": "ขั้นตอนการทำงาน",
+      "approach": [
+        {
+          "title": "ทำความเข้าใจคอนเซปต์",
+          "desc": "เราเริ่มจากวิธีที่ SUDA เล่าถึงตัวเอง คือสูตรและรสชาติดั้งเดิม ไอเดียใหม่ และไม่เปลี่ยนอะไรเพียงเพื่อให้ต่าง แล้วใช้เป็นเกณฑ์ตัดสินทุกการออกแบบ"
+        },
+        {
+          "title": "ออกแบบอัตลักษณ์",
+          "desc": "เราวาดโลโก้ เลือกชุดสีทองกับเขียวเข้ม ลายพฤกษศาสตร์ และกำหนดตัวอักษร ให้แบรนด์ดูอบอุ่นและประณีต ไม่ซ้ำกับหน้าตาร้านอาหารไทยทั่วไป"
+        },
+        {
+          "title": "พัฒนาเว็บไซต์เปิดตัว",
+          "desc": "เราแปลงอัตลักษณ์เป็นหน้าเว็บที่รองรับทุกหน้าจอ มีภาพถ่ายที่แข็งแรงหนึ่งภาพ ข้อความที่ชัดเจน และข้อมูลที่แขกมองหาเป็นอย่างแรก"
+        }
+      ],
+      "techHeading": "เทคโนโลยีและเครื่องมือ",
+      "tech": [
+        "เว็บไซต์ที่รองรับทุกหน้าจอ",
+        "โลโก้และระบบแบรนด์ที่ออกแบบเฉพาะ",
+        "งานอาร์ตลายพฤกษศาสตร์",
+        "ตัวอักษรสำหรับเว็บ"
+      ],
+      "resultsHeading": "ผลลัพธ์",
+      "results": [
+        "หน้าตาแบรนด์ที่จดจำได้ให้ร้านใหม่ก่อนวันเปิด",
+        "หน้าเปิดตัวที่แสดงที่อยู่ ช่องทางติดต่อ และ Instagram",
+        "โครงเว็บไซต์ที่พร้อมรับเมนูและการจอง"
+      ],
+      "faqHeading": "คำถามที่พบบ่อย",
+      "faq": [
+        {
+          "question": "SUDA คือร้านอะไร",
+          "answer": "ร้านอาหารไทยร่วมสมัยและค็อกเทลบาร์ที่กำลังจะเปิดที่ Bellevue รัฐวอชิงตัน ใช้สูตรไทยดั้งเดิมผสมไอเดียใหม่และกลิ่นอายแบบ Pacific Northwest"
+        },
+        {
+          "question": "Haliviq ทำอะไรให้ SUDA",
+          "answer": "อัตลักษณ์แบรนด์ โลโก้ และเว็บไซต์เปิดตัวที่แนะนำร้านก่อนวันเปิด"
+        }
+      ],
+      "backLabel": "กลับไปหน้า Work",
+      "servicesLabel": "บริการที่ให้",
+      "ogImage": "/images/case-studies/suda/cover.jpg"
+    },
+    "en": {
+      "metaTitle": "Thai Restaurant Branding and Website, Bellevue WA | SUDA",
+      "metaDescription": "See the brand identity and launch website Haliviq made for SUDA, a contemporary Thai restaurant and cocktail bar in Bellevue, Washington: gold wordmark, botanical pattern and a clear coming-soon page.",
+      "h1": "SUDA: Brand Identity and Website for a Thai Restaurant in Bellevue, WA",
+      "client": "SUDA",
+      "badge": "F&B",
+      "servicesProvided": [
+        "Brand identity",
+        "Logo design",
+        "Website design",
+        "Website development"
+      ],
+      "intro": "SUDA is a contemporary Thai restaurant and cocktail bar opening in Bellevue, Washington, under the line \"Thai-rooted. Reimagined.\" We designed the brand and built the website that introduces it before the doors open: a gold wordmark on deep green, a botanical line-art pattern, serif small-caps type, and a launch page that gives guests the address, contact details and Instagram link, and points to the group's sister Thai restaurants.",
+      "snapshot": [
+        {
+          "label": "Industry",
+          "value": "F&B"
+        },
+        {
+          "label": "Location",
+          "value": "Bellevue, Washington, USA"
+        },
+        {
+          "label": "Scope",
+          "value": "Brand identity, logo, website design and development"
+        },
+        {
+          "label": "Year",
+          "value": "2026"
+        }
+      ],
+      "objectivesHeading": "Project Objectives",
+      "objectives": [
+        "Express \"Thai-rooted. Reimagined.\" in a look people can recognise at a glance",
+        "Stand out from familiar Thai restaurant visuals while staying warm and refined",
+        "Give guests the address, contact and Instagram before opening day",
+        "Let the website grow into a menu and booking experience later"
+      ],
+      "deliverablesHeading": "What We Delivered",
+      "deliverables": [
+        "Brand identity and custom wordmark",
+        "Colour palette in gold and deep green",
+        "Botanical line-art pattern",
+        "Serif small-caps typography",
+        "Responsive launch website with address, contact and social links"
+      ],
+      "approachHeading": "How We Built It",
+      "approach": [
+        {
+          "title": "Understand the concept",
+          "desc": "We started from how SUDA describes itself: traditional recipes and flavours, new ideas, nothing changed just to be different. That became the test every design choice had to pass."
+        },
+        {
+          "title": "Design the identity",
+          "desc": "We drew the wordmark, chose a gold and deep-green palette and a botanical pattern, and set the type, so the brand feels warm and refined rather than like a generic Thai restaurant look."
+        },
+        {
+          "title": "Build the launch website",
+          "desc": "We turned the identity into a responsive page with one strong photograph, a clear message and the practical details guests look for first."
+        }
+      ],
+      "techHeading": "Technology & Tools",
+      "tech": [
+        "Responsive website",
+        "Custom wordmark and brand system",
+        "Botanical pattern artwork",
+        "Web typography"
+      ],
+      "resultsHeading": "Results",
+      "results": [
+        "A recognisable look for a new restaurant before it opens",
+        "A launch page that shows the address, contact and Instagram",
+        "A site structure ready to take a menu and bookings"
+      ],
+      "faqHeading": "Frequently Asked Questions",
+      "faq": [
+        {
+          "question": "What is SUDA?",
+          "answer": "A contemporary Thai restaurant and cocktail bar opening in Bellevue, Washington, built on traditional Thai recipes with new ideas and Pacific Northwest influence."
+        },
+        {
+          "question": "What did Haliviq make for SUDA?",
+          "answer": "The brand identity and logo, and the launch website that introduces the restaurant before it opens."
+        }
+      ],
+      "backLabel": "Back to Work",
+      "servicesLabel": "Services Provided",
+      "ogImage": "/images/case-studies/suda/cover.jpg"
+    }
   }
 ]
 

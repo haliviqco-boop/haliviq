@@ -1800,6 +1800,114 @@ export const caseStudies: CaseStudy[] = [
       "servicesLabel": "Services Provided"
     }
   },
+  {
+    slug: 'suda',
+    industryTag: 'F&B',
+    result: "แบรนด์ + เว็บไซต์",
+    year: '2026',
+    th: {
+      ...hTH,
+      badge: "F&B",
+      client: "SUDA",
+      title: "SUDA: แบรนด์และเว็บไซต์ร้านอาหารไทยที่ Bellevue รัฐวอชิงตัน",
+      desc: "อัตลักษณ์แบรนด์และเว็บไซต์เปิดตัวของ SUDA ร้านอาหารไทยร่วมสมัยและค็อกเทลบาร์ที่ Bellevue รัฐวอชิงตัน ที่ตีความอาหารไทยใหม่บนรากเดิม",
+      duration: "ช่วงก่อนเปิดร้าน",
+      servicesProvided: [
+        "อัตลักษณ์แบรนด์",
+        "ออกแบบโลโก้",
+        "ออกแบบเว็บไซต์",
+        "พัฒนาเว็บไซต์"
+      ],
+      heroImage: "/images/case-studies/suda/cover.jpg",
+      challenge: "SUDA เป็นร้านอาหารไทยเปิดใหม่ในเมืองที่มีร้านอาหารไทยอยู่แล้วหลายร้าน และเป็นส่วนหนึ่งของกลุ่มร้านอาหารไทยในพื้นที่ แบรนด์ต้องบอกให้ได้ว่าอาหารมาจากสูตรและรสชาติไทยดั้งเดิม แล้วเติมไอเดียใหม่ วัตถุดิบที่ไม่คาดคิด และกลิ่นอายแบบ Pacific Northwest โดยไม่ดูเหมือนเปลี่ยนเพียงเพื่อให้แตกต่าง และต้องมีหน้าเว็บให้คนเจอก่อนวันเปิดร้าน เพื่อให้แขกหาที่อยู่เจอและเริ่มติดตามร้านได้",
+      solution: "เราวางอัตลักษณ์ไว้รอบประโยค \"Thai-rooted. Reimagined.\" โลโก้ตัวอักษรสีทองที่ออกแบบเฉพาะวางบนพื้นเขียวเข้ม มีลายเส้นพฤกษศาสตร์จางๆ อยู่ด้านหลังที่ชวนนึกถึงสมุนไพรและผลไม้ไทย ตัวอักษรเป็นเซอริฟเรียบหรูแบบ small caps เว็บไซต์ใช้หน้าตาเดียวกันตั้งแต่หน้าแรก คือภาพเต็มจอภาพเดียวของพริกแห้งในชามทำมือ ข้อความ \"Coming to Bellevue this fall\" ที่อ่านแล้วเข้าใจทันที และส่วนท้ายที่มีที่อยู่ อีเมลติดต่อ Instagram พร้อมลิงก์ไปร้านในเครือ",
+      overview: "โปรเจกต์นี้ครอบคลุมอัตลักษณ์แบรนด์ โลโก้ และเว็บไซต์เปิดตัวของร้านที่ยังไม่เปิดให้บริการ โจทย์คือแนะนำมุมมองของ SUDA ด้วยข้อความไม่กี่บรรทัดและภาพที่แข็งแรงหนึ่งภาพ และเผื่อที่ไว้ให้ขยายเป็นเว็บที่มีเมนูและการจองเมื่อร้านเปิดแล้ว",
+      approach: [
+        {
+          "title": "ทำความเข้าใจคอนเซปต์",
+          "desc": "เราเริ่มจากวิธีที่ SUDA เล่าถึงตัวเอง คือสูตรและรสชาติดั้งเดิม ไอเดียใหม่ และไม่เปลี่ยนอะไรเพียงเพื่อให้ต่าง แล้วใช้เป็นเกณฑ์ตัดสินทุกการออกแบบ"
+        },
+        {
+          "title": "ออกแบบอัตลักษณ์",
+          "desc": "เราวาดโลโก้ เลือกชุดสีทองกับเขียวเข้ม ลายพฤกษศาสตร์ และกำหนดตัวอักษร ให้แบรนด์ดูอบอุ่นและประณีต ไม่ซ้ำกับหน้าตาร้านอาหารไทยทั่วไป"
+        },
+        {
+          "title": "พัฒนาเว็บไซต์เปิดตัว",
+          "desc": "เราแปลงอัตลักษณ์เป็นหน้าเว็บที่รองรับทุกหน้าจอ มีภาพถ่ายที่แข็งแรงหนึ่งภาพ ข้อความที่ชัดเจน และข้อมูลที่แขกมองหาเป็นอย่างแรก"
+        }
+      ],
+      keyFeatures: [
+        {
+          "title": "แบรนด์ที่มีจุดยืน",
+          "bullets": [
+            "โลโก้ตัวอักษรสีทองที่ออกแบบเฉพาะ บนพื้นเขียวเข้ม",
+            "ลายเส้นพฤกษศาสตร์เป็นพื้นหลังแบบเบาๆ",
+            "ตัวอักษรเซอริฟแบบ small caps ทั้งเว็บไซต์"
+          ]
+        },
+        {
+          "title": "หน้าเปิดตัวที่ทำหน้าที่ครบ",
+          "bullets": [
+            "ภาพเต็มจอและข้อความบอกวันเปิดที่ชัดเจน",
+            "ที่อยู่ อีเมลติดต่อ และลิงก์ Instagram",
+            "ลิงก์ไปร้านอาหารไทยในเครือเดียวกัน",
+            "รองรับตั้งแต่มือถือถึงเดสก์ท็อป"
+          ]
+        }
+      ],
+    },
+    en: {
+      ...hEN,
+      badge: "F&B",
+      client: "SUDA",
+      title: "SUDA: Brand Identity and Website for a Thai Restaurant in Bellevue, WA",
+      desc: "Brand identity and a launch website for SUDA, a contemporary Thai restaurant and cocktail bar in Bellevue, Washington, built around the idea of Thai food, reimagined.",
+      duration: "Pre-opening phase",
+      servicesProvided: [
+        "Brand identity",
+        "Logo design",
+        "Website design",
+        "Website development"
+      ],
+      heroImage: "/images/case-studies/suda/cover.jpg",
+      challenge: "SUDA is a new Thai restaurant in a US city where Thai food is already well represented, and it belongs to a wider family of Thai restaurants in the area. The brand had to say that its cooking comes from traditional Thai recipes and flavours while adding new ideas, unexpected ingredients and Pacific Northwest influence, without sounding like it changes things just to be different. It also needed a web presence before opening day, so that guests could find the address and start following the restaurant.",
+      solution: "We built the identity around the line \"Thai-rooted. Reimagined.\" A custom wordmark in gold sits on deep green, with a faint botanical line-art pattern behind it that nods to Thai herbs and fruit. Type is a refined serif in small caps. The website carries the same look from the first screen: one full-bleed photograph of dried chilli in a handmade bowl, a clear \"Coming to Bellevue this fall\" message, and a footer with the address, contact email and Instagram, plus links to the group's sister restaurants.",
+      overview: "The project covered the brand identity, logo and a launch website for a restaurant that had not yet opened. The brief was to introduce SUDA's point of view in a few lines and one strong image, and to leave room to grow the site into a full menu and booking experience once the restaurant is open.",
+      approach: [
+        {
+          "title": "Understand the concept",
+          "desc": "We started from how SUDA describes itself: traditional recipes and flavours, new ideas, nothing changed just to be different. That became the test every design choice had to pass."
+        },
+        {
+          "title": "Design the identity",
+          "desc": "We drew the wordmark, chose a gold and deep-green palette and a botanical pattern, and set the type, so the brand feels warm and refined rather than like a generic Thai restaurant look."
+        },
+        {
+          "title": "Build the launch website",
+          "desc": "We turned the identity into a responsive page with one strong photograph, a clear message and the practical details guests look for first."
+        }
+      ],
+      keyFeatures: [
+        {
+          "title": "A brand with a point of view",
+          "bullets": [
+            "Custom gold wordmark on deep green",
+            "Botanical line-art pattern used as a quiet background",
+            "Serif small-caps typography across the site"
+          ]
+        },
+        {
+          "title": "A launch page that does its job",
+          "bullets": [
+            "Full-bleed photograph and a clear opening message",
+            "Address and contact email, with a link to Instagram",
+            "Links to the group's sister Thai restaurants",
+            "Responsive from phone to desktop"
+          ]
+        }
+      ],
+    },
+  },
 ]
 
 export function getCaseStudy(slug: string) {

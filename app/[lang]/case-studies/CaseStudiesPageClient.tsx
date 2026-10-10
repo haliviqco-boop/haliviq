@@ -40,7 +40,7 @@ const groupsEN = [
   { label: 'Healthcare', ids: [3, 10] },
   { label: 'AI', ids: [4, 8] },
   { label: 'Enterprise', ids: [7, 9] },
-  { label: 'F&B', ids: [13, 14, 22, 32, 39] },
+  { label: 'F&B', ids: [13, 14, 22, 32, 39, 44] },
   { label: 'Fitness & Wellness', ids: [15] },
   { label: 'Apparel & Uniforms', ids: [16] },
   { label: 'Manufacturing', ids: [17] },
@@ -98,6 +98,7 @@ const casesEN = [
   { id:41, tags:['Construction & Real Estate'], client:"Admire", title:"Website, UX/UI and AI-Assisted CRM for a Home Builder", desc:"UX/UI design and a new website for a custom home builder, with an AI-assisted CRM that makes sure every enquiry gets followed up.", result:"Website + CRM", slug:"admire" },
   { id:42, tags:['Beauty & Aesthetics'], client:"MEKO International Hospital", title:"Brand, Website and Graphics for an Aesthetic Hospital", desc:"Brand identity, website and graphics for an aesthetic surgery hospital, giving patients one polished look across web, social and print.", result:"Brand + Website", slug:"meko-international-hospital" },
   { id:43, tags:['Government & Public Sector'], client:"DEDE", title:"DEDE Inspection Check-in App and Website", desc:"A mobile app that lets energy management auditors and certifiers photograph and check in with a time stamp during on-site inspections, plus a website for the program.", result:"Mobile App + Website", slug:"dede" },
+  { id:44, tags:['F&B'], client:"SUDA", title:"Brand and Website for a Thai Restaurant in the US", desc:"Brand identity and a launch website for SUDA, a contemporary Thai restaurant and cocktail bar in Bellevue, Washington, built around the idea of Thai food, reimagined.", result:"Brand + Website", slug:"suda" },
 ]
 
 const groupsTH = groupsEN
@@ -144,6 +145,7 @@ const casesTH = [
   { id:41, tags:['Construction & Real Estate'], client:"Admire", title:"เว็บไซต์ UX/UI และ AI CRM สำหรับธุรกิจรับสร้างบ้าน", desc:"ออกแบบ UX/UI และพัฒนาเว็บไซต์ใหม่ให้ธุรกิจรับสร้างบ้าน พร้อม CRM ที่มี AI ช่วย ให้ทุกคำถามของลูกค้าได้รับการติดตาม", result:"เว็บไซต์ + CRM", slug:"admire" },
   { id:42, tags:['Beauty & Aesthetics'], client:"MEKO International Hospital", title:"แบรนด์ เว็บไซต์ และกราฟิกสำหรับโรงพยาบาลศัลยกรรมความงาม", desc:"อัตลักษณ์แบรนด์ เว็บไซต์ และกราฟิกของโรงพยาบาลศัลยกรรมความงาม ให้คนไข้เห็นหน้าตาที่ประณีตเป็นแบบเดียวกันทั้งบนเว็บ โซเชียล และสื่อพิมพ์", result:"แบรนด์ + เว็บไซต์", slug:"meko-international-hospital" },
   { id:43, tags:['Government & Public Sector'], client:"DEDE", title:"แอป DEDE สำหรับเช็กอินตรวจสอบ และเว็บไซต์", desc:"แอปพลิเคชันที่ให้ผู้ตรวจสอบและรับรองการจัดการพลังงานถ่ายภาพและเช็กอินระบุเวลาขณะเข้าตรวจ พร้อมเว็บไซต์ของโครงการ", result:"แอปมือถือและเว็บไซต์", slug:"dede" },
+  { id:44, tags:['F&B'], client:"SUDA", title:"แบรนด์และเว็บไซต์ร้านอาหารไทยในอเมริกา", desc:"อัตลักษณ์แบรนด์และเว็บไซต์เปิดตัวของ SUDA ร้านอาหารไทยร่วมสมัยและค็อกเทลบาร์ที่ Bellevue รัฐวอชิงตัน ที่ตีความอาหารไทยใหม่บนรากเดิม", result:"แบรนด์ + เว็บไซต์", slug:"suda" },
 ]
 
 const gradients = [
